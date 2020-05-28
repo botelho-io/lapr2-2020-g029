@@ -85,7 +85,7 @@ Colaborator                  "1" -- "*"      HistoricalTransactionFile : loads >
 Colaborator                "0,1" -- "1"      User                      : acts as >
 Manager                      "1" -- "0,1"    PaymentScheduler          : defines >
 Manager                    "0,1" -- "1"      User                      : acts as >
-Payment                      "*" -- "1,..."  Transaction               : registers >
+Payment                      "1" -- "1,..."  Transaction               : registers >
 Payment                      "*" -- "1"      EmailAPI                  : uses >
 Payment                      "*" -- "1"      PaymentAPI                : uses >
 Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
@@ -99,15 +99,15 @@ Organization                 "1" -- "1,..."  Colaborator               : has >
 Organization                 "1" -- "1"      Manager                   : has >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
 Organization                 "1" -- "*"      Payment                   : responsable by >
-Task                         "*" -- "1"      Freelancer                : executed by >
+Organization                 "1" -- "*"      Task                      : publishes >
+Task                         "*" -- "0, 1"   Freelancer                : executed by >
 App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
 App                          "1" -- "*"      Organization              : has >
 App                          "1" -- "1"      EmailAPI                  : supports >
 App                          "1" -- "1"      PaymentAPI                : supports >
-App                          "1" -- "*"      Transaction               : registers >
+App                          "1" -- "*"      Payment                   : registers >
 App                          "1" -- "*"      Administrator             : has >
 App                          "1" -- "*"      Freelancer                : has >
-App                          "1" -- "*"      Task                      : has >
 App                          "1" -- "1"      EmailScheduler            : has >
 EmailScheduler               "1" -- "1"      EmailAPI                  : uses >
 Administrator                "1" -- "*"      Organization              : adds >

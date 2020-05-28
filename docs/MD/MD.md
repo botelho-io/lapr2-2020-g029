@@ -85,17 +85,17 @@
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
 |                          |responsible by         |Payment                   |
+|                          |publishes              |Task                      |
 |Task                      |executed by            |Freelancer                |
 |App                       |supports               |MonetaryUnitConversionAPI |
 |                          |has                    |Organization              |
 |                          |supports               |EmailAPI                  |
 |                          |supports               |PaymentAPI                |
 |                          |supports               |PasswordAPI               |
-|                          |registers              |Transaction               |
+|                          |registers              |Payment                   |
 |                          |has                    |Administrator             |
 |                          |has                    |EmailScheduler            |
 |                          |has                    |Freelancer                |
-|                          |has                    |Task                      |
 |EmailScheduler            |uses                   |EmailAPI                  |
 |Administrator             |adds                   |Organization              |
 |                          |acts as                |User                      |
