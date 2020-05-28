@@ -64,7 +64,7 @@
 
 |Concept (A)               |Association            |Concept (B)               |
 |-------------------------:|:---------------------:|:-------------------------|
-|Colaborator               |creates                |Payment                   |
+|Colaborator               |creates                |Transaction               |
 |                          |creates                |Task                      |
 |                          |creates                |Freelancer                |
 |                          |loads                  |HistoricalTransactionFile |
@@ -85,17 +85,18 @@
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
 |                          |responsible by         |Payment                   |
+|                          |publishes              |Task                      |
+|                          |has unpaid             |Transaction               |
 |Task                      |executed by            |Freelancer                |
 |App                       |supports               |MonetaryUnitConversionAPI |
 |                          |has                    |Organization              |
 |                          |supports               |EmailAPI                  |
 |                          |supports               |PaymentAPI                |
 |                          |supports               |PasswordAPI               |
-|                          |registers              |Transaction               |
+|                          |registers              |Payment                   |
 |                          |has                    |Administrator             |
 |                          |has                    |EmailScheduler            |
 |                          |has                    |Freelancer                |
-|                          |has                    |Task                      |
 |EmailScheduler            |uses                   |EmailAPI                  |
 |Administrator             |adds                   |Organization              |
 |                          |acts as                |User                      |

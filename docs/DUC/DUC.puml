@@ -15,8 +15,7 @@ usecase UC11 as "UC11 - Serialize Information To File"
 actor Colaborator as C
 actor Manager as M
 actor Administrator as A
-actor PaymentScheduler as S
-actor EmailScheduler as E
+actor Time as T
 actor User as U
 
 left to right direction
@@ -28,7 +27,7 @@ C --> (UC4)
 
 M --> (UC5)
 
-S --> (UC6)
+T --> (UC6)
 
 C --> (UC7)
 M --> (UC7)
@@ -36,7 +35,7 @@ M --> (UC7)
 A --> (UC8)
 A --> (UC9)
 
-E --> (UC10)
+T --> (UC10)
 
 U --> (UC11)
 
