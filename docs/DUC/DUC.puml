@@ -1,0 +1,43 @@
+@startuml DUC
+
+usecase UC1  as "UC1  - Create Payment Transaction"
+usecase UC2  as "UC2  - Create a Task"
+usecase UC3  as "UC3  - Create a Freelancer"
+usecase UC4  as "UC4  - Load Historical Transactions from File"
+usecase UC5  as "UC5  - Define Time and Day of the Month Unpayed Tasks Will Be Payed"
+usecase UC6  as "UC6  - Automatically Make Payments"
+usecase UC7  as "UC7  - Visualize Overall Statistics About Task Execution Times and Freelancer Payments"
+usecase UC8  as "UC8  - Add New Organization"
+usecase UC9  as "UC9  - T4J Data Visualization"
+usecase UC10 as "UC10 - Send E-mail to Late Freelancers"
+usecase UC11 as "UC11 - Serialize Information To File"
+
+actor Colaborator as C
+actor Manager as M
+actor Administrator as A
+actor PaymentScheduler as S
+actor EmailScheduler as E
+actor User as U
+
+left to right direction
+
+C --> (UC1)
+C --> (UC2)
+C --> (UC3)
+C --> (UC4)
+
+M --> (UC5)
+
+S --> (UC6)
+
+C --> (UC7)
+M --> (UC7)
+
+A --> (UC8)
+A --> (UC9)
+
+E --> (UC10)
+
+U --> (UC11)
+
+@enduml

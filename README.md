@@ -15,10 +15,12 @@ Em particular, contém:
 O diagrama de sequência seguinte representa graficamente o fluxo pretendido para a aplicação onde existe uma separação clara (desacoplamento) entre as classes de domínio e as classes de interação com o utilizador (_user interface_). Este desacoplamento é realizado pelas classes com o sufixo _Controller_.
 
 Nesta UC pretende-se que os estudantes se concentrem essencialmente na construção das classes de domínio (cf. documentação).
- 
+
 ![Visão Geral](docs/UI_ControllerOverview.png)
 
 A realização de algumas funcionalidades pelos utilizadores carece de uma autorização baseada em papeis/funções desempenhadas.
 A verificação dessa autorização pode ser realizada da seguinte forma:
 
 ![Visão Geral](docs/ControllerValidaPermissaoUtilizador.png)
+
+// Todo: complete me
