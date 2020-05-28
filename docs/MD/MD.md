@@ -64,7 +64,7 @@
 
 |Concept (A)               |Association            |Concept (B)               |
 |-------------------------:|:---------------------:|:-------------------------|
-|Colaborator               |creates                |Payment                   |
+|Colaborator               |creates                |Transaction               |
 |                          |creates                |Task                      |
 |                          |creates                |Freelancer                |
 |                          |loads                  |HistoricalTransactionFile |

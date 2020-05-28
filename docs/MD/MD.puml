@@ -78,7 +78,7 @@ class Freelancer {
         - String country
 }
 
-Colaborator                  "1" -- "*"      Payment                   : creates >
+Colaborator                  "1" -- "*"      Transaction               : creates >
 Colaborator                  "1" -- "*"      Task                      : creates >
 Colaborator                  "1" -- "*"      Freelancer                : creates >
 Colaborator                  "1" -- "*"      HistoricalTransactionFile : loads >
