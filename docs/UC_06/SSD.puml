@@ -1,0 +1,12 @@
+@startuml SSD
+hide footbox
+autonumber
+actor "Time" as T
+participant ":System" as S
+
+activate T
+T -> S : starts the process of making payments on unpaid Transactions
+activate S
+deactivate S
+deactivate T
+@enduml
