@@ -100,6 +100,7 @@ Organization                 "1" -- "1"      Manager                   : has >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
 Organization                 "1" -- "*"      Payment                   : responsable by >
 Organization                 "1" -- "*"      Task                      : publishes >
+Organization                 "1" -- "*"      Transaction               : has unpaid >
 Task                         "*" -- "0, 1"   Freelancer                : executed by >
 App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
 App                          "1" -- "*"      Organization              : has >

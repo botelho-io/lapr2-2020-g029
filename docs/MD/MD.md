@@ -86,6 +86,7 @@
 |                          |uses                   |PaymentScheduler          |
 |                          |responsible by         |Payment                   |
 |                          |publishes              |Task                      |
+|                          |has unpaid             |Transaction               |
 |Task                      |executed by            |Freelancer                |
 |App                       |supports               |MonetaryUnitConversionAPI |
 |                          |has                    |Organization              |
