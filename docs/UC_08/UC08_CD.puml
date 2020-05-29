@@ -1,0 +1,64 @@
+@startuml
+
+class Colaborator {
+  -String nome
+  -String email
+  Colaborador(nome, email, password )
+  String getNome()
+  String getEmail()
+  String getPassword()}
+
+class Manager {
+  -String name
+  -String email
+  Colaborador(name, email, password)
+  String getName()
+  String getEmail()
+  String getPassword()
+}
+
+class Administrator {
+- String nome
+- String email
+- String password
+}
+
+class Organization {
+  -String name
+  Organizacao(name, managerColaborador ,otherColaborator)
+  {static} Manager novoManager(nome, email, password)
+  {static} Colaborador novoColaborador(nome, email, password)
+}
+
+class App {
+  
+  Organizacao novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+  validatesOrganization(Organizacao org)
+  - addOrganization(Organizacao org) 
+}
+
+class AutorizacaoFacade {
+   - addManager(nomeM,emailM,passawordM)
+   - addColaborator(nomeM,emailM,passawordC)
+}
+
+class AddingOrganizationController {
+    newOrganization(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+   - addOrganizaton()
+}
+
+class AddingOrganizationUI {
+}
+
+AddingOrganizationUI ..> AddingOrganizationController
+AddingOrganizationController ..> App
+AddingOrganizationController ..> Organization
+App ..> Colaborator
+App ..> Manager
+App ..> AutorizacaoFacade
+Organization                 "1" -- "1,..."  Colaborator    : has >
+Organization                 "1" -- "1"      Manager        : has >
+Administrator                "1" -- "*"      Organization   : adds >
+App                          "1" -- "*"      Administrator  : has >
+
+@enduml

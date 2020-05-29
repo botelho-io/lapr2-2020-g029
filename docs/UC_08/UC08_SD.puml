@@ -1,0 +1,96 @@
+@startuml
+autonumber
+
+actor Administrator as A
+participant ":Adding\nOrganizacaoUI" as UI
+participant ":AddingOrganizacao\nController" as CTRL
+participant ":APP" as APP
+participant "Organization" as _ORG
+participant "org:Organization" as ORG
+participant "manag:Manager" as MAN
+participant "colab:Colaborador" as COLAB
+participant ":Autorizacao\nFacade" as AUT
+
+
+activate A
+A -> UI : adding new organization
+activate UI
+UI --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one colaborator of the same organization  (i.e. nameC, emailC, passwordC)
+deactivate UI
+
+A -> UI : enter the requested data
+activate UI
+
+UI -> CTRL : newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+activate CTRL
+
+CTRL -> APP: org = newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+activate APP
+
+APP -> _ORG: manag=newManager( nameM, emailM, passwordM)
+activate _ORG
+_ORG --> MAN ** : create( nameM, emailM, passwordM)
+deactivate _ORG
+
+APP -> _ORG: colab=newColaborator( nameC, emailC, passwordC)
+activate _ORG
+_ORG --> COLAB ** : create( nameC, emailC, passwordC)
+deactivate _ORG
+
+APP --> ORG ** : create(name,manag,colab)
+deactivate APP
+
+CTRL -> APP : validatesOrganization(org)
+activate APP
+deactivate APP
+
+deactivate CTRL
+UI --> A : The sistem validates and presents the data, asking to comfirm.
+deactivate UI
+
+A -> UI : confirms
+activate UI
+
+UI -> CTRL: addOrganization()
+activate CTRL
+CTRL -> APP: addOrganization(org)
+activate APP
+
+APP -> APP: validaOrganizao(org)
+APP -> MAN: nameM = getName()
+activate MAN
+deactivate MAN
+APP -> MAN: emailM = getEmail()
+activate MAN
+deactivate MAN
+APP -> MAN: passwordM = getPassword()
+activate MAN
+deactivate MAN
+APP -> AUT: addManager(nameM,emailM,passwordM)
+activate AUT
+deactivate AUT
+
+APP -> COLAB: nameC = getName()
+activate COLAB
+deactivate COLAB
+APP -> COLAB: emailC = getEmail()
+activate COLAB
+deactivate COLAB
+APP -> COLAB: passwordC = getPassword()
+activate COLAB
+deactivate COLAB
+APP -> AUT: addColaborator(nameC,emailC,passwordC)
+activate AUT
+deactivate AUT
+
+APP -> APP: addOrganization(org)
+
+
+deactivate APP
+deactivate CTRL
+UI --> A : successful operation
+deactivate UI
+
+deactivate A
+@enduml
+@enduml
