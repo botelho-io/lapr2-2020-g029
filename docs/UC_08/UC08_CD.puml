@@ -6,8 +6,7 @@ class Colaborator {
   Colaborador(nome, email, password )
   String getNome()
   String getEmail()
-  String getPassword()
-}
+  String getPassword()}
 
 class Manager {
   -String name
