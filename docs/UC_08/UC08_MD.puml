@@ -1,0 +1,38 @@
+@startuml
+
+hide methods
+left to right direction
+
+class App {
+
+}
+
+class Organization {
+        - String nome
+}
+
+class Colaborator {
+        - String nome
+        - String email
+        - String password
+}
+
+class Manager {
+        - String nome
+        - String email
+        - String password
+}
+
+class User {
+        - String nome
+        - String email
+        - String password
+}
+
+Colaborator                "0,1" -- "1"      User                      : acts as >
+Manager                    "0,1" -- "1"      User                      : acts as >
+Organization                 "1" -- "1,..."  Colaborator               : has >
+Organization                 "1" -- "1"      Manager                   : has >
+App                          "1" -- "*"      Organization              : has >
+
+@enduml
