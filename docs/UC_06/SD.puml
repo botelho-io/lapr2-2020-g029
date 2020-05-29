@@ -1,0 +1,74 @@
+@startuml SD
+autonumber
+hide footbox
+
+participant "scheduler\n:PaymentScheduler" as SC
+participant "timer:\nTimer" as TIMER
+participant "task:\nMakePaymentTask" as TASK
+participant "org\n:Organization" as org
+participant ":App" as app
+participant "rt\n:RegistPayment" as rp
+participant "payment\n:Payment" as pay
+participant "trs\n:Transaction" as trs
+participant ":PaymentAPI" as papi
+participant "lt\n:ListTransactions" as lt
+
+[o-> SC : create(day, timeOfDay, org)
+activate SC
+        SC -> SC : scheduleNextMonth()
+loop
+        activate SC
+                SC -> TASK**  : create(org, scheduler)
+                SC -> TIMER** : create()
+                SC -> SC : date = getNextDate(day, timeOfDaye)
+                SC ->TIMER: schedule(task, date)
+        deactivate SC
+deactivate SC
+        activate TIMER
+                note over SC,TIMER  : On the specified date and time
+                TIMER->TASK:run()
+                activate TASK
+                        TASK->TASK: makePayments()
+                        activate TASK
+                                TASK -> org : lt = getListTransaction()
+                                activate org
+                                deactivate org
+                                TASK -> app : rp = getRegistPayment()
+                                activate app
+                                deactivate app
+                                TASK -> rp : payment = newPayment(lt)
+                                activate rp
+                                        rp -> pay ** : create(lt, org)
+                                deactivate rp
+                                TASK -> pay : processPayments()
+                                activate pay
+                                        loop for each transaction
+                                                pay -> pay : trs = getTransaction(ID)
+                                                pay -> trs : makeBankTransfer()
+                                                activate trs
+                                                        trs -> trs: amount = getAmountToPay()
+                                                        trs -> trs: IBAN = getFreelancerIBAN()
+                                                        trs -> papi: payTo(amount, IBAN)
+                                                        activate papi
+                                                        deactivate papi
+                                                deactivate trs
+                                        end
+                                        pay -> pay : sendEmails()
+                                deactivate pay
+                                TASK -> org : removeUnpaidTransactions()
+                                activate org
+                                deactivate org
+                                TASK -> rp : payment = addPayment(payment)
+                                activate rp
+                                        rp -> rp : validate(payment)
+                                        rp -> rp : add(payment)
+                                deactivate rp
+                        deactivate TASK
+                        TASK -> SC : scheduleNextMonth()
+                        activate SC
+                deactivate TASK
+        deactivate TIMER
+end
+
+
+@enduml
