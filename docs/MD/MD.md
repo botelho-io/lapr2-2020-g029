@@ -73,18 +73,18 @@
 |                          |acts as                |User                      |
 |Payment                   |registers              |Transaction               |
 |                          |uses                   |EmailAPI                  |
-|                          |uses                   |PaymentAPI                |
 |                          |uses                   |MonetaryUnitConversionAPI |
+|                          |made on behalf of      |Organization              |
 |Transaction               |relative to            |Task                      |
 |                          |executed with          |TaskExecutionDetails      |
 |                          |to                     |Freelancer                |
+|                          |uses                   |PaymentAPI                |
 |TaskExecutionDetails      |refer to               |Task                      |
 |HistoricalTransactionFile |records                |Transaction               |
-|PaymentScheduler          |makes automatically    |Payment                   |
+|PaymentScheduler          |schedules              |Payment                   |
 |Organization              |has                    |Colaborator               |
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
-|                          |responsible by         |Payment                   |
 |                          |publishes              |Task                      |
 |                          |has unpaid             |Transaction               |
 |Task                      |executed by            |Freelancer                |

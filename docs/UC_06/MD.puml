@@ -1,0 +1,51 @@
+@startuml MD
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Transaction {
+
+}
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+}
+
+class Organization {
+        - String nome
+}
+
+class App {
+
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+Payment                      "1" -- "1,..."  Transaction               : registers >
+Payment                      "*" -- "1"      EmailAPI                  : uses >
+Payment                      "*" -- "1"      PaymentAPI                : uses >
+Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
+Payment                      "*" --> "1"     Organization              : made on behalf of >
+Transaction                  "*" -- "1"      Freelancer                : to >
+PaymentScheduler             "1" -- "*"      Payment                   : schedules >
+Organization                 "1" -- "1"      PaymentScheduler          : uses >
+Organization                 "1" -- "*"      Transaction               : has unpaid >
+App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
+App                          "1" -- "*"      Organization              : has >
+App                          "1" -- "1"      EmailAPI                  : supports >
+App                          "1" -- "1"      PaymentAPI                : supports >
+App                          "1" -- "*"      Payment                   : registers >
+EmailAPI                     "1" -- "*"      Freelancer                : e-mails >
+
+@enduml

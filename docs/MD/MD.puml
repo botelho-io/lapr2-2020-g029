@@ -87,18 +87,18 @@ Manager                      "1" -- "0,1"    PaymentScheduler          : defines
 Manager                    "0,1" -- "1"      User                      : acts as >
 Payment                      "1" -- "1,..."  Transaction               : registers >
 Payment                      "*" -- "1"      EmailAPI                  : uses >
-Payment                      "*" -- "1"      PaymentAPI                : uses >
 Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
+Payment                      "*" --> "1"     Organization              : made on behalf of >
 Transaction                  "1" -- "1"      Task                      : relative to >
 Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
 Transaction                  "*" -- "1"      Freelancer                : to >
+Transaction                  "*" -- "1"      PaymentAPI                : uses >
 TaskExecutionDetails         "1" -- "1"      Task                      : refer to >
 HistoricalTransactionFile    "1" -- "*"      Transaction               : records >
-PaymentScheduler             "1" -- "*"      Payment                   : makes automatically >
+PaymentScheduler             "1" -- "*"      Payment                   : schedules >
 Organization                 "1" -- "1,..."  Colaborator               : has >
 Organization                 "1" -- "1"      Manager                   : has >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
-Organization                 "1" -- "*"      Payment                   : responsable by >
 Organization                 "1" -- "*"      Task                      : publishes >
 Organization                 "1" -- "*"      Transaction               : has unpaid >
 Task                         "*" -- "0, 1"   Freelancer                : executed by >
