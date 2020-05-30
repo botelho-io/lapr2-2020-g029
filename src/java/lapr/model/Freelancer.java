@@ -10,7 +10,6 @@ package lapr.model;
  * @author Universidade
  */
 public class Freelancer {
-    
     private String id;
     private String name;
     private String levelOfExpertise;
@@ -19,4 +18,8 @@ public class Freelancer {
     private String bankAccountIBAN;
     private String address;
     private String country;
+
+    public String getIBAN() {
+        return bankAccountIBAN;
+    }
 }
