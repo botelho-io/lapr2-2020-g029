@@ -32,11 +32,11 @@ class Freelancer {
         - String country
 }
 
-Payment                      "1" -- "1,..."  Transaction               : registers >
+Payment                      "1" -- "1"      Transaction               : refers to >
 Payment                      "*" -- "1"      EmailAPI                  : uses >
 Payment                      "*" -- "1"      PaymentAPI                : uses >
 Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
-Payment                      "*" --> "1"     Organization              : made on behalf of >
+Payment                      "*" -- "1"      Organization              : made on behalf of >
 Transaction                  "*" -- "1"      Freelancer                : to >
 PaymentScheduler             "1" -- "*"      Payment                   : schedules >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
