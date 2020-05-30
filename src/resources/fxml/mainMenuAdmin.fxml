@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuAdmin">
+   <top>
+      <Label prefHeight="58.0" prefWidth="193.0" text="Administrator Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#addOrg" text="UC 8 - Add New Organization"/>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
