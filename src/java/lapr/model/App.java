@@ -14,16 +14,22 @@ import autorizacao.AutorizacaoFacade;
  */
 public class App {
     private final AutorizacaoFacade m_oAutorizacao;
+    private RegisterOrganization ro;
     
 
     public App()
     {
         this.m_oAutorizacao = new AutorizacaoFacade();
+        this.ro = new RegisterOrganization();
     }
     
     public AutorizacaoFacade getAutorizacaoFacade()
     {
         return this.m_oAutorizacao;
+    }
+
+    public RegisterOrganization getRegisterOrganization() {
+        return ro;
     }
 }
     

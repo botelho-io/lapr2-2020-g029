@@ -55,4 +55,9 @@ public class RegistoUtilizadores
     {
         return this.m_lstUtilizadores.contains(utlz);
     }
+
+    public User newUser(String strNome, String strEmail, String strPassword) {
+        return null;
+    }
 }
+

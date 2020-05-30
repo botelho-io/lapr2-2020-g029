@@ -33,6 +33,14 @@ public class AutorizacaoFacade
         PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(strPapel,strDescricao);
         return this.m_oPapeis.addPapel(papel);
     }
+
+    public boolean registaUtilizadorComPapel(String strNome, String strEmail, String strPassword, String strPapel)
+    {
+        PapelUtilizador papel = this.m_oPapeis.procuraPapel(strPapel);
+        User utlz = this.m_oUtilizadores.newUser(strNome,strEmail,strPassword);
+        utlz.addPapel(papel);
+        return this.m_oUtilizadores.addUtilizador(utlz);
+    }
     
     public boolean registaUtilizador(User utlz)
     {
