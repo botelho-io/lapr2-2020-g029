@@ -5,7 +5,7 @@
  */
 package autorizacao.model;
 
-import main.model.User;
+import lapr.model.User;
 
 import java.util.List;
 

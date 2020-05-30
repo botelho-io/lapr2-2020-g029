@@ -9,7 +9,7 @@ import autorizacao.model.PapelUtilizador;
 import autorizacao.model.RegistoPapeisUtilizador;
 import autorizacao.model.RegistoUtilizadores;
 import autorizacao.model.SessaoUtilizador;
-import main.model.User;
+import lapr.model.User;
 
 /**
  *
