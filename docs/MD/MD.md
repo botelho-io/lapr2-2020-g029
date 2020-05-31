@@ -71,7 +71,7 @@
 |                          |acts as                |User                      |
 |Manager                   |defines                |PaymentScheduler          |
 |                          |acts as                |User                      |
-|Payment                   |registers              |Transaction               |
+|Payment                   |refers to              |Transaction               |
 |                          |uses                   |EmailAPI                  |
 |                          |uses                   |MonetaryUnitConversionAPI |
 |                          |made on behalf of      |Organization              |

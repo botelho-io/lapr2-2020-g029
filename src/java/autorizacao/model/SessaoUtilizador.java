@@ -6,6 +6,7 @@
 package autorizacao.model;
 
 import lapr.model.User;
+import lapr.utils.Role;
 
 import java.util.List;
 
@@ -38,11 +39,11 @@ public class SessaoUtilizador
         return this.m_oUtilizador != null;
     }
     
-    public boolean isLoggedInComPapel(String strPapel)
+    public boolean isLoggedInComPapel(Role oPapel)
     {
         if (isLoggedIn())
         {
-            return this.m_oUtilizador.hasPapel(strPapel);
+            return this.m_oUtilizador.hasPapel(oPapel);
         }
         return false;
     }

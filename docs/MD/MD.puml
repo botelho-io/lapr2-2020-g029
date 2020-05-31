@@ -85,10 +85,10 @@ Colaborator                  "1" -- "*"      HistoricalTransactionFile : loads >
 Colaborator                "0,1" -- "1"      User                      : acts as >
 Manager                      "1" -- "0,1"    PaymentScheduler          : defines >
 Manager                    "0,1" -- "1"      User                      : acts as >
-Payment                      "1" -- "1,..."  Transaction               : registers >
+Payment                      "1" -- "1"      Transaction               : refers to >
 Payment                      "*" -- "1"      EmailAPI                  : uses >
 Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
-Payment                      "*" --> "1"     Organization              : made on behalf of >
+Payment                      "*" -- "1"     Organization              : made on behalf of >
 Transaction                  "1" -- "1"      Task                      : relative to >
 Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
 Transaction                  "*" -- "1"      Freelancer                : to >
