@@ -7,6 +7,8 @@
 package lapr.model;
 
 import autorizacao.AutorizacaoFacade;
+import lapr.api.EmailAPI;
+import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
 import lapr.regist.RegistPayment;
 
@@ -27,6 +29,14 @@ public class App {
      * The API used to process bank payments.
      */
     private PaymentAPI m_oPaymentAPI;
+    /**
+     * The API used to convert between monetary units.
+     */
+    private MonetaryConversionAPI m_oMonetaryConversionAPI;
+    /**
+     * The API used to send emails.
+     */
+    private EmailAPI m_oEmailAPI;
 
     public App()
     {
@@ -50,6 +60,17 @@ public class App {
      */
     public PaymentAPI getPaymentAPI() {
         return m_oPaymentAPI;
+    }
+
+    public MonetaryConversionAPI getMonetaryConversionAPI() {
+        return this.m_oMonetaryConversionAPI;
+    }
+
+    /**
+     * @return The API used to send emails.
+     */
+    public EmailAPI getEmailAPI() {
+        return this.m_oEmailAPI;
     }
 }
     

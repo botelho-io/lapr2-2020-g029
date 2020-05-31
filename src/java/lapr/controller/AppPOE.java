@@ -17,6 +17,7 @@ import lapr.model.App;
 import lapr.utils.Constants;
 import autorizacao.AutorizacaoFacade;
 import autorizacao.model.SessaoUtilizador;
+import lapr.utils.Role;
 
 /**
  *
@@ -82,11 +83,11 @@ public class AppPOE
 
     private void bootstrap()
     {
-        this.m_oAutorizacao.registaPapelUtilizador(Constants.ROLE_ADMINISTRATOR);
-        this.m_oAutorizacao.registaPapelUtilizador(Constants.ROLE_COLABORATOR);
-        this.m_oAutorizacao.registaPapelUtilizador(Constants.ROLE_MANAGER);
+        this.m_oAutorizacao.registaPapelUtilizador(Role.ADMINISTRATOR);
+        this.m_oAutorizacao.registaPapelUtilizador(Role.COLLABORATOR);
+        this.m_oAutorizacao.registaPapelUtilizador(Role.MANAGER);
 
-        Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new PapelUtilizador[]{getRole(Constants.ROLE_ADMINISTRATOR)});
+        Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new PapelUtilizador[]{getRole(Role.ADMINISTRATOR)});
         this.m_oAutorizacao.registaUtilizador(adm);
 
     }
@@ -106,7 +107,7 @@ public class AppPOE
     }
 
 
-    public PapelUtilizador getRole(String role) {
+    public PapelUtilizador getRole(Role role) {
         return this.m_oAutorizacao.getRole(role);
     }
 }

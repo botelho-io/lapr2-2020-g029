@@ -1,9 +1,16 @@
 package lapr.list;
 
+import javafx.util.Pair;
+import lapr.api.EmailAPI;
+import lapr.api.MonetaryConversionAPI;
+import lapr.controller.AppPOE;
 import lapr.model.Transaction;
+import lapr.utils.Triplet;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Represents a list of transactions.
@@ -50,7 +57,36 @@ public class ListTransaction implements Iterable<Transaction> {
      * @return True if all emails were successfully sent, false otherwise.
      */
     public boolean emailAboutPayment() {
-        // TODO: implement
-        return false;
+        Map<String, Triplet<Double, String, String>> map = new HashMap<>();
+        MonetaryConversionAPI mcapi = AppPOE.getInstance().getApp().getMonetaryConversionAPI();
+        EmailAPI eapi = AppPOE.getInstance().getApp().getEmailAPI();
+        for(Transaction trs : m_lstTransaction) {
+            String email = trs.getFreelancer().getEmail();
+            Triplet<Double, String, String> val = map.get(email);
+            if(val == null) val = new Triplet<>(0.0, "", trs.getFreelancer().getCountry());
+            Double amount = val.getFirst();
+            String message = val.getSecond();
+            final String country = val.getThird();
+            final Double currAmount = trs.getAmount();
+            val.setFirst(amount + currAmount);
+            val.setSecond(
+                    message + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
+                        trs.getTask().getDescription(),
+                        trs.getTask().getId(),
+                        currAmount,
+                        mcapi.convert(country, currAmount)));
+            map.put(email, val);
+        }
+        boolean allSent = true;
+        for(String email : map.keySet()) {
+            Triplet<Double, String, String> val = map.get(email);
+            allSent = allSent & eapi.sendEmail(
+                    email,
+                    String.format("%s\n\nTOTAL - %f - NATIVE CURRENCY [%f]",
+                        val.getSecond(),
+                        val.getFirst(),
+                        mcapi.convert(val.getThird(), val.getFirst())));
+        }
+        return allSent;
     }
 }

@@ -5,6 +5,8 @@
  */
 package autorizacao.model;
 
+import lapr.utils.Role;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,14 +18,14 @@ public class RegistoPapeisUtilizador
 {
     private Set<PapelUtilizador> m_lstPapeis = new HashSet<PapelUtilizador>();
     
-    public PapelUtilizador novoPapelUtilizador(String strPapel)
+    public PapelUtilizador novoPapelUtilizador(Role Papel)
     {
-        return new PapelUtilizador(strPapel);
+        return new PapelUtilizador(Papel);
     }
     
-    public PapelUtilizador novoPapelUtilizador(String strPapel, String strDescricao)
+    public PapelUtilizador novoPapelUtilizador(Role papel, String strDescricao)
     {
-        return new PapelUtilizador(strPapel,strDescricao);
+        return new PapelUtilizador(papel,strDescricao);
     }
     
     public boolean addPapel(PapelUtilizador papel)
@@ -40,19 +42,19 @@ public class RegistoPapeisUtilizador
         return false;
     }
     
-    public PapelUtilizador procuraPapel(String strPapel)
+    public PapelUtilizador procuraPapel(Role papel)
     {
         for(PapelUtilizador p: this.m_lstPapeis)
         {
-            if(p.hasId(strPapel))
+            if(p.hasId(papel))
                 return p;
         }
         return null;
     }
     
-    public boolean hasPapel(String strPapel)
+    public boolean hasPapel(Role oPapel)
     {
-        PapelUtilizador papel = procuraPapel(strPapel);
+        PapelUtilizador papel = procuraPapel(oPapel);
         if (papel != null)
             return this.m_lstPapeis.contains(papel);
         return false;

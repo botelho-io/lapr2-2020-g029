@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import lapr.controller.AppPOE;
 import lapr.utils.Constants;
+import lapr.utils.Role;
 
 import java.io.IOException;
 
@@ -45,7 +46,7 @@ public class MainJFXController {
 
         // Select role
         // TODO: complete me.
-        if(AppPOE.getInstance().getSessaoAtual().isLoggedInComPapel(Constants.ROLE_ADMINISTRATOR)) {
+        if(AppPOE.getInstance().getSessaoAtual().isLoggedInComPapel(Role.ADMINISTRATOR)) {
             openWindow("/fxml/mainMenuAdmin.fxml", "Main Menu Administrator");
         } else {
             System.out.println("Unknown Role!");

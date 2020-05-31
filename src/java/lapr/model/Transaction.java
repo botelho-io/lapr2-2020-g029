@@ -6,6 +6,7 @@
 package lapr.model;
 
 import lapr.controller.AppPOE;
+import lapr.utils.Expertise;
 
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
@@ -15,6 +16,10 @@ public class Transaction {
      * The freelancer this transaction refers to.
      */
     private Freelancer m_oFreelancer;
+    /**
+     * The task this transaction is paying.
+     */
+    private Task m_oTask;
     /**
      * Makes a payment on the transaction.
      * @param organization The organization that is paying.
@@ -32,8 +37,23 @@ public class Transaction {
     /**
      * @return Amount (in euros) to pay to the freelancer for the task.
      */
-    private Double getAmount() {
-        // TODO: complete!!!!!
-        return 1.0;
+    public Double getAmount() {
+        double total = m_oTask.getCostPerHourOfJuniorEur() * m_oTask.getDurationInHours();
+        if(m_oFreelancer.getLevelOfExpertise() == Expertise.SENIOR) {
+            total *= 2;
+        }
+        return total;
+    }
+    /**
+     * @return The freelancer this transaction refers to.
+     */
+    public Freelancer getFreelancer() {
+        return m_oFreelancer;
+    }
+    /**
+     * @return The task this transaction is paying.
+     */
+    public Task getTask() {
+        return m_oTask;
     }
 }
