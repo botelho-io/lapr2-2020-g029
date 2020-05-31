@@ -57,32 +57,32 @@ public class ListTransaction implements Iterable<Transaction> {
      * @return True if all emails were successfully sent, false otherwise.
      */
     public boolean emailAboutPayment() {
+        // Maps [Freelancer email] to [Total amount paid, E-mail message, freelancer's country of origin]
         Map<String, Triplet<Double, String, String>> map = new HashMap<>();
         MonetaryConversionAPI mcapi = AppPOE.getInstance().getApp().getMonetaryConversionAPI();
         EmailAPI eapi = AppPOE.getInstance().getApp().getEmailAPI();
+        // Put all payment in message
         for(Transaction trs : m_lstTransaction) {
-            String email = trs.getFreelancer().getEmail();
+            final String email = trs.getFreelancer().getEmail();
             Triplet<Double, String, String> val = map.get(email);
             if(val == null) val = new Triplet<>(0.0, "", trs.getFreelancer().getCountry());
-            Double amount = val.getFirst();
-            String message = val.getSecond();
-            final String country = val.getThird();
             final Double currAmount = trs.getAmount();
-            val.setFirst(amount + currAmount);
+            val.setFirst(val.getFirst() + currAmount);
             val.setSecond(
-                    message + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
+                    val.getSecond() + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
                         trs.getTask().getDescription(),
                         trs.getTask().getId(),
                         currAmount,
-                        mcapi.convert(country, currAmount)));
+                        mcapi.convert(val.getThird(), currAmount)));
             map.put(email, val);
         }
+        // Send message with total at the end
         boolean allSent = true;
         for(String email : map.keySet()) {
-            Triplet<Double, String, String> val = map.get(email);
+            final Triplet<Double, String, String> val = map.get(email);
             allSent = allSent & eapi.sendEmail(
                     email,
-                    String.format("%s\n\nTOTAL - %f - NATIVE CURRENCY [%f]",
+                    String.format("%s\n\nTOTAL - %f - NATIVE CURRENCY [%f]\n",
                         val.getSecond(),
                         val.getFirst(),
                         mcapi.convert(val.getThird(), val.getFirst())));
