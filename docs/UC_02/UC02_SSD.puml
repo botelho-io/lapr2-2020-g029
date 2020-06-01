@@ -1,0 +1,22 @@
+@startuml
+autonumber
+actor Collaborator as C
+
+activate C
+C -> ":Sistem" : creating of a new task.
+activate ":Sistem"
+":Sistem" --> C : request the task data \n(i.e. id, description, durationInHours, costPerHourOfJuniorEur, category)
+deactivate ":Sistem"
+
+C -> ":Sistem" : enter the requested data
+activate ":Sistem"
+":Sistem" --> C : presents data and asks for confirmation
+deactivate ":Sistem"
+
+C -> ":Sistem" : confirms
+activate ":Sistem"
+":Sistem" --> C : successful operation
+deactivate ":Sistem"
+
+deactivate C
+@enduml
