@@ -5,6 +5,8 @@
  */
 package autorizacao.model;
 
+import lapr.utils.Role;
+
 import java.util.Objects;
 
 /**
@@ -13,30 +15,30 @@ import java.util.Objects;
  */
 public class PapelUtilizador
 {
-    private String m_strPapel;
+    private Role m_oPapel;
     private String m_strDescricao;
     
-    public PapelUtilizador(String strPapel)
+    public PapelUtilizador(Role Papel)
     {
-        if ( (strPapel == null) || (strPapel.isEmpty()))
+        if ( (Papel == null) )
             throw new IllegalArgumentException("O argumento não pode ser nulo ou vazio.");
         
-        this.m_strPapel = strPapel;
-        this.m_strDescricao = strPapel;
+        this.m_oPapel = Papel;
+        this.m_strDescricao = Papel.name();
     }
     
-    public PapelUtilizador(String strPapel, String strDescricao)
+    public PapelUtilizador(Role papel, String strDescricao)
     {
-        if ( (strPapel == null) || (strDescricao == null) || (strPapel.isEmpty())|| (strDescricao.isEmpty()))
+        if ( (papel == null) || (strDescricao == null) || (strDescricao.isEmpty()))
             throw new IllegalArgumentException("Nenhum dos argumentos não pode ser nulo ou vazio.");
         
-        this.m_strPapel = strPapel;
+        this.m_oPapel = papel;
         this.m_strDescricao = strDescricao;
     }
     
-    public String getPapel()
+    public Role getPapel()
     {
-        return this.m_strPapel;
+        return this.m_oPapel;
     }
     
     public String getDescricao()
@@ -44,16 +46,16 @@ public class PapelUtilizador
         return this.m_strDescricao;
     }
 
-    public boolean hasId(String strId)
+    public boolean hasId(Role Id)
     {
-        return this.m_strPapel.equals(strId);
+        return this.m_oPapel.equals(Id);
     }
     
     @Override
     public int hashCode()
     {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.m_strPapel);
+        hash = 23 * hash + Objects.hashCode(this.m_oPapel);
         return hash;
     }
     
@@ -72,12 +74,12 @@ public class PapelUtilizador
             return false;
         // field comparison
         PapelUtilizador obj = (PapelUtilizador) o;
-        return Objects.equals(m_strPapel, obj.m_strPapel);
+        return Objects.equals(m_oPapel, obj.m_oPapel);
     }
     
     @Override
     public String toString()
     {
-        return String.format("%s - %s", this.m_strPapel, this.m_strDescricao);
+        return String.format("%s - %s", this.m_oPapel, this.m_strDescricao);
     }
 }

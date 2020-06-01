@@ -7,20 +7,22 @@ participant "timer:\nTimer" as TIMER
 participant "task:\nMakePaymentTask" as TASK
 participant "org\n:Organization" as org
 participant ":App" as app
-participant "rt\n:RegistPayment" as rp
-participant "payment\n:Payment" as pay
+participant "rp\n:RegistPayment" as rp
 participant "trs\n:Transaction" as trs
 participant ":PaymentAPI" as papi
+participant "payment\n:Payment" as pay
 participant "lt\n:ListTransactions" as lt
+participant "completeTransactions\n:ListTransactions" as ct
 
 [o-> SC : create(day, timeOfDay, org)
 activate SC
+        SC -> SC : resetTime(day, timeOfDay)
         SC -> SC : scheduleNextMonth()
 loop
         activate SC
                 SC -> TASK**  : create(org, scheduler)
                 SC -> TIMER** : create()
-                SC -> SC : date = getNextDate(day, timeOfDaye)
+                SC -> SC : date = getNextDate()
                 SC ->TIMER: schedule(task, date)
         deactivate SC
 deactivate SC
@@ -36,32 +38,33 @@ deactivate SC
                                 TASK -> app : rp = getRegistPayment()
                                 activate app
                                 deactivate app
-                                TASK -> rp : payment = newPayment(lt)
+                                TASK -> rp : makePayments(lt, org)
                                 activate rp
-                                        rp -> pay ** : create(lt, org)
-                                deactivate rp
-                                TASK -> pay : processPayments()
-                                activate pay
+                                        rp -> ct ** : create()
                                         loop for each transaction
-                                                pay -> pay : trs = getTransaction(ID)
-                                                pay -> trs : makeBankTransfer()
+                                                rp -> lt : trs = getTransaction(ID)
+                                                activate lt
+                                                deactivate lt
+                                                rp -> trs : payment = makeBankTransfer(org)
                                                 activate trs
                                                         trs -> trs: amount = getAmountToPay()
                                                         trs -> trs: IBAN = getFreelancerIBAN()
                                                         trs -> papi: payTo(amount, IBAN)
                                                         activate papi
+                                                                papi -> pay ** : create(trs, org)
                                                         deactivate papi
                                                 deactivate trs
+                                                rp -> lt : remove(trs)
+                                                activate lt
+                                                deactivate lt
+                                                rp -> ct : add(trs)
+                                                activate ct
+                                                deactivate ct
+                                                rp -> rp : add(payment)
                                         end
-                                        pay -> pay : sendEmails()
-                                deactivate pay
-                                TASK -> org : removeUnpaidTransactions()
-                                activate org
-                                deactivate org
-                                TASK -> rp : payment = addPayment(payment)
-                                activate rp
-                                        rp -> rp : validate(payment)
-                                        rp -> rp : add(payment)
+                                        rp -> ct : emailAboutPayment()
+                                        activate ct
+                                        deactivate ct
                                 deactivate rp
                         deactivate TASK
                         TASK -> SC : scheduleNextMonth()

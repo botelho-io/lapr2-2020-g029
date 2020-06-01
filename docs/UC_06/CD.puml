@@ -6,8 +6,9 @@ class PaymentScheduler {
         - Integer dayMonth
         - LocalTime timeOfDay
         + create (Integer day, LoaclTime timeOfDay, Organization org)
+        + resetTime(Integer dayMonth, LocalTime timeOfDay)
         + scheduleNestMonth()
-        - getNextDate()
+        + getNextDate()
 }
 
 class MakePaymentTask {
@@ -16,11 +17,21 @@ class MakePaymentTask {
         - makePayments()
 }
 
+class App {
+        + getRegistPayment()
+}
 
-class Transaction {
+class PaymentAPI {
+        + payTO(Double eur, String IBAN)
+}
+
+class EmailAPI {
 
 }
 
+class MonetaryUnitConversionAPI {
+
+}
 
 class Organization {
         - String nome
@@ -28,11 +39,16 @@ class Organization {
 }
 
 class ListTransaction {
-        removeUnpaidTransactions()
+        + getTransaction(ID)
+        + remove(Transaction trs)
+        + add(Transaction trs)
+        + emailAboutPayment()
 }
 
-class App {
-        + getRegistPayment()
+class Transaction {
+        + makeBankTransfer(Organization)
+        + getAmmountToPay()
+        - getFreelancerIBAN()
 }
 
 class Freelancer {
@@ -46,29 +62,38 @@ class Freelancer {
         - String country
 }
 
-MakePaymentTask ..> Organization
-MakePaymentTask ..> App
-MakePaymentTask ..> RegistPayment
-MakePaymentTask ..> Payment
+class RegistPayment {
+        + makePayments(ListTransaction lt, Organization org)
+        - add(Payment payment)
+}
 
-PaymentScheduler ..> Timer
-PaymentScheduler ..> MakePaymentTask
+class Payment {
+        + create(Transaction trs, Organization org)
+}
 
-App "1" --> "1" RegistPayment : has
-App "1" --> "1" RegistOrganization : has
-Organization "1" --> "1" ListTransaction : has
+
+App                          "1" --> "1"      EmailAPI                  : has
+App                          "1" --> "1"      PaymentAPI                : has
+App                          "1" --> "1"      RegistPayment             : has
+App                          "1" --> "1"      RegistOrganization        : has
+App                          "1" --> "1"      MonetaryUnitConversionAPI : has
+Timer                            ..>          MakePaymentTask
 Payment                      "1" --> "1,..."  Transaction               : knows
-Payment                          ..>          EmailAPI
-Transaction                      ..>          PaymentAPI
-Payment                          ..>          MonetaryUnitConversionAPI
-Transaction                  "*" --> "1"      Freelancer                : knows
-Organization                 "1" --> "1"      PaymentScheduler          : has
 Payment                      "*" --> "1"      Organization              : knows
-ListTransaction              "1" --> "*"      Transaction               : has
-App                          "1" --> "1"      MonetaryUnitConversionAPI : knows
-RegistOrganization           "1" --> "*"      Organization              : has
-App                          "1" --> "1"      EmailAPI                  : knows
-App                          "1" --> "1"      PaymentAPI                : knows
+Transaction                      ..>          PaymentAPI
+Transaction                  "*" --> "1"      Freelancer                : knows
+Organization                 "1" --> "1"      ListTransaction           : has
+Organization                 "1" --> "1"      PaymentScheduler          : has
 RegistPayment                "1" --> "*"      Payment                   : has
+MakePaymentTask                  ..>          App
+MakePaymentTask                  ..>          Organization
+MakePaymentTask                  ..>          RegistPayment
+MakePaymentTask              "1" --> "1"      PaymentScheduler          : knows
+ListTransaction                  ..>          EmailAPI
+ListTransaction              "1" --> "*"      Transaction               : has
+ListTransaction                  ..>          MonetaryUnitConversionAPI
+PaymentScheduler             "1" --> "1"      Timer                     : has
+PaymentScheduler             "1" --> "1"      MakePaymentTask           : has
+RegistOrganization           "1" --> "*"      Organization              : has
 
 @enduml

@@ -6,6 +6,7 @@
 package lapr.model;
 
 import autorizacao.model.PapelUtilizador;
+import lapr.utils.Role;
 
 import java.util.*;
 
@@ -84,11 +85,11 @@ public class User {
         return this.m_lstPapeis.contains(papel);
     }
 
-    public boolean hasPapel(String strPapel)
+    public boolean hasPapel(Role oPapel)
     {
         for(PapelUtilizador papel: this.m_lstPapeis)
         {
-            if (papel.hasId(strPapel))
+            if (papel.hasId(oPapel))
                 return true;
         }
         return false;

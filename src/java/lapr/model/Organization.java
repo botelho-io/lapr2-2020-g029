@@ -5,20 +5,39 @@
  */
 package lapr.model;
 
+import lapr.list.ListTransaction;
+
 /**
- *
- * @author Universidade
+ * Represents ans organazation seeking freelancers to complete tasks.
  */
 public class Organization {
 
-    private String name;
+    /**
+     * Name of the organization.
+     */
+    private String m_strName;
+    /**
+     * Responsible for making payments on unpaid transactions.
+     */
+    PaymentScheduler m_oScheduler;
+    /**
+     * A list of unpaid transactions.
+     */
+    ListTransaction m_oListTransaction;
+    /**
+     * @return The list of unpaid transactions the organization needs to pay.
+     */
+    public ListTransaction getListTransaction() {
+        return m_oListTransaction;
+    }
+
     private Manager manager;
     private Colaborator colaborator;
 
     public Organization(String name, Manager manager, Colaborator colaborator) {
         if ((name == null) || (manager == null) || (colaborator == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
-            this.name = name;
+            this.m_strName = name;
             if(!validatesColaborator(colaborator))
                 throw new IllegalArgumentException("Colaborator is invalid");
             if(!validatesManager(manager))
@@ -52,5 +71,4 @@ public class Organization {
     public void setManager(Manager manager) {
         this.manager = manager;
     }
-
 }

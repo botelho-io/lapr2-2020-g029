@@ -10,6 +10,7 @@ import autorizacao.model.RegistoPapeisUtilizador;
 import autorizacao.model.RegistoUtilizadores;
 import autorizacao.model.SessaoUtilizador;
 import lapr.model.User;
+import lapr.utils.Role;
 
 /**
  *
@@ -22,21 +23,21 @@ public class AutorizacaoFacade
     private final RegistoPapeisUtilizador m_oPapeis = new RegistoPapeisUtilizador();
     private final RegistoUtilizadores m_oUtilizadores = new RegistoUtilizadores();
     
-    public boolean registaPapelUtilizador(String strPapel)
+    public boolean registaPapelUtilizador(Role Papel)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(strPapel);
+        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(Papel);
         return this.m_oPapeis.addPapel(papel);
     }
     
-    public boolean registaPapelUtilizador(String strPapel, String strDescricao)
+    public boolean registaPapelUtilizador(Role oPapel, String strDescricao)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(strPapel,strDescricao);
+        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(oPapel,strDescricao);
         return this.m_oPapeis.addPapel(papel);
     }
 
-    public boolean registaUtilizadorComPapel(String strNome, String strEmail, String strPassword, String strPapel)
+    public boolean registaUtilizadorComPapel(String strNome, String strEmail, String strPassword, Role enumPapel)
     {
-        PapelUtilizador papel = this.m_oPapeis.procuraPapel(strPapel);
+        PapelUtilizador papel = this.m_oPapeis.procuraPapel(enumPapel);
         User utlz = this.m_oUtilizadores.newUser(strNome,strEmail,strPassword);
         utlz.addPapel(papel);
         return this.m_oUtilizadores.addUtilizador(utlz);
@@ -77,7 +78,7 @@ public class AutorizacaoFacade
         this.m_oSessao = null;
     }
 
-    public PapelUtilizador getRole(String role) {
+    public PapelUtilizador getRole(Role role) {
         return this.m_oPapeis.procuraPapel(role);
     }
 }
