@@ -71,29 +71,25 @@
 |                          |acts as                |User                      |
 |Manager                   |defines                |PaymentScheduler          |
 |                          |acts as                |User                      |
-|Payment                   |refers to              |Transaction               |
-|                          |uses                   |EmailAPI                  |
-|                          |uses                   |MonetaryUnitConversionAPI |
-|                          |made on behalf of      |Organization              |
 |Transaction               |relative to            |Task                      |
 |                          |executed with          |TaskExecutionDetails      |
 |                          |to                     |Freelancer                |
 |                          |uses                   |PaymentAPI                |
-|TaskExecutionDetails      |refer to               |Task                      |
+|                          |made on behalf of      |Organization              |
+|TaskExecutionDetails      |refers to              |Task                      |
 |HistoricalTransactionFile |records                |Transaction               |
 |PaymentScheduler          |schedules              |Payment                   |
 |Organization              |has                    |Colaborator               |
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
 |                          |publishes              |Task                      |
-|                          |has unpaid             |Transaction               |
+|                          |has                    |Transaction               |
 |Task                      |executed by            |Freelancer                |
 |App                       |supports               |MonetaryUnitConversionAPI |
 |                          |has                    |Organization              |
 |                          |supports               |EmailAPI                  |
 |                          |supports               |PaymentAPI                |
 |                          |supports               |PasswordAPI               |
-|                          |registers              |Payment                   |
 |                          |has                    |Administrator             |
 |                          |has                    |EmailScheduler            |
 |                          |has                    |Freelancer                |
