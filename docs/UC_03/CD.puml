@@ -1,0 +1,82 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+        + create (Integer day, LoaclTime timeOfDay, Organization org)
+        + resetTime(Integer dayMonth, LocalTime timeOfDay)
+        + scheduleNestMonth()
+        + getNextDate()
+}
+
+class MakePaymentTask {
+        + create(Organization org, PaymentScheduler scheduler)
+        + run()
+        - makePayments()
+}
+
+class PaymentAPI {
+        + payTo(String freelancerId, String freelancerIBAN, String taskId, \nString taskDescription, Double eur, Double nativeCurrency)
+}
+
+class EmailAPI {
+
+}
+
+class MonetaryUnitConversionAPI {
+
+}
+
+class Organization {
+        - String nome
+        + getListTransaction()
+}
+
+class ListTransaction {
+        + getTransaction(ID)
+        + remove(Transaction trs)
+        + add(Transaction trs)
+        + emailAboutPayment()
+}
+
+class Transaction {
+        + makeBankTransfer()
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+
+App                          "1" --> "1"      EmailAPI                  : has
+App                          "1" --> "1"      PaymentAPI                : has
+App                          "1" --> "1"      RegistOrganization        : has
+App                          "1" --> "1"      MonetaryUnitConversionAPI : has
+Timer                            ..>          MakePaymentTask
+Transaction                      ..>          PaymentAPI
+Transaction                  "*" --> "1"      Freelancer                : knows
+Transaction                      ..>          MonetaryUnitConversionAPI
+Organization                 "1" --> "1"      ListTransaction           : has
+Organization                 "1" --> "1"      PaymentScheduler          : has
+MakePaymentTask                  ..>          App
+MakePaymentTask                  ..>          Organization
+MakePaymentTask                  ..>          ListTransaction
+MakePaymentTask                  ..>          Transaction
+MakePaymentTask              "1" --> "1"      PaymentScheduler          : knows
+ListTransaction                  ..>          EmailAPI
+ListTransaction              "1" --> "*"      Transaction               : has
+ListTransaction                  ..>          MonetaryUnitConversionAPI
+PaymentScheduler             "1" --> "1"      Timer                     : has
+PaymentScheduler             "1" --> "1"      MakePaymentTask           : has
+RegistOrganization           "1" --> "*"      Organization              : has
+
+@enduml

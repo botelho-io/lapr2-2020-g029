@@ -1,0 +1,73 @@
+@startuml SD
+autonumber
+hide footbox
+
+participant "scheduler\n:PaymentScheduler" as SC
+participant "timer:\nTimer" as TIMER
+participant "task:\nMakePaymentTask" as TASK
+participant "org\n:Organization" as org
+participant "trs\n:Transaction" as trs
+participant ":PaymentAPI" as papi
+participant "lt\n:ListTransactions" as lt
+participant "completeTransactions\n:ListTransactions" as ct
+
+[o-> SC : create(day, timeOfDay, org)
+activate SC
+        SC -> SC : resetTime(day, timeOfDay)
+        SC -> SC : scheduleNextMonth()
+loop
+        activate SC
+                SC -> TASK**  : create(org, scheduler)
+                SC -> TIMER** : create()
+                SC -> SC : date = getNextDate()
+                SC ->TIMER: schedule(task, date)
+        deactivate SC
+deactivate SC
+        activate TIMER
+                note over SC,TIMER  : On the specified date and time
+                TIMER->TASK:run()
+                activate TASK
+                        TASK->TASK: makePayments()
+                        activate TASK
+                                TASK -> org : lt = getListTransaction()
+                                activate org
+                                deactivate org
+                                TASK -> ct ** : create()
+                                loop for each transaction
+                                        opt if the transaction isn't payed
+                                                TASK -> lt : trs = getTransaction(ID)
+                                                activate lt
+                                                deactivate lt
+                                                TASK -> trs : makeBankTransfer()
+                                                activate trs
+                                                        trs -> papi: payTo(fID, fIBAN, tID,tDes, aEUR, aNAT)
+                                                        activate papi
+                                                        deactivate papi
+                                                        note right
+                                                                Here the getters for the following fields were omited:
+                                                                fID - The ID of the freelancer to pay to.
+                                                                fIBAN - The IBAN of the freelancer to pay.
+                                                                tID - The ID of the task this payment is for.
+                                                                tDes - The description of the task this payment is for.
+                                                                aEUR - The amount in euros to pay to the freelancer.
+                                                                aNAT - The amount in the freelancer's native currency to pay.
+                                                        end note
+                                                        trs -> trs : setPayed(true)
+                                                deactivate trs
+                                                TASK -> ct : add(trs)
+                                                activate ct
+                                                deactivate ct
+                                        end
+                                end
+                                TASK -> ct : emailAboutPayment()
+                                activate ct
+                                deactivate ct
+                        deactivate TASK
+                        TASK -> SC : scheduleNextMonth()
+                        activate SC
+                deactivate TASK
+        deactivate TIMER
+end
+
+
+@enduml
