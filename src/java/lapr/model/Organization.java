@@ -32,35 +32,35 @@ public class Organization {
     }
 
     private Manager manager;
-    private Colaborator colaborator;
+    private Collaborator collaborator;
 
-    public Organization(String name, Manager manager, Colaborator colaborator) {
-        if ((name == null) || (manager == null) || (colaborator == null))
+    public Organization(String name, Manager manager, Collaborator collaborator) {
+        if ((name == null) || (manager == null) || (collaborator == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
             this.m_strName = name;
-            if(!validatesColaborator(colaborator))
-                throw new IllegalArgumentException("Colaborator is invalid");
+            if(!validatesCollaborator(collaborator))
+                throw new IllegalArgumentException("Collaborator is invalid");
             if(!validatesManager(manager))
                 throw new IllegalArgumentException("Manager is invalid");
             this.setManager(manager);
-            this.setColaborator(colaborator);
+            this.setCollaborator(collaborator);
     }
 
-    public static Colaborator newColaborator (String name, String email, String password) {
-        return new Colaborator(name,email,password);
+    public static Collaborator newCollaborator (String name, String email, String password) {
+        return new Collaborator(name,email,password);
     }
 
     public static Manager newManager (String name, String email, String password) {
         return new Manager(name,email,password);
     }
 
-    public static boolean validatesColaborator(Colaborator colaborator) {
-        //TODO: Validate colaborator.
+    public static boolean validatesCollaborator(Collaborator collaborator) {
+        //TODO: Validate collaborator.
         return true;
     }
 
-    private void setColaborator(Colaborator colaborator) {
-        this.colaborator = colaborator;
+    private void setCollaborator(Collaborator collaborator) {
+        this.collaborator = collaborator;
     }
 
     public static boolean validatesManager(Manager manager) {

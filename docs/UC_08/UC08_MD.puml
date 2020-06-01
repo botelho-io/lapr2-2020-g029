@@ -17,7 +17,7 @@ class Administrator {
         - String password
 }
 
-class Colaborator {
+class Collaborator {
         - String nome
         - String email
         - String password
@@ -35,9 +35,9 @@ class User {
         - String password
 }
 
-Colaborator                "0,1" -- "1"      User                      : acts as >
+Collaborator                "0,1" -- "1"      User                      : acts as >
 Manager                    "0,1" -- "1"      User                      : acts as >
-Organization                 "1" -- "1,..."  Colaborator               : has >
+Organization                 "1" -- "1,..."  Collaborator               : has >
 Organization                 "1" -- "1"      Manager                   : has >
 App                          "1" -- "*"      Organization              : has >
 App                          "1" -- "*"      Administrator             : has >

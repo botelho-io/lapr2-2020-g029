@@ -12,7 +12,7 @@ usecase UC9  as "UC9  - T4J Data Visualization"
 usecase UC10 as "UC10 - Send E-mail to Late Freelancers"
 usecase UC11 as "UC11 - Serialize Information To File"
 
-actor Colaborator as C
+actor Collaborator as C
 actor Manager as M
 actor Administrator as A
 actor Time as T

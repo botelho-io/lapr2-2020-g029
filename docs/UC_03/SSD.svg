@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="301px" preserveAspectRatio="none" style="width:454px;height:301px;" version="1.1" viewBox="0 0 454 301" width="454px" zoomAndPan="magnify"><defs><filter height="300%" id="fnuspj2phwl8g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="174.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="119.9609"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="180.6641"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="241.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="87.6094" y2="289.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="413" x2="413" y1="87.6094" y2="289.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="84.5332">Collaborator</text><ellipse cx="50" cy="13" fill="#FEFECE" filter="url(#fnuspj2phwl8g)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M50,21 L50,48 M37,29 L63,29 M50,48 L37,63 M50,48 L63,63 " fill="none" filter="url(#fnuspj2phwl8g)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#fnuspj2phwl8g)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="379" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="386" y="72.5332">:System</text><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="174.1094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="119.9609"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="180.6641"/><rect fill="#FFFFFF" filter="url(#fnuspj2phwl8g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="408" y="241.3672"/><polygon fill="#A80036" points="396,115.9609,406,119.9609,396,123.9609,400,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="402" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="73" y="115.1045">starts the process of creating a new freelancer</text><polygon fill="#A80036" points="66,146.3125,56,150.3125,66,154.3125,62,150.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="412" y1="150.3125" y2="150.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="145.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="318" x="83" y="145.4561">asks for all the relevant information about the freelancer</text><polygon fill="#A80036" points="396,176.6641,406,180.6641,396,184.6641,400,180.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="402" y1="180.6641" y2="180.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="175.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="242" x="73" y="175.8076">inserts the information that was requested</text><polygon fill="#A80036" points="66,207.0156,56,211.0156,66,215.0156,62,211.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="412" y1="211.0156" y2="211.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="206.1592">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="292" x="83" y="206.1592">presents the information and requests confirmation</text><polygon fill="#A80036" points="396,237.3672,406,241.3672,396,245.3672,400,241.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="402" y1="241.3672" y2="241.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="236.5107">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="73" y="236.5107">confirms</text><polygon fill="#A80036" points="61,267.7188,51,271.7188,61,275.7188,57,271.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="55" x2="412" y1="271.7188" y2="271.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="67" y="266.8623">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="78" y="266.8623">success</text><!--MD5=[0019b5eb1d1c0d5c0bf080b740563129]
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+' The collaborator starts the process of creating a new freelancer.
+' The system asks for all the relevant information of the freelancer.
+' The collaborator inserts the information that was requested.
+' The system presents the information and requests confirmation.
+' The collaborator confirms.
+' The systems validates the data introduces, stores it and informs the user of the success of the operation.
+
+activate C
+        C -> S : starts the process of creating a new freelancer
+        activate S
+                S - -> C: asks for all the relevant information about the freelancer
+        deactivate S
+        C -> S : inserts the information that was requested
+        activate S
+                S - -> C:  presents the information and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success
+        deactivate S
+deactivate C
+
+@enduml
+
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+
+activate C
+        C -> S : starts the process of creating a new freelancer
+        activate S
+                S - -> C: asks for all the relevant information about the freelancer
+        deactivate S
+        C -> S : inserts the information that was requested
+        activate S
+                S - -> C:  presents the information and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success
+        deactivate S
+deactivate C
+
+@enduml
+
+PlantUML version 1.2020.10(Sun May 17 10:35:57 WEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 14+36
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -5,7 +5,7 @@ actor Administrator as A
 activate A
 A -> ":Sistem" : adding new organization
 activate ":Sistem"
-":Sistem" --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one colaborator of the same organization  (i.e. name, email and password)
+":Sistem" --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
 deactivate ":Sistem"
 
 A -> ":Sistem" : enter the requested data
