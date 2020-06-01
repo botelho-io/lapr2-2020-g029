@@ -12,7 +12,6 @@ import lapr.api.PswGeneratorAPI;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
-import lapr.regist.RegistPayment;
 
 /**
  *
@@ -25,10 +24,6 @@ public class App {
     private final AutorizacaoFacade m_oAutorizacao;
     private RegistOrganization ro;
     private PswGeneratorAPI m_oPswGeneratorAPI;
-    /**
-     * The payments registered in the app.
-     */
-    private RegistPayment m_oRegistPayment;
     /**
      * The API used to process bank payments.
      */
@@ -62,13 +57,6 @@ public class App {
 
     public PswGeneratorAPI getPswGeneratorAPI() {
         return this.m_oPswGeneratorAPI;
-    }
-
-    /**
-     * @return The payments registered in the app.
-     */
-    public RegistPayment getRegistPayment() {
-        return this.m_oRegistPayment;
     }
 
     /**

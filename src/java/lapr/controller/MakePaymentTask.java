@@ -3,8 +3,9 @@ package lapr.controller;
 import lapr.list.ListTransaction;
 import lapr.model.Organization;
 import lapr.model.PaymentScheduler;
-import lapr.regist.RegistPayment;
+import lapr.model.Transaction;
 
+import java.util.Iterator;
 import java.util.TimerTask;
 
 public class MakePaymentTask extends TimerTask {
@@ -38,7 +39,13 @@ public class MakePaymentTask extends TimerTask {
      */
     private void makePayments() {
         ListTransaction lt = m_oOrganization.getListTransaction();
-        RegistPayment rp = AppPOE.getInstance().getApp().getRegistPayment();
-        rp.makePayments(lt, m_oOrganization);
+
+        ListTransaction completeTransactions = new ListTransaction();
+        for(Transaction trs : lt) {
+            if(!trs.getPaymentDetails().isPayed())
+                if(trs.makeBankTransfer())
+                    completeTransactions.add(trs);
+        }
+        completeTransactions.emailAboutPayment();
     }
 }

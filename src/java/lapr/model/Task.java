@@ -25,6 +25,9 @@ public class Task {
      * The cost per hour a junior freelancer receives for this task.
      */
     private double m_dCostPerHourOfJuniorEur;
+    /**
+     * The category this task is in.
+     */
     private String category;
     /**
      * @return The duration in hours it took to complete the task.

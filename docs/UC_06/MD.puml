@@ -15,6 +15,13 @@ class PaymentScheduler {
 
 class Organization {
         - String nome
+        - String NIF
+}
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
 }
 
 class App {
@@ -32,20 +39,35 @@ class Freelancer {
         - String country
 }
 
-Payment                      "1" -- "1"      Transaction               : refers to >
-Payment                      "*" -- "1"      EmailAPI                  : uses >
-Payment                      "*" -- "1"      PaymentAPI                : uses >
-Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
-Payment                      "*" -- "1"      Organization              : made on behalf of >
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class PaymentDetails {
+        - Boolean isPayed
+}
+
+Transaction                  "1" -- "1"      Task                      : relative to>
 Transaction                  "*" -- "1"      Freelancer                : to >
-PaymentScheduler             "1" -- "*"      Payment                   : schedules >
+Transaction                  "*" -- "1"      PaymentAPI                : uses >
+Transaction                  "*" -- "1"      Organization              : made on behalf of >
+Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
+TaskExecutionDetails         "1" -- "1"      Task                      : refers to>
+PaymentScheduler             "1" -- "*"      Transaction               : schedules payments>
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
-Organization                 "1" -- "*"      Transaction               : has unpaid >
+Organization                 "1" -- "*"      Task                      : publishes >
+Organization                 "1" -- "*"      Transaction               : has >
+Task                         "*" -- "0, 1"   Freelancer                : executed by >
 App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
 App                          "1" -- "*"      Organization              : has >
 App                          "1" -- "1"      EmailAPI                  : supports >
 App                          "1" -- "1"      PaymentAPI                : supports >
-App                          "1" -- "*"      Payment                   : registers >
 EmailAPI                     "1" -- "*"      Freelancer                : e-mails >
+(Organization, Transaction)      ..          PaymentDetails
+
 
 @enduml
