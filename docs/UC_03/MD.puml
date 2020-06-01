@@ -4,13 +4,8 @@ skinparam classAttributeIconSize 0
 hide methods
 left to right direction
 
-class Transaction {
+class App {
 
-}
-
-class PaymentScheduler {
-        - Integer dayMonth
-        - LocalTime timeOfDay
 }
 
 class Organization {
@@ -18,14 +13,10 @@ class Organization {
         - String NIF
 }
 
-class TaskExecutionDetails {
-        - Date endDate
-        - Integer delayInDays
-        - String DescriptionQualityOfWork
-}
-
-class App {
-
+class Collaborator {
+        - String nome
+        - String email
+        - String password
 }
 
 class Freelancer {
@@ -39,35 +30,9 @@ class Freelancer {
         - String country
 }
 
-class Task {
-        - String id
-        - String description
-        - Integer durationInHours
-        - Double costPerHourOfJuniorEur
-        - String category
-}
-
-class PaymentDetails {
-        - Boolean isPayed
-}
-
-Transaction                  "1" -- "1"      Task                      : relative to>
-Transaction                  "*" -- "1"      Freelancer                : to >
-Transaction                  "*" -- "1"      PaymentAPI                : uses >
-Transaction                  "*" -- "1"      Organization              : made on behalf of >
-Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
-TaskExecutionDetails         "1" -- "1"      Task                      : refers to>
-PaymentScheduler             "1" -- "*"      Transaction               : schedules payments>
-Organization                 "1" -- "1"      PaymentScheduler          : uses >
-Organization                 "1" -- "*"      Task                      : publishes >
-Organization                 "1" -- "*"      Transaction               : has >
-Task                         "*" -- "0, 1"   Freelancer                : executed by >
-App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
+Collaborator                 "1" -- "*"      Freelancer                : creates >
+Organization                 "1" -- "1"      Collaborator              : has >
 App                          "1" -- "*"      Organization              : has >
-App                          "1" -- "1"      EmailAPI                  : supports >
-App                          "1" -- "1"      PaymentAPI                : supports >
-EmailAPI                     "1" -- "*"      Freelancer                : e-mails >
-(Organization, Transaction)      ..          PaymentDetails
-
+App                          "1" -- "*"      Freelancer                : has >
 
 @enduml

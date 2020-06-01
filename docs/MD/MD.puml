@@ -35,7 +35,7 @@ class TaskExecutionDetails {
         - String DescriptionQualityOfWork
 }
 
-class Colaborator {
+class Collaborator {
         - String nome
         - String email
         - String password
@@ -83,11 +83,11 @@ class Freelancer {
         - String country
 }
 
-Colaborator                  "1" -- "*"      Transaction               : creates >
-Colaborator                  "1" -- "*"      Task                      : creates >
-Colaborator                  "1" -- "*"      Freelancer                : creates >
-Colaborator                  "1" -- "*"      HistoricalTransactionFile : loads >
-Colaborator                "0,1" -- "1"      User                      : acts as >
+Collaborator                 "1" -- "*"      Transaction               : creates >
+Collaborator                 "1" -- "*"      Task                      : creates >
+Collaborator                 "1" -- "*"      Freelancer                : creates >
+Collaborator                 "1" -- "*"      HistoricalTransactionFile : loads >
+Collaborator               "0,1" -- "1"      User                      : acts as >
 Manager                      "1" -- "0,1"    PaymentScheduler          : defines >
 Manager                    "0,1" -- "1"      User                      : acts as >
 Transaction                  "1" -- "1"      Task                      : relative to >
@@ -98,7 +98,7 @@ Transaction                  "1" -- "1"      TaskExecutionDetails      : execute
 TaskExecutionDetails         "1" -- "1"      Task                      : refers to >
 HistoricalTransactionFile    "1" -- "*"      Transaction               : records >
 PaymentScheduler             "1" -- "*"      Transaction               : schedules payments>
-Organization                 "1" -- "1"      Colaborator               : has >
+Organization                 "1" -- "1"      Collaborator              : has >
 Organization                 "1" -- "1"      Manager                   : has >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
 Organization                 "1" -- "*"      Task                      : publishes >

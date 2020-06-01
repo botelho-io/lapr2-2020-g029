@@ -14,17 +14,17 @@ import lapr.utils.Role;
  *
  * @author Universidade
  */
-public class Colaborator extends User {
+public class Collaborator extends User {
 
     private String name;
     private String email;
     private String password;
 
-    public Colaborator (String name, String email, String password, PapelUtilizador[] papeis){
+    public Collaborator (String name, String email, String password, PapelUtilizador[] papeis){
         super(name, email, password, papeis);
     }
 
-    public Colaborator (String name, String email, String password){
+    public Collaborator (String name, String email, String password){
         this(name, email, password, new PapelUtilizador[]{AppPOE.getInstance().getRole(Role.COLLABORATOR)});
     }
 

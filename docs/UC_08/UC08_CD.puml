@@ -1,6 +1,6 @@
 @startuml
 
-class Colaborator {
+class Collaborator {
   -String nome
   -String email
   Colaborador(nome, email, password )
@@ -25,21 +25,21 @@ class Administrator {
 
 class Organization {
   -String name
-  Organizacao(name, managerColaborador ,otherColaborator)
+  Organizacao(name, managerColaborador ,otherCollaborator)
   {static} Manager novoManager(nome, email, password)
   {static} Colaborador novoColaborador(nome, email, password)
 }
 
 class App {
-  
+
   Organizacao novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
   validatesOrganization(Organizacao org)
-  - addOrganization(Organizacao org) 
+  - addOrganization(Organizacao org)
 }
 
 class AutorizacaoFacade {
    - addManager(nomeM,emailM,passawordM)
-   - addColaborator(nomeM,emailM,passawordC)
+   - addCollaborator(nomeM,emailM,passawordC)
 }
 
 class AddingOrganizationController {
@@ -53,10 +53,10 @@ class AddingOrganizationUI {
 AddingOrganizationUI ..> AddingOrganizationController
 AddingOrganizationController ..> App
 AddingOrganizationController ..> Organization
-App ..> Colaborator
+App ..> Collaborator
 App ..> Manager
 App ..> AutorizacaoFacade
-Organization                 "1" -- "1,..."  Colaborator    : has >
+Organization                 "1" -- "1,..."  Collaborator    : has >
 Organization                 "1" -- "1"      Manager        : has >
 Administrator                "1" -- "*"      Organization   : adds >
 App                          "1" -- "*"      Administrator  : has >
