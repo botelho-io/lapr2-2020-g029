@@ -5,7 +5,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import lapr.controller.AddOrganizationController;
 import lapr.controller.AppPOE;
+import lapr.model.Organization;
 import lapr.utils.Constants;
 import lapr.utils.Role;
 
@@ -60,7 +62,13 @@ public class MainJFXController {
             String data = (String) FXBridge.data;
             switch (data) {
                 case "UC8":
-                    // TODO: open UC8
+                    // Login
+                    openWindow("/fxml/registOrg.fxml", "UC8 Add Organization");
+                    // Was registration successful?
+                    if( AddOrganizationController.getInstance().validateOrganization() == false) {
+                        System.exit(0); // Not successful - Exit
+                    }
+
                     break;
                 default:
                     Alert a = new Alert(Alert.AlertType.ERROR, "Unknowu UC: " + data);

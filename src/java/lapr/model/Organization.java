@@ -16,6 +16,7 @@ public class Organization {
      * Name of the organization.
      */
     private String m_strName;
+
     /**
      * Responsible for making payments on unpaid transactions.
      */
@@ -24,6 +25,7 @@ public class Organization {
      * A list of unpaid transactions.
      */
     ListTransaction m_oListTransaction;
+
     /**
      * @return The list of unpaid transactions the organization needs to pay.
      */
@@ -31,9 +33,23 @@ public class Organization {
         return m_oListTransaction;
     }
 
+    /**
+     * An manager of the organization.
+     */
     private Manager manager;
+
+    /**
+     * A collaborator of the organization.
+     */
     private Colaborator colaborator;
 
+    /**
+     * Build an instance of organization receiving the name, manager and collaborator.
+     *
+     * @param name of the colaborator.
+     * @param manager of the organization
+     * @param colaborator  of the organization.
+     */
     public Organization(String name, Manager manager, Colaborator colaborator) {
         if ((name == null) || (manager == null) || (colaborator == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
@@ -46,28 +62,64 @@ public class Organization {
             this.setColaborator(colaborator);
     }
 
+    /**
+     * Build a new instance of colaborator receiving the name, email and password.
+     *
+     * @param name of the colaborator.
+     * @param email of the colaborator.
+     * @param password of the colaborator.
+     */
     public static Colaborator newColaborator (String name, String email, String password) {
         return new Colaborator(name,email,password);
     }
 
+    /**
+     * Build a new instance of manager receiving the name, email and password.
+     *
+     * @param name of the manager.
+     * @param email of the manager.
+     * @param password of the manager.
+     */
     public static Manager newManager (String name, String email, String password) {
         return new Manager(name,email,password);
     }
 
+    /**
+     * Validates collaborator of the organization.
+     *
+     * @param colaborator of the organization.
+     * @return true if valid.
+     */
     public static boolean validatesColaborator(Colaborator colaborator) {
         //TODO: Validate colaborator.
         return true;
     }
 
+    /**
+     * Modifies collaborator of the organization.
+     *
+     * @param colaborator of the organization.
+     */
     private void setColaborator(Colaborator colaborator) {
         this.colaborator = colaborator;
     }
 
+    /**
+     * Validates manager of the organization.
+     *
+     * @param manager of the organization.
+     * @return true if valid.
+     */
     public static boolean validatesManager(Manager manager) {
         //TODO: Validate manager.
         return true;
     }
 
+    /**
+     * Modifies manager of the organization.
+     *
+     * @param manager of the organization.
+     */
     public void setManager(Manager manager) {
         this.manager = manager;
     }

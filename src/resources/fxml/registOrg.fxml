@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.ResgistOrgController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="9.0" prefWidth="9.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="129.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="534.0" minWidth="10.0" prefWidth="448.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="47.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="169.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="287.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label prefHeight="20.0" prefWidth="114.0" text="Organization name  :" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label prefHeight="17.0" prefWidth="111.0" text="Manager name        :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label prefHeight="17.0" prefWidth="115.0" text="Manager email        :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label prefHeight="17.0" prefWidth="113.0" text="Collaborator name  :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Collaborator email   :" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="fieldOrganization" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextField fx:id="fieldNameCollaborator" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldEmailCollaborator" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="fieldNameManager" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="fieldEmailManager" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
+         <children>
+            <Label prefHeight="105.0" prefWidth="361.0" text="UC8 Add Organization" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <Button fx:id="btnRegist" mnemonicParsing="false" onAction="#preformResgistOrg" prefHeight="25.0" prefWidth="187.0" text="Registration" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+   </children>
+</GridPane>

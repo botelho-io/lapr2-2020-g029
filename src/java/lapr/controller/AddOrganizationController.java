@@ -7,13 +7,42 @@ import lapr.regist.RegistOrganization;
 
 public class AddOrganizationController {
 
+    public static AddOrganizationController getInstace;
+
+    /**
+     * Name of the organization.
+     */
     private RegistOrganization m_oRegist;
+
+    /**
+     * The manager password.
+     */
     private String m_strManagerPassword;
+
+    /**
+     * The collaborator password.
+     */
     private String m_strCollaboratorPassword;
     private Organization m_oOrg;
+
+    /**
+     * An instance of PswGeneratorAPI.
+     */
     private PswGeneratorAPI m_oPswrd;
+
+    /**
+     * An instance of EmailAPI.
+     */
     private EmailAPI m_oMail;
+
+    /**
+     * The manager email.
+     */
     private String m_strEmailM;
+
+    /**
+     * The collaborator email.
+     */
     private String m_strEmailC;
 
     public AddOrganizationController() {
@@ -24,8 +53,17 @@ public class AddOrganizationController {
         m_oMail = m_oApp.getEmailAPI();
     }
 
-
-    public boolean newOrganization (String name, String nameM, String strEmailM, String nameC, String strEmailC) {
+    /**
+     * Build a new instance of organization receiving the name, nameM ,strEmailM, nameC and strEmailC.
+     *
+     * @param name the name of the organization.
+     * @param nameM the name of the manager.
+     * @param strEmailM the email of the manager.
+     * @param nameC the name of the collaborator.
+     * @param strEmailC the email of the collaborator.
+     *@return true if all parameter are valid.
+     */
+    public boolean newOrganization(String name, String nameM, String strEmailM, String nameC, String strEmailC) {
         m_strEmailM = strEmailM;
         m_strEmailC = strEmailC;
         m_strManagerPassword = m_oPswrd.generatePassword(m_strEmailM);
@@ -51,5 +89,19 @@ public class AddOrganizationController {
             b = b & m_oMail.sendEmail(m_strEmailM, String.format(ManagerEmail, m_strManagerPassword));
             return b;
         } else return false;
+    }
+
+
+    private static RegistOrganization singleton = null;
+    public static RegistOrganization getInstance()
+    {
+        if(singleton == null)
+        {
+            synchronized(RegistOrganization.class)
+            {
+                singleton = new RegistOrganization();
+            }
+        }
+        return singleton;
     }
 }
