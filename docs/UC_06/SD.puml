@@ -6,11 +6,8 @@ participant "scheduler\n:PaymentScheduler" as SC
 participant "timer:\nTimer" as TIMER
 participant "task:\nMakePaymentTask" as TASK
 participant "org\n:Organization" as org
-participant ":App" as app
-participant "rp\n:RegistPayment" as rp
 participant "trs\n:Transaction" as trs
 participant ":PaymentAPI" as papi
-participant "payment\n:Payment" as pay
 participant "lt\n:ListTransactions" as lt
 participant "completeTransactions\n:ListTransactions" as ct
 
@@ -35,37 +32,36 @@ deactivate SC
                                 TASK -> org : lt = getListTransaction()
                                 activate org
                                 deactivate org
-                                TASK -> app : rp = getRegistPayment()
-                                activate app
-                                deactivate app
-                                TASK -> rp : makePayments(lt, org)
-                                activate rp
-                                        rp -> ct ** : create()
-                                        loop for each transaction
-                                                rp -> lt : trs = getTransaction(ID)
+                                TASK -> ct ** : create()
+                                loop for each transaction
+                                        opt if the transaction isn't payed
+                                                TASK -> lt : trs = getTransaction(ID)
                                                 activate lt
                                                 deactivate lt
-                                                rp -> trs : payment = makeBankTransfer(org)
+                                                TASK -> trs : makeBankTransfer()
                                                 activate trs
-                                                        trs -> trs: amount = getAmountToPay()
-                                                        trs -> trs: IBAN = getFreelancerIBAN()
-                                                        trs -> papi: payTo(amount, IBAN)
+                                                        trs -> papi: payTo(fID, fIBAN, tID,tDes, aEUR, aNAT)
                                                         activate papi
-                                                                papi -> pay ** : create(trs, org)
                                                         deactivate papi
+                                                        note right
+                                                                Here the getters for the following fields were omited:
+                                                                fID - The ID of the freelancer to pay to.
+                                                                fIBAN - The IBAN of the freelancer to pay.
+                                                                tID - The ID of the task this payment is for.
+                                                                tDes - The description of the task this payment is for.
+                                                                aEUR - The amount in euros to pay to the freelancer.
+                                                                aNAT - The amount in the freelancer's native currency to pay.
+                                                        end note
+                                                        trs -> trs : setPayed(true)
                                                 deactivate trs
-                                                rp -> lt : remove(trs)
-                                                activate lt
-                                                deactivate lt
-                                                rp -> ct : add(trs)
+                                                TASK -> ct : add(trs)
                                                 activate ct
                                                 deactivate ct
-                                                rp -> rp : add(payment)
                                         end
-                                        rp -> ct : emailAboutPayment()
-                                        activate ct
-                                        deactivate ct
-                                deactivate rp
+                                end
+                                TASK -> ct : emailAboutPayment()
+                                activate ct
+                                deactivate ct
                         deactivate TASK
                         TASK -> SC : scheduleNextMonth()
                         activate SC

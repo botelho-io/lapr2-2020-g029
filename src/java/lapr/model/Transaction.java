@@ -21,12 +21,25 @@ public class Transaction {
      */
     private Task m_oTask;
     /**
-     * Makes a payment on the transaction.
-     * @param organization The organization that is paying.
-     * @return The payment made.
+     * The details about the payment made on this transaction.
      */
-    public Payment makeBankTransfer(Organization organization) {
-        return AppPOE.getInstance().getApp().getPaymentAPI().payTo(getAmount(), getFreelancerIBAN());
+    private PaymentDetails m_oPaymentDetails;
+
+    /**
+     * Makes a payment on the transaction.
+     * @return True if the payment was made, false otherwise.
+     */
+    public boolean makeBankTransfer() {
+        boolean success = AppPOE.getInstance().getApp().getPaymentAPI().payTo(
+            getFreelancer().getId(),    // The ID of the freelancer to pay to.
+            getFreelancer().getIBAN(),  // The IBAN of the freelancer to pay.
+            getTask().getId(),          // The ID of the task this payment is for.
+            getTask().getDescription(), // The description of the task this payment is for.
+            getAmount(),                // The amount in euros to pay to the freelancer.
+            getNativeAmount()           // The amount in the freelancer's native currency to pay.
+        );
+        getPaymentDetails().setPayed(success);
+        return success;
     }
     /**
      * @return The IBAN of the freelancer this transaction refers to.
@@ -45,6 +58,12 @@ public class Transaction {
         return total;
     }
     /**
+     * @return Amount (in the freelancer's native currency) to pay to the freelancer for the task.
+     */
+    public Double getNativeAmount() {
+        return AppPOE.getInstance().getApp().getMonetaryConversionAPI().convert(getFreelancer().getCountry(), getAmount());
+    }
+    /**
      * @return The freelancer this transaction refers to.
      */
     public Freelancer getFreelancer() {
@@ -55,5 +74,12 @@ public class Transaction {
      */
     public Task getTask() {
         return m_oTask;
+    }
+
+    /**
+     * @return The details about the payment made on this transaction.
+     */
+    public PaymentDetails getPaymentDetails() {
+        return m_oPaymentDetails;
     }
 }

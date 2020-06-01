@@ -11,7 +11,10 @@ import lapr.utils.Expertise;
  * Represents a freelancer that intends do profit from completing tasks.
  */
 public class Freelancer {
-    private String id;
+    /**
+     * The unique ID of this freelancer.
+     */
+    private String m_strId;
     private String name;
     /**
      * The level of expertise of this freelancer.
@@ -54,5 +57,11 @@ public class Freelancer {
      */
     public String getCountry() {
         return country;
+    }
+    /**
+     * @return The unique ID of this freelancer.
+     */
+    public String getId() {
+        return m_strId;
     }
 }

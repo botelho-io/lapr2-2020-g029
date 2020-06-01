@@ -78,7 +78,7 @@
 |                          |made on behalf of      |Organization              |
 |TaskExecutionDetails      |refers to              |Task                      |
 |HistoricalTransactionFile |records                |Transaction               |
-|PaymentScheduler          |schedules              |Payment                   |
+|PaymentScheduler          |schedules payments     |Payment                   |
 |Organization              |has                    |Colaborator               |
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
