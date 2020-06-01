@@ -7,6 +7,9 @@
 package lapr.model;
 
 import autorizacao.AutorizacaoFacade;
+import lapr.api.EmailAPI;
+import lapr.api.PswGeneratorAPI;
+import lapr.regist.RegistOrganization;
 
 /**
  *
@@ -14,13 +17,18 @@ import autorizacao.AutorizacaoFacade;
  */
 public class App {
     private final AutorizacaoFacade m_oAutorizacao;
-    private RegisterOrganization ro;
-    
+    private RegistOrganization ro;
+    private PswGeneratorAPI m_oPswGeneratorAPI;
+    /**
+     * The API used to send emails.
+     */
+    private EmailAPI m_oEmailAPI;
+
 
     public App()
     {
         this.m_oAutorizacao = new AutorizacaoFacade();
-        this.ro = new RegisterOrganization();
+        this.ro = new RegistOrganization();
     }
     
     public AutorizacaoFacade getAutorizacaoFacade()
@@ -28,8 +36,19 @@ public class App {
         return this.m_oAutorizacao;
     }
 
-    public RegisterOrganization getRegisterOrganization() {
+    public RegistOrganization getRegistOrganization() {
         return ro;
+    }
+
+    public PswGeneratorAPI getPswGeneratorAPI() {
+        return this.m_oPswGeneratorAPI;
+    }
+
+    /**
+     * @return The API used to send emails.
+     */
+    public EmailAPI getEmailAPI() {
+        return this.m_oEmailAPI;
     }
 }
     
