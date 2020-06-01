@@ -8,6 +8,8 @@ package lapr.model;
 
 import autorizacao.AutorizacaoFacade;
 import lapr.api.EmailAPI;
+import lapr.api.PswGeneratorAPI;
+import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
 import lapr.regist.RegistPayment;
@@ -21,6 +23,8 @@ public class App {
      * The autorization facade used by the app.
      */
     private final AutorizacaoFacade m_oAutorizacao;
+    private RegistOrganization ro;
+    private PswGeneratorAPI m_oPswGeneratorAPI;
     /**
      * The payments registered in the app.
      */
@@ -41,6 +45,7 @@ public class App {
     public App()
     {
         this.m_oAutorizacao = new AutorizacaoFacade();
+        this.ro = new RegistOrganization();
     }
     /**
      * @return The autorization facade used by the app.
@@ -49,12 +54,23 @@ public class App {
     {
         return this.m_oAutorizacao;
     }
+
+
+    public RegistOrganization getRegistOrganization() {
+        return ro;
+    }
+
+    public PswGeneratorAPI getPswGeneratorAPI() {
+        return this.m_oPswGeneratorAPI;
+    }
+
     /**
      * @return The payments registered in the app.
      */
     public RegistPayment getRegistPayment() {
         return this.m_oRegistPayment;
     }
+
     /**
      * @return An instance of the payment API.
      */
