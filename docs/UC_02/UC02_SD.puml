@@ -1,0 +1,84 @@
+@startuml
+autonumber
+'hide footbox
+actor Collaborator as C
+
+participant ":CreatingTaskUI" as UI
+participant ":CreatingTaskController" as CTRL
+participant "AppPOE" as _APPOE
+participant "app\n:AppPOE" as APPOE
+participant "sessao\n:SessaoUtilizador" as SESSAO
+participant ":APP" as APP
+participant "rorgs:Regist\nOrganization" as RORGS
+participant "org\n:Organization" as ORG
+participant "lt\n:TaskList" as LTASKS
+participant "tarefa\n:Task" as TAREFA
+
+activate C
+C -> UI : stars the crating of a new task
+activate UI
+UI --> C : request the task data (i.e. id, description, durationInHours, costPerHourOfJuniorEur, category)
+deactivate UI
+
+C -> UI : enters the requested data
+activate UI
+
+UI -> CTRL : newTask(id, description, durationInHours, costPerHourOfJuniorEur, category)
+activate CTRL
+
+CTRL -> _APPOE: app = getInstance()
+activate _APPOE
+|||
+deactivate _APPOE
+
+CTRL -> APPOE: sessao = getSessaoAtual()
+activate APPOE
+|||
+deactivate APPOE
+
+CTRL -> SESSAO: email = getEmailUtilizador()
+activate SESSAO
+deactivate SESSAO
+
+CTRL -> APP: rorgs = getRegistOrganization()
+activate APP
+deactivate APP
+
+CTRL -> RORGS: org = getOrganizacaoByEmailUtilizador(email)
+activate RORGS
+deactivate RORGS
+
+CTRL -> ORG: lt = getTasklist()
+activate ORG
+deactivate ORG
+
+CTRL -> LTASKS: task=newTask(id, description, durationInHours, costPerHourOfJuniorEur, category)
+activate LTASKS
+
+LTASKS --> TASK**: create(id, description, durationInHours, costPerHourOfJuniorEur, category)
+LTASKS -> LTASKS: validatesTask(task)
+
+UI --> C: validates and presents the data to the collaborator, asking him to confirm it
+deactivate LTASKS
+deactivate CTRL
+deactivate UI
+
+C -> UI : confirms the data
+activate UI
+UI -> CTRL : registTask()
+activate CTRL
+
+CTRL -> LTASKS : registTask(task)
+activate LTASKS
+
+LTASKS -> LTASKS: validatesTask(task)
+LTASKS -> LTASKS: addTask(task)
+
+UI --> C : records the data and informs the collaborator of the success of the operation.
+deactivate LTASKS
+deactivate CTRL
+deactivate UI
+
+deactivate C
+
+@enduml
