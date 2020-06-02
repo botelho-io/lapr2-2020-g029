@@ -22,11 +22,11 @@
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="156" x2="255" y1="147.5" y2="147.5"/>
         <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="163" y="156.918"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="175" y="162.9189">String nome</text>
-        <!--class Colaborator-->
+        <!--class Collaborator-->
         <rect fill="#FEFECE" filter="url(#f4jo9rameehwb)" height="81.5078" style="stroke: #A80036; stroke-width: 1.5;" width="107" x="352" y="45.5"/>
         <ellipse cx="371.5" cy="61.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
         <path d="M374.2656,57.375 Q374.4219,57.1563 374.6094,57.0469 Q374.7969,56.9375 375.0156,56.9375 Q375.3906,56.9375 375.625,57.1953 Q375.8594,57.4531 375.8594,58.0625 L375.8594,59.5156 Q375.8594,60.125 375.625,60.3906 Q375.3906,60.6563 375.0156,60.6563 Q374.6719,60.6563 374.4688,60.4531 Q374.2656,60.2656 374.1563,59.75 Q374.1094,59.3906 373.9219,59.2031 Q373.5938,58.8281 372.9844,58.6094 Q372.375,58.3906 371.75,58.3906 Q370.9844,58.3906 370.3516,58.7188 Q369.7188,59.0469 369.2266,59.7969 Q368.7344,60.5469 368.7344,61.5781 L368.7344,62.6719 Q368.7344,63.9063 369.625,64.7266 Q370.5156,65.5469 372.1094,65.5469 Q373.0469,65.5469 373.7031,65.2969 Q374.0938,65.1406 374.5156,64.7031 Q374.7813,64.4375 374.9297,64.3594 Q375.0781,64.2813 375.2813,64.2813 Q375.6094,64.2813 375.8672,64.5391 Q376.125,64.7969 376.125,65.1406 Q376.125,65.4844 375.7813,65.8906 Q375.2813,66.4688 374.4844,66.7969 Q373.4063,67.25 372.1094,67.25 Q370.5938,67.25 369.3906,66.625 Q368.4063,66.125 367.7188,65.0547 Q367.0313,63.9844 367.0313,62.7031 L367.0313,61.5469 Q367.0313,60.2188 367.6484,59.0703 Q368.2656,57.9219 369.3594,57.3047 Q370.4531,56.6875 371.6875,56.6875 Q372.4219,56.6875 373.0703,56.8516 Q373.7188,57.0156 374.2656,57.375 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="386.5" y="66.4102">Colaborator</text>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="386.5" y="66.4102">Collaborator</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="353" x2="458" y1="77.5" y2="77.5"/>
         <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="360" y="86.918"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="372" y="92.9189">String nome</text>
@@ -102,7 +102,7 @@ class Organization {
 }
 
 
-class Colaborator {
+class Collaborator {
         - String nome
         - String email
         - String password
@@ -122,9 +122,9 @@ class User {
         - String password
 }
 
-Colaborator                "0,1" - - "1"      User                      : acts as >
-Colaborator                  "1" - - "*"      Task                      : creates >
-Organization                 "1" - - "1,..."  Colaborator               : has >
+Collaborator                "0,1" - - "1"      User                      : acts as >
+Collaborator                  "1" - - "*"      Task                      : creates >
+Organization                 "1" - - "1,..."  Collaborator               : has >
 Organization                 "1" - - "*"      Task                      : publishes >
 App                          "1" - - "*"      Organization              : has >
 

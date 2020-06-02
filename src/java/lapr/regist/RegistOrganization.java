@@ -2,7 +2,7 @@ package lapr.regist;
 
 import autorizacao.AutorizacaoFacade;
 import lapr.controller.AppPOE;
-import lapr.model.Colaborator;
+import lapr.model.Collaborator;
 import lapr.model.Manager;
 import lapr.model.Organization;
 
@@ -28,12 +28,12 @@ public class RegistOrganization {
     /**
      * Build a new instance of organization receiving the name, manager and collaborator.
      *
-     * @param name of the colaborator.
+     * @param name of the collaborator.
      * @param manager of the organization
-     * @param colaborator  of the organization.
+     * @param collaborator  of the organization.
      */
-    public Organization newOrganization(String name, Manager manager, Colaborator colaborator) {
-        return new Organization(name, manager, colaborator);
+    public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
+        return new Organization(name, manager, collaborator);
     }
 
     /**

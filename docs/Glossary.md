@@ -11,7 +11,7 @@
 | Transaction | A completed task that needs to be payed by a certain organization to a freelancer |
 | User | A person that is able to log into the app |
 | Manager | A user that is responsible by a certain organization |
-| Colaborator | A user that is employed by an organization |
+| Collaborator | A user that is employed by an organization |
 | NIF | Número de Identificação Fiscal (Number of Fiscal Identification) |
 | Id | A unique identifier |
 | EmailScheduler | A scheduler that is responsible for sending emails to freelancers once a year |

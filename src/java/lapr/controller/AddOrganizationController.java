@@ -68,8 +68,8 @@ public class AddOrganizationController {
         m_strEmailC = strEmailC;
         m_strManagerPassword = m_oPswrd.generatePassword(m_strEmailM);
         m_strCollaboratorPassword = m_oPswrd.generatePassword(m_strEmailC);
-        Colaborator c = Organization.newColaborator(nameC, m_strEmailC, m_strCollaboratorPassword);
-        if(!Organization.validatesColaborator(c))
+        Collaborator c = Organization.newCollaborator(nameC, m_strEmailC, m_strCollaboratorPassword);
+        if(!Organization.validatesCollaborator(c))
             return false;
         Manager m = Organization.newManager(nameM, m_strEmailM, m_strManagerPassword);
         if(!Organization.validatesManager(m))

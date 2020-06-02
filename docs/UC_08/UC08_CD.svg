@@ -8,11 +8,11 @@
         </filter>
     </defs>
     <g>
-        <!--class Colaborator-->
+        <!--class Collaborator-->
         <rect fill="#FEFECE" filter="url(#f1bxdcihd7r0rg)" height="131.0156" style="stroke: #A80036; stroke-width: 1.5;" width="194" x="211" y="771"/>
         <ellipse cx="271.25" cy="787" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
         <path d="M274.0156,782.875 Q274.1719,782.6563 274.3594,782.5469 Q274.5469,782.4375 274.7656,782.4375 Q275.1406,782.4375 275.375,782.6953 Q275.6094,782.9531 275.6094,783.5625 L275.6094,785.0156 Q275.6094,785.625 275.375,785.8906 Q275.1406,786.1563 274.7656,786.1563 Q274.4219,786.1563 274.2188,785.9531 Q274.0156,785.7656 273.9063,785.25 Q273.8594,784.8906 273.6719,784.7031 Q273.3438,784.3281 272.7344,784.1094 Q272.125,783.8906 271.5,783.8906 Q270.7344,783.8906 270.1016,784.2188 Q269.4688,784.5469 268.9766,785.2969 Q268.4844,786.0469 268.4844,787.0781 L268.4844,788.1719 Q268.4844,789.4063 269.375,790.2266 Q270.2656,791.0469 271.8594,791.0469 Q272.7969,791.0469 273.4531,790.7969 Q273.8438,790.6406 274.2656,790.2031 Q274.5313,789.9375 274.6797,789.8594 Q274.8281,789.7813 275.0313,789.7813 Q275.3594,789.7813 275.6172,790.0391 Q275.875,790.2969 275.875,790.6406 Q275.875,790.9844 275.5313,791.3906 Q275.0313,791.9688 274.2344,792.2969 Q273.1563,792.75 271.8594,792.75 Q270.3438,792.75 269.1406,792.125 Q268.1563,791.625 267.4688,790.5547 Q266.7813,789.4844 266.7813,788.2031 L266.7813,787.0469 Q266.7813,785.7188 267.3984,784.5703 Q268.0156,783.4219 269.1094,782.8047 Q270.2031,782.1875 271.4375,782.1875 Q272.1719,782.1875 272.8203,782.3516 Q273.4688,782.5156 274.0156,782.875 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="291.75" y="791.9102">Colaborator</text>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="291.75" y="791.9102">Collaborator</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="212" x2="404" y1="803" y2="803"/>
         <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="219" y="812.418"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="231" y="818.4189">String nome</text>
@@ -60,7 +60,7 @@
         <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="394" y="631.418"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="406" y="637.4189">String name</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="387" x2="687" y1="643.8359" y2="643.8359"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="290" x="392" y="659.2549">Organizacao(name, managerColaborador ,otherColaborator)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="290" x="392" y="659.2549">Organizacao(name, managerColaborador ,otherCollaborator)</text>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="231" x="392" y="673.0908">Manager novoManager(nome, email, password)</text>
         <line style="stroke: #000000; stroke-width: 1.0;" x1="392" x2="623" y1="675.0908" y2="675.0908"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="265" x="392" y="686.9268">Colaborador novoColaborador(nome, email, password)</text>
@@ -86,7 +86,7 @@
         <rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="330.5" y="478.418"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="204" x="342.5" y="484.4189">addManager(nomeM,emailM,passawordM)</text>
         <rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="330.5" y="492.2539"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="217" x="342.5" y="498.2549">addColaborator(nomeM,emailM,passawordC)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="217" x="342.5" y="498.2549">addCollaborator(nomeM,emailM,passawordC)</text>
         <!--class AddingOrganizationController-->
         <rect fill="#FEFECE" filter="url(#f1bxdcihd7r0rg)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="424" x="6" y="117"/>
         <ellipse cx="133.25" cy="133" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
@@ -139,7 +139,7 @@
         <!--
 @startuml
 
-class Colaborator {
+class Collaborator {
   -String nome
   -String email
   Colaborador(nome, email, password )
@@ -165,7 +165,7 @@ class Administrator {
 
 class Organization {
   -String name
-  Organizacao(name, managerColaborador ,otherColaborator)
+  Organizacao(name, managerColaborador ,otherCollaborator)
   {static} Manager novoManager(nome, email, password)
   {static} Colaborador novoColaborador(nome, email, password)
 }
@@ -179,7 +179,7 @@ class App {
 
 class AutorizacaoFacade {
    - addManager(nomeM,emailM,passawordM)
-   - addColaborator(nomeM,emailM,passawordC)
+   - addCollaborator(nomeM,emailM,passawordC)
 }
 
 class AddingOrganizationController {
@@ -193,10 +193,10 @@ class AddingOrganizationUI {
 AddingOrganizationUI ..> AddingOrganizationController
 AddingOrganizationController ..> App
 AddingOrganizationController ..> Organization
-App ..> Colaborator
+App ..> Collaborator
 App ..> Manager
 App ..> AutorizacaoFacade
-Organization                 "1" - - "1,..."  Colaborator    : has >
+Organization                 "1" - - "1,..."  Collaborator    : has >
 Organization                 "1" - - "1"      Manager        : has >
 Administrator                "1" - - "*"      Organization   : adds >
 App                          "1" - - "*"      Administrator  : has >

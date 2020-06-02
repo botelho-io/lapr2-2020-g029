@@ -108,7 +108,7 @@
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="161.8076">2</text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="223" x="85.5" y="145.4561">requests organization data (i.e. name),</text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="455" x="89.5" y="161.8076">the data of one manager of that organization (i.e. nameM, emailM, passwordM)</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="528" x="89.5" y="178.1592">and  the data of one colaborator of the same organization  (i.e. nameC, emailC, passwordC)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="528" x="89.5" y="178.1592">and  the data of one collaborator of the same organization  (i.e. nameC, emailC, passwordC)</text>
         <polygon fill="#A80036" points="612.5,209.0156,622.5,213.0156,612.5,217.0156,616.5,213.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="618.5" y1="213.0156" y2="213.0156"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="208.5107">3</text>
@@ -134,7 +134,7 @@
         <polygon fill="#A80036" points="2035.5,377.0313,2045.5,381.0313,2035.5,385.0313,2039.5,381.0313" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1716.5" x2="2041.5" y1="381.0313" y2="381.0313"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1723.5" y="376.5264">8</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="301" x="1734.5" y="376.5264">colab=newColaborator( nameC, emailC, passwordC)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="301" x="1734.5" y="376.5264">colab=newCollaborator( nameC, emailC, passwordC)</text>
         <polygon fill="#A80036" points="2426.5,407.3828,2436.5,411.3828,2426.5,415.3828,2430.5,411.3828" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="2052.5" x2="2432.5" y1="411.3828" y2="411.3828"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="2059.5" y="406.8779">9</text>
@@ -204,7 +204,7 @@
         <polygon fill="#A80036" points="2614.5,1148.1719,2624.5,1152.1719,2614.5,1156.1719,2618.5,1152.1719" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1716.5" x2="2620.5" y1="1152.1719" y2="1152.1719"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1723.5" y="1147.667">24</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="248" x="1741.5" y="1147.667">addColaborator(nameC,emailC,passwordC)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="248" x="1741.5" y="1147.667">addCollaborator(nameC,emailC,passwordC)</text>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1716.5" x2="1758.5" y1="1217.875" y2="1217.875"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1758.5" x2="1758.5" y1="1217.875" y2="1230.875"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1711.5" x2="1758.5" y1="1230.875" y2="1230.875"/>
@@ -233,7 +233,7 @@ participant ":Autorizacao\nFacade" as AUT
 activate A
 A -> UI : adding new organization
 activate UI
-UI - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one colaborator of the same organization  (i.e. nameC, emailC, passwordC)
+UI - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one collaborator of the same organization  (i.e. nameC, emailC, passwordC)
 deactivate UI
 
 A -> UI : enter the requested data
@@ -250,7 +250,7 @@ activate _ORG
 _ORG - -> MAN ** : create( nameM, emailM, passwordM)
 deactivate _ORG
 
-APP -> _ORG: colab=newColaborator( nameC, emailC, passwordC)
+APP -> _ORG: colab=newCollaborator( nameC, emailC, passwordC)
 activate _ORG
 _ORG - -> COLAB ** : create( nameC, emailC, passwordC)
 deactivate _ORG
@@ -297,7 +297,7 @@ deactivate COLAB
 APP -> COLAB: passwordC = getPassword()
 activate COLAB
 deactivate COLAB
-APP -> AUT: addColaborator(nameC,emailC,passwordC)
+APP -> AUT: addCollaborator(nameC,emailC,passwordC)
 activate AUT
 deactivate AUT
 

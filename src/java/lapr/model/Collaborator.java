@@ -14,51 +14,51 @@ import lapr.utils.Role;
  *
  * @author Universidade
  */
-public class Colaborator extends User {
+public class Collaborator extends User {
 
     /**
-     * The name of the colaborator.
+     * The name of the collaborator.
      */
     private String name;
 
     /**
-     * The email of the colaborator.
+     * The email of the collaborator.
      */
 
     private String email;
 
     /**
-     * The passaword of the colaborator.
+     * The passaword of the collaborator.
      */
     private String password;
 
     /**
-     * Build an instance of colaborator receiving the name, email and password.
+     * Build an instance of collaborator receiving the name, email and password.
      *
-     * @param name of the colaborator.
-     * @param email of the colaborator.
-     * @param password of the colaborator.
+     * @param name of the collaborator.
+     * @param email of the collaborator.
+     * @param password of the collaborator.
      * @param papeis role of the user.
      */
-    public Colaborator (String name, String email, String password, PapelUtilizador[] papeis){
+    public Collaborator (String name, String email, String password, PapelUtilizador[] papeis){
         super(name, email, password, papeis);
     }
 
     /**
-     * Build an instance of colaborator receiving the name, email and password.
+     * Build an instance of collaborator receiving the name, email and password.
      *
-     * @param name of the colaborator.
-     * @param email of the colaborator.
-     * @param password of the colaborator.
+     * @param name of the collaborator.
+     * @param email of the collaborator.
+     * @param password of the collaborator.
      */
-    public Colaborator (String name, String email, String password){
+    public Collaborator (String name, String email, String password){
         this(name, email, password, new PapelUtilizador[]{AppPOE.getInstance().getRole(Role.COLLABORATOR)});
     }
 
     /**
-     * Returns the name of the colaborator.
+     * Returns the name of the collaborator.
      *
-     * @return name of the colaborator.
+     * @return name of the collaborator.
      */
     public String getNome()
     {
@@ -66,9 +66,9 @@ public class Colaborator extends User {
     }
 
     /**
-     * Returns the email of the colaborator.
+     * Returns the email of the collaborator.
      *
-     * @return email of the colaborator.
+     * @return email of the collaborator.
      */
     public String getEmail()
     {
@@ -76,9 +76,9 @@ public class Colaborator extends User {
     }
 
     /**
-     * Returns the password of the colaborator.
+     * Returns the password of the collaborator.
      *
-     * @return password of the colaborator.
+     * @return password of the collaborator.
      */
     public String getPassword(){
         return this.password;

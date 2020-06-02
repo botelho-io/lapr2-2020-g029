@@ -19,7 +19,7 @@
 
 **Roles of people**
 
-- Colaborator (Organization)
+- Collaborator (Organization)
 - Manager (Organization)
 - Administrator (T4J)
 - Freelancer
@@ -64,7 +64,7 @@
 
 |Concept (A)               |Association            |Concept (B)               |
 |-------------------------:|:---------------------:|:-------------------------|
-|Colaborator               |creates                |Transaction               |
+|Collaborator               |creates                |Transaction               |
 |                          |creates                |Task                      |
 |                          |creates                |Freelancer                |
 |                          |loads                  |HistoricalTransactionFile |
@@ -82,7 +82,7 @@
 |TaskExecutionDetails      |refer to               |Task                      |
 |HistoricalTransactionFile |records                |Transaction               |
 |PaymentScheduler          |schedules              |Payment                   |
-|Organization              |has                    |Colaborator               |
+|Organization              |has                    |Collaborator               |
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
 |                          |publishes              |Task                      |

@@ -41,36 +41,36 @@ public class Organization {
     /**
      * A collaborator of the organization.
      */
-    private Colaborator colaborator;
+    private Collaborator collaborator;
 
     /**
      * Build an instance of organization receiving the name, manager and collaborator.
      *
-     * @param name of the colaborator.
+     * @param name of the collaborator.
      * @param manager of the organization
-     * @param colaborator  of the organization.
+     * @param collaborator  of the organization.
      */
-    public Organization(String name, Manager manager, Colaborator colaborator) {
-        if ((name == null) || (manager == null) || (colaborator == null))
+    public Organization(String name, Manager manager, Collaborator collaborator) {
+        if ((name == null) || (manager == null) || (collaborator == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
             this.m_strName = name;
-            if(!validatesColaborator(colaborator))
-                throw new IllegalArgumentException("Colaborator is invalid");
+            if(!validatesCollaborator(collaborator))
+                throw new IllegalArgumentException("Collaborator is invalid");
             if(!validatesManager(manager))
                 throw new IllegalArgumentException("Manager is invalid");
             this.setManager(manager);
-            this.setColaborator(colaborator);
+            this.setCollaborator(collaborator);
     }
 
     /**
-     * Build a new instance of colaborator receiving the name, email and password.
+     * Build a new instance of collaborator receiving the name, email and password.
      *
-     * @param name of the colaborator.
-     * @param email of the colaborator.
-     * @param password of the colaborator.
+     * @param name of the collaborator.
+     * @param email of the collaborator.
+     * @param password of the collaborator.
      */
-    public static Colaborator newColaborator (String name, String email, String password) {
-        return new Colaborator(name,email,password);
+    public static Collaborator newCollaborator (String name, String email, String password) {
+        return new Collaborator(name,email,password);
     }
 
     /**
@@ -87,21 +87,21 @@ public class Organization {
     /**
      * Validates collaborator of the organization.
      *
-     * @param colaborator of the organization.
+     * @param collaborator of the organization.
      * @return true if valid.
      */
-    public static boolean validatesColaborator(Colaborator colaborator) {
-        //TODO: Validate colaborator.
+    public static boolean validatesCollaborator(Collaborator collaborator) {
+        //TODO: Validate collaborator.
         return true;
     }
 
     /**
      * Modifies collaborator of the organization.
      *
-     * @param colaborator of the organization.
+     * @param collaborator of the organization.
      */
-    private void setColaborator(Colaborator colaborator) {
-        this.colaborator = colaborator;
+    private void setCollaborator(Collaborator collaborator) {
+        this.collaborator = collaborator;
     }
 
     /**

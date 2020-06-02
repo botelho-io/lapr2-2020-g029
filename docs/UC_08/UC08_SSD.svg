@@ -37,7 +37,7 @@
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="161.8076">2</text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="223" x="85.5" y="145.4561">requests organization data (i.e. name),</text>
         <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="443" x="89.5" y="161.8076">the data of one manager of that organization (i.e. name, email and password)</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="522" x="89.5" y="178.1592">and  the data of one colaborator of the same organization  (i.e. name, email and password)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="522" x="89.5" y="178.1592">and  the data of one collaborator of the same organization  (i.e. name, email and password)</text>
         <polygon fill="#A80036" points="606.5,209.0156,616.5,213.0156,606.5,217.0156,610.5,213.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="612.5" y1="213.0156" y2="213.0156"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="208.5107">3</text>
@@ -62,7 +62,7 @@ actor Administrator as A
 activate A
 A -> ":Sistem" : adding new organization
 activate ":Sistem"
-":Sistem" - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one colaborator of the same organization  (i.e. name, email and password)
+":Sistem" - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
 deactivate ":Sistem"
 
 A -> ":Sistem" : enter the requested data

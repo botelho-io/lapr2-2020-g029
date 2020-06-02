@@ -65,9 +65,9 @@ public class MainJFXController {
                     // Login
                     openWindow("/fxml/registOrg.fxml", "UC8 Add Organization");
                     // Was registration successful?
-                    if( AddOrganizationController.getInstance().validateOrganization() == false) {
+                    /*if( AddOrganizationController.getInstance().validateOrganization() == false) {
                         System.exit(0); // Not successful - Exit
-                    }
+                    }*/
 
                     break;
                 default:
