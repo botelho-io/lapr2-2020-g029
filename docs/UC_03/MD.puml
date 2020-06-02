@@ -8,17 +8,6 @@ class App {
 
 }
 
-class Organization {
-        - String nome
-        - String NIF
-}
-
-class Collaborator {
-        - String nome
-        - String email
-        - String password
-}
-
 class Freelancer {
         - String id
         - String name
@@ -30,9 +19,6 @@ class Freelancer {
         - String country
 }
 
-Collaborator                 "1" -- "*"      Freelancer                : creates >
-Organization                 "1" -- "1"      Collaborator              : has >
-App                          "1" -- "*"      Organization              : has >
 App                          "1" -- "*"      Freelancer                : has >
 
 @enduml

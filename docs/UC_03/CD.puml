@@ -2,47 +2,25 @@
 skinparam classAttributeIconSize 0
 top to bottom direction
 
-class PaymentScheduler {
-        - Integer dayMonth
-        - LocalTime timeOfDay
-        + create (Integer day, LoaclTime timeOfDay, Organization org)
-        + resetTime(Integer dayMonth, LocalTime timeOfDay)
-        + scheduleNestMonth()
-        + getNextDate()
-}
-
-class MakePaymentTask {
-        + create(Organization org, PaymentScheduler scheduler)
-        + run()
-        - makePayments()
-}
-
-class PaymentAPI {
-        + payTo(String freelancerId, String freelancerIBAN, String taskId, \nString taskDescription, Double eur, Double nativeCurrency)
-}
-
-class EmailAPI {
+class CreateFreelancerUI {
 
 }
 
-class MonetaryUnitConversionAPI {
-
+class CreateFreelancerController {
+        + newFreelancer()
+        + addFreelancer()
 }
 
-class Organization {
-        - String nome
-        + getListTransaction()
+class App {
+        + getRegistFreelancer()
 }
 
-class ListTransaction {
-        + getTransaction(ID)
-        + remove(Transaction trs)
-        + add(Transaction trs)
-        + emailAboutPayment()
-}
-
-class Transaction {
-        + makeBankTransfer()
+class RegistFreelancer {
+        + newFreelancer(String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
+        + validate(Freelancer fre)
+        + addFreelancer(Freelancer fre)
+        + add(Freelancer fre)
+        - generateID(String name)
 }
 
 class Freelancer {
@@ -54,29 +32,14 @@ class Freelancer {
         - String bankAccountIBAN
         - String address
         - String country
+
+        + newFreelancer(String id, String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
 }
 
-
-App                          "1" --> "1"      EmailAPI                  : has
-App                          "1" --> "1"      PaymentAPI                : has
-App                          "1" --> "1"      RegistOrganization        : has
-App                          "1" --> "1"      MonetaryUnitConversionAPI : has
-Timer                            ..>          MakePaymentTask
-Transaction                      ..>          PaymentAPI
-Transaction                  "*" --> "1"      Freelancer                : knows
-Transaction                      ..>          MonetaryUnitConversionAPI
-Organization                 "1" --> "1"      ListTransaction           : has
-Organization                 "1" --> "1"      PaymentScheduler          : has
-MakePaymentTask                  ..>          App
-MakePaymentTask                  ..>          Organization
-MakePaymentTask                  ..>          ListTransaction
-MakePaymentTask                  ..>          Transaction
-MakePaymentTask              "1" --> "1"      PaymentScheduler          : knows
-ListTransaction                  ..>          EmailAPI
-ListTransaction              "1" --> "*"      Transaction               : has
-ListTransaction                  ..>          MonetaryUnitConversionAPI
-PaymentScheduler             "1" --> "1"      Timer                     : has
-PaymentScheduler             "1" --> "1"      MakePaymentTask           : has
-RegistOrganization           "1" --> "*"      Organization              : has
+CreateFreelancerUI               ..>          CreateFreelancerController
+CreateFreelancerController       ..>          App
+CreateFreelancerController       ..>          RegistFreelancer
+App                          "1" --> "1"      RegistFreelancer          : has >
+RegistFreelancer             "1" --> "*"      Freelancer                : has >
 
 @enduml

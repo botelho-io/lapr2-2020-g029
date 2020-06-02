@@ -2,72 +2,48 @@
 autonumber
 hide footbox
 
-participant "scheduler\n:PaymentScheduler" as SC
-participant "timer:\nTimer" as TIMER
-participant "task:\nMakePaymentTask" as TASK
-participant "org\n:Organization" as org
-participant "trs\n:Transaction" as trs
-participant ":PaymentAPI" as papi
-participant "lt\n:ListTransactions" as lt
-participant "completeTransactions\n:ListTransactions" as ct
+actor "Collaborator" as col
+participant ":CreateFreelancerUI" as ui
+participant ":CreateFreelancerController" as cnt
+participant ":App" as app
+participant "reg:RegistFreelancer" as reg
+participant "fre:Freelancer" as fre
 
-[o-> SC : create(day, timeOfDay, org)
-activate SC
-        SC -> SC : resetTime(day, timeOfDay)
-        SC -> SC : scheduleNextMonth()
-loop
-        activate SC
-                SC -> TASK**  : create(org, scheduler)
-                SC -> TIMER** : create()
-                SC -> SC : date = getNextDate()
-                SC ->TIMER: schedule(task, date)
-        deactivate SC
-deactivate SC
-        activate TIMER
-                note over SC,TIMER  : On the specified date and time
-                TIMER->TASK:run()
-                activate TASK
-                        TASK->TASK: makePayments()
-                        activate TASK
-                                TASK -> org : lt = getListTransaction()
-                                activate org
-                                deactivate org
-                                TASK -> ct ** : create()
-                                loop for each transaction
-                                        opt if the transaction isn't payed
-                                                TASK -> lt : trs = getTransaction(ID)
-                                                activate lt
-                                                deactivate lt
-                                                TASK -> trs : makeBankTransfer()
-                                                activate trs
-                                                        trs -> papi: payTo(fID, fIBAN, tID,tDes, aEUR, aNAT)
-                                                        activate papi
-                                                        deactivate papi
-                                                        note right
-                                                                Here the getters for the following fields were omited:
-                                                                fID - The ID of the freelancer to pay to.
-                                                                fIBAN - The IBAN of the freelancer to pay.
-                                                                tID - The ID of the task this payment is for.
-                                                                tDes - The description of the task this payment is for.
-                                                                aEUR - The amount in euros to pay to the freelancer.
-                                                                aNAT - The amount in the freelancer's native currency to pay.
-                                                        end note
-                                                        trs -> trs : setPayed(true)
-                                                deactivate trs
-                                                TASK -> ct : add(trs)
-                                                activate ct
-                                                deactivate ct
-                                        end
-                                end
-                                TASK -> ct : emailAboutPayment()
-                                activate ct
-                                deactivate ct
-                        deactivate TASK
-                        TASK -> SC : scheduleNextMonth()
-                        activate SC
-                deactivate TASK
-        deactivate TIMER
-end
-
+activate col
+        col -> ui : starts the process of creating a new freelancer
+        activate ui
+                ui --> col: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
+        deactivate ui
+        col -> ui : inserts the information that was requested
+        activate ui
+                ui -> cnt : newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
+                activate cnt
+                        cnt -> app : reg = getRegistFreelancer()
+                        activate app
+                        deactivate app
+                        cnt -> reg : fre = newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
+                        activate reg
+                                reg -> reg : id = generateID(name)
+                                reg -> fre ** : create(id, name, expertise, email, \n NIF, IBAN, address, counry)
+                        deactivate reg
+                        cnt -> reg : validate(fre)
+                        activate reg
+                        deactivate reg
+                deactivate cnt
+                ui --> col:  presents the information and requests confirmation
+        deactivate ui
+        col -> ui : confirms
+        activate ui
+                ui -> cnt : addFreelancer()
+                activate cnt
+                        cnt -> reg : addFreelancer(fre)
+                        activate reg
+                                reg -> reg : validate(fre)
+                                reg -> reg : add(fre)
+                        deactivate reg
+                deactivate cnt
+                ui --> col: success
+        deactivate ui
+deactivate col
 
 @enduml
