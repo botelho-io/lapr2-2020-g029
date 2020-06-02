@@ -19,14 +19,16 @@ public class RegistFreelancer {
 
     public Freelancer newFreelancer(String strName, Expertise unumExpertise, String strEmail, String strNIF, String strIBAN, String strAddress, String strCountry) {
         String id = generateID(strName);
+        return null;
     }
 
     private String generateID(String strName) {
-        strName.matches()
+        /*strName.matches()
 
         String[] names = strName.split("[ ]+");
 
-        if(names.length < 2) throw new IllegalArgumentException("Name provided must include at least firs and last name.");
+        if(names.length < 2) throw new IllegalArgumentException("Name provided must include at least firs and last name.");*/
+        return "";
     }
 
 

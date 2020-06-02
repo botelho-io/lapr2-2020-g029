@@ -10,9 +10,10 @@ public class CreateFreelancerController {
     public boolean newFreelancer(String strName, String strExpertise, String strEmail, String strNIF, String strIBAN, String strAddress, String strCountry) {
         reg = AppPOE.getInstance().getApp().getRegistFreelancer();
         fre = reg.newFreelancer(strName, strExpertise, strEmail, strNIF, strIBAN, strAddress, strCountry);
+        return false;
     }
 
     public boolean addFreelancer() {
-
+        return false;
     }
 }
