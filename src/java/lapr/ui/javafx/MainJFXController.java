@@ -1,12 +1,12 @@
 package lapr.ui.javafx;
 
+import autorizacao.model.SessaoUtilizador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import lapr.controller.AppPOE;
-import lapr.utils.Constants;
 import lapr.utils.Role;
 
 import java.io.IOException;
@@ -14,6 +14,15 @@ import java.io.IOException;
 public class MainJFXController {
     public MainJFXController() {
 
+    }
+
+    public static void alert(String message) {
+        alert(Alert.AlertType.ERROR, message);
+    }
+
+    public static void alert(Alert.AlertType type, String message) {
+        Alert a = new Alert(type, message);
+        a.showAndWait();
     }
 
     Stage stage = new Stage();
@@ -24,8 +33,7 @@ public class MainJFXController {
         try {
             root = FXMLLoader.load(getClass().getResource(fxml_s));
         } catch (IOException e) {
-            Alert a = new Alert(Alert.AlertType.ERROR, "Unknowu fxml file: " + fxml_s);
-            a.showAndWait();
+            alert("Unknowu fxml file: " + fxml_s);
             System.exit(1);
             e.printStackTrace();
         }
@@ -44,32 +52,39 @@ public class MainJFXController {
             System.exit(0); // Not successful - Exit
         }
 
-        // Select role
-        // TODO: complete me.
-        if(AppPOE.getInstance().getSessaoAtual().isLoggedInComPapel(Role.ADMINISTRATOR)) {
-            openWindow("/fxml/mainMenuAdmin.fxml", "Main Menu Administrator");
-        } else {
-            System.out.println("Unknown Role!");
-            System.exit(1);
-        }
-        enterUC();
+        do {
+            // Select role
+            // TODO: complete me.
+            final SessaoUtilizador su = AppPOE.getInstance().getSessaoAtual();
+            if (su.isLoggedInComPapel(Role.ADMINISTRATOR)) {
+                openWindow("/fxml/mainMenuAdmin.fxml", "Main Menu Administrator");
+            } else if (su.isLoggedInComPapel(Role.COLLABORATOR)) {
+                openWindow("/fxml/mainMenuCollaborator.fxml", "Main Menu Collaborator");
+            } else {
+                alert("Unknown Role!");
+                System.exit(1);
+            }
+        } while (enterUC());
     }
 
-    private void enterUC() {
+    private boolean enterUC() {
         if(FXBridge.data instanceof String) {
             String data = (String) FXBridge.data;
             switch (data) {
                 case "UC8":
                     // TODO: open UC8
-                    break;
+                    return true;
+                case "UC3":
+                    openWindow("/fxml/UC03AddFreelancer.fxml", "Add New Freelancer");
+                    FXBridge.data = null;
+                    return true;
                 default:
-                    Alert a = new Alert(Alert.AlertType.ERROR, "Unknowu UC: " + data);
-                    a.showAndWait();
-                    System.exit(1);
-                    break;
+                    alert("Unknowu UC: " + data);
+                    return false;
             }
         } else {
-            System.exit(0);
+            FXBridge.data = null;
+            return false;
         }
     }
 }
