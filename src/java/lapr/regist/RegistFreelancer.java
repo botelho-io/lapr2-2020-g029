@@ -13,7 +13,14 @@ public class RegistFreelancer {
     /**
      * The list of freelancers
      */
-    Set<Freelancer> m_setFreelancer = new HashSet<>();
+    Set<Freelancer> m_setFreelancer;
+
+    /**
+     * Constructor.
+     */
+    public RegistFreelancer() {
+        m_setFreelancer = new HashSet<>();
+    }
 
     /**
      * Creates a new freelancer

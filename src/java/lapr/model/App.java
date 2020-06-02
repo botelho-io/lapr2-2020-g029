@@ -46,6 +46,7 @@ public class App {
     {
         this.m_oAutorizacao = new AutorizacaoFacade();
         this.ro = new RegistOrganization();
+        this.m_oRegistFreelancer = new RegistFreelancer();
     }
     /**
      * @return The autorization facade used by the app.
@@ -54,7 +55,6 @@ public class App {
     {
         return this.m_oAutorizacao;
     }
-
 
     public RegistOrganization getRegistOrganization() {
         return ro;

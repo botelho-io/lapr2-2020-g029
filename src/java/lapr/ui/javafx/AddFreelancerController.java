@@ -11,11 +11,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lapr.controller.CreateFreelancerController;
 
-public class UC03AddFreelancerController {
+import java.awt.*;
+
+public class AddFreelancerController {
     @FXML
     public TextField txtName;
     @FXML
-    public ChoiceBox ddExpertise;
+    public ChoiceBox<String> ddExpertise;
     @FXML
     public TextField txtEmail;
     @FXML
@@ -32,7 +34,8 @@ public class UC03AddFreelancerController {
     public Button btnCreate;
 
     CreateFreelancerController controller;
-    public UC03AddFreelancerController() {
+    @FXML
+    public void initialize() {
         controller = new CreateFreelancerController();
         ddExpertise.setItems(FXCollections.observableArrayList(controller.getValidExpertise()));
     }
@@ -50,7 +53,7 @@ public class UC03AddFreelancerController {
             Address = validateString(txtAddress.getText(), "Address");
             Country = validateString(txtCountry.getText(), "Country");
             Email = validateString(txtEmail.getText(), "Email");
-            Expertise = validateString((String) ddExpertise.getValue(), "Expertise");
+            Expertise = validateString(ddExpertise.getValue(), "Expertise");
             IBAN = validateString(txtIBAN.getText(), "IBAN");
             Name = validateString(txtName.getText(), "Name");
             NIF = validateString(txtNIF.getText(), "NIF");
@@ -81,6 +84,7 @@ public class UC03AddFreelancerController {
 
     @FXML
     public void btnCancelAction(ActionEvent actionEvent) {
+        ((Stage)btnCancel.getScene().getWindow()).close();
     }
 
     private String validateString(String data, String dataName) {
