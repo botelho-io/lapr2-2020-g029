@@ -22,12 +22,12 @@ public class Organization {
      */
     PaymentScheduler m_oScheduler;
     /**
-     * A list of unpaid transactions.
+     * A list transactions.
      */
     ListTransaction m_oListTransaction;
 
     /**
-     * @return The list of unpaid transactions the organization needs to pay.
+     * @return The list transactions the organization made.
      */
     public ListTransaction getListTransaction() {
         return m_oListTransaction;
@@ -61,7 +61,6 @@ public class Organization {
             this.setManager(manager);
             this.setCollaborator(collaborator);
     }
-
     /**
      * Build a new instance of collaborator receiving the name, email and password.
      *

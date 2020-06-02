@@ -1,0 +1,45 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class CreateFreelancerUI {
+
+}
+
+class CreateFreelancerController {
+        + newFreelancer()
+        + addFreelancer()
+}
+
+class App {
+        + getRegistFreelancer()
+}
+
+class RegistFreelancer {
+        + newFreelancer(String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
+        + validate(Freelancer fre)
+        + addFreelancer(Freelancer fre)
+        + add(Freelancer fre)
+        - generateID(String name)
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+
+        + newFreelancer(String id, String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
+}
+
+CreateFreelancerUI               ..>          CreateFreelancerController
+CreateFreelancerController       ..>          App
+CreateFreelancerController       ..>          RegistFreelancer
+App                          "1" --> "1"      RegistFreelancer          : has >
+RegistFreelancer             "1" --> "*"      Freelancer                : has >
+
+@enduml

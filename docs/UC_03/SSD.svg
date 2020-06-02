@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="318px" preserveAspectRatio="none" style="width:572px;height:318px;" version="1.1" viewBox="0 0 572 318" width="572px" zoomAndPan="magnify"><defs><filter height="300%" id="fhbgau6l0f6ho" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="190.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="119.9609"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="197.0156"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="257.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="87.6094" y2="306.0703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="531" x2="531" y1="87.6094" y2="306.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="84.5332">Collaborator</text><ellipse cx="50" cy="13" fill="#FEFECE" filter="url(#fhbgau6l0f6ho)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M50,21 L50,48 M37,29 L63,29 M50,48 L37,63 M50,48 L63,63 " fill="none" filter="url(#fhbgau6l0f6ho)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#fhbgau6l0f6ho)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="497" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="504" y="72.5332">:System</text><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="190.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="119.9609"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="197.0156"/><rect fill="#FFFFFF" filter="url(#fhbgau6l0f6ho)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="526" y="257.7188"/><polygon fill="#A80036" points="514,115.9609,524,119.9609,514,123.9609,518,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="520" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="73" y="115.1045">starts the process of creating a new freelancer</text><polygon fill="#A80036" points="66,162.6641,56,166.6641,66,170.6641,62,166.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="530" y1="166.6641" y2="166.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="153.6318">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="318" x="83" y="145.4561">asks for all the relevant information about the freelancer</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="436" x="83" y="161.8076">(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)</text><polygon fill="#A80036" points="514,193.0156,524,197.0156,514,201.0156,518,197.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="520" y1="197.0156" y2="197.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="192.1592">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="242" x="73" y="192.1592">inserts the information that was requested</text><polygon fill="#A80036" points="66,223.3672,56,227.3672,66,231.3672,62,227.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="530" y1="227.3672" y2="227.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="222.5107">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="292" x="83" y="222.5107">presents the information and requests confirmation</text><polygon fill="#A80036" points="514,253.7188,524,257.7188,514,261.7188,518,257.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="520" y1="257.7188" y2="257.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="252.8623">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="73" y="252.8623">confirms</text><polygon fill="#A80036" points="61,284.0703,51,288.0703,61,292.0703,57,288.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="55" x2="530" y1="288.0703" y2="288.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="67" y="283.2139">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="78" y="283.2139">success</text><!--MD5=[e41514962b31624f7e57f0201eeaa8c2]
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+' The collaborator starts the process of creating a new freelancer.
+' The system asks for all the relevant information of the freelancer.
+' The collaborator inserts the information that was requested.
+' The system presents the information and requests confirmation.
+' The collaborator confirms.
+' The systems validates the data introduced, stores it and informs the user of the success of the operation.
+
+activate C
+        C -> S : starts the process of creating a new freelancer
+        activate S
+                S - -> C: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
+        deactivate S
+        C -> S : inserts the information that was requested
+        activate S
+                S - -> C:  presents the information and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success
+        deactivate S
+deactivate C
+
+@enduml
+
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+
+activate C
+        C -> S : starts the process of creating a new freelancer
+        activate S
+                S - -> C: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
+        deactivate S
+        C -> S : inserts the information that was requested
+        activate S
+                S - -> C:  presents the information and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success
+        deactivate S
+deactivate C
+
+@enduml
+
+PlantUML version 1.2020.10(Sun May 17 10:35:57 WEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 14+36
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

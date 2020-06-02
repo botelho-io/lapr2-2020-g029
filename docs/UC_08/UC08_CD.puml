@@ -31,10 +31,10 @@ class Organization {
 }
 
 class App {
-  
+
   Organizacao novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
   validatesOrganization(Organizacao org)
-  - addOrganization(Organizacao org) 
+  - addOrganization(Organizacao org)
 }
 
 class AutorizacaoFacade {

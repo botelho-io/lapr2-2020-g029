@@ -7,7 +7,6 @@
 | Freelancer | An independant self-employed worker that completes a task on behalf of an organization |
 | Organization | A company that seeks freelancers to complete their tasks |
 | Task | A job that an organization needs to get done |
-| Payment | A set of transactions to be payed at the same time |
 | Transaction | A completed task that needs to be payed by a certain organization to a freelancer |
 | User | A person that is able to log into the app |
 | Manager | A user that is responsible by a certain organization |

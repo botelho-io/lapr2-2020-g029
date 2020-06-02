@@ -9,10 +9,10 @@ package lapr.model;
 import autorizacao.AutorizacaoFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
+import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
-import lapr.regist.RegistPayment;
 
 /**
  *
@@ -26,10 +26,6 @@ public class App {
     private RegistOrganization ro;
     private PswGeneratorAPI m_oPswGeneratorAPI;
     /**
-     * The payments registered in the app.
-     */
-    private RegistPayment m_oRegistPayment;
-    /**
      * The API used to process bank payments.
      */
     private PaymentAPI m_oPaymentAPI;
@@ -41,6 +37,10 @@ public class App {
      * The API used to send emails.
      */
     private EmailAPI m_oEmailAPI;
+    /**
+     * The register of all the freelancers available in the system.
+     */
+    private RegistFreelancer m_oRegistFreelancer;
 
     public App()
     {
@@ -65,13 +65,6 @@ public class App {
     }
 
     /**
-     * @return The payments registered in the app.
-     */
-    public RegistPayment getRegistPayment() {
-        return this.m_oRegistPayment;
-    }
-
-    /**
      * @return An instance of the payment API.
      */
     public PaymentAPI getPaymentAPI() {
@@ -87,6 +80,13 @@ public class App {
      */
     public EmailAPI getEmailAPI() {
         return this.m_oEmailAPI;
+    }
+
+    /**
+     * @return The register of all the freelancers available in the system.
+     */
+    public RegistFreelancer getRegistFreelancer() {
+        return this.m_oRegistFreelancer;
     }
 }
     

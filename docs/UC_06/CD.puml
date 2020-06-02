@@ -17,12 +17,8 @@ class MakePaymentTask {
         - makePayments()
 }
 
-class App {
-        + getRegistPayment()
-}
-
 class PaymentAPI {
-        + payTO(Double eur, String IBAN)
+        + payTo(String freelancerId, String freelancerIBAN, String taskId, \nString taskDescription, Double eur, Double nativeCurrency)
 }
 
 class EmailAPI {
@@ -46,9 +42,7 @@ class ListTransaction {
 }
 
 class Transaction {
-        + makeBankTransfer(Organization)
-        + getAmmountToPay()
-        - getFreelancerIBAN()
+        + makeBankTransfer()
 }
 
 class Freelancer {
@@ -62,32 +56,21 @@ class Freelancer {
         - String country
 }
 
-class RegistPayment {
-        + makePayments(ListTransaction lt, Organization org)
-        - add(Payment payment)
-}
-
-class Payment {
-        + create(Transaction trs, Organization org)
-}
-
 
 App                          "1" --> "1"      EmailAPI                  : has
 App                          "1" --> "1"      PaymentAPI                : has
-App                          "1" --> "1"      RegistPayment             : has
 App                          "1" --> "1"      RegistOrganization        : has
 App                          "1" --> "1"      MonetaryUnitConversionAPI : has
 Timer                            ..>          MakePaymentTask
-Payment                      "1" --> "1,..."  Transaction               : knows
-Payment                      "*" --> "1"      Organization              : knows
 Transaction                      ..>          PaymentAPI
 Transaction                  "*" --> "1"      Freelancer                : knows
+Transaction                      ..>          MonetaryUnitConversionAPI
 Organization                 "1" --> "1"      ListTransaction           : has
 Organization                 "1" --> "1"      PaymentScheduler          : has
-RegistPayment                "1" --> "*"      Payment                   : has
 MakePaymentTask                  ..>          App
 MakePaymentTask                  ..>          Organization
-MakePaymentTask                  ..>          RegistPayment
+MakePaymentTask                  ..>          ListTransaction
+MakePaymentTask                  ..>          Transaction
 MakePaymentTask              "1" --> "1"      PaymentScheduler          : knows
 ListTransaction                  ..>          EmailAPI
 ListTransaction              "1" --> "*"      Transaction               : has
