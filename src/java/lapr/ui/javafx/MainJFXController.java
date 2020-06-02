@@ -33,7 +33,8 @@ public class MainJFXController {
         try {
             root = FXMLLoader.load(getClass().getResource(fxml_s));
         } catch (IOException e) {
-            alert("Unknowu fxml file: " + fxml_s);
+            alert("Error on fxml file: " + fxml_s + "\nError:\n" + e.getMessage());
+            System.out.println(e.getMessage());
             System.exit(1);
             e.printStackTrace();
         }
@@ -44,7 +45,7 @@ public class MainJFXController {
     }
 
     public void start() throws Exception {
-
+        openWindow("/fxml/AddFreelancer.fxml", "Add New Freelancer");
         // Login
         openWindow("/fxml/login.fxml", "Login");
         // Was login successful?
@@ -75,7 +76,7 @@ public class MainJFXController {
                     // TODO: open UC8
                     return true;
                 case "UC3":
-                    openWindow("/fxml/UC03AddFreelancer.fxml", "Add New Freelancer");
+                    openWindow("/fxml/AddFreelancer.fxml", "Add New Freelancer");
                     FXBridge.data = null;
                     return true;
                 default:

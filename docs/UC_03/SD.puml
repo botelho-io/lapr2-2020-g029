@@ -8,11 +8,15 @@ participant ":CreateFreelancerController" as cnt
 participant ":App" as app
 participant "reg:RegistFreelancer" as reg
 participant "fre:Freelancer" as fre
+participant "exp:\nList<String>"
 
 activate col
         col -> ui : starts the process of creating a new freelancer
         activate ui
-                ui --> col: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
+                ui -> cnt : exp = getValidExpertise()
+                activate cnt
+                deactivate cnt
+                ui --> col: asks for all the relevant information about the freelancer\n(name, level of expertise, email, NIF, IBAN, address, country)
         deactivate ui
         col -> ui : inserts the information that was requested
         activate ui

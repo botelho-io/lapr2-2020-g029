@@ -15,7 +15,10 @@ public class Freelancer {
      * The unique ID of this freelancer.
      */
     private String m_strId;
-    private String name;
+    /**
+     * The name of this freelancer.
+     */
+    private String m_strName;
     /**
      * The level of expertise of this freelancer.
      */
@@ -23,17 +26,46 @@ public class Freelancer {
     /**
      * The unique email of this freelancer.
      */
-    private String email;
-    private String NIF;
+    private String m_strEmail;
+    /**
+     * The NIF of this freelancer.
+     */
+    private String m_strNIF;
     /**
      * Freelancer's International Bank Account Number.
      */
     private String m_strBankAccountIBAN;
-    private String address;
+    /**
+     * The address of this freelancer.
+     */
+    private String m_strAddress;
     /**
      * The country where the freelancer resides.
      */
-    private String country;
+    private String m_strCountry;
+
+    /**
+     * Constructor.
+     * @param strId The unique ID of this freelancer.
+     * @param strName The name of this freelancer.
+     * @param enumExpertise The level of expertise of this freelancer.
+     * @param strEmail The unique email of this freelancer.
+     * @param strNIF The NIF of this freelancer.
+     * @param strIBAN Freelancer's International Bank Account Number.
+     * @param strAddress The address of this freelancer.
+     * @param strCountry The country where the freelancer resides.
+     */
+    public Freelancer(String strId, String strName, Expertise enumExpertise, String strEmail, String strNIF, String strIBAN, String strAddress, String strCountry) {
+        this.m_strBankAccountIBAN = strIBAN;
+        this.m_strEmail = strEmail;
+        this.m_strId = strId;
+        this.m_strLevelOfExpertise = enumExpertise;
+        this.m_strName = strName;
+        this.m_strNIF = strNIF;
+        this.m_strAddress = strAddress;
+        this.m_strCountry = strCountry;
+    }
+
     /**
      * @return The freelancer's International Bank Account Number.
      */
@@ -50,13 +82,13 @@ public class Freelancer {
      * @return The unique email of this freelancer.
      */
     public String getEmail() {
-        return email;
+        return m_strEmail;
     }
     /**
      * @return The country where the freelancer resides.
      */
     public String getCountry() {
-        return country;
+        return m_strCountry;
     }
     /**
      * @return The unique ID of this freelancer.

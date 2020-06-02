@@ -9,6 +9,7 @@ class CreateFreelancerUI {
 class CreateFreelancerController {
         + newFreelancer()
         + addFreelancer()
+        + getValidExpertise()
 }
 
 class App {
