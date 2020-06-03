@@ -27,6 +27,9 @@ public class App {
      * The autorization facade used by the app.
      */
     private final AutorizacaoFacade m_oAutorizacao;
+    /**
+     * The registration of organization on the app.
+     */
     private RegistOrganization ro;
     /**
      * The API used to generate passwords.

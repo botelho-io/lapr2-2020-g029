@@ -39,6 +39,8 @@ public class Task {
      * @param category The category this task is in.
      */
     public Task(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category) {
+        if ((id == null) || (description == null) || (category == null) || (id.isEmpty()))
+            throw new IllegalArgumentException("None of the arguments can be null or empty.");
         this.m_strId = id;
         this.m_strDescription = description;
         this.m_iDurationInHours = durationInHours;
@@ -80,5 +82,11 @@ public class Task {
      */
     public String getM_strDescription() {
         return m_strDescription;
+    }
+    /**
+     * Build an instance of organization.
+     */
+    public Task(){
+
     }
 }

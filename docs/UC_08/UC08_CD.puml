@@ -7,6 +7,7 @@ class Collaborator {
   String getNome()
   String getEmail()
   String getPassword()}
+}
 
 class Manager {
   -String name
@@ -25,16 +26,22 @@ class Administrator {
 
 class Organization {
   -String name
-  Organizacao(name, managerColaborador ,otherCollaborator)
+  +Organizacao(name, managerColaborador ,otherCollaborator)
   {static} Manager novoManager(nome, email, password)
   {static} Colaborador novoColaborador(nome, email, password)
 }
 
 class App {
 
-  Organizacao novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
-  validatesOrganization(Organizacao org)
-  - addOrganization(Organizacao org)
+  + RegistOrganization getRegistOrganization()
+  + AutorizacaoFacade getAutorizacaoFacade()
+}
+
+class RegistOrganization {
+  +Organization novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+  +validatesOrganization(Organization org)
+  +registOrganization(Organizacao org)
+  -addOrganization(Organizacao org))
 }
 
 class AutorizacaoFacade {
@@ -51,11 +58,14 @@ class AddingOrganizationUI {
 }
 
 AddingOrganizationUI ..> AddingOrganizationController
+AddingOrganizationController ..> RegistOrganization
 AddingOrganizationController ..> App
 AddingOrganizationController ..> Organization
-App ..> Collaborator
-App ..> Manager
-App ..> AutorizacaoFacade
+RegistOrganization"1" --> "*" Organization : has registed
+RegistOrganization ..> Collaborator
+RegistOrganization ..> Manager
+RegistOrganization ..> AutorizacaoFacade
+
 Organization                 "1" -- "1,..."  Collaborator    : has >
 Organization                 "1" -- "1"      Manager        : has >
 Administrator                "1" -- "*"      Organization   : adds >

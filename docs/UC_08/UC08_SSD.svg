@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="411px" preserveAspectRatio="none" style="width:665px;height:411px;" version="1.1" viewBox="0 0 665 411" width="665px" zoomAndPan="magnify"><defs><filter height="300%" id="f1tfb92w2xc3ox" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="206.8125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="63.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="213.3672"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="274.0703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="52" x2="52" y1="87.6094" y2="322.4219"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="626.5" x2="626.5" y1="87.6094" y2="322.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="84.5332">Administrator</text><ellipse cx="52.5" cy="13" fill="#FEFECE" filter="url(#f1tfb92w2xc3ox)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M52.5,21 L52.5,48 M39.5,29 L65.5,29 M52.5,48 L39.5,63 M52.5,48 L65.5,63 " fill="none" filter="url(#f1tfb92w2xc3ox)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="335.9551">Administrator</text><ellipse cx="52.5" cy="349.0313" fill="#FEFECE" filter="url(#f1tfb92w2xc3ox)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M52.5,357.0313 L52.5,384.0313 M39.5,365.0313 L65.5,365.0313 M52.5,384.0313 L39.5,399.0313 M52.5,384.0313 L65.5,399.0313 " fill="none" filter="url(#f1tfb92w2xc3ox)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1tfb92w2xc3ox)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="594.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="601.5" y="72.5332">:Sistem</text><rect fill="#FEFECE" filter="url(#f1tfb92w2xc3ox)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="594.5" y="321.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="601.5" y="342.9551">:Sistem</text><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="206.8125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="63.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="213.3672"/><rect fill="#FFFFFF" filter="url(#f1tfb92w2xc3ox)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="621.5" y="274.0703"/><polygon fill="#A80036" points="609.5,115.9609,619.5,119.9609,609.5,123.9609,613.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="615.5" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="75.5" y="115.1045">adding new organization</text><polygon fill="#A80036" points="68.5,179.0156,58.5,183.0156,68.5,187.0156,64.5,183.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="625.5" y1="183.0156" y2="183.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="161.8076">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="223" x="85.5" y="145.4561">requests organization data (i.e. name),</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="443" x="89.5" y="161.8076">the data of one manager of that organization (i.e. name, email and password)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="525" x="89.5" y="178.1592">and  the data of one collaborator of the same organization  (i.e. name, email and password)</text><polygon fill="#A80036" points="609.5,209.3672,619.5,213.3672,609.5,217.3672,613.5,213.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="615.5" y1="213.3672" y2="213.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="208.5107">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="75.5" y="208.5107">enter the requested data</text><polygon fill="#A80036" points="68.5,239.7188,58.5,243.7188,68.5,247.7188,64.5,243.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="625.5" y1="243.7188" y2="243.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="238.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="228" x="85.5" y="238.8623">presents data and asks for confirmation</text><polygon fill="#A80036" points="609.5,270.0703,619.5,274.0703,609.5,278.0703,613.5,274.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="615.5" y1="274.0703" y2="274.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="269.2139">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="75.5" y="269.2139">confirms</text><polygon fill="#A80036" points="63.5,300.4219,53.5,304.4219,63.5,308.4219,59.5,304.4219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="57.5" x2="625.5" y1="304.4219" y2="304.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="69.5" y="299.5654">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="80.5" y="299.5654">successful operation</text><!--MD5=[93150620e0975458d798f34a0cb89580]
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="408px" preserveAspectRatio="none" style="width:660px;height:408px;" version="1.1" viewBox="0 0 660 408" width="660px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f17lvtcsg5h4c7" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="206.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="63.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="213.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="273.7188"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="52" x2="52" y1="87.6094" y2="322.4219"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="623.5" x2="623.5" y1="87.6094" y2="322.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="84.5332">Administrator</text>
+        <ellipse cx="52.5" cy="13" fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M52.5,21 L52.5,48 M39.5,29 L65.5,29 M52.5,48 L39.5,63 M52.5,48 L65.5,63 " fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="335.9551">Administrator</text>
+        <ellipse cx="52.5" cy="349.0313" fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M52.5,357.0313 L52.5,384.0313 M39.5,365.0313 L65.5,365.0313 M52.5,384.0313 L39.5,399.0313 M52.5,384.0313 L65.5,399.0313 " fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="591.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="72.5332">:Sistem</text>
+        <rect fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="591.5" y="321.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="342.9551">:Sistem</text>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="206.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="63.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="213.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="273.7188"/>
+        <polygon fill="#A80036" points="606.5,115.6094,616.5,119.6094,606.5,123.6094,610.5,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="612.5" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="115.1045">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="75.5" y="115.1045">adding new organization</text>
+        <polygon fill="#A80036" points="68.5,178.9609,58.5,182.9609,68.5,186.9609,64.5,182.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="622.5" y1="182.9609" y2="182.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="161.8076">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="223" x="85.5" y="145.4561">requests organization data (i.e. name),</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="443" x="89.5" y="161.8076">the data of one manager of that organization (i.e. name, email and password)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="522" x="89.5" y="178.1592">and  the data of one collaborator of the same organization  (i.e. name, email and password)</text>
+        <polygon fill="#A80036" points="606.5,209.0156,616.5,213.0156,606.5,217.0156,610.5,213.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="612.5" y1="213.0156" y2="213.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="208.5107">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="75.5" y="208.5107">enter the requested data</text>
+        <polygon fill="#A80036" points="68.5,239.3672,58.5,243.3672,68.5,247.3672,64.5,243.3672" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="622.5" y1="243.3672" y2="243.3672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="238.8623">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="228" x="85.5" y="238.8623">presents data and asks for confirmation</text>
+        <polygon fill="#A80036" points="606.5,269.7188,616.5,273.7188,606.5,277.7188,610.5,273.7188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="612.5" y1="273.7188" y2="273.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="269.2139">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="75.5" y="269.2139">confirms</text>
+        <polygon fill="#A80036" points="63.5,300.0703,53.5,304.0703,63.5,308.0703,59.5,304.0703" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="57.5" x2="622.5" y1="304.0703" y2="304.0703"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="69.5" y="299.5654">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="80.5" y="299.5654">successful operation</text>
+        <!--
 @startuml
 autonumber
 actor Administrator as A
@@ -22,13 +78,16 @@ deactivate ":Sistem"
 deactivate A
 @enduml
 
-PlantUML version 1.2020.10(Sun May 17 10:35:57 WEST 2020)
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
 (GPL source distribution)
-Java Runtime: OpenJDK Runtime Environment
-JVM: OpenJDK 64-Bit Server VM
-Java Version: 14+36
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
 Operating System: Windows 10
-Default Encoding: Cp1252
-Language: en
-Country: US
---></g></svg>
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

@@ -64,32 +64,36 @@
 
 |Concept (A)               |Association            |Concept (B)               |
 |-------------------------:|:---------------------:|:-------------------------|
-|Collaborator              |creates                |Transaction               |
+|Collaborator               |creates                |Transaction               |
 |                          |creates                |Task                      |
 |                          |creates                |Freelancer                |
 |                          |loads                  |HistoricalTransactionFile |
 |                          |acts as                |User                      |
 |Manager                   |defines                |PaymentScheduler          |
 |                          |acts as                |User                      |
+|Payment                   |refers to              |Transaction               |
+|                          |uses                   |EmailAPI                  |
+|                          |uses                   |MonetaryUnitConversionAPI |
+|                          |made on behalf of      |Organization              |
 |Transaction               |relative to            |Task                      |
 |                          |executed with          |TaskExecutionDetails      |
 |                          |to                     |Freelancer                |
 |                          |uses                   |PaymentAPI                |
-|                          |made on behalf of      |Organization              |
-|TaskExecutionDetails      |refers to              |Task                      |
+|TaskExecutionDetails      |refer to               |Task                      |
 |HistoricalTransactionFile |records                |Transaction               |
-|PaymentScheduler          |schedules payments     |Payment                   |
-|Organization              |has                    |Collaborator              |
+|PaymentScheduler          |schedules              |Payment                   |
+|Organization              |has                    |Collaborator               |
 |                          |has                    |Manager                   |
 |                          |uses                   |PaymentScheduler          |
 |                          |publishes              |Task                      |
-|                          |has                    |Transaction               |
+|                          |has unpaid             |Transaction               |
 |Task                      |executed by            |Freelancer                |
 |App                       |supports               |MonetaryUnitConversionAPI |
 |                          |has                    |Organization              |
 |                          |supports               |EmailAPI                  |
 |                          |supports               |PaymentAPI                |
 |                          |supports               |PasswordAPI               |
+|                          |registers              |Payment                   |
 |                          |has                    |Administrator             |
 |                          |has                    |EmailScheduler            |
 |                          |has                    |Freelancer                |

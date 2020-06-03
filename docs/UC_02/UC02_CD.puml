@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class AppPOE{
+  +static getInstance()
+  +getSessaoAtual()
+}
+
+class SessaoUtilizador{
+  +getEmailUtilizador()
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+  +Task(id, description, durationInHours, costPerHourOfJuniorEur, category)
+}
+
+
+class Organization {
+        - String name
+  +Organizacao(name, manager, colaborador)
+  +TaskList getTaskList()
+}
+
+class TaskList {
+  +novaTask(id, description, durationInHours, costPerHourOfJuniorEur, category)
+  +registaTask(task)
+  -addTask(task)
+  -validatesTask(task)
+}
+
+class App{
+  +RegistOrganization getRegistOrganization()
+}
+
+class RegistOrganization {
+  +getOrganizacaoByEmailUser(email)
+}
+
+class CreatingTaskController {
+  +novaTask(id, description, durationInHours, costPerHourOfJuniorEur, category)
+  +registTask()
+}
+
+class CreatingTaskUI {
+
+}
+
+CreatingTaskUI ..> CreatingTaskController
+CreatingTaskController ..> App
+CreatingTaskController ..> Task
+CreatingTaskController ..> Organization
+CreatingTaskController ..> AppPOE
+CreatingTaskController ..> SessaoUtilizador
+App "1" --> "1" RegistOrganization : has
+RegistOrganization "1" --> "*" Organization : has
+Organization "1" --> "1" TaskList : has
+TaskList "1" --> "*" Task : has
+
+
+@enduml

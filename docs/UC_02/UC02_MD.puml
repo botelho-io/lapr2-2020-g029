@@ -1,0 +1,42 @@
+@startuml
+
+hide methods
+left to right direction
+
+class App {
+
+}
+
+class Organization {
+        - String name
+}
+
+
+class Collaborator {
+        - String nome
+        - String email
+        - String password
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class User {
+        - String nome
+        - String email
+        - String password
+}
+
+Collaborator                "0,1" -- "1"      User                      : acts as >
+Collaborator                  "1" -- "*"      Task                      : creates >
+Organization                 "1" -- "1,..."  Collaborator               : has >
+Organization                 "1" -- "*"      Task                      : publishes >
+App                          "1" -- "*"      Organization              : has >
+
+
+@enduml

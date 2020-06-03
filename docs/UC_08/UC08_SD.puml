@@ -5,6 +5,7 @@ actor Administrator as A
 participant ":Adding\nOrganizacaoUI" as UI
 participant ":AddingOrganizacao\nController" as CTRL
 participant ":APP" as APP
+participant "ro:Regist\nOrganization" as ORGS
 participant "Organization" as _ORG
 participant "org:Organization" as ORG
 participant "manag:Manager" as MAN
@@ -24,25 +25,29 @@ activate UI
 UI -> CTRL : newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
 activate CTRL
 
-CTRL -> APP: org = newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+CTRL -> APP: ro = getRegistoOrganizacoes()
 activate APP
+deactivate APP
 
-APP -> _ORG: manag=newManager( nameM, emailM, passwordM)
+CTRL -> ORGS: org = newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+activate ORGS
+
+ORGS -> _ORG: manag=newManager( nameM, emailM, passwordM)
 activate _ORG
 _ORG --> MAN ** : create( nameM, emailM, passwordM)
 deactivate _ORG
 
-APP -> _ORG: colab=newCollaborator( nameC, emailC, passwordC)
+ORGS -> _ORG: colab=newCollaborator( nameC, emailC, passwordC)
 activate _ORG
 _ORG --> COLAB ** : create( nameC, emailC, passwordC)
 deactivate _ORG
 
-APP --> ORG ** : create(name,manag,colab)
+ORGS --> ORG ** : create(name,manag,colab)
 deactivate APP
 
-CTRL -> APP : validatesOrganization(org)
-activate APP
-deactivate APP
+CTRL -> ORGS : validatesOrganization(org)
+activate ORGS
+deactivate ORGS
 
 deactivate CTRL
 UI --> A : The sistem validates and presents the data, asking to comfirm.
@@ -53,40 +58,40 @@ activate UI
 
 UI -> CTRL: addOrganization()
 activate CTRL
-CTRL -> APP: addOrganization(org)
-activate APP
+CTRL -> ORGS: addOrganization(org)
+activate ORGS
 
-APP -> APP: validaOrganizao(org)
-APP -> MAN: nameM = getName()
+ORGS -> ORGS: validaOrganizao(org)
+ORGS -> MAN: nameM = getName()
 activate MAN
 deactivate MAN
-APP -> MAN: emailM = getEmail()
+ORGS -> MAN: emailM = getEmail()
 activate MAN
 deactivate MAN
-APP -> MAN: passwordM = getPassword()
+ORGS -> MAN: passwordM = getPassword()
 activate MAN
 deactivate MAN
-APP -> AUT: addManager(nameM,emailM,passwordM)
+ORGS -> AUT: addManager(nameM,emailM,passwordM)
 activate AUT
 deactivate AUT
 
-APP -> COLAB: nameC = getName()
+ORGS -> COLAB: nameC = getName()
 activate COLAB
 deactivate COLAB
-APP -> COLAB: emailC = getEmail()
+ORGS -> COLAB: emailC = getEmail()
 activate COLAB
 deactivate COLAB
-APP -> COLAB: passwordC = getPassword()
+ORGS -> COLAB: passwordC = getPassword()
 activate COLAB
 deactivate COLAB
-APP -> AUT: addCollaborator(nameC,emailC,passwordC)
+ORGS -> AUT: addCollaborator(nameC,emailC,passwordC)
 activate AUT
 deactivate AUT
 
-APP -> APP: addOrganization(org)
+ORGS -> ORGS: addOrganization(org)
 
 
-deactivate APP
+deactivate ORGS
 deactivate CTRL
 UI --> A : successful operation
 deactivate UI
