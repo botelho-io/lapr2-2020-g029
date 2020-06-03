@@ -5,7 +5,13 @@
  */
 package lapr.model;
 
+import autorizacao.AutorizacaoFacade;
 import lapr.list.ListTransaction;
+import lapr.list.TaskList;
+
+import javax.swing.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents ans organazation seeking freelancers to complete tasks.
@@ -42,6 +48,21 @@ public class Organization {
      * A collaborator of the organization.
      */
     private Collaborator collaborator;
+
+    /**
+     * An AutorizacaoFacade instance.
+     */
+    private final AutorizacaoFacade m_oAutorizacao = null;
+
+    /**
+     * Setting task list.
+     */
+    private Set<Task> m_lstTarefas = new HashSet<Task>();
+
+    /**
+     * Task list of the organization.
+     */
+    private TaskList tc;
 
     /**
      * Build an instance of organization receiving the name, manager and collaborator.
@@ -90,7 +111,10 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesCollaborator(Collaborator collaborator) {
-        //TODO: Validate collaborator.
+        //boolean bRet = true;
+
+        //if (this.m_oAutorizacao.existeUtilizador(collaborator.getEmail()))
+          //  bRet = false;
         return true;
     }
 
@@ -110,7 +134,11 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesManager(Manager manager) {
-        //TODO: Validate manager.
+        //boolean bRet = true;
+
+        //if (this.m_oAutorizacaom_oAutorizacao.existeUtilizador(manager.getEmail()))
+          //  bRet = false;
+
         return true;
     }
 
@@ -121,5 +149,61 @@ public class Organization {
      */
     public void setManager(Manager manager) {
         this.manager = manager;
+    }
+
+    /**
+     * Build an instance of organization receiving the name, manager and collaborator.
+     *
+     * @param id of the task.
+     * @param description of the task.
+     * @param m_iDurationInHours duration it took to complete the task.
+     * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
+     * @param category he category this task is in.
+     */
+    public Task newTask(String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) throws Exception
+    {
+        try{
+            return new Task( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
+        }
+        catch (Exception e){
+            throw e;
+        }
+    }
+
+    /**
+     * Validates task of the organization.
+     *
+     * @param task of the organization.
+     * @return true if valid.
+     */
+    public boolean validatesTask(Task task ) {
+        //TODO escrever código da validação da tarefa
+        return true;
+    }
+
+    /**
+     * Register task of the organization.
+     *
+     * @param task of the organization.
+     * @return task list with new task.
+     */
+    public boolean registTask(Task task){
+        if (validatesTask(task)){
+            return addTask(task);
+        }
+        else{
+            return false;
+
+        }
+    }
+
+    /**
+     * Adds task of the organization.
+     *
+     * @param task of the organization.
+     * @return task list with new task.
+     */
+    private boolean addTask(Task task) {
+        return m_lstTarefas.add(task);
     }
 }

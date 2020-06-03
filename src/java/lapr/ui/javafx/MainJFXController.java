@@ -74,21 +74,19 @@ public class MainJFXController {
         if(FXBridge.data instanceof String) {
             String data = (String) FXBridge.data;
             switch (data) {
-                case "UC8":
-                    // Login
+                case "UC8" :
                     openWindow("/fxml/registOrg.fxml", "UC8 Add Organization");
-                    // Was registration successful?
-                    /*if( AddOrganizationController.getInstance().validateOrganization() == false) {
-                        System.exit(0); // Not successful - Exit
-                    }*/
-                    // TODO: open UC8
+                    FXBridge.data = null;
                     return true;
                 case "UC3":
                     openWindow("/fxml/UC03AddFreelancer.fxml", "Add New Freelancer");
                     FXBridge.data = null;
                     return true;
+                case "UC2":
+                    openWindow("/fxml/createTask.fxml", "UC2 Create Task");
+                    FXBridge.data = null;
                 default:
-                    alert("Unknowu UC: " + data);
+                    alert("Unknow UC: " + data);
                     return false;
             }
         } else {

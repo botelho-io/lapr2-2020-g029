@@ -23,6 +23,9 @@ public class App {
      * The autorization facade used by the app.
      */
     private final AutorizacaoFacade m_oAutorizacao;
+    /**
+     * The registration of organization on the app.
+     */
     private RegistOrganization ro;
     private PswGeneratorAPI m_oPswGeneratorAPI;
     /**
@@ -87,6 +90,10 @@ public class App {
      */
     public RegistFreelancer getRegistFreelancer() {
         return this.m_oRegistFreelancer;
+    }
+
+    public Organization getOrganizationByIdUser(String idCO) {
+        return null;
     }
 }
     

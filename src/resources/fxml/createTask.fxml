@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.ResgistOrgController">
+<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateTaskController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.6" minWidth="10.0" prefWidth="449.6" />
@@ -16,78 +16,78 @@
         <RowConstraints maxHeight="114.39999999999998" minHeight="10.0" prefHeight="37.00000000000003" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+        <VBox alignment="CENTER" prefHeight="145.0" prefWidth="450.0" GridPane.columnIndex="1">
             <children>
                 <StackPane prefHeight="34.0" prefWidth="359.0">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Add Organization" textAlignment="CENTER">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Create Task" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
                         </Label>
                     </children>
                 </StackPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the organization information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+                <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the task information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
             </children>
         </VBox>
-        <SplitPane dividerPositions="0.2, 0.40444444444444444, 0.6133333333333333, 0.8088888888888889" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <SplitPane dividerPositions="0.18666666666666668, 0.38666666666666666, 0.5911111111111111, 0.8" orientation="VERTICAL" prefHeight="320.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <items>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldOrganization" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="109.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldNameCollaborator" prefHeight="26.0" prefWidth="354.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="111.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label prefHeight="17.0" prefWidth="112.0" text="Collaborator name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldEmailCollaborator" prefHeight="25.0" prefWidth="344.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="111.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label prefHeight="17.0" prefWidth="105.0" text="Collaborator email" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldNameManager" prefHeight="25.0" prefWidth="344.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="110.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Manager name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
                 <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="448.0">
                     <center>
-                        <TextField fx:id="fieldEmailManager" BorderPane.alignment="CENTER" />
+                        <TextField fx:id="fieldID" BorderPane.alignment="CENTER" />
                     </center>
                     <left>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="108.0" BorderPane.alignment="CENTER">
+                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
                             <children>
-                                <Label text="Manager email" />
+                                <Label text="ID" />
+                            </children>
+                        </HBox>
+                    </left>
+                </BorderPane>
+                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                    <center>
+                        <TextField fx:id="fieldDescription" BorderPane.alignment="CENTER" />
+                    </center>
+                    <left>
+                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label text="Description" />
+                            </children>
+                        </HBox>
+                    </left>
+                </BorderPane>
+                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                    <center>
+                        <TextField fx:id="fieldDuration" BorderPane.alignment="CENTER" />
+                    </center>
+                    <left>
+                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label text="Duration" />
+                            </children>
+                        </HBox>
+                    </left>
+                </BorderPane>
+                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                    <center>
+                        <TextField fx:id="fieldCost" BorderPane.alignment="CENTER" />
+                    </center>
+                    <left>
+                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label text="Cost" />
+                            </children>
+                        </HBox>
+                    </left>
+                </BorderPane>
+                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="5.0" prefWidth="448.0">
+                    <center>
+                        <TextField fx:id="fieldCategory" BorderPane.alignment="CENTER" />
+                    </center>
+                    <left>
+                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label text="Category" />
                             </children>
                         </HBox>
                     </left>
@@ -99,7 +99,7 @@
                 <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" BorderPane.alignment="CENTER" />
             </left>
             <right>
-                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAction" text="Add Organization" BorderPane.alignment="CENTER" />
+                <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateAction" text="Create" BorderPane.alignment="CENTER" />
             </right>
         </BorderPane>
     </children>

@@ -16,29 +16,68 @@ import lapr.utils.Role;
  */
 public class Collaborator extends User {
 
+    /**
+     * The name of the collaborator.
+     */
     private String name;
+    /**
+     * The email of the collaborator.
+     */
     private String email;
+    /**
+     * The password of the collaborator.
+     */
     private String password;
 
+    /**
+     * Build an instance of collaborator receiving the name, email and password.
+     *
+     * @param name of the collaborator.
+     * @param email of the collaborator.
+     * @param password of the collaborator.
+     * @param papeis role of the user.
+     */
     public Collaborator (String name, String email, String password, PapelUtilizador[] papeis){
         super(name, email, password, papeis);
     }
 
+    /**
+     * Build an instance of collaborator receiving the name, email and password.
+     *
+     * @param name of the collaborator.
+     * @param email of the collaborator.
+     * @param password of the collaborator.
+     */
     public Collaborator (String name, String email, String password){
         this(name, email, password, new PapelUtilizador[]{AppPOE.getInstance().getRole(Role.COLLABORATOR)});
     }
 
-    public String getNome()
+    /**
+     * Returns the name of the collaborator.
+     *
+     * @return name of the collaborator.
+     */
+     public String getNome()
     {
         return this.name;
     }
 
-    public String getEmail()
+    /**
+     * Returns the email of the collaborator.
+     *
+     * @return email of the collaborator.
+     */
+     public String getEmail()
     {
         return this.email;
     }
 
-    public String getPassword(){
+    /**
+     * Returns the password of the collaborator.
+     *
+     * @return password of the collaborator.
+     */
+     public String getPassword(){
         return this.password;
     }
 }

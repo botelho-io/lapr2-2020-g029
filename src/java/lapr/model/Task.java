@@ -65,4 +65,32 @@ public class Task {
     public String getDescription() {
         return description;
     }
+
+    /**
+     * Build an instance of organization receiving the name, manager and collaborator.
+     *
+     * @param id of the task.
+     * @param description of the task.
+     * @param m_iDurationInHours duration it took to complete the task.
+     * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
+     * @param category he category this task is in.
+     */
+    public Task (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
+        if ((id == null) || (description == null) || (m_iDurationInHours == 0) || (m_dCostPerHourOfJuniorEur == 0) || (category == null) ||
+                (id.isEmpty())  )
+            throw new IllegalArgumentException("None of the arguments can be null or empty.");
+
+        this.id = id;
+        this.description = description;
+        this.m_iDurationInHours = m_iDurationInHours;
+        this.m_dCostPerHourOfJuniorEur = m_dCostPerHourOfJuniorEur;
+        this.category = category;
+    }
+
+    /**
+     * Build an instance of organization.
+     */
+    public Task(){
+
+    }
 }
