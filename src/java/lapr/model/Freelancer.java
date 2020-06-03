@@ -7,6 +7,8 @@ package lapr.model;
 
 import lapr.utils.Expertise;
 
+import java.util.Objects;
+
 /**
  * Represents a freelancer that intends do profit from completing tasks.
  */
@@ -95,5 +97,21 @@ public class Freelancer {
      */
     public String getId() {
         return m_strId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Freelancer)) return false;
+        Freelancer that = (Freelancer) o;
+        return m_strId.equals(that.m_strId) ||
+                m_strEmail.equals(that.m_strEmail) ||
+                m_strNIF.equals(that.m_strNIF) ||
+                m_strBankAccountIBAN.equals(that.m_strBankAccountIBAN);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_strId, m_strEmail, m_strNIF, m_strBankAccountIBAN);
     }
 }
