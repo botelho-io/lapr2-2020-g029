@@ -14,7 +14,7 @@ participant ":System" as S
 activate C
         C -> S : starts the process of creating a new freelancer
         activate S
-                S --> C: asks for all the relevant information about the freelancer
+                S --> C: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
         deactivate S
         C -> S : inserts the information that was requested
         activate S
