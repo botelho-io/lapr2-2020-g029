@@ -8,6 +8,8 @@ package lapr.model;
 import lapr.controller.AppPOE;
 import lapr.utils.Expertise;
 
+import java.util.Objects;
+
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
  */
@@ -115,5 +117,20 @@ public class Transaction {
      */
     public PaymentDetails getPaymentDetails() {
         return m_oPaymentDetails;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transaction)) return false;
+        Transaction that = (Transaction) o;
+        return m_oFreelancer.equals(that.m_oFreelancer) &&
+                m_oTask.equals(that.m_oTask) &&
+                m_oPaymentDetails.equals(that.m_oPaymentDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_oFreelancer, m_oTask, m_oPaymentDetails);
     }
 }
