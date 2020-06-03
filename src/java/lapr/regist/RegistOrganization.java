@@ -1,7 +1,7 @@
 package lapr.regist;
 
 import autorizacao.AutorizacaoFacade;
-import lapr.model.Colaborator;
+import lapr.model.Collaborator;
 import lapr.model.Manager;
 import lapr.model.Organization;
 
@@ -19,8 +19,8 @@ public class RegistOrganization {
         this.m_lstOrganizacoes = m_lstOrganizacoes;
     }
 
-    public Organization newOrganization(String name, Manager manager, Colaborator colaborator) {
-        return new Organization(name, manager, colaborator);
+    public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
+        return new Organization(name, manager, collaborator);
     }
 
     public boolean add(Organization organization) {

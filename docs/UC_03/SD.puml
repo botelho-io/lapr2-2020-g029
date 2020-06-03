@@ -1,0 +1,53 @@
+@startuml SD
+autonumber
+hide footbox
+
+actor "Collaborator" as col
+participant ":CreateFreelancerUI" as ui
+participant ":CreateFreelancerController" as cnt
+participant ":App" as app
+participant "reg:RegistFreelancer" as reg
+participant "fre:Freelancer" as fre
+participant "exp:\nList<String>"
+
+activate col
+        col -> ui : starts the process of creating a new freelancer
+        activate ui
+                ui -> cnt : exp = getValidExpertise()
+                activate cnt
+                deactivate cnt
+                ui --> col: asks for all the relevant information about the freelancer\n(name, level of expertise, email, NIF, IBAN, address, country)
+        deactivate ui
+        col -> ui : inserts the information that was requested
+        activate ui
+                ui -> cnt : newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
+                activate cnt
+                        cnt -> app : reg = getRegistFreelancer()
+                        activate app
+                        deactivate app
+                        cnt -> reg : fre = newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
+                        activate reg
+                                reg -> reg : id = generateID(name)
+                                reg -> fre ** : create(id, name, expertise, email, \n NIF, IBAN, address, counry)
+                        deactivate reg
+                        cnt -> reg : validate(fre)
+                        activate reg
+                        deactivate reg
+                deactivate cnt
+                ui --> col:  presents the information and requests confirmation
+        deactivate ui
+        col -> ui : confirms
+        activate ui
+                ui -> cnt : addFreelancer()
+                activate cnt
+                        cnt -> reg : addFreelancer(fre)
+                        activate reg
+                                reg -> reg : validate(fre)
+                                reg -> reg : add(fre)
+                        deactivate reg
+                deactivate cnt
+                ui --> col: success
+        deactivate ui
+deactivate col
+
+@enduml

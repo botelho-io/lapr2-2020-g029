@@ -9,11 +9,13 @@ package lapr.controller;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.Collator;
 import java.util.Properties;
 
 import autorizacao.model.PapelUtilizador;
 import lapr.model.Administrator;
 import lapr.model.App;
+import lapr.model.Collaborator;
 import lapr.utils.Constants;
 import autorizacao.AutorizacaoFacade;
 import autorizacao.model.SessaoUtilizador;
@@ -89,7 +91,8 @@ public class AppPOE
 
         Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new PapelUtilizador[]{getRole(Role.ADMINISTRATOR)});
         this.m_oAutorizacao.registaUtilizador(adm);
-
+        Collaborator col = new Collaborator("Colab Joe", "colab@dei.pt", "password", new PapelUtilizador[]{getRole(Role.COLLABORATOR)});
+        this.m_oAutorizacao.registaUtilizador(col);
     }
 
     // Inspirado em https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

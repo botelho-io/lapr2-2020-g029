@@ -1,0 +1,29 @@
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+' The collaborator starts the process of creating a new freelancer.
+' The system asks for all the relevant information of the freelancer.
+' The collaborator inserts the information that was requested.
+' The system presents the information and requests confirmation.
+' The collaborator confirms.
+' The systems validates the data introduced, stores it and informs the user of the success of the operation.
+
+activate C
+        C -> S : starts the process of creating a new freelancer
+        activate S
+                S --> C: asks for all the relevant information about the freelancer\n(name, level of expertise (senior/junior), email, NIF, IBAN, address, country)
+        deactivate S
+        C -> S : inserts the information that was requested
+        activate S
+                S --> C:  presents the information and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S --> C: success
+        deactivate S
+deactivate C
+
+@enduml

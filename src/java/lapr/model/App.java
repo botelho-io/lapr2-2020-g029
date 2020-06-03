@@ -9,6 +9,7 @@ package lapr.model;
 import autorizacao.AutorizacaoFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
+import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
@@ -36,11 +37,16 @@ public class App {
      * The API used to send emails.
      */
     private EmailAPI m_oEmailAPI;
+    /**
+     * The register of all the freelancers available in the system.
+     */
+    private RegistFreelancer m_oRegistFreelancer;
 
     public App()
     {
         this.m_oAutorizacao = new AutorizacaoFacade();
         this.ro = new RegistOrganization();
+        this.m_oRegistFreelancer = new RegistFreelancer();
     }
     /**
      * @return The autorization facade used by the app.
@@ -49,7 +55,6 @@ public class App {
     {
         return this.m_oAutorizacao;
     }
-
 
     public RegistOrganization getRegistOrganization() {
         return ro;
@@ -75,6 +80,13 @@ public class App {
      */
     public EmailAPI getEmailAPI() {
         return this.m_oEmailAPI;
+    }
+
+    /**
+     * @return The register of all the freelancers available in the system.
+     */
+    public RegistFreelancer getRegistFreelancer() {
+        return this.m_oRegistFreelancer;
     }
 }
     

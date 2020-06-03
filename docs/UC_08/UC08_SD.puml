@@ -15,7 +15,7 @@ participant ":Autorizacao\nFacade" as AUT
 activate A
 A -> UI : adding new organization
 activate UI
-UI --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one colaborator of the same organization  (i.e. nameC, emailC, passwordC)
+UI --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one collaborator of the same organization  (i.e. nameC, emailC, passwordC)
 deactivate UI
 
 A -> UI : enter the requested data
@@ -32,7 +32,7 @@ activate _ORG
 _ORG --> MAN ** : create( nameM, emailM, passwordM)
 deactivate _ORG
 
-APP -> _ORG: colab=newColaborator( nameC, emailC, passwordC)
+APP -> _ORG: colab=newCollaborator( nameC, emailC, passwordC)
 activate _ORG
 _ORG --> COLAB ** : create( nameC, emailC, passwordC)
 deactivate _ORG
@@ -79,7 +79,7 @@ deactivate COLAB
 APP -> COLAB: passwordC = getPassword()
 activate COLAB
 deactivate COLAB
-APP -> AUT: addColaborator(nameC,emailC,passwordC)
+APP -> AUT: addCollaborator(nameC,emailC,passwordC)
 activate AUT
 deactivate AUT
 

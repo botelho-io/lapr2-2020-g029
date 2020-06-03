@@ -1,0 +1,24 @@
+@startuml MD
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class App {
+
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+App                          "1" -- "*"      Freelancer                : has >
+
+@enduml
