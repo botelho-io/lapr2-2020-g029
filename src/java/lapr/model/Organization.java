@@ -7,6 +7,9 @@ package lapr.model;
 
 import lapr.list.ListTransaction;
 
+import java.time.LocalTime;
+import java.util.ArrayList;
+
 /**
  * Represents ans organazation seeking freelancers to complete tasks.
  */
@@ -24,6 +27,22 @@ public class Organization {
      * A list transactions.
      */
     ListTransaction m_oListTransaction;
+
+    /**
+     * Creates a new payment scheduler.
+     * @param DayMonth The day of the month the payment are to be made.
+     * @param TimeOfDay The time of day to make the payments.
+     * @return The new payment scheduler
+     */
+    public PaymentScheduler newPaymentScheduler(int DayMonth, LocalTime TimeOfDay) {
+        if(m_oScheduler == null)
+            return new PaymentScheduler(DayMonth, TimeOfDay, this);
+        else {
+            m_oScheduler.resetTime(DayMonth, TimeOfDay);
+            return m_oScheduler;
+        }
+    }
+
     /**
      * @return The list transactions the organization made.
      */
@@ -44,6 +63,7 @@ public class Organization {
                 throw new IllegalArgumentException("Manager is invalid");
             this.setManager(manager);
             this.setCollaborator(collaborator);
+            this.m_oListTransaction = new ListTransaction();
     }
 
     public static Collaborator newCollaborator (String name, String email, String password) {

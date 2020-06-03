@@ -8,6 +8,8 @@ package lapr.model;
 import lapr.controller.AppPOE;
 import lapr.utils.Expertise;
 
+import java.util.Objects;
+
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
  */
@@ -26,6 +28,40 @@ public class Transaction {
     private PaymentDetails m_oPaymentDetails;
 
     /**
+     * Constructor.
+     * @param freelancer The freelancer that completed the task.
+     * @param task Tha task completed by the freelancer.
+     * @param paymentDetails The payment details of the transaction.
+     */
+    public Transaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails) {
+        this.m_oFreelancer = freelancer;
+        this.m_oTask = task;
+        this.m_oPaymentDetails = paymentDetails;
+    }
+
+    /**
+     * Creates new payment details.
+     * @param isPayed True if the payment was made, false otherwise.
+     * @return The payment details.
+     */
+    public static PaymentDetails newPaymentDetails(boolean isPayed) {
+        return new PaymentDetails(isPayed);
+    }
+
+    /**
+     * Creates a new task.
+     * @param id The id of the task.
+     * @param description A short description of the task.
+     * @param durationInHours The duration it took to complete the task.
+     * @param costPerHourOfJuniorEur The cost per hour a junior freelancer receives for this task.
+     * @param category The category this task is in.
+     * @return The task created.
+     */
+    public static Task newTask(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category) {
+        return new Task(id, description, durationInHours, costPerHourOfJuniorEur, category);
+    }
+
+    /**
      * Makes a payment on the transaction.
      * @return True if the payment was made, false otherwise.
      */
@@ -34,7 +70,7 @@ public class Transaction {
             getFreelancer().getId(),    // The ID of the freelancer to pay to.
             getFreelancer().getIBAN(),  // The IBAN of the freelancer to pay.
             getTask().getId(),          // The ID of the task this payment is for.
-            getTask().getDescription(), // The description of the task this payment is for.
+            getTask().getM_strDescription(), // The description of the task this payment is for.
             getAmount(),                // The amount in euros to pay to the freelancer.
             getNativeAmount()           // The amount in the freelancer's native currency to pay.
         );
@@ -81,5 +117,20 @@ public class Transaction {
      */
     public PaymentDetails getPaymentDetails() {
         return m_oPaymentDetails;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transaction)) return false;
+        Transaction that = (Transaction) o;
+        return m_oFreelancer.equals(that.m_oFreelancer) &&
+                m_oTask.equals(that.m_oTask) &&
+                m_oPaymentDetails.equals(that.m_oPaymentDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_oFreelancer, m_oTask, m_oPaymentDetails);
     }
 }

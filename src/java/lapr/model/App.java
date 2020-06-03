@@ -9,6 +9,10 @@ package lapr.model;
 import autorizacao.AutorizacaoFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
+import lapr.api.stubs.StubEmailAPI;
+import lapr.api.stubs.StubMonetaryConversionAPI;
+import lapr.api.stubs.StubPaymentAPI;
+import lapr.api.stubs.StubPswGeneratorAPI;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
@@ -24,6 +28,9 @@ public class App {
      */
     private final AutorizacaoFacade m_oAutorizacao;
     private RegistOrganization ro;
+    /**
+     * The API used to generate passwords.
+     */
     private PswGeneratorAPI m_oPswGeneratorAPI;
     /**
      * The API used to process bank payments.
@@ -87,6 +94,20 @@ public class App {
      */
     public RegistFreelancer getRegistFreelancer() {
         return this.m_oRegistFreelancer;
+    }
+
+    /**
+     * Sets the APIs supported by the application.
+     * @param email The API used to send emails.
+     * @param conversion The API used to convert between monetary units.
+     * @param payment The API used to process bank payments.
+     * @param pswGenerator The API used to generate passwords.
+     */
+    public void setAPIs(EmailAPI email, MonetaryConversionAPI conversion, PaymentAPI payment, PswGeneratorAPI pswGenerator) {
+        this.m_oMonetaryConversionAPI = conversion;
+        this.m_oEmailAPI = email;
+        this.m_oPaymentAPI = payment;
+        this.m_oPswGeneratorAPI = pswGenerator;
     }
 }
     

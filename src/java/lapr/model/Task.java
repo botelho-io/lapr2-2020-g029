@@ -12,11 +12,11 @@ public class Task {
     /**
      * The id of the task.
      */
-    private String id;
+    private String m_strId;
     /**
      * A short description of the task.
      */
-    private String description;
+    private String m_strDescription;
     /**
      * The duration it took to complete the task.
      */
@@ -28,7 +28,23 @@ public class Task {
     /**
      * The category this task is in.
      */
-    private String category;
+    private String m_strCategory;
+
+    /**
+     * Constructor.
+     * @param id The id of the task.
+     * @param description A short description of the task.
+     * @param durationInHours The duration it took to complete the task.
+     * @param costPerHourOfJuniorEur The cost per hour a junior freelancer receives for this task.
+     * @param category The category this task is in.
+     */
+    public Task(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category) {
+        this.m_strId = id;
+        this.m_strDescription = description;
+        this.m_iDurationInHours = durationInHours;
+        this.m_dCostPerHourOfJuniorEur = costPerHourOfJuniorEur;
+        this.m_strCategory = category;
+    }
     /**
      * @return The duration in hours it took to complete the task.
      */
@@ -57,12 +73,12 @@ public class Task {
      * @return The id of the task.
      */
     public String getId() {
-        return id;
+        return m_strId;
     }
     /**
      * @return A short description of the task.
      */
-    public String getDescription() {
-        return description;
+    public String getM_strDescription() {
+        return m_strDescription;
     }
 }
