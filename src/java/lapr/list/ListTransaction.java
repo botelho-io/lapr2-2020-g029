@@ -1,16 +1,15 @@
 package lapr.list;
 
-import javafx.util.Pair;
 import lapr.api.EmailAPI;
 import lapr.api.MonetaryConversionAPI;
 import lapr.controller.AppPOE;
+import lapr.model.Freelancer;
+import lapr.model.PaymentDetails;
+import lapr.model.Task;
 import lapr.model.Transaction;
 import lapr.utils.Triplet;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Represents a list of transactions.
@@ -22,11 +21,29 @@ public class ListTransaction implements Iterable<Transaction> {
     List<Transaction> m_lstTransaction;
 
     /**
+     * Constructor.
+     */
+    public ListTransaction() {
+        m_lstTransaction = new ArrayList<>();
+    }
+
+    /**
      * @return An iterator for the list.
      */
     @Override
     public Iterator<Transaction> iterator() {
         return m_lstTransaction.iterator();
+    }
+
+    /**
+     * Creates a new transaction.
+     * @param freelancer The freelancer that completed the task.
+     * @param task Tha task completed by the freelancer.
+     * @param paymentDetails The payment details of the transaction.
+     * @return The new task.
+     */
+    public static Transaction newTransaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails) {
+        return new Transaction(freelancer, task, paymentDetails);
     }
 
     /**
@@ -70,7 +87,7 @@ public class ListTransaction implements Iterable<Transaction> {
             val.setFirst(val.getFirst() + currAmount);
             val.setSecond(
                     val.getSecond() + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
-                        trs.getTask().getDescription(),
+                        trs.getTask().getM_strDescription(),
                         trs.getTask().getId(),
                         currAmount,
                         mcapi.convert(val.getThird(), currAmount)));
