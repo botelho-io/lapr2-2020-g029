@@ -30,7 +30,7 @@ class PaymentDetails {
 }
 
 class TaskExecutionDetails {
-        - Date endDate
+        - LocalDate endDate
         - Integer delayInDays
         - String DescriptionQualityOfWork
 }
