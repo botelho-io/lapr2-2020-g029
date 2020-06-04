@@ -1,0 +1,23 @@
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+'The collaborator starts the process of creating a new transaction.
+'The system requests all the data relevant to the transaction (freelancer, task, execution details).
+'The collaborator inserts all the data.
+'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be payed to the freelancer.
+
+activate C
+        C -> S : starts the process of creating a new transaction
+        activate S
+                S --> C: requests all the data relevant to the transaction \n(freelancer, task, execution details)
+        deactivate S
+        C -> S :inserts all the data
+        activate S
+                S --> C: validates and stores the data and informs the collaborator \nof the success of the operation and the amount that will be payed to the freelancer
+        deactivate S
+deactivate C
+
+@enduml
