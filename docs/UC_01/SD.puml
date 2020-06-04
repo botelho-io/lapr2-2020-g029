@@ -1,52 +1,106 @@
 @startuml SD
 autonumber
-hide footbox
 
 actor "Collaborator" as col
-participant ":CreateFreelancerUI" as ui
-participant ":CreateFreelancerController" as cnt
+participant ":CreateTransactionUI" as ui
+participant ":CreateTransactionController" as cnt
 participant ":App" as app
-participant "reg:RegistFreelancer" as reg
-participant "fre:Freelancer" as fre
-participant "exp:\nList<String>"
+participant "ro\n:RegistOrganization" as ro
+participant "org\n:Organization" as org
+participant "lt\n:ListTask" as lt
+participant "unexecuted\n:List<Task>" as ut
+participant "rf\n:RegistFreelancer" as rf
+participant "fres\n:List<Freelancer>" as fres
+participant "ltr\n:ListTransaction" as ltr
+participant "tr\n:Transaction" as tr
+
+
+
+'The collaborator starts the process of creating a new transaction.
+'The system shows all the unexecuted tasks published by their organization.
+'The collaborator chooses one.
+'The system shows all the freelancers in the system.
+'The collaborator chooses one freelancer. (the one that executed the task)
+'The system requests all the relevant information about the execution of the task (end date, days of delay, description of the quality of the work)
+'The collaborator introduces all the data.
+'The systems shows the data introduced and requests confirmation.
+'The collaborator confirms.
+'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be payed to the freelancer.
+
+
 
 activate col
-        col -> ui : starts the process of creating a new freelancer
+        col -> ui :  starts the process of creating a new transaction
         activate ui
-                ui -> cnt : exp = getValidExpertise()
+                ui -> cnt : ut = getTasks()
                 activate cnt
-                deactivate cnt
-                ui --> col: asks for all the relevant information about the freelancer\n(name, level of expertise, email, NIF, IBAN, address, country)
-        deactivate ui
-        col -> ui : inserts the information that was requested
-        activate ui
-                ui -> cnt : newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
-                activate cnt
-                        cnt -> app : reg = getRegistFreelancer()
+                        cnt -> app : ro = getRegistOrganization()
                         activate app
                         deactivate app
-                        cnt -> reg : fre = newFreelancer(name, expertise, \n email, NIF, IBAN, address, counry)
-                        activate reg
-                                reg -> reg : id = generateID(name)
-                                reg -> fre ** : create(id, name, expertise, email, \n NIF, IBAN, address, counry)
-                        deactivate reg
-                        cnt -> reg : validate(fre)
-                        activate reg
-                        deactivate reg
+                        cnt -> ro : org = getOrganizationByEmailUser(email)
+                        activate ro
+                        deactivate ro
+                        cnt -> org : lt = getListTask()
+                        activate org
+                        deactivate org
+                        cnt -> lt : ut = getUnexecutedTaks()
+                        activate lt
+                                ref over lt : UC1_Detail_getUnexecutedTaks
+                        deactivate lt
                 deactivate cnt
-                ui --> col:  presents the information and requests confirmation
+                ui --> col :  shows all the unexecuted tasks published by their organization
         deactivate ui
-        col -> ui : confirms
+        col -> ui :  chooses one
         activate ui
-                ui -> cnt : addFreelancer()
+                ui -> cnt : fres = getFreelancers()
                 activate cnt
-                        cnt -> reg : addFreelancer(fre)
-                        activate reg
-                                reg -> reg : validate(fre)
-                                reg -> reg : add(fre)
-                        deactivate reg
+                        cnt -> app : rf = getRegistFreelancer()
+                        activate app
+                        deactivate app
+                        cnt -> rf : fres = getFreelancers()
+                        activate rf
+                        deactivate rf
                 deactivate cnt
-                ui --> col: success
+                ui --> col :  shows all the freelancers in the system
+        deactivate ui
+        col -> ui : chooses one freelancer. (the one that executed the task)
+        activate ui
+                ui --> col :  requests all the relevant information about the execution of the task \n(end date, days of delay, description of the quality of the work)
+        deactivate ui
+        col -> ui :  introduces all the data
+        activate ui
+                ui -> cnt : newTransaction(task, freelancer, endDate, daysDelay, description)
+                activate cnt
+                        cnt -> org : ltr = getListTransaction()
+                        activate org
+                        deactivate org
+                        cnt -> ltr : tr = newTransaction(task, freelancer, endDate, daysDelay, description)
+                        activate ltr
+                                ltr -> tr ** : create(task, freelancer, endDate, daysDelay, description)
+                        deactivate ltr
+                        cnt -> ltr : validate(tr)
+                        activate ltr
+                        deactivate ltr
+                deactivate cnt
+                ui --> col : shows the data introduced and requests confirmation
+        deactivate ui
+         col -> ui :  confirms
+        activate ui
+                ui -> cnt : addTransaction()
+                activate cnt
+                        cnt -> ltr : addTransaction(tr)
+                        activate ltr
+                                ltr -> ltr : validate(tr)
+                                ltr -> ltr : add(tr)
+                        deactivate ltr
+                deactivate cnt
+                 ui -> cnt : eur = getAmount()
+                activate cnt
+                        cnt -> tr : eur = getAmount()
+                        activate tr
+                        deactivate tr
+                deactivate cnt
+                ui --> col :  success and shows amount that will be payed to the freelancer
         deactivate ui
 deactivate col
 

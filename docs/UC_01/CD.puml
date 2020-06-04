@@ -2,26 +2,74 @@
 skinparam classAttributeIconSize 0
 top to bottom direction
 
-class CreateFreelancerUI {
+class CreateTransactionUI {
 
 }
 
-class CreateFreelancerController {
-        + newFreelancer()
-        + addFreelancer()
-        + getValidExpertise()
+class CreateTransactionController {
+        + getTasks()
+        + getFreelancers()
+        + newTransaction(Task task, Freelancer freelancer, \nLocalDate endDate, Integer daysDelay, String description)
+        + addTransaction()
+        + getAmount()
 }
 
 class App {
+        + getRegistOrganization()
         + getRegistFreelancer()
 }
 
+class RegistOrganization {
+        + getOrganizationByEmailUser(String email)
+}
+
 class RegistFreelancer {
-        + newFreelancer(String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
-        + validate(Freelancer fre)
-        + addFreelancer(Freelancer fre)
-        + add(Freelancer fre)
-        - generateID(String name)
+        + getFreelancers()
+}
+
+class Organization {
+        - String nome
+        - String NIF
+
+        + getListTask()
+        + getListTransaction()
+}
+
+class ListTask {
+        + getUnexecutedTaks()
+        + getTask(ID)
+}
+
+class ListTransaction {
+        + newTransaction(Task task, Freelancer freelancer, \nLocalDate endDate, Integer daysDelay, String description)
+        + validate(Transaction tr)
+        + addTransaction(Transaction tr)
+        - add(Transaction tr)
+}
+
+class Transaction {
+        + create(Task task, Freelancer freelancer, \nLocalDate endDate, Integer daysDelay, String description)
+        + getAmount()
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+
+        + getExecutor()
+}
+
+class PaymentDetails {
+        Boolean isPaid
+}
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
 }
 
 class Freelancer {
@@ -33,14 +81,31 @@ class Freelancer {
         - String bankAccountIBAN
         - String address
         - String country
-
-        + newFreelancer(String id, String name, String expertise, String email, \n String NIF, String IBAN, String address, String counry)
 }
 
-CreateFreelancerUI               ..>          CreateFreelancerController
-CreateFreelancerController       ..>          App
-CreateFreelancerController       ..>          RegistFreelancer
+CreateTransactionUI              ..>          CreateTransactionController
+
+CreateTransactionController      ..>          App
+CreateTransactionController      ..>          RegistOrganization
+CreateTransactionController      ..>          Organization
+CreateTransactionController      ..>          ListTask
+CreateTransactionController      ..>          RegistFreelancer
+CreateTransactionController      ..>          ListTransaction
+CreateTransactionController      ..>          Transaction
+
+Transaction                  "1" --> "1"      Task                      : knows >
+Transaction                  "*" --> "1"      Freelancer                : knows >
+Transaction                  "*" --> "1"      Organization              : knows >
+Transaction                  "1" --> "1"      TaskExecutionDetails      : has >
+Organization                 "1" --> "1"      ListTask                  : has >
+ListTask                     "1" --> "*"      Task                      : has >
+Organization                 "1" --> "1"      ListTransaction           : has >
+ListTransaction              "1" --> "*"      Transaction               : has >
+Task                         "*" --> "0, 1"   Freelancer                : knows >
+App                          "1" --> "1"      RegistOrganization        : has >
+RegistOrganization           "1" --> "*"      Organization              : has >
 App                          "1" --> "1"      RegistFreelancer          : has >
 RegistFreelancer             "1" --> "*"      Freelancer                : has >
+Transaction                  "1" --> "1"      PaymentDetails            : has >
 
 @enduml
