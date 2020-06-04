@@ -7,7 +7,7 @@ package lapr.model;
 
 import autorizacao.AutorizacaoFacade;
 import lapr.list.ListTransaction;
-import lapr.list.TaskList;
+import lapr.list.ListTask;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -91,7 +91,14 @@ public class Organization {
     /**
      * Task list of the organization.
      */
-    private TaskList tc;
+    private ListTask m_oListTask;
+
+    /**
+     * @return Task list of the organization.
+     */
+    public ListTask getListTask() {
+        return m_oListTask;
+    }
 
     /**
      * Build an instance of organization receiving the name, manager and collaborator.
@@ -111,6 +118,7 @@ public class Organization {
             this.setManager(manager);
             this.setCollaborator(collaborator);
             this.m_oListTransaction = new ListTransaction();
+            this.m_oListTask = new ListTask();
     }
     /**
      * Build a new instance of collaborator receiving the name, email and password.
@@ -179,55 +187,5 @@ public class Organization {
      */
     public void setManager(Manager manager) {
         this.m_oManager = manager;
-    }
-
-    /**
-     * Build an instance of organization receiving the name, manager and collaborator.
-     *
-     * @param id of the task.
-     * @param description of the task.
-     * @param m_iDurationInHours duration it took to complete the task.
-     * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
-     * @param category he category this task is in.
-     */
-    public Task newTask(String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
-        return new Task(id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
-    }
-
-    /**
-     * Validates task of the organization.
-     *
-     * @param task of the organization.
-     * @return true if valid.
-     */
-    public boolean validatesTask(Task task ) {
-        //TODO escrever código da validação da tarefa
-        return true;
-    }
-
-    /**
-     * Register task of the organization.
-     *
-     * @param task of the organization.
-     * @return task list with new task.
-     */
-    public boolean registTask(Task task){
-        if (validatesTask(task)){
-            return addTask(task);
-        }
-        else{
-            return false;
-
-        }
-    }
-
-    /**
-     * Adds task of the organization.
-     *
-     * @param task of the organization.
-     * @return task list with new task.
-     */
-    private boolean addTask(Task task) {
-        return m_lstTarefas.add(task);
     }
 }
