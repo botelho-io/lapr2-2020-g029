@@ -4,6 +4,37 @@ skinparam classAttributeIconSize 0
 hide methods
 left to right direction
 
+class App {
+
+}
+
+class Organization {
+        - String nome
+        - String NIF
+}
+
+class Transaction {
+
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class PaymentDetails {
+        Boolean isPaid
+}
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
 class Collaborator {
         - String nome
         - String email
@@ -16,16 +47,6 @@ class Manager {
         - String password
 }
 
-class Transaction {
-
-}
-
-class TaskExecutionDetails {
-        - Date endDate
-        - Integer delayInDays
-        - String DescriptionQualityOfWork
-}
-
 class HistoricalTransactionFile {
 
 }
@@ -33,22 +54,6 @@ class HistoricalTransactionFile {
 class PaymentScheduler {
         - Integer dayMonth
         - LocalTime timeOfDay
-}
-
-class Organization {
-        - String nome
-}
-
-class Task {
-        - String id
-        - String description
-        - Integer durationInHours
-        - Double costPerHourOfJuniorEur
-        - String category
-}
-
-class App {
-
 }
 
 class Administrator {
@@ -78,35 +83,31 @@ class Freelancer {
         - String country
 }
 
-Collaborator                  "1" -- "*"      Transaction               : creates >
-Collaborator                  "1" -- "*"      Task                      : creates >
-Collaborator                  "1" -- "*"      Freelancer                : creates >
-Collaborator                  "1" -- "*"      HistoricalTransactionFile : loads >
-Collaborator                "0,1" -- "1"      User                      : acts as >
+Collaborator                 "1" -- "*"      Transaction               : creates >
+Collaborator                 "1" -- "*"      Task                      : creates >
+Collaborator                 "1" -- "*"      Freelancer                : creates >
+Collaborator                 "1" -- "*"      HistoricalTransactionFile : loads >
+Collaborator               "0,1" -- "1"      User                      : acts as >
 Manager                      "1" -- "0,1"    PaymentScheduler          : defines >
 Manager                    "0,1" -- "1"      User                      : acts as >
-Payment                      "1" -- "1"      Transaction               : refers to >
-Payment                      "*" -- "1"      EmailAPI                  : uses >
-Payment                      "*" -- "1"      MonetaryUnitConversionAPI : uses >
-Payment                      "*" -- "1"     Organization              : made on behalf of >
 Transaction                  "1" -- "1"      Task                      : relative to >
-Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
 Transaction                  "*" -- "1"      Freelancer                : to >
 Transaction                  "*" -- "1"      PaymentAPI                : uses >
-TaskExecutionDetails         "1" -- "1"      Task                      : refer to >
+Transaction                  "*" -- "1"      Organization              : made on behalf of >
+Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
+TaskExecutionDetails         "1" -- "1"      Task                      : refers to >
 HistoricalTransactionFile    "1" -- "*"      Transaction               : records >
-PaymentScheduler             "1" -- "*"      Payment                   : schedules >
-Organization                 "1" -- "1,..."  Collaborator               : has >
+PaymentScheduler             "1" -- "*"      Transaction               : schedules payments>
+Organization                 "1" -- "1"      Collaborator              : has >
 Organization                 "1" -- "1"      Manager                   : has >
 Organization                 "1" -- "1"      PaymentScheduler          : uses >
 Organization                 "1" -- "*"      Task                      : publishes >
-Organization                 "1" -- "*"      Transaction               : has unpaid >
+Organization                 "1" -- "*"      Transaction               : has >
 Task                         "*" -- "0, 1"   Freelancer                : executed by >
 App                          "1" -- "1"      MonetaryUnitConversionAPI : supports >
 App                          "1" -- "*"      Organization              : has >
 App                          "1" -- "1"      EmailAPI                  : supports >
 App                          "1" -- "1"      PaymentAPI                : supports >
-App                          "1" -- "*"      Payment                   : registers >
 App                          "1" -- "*"      Administrator             : has >
 App                          "1" -- "*"      Freelancer                : has >
 App                          "1" -- "1"      EmailScheduler            : has >
@@ -115,5 +116,6 @@ Administrator                "1" -- "*"      Organization              : adds >
 Administrator              "0,1" -- "1"      User                      : acts as >
 EmailAPI                     "1" -- "*"      User                      : e-mails >
 EmailAPI                     "1" -- "*"      Freelancer                : e-mails >
+(Organization, Transaction)      ..          PaymentDetails
 
 @enduml
