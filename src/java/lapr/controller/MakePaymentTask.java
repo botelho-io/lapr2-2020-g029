@@ -45,7 +45,7 @@ public class MakePaymentTask extends TimerTask {
         for(Transaction trs : lt) {
             if(!trs.getPaymentDetails().isPayed())
                 if(trs.makeBankTransfer())
-                    completeTransactions.add(trs);
+                    completeTransactions.addTransaction(trs);
         }
         completeTransactions.emailAboutPayment();
     }

@@ -2,6 +2,8 @@ package lapr.controller;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import lapr.list.ListTask;
 import lapr.model.App;
 import lapr.model.Organization;
 import lapr.model.Task;
@@ -55,8 +57,8 @@ public class CreatingTaskController {
                 this.sessao = this.autorizacao.getSessaoAtual();
                 this.emailUser = this.sessao.getEmailUtilizador();
                 this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);
-                this.task = this.organization.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
-                return this.organization.validatesTask(this.task);
+                this.task = ListTask.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
+                return this.organization.getListTask().validatesTask(this.task);
             } catch(RuntimeException ex){
                 Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
                 this.task = null;
@@ -69,7 +71,7 @@ public class CreatingTaskController {
      * @return registed on the organization.
      */
         public boolean registTask() {
-            return this.organization.registTask(this.task);
+            return this.organization.getListTask().registTask(this.task);
         }
 
     /**

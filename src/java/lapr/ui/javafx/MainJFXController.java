@@ -73,18 +73,20 @@ public class MainJFXController {
     private boolean enterUC() {
         if(FXBridge.data instanceof String) {
             String data = (String) FXBridge.data;
+            FXBridge.data = null;
             switch (data) {
                 case "UC8" :
                     openWindow("/fxml/registOrg.fxml", "UC8 Add Organization");
-                    FXBridge.data = null;
                     return true;
                 case "UC3":
                     openWindow("/fxml/AddFreelancer.fxml", "Add New Freelancer");
-                    FXBridge.data = null;
                     return true;
                 case "UC2":
                     openWindow("/fxml/createTask.fxml", "UC2 Create Task");
-                    FXBridge.data = null;
+                    return true;
+                case "UC1":
+                    openWindow("/fxml/newTransaction.fxml", "UC1 Add New Transaction");
+                    return true;
                 default:
                     alert("Unknow UC: " + data);
                     return false;

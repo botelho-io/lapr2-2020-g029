@@ -98,6 +98,12 @@ public class Freelancer {
     public String getId() {
         return m_strId;
     }
+    /**
+     * @return The name of this freelancer.
+     */
+    public String getName() {
+        return m_strName;
+    }
 
     @Override
     public boolean equals(Object o) {

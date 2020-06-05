@@ -3,7 +3,9 @@ package lapr.regist;
 import lapr.model.Freelancer;
 import lapr.utils.Expertise;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -113,5 +115,9 @@ public class RegistFreelancer {
         if(validate(fre))
             return m_setFreelancer.add(fre);
         return false;
+    }
+
+    public List<Freelancer> getFreelancers() {
+        return new ArrayList<>(this.m_setFreelancer);
     }
 }
