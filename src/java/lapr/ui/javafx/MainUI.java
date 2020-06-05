@@ -73,7 +73,7 @@ public class MainUI {
             FXBridge.data = null;
             switch (data) {
                 case "UC8" :
-                    openWindow("/fxml/registOrg.fxml", "UC8 Add Organization");
+                    openWindow("/fxml/createOrganization.fxml", "UC8 Add Organization");
                     return true;
                 case "UC3":
                     openWindow("/fxml/AddFreelancer.fxml", "Add New Freelancer");

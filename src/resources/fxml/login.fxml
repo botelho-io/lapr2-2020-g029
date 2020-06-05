@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.LoginUI">
+<GridPane alignment="CENTER" maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="383.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.LoginUI">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="292.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="68.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="361.0" minWidth="10.0" prefWidth="292.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="209.5999942779541" minHeight="5.400006198883062" prefHeight="63.40000381469727" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="292.6" minHeight="10.0" prefHeight="182.6" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="114.39999999999998" minHeight="10.0" prefHeight="37.00000000000003" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="292.6" minHeight="10.0" prefHeight="182.6" valignment="CENTER" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <left>
             <StackPane prefHeight="214.0" prefWidth="71.0" BorderPane.alignment="CENTER">
                <children>
@@ -50,19 +47,24 @@
                </children>
             </VBox>
          </bottom>
-      </BorderPane>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-         <children>
-            <StackPane prefHeight="34.0" prefWidth="359.0">
+         <top>
+            <VBox alignment="CENTER" prefHeight="38.0" prefWidth="362.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="32.0" prefWidth="60.0" text="Login" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Label>
+                  <StackPane prefHeight="34.0" prefWidth="359.0">
+                     <children>
+                        <Label prefHeight="32.0" prefWidth="60.0" text="Login" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
                </children>
-            </StackPane>
-         </children>
-      </VBox>
+            </VBox>
+         </top>
+      </BorderPane>
    </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </GridPane>
