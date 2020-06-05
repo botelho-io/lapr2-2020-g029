@@ -43,16 +43,14 @@ public class CreateTaskUI {
             String Cost = validateString(fieldCost.getText(), "Cost");
             String Category = validateString(fieldCategory.getText(), "Category");
             final boolean succsess = controller.newTask( ID, Description, Integer.parseInt(Duration), Double.parseDouble(Cost), Category);
-            if(succsess) {
+            if(!succsess) MainUI.alert("Task with wrong data!!!");
+            final boolean succsess2 = controller.registTask();
+            if(succsess2) {
                 ((Stage) fieldID.getScene().getWindow()).close();
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR, "Task with wrong data!!!");
-                a.show();
-            }
+            } else MainUI.alert("Task with wrong data!!!");
         } catch (Exception e) {
-            e.printStackTrace();
+            MainUI.alert("An error occurred:\n" + e.getMessage());
         }
-
     }
 
     @FXML
