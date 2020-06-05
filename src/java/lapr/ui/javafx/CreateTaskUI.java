@@ -4,14 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import lapr.controller.AddOrganizationController;
-import lapr.controller.CreatingTaskController;
+import lapr.controller.CreateTaskController;
+import lapr.controller.CreateTransactionController;
 
-public class CreateTaskController {
+public class CreateTaskUI {
 
-    private static CreatingTaskController getInstace;
+    private static CreateTaskController controller;
+
     @FXML
     public TextField fieldID;
     @FXML
@@ -28,6 +30,11 @@ public class CreateTaskController {
     public Button btnCreate;
 
     @FXML
+    public void initialize() {
+        controller = new CreateTaskController();
+    }
+
+    @FXML
     public void btnCreateAction(ActionEvent actionEvent) {
         try {
             String ID = validateString(fieldID.getText(), "ID");
@@ -35,7 +42,7 @@ public class CreateTaskController {
             String Duration = validateString(fieldDuration.getText(), "Duration");
             String Cost = validateString(fieldCost.getText(), "Cost");
             String Category = validateString(fieldCategory.getText(), "Category");
-            final boolean succsess = CreateTaskController.getInstace.newTask( ID, Description, Integer.parseInt(Duration), Double.parseDouble(Cost), Category);
+            final boolean succsess = controller.newTask( ID, Description, Integer.parseInt(Duration), Double.parseDouble(Cost), Category);
             if(succsess) {
                 ((Stage) fieldID.getScene().getWindow()).close();
             } else {

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AddTransactionController {
+public class CreateTransactionUI {
     @FXML
     public Button btnUC3;
     @FXML
@@ -103,13 +103,13 @@ public class AddTransactionController {
             boolean ad = controller.addTransaction();
             if (!ad) throw new IllegalStateException("An error occurred while adding the transaction to the register.\nPlease, try again.");
         } catch (IllegalArgumentException | IllegalStateException ex) {
-            MainJFXController.alert(ex.getMessage());
+            MainUI.alert(ex.getMessage());
             initialize();
             return;
         }
         // All went ok.
         final String msg = String.format("The freelancer (%s) %s will be payed %f€.\nYou may quit or keep adding transactions.", fre.getId(), fre.getName(), controller.getAmount());
-        MainJFXController.alert(Alert.AlertType.INFORMATION, msg);
+        MainUI.alert(Alert.AlertType.INFORMATION, msg);
         initialize();
     }
 
@@ -118,7 +118,7 @@ public class AddTransactionController {
         try {
             root = FXMLLoader.load(getClass().getResource(fxml_s));
         } catch (IOException e) {
-            MainJFXController.alert("Error on fxml file: " + fxml_s + "\nError:\n" + e.getMessage());
+            MainUI.alert("Error on fxml file: " + fxml_s + "\nError:\n" + e.getMessage());
             System.out.println(e.getMessage());
             System.exit(1);
             e.printStackTrace();

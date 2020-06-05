@@ -8,7 +8,7 @@ package lapr.ui;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import lapr.ui.javafx.MainJFXController;
+import lapr.ui.javafx.MainUI;
 
 public class Main extends Application {
 
@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        MainJFXController ctrl = new MainJFXController();
+        MainUI ctrl = new MainUI();
         ctrl.start();
     }
 }

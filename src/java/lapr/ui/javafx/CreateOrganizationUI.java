@@ -6,10 +6,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import lapr.controller.AddOrganizationController;
+import lapr.controller.CreateOrganizationController;
+import lapr.controller.CreateTaskController;
 
 
-public class ResgistOrgController {
+public class CreateOrganizationUI {
 
     @FXML
     public TextField fieldOrganization;
@@ -26,16 +27,21 @@ public class ResgistOrgController {
     @FXML
     public Button btnCancel;
 
+    CreateOrganizationController controller;
+    @FXML
+    public void initialize() {
+        controller = new CreateOrganizationController();
+    }
 
     @FXML
     public void btnAddAction (ActionEvent actionEvent) {
         try {
-        final String name = validateString(fieldOrganization.getText(), "name");
-        final String nameC = validateString(fieldNameCollaborator.getText(), "nameC");
-        final String mailC = validateString(fieldEmailCollaborator.getText() , "mailC" );
-        final String nameM = validateString(fieldNameManager.getText(), "nameM" );
-        final String mailM = validateString(fieldEmailManager.getText() , "mailM");
-        final boolean succsess = AddOrganizationController.getInstace.newOrganization(name, nameC,mailC,nameM,mailM);
+            final String name = validateString(fieldOrganization.getText(), "name");
+            final String nameC = validateString(fieldNameCollaborator.getText(), "nameC");
+            final String mailC = validateString(fieldEmailCollaborator.getText() , "mailC" );
+            final String nameM = validateString(fieldNameManager.getText(), "nameM" );
+            final String mailM = validateString(fieldEmailManager.getText() , "mailM");
+            final boolean succsess = controller.newOrganization(name, nameC,mailC,nameM,mailM);
         if(succsess) {
             ((Stage) fieldOrganization.getScene().getWindow()).close();
         } else {
