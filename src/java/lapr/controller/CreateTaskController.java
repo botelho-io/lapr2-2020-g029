@@ -8,7 +8,7 @@ import lapr.model.App;
 import lapr.model.Organization;
 import lapr.model.Task;
 import autorizacao.model.SessaoUtilizador;
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
 import lapr.ui.console.utils.Utils;
 
 public class CreateTaskController {
@@ -35,7 +35,7 @@ public class CreateTaskController {
      /**
      * An AutorizacaoFacade instance.
       */
-     private AutorizacaoFacade autorizacao;
+     private AuthFacade autorizacao;
 
      public CreateTaskController() {
         this.plataforma = AppPOE.getInstance().getApp();

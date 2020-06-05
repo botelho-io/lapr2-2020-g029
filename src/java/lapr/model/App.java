@@ -6,13 +6,9 @@
 
 package lapr.model;
 
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
-import lapr.api.stubs.StubEmailAPI;
-import lapr.api.stubs.StubMonetaryConversionAPI;
-import lapr.api.stubs.StubPaymentAPI;
-import lapr.api.stubs.StubPswGeneratorAPI;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
@@ -26,7 +22,7 @@ public class App {
     /**
      * The autorization facade used by the app.
      */
-    private final AutorizacaoFacade m_oAutorizacao;
+    private final AuthFacade m_oAutorizacao;
     /**
      * The registration of organization on the app.
      */
@@ -54,14 +50,14 @@ public class App {
 
     public App()
     {
-        this.m_oAutorizacao = new AutorizacaoFacade();
+        this.m_oAutorizacao = new AuthFacade();
         this.ro = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
     }
     /**
      * @return The autorization facade used by the app.
      */
-    public AutorizacaoFacade getAutorizacaoFacade()
+    public AuthFacade getAutorizacaoFacade()
     {
         return this.m_oAutorizacao;
     }

@@ -14,15 +14,13 @@ import java.util.Set;
  *
  * @author paulomaio
  */
-public class RegistoPapeisUtilizador
-{
+public class RegistUserRoles {
+
     private Set<UserRole> m_lstPapeis = new HashSet<UserRole>();
-    
     public UserRole novoPapelUtilizador(Role Papel)
     {
         return new UserRole(Papel);
     }
-    
     public UserRole novoPapelUtilizador(Role papel, String strDescricao)
     {
         return new UserRole(papel,strDescricao);

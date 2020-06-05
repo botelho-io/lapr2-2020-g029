@@ -14,11 +14,11 @@ import java.util.Set;
  *
  * @author paulomaio
  */
-public class RegistoUtilizadores
+public class RegistUsers
 {
     private Set<User> m_lstUtilizadores = new HashSet<>();
     
-    public boolean addUtilizador(User utlz)
+    public boolean addUser(User utlz)
     {
 
         if (utlz != null)
@@ -43,7 +43,7 @@ public class RegistoUtilizadores
         return null;
     }
     
-    public boolean hasUtilizador(String email)
+    public boolean hasUser(String email)
     {
         User utlz = procuraUtilizador(email);
         if (utlz != null)
@@ -51,7 +51,7 @@ public class RegistoUtilizadores
         return false;
     }
     
-    public boolean hasUtilizador(User utlz)
+    public boolean hasUser(User utlz)
     {
         return this.m_lstUtilizadores.contains(utlz);
     }

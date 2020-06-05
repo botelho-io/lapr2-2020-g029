@@ -69,13 +69,15 @@ public class CreateOrganizationController {
         m_strCollaboratorPassword = m_oPswrd.generatePassword(m_strEmailC);
         Collaborator c = Organization.newCollaborator(nameC, m_strEmailC, m_strCollaboratorPassword);
         if(!Organization.validatesCollaborator(c))
-            return false;
+            throw new IllegalArgumentException("Collaborator already registered");
         Manager m = Organization.newManager(nameM, m_strEmailM, m_strManagerPassword);
         if(!Organization.validatesManager(m))
-            return false;
+            throw new IllegalArgumentException("Manager already registered");
         m_oOrg = m_oRegist.newOrganization(name, m, c);
         return m_oRegist.validateOrganization(m_oOrg);
     }
+
+
 
     // TODO: Extract to config file?
     private static final String CollaboratorEmail = "Hello new collaborator!\nHere's your password: [%s].\n\nHave a great day!";
@@ -83,7 +85,7 @@ public class CreateOrganizationController {
 
     /**
      * Adds the organization to the regist.
-     * @return True if all the organization was added, false otherwise.
+     * @return True if all the organization was added and the emails with the passwords , false otherwise.
      */
     public boolean registOrganizacation() {
         if(m_oRegist.add(m_oOrg)) {

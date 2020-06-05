@@ -5,7 +5,8 @@
  */
 package lapr.model;
 
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
+import lapr.controller.AppPOE;
 import lapr.list.ListTransaction;
 import lapr.list.ListTask;
 
@@ -81,7 +82,7 @@ public class Organization {
     /**
      * An AutorizacaoFacade instance.
      */
-    private final AutorizacaoFacade m_oAutorizacao = null;
+    private final AuthFacade m_oAutorizacao = null;
 
     /**
      * Setting task list.
@@ -112,11 +113,13 @@ public class Organization {
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
             this.m_strName = name;
             if(!validatesCollaborator(collaborator))
-                throw new IllegalArgumentException("Collaborator is invalid");
+                throw new IllegalStateException("Organization - Collaborator is not valid because it already exists.");
             if(!validatesManager(manager))
-                throw new IllegalArgumentException("Manager is invalid");
-            this.setManager(manager);
-            this.setCollaborator(collaborator);
+                throw new IllegalStateException("Organization - Manager is not valid because it already exists.");
+            if(!this.setManager(manager))
+                throw new IllegalStateException("Organization - Manager cannot be added into the system because it already exists.");
+            if(!this.setCollaborator(collaborator))
+                throw new IllegalStateException("Organization - Collaborator cannot be added into the system because it already exists.");
             this.m_oListTransaction = new ListTransaction();
             this.m_oListTask = new ListTask();
     }
@@ -149,11 +152,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesCollaborator(Collaborator collaborator) {
-        //boolean bRet = true;
-
-        //if (this.m_oAutorizacao.existeUtilizador(collaborator.getEmail()))
-          //  bRet = false;
-        return true;
+        return !AppPOE.getInstance().getAuthFacade().hasUser(collaborator);
     }
 
     /**
@@ -161,8 +160,10 @@ public class Organization {
      *
      * @param collaborator of the organization.
      */
-    private void setCollaborator(Collaborator collaborator) {
+    private boolean setCollaborator(Collaborator collaborator) {
+        if(m_oCollaborator != null || !validatesCollaborator(collaborator)) return false;
         this.m_oCollaborator = collaborator;
+        return true;
     }
 
     /**
@@ -172,12 +173,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesManager(Manager manager) {
-        //boolean bRet = true;
-
-        //if (this.m_oAutorizacaom_oAutorizacao.existeUtilizador(manager.getEmail()))
-          //  bRet = false;
-
-        return true;
+        return !AppPOE.getInstance().getAuthFacade().hasUser(manager);
     }
 
     /**
@@ -185,7 +181,18 @@ public class Organization {
      *
      * @param manager of the organization.
      */
-    public void setManager(Manager manager) {
+    public boolean setManager(Manager manager) {
+        if(m_oManager != null || !validatesManager(manager)) return false;
         this.m_oManager = manager;
+        return true;
+    }
+
+    /**
+     * Checks if an organization is able to be added into the system
+     * @return True if the organization can be added into the system; False otherwise.
+     */
+    public boolean validateOrganization() {
+        return  validatesCollaborator(getCollaborator()) &&
+                validatesManager(getManager());
     }
 }

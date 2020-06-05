@@ -20,9 +20,8 @@ import lapr.api.stubs.StubPswGeneratorAPI;
 import lapr.list.ListTask;
 import lapr.list.ListTransaction;
 import lapr.model.*;
-import lapr.regist.RegistFreelancer;
 import lapr.utils.Constants;
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
 import autorizacao.model.SessaoUtilizador;
 import lapr.utils.Expertise;
 import lapr.utils.Role;
@@ -35,14 +34,13 @@ public class AppPOE
 {
 
     private final App m_oApp;
-    private final AutorizacaoFacade m_oAutorizacao;
+    private final AuthFacade m_oAutorizacao;
 
     private AppPOE()
     {
         Properties props = getProperties();
         this.m_oApp = new App();
         this.m_oAutorizacao = this.m_oApp.getAutorizacaoFacade();
-        bootstrap();
     }
 
     public App getApp()
@@ -50,6 +48,9 @@ public class AppPOE
         return this.m_oApp;
     }
 
+    public AuthFacade getAuthFacade() {
+        return m_oAutorizacao;
+    }
 
     public SessaoUtilizador getSessaoAtual()
     {
@@ -99,11 +100,9 @@ public class AppPOE
         Freelancer fre = m_oApp.getRegistFreelancer().newFreelancer("Free Joe", Expertise.SENIOR, "fre@dei.pt", "28739247893", "8937432", "Address", "Germany");
         m_oApp.getRegistFreelancer().addFreelancer(fre);
         Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new UserRole[]{getRole(Role.ADMINISTRATOR)});
-        this.m_oAutorizacao.registaUtilizador(adm);
+        this.m_oAutorizacao.registUser(adm);
         Manager man = new Manager("Man Joe", "man@dei.pt", "password", new UserRole[]{getRole(Role.MANAGER)});
-        this.m_oAutorizacao.registaUtilizador(man);
         Collaborator col = new Collaborator("Colab Joe", "colab@dei.pt", "password", new UserRole[]{getRole(Role.COLLABORATOR)});
-        this.m_oAutorizacao.registaUtilizador(col);
         Organization org = m_oApp.getRegistOrganization().newOrganization("DEFAULT", man, col);
         m_oApp.getRegistOrganization().add(org);
         Task tsk1 = ListTask.newTask("TSK1", "A Test task", 10, 10, "TEST");
@@ -131,9 +130,9 @@ public class AppPOE
      * Restarts the instance of AppPOE, useful for testing.
      */
     public static void restartInstance() {
-        synchronized(AppPOE.class)
-        {
+        synchronized(AppPOE.class) {
             singleton = new AppPOE();
+            singleton.bootstrap();
         }
     }
 
