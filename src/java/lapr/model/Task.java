@@ -102,7 +102,7 @@ public class Task {
     /**
      * @return A short description of the task.
      */
-    public String getM_strDescription() {
+    public String getDescription() {
         return m_strDescription;
     }
 

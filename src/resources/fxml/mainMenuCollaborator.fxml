@@ -5,26 +5,6 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuCollaborator">
-    <center>
-        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                     <children>
-                        <Button fx:id="btnUC2CTask" layoutX="242.0" layoutY="128.0" mnemonicParsing="false" onAction="#createTask" text="UC 2 - Create Task" />
-                     </children>
-                  </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                     <children>
-                            <Button fx:id="btnUC3NFre" layoutX="219.0" layoutY="14.0" mnemonicParsing="false" onAction="#addFre" prefHeight="21.0" prefWidth="160.0" text="UC 3 - Add New Freelancer" />
-                     </children>
-                  </AnchorPane>
-              </items>
-            </SplitPane>
-            </children>
-        </StackPane>
-    </center>
    <top>
         <Label prefHeight="58.0" prefWidth="193.0" text="Collaborator Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
             <font>
@@ -32,4 +12,15 @@
             </font>
         </Label>
    </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addTransaction" text="UC1 - Add New Transaction" />
+            <Separator layoutX="10.0" layoutY="207.0" prefHeight="42.0" prefWidth="600.0" />
+            <Button fx:id="btnUC2CTask" mnemonicParsing="false" onAction="#createTask" text="UC 2 - Add New Task" />
+            <Separator prefHeight="42.0" prefWidth="600.0" />
+                <Button fx:id="btnUC3NFre" mnemonicParsing="false" onAction="#addFre" prefHeight="21.0" prefWidth="160.0" text="UC 3 - Add New Freelancer" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

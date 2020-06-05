@@ -6,7 +6,7 @@
 package lapr.controller;
 
 import java.util.List;
-import autorizacao.model.PapelUtilizador;
+import autorizacao.model.UserRole;
 
 /**
  *
@@ -26,7 +26,7 @@ public class AutenticacaoController
         return this.m_oApp.doLogin(strId, strPwd);
     }
     
-    public List<PapelUtilizador> getPapeisUtilizador()
+    public List<UserRole> getPapeisUtilizador()
     {
         if (this.m_oApp.getSessaoAtual().isLoggedIn())
         {

@@ -83,7 +83,11 @@ public class ListTransaction implements Iterable<Transaction> {
      * @return True if the transaction is added, false otherwise.
      */
     private boolean add(Transaction trs) {
-        return m_setTransaction.add(trs);
+        if(m_setTransaction.add(trs)) {
+            trs.getTask().setExecutor(trs.getFreelancer());
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -109,7 +113,7 @@ public class ListTransaction implements Iterable<Transaction> {
             val.setFirst(val.getFirst() + currAmount);
             val.setSecond(
                     val.getSecond() + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
-                        trs.getTask().getM_strDescription(),
+                        trs.getTask().getDescription(),
                         trs.getTask().getId(),
                         currAmount,
                         mcapi.convert(val.getThird(), currAmount)));

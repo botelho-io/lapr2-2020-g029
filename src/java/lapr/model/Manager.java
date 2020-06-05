@@ -5,9 +5,7 @@
  */
 package lapr.model;
 
-import autorizacao.model.PapelUtilizador;
-import lapr.controller.AppPOE;
-import lapr.utils.Constants;
+import autorizacao.model.UserRole;
 import lapr.utils.Role;
 
 import static lapr.controller.AppPOE.*;
@@ -17,22 +15,6 @@ import static lapr.controller.AppPOE.*;
  * @author Universidade
  */
 public class Manager extends User {
-
-    /**
-     * The name of the manager.
-     */
-    private String name;
-
-    /**
-     * The email of the manager.
-     */
-    private String email;
-
-    /**
-     * The passaword of the manager.
-     */
-    private String password;
-
     /**
      * Build an instance of manager receiving the name, email and password.
      *
@@ -41,7 +23,7 @@ public class Manager extends User {
      * @param password of the manager.
      * @param papeis role of the user.
      */
-    public Manager (String name, String email, String password, PapelUtilizador[] papeis){
+    public Manager (String name, String email, String password, UserRole[] papeis){
         super(name, email, password, papeis);
     }
 
@@ -53,35 +35,6 @@ public class Manager extends User {
      * @param password of the manager.
      */
     public Manager (String name, String email, String password) {
-        this(name, email, password, new PapelUtilizador[]{getInstance().getRole(Role.MANAGER)});
-    }
-
-    /**
-     * Returns the name of the manager.
-     *
-     * @return name of the manager.
-     */
-    public String getNome()
-    {
-        return this.name;
-    }
-
-    /**
-     * Returns the email of the manager.
-     *
-     * @return email of the manager.
-     */
-    public String getEmail()
-    {
-        return this.email;
-    }
-
-    /**
-     * Returns the password of the manager.
-     *
-     * @return password of the manager.
-     */
-    public String getPassword(){
-        return this.password;
+        this(name, email, password, new UserRole[]{getInstance().getRole(Role.MANAGER)});
     }
 }

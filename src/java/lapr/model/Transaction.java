@@ -40,6 +40,10 @@ public class Transaction {
      * @param details The details about the execution of the task.
      */
     public Transaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+        if(freelancer == null) throw new IllegalArgumentException("Transaction - Freelancer cannot be null");
+        if(task == null) throw new IllegalArgumentException("Transaction - Task cannot be null");
+        if(paymentDetails == null) throw new IllegalArgumentException("Transaction - Payment Details cannot be null");
+        if(details == null) throw new IllegalArgumentException("Transaction - Task ExecutionDetails cannot be null");
         this.m_oFreelancer = freelancer;
         this.m_oTask = task;
         this.m_oPaymentDetails = paymentDetails;
@@ -74,7 +78,7 @@ public class Transaction {
             getFreelancer().getId(),            // The ID of the freelancer to pay to.
             getFreelancer().getIBAN(),          // The IBAN of the freelancer to pay.
             getTask().getId(),                  // The ID of the task this payment is for.
-            getTask().getM_strDescription(),    // The description of the task this payment is for.
+            getTask().getDescription(),    // The description of the task this payment is for.
             getAmount(),                        // The amount in euros to pay to the freelancer.
             getNativeAmount()                   // The amount in the freelancer's native currency to pay.
         );

@@ -13,6 +13,12 @@ public class MainMenuCollaborator {
     public Button btnUC2CTask;
 
     @FXML
+    public void addTransaction(ActionEvent actionEvent) {
+        FXBridge.data = (Object) "UC1";
+        quit();
+    }
+
+    @FXML
     public void addFre(ActionEvent actionEvent) {
         FXBridge.data = (Object) "UC3";
         quit();
@@ -23,7 +29,6 @@ public class MainMenuCollaborator {
         FXBridge.data = (Object) "UC2";
         quit();
     }
-
 
     private void quit() {
         ((Stage)btnUC3NFre.getScene().getWindow()).close();

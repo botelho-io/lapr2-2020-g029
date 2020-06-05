@@ -5,7 +5,7 @@
  */
 package autorizacao;
 
-import autorizacao.model.PapelUtilizador;
+import autorizacao.model.UserRole;
 import autorizacao.model.RegistoPapeisUtilizador;
 import autorizacao.model.RegistoUtilizadores;
 import autorizacao.model.SessaoUtilizador;
@@ -25,22 +25,14 @@ public class AutorizacaoFacade
     
     public boolean registaPapelUtilizador(Role Papel)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(Papel);
+        UserRole papel = this.m_oPapeis.novoPapelUtilizador(Papel);
         return this.m_oPapeis.addPapel(papel);
     }
     
     public boolean registaPapelUtilizador(Role oPapel, String strDescricao)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(oPapel,strDescricao);
+        UserRole papel = this.m_oPapeis.novoPapelUtilizador(oPapel,strDescricao);
         return this.m_oPapeis.addPapel(papel);
-    }
-
-    public boolean registaUtilizadorComPapel(String strNome, String strEmail, String strPassword, Role enumPapel)
-    {
-        PapelUtilizador papel = this.m_oPapeis.procuraPapel(enumPapel);
-        User utlz = this.m_oUtilizadores.newUser(strNome,strEmail,strPassword);
-        utlz.addPapel(papel);
-        return this.m_oUtilizadores.addUtilizador(utlz);
     }
     
     public boolean registaUtilizador(User utlz)
@@ -78,7 +70,7 @@ public class AutorizacaoFacade
         this.m_oSessao = null;
     }
 
-    public PapelUtilizador getRole(Role role) {
+    public UserRole getRole(Role role) {
         return this.m_oPapeis.procuraPapel(role);
     }
 }
