@@ -73,14 +73,14 @@ public class CreateTransactionUI {
 
     @FXML
     public void startUC3(ActionEvent actionEvent) {
-        openWindow(new Stage(),"/fxml/AddFreelancer.fxml", "Add New Freelancer");
+        MainUI.openUC(MainUI.UC.UC3, new Stage());
         refreshFreelancer();
     }
 
     //Stage stgUC2;
     @FXML
     public void startUC2(ActionEvent actionEvent) {
-        openWindow(new Stage(),"/fxml/createTask.fxml", "UC2 Create Task");
+        MainUI.openUC(MainUI.UC.UC2, new Stage());
         refreshTasks();
     }
 
@@ -111,22 +111,5 @@ public class CreateTransactionUI {
         final String msg = String.format("The freelancer (%s) %s will be payed %f€.\nYou may quit or keep adding transactions.", fre.getId(), fre.getName(), controller.getAmount());
         MainUI.alert(Alert.AlertType.INFORMATION, msg);
         initialize();
-    }
-
-    private void openWindow(Stage stage, String fxml_s, String title) {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource(fxml_s));
-        } catch (IOException e) {
-            MainUI.alert("Error on fxml file: " + fxml_s + "\nError:\n" + e.getMessage());
-            System.out.println(e.getMessage());
-            System.exit(1);
-            e.printStackTrace();
-            return;
-        }
-        Scene scene = new Scene(root);
-        stage.setTitle(title);
-        stage.setScene(scene);
-        stage.showAndWait();
     }
 }
