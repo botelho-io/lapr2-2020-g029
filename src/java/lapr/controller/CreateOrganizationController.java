@@ -42,6 +42,9 @@ public class CreateOrganizationController {
      */
     private String m_strEmailC;
 
+    /**
+     * Constructor.
+     */
     public CreateOrganizationController() {
         AppPOE m_oPOE = AppPOE.getInstance();
         App m_oApp = m_oPOE.getApp();
@@ -52,13 +55,12 @@ public class CreateOrganizationController {
 
     /**
      * Build a new instance of organization receiving the name, nameM ,strEmailM, nameC and strEmailC.
-     *
      * @param name the name of the organization.
      * @param nameM the name of the manager.
      * @param strEmailM the email of the manager.
      * @param nameC the name of the collaborator.
      * @param strEmailC the email of the collaborator.
-     *@return true if all parameter are valid.
+     * @return True if all parameter are valid, false otherwise.
      */
     public boolean newOrganization(String name, String nameM, String strEmailM, String nameC, String strEmailC) {
         m_strEmailM = strEmailM;
@@ -79,6 +81,10 @@ public class CreateOrganizationController {
     private static final String CollaboratorEmail = "Hello new collaborator!\nHere's your password: [%s].\n\nHave a great day!";
     private static final String ManagerEmail = "Hello new Manager!\nHere's your password: [%s].\n\nHave a great day!";
 
+    /**
+     * Adds the organization to the regist.
+     * @return True if all the organization was added, false otherwise.
+     */
     public boolean registOrganizacation() {
         if(m_oRegist.add(m_oOrg)) {
             boolean b = true;

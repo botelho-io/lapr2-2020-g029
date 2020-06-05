@@ -42,7 +42,7 @@ public class CreateTransactionUI {
         controller = new CreateTransactionController();
         refreshTasks();
         refreshFreelancer();
-        final SpinnerValueFactory<Integer> vFac = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,Integer.MAX_VALUE, 0);
+        final SpinnerValueFactory<Integer> vFac = new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE,Integer.MAX_VALUE, 0);
         spDays.setValueFactory(vFac);
         taDesc.setText("");
     }
