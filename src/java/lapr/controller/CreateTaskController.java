@@ -11,7 +11,7 @@ import autorizacao.model.SessaoUtilizador;
 import autorizacao.AutorizacaoFacade;
 import lapr.ui.console.utils.Utils;
 
-public class CreatingTaskController {
+public class CreateTaskController {
 
 
         private App plataforma;
@@ -38,7 +38,7 @@ public class CreatingTaskController {
         private AutorizacaoFacade autorizacao;
 
 
-        public CreatingTaskController() {
+        public CreateTaskController() {
             this.plataforma = AppPOE.getInstance().getApp();
         }
 

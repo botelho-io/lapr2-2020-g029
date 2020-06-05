@@ -6,16 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import lapr.controller.AddOrganizationController;
 import lapr.controller.AppPOE;
-import lapr.model.Organization;
-import lapr.utils.Constants;
 import lapr.utils.Role;
 
 import java.io.IOException;
 
-public class MainJFXController {
-    public MainJFXController() {
+public class MainUI {
+    public MainUI() {
 
     }
 

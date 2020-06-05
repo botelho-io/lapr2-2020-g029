@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lapr.controller.AppPOE;
 
-public class LoginController {
+public class LoginUI {
     @FXML
     public TextField fieldEmail;
     @FXML

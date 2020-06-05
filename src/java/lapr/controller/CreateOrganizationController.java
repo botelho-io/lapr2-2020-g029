@@ -5,10 +5,7 @@ import lapr.api.PswGeneratorAPI;
 import lapr.model.*;
 import lapr.regist.RegistOrganization;
 
-public class AddOrganizationController {
-
-    public static AddOrganizationController getInstace;
-
+public class CreateOrganizationController {
     /**
      * Name of the organization.
      */
@@ -45,7 +42,7 @@ public class AddOrganizationController {
      */
     private String m_strEmailC;
 
-    public AddOrganizationController() {
+    public CreateOrganizationController() {
         AppPOE m_oPOE = AppPOE.getInstance();
         App m_oApp = m_oPOE.getApp();
         m_oRegist = m_oApp.getRegistOrganization();
@@ -89,19 +86,5 @@ public class AddOrganizationController {
             b = b & m_oMail.sendEmail(m_strEmailM, String.format(ManagerEmail, m_strManagerPassword));
             return b;
         } else return false;
-    }
-
-
-    private static RegistOrganization singleton = null;
-    public static RegistOrganization getInstance()
-    {
-        if(singleton == null)
-        {
-            synchronized(RegistOrganization.class)
-            {
-                singleton = new RegistOrganization();
-            }
-        }
-        return singleton;
     }
 }

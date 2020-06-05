@@ -33,7 +33,6 @@ public class TaskExecutionDetails {
      */
     public TaskExecutionDetails(LocalDate endDate, int daysDelay, String description) {
         if(endDate == null) throw new IllegalArgumentException("Task Execution - End Date cannot be null");
-        if(daysDelay < 0) throw new IllegalArgumentException("Task Execution - Days of Delay cannot be negative");
         if(description == null || (description = description.trim()).isEmpty()) throw new IllegalArgumentException("Task Execution - Description cannot be empty");
         this.m_oEndDate = endDate;
         this.m_iDaysDelay = daysDelay;
