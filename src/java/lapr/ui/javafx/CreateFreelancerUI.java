@@ -35,6 +35,12 @@ public class CreateFreelancerUI {
     public void initialize() {
         controller = new CreateFreelancerController();
         ddExpertise.setItems(FXCollections.observableArrayList(controller.getValidExpertise()));
+        txtAddress.setText("");
+        txtCountry.setText("");
+        txtEmail.setText("");
+        txtIBAN.setText("");
+        txtName.setText("");
+        txtNIF.setText("");
     }
 
     @FXML
@@ -60,22 +66,15 @@ public class CreateFreelancerUI {
         }
         try {
             if(!controller.newFreelancer(Name, Expertise, Email, NIF, IBAN, Address, Country)) {
-                MainUI.alert("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN!");
+                throw new IllegalStateException("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN/ Email!");
             }else if(!controller.addFreelancer()) {
-                MainUI.alert("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN!");
+                throw new IllegalStateException("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN/ Email!");
             } else {
                 MainUI.alert(Alert.AlertType.INFORMATION, "Success!\nYou may keep adding freelancers or quit.");
-                txtAddress.setText("");
-                txtCountry.setText("");
-                txtEmail.setText("");
-                txtIBAN.setText("");
-                txtName.setText("");
-                txtNIF.setText("");
+                initialize();
             }
-            return;
-        } catch (Exception e) {
+        } catch (IllegalArgumentException | IllegalStateException e) {
             MainUI.alert(e.getMessage());
-            return;
         }
     }
 

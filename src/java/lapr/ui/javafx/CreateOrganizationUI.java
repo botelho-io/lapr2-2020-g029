@@ -42,19 +42,21 @@ public class CreateOrganizationUI {
             final String nameM = validateString(fieldNameManager.getText(), "nameM" );
             final String mailM = validateString(fieldEmailManager.getText() , "mailM");
             final boolean succsess = controller.newOrganization(name, nameC,mailC,nameM,mailM);
-        if(succsess) {
-            ((Stage) fieldOrganization.getScene().getWindow()).close();
-        } else {
-            Alert a = new Alert(Alert.AlertType.ERROR, "Organization with wrong data!!!");
-            a.show();
-        }
+            if(!succsess) throw new IllegalStateException("Organization with wrong data!!!");
+            final boolean succsess2 = controller.registOrganizacation();
+            if(!succsess2) throw new IllegalStateException("Organization with wrong data!!!");
+            quit();
         } catch (Exception e) {
-            e.printStackTrace();
+            MainUI.alert("An error occurred:\n" + e.getMessage());
         }
     }
 
     @FXML
     public void btnCancelAction(ActionEvent actionEvent) {
+    }
+
+    private void quit() {
+        ((Stage) fieldOrganization.getScene().getWindow()).close();
     }
 
     private String validateString(String data, String dataName) {
