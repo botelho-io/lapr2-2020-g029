@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="558px" preserveAspectRatio="none" style="width:1843px;height:558px;" version="1.1" viewBox="0 0 1843 558" width="1843px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1a2hjmeykfspm" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <!--class TaskExecutionDetails-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="81.5078" style="stroke: #A80036; stroke-width: 1.5;" width="171" x="1379" y="167"/>
+        <ellipse cx="1403" cy="183" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M1405.7656,178.875 Q1405.9219,178.6563 1406.1094,178.5469 Q1406.2969,178.4375 1406.5156,178.4375 Q1406.8906,178.4375 1407.125,178.6953 Q1407.3594,178.9531 1407.3594,179.5625 L1407.3594,181.0156 Q1407.3594,181.625 1407.125,181.8906 Q1406.8906,182.1563 1406.5156,182.1563 Q1406.1719,182.1563 1405.9688,181.9531 Q1405.7656,181.7656 1405.6563,181.25 Q1405.6094,180.8906 1405.4219,180.7031 Q1405.0938,180.3281 1404.4844,180.1094 Q1403.875,179.8906 1403.25,179.8906 Q1402.4844,179.8906 1401.8516,180.2188 Q1401.2188,180.5469 1400.7266,181.2969 Q1400.2344,182.0469 1400.2344,183.0781 L1400.2344,184.1719 Q1400.2344,185.4063 1401.125,186.2266 Q1402.0156,187.0469 1403.6094,187.0469 Q1404.5469,187.0469 1405.2031,186.7969 Q1405.5938,186.6406 1406.0156,186.2031 Q1406.2813,185.9375 1406.4297,185.8594 Q1406.5781,185.7813 1406.7813,185.7813 Q1407.1094,185.7813 1407.3672,186.0391 Q1407.625,186.2969 1407.625,186.6406 Q1407.625,186.9844 1407.2813,187.3906 Q1406.7813,187.9688 1405.9844,188.2969 Q1404.9063,188.75 1403.6094,188.75 Q1402.0938,188.75 1400.8906,188.125 Q1399.9063,187.625 1399.2188,186.5547 Q1398.5313,185.4844 1398.5313,184.2031 L1398.5313,183.0469 Q1398.5313,181.7188 1399.1484,180.5703 Q1399.7656,179.4219 1400.8594,178.8047 Q1401.9531,178.1875 1403.1875,178.1875 Q1403.9219,178.1875 1404.5703,178.3516 Q1405.2188,178.5156 1405.7656,178.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="119" x="1419" y="187.9102">TaskExecutionDetails</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1380" x2="1549" y1="199" y2="199"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="69" x="1385" y="214.4189">-Date endDate</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="1385" y="228.2549">-Integer delayInDays</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="159" x="1385" y="242.0908">-String DescriptionQualityOfWork</text>
+        <!--class Organization-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="53.8359" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="184" y="254"/>
+        <ellipse cx="199" cy="270" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M201.7656,265.875 Q201.9219,265.6563 202.1094,265.5469 Q202.2969,265.4375 202.5156,265.4375 Q202.8906,265.4375 203.125,265.6953 Q203.3594,265.9531 203.3594,266.5625 L203.3594,268.0156 Q203.3594,268.625 203.125,268.8906 Q202.8906,269.1563 202.5156,269.1563 Q202.1719,269.1563 201.9688,268.9531 Q201.7656,268.7656 201.6563,268.25 Q201.6094,267.8906 201.4219,267.7031 Q201.0938,267.3281 200.4844,267.1094 Q199.875,266.8906 199.25,266.8906 Q198.4844,266.8906 197.8516,267.2188 Q197.2188,267.5469 196.7266,268.2969 Q196.2344,269.0469 196.2344,270.0781 L196.2344,271.1719 Q196.2344,272.4063 197.125,273.2266 Q198.0156,274.0469 199.6094,274.0469 Q200.5469,274.0469 201.2031,273.7969 Q201.5938,273.6406 202.0156,273.2031 Q202.2813,272.9375 202.4297,272.8594 Q202.5781,272.7813 202.7813,272.7813 Q203.1094,272.7813 203.3672,273.0391 Q203.625,273.2969 203.625,273.6406 Q203.625,273.9844 203.2813,274.3906 Q202.7813,274.9688 201.9844,275.2969 Q200.9063,275.75 199.6094,275.75 Q198.0938,275.75 196.8906,275.125 Q195.9063,274.625 195.2188,273.5547 Q194.5313,272.4844 194.5313,271.2031 L194.5313,270.0469 Q194.5313,268.7188 195.1484,267.5703 Q195.7656,266.4219 196.8594,265.8047 Q197.9531,265.1875 199.1875,265.1875 Q199.9219,265.1875 200.5703,265.3516 Q201.2188,265.5156 201.7656,265.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="213" y="274.9102">Organization</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="185" x2="284" y1="286" y2="286"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="61" x="190" y="301.4189">-String nome</text>
+        <!--class Task-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="109.1797" style="stroke: #A80036; stroke-width: 1.5;" width="169" x="1665" y="93.5"/>
+        <ellipse cx="1731.75" cy="109.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M1734.5156,105.375 Q1734.6719,105.1563 1734.8594,105.0469 Q1735.0469,104.9375 1735.2656,104.9375 Q1735.6406,104.9375 1735.875,105.1953 Q1736.1094,105.4531 1736.1094,106.0625 L1736.1094,107.5156 Q1736.1094,108.125 1735.875,108.3906 Q1735.6406,108.6563 1735.2656,108.6563 Q1734.9219,108.6563 1734.7188,108.4531 Q1734.5156,108.2656 1734.4063,107.75 Q1734.3594,107.3906 1734.1719,107.2031 Q1733.8438,106.8281 1733.2344,106.6094 Q1732.625,106.3906 1732,106.3906 Q1731.2344,106.3906 1730.6016,106.7188 Q1729.9688,107.0469 1729.4766,107.7969 Q1728.9844,108.5469 1728.9844,109.5781 L1728.9844,110.6719 Q1728.9844,111.9063 1729.875,112.7266 Q1730.7656,113.5469 1732.3594,113.5469 Q1733.2969,113.5469 1733.9531,113.2969 Q1734.3438,113.1406 1734.7656,112.7031 Q1735.0313,112.4375 1735.1797,112.3594 Q1735.3281,112.2813 1735.5313,112.2813 Q1735.8594,112.2813 1736.1172,112.5391 Q1736.375,112.7969 1736.375,113.1406 Q1736.375,113.4844 1736.0313,113.8906 Q1735.5313,114.4688 1734.7344,114.7969 Q1733.6563,115.25 1732.3594,115.25 Q1730.8438,115.25 1729.6406,114.625 Q1728.6563,114.125 1727.9688,113.0547 Q1727.2813,111.9844 1727.2813,110.7031 L1727.2813,109.5469 Q1727.2813,108.2188 1727.8984,107.0703 Q1728.5156,105.9219 1729.6094,105.3047 Q1730.7031,104.6875 1731.9375,104.6875 Q1732.6719,104.6875 1733.3203,104.8516 Q1733.9688,105.0156 1734.5156,105.375 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="27" x="1752.25" y="114.4102">Task</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1666" x2="1833" y1="125.5" y2="125.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="43" x="1671" y="140.9189">-String id</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="1671" y="154.7549">-String description</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="1671" y="168.5908">-Integer durationInHours</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="157" x="1671" y="182.4268">-Double costPerHourOfJuniorEur</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="78" x="1671" y="196.2627">-String category</text>
+        <!--class App-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="40" style="stroke: #A80036; stroke-width: 1.5;" width="53" x="6" y="404"/>
+        <ellipse cx="21" cy="420" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M23.7656,415.875 Q23.9219,415.6563 24.1094,415.5469 Q24.2969,415.4375 24.5156,415.4375 Q24.8906,415.4375 25.125,415.6953 Q25.3594,415.9531 25.3594,416.5625 L25.3594,418.0156 Q25.3594,418.625 25.125,418.8906 Q24.8906,419.1563 24.5156,419.1563 Q24.1719,419.1563 23.9688,418.9531 Q23.7656,418.7656 23.6563,418.25 Q23.6094,417.8906 23.4219,417.7031 Q23.0938,417.3281 22.4844,417.1094 Q21.875,416.8906 21.25,416.8906 Q20.4844,416.8906 19.8516,417.2188 Q19.2188,417.5469 18.7266,418.2969 Q18.2344,419.0469 18.2344,420.0781 L18.2344,421.1719 Q18.2344,422.4063 19.125,423.2266 Q20.0156,424.0469 21.6094,424.0469 Q22.5469,424.0469 23.2031,423.7969 Q23.5938,423.6406 24.0156,423.2031 Q24.2813,422.9375 24.4297,422.8594 Q24.5781,422.7813 24.7813,422.7813 Q25.1094,422.7813 25.3672,423.0391 Q25.625,423.2969 25.625,423.6406 Q25.625,423.9844 25.2813,424.3906 Q24.7813,424.9688 23.9844,425.2969 Q22.9063,425.75 21.6094,425.75 Q20.0938,425.75 18.8906,425.125 Q17.9063,424.625 17.2188,423.5547 Q16.5313,422.4844 16.5313,421.2031 L16.5313,420.0469 Q16.5313,418.7188 17.1484,417.5703 Q17.7656,416.4219 18.8594,415.8047 Q19.9531,415.1875 21.1875,415.1875 Q21.9219,415.1875 22.5703,415.3516 Q23.2188,415.5156 23.7656,415.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="21" x="35" y="424.9102">App</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="58" y1="436" y2="436"/>
+        <!--class Manager-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="81.5078" style="stroke: #A80036; stroke-width: 1.5;" width="97" x="381" y="422"/>
+        <ellipse cx="403.65" cy="438" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M406.4156,433.875 Q406.5719,433.6563 406.7594,433.5469 Q406.9469,433.4375 407.1656,433.4375 Q407.5406,433.4375 407.775,433.6953 Q408.0094,433.9531 408.0094,434.5625 L408.0094,436.0156 Q408.0094,436.625 407.775,436.8906 Q407.5406,437.1563 407.1656,437.1563 Q406.8219,437.1563 406.6188,436.9531 Q406.4156,436.7656 406.3063,436.25 Q406.2594,435.8906 406.0719,435.7031 Q405.7438,435.3281 405.1344,435.1094 Q404.525,434.8906 403.9,434.8906 Q403.1344,434.8906 402.5016,435.2188 Q401.8688,435.5469 401.3766,436.2969 Q400.8844,437.0469 400.8844,438.0781 L400.8844,439.1719 Q400.8844,440.4063 401.775,441.2266 Q402.6656,442.0469 404.2594,442.0469 Q405.1969,442.0469 405.8531,441.7969 Q406.2438,441.6406 406.6656,441.2031 Q406.9313,440.9375 407.0797,440.8594 Q407.2281,440.7813 407.4313,440.7813 Q407.7594,440.7813 408.0172,441.0391 Q408.275,441.2969 408.275,441.6406 Q408.275,441.9844 407.9313,442.3906 Q407.4313,442.9688 406.6344,443.2969 Q405.5563,443.75 404.2594,443.75 Q402.7438,443.75 401.5406,443.125 Q400.5563,442.625 399.8688,441.5547 Q399.1813,440.4844 399.1813,439.2031 L399.1813,438.0469 Q399.1813,436.7188 399.7984,435.5703 Q400.4156,434.4219 401.5094,433.8047 Q402.6031,433.1875 403.8375,433.1875 Q404.5719,433.1875 405.2203,433.3516 Q405.8688,433.5156 406.4156,433.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="419.35" y="442.9102">Manager</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="382" x2="477" y1="454" y2="454"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="61" x="387" y="469.4189">-String nome</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="387" y="483.2549">-String email</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="387" y="497.0908">-String password</text>
+        <!--class Transaction-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="40" style="stroke: #A80036; stroke-width: 1.5;" width="97" x="1127" y="276"/>
+        <ellipse cx="1142" cy="292" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M1144.7656,287.875 Q1144.9219,287.6563 1145.1094,287.5469 Q1145.2969,287.4375 1145.5156,287.4375 Q1145.8906,287.4375 1146.125,287.6953 Q1146.3594,287.9531 1146.3594,288.5625 L1146.3594,290.0156 Q1146.3594,290.625 1146.125,290.8906 Q1145.8906,291.1563 1145.5156,291.1563 Q1145.1719,291.1563 1144.9688,290.9531 Q1144.7656,290.7656 1144.6563,290.25 Q1144.6094,289.8906 1144.4219,289.7031 Q1144.0938,289.3281 1143.4844,289.1094 Q1142.875,288.8906 1142.25,288.8906 Q1141.4844,288.8906 1140.8516,289.2188 Q1140.2188,289.5469 1139.7266,290.2969 Q1139.2344,291.0469 1139.2344,292.0781 L1139.2344,293.1719 Q1139.2344,294.4063 1140.125,295.2266 Q1141.0156,296.0469 1142.6094,296.0469 Q1143.5469,296.0469 1144.2031,295.7969 Q1144.5938,295.6406 1145.0156,295.2031 Q1145.2813,294.9375 1145.4297,294.8594 Q1145.5781,294.7813 1145.7813,294.7813 Q1146.1094,294.7813 1146.3672,295.0391 Q1146.625,295.2969 1146.625,295.6406 Q1146.625,295.9844 1146.2813,296.3906 Q1145.7813,296.9688 1144.9844,297.2969 Q1143.9063,297.75 1142.6094,297.75 Q1141.0938,297.75 1139.8906,297.125 Q1138.9063,296.625 1138.2188,295.5547 Q1137.5313,294.4844 1137.5313,293.2031 L1137.5313,292.0469 Q1137.5313,290.7188 1138.1484,289.5703 Q1138.7656,288.4219 1139.8594,287.8047 Q1140.9531,287.1875 1142.1875,287.1875 Q1142.9219,287.1875 1143.5703,287.3516 Q1144.2188,287.5156 1144.7656,287.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="1156" y="296.9102">Transaction</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1128" x2="1223" y1="308" y2="308"/>
+        <!--class PaymentScheduler-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="67.6719" style="stroke: #A80036; stroke-width: 1.5;" width="136" x="655" y="343"/>
+        <ellipse cx="670" cy="359" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M672.7656,354.875 Q672.9219,354.6563 673.1094,354.5469 Q673.2969,354.4375 673.5156,354.4375 Q673.8906,354.4375 674.125,354.6953 Q674.3594,354.9531 674.3594,355.5625 L674.3594,357.0156 Q674.3594,357.625 674.125,357.8906 Q673.8906,358.1563 673.5156,358.1563 Q673.1719,358.1563 672.9688,357.9531 Q672.7656,357.7656 672.6563,357.25 Q672.6094,356.8906 672.4219,356.7031 Q672.0938,356.3281 671.4844,356.1094 Q670.875,355.8906 670.25,355.8906 Q669.4844,355.8906 668.8516,356.2188 Q668.2188,356.5469 667.7266,357.2969 Q667.2344,358.0469 667.2344,359.0781 L667.2344,360.1719 Q667.2344,361.4063 668.125,362.2266 Q669.0156,363.0469 670.6094,363.0469 Q671.5469,363.0469 672.2031,362.7969 Q672.5938,362.6406 673.0156,362.2031 Q673.2813,361.9375 673.4297,361.8594 Q673.5781,361.7813 673.7813,361.7813 Q674.1094,361.7813 674.3672,362.0391 Q674.625,362.2969 674.625,362.6406 Q674.625,362.9844 674.2813,363.3906 Q673.7813,363.9688 672.9844,364.2969 Q671.9063,364.75 670.6094,364.75 Q669.0938,364.75 667.8906,364.125 Q666.9063,363.625 666.2188,362.5547 Q665.5313,361.4844 665.5313,360.2031 L665.5313,359.0469 Q665.5313,357.7188 666.1484,356.5703 Q666.7656,355.4219 667.8594,354.8047 Q668.9531,354.1875 670.1875,354.1875 Q670.9219,354.1875 671.5703,354.3516 Q672.2188,354.5156 672.7656,354.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="104" x="684" y="363.9102">PaymentScheduler</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="656" x2="790" y1="375" y2="375"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="661" y="390.4189">-Integer dayMonth</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="105" x="661" y="404.2549">-LocalTime timeOfDay</text>
+        <!--class PaymentAPI-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="40" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="185.5" y="404"/>
+        <ellipse cx="200.5" cy="420" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M203.2656,415.875 Q203.4219,415.6563 203.6094,415.5469 Q203.7969,415.4375 204.0156,415.4375 Q204.3906,415.4375 204.625,415.6953 Q204.8594,415.9531 204.8594,416.5625 L204.8594,418.0156 Q204.8594,418.625 204.625,418.8906 Q204.3906,419.1563 204.0156,419.1563 Q203.6719,419.1563 203.4688,418.9531 Q203.2656,418.7656 203.1563,418.25 Q203.1094,417.8906 202.9219,417.7031 Q202.5938,417.3281 201.9844,417.1094 Q201.375,416.8906 200.75,416.8906 Q199.9844,416.8906 199.3516,417.2188 Q198.7188,417.5469 198.2266,418.2969 Q197.7344,419.0469 197.7344,420.0781 L197.7344,421.1719 Q197.7344,422.4063 198.625,423.2266 Q199.5156,424.0469 201.1094,424.0469 Q202.0469,424.0469 202.7031,423.7969 Q203.0938,423.6406 203.5156,423.2031 Q203.7813,422.9375 203.9297,422.8594 Q204.0781,422.7813 204.2813,422.7813 Q204.6094,422.7813 204.8672,423.0391 Q205.125,423.2969 205.125,423.6406 Q205.125,423.9844 204.7813,424.3906 Q204.2813,424.9688 203.4844,425.2969 Q202.4063,425.75 201.1094,425.75 Q199.5938,425.75 198.3906,425.125 Q197.4063,424.625 196.7188,423.5547 Q196.0313,422.4844 196.0313,421.2031 L196.0313,420.0469 Q196.0313,418.7188 196.6484,417.5703 Q197.2656,416.4219 198.3594,415.8047 Q199.4531,415.1875 200.6875,415.1875 Q201.4219,415.1875 202.0703,415.3516 Q202.7188,415.5156 203.2656,415.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="214.5" y="424.9102">PaymentAPI</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="186.5" x2="282.5" y1="436" y2="436"/>
+        <!--class Payment-->
+        <rect fill="#FEFECE" filter="url(#f1a2hjmeykfspm)" height="40" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="925" y="319"/>
+        <ellipse cx="940" cy="335" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M942.7656,330.875 Q942.9219,330.6563 943.1094,330.5469 Q943.2969,330.4375 943.5156,330.4375 Q943.8906,330.4375 944.125,330.6953 Q944.3594,330.9531 944.3594,331.5625 L944.3594,333.0156 Q944.3594,333.625 944.125,333.8906 Q943.8906,334.1563 943.5156,334.1563 Q943.1719,334.1563 942.9688,333.9531 Q942.7656,333.7656 942.6563,333.25 Q942.6094,332.8906 942.4219,332.7031 Q942.0938,332.3281 941.4844,332.1094 Q940.875,331.8906 940.25,331.8906 Q939.4844,331.8906 938.8516,332.2188 Q938.2188,332.5469 937.7266,333.2969 Q937.2344,334.0469 937.2344,335.0781 L937.2344,336.1719 Q937.2344,337.4063 938.125,338.2266 Q939.0156,339.0469 940.6094,339.0469 Q941.5469,339.0469 942.2031,338.7969 Q942.5938,338.6406 943.0156,338.2031 Q943.2813,337.9375 943.4297,337.8594 Q943.5781,337.7813 943.7813,337.7813 Q944.1094,337.7813 944.3672,338.0391 Q944.625,338.2969 944.625,338.6406 Q944.625,338.9844 944.2813,339.3906 Q943.7813,339.9688 942.9844,340.2969 Q941.9063,340.75 940.6094,340.75 Q939.0938,340.75 937.8906,340.125 Q936.9063,339.625 936.2188,338.5547 Q935.5313,337.4844 935.5313,336.2031 L935.5313,335.0469 Q935.5313,333.7188 936.1484,332.5703 Q936.7656,331.4219 937.8594,330.8047 Q938.9531,330.1875 940.1875,330.1875 Q940.9219,330.1875 941.5703,330.3516 Q942.2188,330.5156 942.7656,330.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="954" y="339.9102">Payment</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="926" x2="1004" y1="351" y2="351"/>
+        <path d="M59.2371,405.598 C93.8416,380.856 155.627,336.679 195.565,308.123 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="104.5" y="336.4951">has</text>
+        <polygon fill="#000000" points="128.5,329.6758,134.5,332.6758,128.5,335.6758,128.5,329.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="66.9854" y="416.4726">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="181.5011" y="329.3577">*</text>
+        <path d="M59.2371,424 C90.993,424 145.639,424 185.286,424 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="90" y="420.4951">supports</text>
+        <polygon fill="#000000" points="143,413.6758,149,416.6758,143,419.6758,143,413.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="66.9854" y="439.5902">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="170.5436" y="438.6959">1</text>
+        <path d="M49.2538,444.2 C80.2144,481.4062 153.021,557 233.5,557 C233.5,557 233.5,557 724,557 C841.082,557 926.343,413.086 954.2,359.118 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="398" y="553.4951">registers</text>
+        <polygon fill="#000000" points="451,546.6758,457,549.6758,451,552.6758,451,546.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="45.8158" y="465.3211">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="945.4594" y="380.5707">*</text>
+        <path d="M240.626,253.922 C249.487,213.52 271.1,136.978 315,88 C353.365,45.197 371.02,26 428.5,26 C428.5,26 428.5,26 1465.5,26 C1538.8,26 1614.69,60.94 1669.41,93.423 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="931" y="22.4951">publishes</text>
+        <polygon fill="#000000" points="989,15.6758,995,18.6758,989,21.6758,989,15.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="234.2661" y="242.9297">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="1653.312" y="82.5209">*</text>
+        <path d="M250.361,253.797 C278.433,206.475 344.091,114 428.5,114 C428.5,114 428.5,114 1465.5,114 C1532.92,114 1608.74,123.631 1664.92,132.641 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="931" y="110.4951">publishes</text>
+        <polygon fill="#000000" points="989,103.6758,995,106.6758,989,109.6758,989,103.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="246.2195" y="243.211">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="1651.8923" y="145.4656">*</text>
+        <path d="M478.309,448.895 C526.361,434.719 600.847,412.743 654.825,396.818 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="539.5" y="404.4951">defines</text>
+        <polygon fill="#000000" points="583.5,397.6758,589.5,400.6758,583.5,403.6758,583.5,397.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="485.9919" y="461.5554">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="18" x="628.8663" y="413.2169">0,1</text>
+        <path d="M1224.25,302.816 C1296.74,311.331 1437.94,320.689 1550,284 C1601.21,267.233 1651.22,232.83 1688.23,202.823 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="1430.5" y="280.4951">relative to</text>
+        <polygon fill="#000000" points="1488.5,273.6758,1494.5,276.6758,1488.5,279.6758,1488.5,273.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1231.9242" y="318.513">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1673.3362" y="223.9851">1</text>
+        <path d="M1224.21,281.37 C1266.21,268.492 1328.36,249.436 1378.79,233.972 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="1255" y="241.4951">executed with</text>
+        <polygon fill="#000000" points="1338,234.6758,1344,237.6758,1338,240.6758,1338,234.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1231.8783" y="293.9172">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1364.1235" y="250.4228">1</text>
+        <path d="M1550.03,190.079 C1586.35,182.379 1628.68,173.404 1664.9,165.725 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="1581" y="169.4951">refer to</text>
+        <polygon fill="#000000" points="1624,162.6758,1630,165.6758,1624,168.6758,1624,162.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1557.9592" y="202.7281">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1650.0536" y="181.5189">1</text>
+        <path d="M791.173,366.364 C834.3,359.536 888.801,350.907 924.946,345.184 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="822" y="347.4951">schedules</text>
+        <polygon fill="#000000" points="884,340.6758,890,343.6758,884,346.6758,884,340.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="799.0122" y="379.608">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="912.1001" y="361.3267">*</text>
+        <path d="M249.728,308.124 C263.826,333.141 287.285,370.202 315,396 C334.345,414.007 359.338,429.404 380.944,440.88 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="316" y="392.4951">has</text>
+        <polygon fill="#000000" points="322,401.3516,325,407.3516,328,401.3516,322,401.3516" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="245.2935" y="329.3589">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="365.9729" y="452.2776">1</text>
+        <path d="M285.423,297.747 C295.202,300.909 305.402,304.124 315,307 C344.125,315.728 351.256,318.698 381,325 C475.322,344.985 585.878,360.4 654.942,369.088 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="28" x="409" y="321.4951">uses</text>
+        <polygon fill="#000000" points="440,314.6758,446,317.6758,440,320.6758,440,314.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="293.0762" y="314.7584">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="640.1153" y="382.6299">1</text>
+        <path d="M275.714,253.813 C313.467,230.961 372.382,202 428.5,202 C428.5,202 428.5,202 966,202 C1037.27,202 1111.1,248.214 1148.87,275.835 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="685" y="198.4951">has unpaid</text>
+        <polygon fill="#000000" points="751,191.6758,757,194.6758,751,197.6758,751,191.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="277.4354" y="243.2307">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="1135.3131" y="265.1083">*</text>
+        <path d="M924.746,330.091 C915.064,328.156 904.692,326.301 895,325 C668.674,294.628 395.703,284.887 285.365,282.055 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#000000" points="516,281.6758,510,284.6758,516,287.6758,516,281.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="522" y="288.4951">made on behalf of</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="912.1304" y="324.6055">*</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="293.0101" y="278.6097">1</text>
+        <path d="M1005.217,330.912 C1039.66,323.808 1089.88,313.452 1126.67,305.863 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="1036" y="309.4951">refers to</text>
+        <polygon fill="#000000" points="1086,302.6758,1092,305.6758,1086,308.6758,1086,302.6758" style="stroke: #000000; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1013.0041" y="344.4228">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="1111.984" y="322.0076">1</text>
+        <!--
+@startuml MD
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
+class Organization {
+        - String nome
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class App {
+
+}
+
+
+class Manager {
+        - String nome
+        - String email
+        - String password
+}
+
+class Transaction {
+
+}
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+}
+
+App                          "1" - - "*"      Organization              : has >
+App                          "1" - - "1"      PaymentAPI                : supports >
+App                          "1" - - "*"      Payment                   : registers >
+Organization                 "1" - - "*"      Task                      : publishes >
+Manager                      "1" - - "0,1"    PaymentScheduler          : defines >
+Transaction                  "1" - - "1"      Task                      : relative to >
+Transaction                  "1" - - "1"      TaskExecutionDetails      : executed with >
+TaskExecutionDetails         "1" - - "1"      Task                      : refer to >
+PaymentScheduler             "1" - - "*"      Payment                   : schedules >
+Organization                 "1" - - "1"      Manager                   : has >
+Organization                 "1" - - "1"      PaymentScheduler          : uses >
+Organization                 "1" - - "*"      Task                      : publishes >
+Organization                 "1" - - "*"      Transaction               : has unpaid >
+Payment                      "*" - - "1"      Organization              : made on behalf of >
+Payment                      "1" - - "1"      Transaction               : refers to >
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>
