@@ -53,6 +53,7 @@ public class CreateOrganizationUI {
 
     @FXML
     public void btnCancelAction(ActionEvent actionEvent) {
+        quit();
     }
 
     private void quit() {
