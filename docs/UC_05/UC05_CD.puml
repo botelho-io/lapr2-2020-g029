@@ -1,0 +1,53 @@
+@startuml
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+        + create (Integer day, LoaclTime timeOfDay, Organization org)
+        + resetTime(Integer dayMonth, LocalTime timeOfDay)
+        + scheduleNestMonth()
+        + getNextDate()
+}
+
+class Manager {
+  -String name
+  -String email
+}
+
+
+class Organization {
+  -String name
+  +validatesPaymentScheduler(psche)
+  +addPaymentScheduler(psche)
+}
+
+class App {
+	+getRegistoOrganizacoes()
+}
+
+class RegistOrganization {
+	+getOrganizationByEmailUser()
+}
+
+
+class DefineTimeController {
+        +newPaymentScheduler(dayMonth, timeOfDay)
+        +addPaymentScheduler()
+}
+
+class DefineTimeUI {
+}
+
+
+DefineTimeUI ..> DefineTimeController
+DefineTimeController                  ..>          App
+DefineTimeController                  ..>          Organization
+DefineTimeController                  ..>          PaymentScheduler        
+App                               "1" --> "1"      RegistOrganization       : has
+RegistOrganization                "1" --> "*"     Organization              : has
+Organization                      "1" --> "1"      Manager                  : has 
+Organization                      "1" --> "1"      PaymentScheduler         : has
+
+
+
+@enduml

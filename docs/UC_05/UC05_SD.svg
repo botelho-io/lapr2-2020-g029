@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="780px" preserveAspectRatio="none" style="width:1594px;height:780px;" version="1.1" viewBox="0 0 1594 780" width="1594px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f5bcg1i1krsdz" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="579.1797" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="34" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="288.3672" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="177.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="499.0313"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="227.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="749" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="110.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="749" y="529.3828"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="966" y="241.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1049.5" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1170" y="408.3281"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="79.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1170" y="559.7344"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="314.4219" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1494.5" y="371.7188"/>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="175" x="1410" y="339.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="161" x="1417" y="361.252">psche:PaymentScheduler</text>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="39" x2="39" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="446.5" x2="446.5" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="754" x2="754" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="970.5" x2="970.5" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1054.5" x2="1054.5" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1174.5" x2="1174.5" y1="87.6094" y2="695.1406"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1499" x2="1499" y1="373.0234" y2="695.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="8" y="84.5332">Manager</text>
+        <ellipse cx="39" cy="13" fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M39,21 L39,48 M26,29 L52,29 M39,48 L26,63 M39,48 L52,63 " fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="8" y="708.6738">Manager</text>
+        <ellipse cx="39" cy="721.75" fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M39,729.75 L39,756.75 M26,737.75 L52,737.75 M39,756.75 L26,771.75 M39,756.75 L52,771.75 " fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="415.5" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="422.5" y="54.9238">:Define</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="423.5" y="72.5332">TimeUI</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="415.5" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="422.5" y="715.6738">:Define</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="423.5" y="733.2832">TimeUI</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="707" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="714" y="54.9238">:DefineTime</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="721" y="72.5332">Controller</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="707" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="714" y="715.6738">:DefineTime</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="721" y="733.2832">Controller</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="45" x="946.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="953.5" y="72.5332">:APP</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="45" x="946.5" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="953.5" y="715.6738">:APP</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="1005.5" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="1024" y="54.9238">ro:Regist</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="1012.5" y="72.5332">Organization</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="1005.5" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="1024" y="715.6738">ro:Regist</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="1012.5" y="733.2832">Organization</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="1113.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="1120.5" y="72.5332">org:Organization</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="1113.5" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="1120.5" y="715.6738">org:Organization</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="175" x="1410" y="694.1406"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="161" x="1417" y="715.6738">psche:PaymentScheduler</text>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="579.1797" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="34" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="288.3672" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="177.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="442" y="499.0313"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="227.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="749" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="110.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="749" y="529.3828"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="966" y="241.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1049.5" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1170" y="408.3281"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="79.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1170" y="559.7344"/>
+        <rect fill="#FFFFFF" filter="url(#f5bcg1i1krsdz)" height="314.4219" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1494.5" y="371.7188"/>
+        <polygon fill="#A80036" points="430,115.6094,440,119.6094,430,123.6094,434,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="44" x2="436" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="51" y="115.1045">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="192" x="62" y="115.1045">defining time tasks will be payed.</text>
+        <polygon fill="#A80036" points="55,145.9609,45,149.9609,55,153.9609,51,149.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="49" x2="446" y1="149.9609" y2="149.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="61" y="145.4561">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="287" x="72" y="145.4561">request the time data (i.e. dayMonth, timeOfDay).</text>
+        <polygon fill="#A80036" points="430,176.3125,440,180.3125,430,184.3125,434,180.3125" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="44" x2="436" y1="180.3125" y2="180.3125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="51" y="175.8076">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="62" y="175.8076">enter the requested data</text>
+        <polygon fill="#A80036" points="737,206.6641,747,210.6641,737,214.6641,741,210.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="452" x2="743" y1="210.6641" y2="210.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="459" y="206.1592">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="470" y="206.1592">newPaymentScheduler(dayMonth, timeOfDay)</text>
+        <polygon fill="#A80036" points="954,237.0156,964,241.0156,954,245.0156,958,241.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="759" x2="960" y1="241.0156" y2="241.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="766" y="236.5107">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="777" y="236.5107">ro = getRegistoOrganizacoes()</text>
+        <polygon fill="#A80036" points="1037.5,297.3672,1047.5,301.3672,1037.5,305.3672,1041.5,301.3672" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="759" x2="1043.5" y1="301.3672" y2="301.3672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="766" y="296.8623">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="209" x="777" y="296.8623">org = getOrganizationByEmailUser()</text>
+        <polygon fill="#A80036" points="1398,357.7188,1408,361.7188,1398,365.7188,1402,361.7188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="1175" x2="1404" y1="361.7188" y2="361.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1182" y="357.2139">7</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="1193" y="357.2139">create(org , dayMonth, timeOfDay)</text>
+        <rect fill="#FEFECE" filter="url(#f5bcg1i1krsdz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="175" x="1410" y="339.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="161" x="1417" y="361.252">psche:PaymentScheduler</text>
+        <polygon fill="#A80036" points="1158,404.3281,1168,408.3281,1158,412.3281,1162,408.3281" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="759" x2="1164" y1="408.3281" y2="408.3281"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="766" y="403.8232">8</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="203" x="777" y="403.8232">validatesPaymentScheduler(psche)</text>
+        <polygon fill="#A80036" points="55,464.6797,45,468.6797,55,472.6797,51,468.6797" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="49" x2="446" y1="468.6797" y2="468.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="61" y="464.1748">9</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="363" x="72" y="464.1748">The sistem validates and presents the data, asking to comfirm.</text>
+        <polygon fill="#A80036" points="430,495.0313,440,499.0313,430,503.0313,434,499.0313" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="44" x2="436" y1="499.0313" y2="499.0313"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="51" y="494.5264">10</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="69" y="494.5264">confirms</text>
+        <polygon fill="#A80036" points="737,525.3828,747,529.3828,737,533.3828,741,529.3828" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="452" x2="743" y1="529.3828" y2="529.3828"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="459" y="524.8779">11</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="477" y="524.8779">addPaymentScheduler()</text>
+        <polygon fill="#A80036" points="1158,555.7344,1168,559.7344,1158,563.7344,1162,559.7344" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="759" x2="1164" y1="559.7344" y2="559.7344"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="766" y="555.2295">12</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="174" x="784" y="555.2295">addPaymentScheduler(psche)</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1180" x2="1222" y1="590.4375" y2="590.4375"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1222" x2="1222" y1="590.4375" y2="603.4375"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1181" x2="1222" y1="603.4375" y2="603.4375"/>
+        <polygon fill="#A80036" points="1191,599.4375,1181,603.4375,1191,607.4375,1187,603.4375" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1187" y="585.5811">13</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="185" x="1205" y="585.5811">validaPaymentScheduler(psche)</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1180" x2="1222" y1="638.7891" y2="638.7891"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1222" x2="1222" y1="638.7891" y2="651.7891"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1175" x2="1222" y1="651.7891" y2="651.7891"/>
+        <polygon fill="#A80036" points="1185,647.7891,1175,651.7891,1185,655.7891,1181,651.7891" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1187" y="633.9326">14</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="174" x="1205" y="633.9326">addPaymentScheduler(psche)</text>
+        <polygon fill="#A80036" points="50,672.7891,40,676.7891,50,680.7891,46,676.7891" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="44" x2="446" y1="676.7891" y2="676.7891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="56" y="672.2842">15</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="74" y="672.2842">successful operation</text>
+        <!--
+@startuml
+autonumber
+
+actor Manager as M
+participant ":Define\nTimeUI" as UI
+participant ":DefineTime\nController" as CTRL
+participant ":APP" as APP
+participant "ro:Regist\nOrganization" as ORGS
+participant "org:Organization" as ORG
+participant "psche:PaymentScheduler" as PS
+
+activate M
+M -> UI : defining time tasks will be payed.
+activate UI
+UI - -> M : request the time data (i.e. dayMonth, timeOfDay).
+deactivate UI
+
+M -> UI : enter the requested data
+activate UI
+
+UI -> CTRL : newPaymentScheduler(dayMonth, timeOfDay)
+activate CTRL
+
+CTRL -> APP: ro = getRegistoOrganizacoes()
+activate APP
+deactivate APP
+
+CTRL -> ORGS: org = getOrganizationByEmailUser()
+activate ORGS
+deactivate ORGS
+
+
+ORG - -> PS ** : create(org , dayMonth, timeOfDay)
+activate PS
+deactivate PS
+
+CTRL -> ORG : validatesPaymentScheduler(psche)
+activate ORG
+deactivate ORG
+
+deactivate CTRL
+UI - -> M : The sistem validates and presents the data, asking to comfirm.
+deactivate UI
+
+M -> UI : confirms
+activate UI
+
+UI -> CTRL: addPaymentScheduler()
+activate CTRL
+CTRL -> ORG: addPaymentScheduler(psche)
+activate ORG
+
+ORG -> ORG: validaPaymentScheduler(psche)
+
+
+ORG -> ORG: addPaymentScheduler(psche)
+
+
+deactivate ORG
+deactivate CTRL
+UI - -> M : successful operation
+deactivate UI
+
+deactivate M
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>
