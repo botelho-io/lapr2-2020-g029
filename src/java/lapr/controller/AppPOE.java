@@ -96,23 +96,14 @@ public class AppPOE
         this.m_oAutorization.registaPapelUtilizador(Role.ADMINISTRATOR);
         this.m_oAutorization.registaPapelUtilizador(Role.COLLABORATOR);
         this.m_oAutorization.registaPapelUtilizador(Role.MANAGER);
-        // Add default users TODO: Delete
-        Freelancer fre = m_oApp.getRegistFreelancer().newFreelancer("Free Joe", Expertise.SENIOR, "fre@dei.pt", "28739247893", "8937432", "Address", "Germany");
-        m_oApp.getRegistFreelancer().addFreelancer(fre);
-        Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new UserRole[]{getRole(Role.ADMINISTRATOR)});
-        this.m_oAutorization.registUser(adm);
-        Manager man = new Manager("Man Joe", "man@dei.pt", "password", new UserRole[]{getRole(Role.MANAGER)});
-        Collaborator col = new Collaborator("Colab Joe", "colab@dei.pt", "password", new UserRole[]{getRole(Role.COLLABORATOR)});
-        Organization org = m_oApp.getRegistOrganization().newOrganization("DEFAULT", man, col);
-        m_oApp.getRegistOrganization().add(org);
-        Task tsk1 = ListTask.newTask("TSK1", "A Test task", 10, 10, "TEST");
-        Task tsk2 = ListTask.newTask("TSK2", "A Test task", 10, 10, "TEST");
-        Transaction trs = ListTransaction.newTransaction(fre, tsk2, LocalDate.now(), 1, "Good Job :)");
-        org.getListTask().registTask(tsk1);
-        org.getListTask().registTask(tsk2);
-        org.getListTransaction().addTransaction(trs);
+
+        // Add APIs
         // TODO: add real APIs
         m_oApp.setAPIs(new StubEmailAPI(), new StubMonetaryConversionAPI(), new StubPaymentAPI(), new StubPswGeneratorAPI());
+
+        // Add test data TODO: Delete
+        Constants.addTestOrgTasksFreelancersAndTransactions();
+        // new SendEmailTask(new EmailScheduler()).run(); // Send test emails
     }
 
     // Inspirado em https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

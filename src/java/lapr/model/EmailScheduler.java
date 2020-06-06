@@ -25,6 +25,7 @@ public class EmailScheduler {
      * Creates a new scheduler.
      */
     public EmailScheduler() {
+        resetTime();
     }
 
     /**
@@ -35,9 +36,8 @@ public class EmailScheduler {
         if(m_oTimer != null) {
             m_oTimer.cancel();
             m_oTimer.purge();
-        } else {
-            m_oTimer = new Timer();
         }
+        m_oTimer = new Timer();
         // Schedule next task
         scheduleNextYear();
     }

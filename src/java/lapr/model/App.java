@@ -58,7 +58,6 @@ public class App {
         this.ro = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
         this.m_oEmailScheduler = new EmailScheduler();
-        m_oEmailScheduler.resetTime();
     }
     /**
      * @return The autorization facade used by the app.

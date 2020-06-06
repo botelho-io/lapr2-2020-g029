@@ -78,7 +78,7 @@ public class ListTransaction implements Iterable<Transaction> {
     }
 
     /**
-     * Adds a transaction to the list.
+     * Adds a transaction to the list & sets the transactions executor.
      * @param trs Transaction to add.
      * @return True if the transaction is added, false otherwise.
      */
@@ -133,6 +133,11 @@ public class ListTransaction implements Iterable<Transaction> {
         return allSent;
     }
 
+    /**
+     * Adds a transaction to the list & sets the transactions executor.
+     * @param tr Transaction to add.
+     * @return True if the transaction is added, false otherwise.
+     */
     public boolean addTransaction(Transaction tr) {
         if(!validate(tr)) return false;
         return add(tr);

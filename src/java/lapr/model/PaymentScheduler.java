@@ -53,9 +53,8 @@ public class PaymentScheduler {
         if(m_oTimer != null) {
             m_oTimer.cancel();
             m_oTimer.purge();
-        } else {
-            m_oTimer = new Timer();
         }
+        m_oTimer = new Timer();
         // Schedule next task
         this.m_iDayMonth = DayMonth;
         this.m_oTimeOfDay = TimeOfDay;
