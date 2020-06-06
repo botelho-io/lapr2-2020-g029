@@ -1,17 +1,14 @@
 package lapr.list;
 
 import lapr.controller.AppPOE;
-import lapr.controller.MakePaymentTask;
 import lapr.model.*;
 import lapr.regist.RegistFreelancer;
-import lapr.regist.RegistOrganization;
 import lapr.utils.Expertise;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 

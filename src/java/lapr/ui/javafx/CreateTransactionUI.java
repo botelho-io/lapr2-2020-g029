@@ -3,16 +3,12 @@ package lapr.ui.javafx;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import lapr.controller.CreateTransactionController;
 import lapr.model.Freelancer;
 import lapr.model.Task;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +26,7 @@ public class CreateTransactionUI {
     @FXML
     public DatePicker dpDate;
     @FXML
-    public Spinner<Integer> spDays;
+    public Spinner<Integer> spHours;
     @FXML
     public TextArea taDesc;
 
@@ -43,7 +39,7 @@ public class CreateTransactionUI {
         refreshTasks();
         refreshFreelancer();
         final SpinnerValueFactory<Integer> vFac = new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE,Integer.MAX_VALUE, 0);
-        spDays.setValueFactory(vFac);
+        spHours.setValueFactory(vFac);
         taDesc.setText("");
     }
 
@@ -98,7 +94,7 @@ public class CreateTransactionUI {
             if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.\nPlease, try again.");
             tsk = name_task.get(cbTask.getValue());
             if (tsk == null) throw new IllegalStateException("An illegal task was chosen.\nPlease, try again.");
-            boolean nt = controller.newTransaction(fre, tsk, dpDate.getValue(), spDays.getValue(), taDesc.getText());
+            boolean nt = controller.newTransaction(fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
             if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.\nPlease, try again.");
             boolean ad = controller.addTransaction();
             if (!ad) throw new IllegalStateException("An error occurred while adding the transaction to the register.\nPlease, try again.");

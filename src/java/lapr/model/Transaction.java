@@ -53,11 +53,11 @@ public class Transaction {
     /**
      * Constructor.
      * @param endDate The date the task ended.
-     * @param daysDelay The delay the freelancer took to execute the task.
+     * @param hoursDelay The delay the freelancer took to execute the task.
      * @param description A textual description of the quality of the work done by the freelancer.
      */
-    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int daysDelay, String description) {
-        return new TaskExecutionDetails(endDate, daysDelay, description);
+    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
+        return new TaskExecutionDetails(endDate, hoursDelay, description);
     }
 
     /**
@@ -124,6 +124,13 @@ public class Transaction {
      */
     public PaymentDetails getPaymentDetails() {
         return m_oPaymentDetails;
+    }
+
+    /**
+     * @return The details of the execution of the task.
+     */
+    public TaskExecutionDetails getExecutionDetails() {
+        return m_oDetails;
     }
 
     @Override

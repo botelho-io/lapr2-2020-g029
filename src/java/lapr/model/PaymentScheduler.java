@@ -7,11 +7,9 @@ package lapr.model;
 
 import lapr.controller.MakePaymentTask;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 import java.util.Timer;
 
 /**

@@ -22,7 +22,7 @@ public class App {
     /**
      * The autorization facade used by the app.
      */
-    private final AuthFacade m_oAutorizacao;
+    private final AuthFacade m_oAutorization;
     /**
      * The registration of organization on the app.
      */
@@ -47,19 +47,25 @@ public class App {
      * The register of all the freelancers available in the system.
      */
     private RegistFreelancer m_oRegistFreelancer;
+    /**
+     * The object responsible for sending emails to freelancers every year.
+     */
+    private EmailScheduler m_oEmailScheduler;
 
     public App()
     {
-        this.m_oAutorizacao = new AuthFacade();
+        this.m_oAutorization = new AuthFacade();
         this.ro = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
+        this.m_oEmailScheduler = new EmailScheduler();
+        m_oEmailScheduler.resetTime();
     }
     /**
      * @return The autorization facade used by the app.
      */
     public AuthFacade getAutorizacaoFacade()
     {
-        return this.m_oAutorizacao;
+        return this.m_oAutorization;
     }
 
     public RegistOrganization getRegistOrganization() {
