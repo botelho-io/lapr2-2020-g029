@@ -60,10 +60,10 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <left>
-                  <Label text="Days The Task Was Delayed" BorderPane.alignment="CENTER" />
+                  <Label text="Hours The Task Was Delayed" BorderPane.alignment="CENTER" />
                </left>
                <right>
-                  <Spinner fx:id="spDays" prefWidth="400.0" BorderPane.alignment="CENTER" />
+                  <Spinner fx:id="spHours" prefWidth="400.0" BorderPane.alignment="CENTER" />
                </right>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">

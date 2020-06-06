@@ -1,0 +1,71 @@
+@startuml SD
+autonumber
+hide footbox
+
+participant "scheduler\n:EmailScheduler" as SC
+participant "timer:\nTimer" as TIMER
+participant "task:\nTask" as TASK
+participant "org\n:Organization" as org
+participant "ted\n:TaskExecutionDetails" as ted
+participant ":EmailAPI" as eapi
+participant "tl\n:TaskList" as tl
+participant "completetask\n:TaskList" as ct
+
+[o-> SC : create(dayOfMonth, timeOfDay, task)
+activate SC
+        SC -> SC : resetTime(day, timeOfDay)
+        SC -> SC : scheduleNextMonth()
+loop
+        activate SC
+                SC -> TASK**  : create(task, scheduler)
+                SC -> TIMER** : create()
+                SC -> SC : date = getNextDate()
+                SC ->TIMER: schedule(task, date)
+        deactivate SC
+
+deactivate SC
+        activate TIMER
+                note over SC,TIMER  : On the specified date and time
+                TIMER->TASK:run()
+                activate TASK
+                        TASK->TASK: emailFreelancer()
+                        activate TASK
+                                TASK -> org : tl = getTasklist()
+                                activate org
+                                deactivate org
+                                TASK -> ct ** : create()
+                                loop for each task
+                                        opt if the task is delayed
+                                                TASK -> tl : trs = getTask(ID)
+                                                activate tl
+                                                deactivate tl
+                                                TASK -> ted : sendEmailFreelancer()
+                                                activate ted
+                                                        ted -> eapi: emailTo(fID, taskID, delayTime )
+                                                        activate eapi
+                                                        deactivate eapi
+                                                        note right
+                                                                Here the getters for the following fields were omited:
+                                                                fID - The ID of the freelancer to email to.
+								taskID - the id of the task he as delay
+                                                                delayTime - the delay he have on the task
+                                                        end note
+                                                        ted -> ted : setEmailed(true)
+                                                deactivate ted
+                                                TASK -> ct : add(ted)
+                                                activate ct
+                                                deactivate ct
+                                        end
+                                end
+                                TASK -> ct : emailAboutTask()
+                                activate ct
+                                deactivate ct
+                        deactivate TASK
+                        TASK -> SC : scheduleNextMonth()
+                        activate SC
+                deactivate TASK
+        deactivate TIMER
+end
+
+
+@enduml

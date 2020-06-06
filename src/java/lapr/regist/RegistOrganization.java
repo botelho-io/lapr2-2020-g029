@@ -2,14 +2,11 @@ package lapr.regist;
 
 import autorizacao.AuthFacade;
 import lapr.controller.AppPOE;
-import lapr.model.Collaborator;
-import lapr.model.Manager;
-import lapr.model.Organization;
+import lapr.model.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class RegistOrganization {
+public class RegistOrganization implements Iterable<Organization> {
 
     /**
      * A list of organizations.
@@ -74,5 +71,50 @@ public class RegistOrganization {
                 return org;
         }
         return null;
+    }
+
+    /**
+     * @return An iterator to all organizations.
+     */
+    @Override
+    public Iterator<Organization> iterator() {
+        return this.m_lstOrganizacoes.iterator();
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them on all organizations.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactions() {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for (final Organization org : this) {
+            final Map<Freelancer, List<Transaction>> map = org.getListTransaction().getGroupedTransactions();
+            for(final Freelancer fre : map.keySet()) {
+                final List<Transaction> lt = fre_trs.get(fre);
+                final List<Transaction> val = map.get(fre);
+                if(lt != null) lt.addAll(val);
+                else fre_trs.put(fre, val);
+            }
+        }
+        return  fre_trs;
+    }
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @param year The year of the transactions.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the system
+     * on the year specified.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactionsInYear(final int year) {
+        Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for (final Organization org : this) {
+            final Map<Freelancer, List<Transaction>> map = org.getListTransaction().getGroupedTransactionsInYear(year);
+            for(final Freelancer fre : map.keySet()) {
+                final List<Transaction> lt = fre_trs.get(fre);
+                final List<Transaction> val = map.get(fre);
+                if(lt != null) lt.addAll(val);
+                else  fre_trs.put(fre, val);
+            }
+        }
+        return  fre_trs;
     }
 }

@@ -34,13 +34,13 @@ public class AppPOE
 {
 
     private final App m_oApp;
-    private final AuthFacade m_oAutorizacao;
+    private final AuthFacade m_oAutorization;
 
     private AppPOE()
     {
         Properties props = getProperties();
         this.m_oApp = new App();
-        this.m_oAutorizacao = this.m_oApp.getAutorizacaoFacade();
+        this.m_oAutorization = this.m_oApp.getAutorizacaoFacade();
     }
 
     public App getApp()
@@ -49,22 +49,22 @@ public class AppPOE
     }
 
     public AuthFacade getAuthFacade() {
-        return m_oAutorizacao;
+        return m_oAutorization;
     }
 
     public SessaoUtilizador getSessaoAtual()
     {
-        return this.m_oAutorizacao.getSessaoAtual();
+        return this.m_oAutorization.getSessaoAtual();
     }
 
     public boolean doLogin(String strId, String strPwd)
     {
-        return this.m_oAutorizacao.doLogin(strId,strPwd) != null;
+        return this.m_oAutorization.doLogin(strId,strPwd) != null;
     }
 
     public void doLogout()
     {
-        this.m_oAutorizacao.doLogout();
+        this.m_oAutorization.doLogout();
     }
 
     private Properties getProperties()
@@ -93,26 +93,17 @@ public class AppPOE
     private void bootstrap()
     {
         // Add roles
-        this.m_oAutorizacao.registaPapelUtilizador(Role.ADMINISTRATOR);
-        this.m_oAutorizacao.registaPapelUtilizador(Role.COLLABORATOR);
-        this.m_oAutorizacao.registaPapelUtilizador(Role.MANAGER);
-        // Add default users TODO: Delete
-        Freelancer fre = m_oApp.getRegistFreelancer().newFreelancer("Free Joe", Expertise.SENIOR, "fre@dei.pt", "28739247893", "8937432", "Address", "Germany");
-        m_oApp.getRegistFreelancer().addFreelancer(fre);
-        Administrator adm = new Administrator("Admin Joe", "admin@dei.pt", "password", new UserRole[]{getRole(Role.ADMINISTRATOR)});
-        this.m_oAutorizacao.registUser(adm);
-        Manager man = new Manager("Man Joe", "man@dei.pt", "password", new UserRole[]{getRole(Role.MANAGER)});
-        Collaborator col = new Collaborator("Colab Joe", "colab@dei.pt", "password", new UserRole[]{getRole(Role.COLLABORATOR)});
-        Organization org = m_oApp.getRegistOrganization().newOrganization("DEFAULT", man, col);
-        m_oApp.getRegistOrganization().add(org);
-        Task tsk1 = ListTask.newTask("TSK1", "A Test task", 10, 10, "TEST");
-        Task tsk2 = ListTask.newTask("TSK2", "A Test task", 10, 10, "TEST");
-        Transaction trs = ListTransaction.newTransaction(fre, tsk2, LocalDate.now(), 1, "Good Job :)");
-        org.getListTask().registTask(tsk1);
-        org.getListTask().registTask(tsk2);
-        org.getListTransaction().addTransaction(trs);
+        this.m_oAutorization.registaPapelUtilizador(Role.ADMINISTRATOR);
+        this.m_oAutorization.registaPapelUtilizador(Role.COLLABORATOR);
+        this.m_oAutorization.registaPapelUtilizador(Role.MANAGER);
+
+        // Add APIs
         // TODO: add real APIs
         m_oApp.setAPIs(new StubEmailAPI(), new StubMonetaryConversionAPI(), new StubPaymentAPI(), new StubPswGeneratorAPI());
+
+        // Add test data TODO: Delete
+        Constants.addTestOrgTasksFreelancersAndTransactions();
+        // new SendEmailTask(new EmailScheduler()).run(); // Send test emails
     }
 
     // Inspirado em https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
@@ -138,6 +129,6 @@ public class AppPOE
 
 
     public UserRole getRole(Role role) {
-        return this.m_oAutorizacao.getRole(role);
+        return this.m_oAutorization.getRole(role);
     }
 }

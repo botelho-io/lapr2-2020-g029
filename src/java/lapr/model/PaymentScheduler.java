@@ -7,11 +7,9 @@ package lapr.model;
 
 import lapr.controller.MakePaymentTask;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 import java.util.Timer;
 
 /**
@@ -55,9 +53,8 @@ public class PaymentScheduler {
         if(m_oTimer != null) {
             m_oTimer.cancel();
             m_oTimer.purge();
-        } else {
-            m_oTimer = new Timer();
         }
+        m_oTimer = new Timer();
         // Schedule next task
         this.m_iDayMonth = DayMonth;
         this.m_oTimeOfDay = TimeOfDay;

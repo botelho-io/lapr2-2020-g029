@@ -1,0 +1,12 @@
+@startuml SSD
+hide footbox
+autonumber
+actor "Time" as T
+participant ":System" as S
+
+activate T
+T -> S : starts the process of sending email's to all freelancer\n who have higher task delay time
+activate S
+deactivate S
+deactivate T
+@enduml

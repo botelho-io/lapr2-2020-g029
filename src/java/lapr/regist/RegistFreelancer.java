@@ -3,15 +3,12 @@ package lapr.regist;
 import lapr.model.Freelancer;
 import lapr.utils.Expertise;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Represents the register of all the freelancers available in the system.
  */
-public class RegistFreelancer {
+public class RegistFreelancer implements Iterable<Freelancer> {
     /**
      * The list of freelancers
      */
@@ -119,5 +116,13 @@ public class RegistFreelancer {
 
     public List<Freelancer> getFreelancers() {
         return new ArrayList<>(this.m_setFreelancer);
+    }
+
+    /**
+     * @return An iterator to all the freelancers.
+     */
+    @Override
+    public Iterator<Freelancer> iterator() {
+        return this.m_setFreelancer.iterator();
     }
 }

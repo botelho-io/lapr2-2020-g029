@@ -17,13 +17,19 @@ public class LoginUI {
     public void preformLogin(ActionEvent actionEvent) {
         final String mail = fieldEmail.getText();
         final String password = fieldPassword.getText();
+        try {
+            if(mail == null || mail.isEmpty()) throw new IllegalStateException("Email field cannot be empty!");
+            if(password == null || password.isEmpty()) throw new IllegalStateException("Password field cannot be empty!");
+        } catch (IllegalStateException e) {
+            MainUI.alert(e.getMessage());
+            return;
+        }
         final boolean succsess = AppPOE.getInstance().doLogin(mail, password);
         if(succsess) {
             // Close window, main controller knows if there was a successful login.
             ((Stage) fieldEmail.getScene().getWindow()).close();
         } else {
-            Alert a = new Alert(Alert.AlertType.ERROR, "Wrong e-mail or password");
-            a.show();
+            MainUI.alert("Wrong e-mail or password");
         }
     }
 }

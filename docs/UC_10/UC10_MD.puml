@@ -1,0 +1,54 @@
+@startuml MD
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
+class Organization {
+        - String nome
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class App {
+
+}
+
+
+class EmailScheduler {
+
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+App                          "1" -- "*"      Organization              : has >
+App                          "1" -- "1"      EmailAPI                  : supports >
+Organization                 "1" -- "*"      Task                      : publishes >
+EmailAPI                     "1" -- "*"      Freelancer                : e-mails >
+TaskExecutionDetails         "1" -- "1"      Task                      : refers to>
+App                          "1" -- "*"      Freelancer                : has >
+App                          "1" -- "1"      EmailScheduler            : has >
+EmailScheduler               "1" -- "1"      EmailAPI                  : uses >
+
+@enduml

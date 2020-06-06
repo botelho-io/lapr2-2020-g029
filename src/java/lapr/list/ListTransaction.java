@@ -38,12 +38,12 @@ public class ListTransaction implements Iterable<Transaction> {
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param endDate The date the task ended.
-     * @param daysDelay The delay the freelancer took to execute the task.
+     * @param hoursDelay The delay the freelancer took to execute the task.
      * @param description A textual description of the quality of the work done by the freelancer.
      * @return The new task.
      */
-    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int daysDelay, String description) {
-        return new Transaction(freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, daysDelay, description));
+    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
+        return new Transaction(freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
     }
 
     /**
@@ -78,7 +78,7 @@ public class ListTransaction implements Iterable<Transaction> {
     }
 
     /**
-     * Adds a transaction to the list.
+     * Adds a transaction to the list & sets the transactions executor.
      * @param trs Transaction to add.
      * @return True if the transaction is added, false otherwise.
      */
@@ -133,8 +133,57 @@ public class ListTransaction implements Iterable<Transaction> {
         return allSent;
     }
 
+    /**
+     * Adds a transaction to the list & sets the transactions executor.
+     * @param tr Transaction to add.
+     * @return True if the transaction is added, false otherwise.
+     */
     public boolean addTransaction(Transaction tr) {
         if(!validate(tr)) return false;
         return add(tr);
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the organization.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactions() {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for(final Transaction trs : this) {
+            final Freelancer fre = trs.getFreelancer();
+            final List<Transaction> lt = fre_trs.get(fre);
+            if(lt != null) {
+                lt.add(trs);
+            } else {
+                final ArrayList<Transaction> ltt = new ArrayList<Transaction>();
+                ltt.add(trs);
+                fre_trs.put(fre, ltt);
+            }
+        }
+        return fre_trs;
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @param year The year of the transactions.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the organization
+     * on the year specified.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactionsInYear(final int year) {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for(final Transaction trs : this) {
+            if(trs.getExecutionDetails().getEndDate().getYear() == year) {
+                final Freelancer fre = trs.getFreelancer();
+                final List<Transaction> lt = fre_trs.get(fre);
+                if (lt != null) {
+                    lt.add(trs);
+                } else {
+                    final ArrayList<Transaction> ltt = new ArrayList<Transaction>();
+                    ltt.add(trs);
+                    fre_trs.put(fre, ltt);
+                }
+            }
+        }
+        return fre_trs;
     }
 }

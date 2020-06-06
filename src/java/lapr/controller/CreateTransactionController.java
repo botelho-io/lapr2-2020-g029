@@ -40,13 +40,13 @@ public class CreateTransactionController {
      * @param freelancer The freelancer who executed the task.
      * @param task The task that was executed.
      * @param endDate The date the task was executed.
-     * @param daysDelay The days the task execution was delayed.
+     * @param hoursDelay The days the task execution was delayed.
      * @param description A short description of the work.
      * @return True if the new transaction is valid, false otherwise.
      */
-    public boolean newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int daysDelay, String description) {
+    public boolean newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
         ltr = org.getListTransaction();
-        tr = ltr.newTransaction(freelancer, task, endDate, daysDelay, description);
+        tr = ltr.newTransaction(freelancer, task, endDate, hoursDelay, description);
         return ltr.validate(tr);
     }
 
