@@ -15,8 +15,7 @@ import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
 
 /**
- *
- * @author Paulo Maio <pam@isep.ipp.pt>
+ * @author André Botelho and Ricardo Moreira.
  */
 public class App {
     /**
@@ -26,7 +25,7 @@ public class App {
     /**
      * The registration of organization on the app.
      */
-    private RegistOrganization ro;
+    private RegistOrganization m_oRegistOrganization;
     /**
      * The API used to generate passwords.
      */
@@ -55,7 +54,7 @@ public class App {
     public App()
     {
         this.m_oAutorization = new AuthFacade();
-        this.ro = new RegistOrganization();
+        this.m_oRegistOrganization = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
         this.m_oEmailScheduler = new EmailScheduler();
     }
@@ -68,7 +67,7 @@ public class App {
     }
 
     public RegistOrganization getRegistOrganization() {
-        return ro;
+        return m_oRegistOrganization;
     }
 
     public PswGeneratorAPI getPswGeneratorAPI() {

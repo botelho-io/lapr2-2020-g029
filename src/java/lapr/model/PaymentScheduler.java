@@ -62,7 +62,6 @@ public class PaymentScheduler {
     }
     /**
      * Schedules the payments to be made on the next month.
-     * @return
      */
     public void scheduleNextMonth() {
         m_oTimer.schedule(new MakePaymentTask(m_oOrganization, this), getNextDate());

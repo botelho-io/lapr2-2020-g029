@@ -55,6 +55,7 @@ public class Transaction {
      * @param endDate The date the task ended.
      * @param hoursDelay The delay the freelancer took to execute the task.
      * @param description A textual description of the quality of the work done by the freelancer.
+     * @return The new TaskExecutionDetails.
      */
     public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
         return new TaskExecutionDetails(endDate, hoursDelay, description);

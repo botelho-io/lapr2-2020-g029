@@ -24,10 +24,10 @@ public class RegistOrganization implements Iterable<Organization> {
 
     /**
      * Build a new instance of organization receiving the name, manager and collaborator.
-     *
      * @param name of the collaborator.
      * @param manager of the organization
      * @param collaborator  of the organization.
+     * @return The new organization.
      */
     public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
         return new Organization(name, manager, collaborator);
