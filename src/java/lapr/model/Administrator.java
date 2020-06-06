@@ -5,9 +5,8 @@
  */
 package lapr.model;
 
-import autorizacao.model.PapelUtilizador;
+import autorizacao.model.UserRole;
 import lapr.controller.AppPOE;
-import lapr.utils.Constants;
 import lapr.utils.Role;
 
 /**
@@ -24,7 +23,7 @@ public class Administrator extends User {
      * @param password of the admininstrator.
      * @param papeis role of the user.
      */
-    public Administrator (String name, String email, String password, PapelUtilizador[] papeis){
+    public Administrator (String name, String email, String password, UserRole[] papeis){
         super(name, email, password, papeis);
     }
 
@@ -36,6 +35,6 @@ public class Administrator extends User {
      * @param password of the admininstrator.
      */
     public Administrator (String name, String email, String password){
-        this(name, email, password, new PapelUtilizador[]{AppPOE.getInstance().getRole(Role.MANAGER)});
+        this(name, email, password, new UserRole[]{AppPOE.getInstance().getRole(Role.MANAGER)});
     }
 }

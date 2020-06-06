@@ -3,7 +3,6 @@ package lapr.ui.javafx;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -11,9 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lapr.controller.CreateFreelancerController;
 
-import java.awt.*;
-
-public class AddFreelancerController {
+public class CreateFreelancerUI {
     @FXML
     public TextField txtName;
     @FXML
@@ -38,6 +35,12 @@ public class AddFreelancerController {
     public void initialize() {
         controller = new CreateFreelancerController();
         ddExpertise.setItems(FXCollections.observableArrayList(controller.getValidExpertise()));
+        txtAddress.setText("");
+        txtCountry.setText("");
+        txtEmail.setText("");
+        txtIBAN.setText("");
+        txtName.setText("");
+        txtNIF.setText("");
     }
 
     @FXML
@@ -58,27 +61,20 @@ public class AddFreelancerController {
             Name = validateString(txtName.getText(), "Name");
             NIF = validateString(txtNIF.getText(), "NIF");
         } catch (IllegalArgumentException ex) {
-            MainJFXController.alert(ex.getMessage());
+            MainUI.alert(ex.getMessage());
             return;
         }
         try {
             if(!controller.newFreelancer(Name, Expertise, Email, NIF, IBAN, Address, Country)) {
-                MainJFXController.alert("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN!");
+                throw new IllegalStateException("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN/ Email!");
             }else if(!controller.addFreelancer()) {
-                MainJFXController.alert("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN!");
+                throw new IllegalStateException("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN/ Email!");
             } else {
-                MainJFXController.alert(Alert.AlertType.INFORMATION, "Success!\nYou may keep adding freelancers or quit.");
-                txtAddress.setText("");
-                txtCountry.setText("");
-                txtEmail.setText("");
-                txtIBAN.setText("");
-                txtName.setText("");
-                txtNIF.setText("");
+                MainUI.alert(Alert.AlertType.INFORMATION, "Success!\nYou may keep adding freelancers or quit.");
+                initialize();
             }
-            return;
-        } catch (Exception e) {
-            MainJFXController.alert(e.getMessage());
-            return;
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            MainUI.alert(e.getMessage());
         }
     }
 

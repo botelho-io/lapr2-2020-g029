@@ -14,37 +14,35 @@ import java.util.Set;
  *
  * @author paulomaio
  */
-public class RegistoPapeisUtilizador
-{
-    private Set<PapelUtilizador> m_lstPapeis = new HashSet<PapelUtilizador>();
-    
-    public PapelUtilizador novoPapelUtilizador(Role Papel)
+public class RegistUserRoles {
+
+    private Set<UserRole> m_lstPapeis = new HashSet<UserRole>();
+    public UserRole novoPapelUtilizador(Role Papel)
     {
-        return new PapelUtilizador(Papel);
+        return new UserRole(Papel);
+    }
+    public UserRole novoPapelUtilizador(Role papel, String strDescricao)
+    {
+        return new UserRole(papel,strDescricao);
     }
     
-    public PapelUtilizador novoPapelUtilizador(Role papel, String strDescricao)
-    {
-        return new PapelUtilizador(papel,strDescricao);
-    }
-    
-    public boolean addPapel(PapelUtilizador papel)
+    public boolean addPapel(UserRole papel)
     {
         if (papel != null)
             return this.m_lstPapeis.add(papel);
         return false;
     }
     
-    public boolean removePapel(PapelUtilizador papel)
+    public boolean removePapel(UserRole papel)
     {
         if (papel != null)
             return this.m_lstPapeis.remove(papel);
         return false;
     }
     
-    public PapelUtilizador procuraPapel(Role papel)
+    public UserRole procuraPapel(Role papel)
     {
-        for(PapelUtilizador p: this.m_lstPapeis)
+        for(UserRole p: this.m_lstPapeis)
         {
             if(p.hasId(papel))
                 return p;
@@ -54,13 +52,13 @@ public class RegistoPapeisUtilizador
     
     public boolean hasPapel(Role oPapel)
     {
-        PapelUtilizador papel = procuraPapel(oPapel);
+        UserRole papel = procuraPapel(oPapel);
         if (papel != null)
             return this.m_lstPapeis.contains(papel);
         return false;
     }
     
-    public boolean hasPapel(PapelUtilizador papel)
+    public boolean hasPapel(UserRole papel)
     {
         return this.m_lstPapeis.contains(papel);
     }

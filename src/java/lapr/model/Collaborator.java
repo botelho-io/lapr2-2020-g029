@@ -5,9 +5,8 @@
  */
 package lapr.model;
 
-import autorizacao.model.PapelUtilizador;
+import autorizacao.model.UserRole;
 import lapr.controller.AppPOE;
-import lapr.utils.Constants;
 import lapr.utils.Role;
 
 /**
@@ -15,20 +14,6 @@ import lapr.utils.Role;
  * @author Universidade
  */
 public class Collaborator extends User {
-
-    /**
-     * The name of the collaborator.
-     */
-    private String name;
-    /**
-     * The email of the collaborator.
-     */
-    private String email;
-    /**
-     * The password of the collaborator.
-     */
-    private String password;
-
     /**
      * Build an instance of collaborator receiving the name, email and password.
      *
@@ -37,7 +22,7 @@ public class Collaborator extends User {
      * @param password of the collaborator.
      * @param papeis role of the user.
      */
-    public Collaborator (String name, String email, String password, PapelUtilizador[] papeis){
+    public Collaborator (String name, String email, String password, UserRole[] papeis){
         super(name, email, password, papeis);
     }
 
@@ -49,35 +34,6 @@ public class Collaborator extends User {
      * @param password of the collaborator.
      */
     public Collaborator (String name, String email, String password){
-        this(name, email, password, new PapelUtilizador[]{AppPOE.getInstance().getRole(Role.COLLABORATOR)});
-    }
-
-    /**
-     * Returns the name of the collaborator.
-     *
-     * @return name of the collaborator.
-     */
-     public String getNome()
-    {
-        return this.name;
-    }
-
-    /**
-     * Returns the email of the collaborator.
-     *
-     * @return email of the collaborator.
-     */
-     public String getEmail()
-    {
-        return this.email;
-    }
-
-    /**
-     * Returns the password of the collaborator.
-     *
-     * @return password of the collaborator.
-     */
-     public String getPassword(){
-        return this.password;
+        this(name, email, password, new UserRole[]{AppPOE.getInstance().getRole(Role.COLLABORATOR)});
     }
 }

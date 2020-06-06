@@ -5,9 +5,10 @@
  */
 package lapr.model;
 
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
+import lapr.controller.AppPOE;
 import lapr.list.ListTransaction;
-import lapr.list.TaskList;
+import lapr.list.ListTask;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -81,7 +82,7 @@ public class Organization {
     /**
      * An AutorizacaoFacade instance.
      */
-    private final AutorizacaoFacade m_oAutorizacao = null;
+    private final AuthFacade m_oAutorizacao = null;
 
     /**
      * Setting task list.
@@ -91,7 +92,14 @@ public class Organization {
     /**
      * Task list of the organization.
      */
-    private TaskList tc;
+    private ListTask m_oListTask;
+
+    /**
+     * @return Task list of the organization.
+     */
+    public ListTask getListTask() {
+        return m_oListTask;
+    }
 
     /**
      * Build an instance of organization receiving the name, manager and collaborator.
@@ -105,12 +113,15 @@ public class Organization {
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
             this.m_strName = name;
             if(!validatesCollaborator(collaborator))
-                throw new IllegalArgumentException("Collaborator is invalid");
+                throw new IllegalStateException("Organization - Collaborator is not valid because it already exists.");
             if(!validatesManager(manager))
-                throw new IllegalArgumentException("Manager is invalid");
-            this.setManager(manager);
-            this.setCollaborator(collaborator);
+                throw new IllegalStateException("Organization - Manager is not valid because it already exists.");
+            if(!this.setManager(manager))
+                throw new IllegalStateException("Organization - Manager cannot be added into the system because it already exists.");
+            if(!this.setCollaborator(collaborator))
+                throw new IllegalStateException("Organization - Collaborator cannot be added into the system because it already exists.");
             this.m_oListTransaction = new ListTransaction();
+            this.m_oListTask = new ListTask();
     }
     /**
      * Build a new instance of collaborator receiving the name, email and password.
@@ -141,11 +152,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesCollaborator(Collaborator collaborator) {
-        //boolean bRet = true;
-
-        //if (this.m_oAutorizacao.existeUtilizador(collaborator.getEmail()))
-          //  bRet = false;
-        return true;
+        return !AppPOE.getInstance().getAuthFacade().hasUser(collaborator);
     }
 
     /**
@@ -153,8 +160,10 @@ public class Organization {
      *
      * @param collaborator of the organization.
      */
-    private void setCollaborator(Collaborator collaborator) {
+    private boolean setCollaborator(Collaborator collaborator) {
+        if(m_oCollaborator != null || !validatesCollaborator(collaborator)) return false;
         this.m_oCollaborator = collaborator;
+        return true;
     }
 
     /**
@@ -164,12 +173,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesManager(Manager manager) {
-        //boolean bRet = true;
-
-        //if (this.m_oAutorizacaom_oAutorizacao.existeUtilizador(manager.getEmail()))
-          //  bRet = false;
-
-        return true;
+        return !AppPOE.getInstance().getAuthFacade().hasUser(manager);
     }
 
     /**
@@ -177,57 +181,18 @@ public class Organization {
      *
      * @param manager of the organization.
      */
-    public void setManager(Manager manager) {
+    public boolean setManager(Manager manager) {
+        if(m_oManager != null || !validatesManager(manager)) return false;
         this.m_oManager = manager;
-    }
-
-    /**
-     * Build an instance of organization receiving the name, manager and collaborator.
-     *
-     * @param id of the task.
-     * @param description of the task.
-     * @param m_iDurationInHours duration it took to complete the task.
-     * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
-     * @param category he category this task is in.
-     */
-    public Task newTask(String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
-        return new Task(id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
-    }
-
-    /**
-     * Validates task of the organization.
-     *
-     * @param task of the organization.
-     * @return true if valid.
-     */
-    public boolean validatesTask(Task task ) {
-        //TODO escrever código da validação da tarefa
         return true;
     }
 
     /**
-     * Register task of the organization.
-     *
-     * @param task of the organization.
-     * @return task list with new task.
+     * Checks if an organization is able to be added into the system
+     * @return True if the organization can be added into the system; False otherwise.
      */
-    public boolean registTask(Task task){
-        if (validatesTask(task)){
-            return addTask(task);
-        }
-        else{
-            return false;
-
-        }
-    }
-
-    /**
-     * Adds task of the organization.
-     *
-     * @param task of the organization.
-     * @return task list with new task.
-     */
-    private boolean addTask(Task task) {
-        return m_lstTarefas.add(task);
+    public boolean validateOrganization() {
+        return  validatesCollaborator(getCollaborator()) &&
+                validatesManager(getManager());
     }
 }

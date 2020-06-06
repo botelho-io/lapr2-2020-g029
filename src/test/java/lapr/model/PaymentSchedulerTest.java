@@ -23,7 +23,7 @@ class PaymentSchedulerTest {
 
     @Test
     void getNextDate() {
-        assertEquals(getNextDateTested(), ps.getNextDate());
+        assertEquals(getNextDateTested().toString(), ps.getNextDate().toString());
     }
 
     public static Date getNextDateTested() {

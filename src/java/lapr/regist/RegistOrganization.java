@@ -1,6 +1,6 @@
 package lapr.regist;
 
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
 import lapr.controller.AppPOE;
 import lapr.model.Collaborator;
 import lapr.model.Manager;
@@ -45,16 +45,22 @@ public class RegistOrganization {
     public boolean add(Organization organization) {
         if(!validateOrganization(organization))
             throw new IllegalArgumentException("Organization is invalid.");
-        return m_lstOrganizacoes.add(organization);
+
+        final AuthFacade au = AppPOE.getInstance().getAuthFacade();
+        boolean success =  m_lstOrganizacoes.add(organization);
+        success = success && au.registUser(organization.getCollaborator());
+        success = success && au.registUser(organization.getManager());
+        return success;
     }
 
     /**
      * Validates organization.
-     * @param organizacation to get validated .
+     * @param organizacation Organization to validate.
      * @return true if valid.
      */
     public boolean validateOrganization(Organization organizacation) {
-        return !m_lstOrganizacoes.contains(organizacation);
+        return  organizacation.validateOrganization() &&
+                !m_lstOrganizacoes.contains(organizacation);
     }
 
     /**

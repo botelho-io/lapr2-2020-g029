@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="318px" preserveAspectRatio="none" style="width:500px;height:318px;" version="1.1" viewBox="0 0 500 318" width="500px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vbac5gpwl05g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="190.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="197.0156"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="257.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="87.6094" y2="306.0703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="459" x2="459" y1="87.6094" y2="306.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="84.5332">Collaborator</text><ellipse cx="50" cy="13" fill="#FEFECE" filter="url(#f1vbac5gpwl05g)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M50,21 L50,48 M37,29 L63,29 M50,48 L37,63 M50,48 L63,63 " fill="none" filter="url(#f1vbac5gpwl05g)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1vbac5gpwl05g)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="425" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="432" y="72.5332">:System</text><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="190.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="197.0156"/><rect fill="#FFFFFF" filter="url(#f1vbac5gpwl05g)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="454" y="257.7188"/><polygon fill="#A80036" points="442,115.9609,452,119.9609,442,123.9609,446,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="448" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="275" x="73" y="115.1045">starts the process of creating a new transaction</text><polygon fill="#A80036" points="66,162.6641,56,166.6641,66,170.6641,62,166.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="458" y1="166.6641" y2="166.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="153.6318">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="271" x="83" y="145.4561">requests all the data relevant to the transaction</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="203" x="83" y="161.8076">(freelancer, task, execution details)</text><polygon fill="#A80036" points="442,193.0156,452,197.0156,442,201.0156,446,197.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="448" y1="197.0156" y2="197.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="192.1592">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="107" x="73" y="192.1592">inserts all the data</text><polygon fill="#A80036" points="66,223.3672,56,227.3672,66,231.3672,62,227.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="458" y1="227.3672" y2="227.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="222.5107">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="305" x="83" y="222.5107">shows the data introduced and requests confirmation</text><polygon fill="#A80036" points="442,253.7188,452,257.7188,442,261.7188,446,257.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="448" y1="257.7188" y2="257.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="252.8623">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="73" y="252.8623">confirms</text><polygon fill="#A80036" points="61,284.0703,51,288.0703,61,292.0703,57,288.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="55" x2="458" y1="288.0703" y2="288.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="67" y="283.2139">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="364" x="78" y="283.2139">success and shows amount that will be payed to the freelancer</text><!--MD5=[61b05421ad7355caf5314c22760f76c1]
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+'The collaborator starts the process of creating a new transaction.
+'The system requests all the data relevant to the transaction (freelancer, task, execution details).
+'The collaborator inserts all the data.
+'The systems shows the data introduced and requests confirmation.
+'The collaborator confirms.
+'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be payed to the freelancer.
+
+
+activate C
+        C -> S : starts the process of creating a new transaction
+        activate S
+                S - -> C: requests all the data relevant to the transaction \n(freelancer, task, execution details)
+        deactivate S
+        C -> S : inserts all the data
+        activate S
+                S - -> C: shows the data introduced and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success and shows amount that will be payed to the freelancer
+        deactivate S
+deactivate C
+
+@enduml
+
+@startuml SSD
+hide footbox
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+
+
+activate C
+        C -> S : starts the process of creating a new transaction
+        activate S
+                S - -> C: requests all the data relevant to the transaction \n(freelancer, task, execution details)
+        deactivate S
+        C -> S : inserts all the data
+        activate S
+                S - -> C: shows the data introduced and requests confirmation
+        deactivate S
+        C -> S : confirms
+        activate S
+                S - -> C: success and shows amount that will be payed to the freelancer
+        deactivate S
+deactivate C
+
+@enduml
+
+PlantUML version 1.2020.10(Sun May 17 10:35:57 WEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 14+36
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -5,9 +5,9 @@
  */
 package autorizacao;
 
-import autorizacao.model.PapelUtilizador;
-import autorizacao.model.RegistoPapeisUtilizador;
-import autorizacao.model.RegistoUtilizadores;
+import autorizacao.model.UserRole;
+import autorizacao.model.RegistUserRoles;
+import autorizacao.model.RegistUsers;
 import autorizacao.model.SessaoUtilizador;
 import lapr.model.User;
 import lapr.utils.Role;
@@ -16,47 +16,43 @@ import lapr.utils.Role;
  *
  * @author paulomaio
  */
-public class AutorizacaoFacade
+public class AuthFacade
 {
     private SessaoUtilizador m_oSessao = null;
     
-    private final RegistoPapeisUtilizador m_oPapeis = new RegistoPapeisUtilizador();
-    private final RegistoUtilizadores m_oUtilizadores = new RegistoUtilizadores();
-    
+    private final RegistUserRoles m_oPapeis = new RegistUserRoles();
+    private final RegistUsers m_oUsers = new RegistUsers();
+
+    public RegistUsers getRegistUser() {
+        return m_oUsers;
+    }
+
     public boolean registaPapelUtilizador(Role Papel)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(Papel);
+        UserRole papel = this.m_oPapeis.novoPapelUtilizador(Papel);
         return this.m_oPapeis.addPapel(papel);
     }
     
     public boolean registaPapelUtilizador(Role oPapel, String strDescricao)
     {
-        PapelUtilizador papel = this.m_oPapeis.novoPapelUtilizador(oPapel,strDescricao);
+        UserRole papel = this.m_oPapeis.novoPapelUtilizador(oPapel,strDescricao);
         return this.m_oPapeis.addPapel(papel);
     }
-
-    public boolean registaUtilizadorComPapel(String strNome, String strEmail, String strPassword, Role enumPapel)
-    {
-        PapelUtilizador papel = this.m_oPapeis.procuraPapel(enumPapel);
-        User utlz = this.m_oUtilizadores.newUser(strNome,strEmail,strPassword);
-        utlz.addPapel(papel);
-        return this.m_oUtilizadores.addUtilizador(utlz);
-    }
     
-    public boolean registaUtilizador(User utlz)
+    public boolean registUser(User utlz)
     {
-        return this.m_oUtilizadores.addUtilizador(utlz);
+        return this.m_oUsers.addUser(utlz);
     }
     
     public boolean existeUtilizador(String strId)
     {
-        return this.m_oUtilizadores.hasUtilizador(strId);
+        return this.m_oUsers.hasUser(strId);
     }
     
     
     public SessaoUtilizador doLogin(String strId, String strPwd)
     {
-        User utlz = this.m_oUtilizadores.procuraUtilizador(strId);
+        User utlz = this.m_oUsers.procuraUtilizador(strId);
         if (utlz != null)
         {
             if (utlz.hasPassword(strPwd)){
@@ -78,7 +74,11 @@ public class AutorizacaoFacade
         this.m_oSessao = null;
     }
 
-    public PapelUtilizador getRole(Role role) {
+    public UserRole getRole(Role role) {
         return this.m_oPapeis.procuraPapel(role);
+    }
+
+    public boolean hasUser(User uzr) {
+        return m_oUsers.hasUser(uzr);
     }
 }
