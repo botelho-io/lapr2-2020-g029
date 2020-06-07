@@ -1,0 +1,21 @@
+@startuml SSD
+autonumber
+actor "Administrator" as A
+participant ":System" as S
+
+'The administrator starts the process of visualizing statistics about the performance of the freelancers.
+'The system shows the freelancers in the system and requests the user to select which ones to include.
+'The administrator selects the freelancers.
+'The systems shows the statistical data ( mean and the standard deviation of the delays; mean and the standard deviation of the payments; histograms to analyze the delays and payments; the probability that the sample execution delay time mean is higher than 3 hours ).
+
+activate A
+        A -> S : starts the process of visualizing statistics about the performance of the freelancers
+        activate S
+                S --> A : shows the freelancers in the system and requests to select which ones to include
+        deactivate S
+        A -> S : selects the freelancers
+        activate S
+                S --> A : shows the statistical data \n( mean and the standard deviation of the delays; \nmean and the standard deviation of the payments; \nhistograms to analyze the delays and payments; \nthe probability that the sample execution delay time mean is higher than 3 hours)
+        deactivate S
+deactivate A
+@enduml

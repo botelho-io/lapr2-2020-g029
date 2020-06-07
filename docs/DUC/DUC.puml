@@ -8,7 +8,7 @@ usecase UC5  as "UC5  - Define Time and Day of the Month Unpayed Tasks Will Be P
 usecase UC6  as "UC6  - Automatically Make Payments"
 usecase UC7  as "UC7  - Visualize Overall Statistics About Task Execution Times and Freelancer Payments"
 usecase UC8  as "UC8  - Add New Organization"
-usecase UC9  as "UC9  - T4J Data Visualization"
+usecase UC9  as "UC9  - Administrator Statistics Visualization"
 usecase UC10 as "UC10 - Send E-mail to Late Freelancers"
 usecase UC11 as "UC11 - Serialize Information To File"
 
