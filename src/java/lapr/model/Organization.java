@@ -47,6 +47,8 @@ public class Organization {
             return m_oScheduler;
         }
     }
+
+
     /**
      * @return The list transactions the organization made.
      */
@@ -229,5 +231,17 @@ public class Organization {
      */
     private boolean addTask(Task task) {
         return m_lstTarefas.add(task);
+    }
+
+
+    /**
+     * Validates paymentScheduler of the organization.
+     *
+     * @param paymentScheduler of the organization.
+     * @return true if valid.
+     */
+    public boolean validatesPaymentScheduler(PaymentScheduler paymentScheduler) {
+        //TODO escrever código da validação da Schueduler
+        return true;
     }
 }
