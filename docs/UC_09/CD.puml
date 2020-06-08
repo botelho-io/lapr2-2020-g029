@@ -16,6 +16,7 @@ class AdministratorStatisticsController {
         + getHistogramDataDelays(Double bucketSize)
         + getHistogramDataPayments(Double bucketSize)
         + getNumberTransactions()
+        + getProbabilityMeanDelayLessThan(double value)
 }
 
 AdministratorStatisticsUI ..> AdministratorStatisticsController
