@@ -104,13 +104,25 @@ public class Freelancer {
     public String getName() {
         return m_strName;
     }
+    /**
+     * @return The NIF of this freelancer.
+     */
+    public String getNIF() {
+        return m_strNIF;
+    }
+    /**
+     * @return The address of this freelancer.
+     */
+    public String getAddress() {
+        return m_strAddress;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Freelancer)) return false;
         Freelancer that = (Freelancer) o;
-        return m_strId.equals(that.m_strId) ||
+        return  m_strId.equals(that.m_strId) ||
                 m_strEmail.equals(that.m_strEmail) ||
                 m_strNIF.equals(that.m_strNIF) ||
                 m_strBankAccountIBAN.equals(that.m_strBankAccountIBAN);
@@ -118,6 +130,32 @@ public class Freelancer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(m_strId, m_strEmail, m_strNIF, m_strBankAccountIBAN);
+        return Objects.hash(m_strEmail);
+    }
+
+    /**
+     * Returns a string representation of the object. In general, the
+     * {@code toString} method returns a string that
+     * "textually represents" this object. The result should
+     * be a concise but informative representation that is easy for a
+     * person to read.
+     * It is recommended that all subclasses override this method.
+     * <p>
+     * The {@code toString} method for class {@code Object}
+     * returns a string consisting of the name of the class of which the
+     * object is an instance, the at-sign character `{@code @}', and
+     * the unsigned hexadecimal representation of the hash code of the
+     * object. In other words, this method returns a string equal to the
+     * value of:
+     * <blockquote>
+     * <pre>
+     * getClass().getName() + '@' + Integer.toHexString(hashCode())
+     * </pre></blockquote>
+     *
+     * @return a string representation of the object.
+     */
+    @Override
+    public String toString() {
+        return String.format("(%s) %s", m_strId, m_strName);
     }
 }

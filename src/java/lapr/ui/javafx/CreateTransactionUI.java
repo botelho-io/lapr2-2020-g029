@@ -8,11 +8,11 @@ import javafx.stage.Stage;
 import lapr.controller.CreateTransactionController;
 import lapr.model.Freelancer;
 import lapr.model.Task;
+import lapr.ui.javafx.util.FXBridge;
+import lapr.ui.javafx.util.HelperUI;
+import lapr.ui.javafx.util.MainUI;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CreateTransactionUI {
     @FXML
@@ -57,7 +57,7 @@ public class CreateTransactionUI {
 
     private void refreshFreelancer() {
         name_freelancer = new HashMap<>();
-        List<Freelancer> lf = controller.getFreelancers();
+        Collection<Freelancer> lf = controller.getFreelancers();
         ArrayList<String> strLf = new ArrayList<>();
         for (Freelancer fre : lf) {
             final String name = String.format("(%s) %s", fre.getId(), fre.getName());
@@ -69,14 +69,14 @@ public class CreateTransactionUI {
 
     @FXML
     public void startUC3(ActionEvent actionEvent) {
-        MainUI.openUC(MainUI.UC.UC3, new Stage());
+        FXBridge.openUC(FXBridge.UC.UC3, new Stage());
         refreshFreelancer();
     }
 
     //Stage stgUC2;
     @FXML
     public void startUC2(ActionEvent actionEvent) {
-        MainUI.openUC(MainUI.UC.UC2, new Stage());
+        FXBridge.openUC(FXBridge.UC.UC2, new Stage());
         refreshTasks();
     }
 
@@ -99,13 +99,13 @@ public class CreateTransactionUI {
             boolean ad = controller.addTransaction();
             if (!ad) throw new IllegalStateException("An error occurred while adding the transaction to the register.\nPlease, try again.");
         } catch (IllegalArgumentException | IllegalStateException ex) {
-            MainUI.alert(ex.getMessage());
+            HelperUI.alert(ex.getMessage());
             initialize();
             return;
         }
         // All went ok.
         final String msg = String.format("The freelancer (%s) %s will be payed %f€.\nYou may quit or keep adding transactions.", fre.getId(), fre.getName(), controller.getAmount());
-        MainUI.alert(Alert.AlertType.INFORMATION, msg);
+        HelperUI.alert(Alert.AlertType.INFORMATION, msg);
         initialize();
     }
 }

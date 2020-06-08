@@ -8,12 +8,7 @@ package lapr.ui;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import lapr.ui.javafx.MainUI;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import lapr.ui.javafx.util.MainUI;
 
 public class Main extends Application {
 

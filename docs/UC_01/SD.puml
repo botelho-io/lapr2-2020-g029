@@ -10,7 +10,7 @@ participant "org\n:Organization" as org
 participant "lt\n:ListTask" as lt
 participant "unexecuted\n:List<Task>" as ut
 participant "rf\n:RegistFreelancer" as rf
-participant "fres\n:List<Freelancer>" as fres
+participant "fres\n:Collection<Freelancer>" as fres
 participant "ltr\n:ListTransaction" as ltr
 participant "tr\n:Transaction" as tr
 

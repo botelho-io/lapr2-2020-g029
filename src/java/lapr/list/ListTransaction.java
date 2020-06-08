@@ -186,4 +186,17 @@ public class ListTransaction implements Iterable<Transaction> {
         }
         return fre_trs;
     }
+
+    /**
+     * Gets the all the transactions in the list made by a freelancer.
+     * @param selected The freelancers to filter.
+     * @return All the transactions made to the freelancers in the selected collection.
+     */
+    public Collection<Transaction> getTransactionsOfFreelancers(final Set<Freelancer> selected) {
+        final ArrayList<Transaction> trss = new ArrayList<>();
+        for (final Transaction t : this)
+            if(t.madeToAny(selected))
+                trss.add(t);
+        return trss;
+    }
 }

@@ -13,8 +13,9 @@ class AdministratorStatisticsController {
         + getMeanPayments()
         + getStandardDeviationDelays()
         + getStandardDeviationPayments()
-        + getHistogramDataDelays()
-        + getHistogramDataPayments()
+        + getHistogramDataDelays(Double bucketSize)
+        + getHistogramDataPayments(Double bucketSize)
+        + getNumberTransactions()
 }
 
 AdministratorStatisticsUI ..> AdministratorStatisticsController
@@ -51,7 +52,7 @@ class ListTransaction {
 }
 
 class Transaction {
-        + madeByAny(Set<Freelancer> selected)
+        + madeToAny(Set<Freelancer> selected)
         + getTaskExecutionDetails()
         + getAmount()
 }

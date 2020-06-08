@@ -9,7 +9,9 @@ import lapr.controller.AppPOE;
 import lapr.utils.Expertise;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
@@ -132,6 +134,15 @@ public class Transaction {
      */
     public TaskExecutionDetails getExecutionDetails() {
         return m_oDetails;
+    }
+
+    /**
+     * Test if the transaction was made to any of the freelancer's in 'selected'.
+     * @param selected The freelancer's to test against.
+     * @return True if 'selected' contains the freelancer this transaction was made to, false otherwise.
+     */
+    public boolean madeToAny(final Collection<Freelancer> selected) {
+        return selected.contains(m_oFreelancer);
     }
 
     @Override
