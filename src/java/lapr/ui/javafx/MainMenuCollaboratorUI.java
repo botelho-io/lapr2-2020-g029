@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import lapr.ui.javafx.util.FXBridge;
+import lapr.ui.javafx.util.HelperUI;
 
 public class MainMenuCollaboratorUI {
     @FXML
@@ -14,19 +16,19 @@ public class MainMenuCollaboratorUI {
 
     @FXML
     public void addTransaction(ActionEvent actionEvent) {
-        FXBridge.data = (Object) "UC1";
+        FXBridge.scene = FXBridge.UC.UC1;
         quit();
     }
 
     @FXML
     public void addFre(ActionEvent actionEvent) {
-        FXBridge.data = (Object) "UC3";
+        FXBridge.scene = FXBridge.UC.UC3;
         quit();
     }
 
     @FXML
     public void createTask (ActionEvent actionEvent) {
-        FXBridge.data = (Object) "UC2";
+        FXBridge.scene = FXBridge.UC.UC2;
         quit();
     }
 

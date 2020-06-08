@@ -81,7 +81,7 @@ public abstract class Constants {
         final App app = poe.getApp();
         final RegistFreelancer rf = app.getRegistFreelancer();
         for(final Freelancer f : testFreelancers)
-            rf.addFreelancer(f);
+            rf.forceAdd(f);
     }
 
     public static void addTestOrgTasksFreelancersAndTransactions() {

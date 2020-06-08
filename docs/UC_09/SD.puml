@@ -7,14 +7,14 @@ participant ":App" as app
 participant "rf\n:RegistFreelancer" as rf
 participant "ro\n:RegistOrganization" as ro
 participant "org\n:Organization" as org
-participant "trs\n:List<Transaction>" as trs
+participant "trs\n:Collection<Transaction>" as trs
 participant "lt\n:ListTransaction" as lt
 participant "tr\n:Transaction" as tr
-participant "trss\n:List<Transaction>" as trss
+participant "trss\n:Collection<Transaction>" as trss
 participant "td\n:TaskExecutionDetails" as td
-participant "fres\n:Set<Freelancer>" as fres
+participant "fres\n:Collection<Freelancer>" as fres
 participant "result\n:Double"
-participant "histData\n:Map<Double,Double>"
+participant "histData\n:Map<Double,Integer>"
 
 activate A
         A -> ui : starts the process of visualizing statistics about the performance of the freelancers
@@ -50,10 +50,10 @@ activate A
                                                 loop for each Transaction
                                                         lt -> trss ** : create()
                                                         lt -> lt : tr = get(ID)
-                                                        lt -> tr : madeBy = madeByAny(selected)
+                                                        lt -> tr : madeTo = madeToAny(selected)
                                                         activate tr
                                                         deactivate tr
-                                                        opt madeBy == true
+                                                        opt madeTo == true
                                                                 lt -> trss : add(tr)
                                                                 activate trss
                                                                 deactivate trss
@@ -102,11 +102,11 @@ activate A
                         activate trs
                         deactivate trs
                 deactivate ctr
-                ui -> ctr : histData = getHistogramDataDelays()
+                ui -> ctr : histData = getHistogramDataDelays(bucketSize)
                 activate ctr
                         note over ctr : Same responsibility assignments as getMeanDelays
                 deactivate ctr
-                ui -> ctr : histData = getHistogramDataPayments()
+                ui -> ctr : histData = getHistogramDataPayments(bucketSize)
                 activate ctr
                         note over ctr : Same responsibility assignments as getMeanPayments
                 deactivate ctr

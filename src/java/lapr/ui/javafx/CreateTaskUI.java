@@ -2,13 +2,12 @@ package lapr.ui.javafx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lapr.controller.CreateTaskController;
-import lapr.controller.CreateTransactionController;
+import lapr.ui.javafx.util.HelperUI;
+import lapr.ui.javafx.util.MainUI;
 
 public class CreateTaskUI {
 
@@ -48,7 +47,7 @@ public class CreateTaskUI {
             if(!succsess2)  throw new IllegalStateException("Task with wrong data!!!");
             quit();
         } catch (Exception e) {
-            MainUI.alert("An error occurred:\n" + e.getMessage());
+            HelperUI.alert("An error occurred:\n" + e.getMessage());
         }
     }
 

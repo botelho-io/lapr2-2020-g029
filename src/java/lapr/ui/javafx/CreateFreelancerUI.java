@@ -9,6 +9,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lapr.controller.CreateFreelancerController;
+import lapr.ui.javafx.util.HelperUI;
+import lapr.ui.javafx.util.MainUI;
 
 public class CreateFreelancerUI {
     @FXML
@@ -61,7 +63,7 @@ public class CreateFreelancerUI {
             Name = validateString(txtName.getText(), "Name");
             NIF = validateString(txtNIF.getText(), "NIF");
         } catch (IllegalArgumentException ex) {
-            MainUI.alert(ex.getMessage());
+            HelperUI.alert(ex.getMessage());
             return;
         }
         try {
@@ -70,11 +72,11 @@ public class CreateFreelancerUI {
             }else if(!controller.addFreelancer()) {
                 throw new IllegalStateException("The Freelancer couldn't be created.\nAnother freelancer in the system already has that NIF/ IBAN/ Email!");
             } else {
-                MainUI.alert(Alert.AlertType.INFORMATION, "Success!\nYou may keep adding freelancers or quit.");
+                HelperUI.alert(Alert.AlertType.INFORMATION, "Success!\nYou may keep adding freelancers or quit.");
                 initialize();
             }
         } catch (IllegalArgumentException | IllegalStateException e) {
-            MainUI.alert(e.getMessage());
+            HelperUI.alert(e.getMessage());
         }
     }
 
