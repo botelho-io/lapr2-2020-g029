@@ -1,0 +1,70 @@
+@startuml MD
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+class App {
+}
+
+class Organization {
+        - String nome
+        - String NIF
+}
+
+class Collaborator {
+        - String nome
+        - String email
+        - String password
+}
+
+class Manager {
+        - String nome
+        - String email
+        - String password
+}
+
+class Transaction {
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class TaskExecutionDetails {
+        - LocalDate endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+class PaymentDetails {
+        Boolean isPaid
+}
+
+Transaction                  "1" -- "1"      Task                      : relative to >
+Transaction                  "*" -- "1"      Freelancer                : to >
+Transaction                  "*" -- "1"      Organization              : made on behalf of >
+Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
+TaskExecutionDetails         "1" -- "1"      Task                      : refers to >
+Organization                 "1" -- "*"      Task                      : publishes >
+Organization                 "1" -- "*"      Transaction               : has >
+Task                         "*" -- "0, 1"   Freelancer                : executed by >
+App                          "1" -- "*"      Organization              : has >
+App                          "1" -- "*"      Freelancer                : has >
+Organization                 "1" -- "1,..."  Collaborator               : has >
+Organization                 "1" -- "1"      Manager                   : has >
+(Organization, Transaction)      ..          PaymentDetails
+@enduml
