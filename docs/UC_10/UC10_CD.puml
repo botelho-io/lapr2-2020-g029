@@ -3,18 +3,15 @@ skinparam classAttributeIconSize 0
 top to bottom direction
 
 class EmailScheduler {
-        - Integer dayOfMonth
-        - LocalTime timeOfDay
-        + create (Integer dayOfMonth, LoaclTime timeOfDay, Task task)
-        + resetTime(Integer dayOfMonth, LocalTime timeOfDay)
-        + scheduleNestMonth()
+        - Timer m_oTimer
+        + resetTime()
         + getNextDate()
 }
 
-class DelayController {       
-	+ create(Task task, EmailScheduler scheduler)
+class SendEmailTask {       
+	+ sendMessages(Map<Freelancer, String> fre_msg)
         + run()
-	- sendEmail()
+	+ getMessages()
 }
 
 
@@ -28,26 +25,14 @@ class Organization {
         + getTaskList()
 }
 
-class TaskList {
-  +novaTask(id, description, durationInHours, costPerHourOfJuniorEur, category)
-  +registaTask(task)
-  + getTransaction(ID)
-  + removeTask(task)
-  -addTask(task)
-  -validatesTask(task)
-  + emailAboutTask()
+class ListTransaction {
+        + getTransaction(ID)
 }
 
-
-class Task {
-        - String id
-        - String description
-        - Integer durationInHours
-        - Double costPerHourOfJuniorEur
-        - String category
-         +Task(id, description, durationInHours, costPerHourOfJuniorEur, category)
-	 
+class Transaction {
+        + getExecutionDetails()
 }
+
 
 class TaskExecutionDetails {
         - Date endDate
@@ -70,20 +55,21 @@ class Freelancer {
 
 App                          "1" --> "1"      EmailAPI                  : has
 App                          "1" --> "1"      RegistOrganization        : has
-Timer                            ..>          DelayController
+Timer                            ..>          SendEmailTask
 TaskExecutionDetails         "*" --> "1"      Freelancer                : knows
-TaskExecutionDetails         "1" --> "1"         Task                   : has
-Organization                 "1" --> "1"      TaskList                  : has
 Organization                 "1" --> "1"      EmailScheduler            : has
-DelayController                  ..>          App
-DelayController                  ..>          Organization
-DelayController                  ..>          TaskList
-DelayController                  ..>          TaskExecutionDetails
-DelayController              "1" --> "1"      EmailScheduler            : knows
-TaskList                         ..>          EmailAPI
-TaskList                     "1" --> "*"      Task             : has
+SendEmailTask                   ..>          ListTransaction
+SendEmailTask                   ..>          Transaction
+SendEmailTask                  ..>          App
+SendEmailTask                  ..>          Organization
+SendEmailTask                  ..>          TaskExecutionDetails
+SendEmailTask              "1" --> "1"      EmailScheduler            : knows
+ListTransaction              "1" --> "*"      Transaction               : has
+ListTransaction                  ..>          EmailAPI
 EmailScheduler               "1" --> "1"      Timer                     : has
 EmailScheduler               "1" --> "*"      TaskExecutionDetails      : has
 RegistOrganization           "1" --> "*"      Organization              : has
+Organization                 "1" --> "1"      ListTransaction           : has
+Organization                 "1" --> "1"      EmailScheduler           : has
 
 @enduml
