@@ -1,37 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 
-<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuAdminUI">
-   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-   </rowConstraints>
-   <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-         <top>
-            <Label prefHeight="58.0" prefWidth="193.0" text="Administrator Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-         </top>
-         <center>
-            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#addOrg" text="UC 8 - Add New Organization" />
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</GridPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuAdminUI">
+   <top>
+      <Label prefHeight="58.0" prefWidth="193.0" text="Administrator Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#enterUC08" text="UC 8 - Add New Organization" />
+            <Button mnemonicParsing="false" onAction="#enterUC09" text="UC 9 - Administrator Statistics" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

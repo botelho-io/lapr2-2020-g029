@@ -2,6 +2,7 @@ package lapr.regist;
 
 import autorizacao.AuthFacade;
 import lapr.controller.AppPOE;
+import lapr.list.ListTransaction;
 import lapr.model.*;
 
 import java.util.*;
@@ -24,10 +25,10 @@ public class RegistOrganization implements Iterable<Organization> {
 
     /**
      * Build a new instance of organization receiving the name, manager and collaborator.
-     *
      * @param name of the collaborator.
      * @param manager of the organization
      * @param collaborator  of the organization.
+     * @return The new organization.
      */
     public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
         return new Organization(name, manager, collaborator);
@@ -116,5 +117,17 @@ public class RegistOrganization implements Iterable<Organization> {
             }
         }
         return  fre_trs;
+    }
+
+    /**
+     * Gets the all the transactions in the system made by a freelancer.
+     * @param selected The freelancers to filter.
+     * @return All the transactions made to the freelancers in the selected collection.
+     */
+    public Collection<Transaction> getTransactionsOfFreelancers(final Set<Freelancer> selected) {
+        final ArrayList<Transaction> trs = new ArrayList<Transaction>();
+        for(Organization org : this)
+            trs.addAll(org.getListTransaction().getTransactionsOfFreelancers(selected));
+        return trs;
     }
 }

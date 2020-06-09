@@ -125,10 +125,10 @@ public class Organization {
     }
     /**
      * Build a new instance of collaborator receiving the name, email and password.
-     *
      * @param name of the collaborator.
      * @param email of the collaborator.
      * @param password of the collaborator.
+     * @return The new collaborator.
      */
     public static Collaborator newCollaborator (String name, String email, String password) {
         return new Collaborator(name,email,password);
@@ -136,10 +136,10 @@ public class Organization {
 
     /**
      * Build a new instance of manager receiving the name, email and password.
-     *
      * @param name of the manager.
      * @param email of the manager.
      * @param password of the manager.
+     * @return The new manager.
      */
     public static Manager newManager (String name, String email, String password) {
         return new Manager(name,email,password);
@@ -157,8 +157,8 @@ public class Organization {
 
     /**
      * Modifies collaborator of the organization.
-     *
      * @param collaborator of the organization.
+     * @return True if the collaborator was set, false otherwise.
      */
     private boolean setCollaborator(Collaborator collaborator) {
         if(m_oCollaborator != null || !validatesCollaborator(collaborator)) return false;
@@ -178,8 +178,8 @@ public class Organization {
 
     /**
      * Modifies manager of the organization.
-     *
      * @param manager of the organization.
+     * @return True iff the manager was set, false otherwise.
      */
     public boolean setManager(Manager manager) {
         if(m_oManager != null || !validatesManager(manager)) return false;

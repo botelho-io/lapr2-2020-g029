@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="383px" preserveAspectRatio="none" style="width:609px;height:383px;" version="1.1" viewBox="0 0 609 383" width="609px" zoomAndPan="magnify"><defs><filter height="300%" id="f17t2j4v1fz0h0" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="178.8125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="563.5" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="95.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="563.5" y="180.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="52" x2="52" y1="87.6094" y2="294.4219"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="568.5" x2="568.5" y1="87.6094" y2="294.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="84.5332">Administrator</text><ellipse cx="52.5" cy="13" fill="#FEFECE" filter="url(#f17t2j4v1fz0h0)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M52.5,21 L52.5,48 M39.5,29 L65.5,29 M52.5,48 L39.5,63 M52.5,48 L65.5,63 " fill="none" filter="url(#f17t2j4v1fz0h0)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="8" y="307.9551">Administrator</text><ellipse cx="52.5" cy="321.0313" fill="#FEFECE" filter="url(#f17t2j4v1fz0h0)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M52.5,329.0313 L52.5,356.0313 M39.5,337.0313 L65.5,337.0313 M52.5,356.0313 L39.5,371.0313 M52.5,356.0313 L65.5,371.0313 " fill="none" filter="url(#f17t2j4v1fz0h0)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f17t2j4v1fz0h0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="534.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="541.5" y="72.5332">:System</text><rect fill="#FEFECE" filter="url(#f17t2j4v1fz0h0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="534.5" y="293.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="541.5" y="314.9551">:System</text><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="178.8125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="563.5" y="119.9609"/><rect fill="#FFFFFF" filter="url(#f17t2j4v1fz0h0)" height="95.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="563.5" y="180.6641"/><polygon fill="#A80036" points="551.5,115.9609,561.5,119.9609,551.5,123.9609,555.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="557.5" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="115.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="475" x="75.5" y="115.1045">starts the process of visualizing statistics about the performance of the freelancers</text><polygon fill="#A80036" points="68.5,146.3125,58.5,150.3125,68.5,154.3125,64.5,150.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="567.5" y1="150.3125" y2="150.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="74.5" y="145.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="471" x="85.5" y="145.4561">shows the freelancers in the system and requests to select which ones to include</text><polygon fill="#A80036" points="551.5,176.6641,561.5,180.6641,551.5,184.6641,555.5,180.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="557.5" y1="180.6641" y2="180.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="64.5" y="175.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="131" x="75.5" y="175.8076">selects the freelancers</text><polygon fill="#A80036" points="63.5,272.4219,53.5,276.4219,63.5,280.4219,59.5,276.4219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="57.5" x2="567.5" y1="276.4219" y2="276.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="69.5" y="238.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="148" x="80.5" y="206.1592">shows the statistical data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="277" x="80.5" y="222.5107">( mean and the standard deviation of the delays;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="288" x="80.5" y="238.8623">mean and the standard deviation of the payments;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="282" x="80.5" y="255.2139">histograms to analyze the delays and payments;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="468" x="80.5" y="271.5654">the probability that the sample execution delay time mean is higher than 3 hours)</text><!--MD5=[62f204800d0ac0e9b3eca8cec2dfee42]
+@startuml SSD
+autonumber
+actor "Administrator" as A
+participant ":System" as S
+
+'The administrator starts the process of visualizing statistics about the performance of the freelancers.
+'The system shows the freelancers in the system and requests the user to select which ones to include.
+'The administrator selects the freelancers.
+'The systems shows the statistical data ( mean and the standard deviation of the delays; mean and the standard deviation of the payments; histograms to analyze the delays and payments; the probability that the sample execution delay time mean is higher than 3 hours ).
+
+activate A
+        A -> S : starts the process of visualizing statistics about the performance of the freelancers
+        activate S
+                S - -> A : shows the freelancers in the system and requests to select which ones to include
+        deactivate S
+        A -> S : selects the freelancers
+        activate S
+                S - -> A : shows the statistical data \n( mean and the standard deviation of the delays; \nmean and the standard deviation of the payments; \nhistograms to analyze the delays and payments; \nthe probability that the sample execution delay time mean is higher than 3 hours)
+        deactivate S
+deactivate A
+@enduml
+
+@startuml SSD
+autonumber
+actor "Administrator" as A
+participant ":System" as S
+
+
+activate A
+        A -> S : starts the process of visualizing statistics about the performance of the freelancers
+        activate S
+                S - -> A : shows the freelancers in the system and requests to select which ones to include
+        deactivate S
+        A -> S : selects the freelancers
+        activate S
+                S - -> A : shows the statistical data \n( mean and the standard deviation of the delays; \nmean and the standard deviation of the payments; \nhistograms to analyze the delays and payments; \nthe probability that the sample execution delay time mean is higher than 3 hours)
+        deactivate S
+deactivate A
+@enduml
+
+PlantUML version 1.2020.10(Sun May 17 10:35:57 WEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 14+36
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

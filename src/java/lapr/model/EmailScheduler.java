@@ -44,7 +44,6 @@ public class EmailScheduler {
 
     /**
      * Schedules the e-mails to be sent on the next year.
-     * @return
      */
     public void scheduleNextYear() {
         m_oTimer.schedule(new SendEmailTask(this), getNextDate());

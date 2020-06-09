@@ -4,6 +4,7 @@ import lapr.list.ListTransaction;
 import lapr.model.*;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
 
 public class CreateTransactionController {
@@ -31,7 +32,7 @@ public class CreateTransactionController {
     /**
      * @return A list of the freelancers in the system.
      */
-    public List<Freelancer> getFreelancers() {
+    public Collection<Freelancer> getFreelancers() {
         return app.getRegistFreelancer().getFreelancers();
     }
 

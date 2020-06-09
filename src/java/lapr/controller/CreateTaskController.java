@@ -9,11 +9,8 @@ import lapr.model.Organization;
 import lapr.model.Task;
 import autorizacao.model.SessaoUtilizador;
 import autorizacao.AuthFacade;
-import lapr.ui.console.utils.Utils;
 
 public class CreateTaskController {
-
-
         private App plataforma;
         /**
         * Instance of the organization.
@@ -41,16 +38,16 @@ public class CreateTaskController {
         this.plataforma = AppPOE.getInstance().getApp();
     }
 
-     /**
+    /**
      * Build an instance of organization receiving the name, manager and collaborator.
-     *
      * @param id of the task.
      * @param description of the task.
      * @param m_iDurationInHours duration it took to complete the task.
      * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
      * @param category he category this task is in.
+     * @return The new task.
      */
-    public boolean newTask (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) throws Exception {
+    public boolean newTask (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
         try {
             this.autorizacao = this.plataforma.getAutorizacaoFacade();
             this.sessao = this.autorizacao.getSessaoAtual();
@@ -59,7 +56,7 @@ public class CreateTaskController {
             this.task = ListTask.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
             return this.organization.getListTask().validatesTask(this.task);
         } catch(RuntimeException ex){
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
             this.task = null;
             return false;
         }
