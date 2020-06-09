@@ -1,0 +1,26 @@
+@startuml SD
+autonumber
+actor "User" as U
+participant ":SerializeUI" as ui
+participant ":SerializeController" as ctr
+participant ":App" as app
+
+activate U
+        U -> ui : starts the process of shuting down the system
+        activate ui
+                ui --> U : questions if the changes that were made to the system should be saved
+        deactivate ui
+        U -> ui : confirms
+        activate ui
+                ui -> ctr : serialize()
+                activate ctr
+                        ctr -> app : serialize(path)
+                        activate app
+                                note over app : The app serializes all \nthe objects in the system
+                        deactivate app
+                deactivate ctr
+                ui --> U : shuts down
+        deactivate ui
+deactivate U
+
+@enduml
