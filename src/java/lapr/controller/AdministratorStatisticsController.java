@@ -128,8 +128,8 @@ public class AdministratorStatisticsController {
      * @return The probability that the mean delay is less than the specified value.
      */
     public double getProbabilityMeanDelayLessThan(double value) {
-        final double mean = getMeanDelays();
-        final double standardDeviation = getStandardDeviationDelays();
+        final double mean = 2;
+        final double standardDeviation = 1.5;
         final double number = getNumberTransactions();
         final NormalDistribution p = new NormalDistribution(mean,standardDeviation/number);
         return 1.0 - p.cumulativeProbability(value);
