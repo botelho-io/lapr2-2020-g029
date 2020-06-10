@@ -4,7 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuManager">
+=======
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuMangerUI">
+>>>>>>> 35cfa2c7b141660a2e8a0f4865c4e979407c02e9
     <top>
         <Label prefHeight="58.0" prefWidth="193.0" text="Manager Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
             <font>
@@ -13,10 +17,18 @@
         </Label>
     </top>
     <center>
+<<<<<<< HEAD
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="btnUC5dps" mnemonicParsing="false" onAction="#defineTime" text="UC 5 - Define Payment Schedular" />
             </children>
         </StackPane>
+=======
+        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnUC7ViIn" mnemonicParsing="false" onAction="#visIn" text="UC 7 -Visualize Informatiion" />
+            </children>
+        </VBox>
+>>>>>>> 35cfa2c7b141660a2e8a0f4865c4e979407c02e9
     </center>
 </BorderPane>

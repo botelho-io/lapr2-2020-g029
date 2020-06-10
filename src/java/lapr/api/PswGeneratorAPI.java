@@ -1,5 +1,7 @@
 package lapr.api;
 
-public interface PswGeneratorAPI {
+import java.io.Serializable;
+
+public interface PswGeneratorAPI extends Serializable {
     public String generatePassword(String emailOfUser);
 }

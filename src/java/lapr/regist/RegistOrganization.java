@@ -1,15 +1,14 @@
 package lapr.regist;
 
-import autorizacao.AutorizacaoFacade;
+import autorizacao.AuthFacade;
 import lapr.controller.AppPOE;
-import lapr.model.Collaborator;
-import lapr.model.Manager;
-import lapr.model.Organization;
+import lapr.list.ListTransaction;
+import lapr.model.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.*;
 
-public class RegistOrganization {
+public class RegistOrganization implements Iterable<Organization>, Serializable {
 
     /**
      * A list of organizations.
@@ -27,10 +26,10 @@ public class RegistOrganization {
 
     /**
      * Build a new instance of organization receiving the name, manager and collaborator.
-     *
      * @param name of the collaborator.
      * @param manager of the organization
      * @param collaborator  of the organization.
+     * @return The new organization.
      */
     public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
         return new Organization(name, manager, collaborator);
@@ -45,16 +44,22 @@ public class RegistOrganization {
     public boolean add(Organization organization) {
         if(!validateOrganization(organization))
             throw new IllegalArgumentException("Organization is invalid.");
-        return m_lstOrganizacoes.add(organization);
+
+        final AuthFacade au = AppPOE.getInstance().getApp().getAuthFacade();
+        boolean success =  m_lstOrganizacoes.add(organization);
+        success = success && au.registUser(organization.getCollaborator());
+        success = success && au.registUser(organization.getManager());
+        return success;
     }
 
     /**
      * Validates organization.
-     * @param organizacation to get validated .
+     * @param organizacation Organization to validate.
      * @return true if valid.
      */
     public boolean validateOrganization(Organization organizacation) {
-        return !m_lstOrganizacoes.contains(organizacation);
+        return  organizacation.validateOrganization() &&
+                !m_lstOrganizacoes.contains(organizacation);
     }
 
     /**
@@ -68,5 +73,62 @@ public class RegistOrganization {
                 return org;
         }
         return null;
+    }
+
+    /**
+     * @return An iterator to all organizations.
+     */
+    @Override
+    public Iterator<Organization> iterator() {
+        return this.m_lstOrganizacoes.iterator();
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them on all organizations.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactions() {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for (final Organization org : this) {
+            final Map<Freelancer, List<Transaction>> map = org.getListTransaction().getGroupedTransactions();
+            for(final Freelancer fre : map.keySet()) {
+                final List<Transaction> lt = fre_trs.get(fre);
+                final List<Transaction> val = map.get(fre);
+                if(lt != null) lt.addAll(val);
+                else fre_trs.put(fre, val);
+            }
+        }
+        return  fre_trs;
+    }
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @param year The year of the transactions.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the system
+     * on the year specified.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactionsInYear(final int year) {
+        Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for (final Organization org : this) {
+            final Map<Freelancer, List<Transaction>> map = org.getListTransaction().getGroupedTransactionsInYear(year);
+            for(final Freelancer fre : map.keySet()) {
+                final List<Transaction> lt = fre_trs.get(fre);
+                final List<Transaction> val = map.get(fre);
+                if(lt != null) lt.addAll(val);
+                else  fre_trs.put(fre, val);
+            }
+        }
+        return  fre_trs;
+    }
+
+    /**
+     * Gets the all the transactions in the system made by a freelancer.
+     * @param selected The freelancers to filter.
+     * @return All the transactions made to the freelancers in the selected collection.
+     */
+    public Collection<Transaction> getTransactionsOfFreelancers(final Set<Freelancer> selected) {
+        final ArrayList<Transaction> trs = new ArrayList<Transaction>();
+        for(Organization org : this)
+            trs.addAll(org.getListTransaction().getTransactionsOfFreelancers(selected));
+        return trs;
     }
 }

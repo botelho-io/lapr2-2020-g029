@@ -8,12 +8,15 @@ package lapr.model;
 import lapr.controller.AppPOE;
 import lapr.utils.Expertise;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Objects;
 
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
  */
-public class Transaction {
+public class Transaction implements Serializable {
     /**
      * The freelancer this transaction refers to.
      */
@@ -26,17 +29,38 @@ public class Transaction {
      * The details about the payment made on this transaction.
      */
     private PaymentDetails m_oPaymentDetails;
+    /**
+     * The details about the execution of the task.
+     */
+    private TaskExecutionDetails m_oDetails;
 
     /**
      * Constructor.
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param paymentDetails The payment details of the transaction.
+     * @param details The details about the execution of the task.
      */
-    public Transaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails) {
+    public Transaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+        if(freelancer == null) throw new IllegalArgumentException("Transaction - Freelancer cannot be null");
+        if(task == null) throw new IllegalArgumentException("Transaction - Task cannot be null");
+        if(paymentDetails == null) throw new IllegalArgumentException("Transaction - Payment Details cannot be null");
+        if(details == null) throw new IllegalArgumentException("Transaction - Task ExecutionDetails cannot be null");
         this.m_oFreelancer = freelancer;
         this.m_oTask = task;
         this.m_oPaymentDetails = paymentDetails;
+        this.m_oDetails = details;
+    }
+
+    /**
+     * Constructor.
+     * @param endDate The date the task ended.
+     * @param hoursDelay The delay the freelancer took to execute the task.
+     * @param description A textual description of the quality of the work done by the freelancer.
+     * @return The new TaskExecutionDetails.
+     */
+    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
+        return new TaskExecutionDetails(endDate, hoursDelay, description);
     }
 
     /**
@@ -49,30 +73,17 @@ public class Transaction {
     }
 
     /**
-     * Creates a new task.
-     * @param id The id of the task.
-     * @param description A short description of the task.
-     * @param durationInHours The duration it took to complete the task.
-     * @param costPerHourOfJuniorEur The cost per hour a junior freelancer receives for this task.
-     * @param category The category this task is in.
-     * @return The task created.
-     */
-    public static Task newTask(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category) {
-        return new Task(id, description, durationInHours, costPerHourOfJuniorEur, category);
-    }
-
-    /**
      * Makes a payment on the transaction.
      * @return True if the payment was made, false otherwise.
      */
     public boolean makeBankTransfer() {
         boolean success = AppPOE.getInstance().getApp().getPaymentAPI().payTo(
-            getFreelancer().getId(),    // The ID of the freelancer to pay to.
-            getFreelancer().getIBAN(),  // The IBAN of the freelancer to pay.
-            getTask().getId(),          // The ID of the task this payment is for.
-            getTask().getM_strDescription(), // The description of the task this payment is for.
-            getAmount(),                // The amount in euros to pay to the freelancer.
-            getNativeAmount()           // The amount in the freelancer's native currency to pay.
+            getFreelancer().getId(),            // The ID of the freelancer to pay to.
+            getFreelancer().getIBAN(),          // The IBAN of the freelancer to pay.
+            getTask().getId(),                  // The ID of the task this payment is for.
+            getTask().getDescription(),    // The description of the task this payment is for.
+            getAmount(),                        // The amount in euros to pay to the freelancer.
+            getNativeAmount()                   // The amount in the freelancer's native currency to pay.
         );
         getPaymentDetails().setPayed(success);
         return success;
@@ -111,7 +122,6 @@ public class Transaction {
     public Task getTask() {
         return m_oTask;
     }
-
     /**
      * @return The details about the payment made on this transaction.
      */
@@ -119,18 +129,33 @@ public class Transaction {
         return m_oPaymentDetails;
     }
 
+    /**
+     * @return The details of the execution of the task.
+     */
+    public TaskExecutionDetails getExecutionDetails() {
+        return m_oDetails;
+    }
+
+    /**
+     * Test if the transaction was made to any of the freelancer's in 'selected'.
+     * @param selected The freelancer's to test against.
+     * @return True if 'selected' contains the freelancer this transaction was made to, false otherwise.
+     */
+    public boolean madeToAny(final Collection<Freelancer> selected) {
+        return selected.contains(m_oFreelancer);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Transaction)) return false;
         Transaction that = (Transaction) o;
-        return m_oFreelancer.equals(that.m_oFreelancer) &&
-                m_oTask.equals(that.m_oTask) &&
-                m_oPaymentDetails.equals(that.m_oPaymentDetails);
+        return m_oTask.equals(that.m_oTask);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(m_oFreelancer, m_oTask, m_oPaymentDetails);
+        return Objects.hash(m_oTask);
     }
+
 }

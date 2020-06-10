@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="592.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.AdministratorStatisticsUI2">
+  <tabs>
+    <Tab text="Analyse Payments">
+      <content>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Mean:" />
+                        <Label fx:id="PlblM" prefHeight="18.0" prefWidth="235.0" text="__MEAN__" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="14.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Standard Deviation:" />
+                        <Label fx:id="PlblSD" prefHeight="18.0" prefWidth="201.0" text="__SD__" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="14.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="10.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <BarChart fx:id="PbcH" animated="false" title="Payment Histogram" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="Frequency" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="783.0" spacing="10.0">
+                     <children>
+                        <Label text="Bucket Size:" />
+                        <Spinner fx:id="PspBS" prefHeight="26.0" prefWidth="120.0" />
+                        <Button mnemonicParsing="false" onAction="#applyBucketSizePayments" text="Apply" />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <right>
+                              <Button mnemonicParsing="false" onAction="#quit" text="Exit" BorderPane.alignment="CENTER" />
+                           </right>
+                        </BorderPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+      </content>
+    </Tab>
+    <Tab text="Analyse Delays">
+      <content>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Mean:" />
+                        <Label fx:id="DlblM" prefHeight="18.0" prefWidth="218.0" text="__MEAN__" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="14.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Santard Deviation:" />
+                        <Label fx:id="DlblSD" prefHeight="18.0" prefWidth="197.0" text="__SD__" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="14.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Probability that Sample Mean Exceedes" />
+                        <Spinner fx:id="DspHOURS" prefHeight="26.0" prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets left="-10.0" />
+                           </HBox.margin>
+                        </Spinner>
+                        <Label text=":">
+                           <HBox.margin>
+                              <Insets left="-10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="DlblPROB" prefHeight="18.0" prefWidth="219.0" text="__PROB__" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <BarChart fx:id="DbcH" animated="false" title="Delay Histogram" VBox.vgrow="ALWAYS">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis label="Frequency" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="727.0" spacing="10.0">
+                     <children>
+                        <Label text="Bucket Size:" />
+                        <Spinner fx:id="DspBS" prefHeight="26.0" prefWidth="120.0" />
+                        <Button mnemonicParsing="false" onAction="#applyBucketSizeDelays" text="Apply" />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <right>
+                              <Button mnemonicParsing="false" onAction="#quit" text="Exit" BorderPane.alignment="CENTER" />
+                           </right>
+                        </BorderPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

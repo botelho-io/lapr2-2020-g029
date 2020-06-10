@@ -1,5 +1,6 @@
 package lapr.controller;
 
+import lapr.list.ListTask;
 import lapr.list.ListTransaction;
 import lapr.model.*;
 import lapr.regist.RegistFreelancer;
@@ -9,10 +10,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,15 +32,13 @@ class MakePaymentTaskTest {
         RegistFreelancer rfre = app.getRegistFreelancer();
         Freelancer fre = rfre.newFreelancer("André Botelho", Expertise.SENIOR.name(), "fre@mail.com", "7238648762", "6248736", "dshfsk", "Portugal");
         rfre.addFreelancer(fre);
-        Task tsk = Transaction.newTask("id", "desc", 10, 10, "Example");
+        Task tsk = ListTask.newTask("id", "desc", 10, 10, "Example");
         lt = org.getListTransaction();
-        PaymentDetails pd = Transaction.newPaymentDetails(false);
-        Transaction trs = ListTransaction.newTransaction(fre, tsk, pd);
-        lt.add(trs);
-        tsk = Transaction.newTask("id2", "desc2", 100, 5, "Example");
-        pd = Transaction.newPaymentDetails(false);
-        trs = ListTransaction.newTransaction(fre, tsk, pd);
-        lt.add(trs);
+        Transaction trs = ListTransaction.newTransaction(fre, tsk, LocalDate.now(), 1, "Good Job!");
+        lt.addTransaction(trs);
+        tsk = ListTask.newTask("id2", "desc2", 100, 5, "Example");
+        trs = ListTransaction.newTransaction(fre, tsk, LocalDate.now(), 3650, "A little late...");
+        lt.addTransaction(trs);
         PaymentScheduler ps = org.newPaymentScheduler(40, LocalTime.now());
         pt = new MakePaymentTask(org, ps);
     }

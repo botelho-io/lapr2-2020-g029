@@ -1,0 +1,75 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class EmailScheduler {
+        - Timer m_oTimer
+        + resetTime()
+        + getNextDate()
+}
+
+class SendEmailTask {       
+	+ sendMessages(Map<Freelancer, String> fre_msg)
+        + run()
+	+ getMessages()
+}
+
+
+class EmailAPI {
+	+ payTo(String freelancerId,String taskId, Interger delay )
+}
+
+
+class Organization {
+        - String nome
+        + getTaskList()
+}
+
+class ListTransaction {
+        + getTransaction(ID)
+}
+
+class Transaction {
+        + getExecutionDetails()
+}
+
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+        + sendEmailFreelancer()
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+
+App                          "1" --> "1"      EmailAPI                  : has
+App                          "1" --> "1"      RegistOrganization        : has
+Timer                            ..>          SendEmailTask
+TaskExecutionDetails         "*" --> "1"      Freelancer                : knows
+Organization                 "1" --> "1"      EmailScheduler            : has
+SendEmailTask                   ..>          ListTransaction
+SendEmailTask                   ..>          Transaction
+SendEmailTask                  ..>          App
+SendEmailTask                  ..>          Organization
+SendEmailTask                  ..>          TaskExecutionDetails
+SendEmailTask              "1" --> "1"      EmailScheduler            : knows
+ListTransaction              "1" --> "*"      Transaction               : has
+ListTransaction                  ..>          EmailAPI
+EmailScheduler               "1" --> "1"      Timer                     : has
+EmailScheduler               "1" --> "*"      TaskExecutionDetails      : has
+RegistOrganization           "1" --> "*"      Organization              : has
+Organization                 "1" --> "1"      ListTransaction           : has
+Organization                 "1" --> "1"      EmailScheduler           : has
+
+@enduml

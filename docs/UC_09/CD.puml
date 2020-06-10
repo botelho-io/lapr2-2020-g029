@@ -1,0 +1,108 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class AdministratorStatisticsUI {
+
+}
+
+class AdministratorStatisticsController {
+        + getFreelancers()
+        + setFreelancers(Set<Freelancer> selected)
+        + getMeanDelays()
+        + getMeanPayments()
+        + getStandardDeviationDelays()
+        + getStandardDeviationPayments()
+        + getHistogramDataDelays(Double bucketSize)
+        + getHistogramDataPayments(Double bucketSize)
+        + getNumberTransactions()
+        + getProbabilityMeanDelayLessThan(double value)
+}
+
+AdministratorStatisticsUI ..> AdministratorStatisticsController
+
+class App {
+        + getRegistFreelancer()
+        + getRegistOrganization()
+}
+
+AdministratorStatisticsController ..> App
+
+class RegistFreelancer {
+        + getFreelancers()
+}
+
+AdministratorStatisticsController ..> RegistFreelancer
+
+class RegistOrganization {
+        + getTransactionsOfFreelancers(Set<Freelancer> selected)
+}
+
+AdministratorStatisticsController ..> RegistOrganization
+
+class Organization {
+        - String nome
+        - String NIF
+
+        + getListTransaction()
+}
+
+class ListTransaction {
+        + getTransactionsOfFreelancers(Set<Freelancer> selected)
+        + get(ID)
+}
+
+class Transaction {
+        + madeToAny(Set<Freelancer> selected)
+        + getTaskExecutionDetails()
+        + getAmount()
+}
+
+AdministratorStatisticsController ..> Transaction
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class TaskExecutionDetails {
+        - LocalDate endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+class PaymentDetails {
+        Boolean isPaid
+}
+
+Transaction                  "1" --> "1"      Task                      : knows
+Transaction                  "*" --> "1"      Freelancer                : knows
+Transaction                  "*" --> "1"      Organization              : knows
+Transaction                  "1" --> "1"      TaskExecutionDetails      : has
+TaskExecutionDetails         "1" --> "1"      Task                      : knows
+Organization                 "1" --> "1"      ListTask                  : has
+ListTask                     "1" --> "*"      Task                      : has
+Organization                 "1" --> "1"      ListTransaction           : has
+ListTransaction              "1" --> "*"      Transaction               : has
+Task                         "*" --> "0, 1"   Freelancer                : knows
+App                          "1" --> "1"      RegistOrganization        : has
+RegistOrganization           "1" --> "*"      Organization              : has
+App                          "1" --> "1"      RegistFreelancer          : has
+RegistFreelancer             "1" --> "*"      Freelancer                : has
+Transaction                  "1" --> "1"      PaymentDetails            : has
+
+@enduml

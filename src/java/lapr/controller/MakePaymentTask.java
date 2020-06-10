@@ -5,11 +5,12 @@ import lapr.model.Organization;
 import lapr.model.PaymentScheduler;
 import lapr.model.Transaction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TimerTask;
 
-public class MakePaymentTask extends TimerTask {
+public class MakePaymentTask extends TimerTask implements Serializable {
     /**
      * The organization to make the payments on.
      */
@@ -45,7 +46,7 @@ public class MakePaymentTask extends TimerTask {
         for(Transaction trs : lt) {
             if(!trs.getPaymentDetails().isPayed())
                 if(trs.makeBankTransfer())
-                    completeTransactions.add(trs);
+                    completeTransactions.addTransaction(trs);
         }
         completeTransactions.emailAboutPayment();
     }

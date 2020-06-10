@@ -1,9 +1,11 @@
 package lapr.api;
 
+import java.io.Serializable;
+
 /**
  * The API used to send emails.
  */
-public interface EmailAPI {
+public interface EmailAPI extends Serializable {
     /**
      * Send an email.
      * @param address Address that will receive the email.

@@ -1,0 +1,29 @@
+@startuml UC1_Detail_getUnexecutedTaks
+autonumber
+hide footbox
+
+participant ":CreateTransactionController" as cnt
+participant "lt\n:ListTask" as lt
+participant "ut\n:List<Transaction>" as ut
+participant "tsk\n:Task" as tsk
+participant "exe\n:Freelancer" as exe
+
+activate cnt
+        cnt -> lt : ut = getUnexecutedTaks()
+        activate lt
+                lt -> ut ** : create()
+                loop for each Task
+                        lt -> lt : tsk = getTask(ID)
+                        lt -> tsk : exe = getExecutor()
+                        activate tsk
+                        deactivate tsk
+                        opt exe == null
+                                lt -> ut : add(tsk)
+                                activate ut
+                                deactivate ut
+                        end
+                end
+        deactivate lt
+deactivate cnt
+
+@enduml

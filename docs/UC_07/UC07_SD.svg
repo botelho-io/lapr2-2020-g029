@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1674px" preserveAspectRatio="none" style="width:2342px;height:1674px;" version="1.1" viewBox="0 0 2342 1674" width="2342px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1e4yymmsfusn1" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="1472.9297" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="573.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="1390.2266" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="573.5" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="589.9531" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="161.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="822.6172"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="161.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1006.0234"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1189.4297"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1249.7813"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1310.1328"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1400.8359"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1461.1875"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1060.5" y="241.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="499.25" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1165" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1342" y="439.2891"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="755.2656"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="878.3203"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="1061.7266"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="1340.4844"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="293.9766" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1607.5" y="439.2891"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="28" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="597.2109"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="938.6719"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="1122.0781"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1851.5" y="687.9141"/>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1408" y="309.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="16" x="1465.5" y="331.252">trs</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1415" y="348.8613">:List&lt;Transaction&gt;</text>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="308.9766" style="stroke: #000000; stroke-width: 2.0;" width="855" x="1089" y="484.6406"/>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1789" y="502.9922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="1843" y="524.5254">trss</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1796" y="542.1348">:List&lt;Transaction&gt;</text>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="78.7031" style="stroke: #000000; stroke-width: 2.0;" width="391" x="1543" y="647.5625"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="139.0547" style="stroke: #000000; stroke-width: 2.0;" width="1073.5" x="715.5" y="837.9688"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="139.0547" style="stroke: #000000; stroke-width: 2.0;" width="1073.5" x="715.5" y="1021.375"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="88" x2="88" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="578.5" x2="578.5" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="862.5" x2="862.5" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1065" x2="1065" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1170" x2="1170" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1347" x2="1347" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1475" x2="1475" y1="351.8281" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1612" x2="1612" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1730" x2="1730" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1856" x2="1856" y1="545.1016" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="2012" x2="2012" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="2134" x2="2134" y1="87.6094" y2="1588.9453"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="2257" x2="2257" y1="87.6094" y2="1588.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="155" x="8" y="84.5332">Manager or Collaborator</text>
+        <ellipse cx="88.5" cy="13" fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M88.5,21 L88.5,48 M75.5,29 L101.5,29 M88.5,48 L75.5,63 M88.5,48 L101.5,63 " fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="155" x="8" y="1602.4785">Manager or Collaborator</text>
+        <ellipse cx="88.5" cy="1615.5547" fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M88.5,1623.5547 L88.5,1650.5547 M75.5,1631.5547 L101.5,1631.5547 M88.5,1650.5547 L75.5,1665.5547 M88.5,1650.5547 L101.5,1665.5547 " fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="220" x="466.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="206" x="473.5" y="72.5332">:ManagerCollaboratorStatisticsUI</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="220" x="466.5" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="206" x="473.5" y="1609.4785">:ManagerCollaboratorStatisticsUI</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="270" x="725.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="256" x="732.5" y="72.5332">:ManagerCollaboratorStatisticsController</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="270" x="725.5" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="256" x="732.5" y="1609.4785">:ManagerCollaboratorStatisticsController</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="1042" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="1049" y="72.5332">:App</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="1042" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="1049" y="1609.4785">:App</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="138" x="1099" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="13" x="1161.5" y="54.9238">ro</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="124" x="1106" y="72.5332">:RegistOrganization</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="138" x="1099" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="13" x="1161.5" y="1609.4785">ro</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="124" x="1106" y="1627.0879">:RegistOrganization</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="1296" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="21" x="1334.5" y="54.9238">org</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="1303" y="72.5332">:Organization</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="1296" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="21" x="1334.5" y="1609.4785">org</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="1303" y="1627.0879">:Organization</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1408" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="16" x="1465.5" y="1609.4785">trs</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1415" y="1627.0879">:List&lt;Transaction&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="1553" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="1607" y="54.9238">lt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1560" y="72.5332">:ListTransaction</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="1553" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="1607" y="1609.4785">lt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1560" y="1627.0879">:ListTransaction</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="1682" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="9" x="1724" y="54.9238">tr</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="1689" y="72.5332">:Transaction</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="1682" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="9" x="1724" y="1609.4785">tr</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="1689" y="1627.0879">:Transaction</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1789" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="1843" y="1609.4785">trss</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1796" y="1627.0879">:List&lt;Transaction&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="1934" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="12" x="2004.5" y="54.9238">td</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="1941" y="72.5332">:TaskExecutionDetails</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="1934" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="12" x="2004.5" y="1609.4785">td</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="1941" y="1627.0879">:TaskExecutionDetails</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="63" x="2101" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="2115" y="54.9238">result</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="2108" y="72.5332">:Double</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="63" x="2101" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="2115" y="1609.4785">result</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="2108" y="1627.0879">:Double</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="155" x="2178" y="33.3906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="2229.5" y="54.9238">histData</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="141" x="2185" y="72.5332">:Map&lt;Double,Double&gt;</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="155" x="2178" y="1587.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="2229.5" y="1609.4785">histData</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="141" x="2185" y="1627.0879">:Map&lt;Double,Double&gt;</text>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="1472.9297" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="573.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="1390.2266" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="573.5" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="589.9531" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="161.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="822.6172"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="161.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1006.0234"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1189.4297"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1249.7813"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1310.1328"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1400.8359"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="857.5" y="1461.1875"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1060.5" y="241.0156"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="499.25" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1165" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1342" y="439.2891"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="755.2656"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="878.3203"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="1061.7266"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1470.5" y="1340.4844"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="293.9766" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1607.5" y="439.2891"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="28" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="597.2109"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="938.6719"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1725.5" y="1122.0781"/>
+        <rect fill="#FFFFFF" filter="url(#f1e4yymmsfusn1)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1851.5" y="687.9141"/>
+        <polygon fill="#A80036" points="561.5,115.6094,571.5,119.6094,561.5,123.6094,565.5,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="567.5" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="100.5" y="115.1045">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="380" x="111.5" y="115.1045">starts the visualize of overall statistics about task execution times</text>
+        <polygon fill="#A80036" points="104.5,145.9609,94.5,149.9609,104.5,153.9609,100.5,149.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="98.5" x2="577.5" y1="149.9609" y2="149.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="110.5" y="145.4561">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="319" x="121.5" y="145.4561">request sorting of the data (i.e.name or payment value).</text>
+        <polygon fill="#A80036" points="561.5,176.3125,571.5,180.3125,561.5,184.3125,565.5,180.3125" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="567.5" y1="180.3125" y2="180.3125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="100.5" y="175.8076">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="111.5" y="175.8076">enter the requested data</text>
+        <polygon fill="#A80036" points="845.5,206.6641,855.5,210.6641,845.5,214.6641,849.5,210.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="210.6641" y2="210.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="590.5" y="206.1592">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="601.5" y="206.1592">setSortMethod(sm)</text>
+        <polygon fill="#A80036" points="1048.5,237.0156,1058.5,241.0156,1048.5,245.0156,1052.5,241.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1054.5" y1="241.0156" y2="241.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="874.5" y="236.5107">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="163" x="885.5" y="236.5107">ro = getRegistOrganization()</text>
+        <polygon fill="#A80036" points="1153,297.3672,1163,301.3672,1153,305.3672,1157,301.3672" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1159" y1="301.3672" y2="301.3672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="874.5" y="296.8623">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="131" x="885.5" y="296.8623">trs = getTransactions()</text>
+        <polygon fill="#A80036" points="1396,327.7188,1406,331.7188,1396,335.7188,1400,331.7188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1175" x2="1402" y1="331.7188" y2="331.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1182" y="327.2139">7</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="1193" y="327.2139">create()</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1408" y="309.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="16" x="1465.5" y="331.252">trs</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1415" y="348.8613">:List&lt;Transaction&gt;</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1175" x2="1217" y1="396.2891" y2="396.2891"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1217" x2="1217" y1="396.2891" y2="409.2891"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1176" x2="1217" y1="409.2891" y2="409.2891"/>
+        <polygon fill="#A80036" points="1186,405.2891,1176,409.2891,1186,413.2891,1182,409.2891" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1182" y="391.4326">8</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="1193" y="391.4326">org = get(ID)</text>
+        <polygon fill="#A80036" points="1330,435.2891,1340,439.2891,1330,443.2891,1334,439.2891" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1175" x2="1336" y1="439.2891" y2="439.2891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1182" y="434.7842">9</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="1193" y="434.7842">lt = getListTransaction()</text>
+        <rect fill="none" height="308.9766" style="stroke: #000000; stroke-width: 2.0;" width="855" x="1089" y="484.6406"/>
+        <polygon fill="#EEEEEE" points="1089,484.6406,1162,484.6406,1162,492.6406,1152,502.6406,1089,502.6406,1089,484.6406" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="1104" y="499.1357">loop</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="1177" y="498.0596">[for each Transaction]</text>
+        <polygon fill="#A80036" points="1777,520.9922,1787,524.9922,1777,528.9922,1781,524.9922" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1617.5" x2="1783" y1="524.9922" y2="524.9922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1624.5" y="520.4873">10</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="1642.5" y="520.4873">create()</text>
+        <rect fill="#FEFECE" filter="url(#f1e4yymmsfusn1)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="1789" y="502.9922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="1843" y="524.5254">trss</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="1796" y="542.1348">:List&lt;Transaction&gt;</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1622.5" x2="1664.5" y1="589.5625" y2="589.5625"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1664.5" x2="1664.5" y1="589.5625" y2="602.5625"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1623.5" x2="1664.5" y1="602.5625" y2="602.5625"/>
+        <polygon fill="#A80036" points="1633.5,598.5625,1623.5,602.5625,1633.5,606.5625,1629.5,602.5625" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1629.5" y="584.7061">11</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="1647.5" y="584.7061">tr = get(ID)</text>
+        <rect fill="none" height="78.7031" style="stroke: #000000; stroke-width: 2.0;" width="391" x="1543" y="647.5625"/>
+        <polygon fill="#EEEEEE" points="1543,647.5625,1608,647.5625,1608,655.5625,1598,665.5625,1543,665.5625,1543,647.5625" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="1558" y="662.0576">opt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="93" x="1623" y="660.9814">[madeBy == true]</text>
+        <polygon fill="#A80036" points="1839.5,683.9141,1849.5,687.9141,1839.5,691.9141,1843.5,687.9141" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1617.5" x2="1845.5" y1="687.9141" y2="687.9141"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1624.5" y="683.4092">12</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="37" x="1642.5" y="683.4092">add(tr)</text>
+        <polygon fill="#A80036" points="1458.5,751.2656,1468.5,755.2656,1458.5,759.2656,1462.5,755.2656" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1175" x2="1464.5" y1="755.2656" y2="755.2656"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1182" y="750.7607">13</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="1200" y="750.7607">addAll(trs)</text>
+        <polygon fill="#A80036" points="845.5,818.6172,855.5,822.6172,845.5,826.6172,849.5,822.6172" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="822.6172" y2="822.6172"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="818.1123">14</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="146" x="608.5" y="818.1123">result = getMeanDelays()</text>
+        <rect fill="none" height="139.0547" style="stroke: #000000; stroke-width: 2.0;" width="1073.5" x="715.5" y="837.9688"/>
+        <polygon fill="#EEEEEE" points="715.5,837.9688,788.5,837.9688,788.5,845.9688,778.5,855.9688,715.5,855.9688,715.5,837.9688" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="730.5" y="852.4639">loop</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="803.5" y="851.3877">[for each Transaction]</text>
+        <polygon fill="#A80036" points="1458.5,874.3203,1468.5,878.3203,1458.5,882.3203,1462.5,878.3203" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1464.5" y1="878.3203" y2="878.3203"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="874.5" y="873.8154">15</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="892.5" y="873.8154">tr = get(ID)</text>
+        <polygon fill="#A80036" points="1713.5,934.6719,1723.5,938.6719,1713.5,942.6719,1717.5,938.6719" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1719.5" y1="938.6719" y2="938.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="874.5" y="934.167">16</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="179" x="892.5" y="934.167">td = getTaskExecutionDetails()</text>
+        <polygon fill="#A80036" points="845.5,1002.0234,855.5,1006.0234,845.5,1010.0234,849.5,1006.0234" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1006.0234" y2="1006.0234"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1001.5186">17</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="608.5" y="1001.5186">result = getMeanPayments()</text>
+        <rect fill="none" height="139.0547" style="stroke: #000000; stroke-width: 2.0;" width="1073.5" x="715.5" y="1021.375"/>
+        <polygon fill="#EEEEEE" points="715.5,1021.375,788.5,1021.375,788.5,1029.375,778.5,1039.375,715.5,1039.375,715.5,1021.375" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="730.5" y="1035.8701">loop</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="803.5" y="1034.7939">[for each Transaction]</text>
+        <polygon fill="#A80036" points="1458.5,1057.7266,1468.5,1061.7266,1458.5,1065.7266,1462.5,1061.7266" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1464.5" y1="1061.7266" y2="1061.7266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="874.5" y="1057.2217">18</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="892.5" y="1057.2217">tr = get(ID)</text>
+        <polygon fill="#A80036" points="1713.5,1118.0781,1723.5,1122.0781,1713.5,1126.0781,1717.5,1122.0781" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1719.5" y1="1122.0781" y2="1122.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="874.5" y="1117.5732">19</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="71" x="892.5" y="1117.5732">getAmount()</text>
+        <polygon fill="#A80036" points="845.5,1185.4297,855.5,1189.4297,845.5,1193.4297,849.5,1189.4297" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1189.4297" y2="1189.4297"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1184.9248">20</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="218" x="608.5" y="1184.9248">result = getStandardDeviationDelays()</text>
+        <polygon fill="#A80036" points="845.5,1245.7813,855.5,1249.7813,845.5,1253.7813,849.5,1249.7813" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1249.7813" y2="1249.7813"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1245.2764">21</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="237" x="608.5" y="1245.2764">result = getStandardDeviationPayments()</text>
+        <polygon fill="#A80036" points="845.5,1306.1328,855.5,1310.1328,845.5,1314.1328,849.5,1310.1328" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1310.1328" y2="1310.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1305.6279">22</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="193" x="608.5" y="1305.6279">result = getNumberTransactions()</text>
+        <polygon fill="#A80036" points="1458.5,1336.4844,1468.5,1340.4844,1458.5,1344.4844,1462.5,1340.4844" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="867.5" x2="1464.5" y1="1340.4844" y2="1340.4844"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="874.5" y="1335.9795">23</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="892.5" y="1335.9795">size()</text>
+        <polygon fill="#A80036" points="845.5,1396.8359,855.5,1400.8359,845.5,1404.8359,849.5,1400.8359" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1400.8359" y2="1400.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1396.3311">24</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="216" x="608.5" y="1396.3311">histData = getHistogramDataDelays()</text>
+        <polygon fill="#A80036" points="845.5,1457.1875,855.5,1461.1875,845.5,1465.1875,849.5,1461.1875" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="583.5" x2="851.5" y1="1461.1875" y2="1461.1875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="590.5" y="1456.6826">25</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="235" x="608.5" y="1456.6826">histData = getHistogramDataPayments()</text>
+        <polygon fill="#A80036" points="99.5,1566.5391,89.5,1570.5391,99.5,1574.5391,95.5,1570.5391" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="93.5" x2="577.5" y1="1570.5391" y2="1570.5391"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="105.5" y="1541.5615">26</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="420" x="123.5" y="1517.0342">presents the information ( mean and the standard deviation of the delays,</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="397" x="127.5" y="1533.3857">of each one and of all freelancers; histogram to analyze the delays of</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="430" x="127.5" y="1549.7373">each one and all the freelancers working to the organization; mean and the</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="420" x="123.5" y="1566.0889">standard deviation of the payments made to each one of the freelancers).</text>
+        <!--
+@startuml SD
+autonumber
+actor "Manager or Collaborator" as MC
+participant ":ManagerCollaboratorStatisticsUI" as ui
+participant ":ManagerCollaboratorStatisticsController" as ctr
+participant ":App" as app
+participant "ro\n:RegistOrganization" as ro
+participant "org\n:Organization" as org
+participant "trs\n:List<Transaction>" as trs
+participant "lt\n:ListTransaction" as lt
+participant "tr\n:Transaction" as tr
+participant "trss\n:List<Transaction>" as trss
+participant "td\n:TaskExecutionDetails" as td
+participant "result\n:Double"
+participant "histData\n:Map<Double,Double>"
+
+activate MC
+        MC -> ui : starts the visualize of overall statistics about task execution times
+        activate ui
+                ui - -> MC : request sorting of the data (i.e.name or payment value).
+        deactivate ui
+        MC -> ui : enter the requested data
+        activate ui
+                ui -> ctr : setSortMethod(sm)
+                activate ctr
+                        ctr -> app : ro = getRegistOrganization()
+                        activate app
+                        deactivate app
+                        ctr -> ro : trs = getTransactions()
+                        activate ro
+                                ro -> trs ** : create()
+                                        ro -> ro : org = get(ID)
+                                        ro -> org : lt = getListTransaction()
+                                        activate org
+                                        deactivate org
+                                        activate lt
+                                                loop for each Transaction
+                                                        lt -> trss ** : create()
+                                                        lt -> lt : tr = get(ID)
+                                                        activate tr
+                                                        deactivate tr
+                                                        opt madeBy == true
+                                                                lt -> trss : add(tr)
+                                                                activate trss
+                                                                deactivate trss
+                                                        end
+                                        deactivate lt
+                                        ro -> trs : addAll(trs)
+                                        activate trs
+                                        deactivate trs
+                                end
+                        deactivate ro
+                deactivate ctr
+                ui -> ctr : result = getMeanDelays()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : td = getTaskExecutionDetails()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getMeanPayments()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : getAmount()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationDelays()
+                activate ctr
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationPayments()
+                activate ctr 
+                deactivate ctr
+                ui -> ctr : result = getNumberTransactions()
+                activate ctr
+                        ctr -> trs : size()
+                        activate trs
+                        deactivate trs
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataDelays()
+                activate ctr                       
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataPayments()
+                activate ctr                       
+                deactivate ctr
+                ui - -> MC : presents the information ( mean and the standard deviation of the delays,\n of each one and of all freelancers; histogram to analyze the delays of\n each one and all the freelancers working to the organization; mean and the \nstandard deviation of the payments made to each one of the freelancers).
+        deactivate ui
+deactivate MC
+
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

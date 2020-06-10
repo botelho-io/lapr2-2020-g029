@@ -3,28 +3,27 @@ package lapr.list;
 import lapr.api.EmailAPI;
 import lapr.api.MonetaryConversionAPI;
 import lapr.controller.AppPOE;
-import lapr.model.Freelancer;
-import lapr.model.PaymentDetails;
-import lapr.model.Task;
-import lapr.model.Transaction;
+import lapr.model.*;
 import lapr.utils.Triplet;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.*;
 
 /**
  * Represents a list of transactions.
  */
-public class ListTransaction implements Iterable<Transaction> {
+public class ListTransaction implements Iterable<Transaction>, Serializable {
     /**
      * The list of the transactions held by the list.
      */
-    List<Transaction> m_lstTransaction;
+    Set<Transaction> m_setTransaction;
 
     /**
      * Constructor.
      */
     public ListTransaction() {
-        m_lstTransaction = new ArrayList<>();
+        m_setTransaction = new HashSet<>();
     }
 
     /**
@@ -32,7 +31,20 @@ public class ListTransaction implements Iterable<Transaction> {
      */
     @Override
     public Iterator<Transaction> iterator() {
-        return m_lstTransaction.iterator();
+        return m_setTransaction.iterator();
+    }
+
+    /**
+     * Creates a new transaction.
+     * @param freelancer The freelancer that completed the task.
+     * @param task Tha task completed by the freelancer.
+     * @param endDate The date the task ended.
+     * @param hoursDelay The delay the freelancer took to execute the task.
+     * @param description A textual description of the quality of the work done by the freelancer.
+     * @return The new task.
+     */
+    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
+        return new Transaction(freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
     }
 
     /**
@@ -40,10 +52,11 @@ public class ListTransaction implements Iterable<Transaction> {
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param paymentDetails The payment details of the transaction.
+     * @param details The details about the execution of the task.
      * @return The new task.
      */
-    public static Transaction newTransaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails) {
-        return new Transaction(freelancer, task, paymentDetails);
+    public static Transaction newTransaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+        return new Transaction(freelancer, task, paymentDetails, details);
     }
 
     /**
@@ -52,16 +65,30 @@ public class ListTransaction implements Iterable<Transaction> {
      * @return True if the transaction is removed, false otherwise.
      */
     public boolean remove(Transaction trs) {
-        return m_lstTransaction.remove(trs);
+        return m_setTransaction.remove(trs);
     }
 
     /**
-     * Adds a transaction to the list.
+     * Validates a transaction. For a transaction to be valid it has to be the only transaction that refers to
+     * a task.
+     * @param trs The transaction to validate.
+     * @return True if the task is valid, false otherwise.
+     */
+    public boolean validate(Transaction trs) {
+        return !this.m_setTransaction.contains(trs);
+    }
+
+    /**
+     * Adds a transaction to the list and sets the transactions executor.
      * @param trs Transaction to add.
      * @return True if the transaction is added, false otherwise.
      */
-    public boolean add(Transaction trs) {
-        return m_lstTransaction.add(trs);
+    private boolean add(Transaction trs) {
+        if(m_setTransaction.add(trs)) {
+            trs.getTask().setExecutor(trs.getFreelancer());
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -79,7 +106,7 @@ public class ListTransaction implements Iterable<Transaction> {
         MonetaryConversionAPI mcapi = AppPOE.getInstance().getApp().getMonetaryConversionAPI();
         EmailAPI eapi = AppPOE.getInstance().getApp().getEmailAPI();
         // Put all payment in message
-        for(Transaction trs : m_lstTransaction) {
+        for(Transaction trs : m_setTransaction) {
             final String email = trs.getFreelancer().getEmail();
             Triplet<Double, String, String> val = map.get(email);
             if(val == null) val = new Triplet<>(0.0, "", trs.getFreelancer().getCountry());
@@ -87,7 +114,7 @@ public class ListTransaction implements Iterable<Transaction> {
             val.setFirst(val.getFirst() + currAmount);
             val.setSecond(
                     val.getSecond() + String.format("TASK [%s] (ID: %s) - EUR [%f] - NATIVE CURRENCY [%f]\n",
-                        trs.getTask().getM_strDescription(),
+                        trs.getTask().getDescription(),
                         trs.getTask().getId(),
                         currAmount,
                         mcapi.convert(val.getThird(), currAmount)));
@@ -105,5 +132,83 @@ public class ListTransaction implements Iterable<Transaction> {
                         mcapi.convert(val.getThird(), val.getFirst())));
         }
         return allSent;
+    }
+
+    /**
+     * Adds a transaction to the list and sets the transactions executor.
+     * @param tr Transaction to add.
+     * @return True if the transaction is added, false otherwise.
+     */
+    public boolean addTransaction(Transaction tr) {
+        if(!validate(tr)) return false;
+        return add(tr);
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the organization.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactions() {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for(final Transaction trs : this) {
+            final Freelancer fre = trs.getFreelancer();
+            final List<Transaction> lt = fre_trs.get(fre);
+            if(lt != null) {
+                lt.add(trs);
+            } else {
+                final ArrayList<Transaction> ltt = new ArrayList<Transaction>();
+                ltt.add(trs);
+                fre_trs.put(fre, ltt);
+            }
+        }
+        return fre_trs;
+    }
+
+    /**
+     * Group the transaction by the freelancer that executed them.
+     * @param year The year of the transactions.
+     * @return A map that makes a freelancer correspond to a list of their executed transactions in the organization
+     * on the year specified.
+     */
+    public Map<Freelancer, List<Transaction>> getGroupedTransactionsInYear(final int year) {
+        final Map<Freelancer, List<Transaction>> fre_trs = new HashMap<>();
+        for(final Transaction trs : this) {
+            if(trs.getExecutionDetails().getEndDate().getYear() == year) {
+                final Freelancer fre = trs.getFreelancer();
+                final List<Transaction> lt = fre_trs.get(fre);
+                if (lt != null) {
+                    lt.add(trs);
+                } else {
+                    final ArrayList<Transaction> ltt = new ArrayList<Transaction>();
+                    ltt.add(trs);
+                    fre_trs.put(fre, ltt);
+                }
+            }
+        }
+        return fre_trs;
+    }
+
+    /**
+     * Gets the all the transactions in the list made by a freelancer.
+     * @param selected The freelancers to filter.
+     * @return All the transactions made to the freelancers in the selected collection.
+     */
+    public Collection<Transaction> getTransactionsOfFreelancers(final Set<Freelancer> selected) {
+        final ArrayList<Transaction> trss = new ArrayList<>();
+        for (final Transaction t : this)
+            if(t.madeToAny(selected))
+                trss.add(t);
+        return trss;
+    }
+
+    /**
+     * Gets the all the freelancers who have a transaction in the list.
+     * @return All the freelancers who have a transaction in the list.
+     */
+    public Collection<Freelancer> getFreelancersOfAllTransactions() {
+        final HashSet<Freelancer> trss = new HashSet<>();
+        for (final Transaction t : this)
+            trss.add(t.getFreelancer());
+        return trss;
     }
 }

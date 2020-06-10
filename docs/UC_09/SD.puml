@@ -1,0 +1,122 @@
+@startuml SD
+autonumber
+actor "Administrator" as A
+participant ":AdministratorStatisticsUI" as ui
+participant ":AdministratorStatisticsController" as ctr
+participant ":App" as app
+participant "rf\n:RegistFreelancer" as rf
+participant "ro\n:RegistOrganization" as ro
+participant "org\n:Organization" as org
+participant "trs\n:Collection<Transaction>" as trs
+participant "lt\n:ListTransaction" as lt
+participant "tr\n:Transaction" as tr
+participant "trss\n:Collection<Transaction>" as trss
+participant "td\n:TaskExecutionDetails" as td
+participant "fres\n:Collection<Freelancer>" as fres
+participant "result\n:Double"
+participant "histData\n:Map<Double,Integer>"
+
+activate A
+        A -> ui : starts the process of visualizing statistics about the performance of the freelancers
+        activate ui
+                ui -> ctr : fres = getFreelancers()
+                activate ctr
+                        ctr -> app : rf = getRegistFreelancer()
+                        activate app
+                        deactivate app
+                        ctr -> rf : fres = getFreelancers()
+                        activate rf
+                        deactivate rf
+                deactivate ctr
+                ui --> A : shows the freelancers in the system and requests to select which ones to include
+        deactivate ui
+        A -> ui : selects the freelancers
+        activate ui
+                ui -> ctr : setFreelancers(selected)
+                activate ctr
+                        ctr -> app : ro = getRegistOrganization()
+                        activate app
+                        deactivate app
+                        ctr -> ro : trs = getTransactionsOfFreelancers(selected)
+                        activate ro
+                                ro -> trs ** : create()
+                                loop for each Organization
+                                        ro -> ro : org = get(ID)
+                                        ro -> org : lt = getListTransaction()
+                                        activate org
+                                        deactivate org
+                                        ro -> lt : trss = getTransactionsOfFreelancers(selected)
+                                        activate lt
+                                                loop for each Transaction
+                                                        lt -> trss ** : create()
+                                                        lt -> lt : tr = get(ID)
+                                                        lt -> tr : madeTo = madeToAny(selected)
+                                                        activate tr
+                                                        deactivate tr
+                                                        opt madeTo == true
+                                                                lt -> trss : add(tr)
+                                                                activate trss
+                                                                deactivate trss
+                                                        end
+                                                end
+                                        deactivate lt
+                                        ro -> trs : addAll(trs)
+                                        activate trs
+                                        deactivate trs
+                                end
+                        deactivate ro
+                deactivate ctr
+                ui -> ctr : result = getMeanDelays()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : td = getTaskExecutionDetails()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getMeanPayments()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : getAmount()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationDelays()
+                activate ctr
+                        note over ctr : Same responsibility assignments as getMeanDelays
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationPayments()
+                activate ctr
+                        note over ctr : Same responsibility assignments as getMeanPayments
+                deactivate ctr
+                ui -> ctr : result = getProbabilityMeanDelayLessThan(3)
+                activate ctr
+                        note over ctr : Same responsibility assignments as getMeanDelays
+                deactivate ctr
+                ui -> ctr : result = getNumberTransactions()
+                activate ctr
+                        ctr -> trs : size()
+                        activate trs
+                        deactivate trs
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataDelays(bucketSize)
+                activate ctr
+                        note over ctr : Same responsibility assignments as getMeanDelays
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataPayments(bucketSize)
+                activate ctr
+                        note over ctr : Same responsibility assignments as getMeanPayments
+                deactivate ctr
+                ui --> A : shows the statistical data \n( mean and the standard deviation of the delays; \nmean and the standard deviation of the payments; \nhistograms to analyze the delays and payments; \nthe probability that the sample execution delay time mean is higher than 3 hours)
+        deactivate ui
+deactivate A
+
+
+@enduml

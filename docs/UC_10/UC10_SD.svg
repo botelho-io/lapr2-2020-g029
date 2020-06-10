@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1030px" preserveAspectRatio="none" style="width:1460px;height:1030px;" version="1.1" viewBox="0 0 1460 1030" width="1460px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fqnnaa8gco4gz" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="314.1953" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="85" y="89.2188"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="232.4922" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="90" y="170.9219"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="46.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="85" y="974.2031"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="600.7891" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="246" y="403.4141"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="530.0859" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="341" y="474.1172"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="439.7344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="346" y="512.4688"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="579.5" y="547.8203"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="139.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="856" y="783.4453"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1083" y="835.1484"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1191" y="723.0938"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="821.2813" style="stroke: #000000; stroke-width: 2.0;" width="1431" x="20" y="191.2734"/>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="112" x="288" y="209.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="329" y="231.1582">task:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="295" y="248.7676">SendEmailTask</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="224" y="273.8438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="231.5" y="295.377">timer:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="231" y="312.9863">Timer</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="1265.5" y="586.1719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1281.5" y="607.7051">completetask</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1272.5" y="625.3145">:ListTransaction</text>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="287.8125" style="stroke: #000000; stroke-width: 2.0;" width="1173" x="268" y="657.3906"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="255.4609" style="stroke: #000000; stroke-width: 2.0;" width="1153" x="278" y="682.7422"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="90" x2="90" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="251" x2="251" y1="315.9531" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="346" x2="346" y1="251.7344" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="476.5" x2="476.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="584.5" x2="584.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="723.5" x2="723.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="860.5" x2="860.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1087.5" x2="1087.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1195.5" x2="1195.5" y1="57.2188" y2="1029.5547"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1324.5" x2="1324.5" y1="628.2813" y2="1029.5547"/>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="116" x="30" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="57" y="24.5332">scheduler</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="37" y="42.1426">:EmailScheduler</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="430.5" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="461" y="24.5332">tras:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="437.5" y="42.1426">Transaction</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="533.5" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="21" x="572" y="24.5332">org</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="540.5" y="42.1426">:Organization</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="645.5" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="20" x="712" y="24.5332">ted</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="652.5" y="42.1426">:TaskExecutionDetails</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="812.5" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="16" x="851" y="24.5332">trs</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="819.5" y="42.1426">:Transaction</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="1049.5" y="20.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="1056.5" y="42.1426">:EmailAPI</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="1136.5" y="3"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="1190.5" y="24.5332">lt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1143.5" y="42.1426">:ListTransaction</text>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="314.1953" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="85" y="89.2188"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="232.4922" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="90" y="170.9219"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="46.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="85" y="974.2031"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="600.7891" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="246" y="403.4141"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="530.0859" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="341" y="474.1172"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="439.7344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="346" y="512.4688"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="579.5" y="547.8203"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="139.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="856" y="783.4453"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1083" y="835.1484"/>
+        <rect fill="#FFFFFF" filter="url(#fqnnaa8gco4gz)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1191" y="723.0938"/>
+        <ellipse cx="10.5" cy="88.4688" fill="none" rx="4" ry="4" style="stroke: #A80036; stroke-width: 1.5;"/>
+        <polygon fill="#A80036" points="73,85.2188,83,89.2188,73,93.2188,77,89.2188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="15" x2="79" y1="89.2188" y2="89.2188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="18" y="84.7139">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="29" y="84.7139">create()</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="95" x2="137" y1="119.9219" y2="119.9219"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="137" x2="137" y1="119.9219" y2="132.9219"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="96" x2="137" y1="132.9219" y2="132.9219"/>
+        <polygon fill="#A80036" points="106,128.9219,96,132.9219,106,136.9219,102,132.9219" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="102" y="115.0654">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="113" y="115.0654">resetTime()</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="95" x2="142" y1="158.2734" y2="158.2734"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="142" x2="142" y1="158.2734" y2="171.2734"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="101" x2="142" y1="171.2734" y2="171.2734"/>
+        <polygon fill="#A80036" points="111,167.2734,101,171.2734,111,175.2734,107,171.2734" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="107" y="153.417">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="118" y="153.417">scheduleNextYear()</text>
+        <rect fill="none" height="821.2813" style="stroke: #000000; stroke-width: 2.0;" width="1431" x="20" y="191.2734"/>
+        <polygon fill="#EEEEEE" points="20,191.2734,93,191.2734,93,199.2734,83,209.2734,20,209.2734,20,191.2734" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="35" y="205.7686">loop</text>
+        <polygon fill="#A80036" points="276,227.625,286,231.625,276,235.625,280,231.625" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="100" x2="282" y1="231.625" y2="231.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="107" y="227.1201">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="118" y="227.1201">create(scheduler)</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="112" x="288" y="209.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="329" y="231.1582">task:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="295" y="248.7676">SendEmailTask</text>
+        <polygon fill="#A80036" points="212,291.8438,222,295.8438,212,299.8438,216,295.8438" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="100" x2="218" y1="295.8438" y2="295.8438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="107" y="291.3389">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="118" y="291.3389">create()</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="224" y="273.8438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="231.5" y="295.377">timer:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="231" y="312.9863">Timer</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="100" x2="142" y1="360.4141" y2="360.4141"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="142" x2="142" y1="360.4141" y2="373.4141"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="101" x2="142" y1="373.4141" y2="373.4141"/>
+        <polygon fill="#A80036" points="111,369.4141,101,373.4141,111,377.4141,107,373.4141" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="107" y="355.5576">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="121" x="118" y="355.5576">date = getNextDate()</text>
+        <polygon fill="#A80036" points="234,399.4141,244,403.4141,234,407.4141,238,403.4141" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="90" x2="240" y1="403.4141" y2="403.4141"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="97" y="398.9092">7</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="108" y="398.9092">schedule(date)</text>
+        <polygon fill="#FBFB77" filter="url(#fqnnaa8gco4gz)" points="49,416.7656,49,442.7656,292,442.7656,292,426.7656,282,416.7656,49,416.7656" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="282" x2="282" y1="416.7656" y2="426.7656"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="292" x2="282" y1="426.7656" y2="426.7656"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="75.5" y="435.2607">On the specified date and time</text>
+        <polygon fill="#A80036" points="329,470.1172,339,474.1172,329,478.1172,333,474.1172" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="256" x2="335" y1="474.1172" y2="474.1172"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="263" y="469.6123">8</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="274" y="469.6123">run()</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="351" x2="398" y1="499.8203" y2="499.8203"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="398" x2="398" y1="499.8203" y2="512.8203"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="357" x2="398" y1="512.8203" y2="512.8203"/>
+        <polygon fill="#A80036" points="367,508.8203,357,512.8203,367,516.8203,363,512.8203" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="363" y="494.9639">9</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="96" x="374" y="494.9639">sendMessages()</text>
+        <polygon fill="#A80036" points="567.5,543.8203,577.5,547.8203,567.5,551.8203,571.5,547.8203" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="356" x2="573.5" y1="547.8203" y2="547.8203"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="363" y="543.3154">10</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="381" y="543.3154">tl = getListTransaction()</text>
+        <polygon fill="#A80036" points="1253.5,604.1719,1263.5,608.1719,1253.5,612.1719,1257.5,608.1719" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="356" x2="1259.5" y1="608.1719" y2="608.1719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="363" y="603.667">11</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="381" y="603.667">create()</text>
+        <rect fill="#FEFECE" filter="url(#fqnnaa8gco4gz)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="1265.5" y="586.1719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1281.5" y="607.7051">completetask</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="101" x="1272.5" y="625.3145">:ListTransaction</text>
+        <rect fill="none" height="287.8125" style="stroke: #000000; stroke-width: 2.0;" width="1173" x="268" y="657.3906"/>
+        <polygon fill="#EEEEEE" points="268,657.3906,341,657.3906,341,665.3906,331,675.3906,268,675.3906,268,657.3906" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="283" y="671.8857">loop</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="118" x="356" y="670.8096">[for each transaction]</text>
+        <rect fill="none" height="255.4609" style="stroke: #000000; stroke-width: 2.0;" width="1153" x="278" y="682.7422"/>
+        <polygon fill="#EEEEEE" points="278,682.7422,343,682.7422,343,690.7422,333,700.7422,278,700.7422,278,682.7422" style="stroke: #000000; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="293" y="697.2373">opt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="205" x="358" y="696.1611">[if the freelancer has high task delay]</text>
+        <polygon fill="#A80036" points="1179,719.0938,1189,723.0938,1179,727.0938,1183,723.0938" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="356" x2="1185" y1="723.0938" y2="723.0938"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="363" y="718.5889">12</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="136" x="381" y="718.5889">trs = getTransaction(ID)</text>
+        <polygon fill="#A80036" points="844,779.4453,854,783.4453,844,787.4453,848,783.4453" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="356" x2="850" y1="783.4453" y2="783.4453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="363" y="778.9404">13</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="124" x="381" y="778.9404">getExecutionDetails()</text>
+        <polygon fill="#A80036" points="1071,831.1484,1081,835.1484,1071,839.1484,1075,835.1484" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="866" x2="1077" y1="835.1484" y2="835.1484"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="873" y="830.6436">14</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="891" y="830.6436">sendEmail( address, message)</text>
+        <polygon fill="#FBFB77" filter="url(#fqnnaa8gco4gz)" points="1098,796.7969,1098,855.7969,1417,855.7969,1417,806.7969,1407,796.7969,1098,796.7969" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1407" x2="1407" y1="796.7969" y2="806.7969"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1417" x2="1407" y1="806.7969" y2="806.7969"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="298" x="1104" y="815.292">Here the getters for the following fields were omited:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="195" x="1104" y="831.6436">address that will receive the email</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="192" x="1104" y="847.9951">message of the body of the email</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="866" x2="908" y1="922.2031" y2="922.2031"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="908" x2="908" y1="922.2031" y2="935.2031"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="861" x2="908" y1="935.2031" y2="935.2031"/>
+        <polygon fill="#A80036" points="871,931.2031,861,935.2031,871,939.2031,867,935.2031" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="873" y="917.3467">15</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="891" y="917.3467">setEmailed(true)</text>
+        <polygon fill="#A80036" points="106,970.2031,96,974.2031,106,978.2031,102,974.2031" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="100" x2="340" y1="974.2031" y2="974.2031"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="112" y="969.6982">16</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="130" y="969.6982">scheduleNextYear()</text>
+        <!--
+@startuml SD
+autonumber
+hide footbox
+
+participant "scheduler\n:EmailScheduler" as SC
+participant "timer:\nTimer" as TIMER
+participant "task:\nSendEmailTask" as TASK
+participant "tras:\nTransaction" as TRA
+participant "org\n:Organization" as org
+participant "ted\n:TaskExecutionDetails" as ted
+participant "trs\n:Transaction" as trs
+participant ":EmailAPI" as eapi
+participant "lt\n:ListTransaction" as lt
+participant "completetask\n:ListTransaction" as ct
+
+[o-> SC : create()
+activate SC
+        SC -> SC : resetTime()
+        SC -> SC : scheduleNextYear()
+loop
+        activate SC
+                SC -> TASK**  : create(scheduler)
+                SC -> TIMER** : create()
+                SC -> SC : date = getNextDate()
+                SC ->TIMER: schedule(date)
+        deactivate SC
+
+deactivate SC
+        activate TIMER
+                note over SC,TIMER  : On the specified date and time
+                TIMER->TASK:run()
+                activate TASK
+                        TASK->TASK: sendMessages()
+                        activate TASK
+                                TASK -> org : tl = getListTransaction()
+                                activate org
+                                deactivate org
+                                TASK -> ct ** : create()
+                                loop for each transaction
+                                        opt if the freelancer has high task delay
+                                                TASK -> lt : trs = getTransaction(ID)
+                                                activate lt
+                                                deactivate lt
+                                                TASK -> trs : getExecutionDetails()
+                                                activate trs
+                                                        trs -> eapi: sendEmail( address, message)
+                                                        activate eapi
+                                                        deactivate eapi
+                                                        note right
+                                                                Here the getters for the following fields were omited:
+                                                                address that will receive the email
+                                                                message of the body of the email
+                                                        end note
+                                                        trs-> trs : setEmailed(true)
+                                                deactivate trs
+                                                end
+                                end
+                        deactivate TASK
+                        TASK -> SC : scheduleNextYear()
+                        activate SC
+                deactivate TASK
+        deactivate TIMER
+end
+
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

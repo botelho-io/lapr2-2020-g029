@@ -1,0 +1,99 @@
+@startuml SD
+autonumber
+actor "Manager or Collaborator" as MC
+participant ":ManagerCollaboratorStatisticsUI" as ui
+participant ":ManagerCollaboratorStatisticsController" as ctr
+participant ":App" as app
+participant "ro\n:RegistOrganization" as ro
+participant "org\n:Organization" as org
+participant "trs\n:List<Transaction>" as trs
+participant "lt\n:ListTransaction" as lt
+participant "tr\n:Transaction" as tr
+participant "trss\n:List<Transaction>" as trss
+participant "td\n:TaskExecutionDetails" as td
+participant "result\n:Double"
+participant "histData\n:Map<Double,Double>"
+
+activate MC
+        MC -> ui : starts the visualize of overall statistics about task execution times
+        activate ui
+                ui --> MC : request sorting of the data (i.e.name or payment value).
+        deactivate ui
+        MC -> ui : enter the requested data
+        activate ui
+                ui -> ctr : setSortMethod(sm)
+                activate ctr
+                        ctr -> app : ro = getRegistOrganization()
+                        activate app
+                        deactivate app
+                        ctr -> ro : trs = getTransactions()
+                        activate ro
+                                ro -> trs ** : create()
+                                        ro -> ro : org = get(ID)
+                                        ro -> org : lt = getListTransaction()
+                                        activate org
+                                        deactivate org
+                                        activate lt
+                                                loop for each Transaction
+                                                        lt -> trss ** : create()
+                                                        lt -> lt : tr = get(ID)
+                                                        activate tr
+                                                        deactivate tr
+                                                        opt madeBy == true
+                                                                lt -> trss : add(tr)
+                                                                activate trss
+                                                                deactivate trss
+                                                        end
+                                        deactivate lt
+                                        ro -> trs : addAll(trs)
+                                        activate trs
+                                        deactivate trs
+                                end
+                        deactivate ro
+                deactivate ctr
+                ui -> ctr : result = getMeanDelays()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : td = getTaskExecutionDetails()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getMeanPayments()
+                activate ctr
+                        loop for each Transaction
+                                ctr -> trs : tr = get(ID)
+                                activate trs
+                                deactivate trs
+                                ctr -> tr : getAmount()
+                                activate tr
+                                deactivate tr
+                        end
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationDelays()
+                activate ctr
+                deactivate ctr
+                ui -> ctr : result = getStandardDeviationPayments()
+                activate ctr 
+                deactivate ctr
+                ui -> ctr : result = getNumberTransactions()
+                activate ctr
+                        ctr -> trs : size()
+                        activate trs
+                        deactivate trs
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataDelays()
+                activate ctr                       
+                deactivate ctr
+                ui -> ctr : histData = getHistogramDataPayments()
+                activate ctr                       
+                deactivate ctr
+                ui --> MC : presents the information ( mean and the standard deviation of the delays,\n of each one and of all freelancers; histogram to analyze the delays of\n each one and all the freelancers working to the organization; mean and the \nstandard deviation of the payments made to each one of the freelancers).
+        deactivate ui
+deactivate MC
+
+
+@enduml

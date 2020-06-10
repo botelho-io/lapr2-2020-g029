@@ -8,22 +8,21 @@ package autorizacao.model;
 import lapr.model.User;
 import lapr.utils.Role;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author paulomaio
  */
-public class SessaoUtilizador
+public class SessaoUtilizador implements Serializable
 {
     private User m_oUtilizador = null;
     
-    private SessaoUtilizador()
-    {
+    private SessaoUtilizador() {
     }
     
-    public SessaoUtilizador(User oUtilizador)
-    {
+    public SessaoUtilizador(User oUtilizador) {
         if (oUtilizador == null)
             throw new IllegalArgumentException("Argumento não pode ser nulo.");
         this.m_oUtilizador = oUtilizador;
@@ -51,18 +50,18 @@ public class SessaoUtilizador
     public String getNomeUtilizador()
     {
         if (isLoggedIn())
-            this.m_oUtilizador.getName();
+            return this.m_oUtilizador.getName();
         return null;
     }
     
     public String getEmailUtilizador()
     {
         if (isLoggedIn())
-            this.m_oUtilizador.getEmail();
+            return this.m_oUtilizador.getEmail();
         return null;
     }
     
-    public List<PapelUtilizador> getPapeisUtilizador()
+    public List<UserRole> getPapeisUtilizador()
     {
         return this.m_oUtilizador.getPapeis();
     }

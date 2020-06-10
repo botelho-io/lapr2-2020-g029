@@ -7,18 +7,20 @@ package lapr.model;
 
 import lapr.controller.MakePaymentTask;
 
-import java.time.LocalDate;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 import java.util.Timer;
 
 /**
  * Class responsible for scheduling a task to automatically pay
  * the transactions of an organization.
  */
-public class PaymentScheduler {
+public class PaymentScheduler implements Serializable {
     /**
      * The day of the month the payments will be processed.
      */
@@ -34,7 +36,9 @@ public class PaymentScheduler {
     /**
      * The current Timer being used.
      */
-    private Timer m_oTimer;
+    private transient Timer m_oTimer;
+    private transient MakePaymentTask task;
+
     /**
      * Creates a new scheduler.
      * @param DayMonth The day of the month the payment are to be made.
@@ -55,9 +59,8 @@ public class PaymentScheduler {
         if(m_oTimer != null) {
             m_oTimer.cancel();
             m_oTimer.purge();
-        } else {
-            m_oTimer = new Timer();
         }
+        m_oTimer = new Timer();
         // Schedule next task
         this.m_iDayMonth = DayMonth;
         this.m_oTimeOfDay = TimeOfDay;
@@ -65,10 +68,10 @@ public class PaymentScheduler {
     }
     /**
      * Schedules the payments to be made on the next month.
-     * @return
      */
     public void scheduleNextMonth() {
-        m_oTimer.schedule(new MakePaymentTask(m_oOrganization, this), getNextDate());
+        this.task = new MakePaymentTask(m_oOrganization, this);
+        m_oTimer.schedule(task, getNextDate());
     }
     /**
      * @return The date when the next automatic payments will be made.
@@ -89,5 +92,32 @@ public class PaymentScheduler {
             cal.add(Calendar.MONTH, 1);
         }
         return cal.getTime();
+    }
+
+    /**
+     * Read object.
+     * @param aInputStream The input stream.
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
+    private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
+        this.task = null;
+        this.m_oTimer = null;
+
+        this.m_oOrganization = (Organization) aInputStream.readObject();
+        this.m_oTimeOfDay = (LocalTime) aInputStream.readObject();
+        this.m_iDayMonth = aInputStream.readInt();
+        resetTime(m_iDayMonth, m_oTimeOfDay);
+    }
+
+    /**
+     * Writes the object.
+     * @param aOutputStream The output stream.
+     * @throws IOException
+     */
+    private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
+        aOutputStream.writeObject(m_oOrganization);
+        aOutputStream.writeObject(m_oTimeOfDay);
+        aOutputStream.writeInt(m_iDayMonth);
     }
 }

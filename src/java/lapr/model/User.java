@@ -5,67 +5,76 @@
  */
 package lapr.model;
 
-import autorizacao.model.PapelUtilizador;
+import autorizacao.model.UserRole;
 import lapr.utils.Role;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
- *
- * @author Universidade
+ * Represents a user that can login into the system.
  */
-public class User {
-    private String name;
-    private String email;
-    private String password; // Não deveria guardar a password em "plain text"
-    private Set<PapelUtilizador> m_lstPapeis = new HashSet<PapelUtilizador>();
+public class User implements Serializable  {
+    /**
+     * The name of the user.
+     */
+    private String m_strName;
+    /**
+     * The email of the user.
+     */
+    private String m_strEmail;
+    /**
+     * The password of the user.
+     */
+    private String m_strPassword;
+    private Set<UserRole> m_lstPapeis = new HashSet<UserRole>();
 
-    public User(String name, String email, String password, PapelUtilizador role) {
-        this(name, email, password, new PapelUtilizador[]{role});
+    public User(String name, String email, String password, UserRole role) {
+        this(name, email, password, new UserRole[]{role});
     }
 
-    public User(String name, String email, String password, PapelUtilizador[] Roles) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.m_lstPapeis = new HashSet<PapelUtilizador>(Arrays.asList(Roles));
+    public User(String name, String email, String password, UserRole[] Roles) {
+        this.m_strName = name;
+        this.m_strEmail = email;
+        this.m_strPassword = password;
+        this.m_lstPapeis = new HashSet<UserRole>(Arrays.asList(Roles));
     }
 
     public String getName() {
-        return name;
+        return m_strName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.m_strName = name;
     }
 
     public String getEmail() {
-        return email;
+        return m_strEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.m_strEmail = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getM_strPassword() {
+        return m_strPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setM_strPassword(String m_strPassword) {
+        this.m_strPassword = m_strPassword;
     }
 
     public boolean hasEmail(String email)
     {
-        return this.email.equals(email);
+        return this.m_strEmail.equals(email);
     }
 
     public boolean hasPassword(String strPwd)
     {
-        return this.password.equals(strPwd);
+        return this.m_strPassword.equals(strPwd);
     }
 
-    public boolean addPapel(PapelUtilizador papel)
+    public boolean addPapel(UserRole papel)
     {
         if (papel != null)
             return this.m_lstPapeis.add(papel);
@@ -73,21 +82,21 @@ public class User {
     }
 
 
-    public boolean removePapel(PapelUtilizador papel)
+    public boolean removePapel(UserRole papel)
     {
         if (papel != null)
             return this.m_lstPapeis.remove(papel);
         return false;
     }
 
-    public boolean hasPapel(PapelUtilizador papel)
+    public boolean hasPapel(UserRole papel)
     {
         return this.m_lstPapeis.contains(papel);
     }
 
     public boolean hasPapel(Role oPapel)
     {
-        for(PapelUtilizador papel: this.m_lstPapeis)
+        for(UserRole papel: this.m_lstPapeis)
         {
             if (papel.hasId(oPapel))
                 return true;
@@ -95,7 +104,7 @@ public class User {
         return false;
     }
 
-    public List<PapelUtilizador> getPapeis()
+    public List<UserRole> getPapeis()
     {
         return new ArrayList<>(this.m_lstPapeis);
     }
@@ -104,7 +113,7 @@ public class User {
     public int hashCode()
     {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.email);
+        hash = 23 * hash + Objects.hashCode(this.m_strEmail);
         return hash;
     }
 
@@ -123,13 +132,13 @@ public class User {
             return false;
         // field comparison
         User obj = (User) o;
-        return Objects.equals(email, obj.getEmail());
+        return Objects.equals(m_strEmail, obj.getEmail());
     }
 
     @Override
     public String toString()
     {
-        return String.format("%s - %s", this.name, this.email);
+        return String.format("%s - %s", this.m_strName, this.m_strEmail);
     }
 
 }

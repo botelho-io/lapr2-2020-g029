@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuAdmin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuAdminUI">
    <top>
       <Label prefHeight="58.0" prefWidth="193.0" text="Administrator Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
@@ -14,10 +14,11 @@
       </Label>
    </top>
    <center>
-      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#addOrg" text="UC 8 - Add New Organization"/>
+            <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#enterUC08" text="UC 8 - Add New Organization" />
+            <Button mnemonicParsing="false" onAction="#enterUC09" text="UC 9 - Administrator Statistics" />
          </children>
-      </StackPane>
+      </VBox>
    </center>
 </BorderPane>

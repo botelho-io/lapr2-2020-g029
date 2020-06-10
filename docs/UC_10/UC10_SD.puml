@@ -1,0 +1,66 @@
+@startuml SD
+autonumber
+hide footbox
+
+participant "scheduler\n:EmailScheduler" as SC
+participant "timer:\nTimer" as TIMER
+participant "task:\nSendEmailTask" as TASK
+participant "tras:\nTransaction" as TRA
+participant "org\n:Organization" as org
+participant "ted\n:TaskExecutionDetails" as ted
+participant "trs\n:Transaction" as trs
+participant ":EmailAPI" as eapi
+participant "lt\n:ListTransaction" as lt
+participant "completetask\n:ListTransaction" as ct
+
+[o-> SC : create()
+activate SC
+        SC -> SC : resetTime()
+        SC -> SC : scheduleNextYear()
+loop
+        activate SC
+                SC -> TASK**  : create(scheduler)
+                SC -> TIMER** : create()
+                SC -> SC : date = getNextDate()
+                SC ->TIMER: schedule(date)
+        deactivate SC
+
+deactivate SC
+        activate TIMER
+                note over SC,TIMER  : On the specified date and time
+                TIMER->TASK:run()
+                activate TASK
+                        TASK->TASK: sendMessages()
+                        activate TASK
+                                TASK -> org : tl = getListTransaction()
+                                activate org
+                                deactivate org
+                                TASK -> ct ** : create()
+                                loop for each transaction
+                                        opt if the freelancer has high task delay
+                                                TASK -> lt : trs = getTransaction(ID)
+                                                activate lt
+                                                deactivate lt
+                                                TASK -> trs : getExecutionDetails()
+                                                activate trs
+                                                        trs -> eapi: sendEmail( address, message)
+                                                        activate eapi
+                                                        deactivate eapi
+                                                        note right
+                                                                Here the getters for the following fields were omited:
+                                                                address that will receive the email
+                                                                message of the body of the email
+                                                        end note
+                                                        trs-> trs : setEmailed(true)
+                                                deactivate trs
+                                                end
+                                end
+                        deactivate TASK
+                        TASK -> SC : scheduleNextYear()
+                        activate SC
+                deactivate TASK
+        deactivate TIMER
+end
+
+
+@enduml
