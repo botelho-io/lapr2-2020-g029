@@ -4,8 +4,8 @@ import lapr.list.ListTask;
 import lapr.model.App;
 import lapr.model.Organization;
 import lapr.model.Task;
-import autorizacao.model.SessaoUtilizador;
-import autorizacao.AuthFacade;
+import authorization.model.UserSession;
+import authorization.AuthFacade;
 
 public class CreateTaskController {
         private App plataforma;
@@ -16,7 +16,7 @@ public class CreateTaskController {
         /**
         * User session.
         */
-        private SessaoUtilizador sessao;
+        private UserSession sessao;
         /**
         * id of the collaborator.
         */
@@ -48,7 +48,7 @@ public class CreateTaskController {
         try {
             this.autorizacao = this.plataforma.getAuthFacade();
             this.sessao = this.autorizacao.getSessaoAtual();
-            this.emailUser = this.sessao.getEmailUtilizador();
+            this.emailUser = this.sessao.getEmailUser();
             this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);
             this.task = ListTask.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
             return this.organization.getListTask().validatesTask(this.task);

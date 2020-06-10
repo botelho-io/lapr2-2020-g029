@@ -18,7 +18,7 @@ public class CreateTransactionController {
      */
     public CreateTransactionController() {
         app = AppPOE.getInstance().getApp();
-        String email = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual().getEmailUtilizador();
+        String email = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual().getEmailUser();
         org = app.getRegistOrganization().getOrganizationByEmailUser(email);
     }
 

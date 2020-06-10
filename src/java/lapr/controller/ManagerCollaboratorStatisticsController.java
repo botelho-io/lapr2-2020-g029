@@ -1,11 +1,7 @@
 package lapr.controller;
 
-import lapr.list.ListTransaction;
 import lapr.model.*;
 import lapr.model.Transaction;
-import lapr.regist.RegistFreelancer;
-import lapr.regist.RegistOrganization;
-import org.apache.commons.math3.distribution.NormalDistribution;
 
 import java.util.*;
 
@@ -22,7 +18,7 @@ public class ManagerCollaboratorStatisticsController {
      */
     public ManagerCollaboratorStatisticsController() {
         app = AppPOE.getInstance().getApp();
-        org = app.getRegistOrganization().getOrganizationByEmailUser(app.getAuthFacade().getSessaoAtual().getEmailUtilizador());
+        org = app.getRegistOrganization().getOrganizationByEmailUser(app.getAuthFacade().getSessaoAtual().getEmailUser());
     }
 
     /**

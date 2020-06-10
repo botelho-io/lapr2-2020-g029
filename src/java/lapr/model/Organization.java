@@ -5,7 +5,7 @@
  */
 package lapr.model;
 
-import autorizacao.AuthFacade;
+import authorization.AuthFacade;
 import lapr.controller.AppPOE;
 import lapr.list.ListTransaction;
 import lapr.list.ListTask;

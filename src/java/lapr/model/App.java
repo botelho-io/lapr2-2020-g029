@@ -6,10 +6,9 @@
 
 package lapr.model;
 
-import autorizacao.AuthFacade;
+import authorization.AuthFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
-import lapr.controller.AppPOE;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;

@@ -1,19 +1,9 @@
 package lapr.ui.javafx.util;
 
-import autorizacao.model.SessaoUtilizador;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import authorization.model.UserSession;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 import lapr.controller.AppPOE;
-import lapr.ui.javafx.util.FXBridge;
-import lapr.ui.javafx.util.HelperUI;
-import lapr.utils.Constants;
 import lapr.utils.Role;
-
-import java.io.IOException;
 
 public class MainUI {
     private Stage stage;
@@ -26,15 +16,15 @@ public class MainUI {
     }
 
     public void mainMenu() {
-        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
         // Loop trough the menus
         FXBridge.scene = null;
         // Select role
-        if (su.isLoggedInComPapel(Role.ADMINISTRATOR)) {
+        if (su.isLoggedInWithRole(Role.ADMINISTRATOR)) {
             openUC(FXBridge.UC.MENU_ADMIN);
-        } else if (su.isLoggedInComPapel(Role.COLLABORATOR)) {
+        } else if (su.isLoggedInWithRole(Role.COLLABORATOR)) {
             openUC(FXBridge.UC.MENU_COLLA);
-        } else if (su.isLoggedInComPapel(Role.MANAGER)) {
+        } else if (su.isLoggedInWithRole(Role.MANAGER)) {
             openUC(FXBridge.UC.MENU_MANAG);
         } else {
             HelperUI.alert("Unknown Role!");
@@ -49,7 +39,7 @@ public class MainUI {
         // Login
         openUC(FXBridge.UC.LOGIN);
         // Was login successful?
-        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
         if(su == null || (!su.isLoggedIn())) {
             System.exit(0); // Not successful - Exit
         } else {

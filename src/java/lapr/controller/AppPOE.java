@@ -17,7 +17,7 @@ import lapr.api.stubs.StubPaymentAPI;
 import lapr.api.stubs.StubPswGeneratorAPI;
 import lapr.model.*;
 import lapr.utils.Constants;
-import autorizacao.AuthFacade;
+import authorization.AuthFacade;
 import lapr.utils.Role;
 import lapr.utils.TestConstants;
 
@@ -57,9 +57,9 @@ public class AppPOE {
     private void bootstrap() {
         // Add roles
         AuthFacade auth = getApp().getAuthFacade();
-        auth.registaPapelUtilizador(Role.ADMINISTRATOR);
-        auth.registaPapelUtilizador(Role.COLLABORATOR);
-        auth.registaPapelUtilizador(Role.MANAGER);
+        auth.registRoleUser(Role.ADMINISTRATOR);
+        auth.registRoleUser(Role.COLLABORATOR);
+        auth.registRoleUser(Role.MANAGER);
 
         // Add APIs
         // TODO: add real APIs
