@@ -14,6 +14,15 @@ public class MainMenuMangerUI {
         public Button btnUC7ViIn;
 
         @FXML
+        public Button btnUC5dps;
+
+        @FXML
+        public void defineTime (ActionEvent actionEvent) {
+            FXBridge.scene = FXBridge.UC.UC5;
+            quit();
+        }
+
+        @FXML
         public void visIn (ActionEvent actionEvent) {
             FXBridge.scene = FXBridge.UC.UC7;
             quit();

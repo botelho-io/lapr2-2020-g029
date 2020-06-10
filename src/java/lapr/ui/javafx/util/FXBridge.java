@@ -16,6 +16,7 @@ public abstract class FXBridge {
         UC1,
         UC2,
         UC3,
+        UC5,
         UC7,
         UC8,
         UC9,
@@ -42,6 +43,7 @@ public abstract class FXBridge {
         tmp.put(UC.UC1, new Pair<>("/fxml/createTransaction.fxml", "UC1 Create Transaction"));
         tmp.put(UC.UC2, new Pair<>("/fxml/createTask.fxml", "UC2 Create Task"));
         tmp.put(UC.UC3, new Pair<>("/fxml/createFreelancer.fxml", "UC3 Create Freelancer"));
+        tmp.put(UC.UC5, new Pair<>("/fxml/definePaymentScheduler.fxml", "UC5 Define Payment Scheduler"));
         tmp.put(UC.UC7, new Pair<>("/fxml/mancolStatistics.fxml", "UC7 Manager/ Collaborator Statistics"));
         tmp.put(UC.UC8, new Pair<>("/fxml/createOrganization.fxml", "UC8 Create Organization"));
         tmp.put(UC.UC9, new Pair<>("/fxml/administratorStatistics.fxml", "UC9 Administrator Statistics"));
