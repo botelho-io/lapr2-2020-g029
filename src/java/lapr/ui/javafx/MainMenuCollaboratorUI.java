@@ -15,6 +15,10 @@ public class MainMenuCollaboratorUI {
     public Button btnUC2CTask;
 
     @FXML
+    public Button btnUC7ViIn;
+
+
+    @FXML
     public void addTransaction(ActionEvent actionEvent) {
         FXBridge.scene = FXBridge.UC.UC1;
         quit();
@@ -29,6 +33,12 @@ public class MainMenuCollaboratorUI {
     @FXML
     public void createTask (ActionEvent actionEvent) {
         FXBridge.scene = FXBridge.UC.UC2;
+        quit();
+    }
+
+    @FXML
+    public void visInf (ActionEvent actionEvent) {
+        FXBridge.scene = FXBridge.UC.UC7;
         quit();
     }
 
