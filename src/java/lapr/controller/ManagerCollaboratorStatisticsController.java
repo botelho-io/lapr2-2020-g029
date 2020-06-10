@@ -1,7 +1,7 @@
 package lapr.controller;
 
-import lapr.model.App;
-import lapr.model.Freelancer;
+import lapr.list.ListTransaction;
+import lapr.model.*;
 import lapr.model.Transaction;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
@@ -9,15 +9,20 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 
 import java.util.*;
 
-public class AdministratorStatisticsController {
+
+import java.util.Collection;
+
+public class ManagerCollaboratorStatisticsController {
     final App app;
+    private final Organization org;
     Collection<Transaction> trs;
 
     /**
      * Constructor.
      */
-    public AdministratorStatisticsController() {
+    public ManagerCollaboratorStatisticsController() {
         app = AppPOE.getInstance().getApp();
+        org = app.getRegistOrganization().getOrganizationByEmailUser(app.getAutorizacaoFacade().getSessaoAtual().getEmailUtilizador());
     }
 
     /**
@@ -25,7 +30,7 @@ public class AdministratorStatisticsController {
      * @return All the freelancers in the system.
      */
     public Collection<Freelancer> getFreelancers() {
-        return app.getRegistFreelancer().getFreelancers();
+        return org.getListTransaction().getFreelancersOfAllTransactions();
     }
 
     /**
@@ -35,10 +40,9 @@ public class AdministratorStatisticsController {
      * @return True if there are transactions in the list, false otherwise.
      */
     public boolean setFreelancers(final Set<Freelancer> selected) {
-        trs = app.getRegistOrganization().getTransactionsOfFreelancers(selected);
+        trs = org.getListTransaction().getTransactionsOfFreelancers(selected);
         return !trs.isEmpty();
     }
-
     /**
      * @return The mean delay of the selected transactions.
      */
@@ -122,16 +126,12 @@ public class AdministratorStatisticsController {
         return trs.size();
     }
 
-    /**
-     * Calculates the probability that the mean delay is less than the specified value.
-     * @param value The value in hours to check the probability against.
-     * @return The probability that the mean delay is less than the specified value.
-     */
-    public double getProbabilityMeanDelayLessThan(double value) {
-        final double mean = 2;
-        final double standardDeviation = 1.5;
-        final double number = getNumberTransactions();
-        final NormalDistribution p = new NormalDistribution(mean,standardDeviation/number);
-        return 1.0 - p.cumulativeProbability(value);
+    public Double getPaymentOf(final Freelancer f) {
+        double acc = 0;
+        for(final Transaction t: trs)
+            if(t.getFreelancer() == f)
+                acc += t.getAmount();
+        return acc;
     }
 }
+

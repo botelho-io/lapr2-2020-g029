@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.ManColStatisticsUI">
+   <top>
+      <Label text="Select Freelancers To Be Included In The Statistics" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <bottom>
+      <BorderPane prefHeight="33.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button mnemonicParsing="false" onAction="#quit" text="Cancel" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#next" text="Continue" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <left>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Label text="Not-Selected" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <ListView fx:id="lvNSelected" prefHeight="236.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </bottom>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </BorderPane>
+         </left>
+         <right>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Label text="Selected" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <ListView fx:id="lvSelected" prefHeight="236.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </bottom>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </BorderPane>
+         </right>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#selectAll" prefWidth="100.0" text="Select All &gt;&gt;">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#select" prefWidth="100.0" text="Select &gt;">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deselect" prefWidth="100.0" text="&lt; Deselect">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deselectAll" prefWidth="100.0" text="&lt;&lt; Deselect All">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

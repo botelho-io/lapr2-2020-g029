@@ -200,4 +200,15 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
                 trss.add(t);
         return trss;
     }
+
+    /**
+     * Gets the all the freelancers who have a transaction in the list.
+     * @return All the freelancers who have a transaction in the list.
+     */
+    public Collection<Freelancer> getFreelancersOfAllTransactions() {
+        final HashSet<Freelancer> trss = new HashSet<>();
+        for (final Transaction t : this)
+            trss.add(t.getFreelancer());
+        return trss;
+    }
 }

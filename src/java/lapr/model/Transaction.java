@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
@@ -158,4 +157,5 @@ public class Transaction implements Serializable {
     public int hashCode() {
         return Objects.hash(m_oTask);
     }
+
 }

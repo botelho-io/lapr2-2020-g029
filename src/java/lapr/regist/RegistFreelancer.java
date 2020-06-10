@@ -115,14 +115,6 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
         return false;
     }
 
-    /**
-     * Always adds a new freelancer.
-     * @param fre Freelancer to add.
-     */
-    public void forceAdd(final Freelancer fre) {
-        m_setFreelancer.add(newFreelancer(fre.getName(), fre.getLevelOfExpertise(), fre.getEmail(), fre.getNIF(), fre.getIBAN(), fre.getAddress(), fre.getCountry()));
-    }
-
     public Collection<Freelancer> getFreelancers() {
         return new ArrayList<>(this.m_setFreelancer);
     }
