@@ -103,21 +103,21 @@
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="204" x="450.5" y="657.9189">addManager(nomeM,emailM,passawordM)</text>
         <rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="438.5" y="665.7539"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="219" x="450.5" y="671.7549">addCollaborator(nomeM,emailM,passawordC)</text>
-        <!--class AddingOrganizationController-->
+        <!--class CreateOrganizationController-->
         <rect fill="#FEFECE" filter="url(#f4nhf7r5wczvl)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="424" x="53" y="117"/>
         <ellipse cx="180.25" cy="133" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
         <path d="M183.0156,128.875 Q183.1719,128.6563 183.3594,128.5469 Q183.5469,128.4375 183.7656,128.4375 Q184.1406,128.4375 184.375,128.6953 Q184.6094,128.9531 184.6094,129.5625 L184.6094,131.0156 Q184.6094,131.625 184.375,131.8906 Q184.1406,132.1563 183.7656,132.1563 Q183.4219,132.1563 183.2188,131.9531 Q183.0156,131.7656 182.9063,131.25 Q182.8594,130.8906 182.6719,130.7031 Q182.3438,130.3281 181.7344,130.1094 Q181.125,129.8906 180.5,129.8906 Q179.7344,129.8906 179.1016,130.2188 Q178.4688,130.5469 177.9766,131.2969 Q177.4844,132.0469 177.4844,133.0781 L177.4844,134.1719 Q177.4844,135.4063 178.375,136.2266 Q179.2656,137.0469 180.8594,137.0469 Q181.7969,137.0469 182.4531,136.7969 Q182.8438,136.6406 183.2656,136.2031 Q183.5313,135.9375 183.6797,135.8594 Q183.8281,135.7813 184.0313,135.7813 Q184.3594,135.7813 184.6172,136.0391 Q184.875,136.2969 184.875,136.6406 Q184.875,136.9844 184.5313,137.3906 Q184.0313,137.9688 183.2344,138.2969 Q182.1563,138.75 180.8594,138.75 Q179.3438,138.75 178.1406,138.125 Q177.1563,137.625 176.4688,136.5547 Q175.7813,135.4844 175.7813,134.2031 L175.7813,133.0469 Q175.7813,131.7188 176.3984,130.5703 Q177.0156,129.4219 178.1094,128.8047 Q179.2031,128.1875 180.4375,128.1875 Q181.1719,128.1875 181.8203,128.3516 Q182.4688,128.5156 183.0156,128.875 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="161" x="200.75" y="137.9102">AddingOrganizationController</text>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="161" x="200.75" y="137.9102">CreateOrganizationController</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="54" x2="476" y1="149" y2="149"/>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="54" x2="476" y1="157" y2="157"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="398" x="73" y="172.4189">newOrganization(name, nameM, emailM, passwordM, nameC, emailC, passwordC)</text>
         <rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="61" y="180.2539"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="73" y="186.2549">addOrganizaton()</text>
-        <!--class AddingOrganizationUI-->
+        <!--class CreateOrganizationUI-->
         <rect fill="#FEFECE" filter="url(#f4nhf7r5wczvl)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="189.5" y="8"/>
         <ellipse cx="204.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
         <path d="M207.2656,19.875 Q207.4219,19.6563 207.6094,19.5469 Q207.7969,19.4375 208.0156,19.4375 Q208.3906,19.4375 208.625,19.6953 Q208.8594,19.9531 208.8594,20.5625 L208.8594,22.0156 Q208.8594,22.625 208.625,22.8906 Q208.3906,23.1563 208.0156,23.1563 Q207.6719,23.1563 207.4688,22.9531 Q207.2656,22.7656 207.1563,22.25 Q207.1094,21.8906 206.9219,21.7031 Q206.5938,21.3281 205.9844,21.1094 Q205.375,20.8906 204.75,20.8906 Q203.9844,20.8906 203.3516,21.2188 Q202.7188,21.5469 202.2266,22.2969 Q201.7344,23.0469 201.7344,24.0781 L201.7344,25.1719 Q201.7344,26.4063 202.625,27.2266 Q203.5156,28.0469 205.1094,28.0469 Q206.0469,28.0469 206.7031,27.7969 Q207.0938,27.6406 207.5156,27.2031 Q207.7813,26.9375 207.9297,26.8594 Q208.0781,26.7813 208.2813,26.7813 Q208.6094,26.7813 208.8672,27.0391 Q209.125,27.2969 209.125,27.6406 Q209.125,27.9844 208.7813,28.3906 Q208.2813,28.9688 207.4844,29.2969 Q206.4063,29.75 205.1094,29.75 Q203.5938,29.75 202.3906,29.125 Q201.4063,28.625 200.7188,27.5547 Q200.0313,26.4844 200.0313,25.2031 L200.0313,24.0469 Q200.0313,22.7188 200.6484,21.5703 Q201.2656,20.4219 202.3594,19.8047 Q203.4531,19.1875 204.6875,19.1875 Q205.4219,19.1875 206.0703,19.3516 Q206.7188,19.5156 207.2656,19.875 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="119" x="218.5" y="28.9102">AddingOrganizationUI</text>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="119" x="218.5" y="28.9102">CreateOrganizationUI</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="190.5" x2="339.5" y1="40" y2="40"/>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="190.5" x2="339.5" y1="48" y2="48"/>
         <path d="M265,56.044 C265,71.713 265,92.908 265,111.575 " fill="none" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
@@ -211,18 +211,18 @@ class AutorizacaoFacade {
    - addCollaborator(nomeM,emailM,passawordC)
 }
 
-class AddingOrganizationController {
+class CreateOrganizationController {
     newOrganization(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
    - addOrganizaton()
 }
 
-class AddingOrganizationUI {
+class CreateOrganizationUI {
 }
 
-AddingOrganizationUI ..> AddingOrganizationController
-AddingOrganizationController ..> RegistOrganization
-AddingOrganizationController ..> App
-AddingOrganizationController ..> Organization
+CreateOrganizationUI ..> CreateOrganizationController
+CreateOrganizationController ..> RegistOrganization
+CreateOrganizationController ..> App
+CreateOrganizationController ..> Organization
 RegistOrganization"1" - -> "*" Organization : has registed
 RegistOrganization ..> Collaborator
 RegistOrganization ..> Manager

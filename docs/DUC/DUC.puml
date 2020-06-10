@@ -12,6 +12,7 @@ usecase UC9  as "UC9  - Administrator Statistics Visualization"
 usecase UC10 as "UC10 - Send E-mail to Late Freelancers"
 usecase UC11 as "UC11 - Serialize Information To File"
 usecase UC12 as "UC12 - Deserialize Information From File"
+usecase UC13 as "UC13 - Manually Send E-mail to Late Freelancers"
 
 actor Collaborator as C
 actor Manager as M
@@ -35,6 +36,7 @@ M --> (UC7)
 
 A --> (UC8)
 A --> (UC9)
+A --> (UC13)
 
 T --> (UC10)
 

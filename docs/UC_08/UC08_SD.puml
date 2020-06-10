@@ -50,7 +50,7 @@ activate ORGS
 deactivate ORGS
 
 deactivate CTRL
-UI --> A : The sistem validates and presents the data, asking to comfirm.
+UI --> A : The system validates and presents the data, asking to confirm.
 deactivate UI
 
 A -> UI : confirms

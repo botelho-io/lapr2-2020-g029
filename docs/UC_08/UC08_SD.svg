@@ -167,7 +167,7 @@
         <polygon fill="#A80036" points="68.5,621.3047,58.5,625.3047,68.5,629.3047,64.5,625.3047" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="62.5" x2="631.5" y1="625.3047" y2="625.3047"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="74.5" y="620.7998">13</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="363" x="92.5" y="620.7998">The sistem validates and presents the data, asking to comfirm.</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="363" x="92.5" y="620.7998">The system validates and presents the data, asking to confirm.</text>
         <polygon fill="#A80036" points="615.5,651.6563,625.5,655.6563,615.5,659.6563,619.5,655.6563" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="57.5" x2="621.5" y1="655.6563" y2="655.6563"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="64.5" y="651.1514">14</text>
@@ -281,7 +281,7 @@ activate ORGS
 deactivate ORGS
 
 deactivate CTRL
-UI - -> A : The sistem validates and presents the data, asking to comfirm.
+UI - -> A : The system validates and presents the data, asking to confirm.
 deactivate UI
 
 A -> UI : confirms
