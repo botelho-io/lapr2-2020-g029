@@ -10,6 +10,7 @@ import javafx.util.Pair;
 import lapr.controller.AppPOE;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
+import lapr.utils.Constants;
 import lapr.utils.Role;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class MainUI {
     }
 
     public void mainMenu() {
-        final SessaoUtilizador su = AppPOE.getInstance().getSessaoAtual();
+        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
         // Loop trough the menus
         FXBridge.scene = null;
         // Select role
@@ -42,27 +43,46 @@ public class MainUI {
     }
 
     public void start() throws Exception {
+        // Load data from file
+        openUC(FXBridge.UC.UC12);
+
         // Login
         openUC(FXBridge.UC.LOGIN);
         // Was login successful?
-        final SessaoUtilizador su = AppPOE.getInstance().getSessaoAtual();
+        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
         if(su == null || (!su.isLoggedIn())) {
             System.exit(0); // Not successful - Exit
         } else {
+
+            // Main interaction loop
+            MAIN_MENU_LOOP:
             while (true) {
-                // Pull data from main menu
+                // Pull scene from main menu
                 mainMenu();
-                // Check is a scene was opened
+
+                // Check is a scene was selected
                 if(FXBridge.scene != null) {
                     // It was.
                     // Continue opening UC panels until there are no more panels to open;
+                    // This allows a panel to just set a FXBridge.scene and it will be automatically
+                    // opened when the current UC closes;
+                    // FXBridge.param may be used for iter-panel communications.
                     FXBridge.UC uc;
                     do {
                         uc = FXBridge.scene;
                         FXBridge.scene = null;
                     } while(openUC(uc));
-                } else break; // Nothing selected in main menu, quit app
+                } else {
+                    // Nothing selected. Quit?
+                    openUC(FXBridge.UC.UC11);
+                    switch (FXBridge.scene) {
+                        case QUIT: break MAIN_MENU_LOOP;
+                        case MAIN_MENU: continue MAIN_MENU_LOOP;
+                    }
+                }
             }
+
+
         }
     }
 }

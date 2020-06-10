@@ -1,9 +1,11 @@
 package lapr.model;
 
+import java.io.Serializable;
+
 /**
  * Represents the details of a payment made on a transaction.
  */
-public class PaymentDetails {
+public class PaymentDetails implements Serializable {
     /**
      * Represents whether the payment has been made (true) or not (false).
      */

@@ -1,0 +1,22 @@
+@startuml SSD
+autonumber
+actor "User" as U
+participant ":System" as S
+
+'The user starts the process of shuting down the system.
+'The system questions if the changes that were made to the system should be saved.
+'The user confirms.
+'The system saves all the data to a file and shuts down.
+
+activate U
+        U -> S : starts the process of shuting down the system
+        activate S
+                S --> U : questions if the changes that were made to the system should be saved
+        deactivate S
+        U -> S : confirms
+        activate S
+                S --> U : shuts down
+        deactivate S
+deactivate U
+
+@enduml

@@ -5,12 +5,13 @@
  */
 package lapr.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Represents a task an organization is trying to outsource to a freelancer.
  */
-public class Task {
+public class Task implements Serializable {
     /**
      * The id of the task.
      */

@@ -7,12 +7,14 @@ package lapr.model;
 
 import autorizacao.model.UserRole;
 import lapr.utils.Role;
+
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Represents a user that can login into the system.
  */
-public class User {
+public class User implements Serializable  {
     /**
      * The name of the user.
      */

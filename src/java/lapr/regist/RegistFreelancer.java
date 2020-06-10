@@ -3,12 +3,13 @@ package lapr.regist;
 import lapr.model.Freelancer;
 import lapr.utils.Expertise;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Represents the register of all the freelancers available in the system.
  */
-public class RegistFreelancer implements Iterable<Freelancer> {
+public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     /**
      * The list of freelancers
      */

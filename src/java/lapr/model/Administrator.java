@@ -35,6 +35,6 @@ public class Administrator extends User {
      * @param password of the admininstrator.
      */
     public Administrator (String name, String email, String password){
-        this(name, email, password, new UserRole[]{AppPOE.getInstance().getRole(Role.ADMINISTRATOR)});
+        this(name, email, password, new UserRole[]{AppPOE.getInstance().getApp().getAuthFacade().getRole(Role.ADMINISTRATOR)});
     }
 }

@@ -1,0 +1,21 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class SerializeUI {
+
+}
+
+class SerializeController {
+        + serialize()
+}
+
+SerializeUI ..> SerializeController
+
+class App {
+        + serialize(String path)
+}
+
+SerializeController ..> App
+
+@enduml

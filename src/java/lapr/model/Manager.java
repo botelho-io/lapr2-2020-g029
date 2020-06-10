@@ -35,6 +35,6 @@ public class Manager extends User {
      * @param password of the manager.
      */
     public Manager (String name, String email, String password) {
-        this(name, email, password, new UserRole[]{getInstance().getRole(Role.MANAGER)});
+        this(name, email, password, new UserRole[]{getInstance().getApp().getAuthFacade().getRole(Role.MANAGER)});
     }
 }

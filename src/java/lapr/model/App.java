@@ -9,15 +9,18 @@ package lapr.model;
 import autorizacao.AuthFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
+import lapr.controller.AppPOE;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
 
+import java.io.*;
+
 /**
  * @author André Botelho and Ricardo Moreira.
  */
-public class App {
+public class App implements Serializable {
     /**
      * The autorization facade used by the app.
      */
@@ -51,17 +54,18 @@ public class App {
      */
     private EmailScheduler m_oEmailScheduler;
 
-    public App()
-    {
+
+    public App() {
         this.m_oAutorization = new AuthFacade();
         this.m_oRegistOrganization = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
         this.m_oEmailScheduler = new EmailScheduler();
     }
+
     /**
      * @return The autorization facade used by the app.
      */
-    public AuthFacade getAutorizacaoFacade()
+    public AuthFacade getAuthFacade()
     {
         return this.m_oAutorization;
     }
@@ -111,6 +115,35 @@ public class App {
         this.m_oEmailAPI = email;
         this.m_oPaymentAPI = payment;
         this.m_oPswGeneratorAPI = pswGenerator;
+    }
+
+    /**
+     * Serialize data.
+     * @param path The path of the file to serialize the data to.
+     * @throws IOException If the file is not able to be opened or serialization fails.
+     */
+    public void serialize(final String path) throws IOException {
+        FileOutputStream fileOut = new FileOutputStream(path);
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(this);
+        out.close();
+        fileOut.close();
+    }
+
+    /**
+     * Deserializes data from file.
+     * @param path The path of the file to deserialize the data from.
+     * @return The deserialized data.
+     * @throws IOException If the file is not able to be opened or serialization fails.
+     * @throws ClassNotFoundException If class of a serialized object cannot be found.
+     */
+    public static App deserialize(String path) throws IOException, ClassNotFoundException {
+        FileInputStream fileIn = new FileInputStream(path);
+        ObjectInputStream out = new ObjectInputStream(fileIn);
+        final App app = (App) out.readObject();
+        out.close();
+        fileIn.close();
+        return app;
     }
 }
     

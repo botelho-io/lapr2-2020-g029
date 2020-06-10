@@ -7,12 +7,13 @@ package lapr.model;
 
 import lapr.utils.Expertise;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Represents a freelancer that intends do profit from completing tasks.
  */
-public class Freelancer {
+public class Freelancer implements Serializable {
     /**
      * The unique ID of this freelancer.
      */
@@ -24,7 +25,7 @@ public class Freelancer {
     /**
      * The level of expertise of this freelancer.
      */
-    private Expertise m_strLevelOfExpertise;
+    private Expertise m_enumLevelOfExpertise;
     /**
      * The unique email of this freelancer.
      */
@@ -61,7 +62,7 @@ public class Freelancer {
         this.m_strBankAccountIBAN = strIBAN;
         this.m_strEmail = strEmail;
         this.m_strId = strId;
-        this.m_strLevelOfExpertise = enumExpertise;
+        this.m_enumLevelOfExpertise = enumExpertise;
         this.m_strName = strName;
         this.m_strNIF = strNIF;
         this.m_strAddress = strAddress;
@@ -78,7 +79,7 @@ public class Freelancer {
      * @return The level of expertise of this freelancer.
      */
     public Expertise getLevelOfExpertise() {
-        return m_strLevelOfExpertise;
+        return m_enumLevelOfExpertise;
     }
     /**
      * @return The unique email of this freelancer.

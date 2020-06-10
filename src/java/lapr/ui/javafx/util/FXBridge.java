@@ -19,6 +19,8 @@ public abstract class FXBridge {
         UC7,
         UC8,
         UC9,
+        UC11,
+        UC12,
 
         // Unnumbered use cases
         LOGIN,
@@ -28,8 +30,10 @@ public abstract class FXBridge {
 
 
         // Others
+        QUIT,
+        MAIN_MENU,
         UC7_PART2,
-        UC9_PART2
+        UC9_PART2,
     }
 
     public final static Map<UC, Pair<String, String>> UC_name_title;
@@ -41,6 +45,8 @@ public abstract class FXBridge {
         tmp.put(UC.UC7, new Pair<>("/fxml/mancolStatistics.fxml", "UC7 Manager/ Collaborator Statistics"));
         tmp.put(UC.UC8, new Pair<>("/fxml/createOrganization.fxml", "UC8 Create Organization"));
         tmp.put(UC.UC9, new Pair<>("/fxml/administratorStatistics.fxml", "UC9 Administrator Statistics"));
+        tmp.put(UC.UC11, new Pair<>("/fxml/serializeToFile.fxml", "UC11 Serialize To File"));
+        tmp.put(UC.UC12, new Pair<>("/fxml/deserializeFromFile.fxml", "UC12 Serialize From File"));
         tmp.put(UC.LOGIN, new Pair<>("/fxml/login.fxml", "Login"));
         tmp.put(UC.MENU_ADMIN, new Pair<>("/fxml/mainMenuAdmin.fxml", "Main Menu Administrator"));
         tmp.put(UC.MENU_MANAG, new Pair<>("/fxml/mainMenuManager.fxml", "Main Menu Manager"));
