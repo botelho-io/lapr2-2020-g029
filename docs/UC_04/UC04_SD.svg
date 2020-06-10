@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="583px" preserveAspectRatio="none" style="width:1110px;height:583px;" version="1.1" viewBox="0 0 1110 583" width="1110px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fpcnqwg1iwmz0" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="381.5156" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="90.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="177.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="632" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="632" y="331.7188"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="986" y="362.0703"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="87.6094" y2="497.4766"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="416.5" x2="416.5" y1="87.6094" y2="497.4766"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="636.5" x2="636.5" y1="87.6094" y2="497.4766"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="990.5" x2="990.5" y1="87.6094" y2="497.4766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="84.5332">Collaborator</text>
+        <ellipse cx="50" cy="13" fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M50,21 L50,48 M37,29 L63,29 M50,48 L37,63 M50,48 L63,63 " fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="511.0098">Collaborator</text>
+        <ellipse cx="50" cy="524.0859" fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M50,532.0859 L50,559.0859 M37,540.0859 L63,540.0859 M50,559.0859 L37,574.0859 M50,559.0859 L63,574.0859 " fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="377.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="384.5" y="72.5332">:LoaderUI</text>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="377.5" y="496.4766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="384.5" y="518.0098">:LoaderUI</text>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="125" x="572.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="579.5" y="72.5332">:LoaderController</text>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="125" x="572.5" y="496.4766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="579.5" y="518.0098">:LoaderController</text>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="173" x="902.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="159" x="909.5" y="72.5332">:HistoricalTransactionFile</text>
+        <rect fill="#FEFECE" filter="url(#fpcnqwg1iwmz0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="173" x="902.5" y="496.4766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="159" x="909.5" y="518.0098">:HistoricalTransactionFile</text>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="381.5156" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="90.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="177.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="301.3672"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="632" y="210.6641"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="60.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="632" y="331.7188"/>
+        <rect fill="#FFFFFF" filter="url(#fpcnqwg1iwmz0)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="986" y="362.0703"/>
+        <polygon fill="#A80036" points="400,115.6094,410,119.6094,400,123.6094,404,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="115.1045">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="327" x="73" y="115.1045">starts the process of load historical transactions from file</text>
+        <polygon fill="#A80036" points="66,145.9609,56,149.9609,66,153.9609,62,149.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="416" y1="149.9609" y2="149.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="145.4561">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="83" y="145.4561">asks witch file should be loaded</text>
+        <polygon fill="#A80036" points="400,176.3125,410,180.3125,400,184.3125,404,180.3125" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="180.3125" y2="180.3125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="175.8076">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="73" y="175.8076">selctes the file</text>
+        <polygon fill="#A80036" points="620,206.6641,630,210.6641,620,214.6641,624,210.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="422" x2="626" y1="210.6641" y2="210.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="429" y="206.1592">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="440" y="206.1592">create()</text>
+        <polygon fill="#A80036" points="66,267.0156,56,271.0156,66,275.0156,62,271.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="416" y1="271.0156" y2="271.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="266.5107">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="314" x="83" y="266.5107">open the file and displays the data contained in the file</text>
+        <polygon fill="#A80036" points="400,297.3672,410,301.3672,400,305.3672,404,301.3672" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="301.3672" y2="301.3672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="296.8623">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="73" y="296.8623">confirms the data</text>
+        <polygon fill="#A80036" points="620,327.7188,630,331.7188,620,335.7188,624,331.7188" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="422" x2="626" y1="331.7188" y2="331.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="429" y="327.2139">7</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="440" y="327.2139">newHistoricalTransactionsFile()</text>
+        <polygon fill="#A80036" points="974,358.0703,984,362.0703,974,366.0703,978,362.0703" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="642" x2="980" y1="362.0703" y2="362.0703"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="649" y="357.5654">8</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="314" x="660" y="357.5654">readFileTo(registFreelancer, ListTask, ListTransaction)</text>
+        <polygon fill="#FBFB77" filter="url(#fpcnqwg1iwmz0)" points="877,405.4219,877,447.4219,1101,447.4219,1101,415.4219,1091,405.4219,877,405.4219" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1091" x2="1091" y1="405.4219" y2="415.4219"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1101" x2="1091" y1="415.4219" y2="415.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="199" x="883" y="423.917">HistoricalTransactionFile create all</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="883" y="440.2686">the objects in the file</text>
+        <polygon fill="#A80036" points="61,475.125,51,479.125,61,483.125,57,479.125" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="55" x2="416" y1="479.125" y2="479.125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="67" y="474.6201">9</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="78" y="474.6201">successful operation</text>
+        <!--
+@startuml SD
+autonumber
+actor "Collaborator" as C   
+participant ":LoaderUI" as ui
+participant ":LoaderController" as ctr
+participant ":HistoricalTransactionFile" as htf
+
+activate C
+        C -> ui : starts the process of load historical transactions from file
+        activate ui
+                ui - -> C : asks witch file should be loaded
+        deactivate ui
+        C -> ui : selctes the file
+        activate ui
+                ui -> ctr : create()
+                activate ctr
+                deactivate ctr 
+                ui - -> C : open the file and displays the data contained in the file
+        deactivate ui
+        C -> ui : confirms the data
+        activate ui
+                ui -> ctr : newHistoricalTransactionsFile()
+                activate ctr
+                        ctr -> htf : readFileTo(registFreelancer, ListTask, ListTransaction)
+                        activate htf
+                                note over htf :HistoricalTransactionFile create all \nthe objects in the file
+                        deactivate htf
+                deactivate ctr
+                ui - -> C : successful operation
+        deactivate ui
+deactivate C
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

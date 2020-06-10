@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="375px" preserveAspectRatio="none" style="width:456px;height:375px;" version="1.1" viewBox="0 0 456 375" width="456px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fwpkg90pitg1b" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="173.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="241.0156"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="87.6094" y2="289.7188"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="417" x2="417" y1="87.6094" y2="289.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="84.5332">Collaborator</text>
+        <ellipse cx="50" cy="13" fill="#FEFECE" filter="url(#fwpkg90pitg1b)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M50,21 L50,48 M37,29 L63,29 M50,48 L37,63 M50,48 L63,63 " fill="#FEFECE" filter="url(#fwpkg90pitg1b)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="8" y="303.252">Collaborator</text>
+        <ellipse cx="50" cy="316.3281" fill="#FEFECE" filter="url(#fwpkg90pitg1b)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M50,324.3281 L50,351.3281 M37,332.3281 L63,332.3281 M50,351.3281 L37,366.3281 M50,351.3281 L63,366.3281 " fill="#FEFECE" filter="url(#fwpkg90pitg1b)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#fwpkg90pitg1b)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="383" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="390" y="72.5332">:System</text>
+        <rect fill="#FEFECE" filter="url(#fwpkg90pitg1b)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="383" y="288.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="390" y="310.252">:System</text>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="173.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="45" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#fwpkg90pitg1b)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="412" y="241.0156"/>
+        <polygon fill="#A80036" points="400,115.6094,410,119.6094,400,123.6094,404,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="115.1045">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="327" x="73" y="115.1045">starts the process of load historical transactions from file</text>
+        <polygon fill="#A80036" points="66,145.9609,56,149.9609,66,153.9609,62,149.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="416" y1="149.9609" y2="149.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="145.4561">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="83" y="145.4561">asks witch file should be loaded</text>
+        <polygon fill="#A80036" points="400,176.3125,410,180.3125,400,184.3125,404,180.3125" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="180.3125" y2="180.3125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="175.8076">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="73" y="175.8076">selctes the file</text>
+        <polygon fill="#A80036" points="66,206.6641,56,210.6641,66,214.6641,62,210.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="60" x2="416" y1="210.6641" y2="210.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="72" y="206.1592">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="314" x="83" y="206.1592">open the file and displays the data contained in the file</text>
+        <polygon fill="#A80036" points="400,237.0156,410,241.0156,400,245.0156,404,241.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="55" x2="406" y1="241.0156" y2="241.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="62" y="236.5107">5</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="73" y="236.5107">confirms the data</text>
+        <polygon fill="#A80036" points="61,267.3672,51,271.3672,61,275.3672,57,271.3672" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="55" x2="416" y1="271.3672" y2="271.3672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="67" y="266.8623">6</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="78" y="266.8623">successful operation</text>
+        <!--
+@startuml SSD
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+
+activate C
+        C -> S :starts the process of load historical transactions from file
+        activate S
+                S - -> C : asks witch file should be loaded
+        deactivate S
+        C -> S : selctes the file
+        activate S
+                S - -> C : open the file and displays the data contained in the file
+        deactivate S
+         C -> S : confirms the data
+        activate S
+                S - -> C : successful operation
+        deactivate S
+deactivate C
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

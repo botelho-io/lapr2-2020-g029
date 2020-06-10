@@ -1,0 +1,22 @@
+@startuml SSD
+autonumber
+actor "Collaborator" as C
+participant ":System" as S
+
+
+activate C
+        C -> S :starts the process of load historical transactions from file
+        activate S
+                S --> C : asks witch file should be loaded
+        deactivate S
+        C -> S : selctes the file
+        activate S
+                S --> C : open the file and displays the data contained in the file
+        deactivate S
+         C -> S : confirms the data
+        activate S
+                S --> C : successful operation
+        deactivate S
+deactivate C
+
+@enduml
