@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class AuthFacade implements Serializable {
 
-    private SessaoUtilizador m_oSessao = null;
+    private transient SessaoUtilizador m_oSessao = null;
     private final RegistUserRoles m_oPapeis = new RegistUserRoles();
     private final RegistUsers m_oUsers = new RegistUsers();
 
