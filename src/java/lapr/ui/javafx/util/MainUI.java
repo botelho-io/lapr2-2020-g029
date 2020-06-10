@@ -75,9 +75,11 @@ public class MainUI {
                 } else {
                     // Nothing selected. Quit?
                     openUC(FXBridge.UC.UC11);
+                    if(FXBridge.scene == null)
+                        FXBridge.scene = FXBridge.UC.MAIN_MENU;
                     switch (FXBridge.scene) {
-                        case QUIT: break MAIN_MENU_LOOP;
                         case MAIN_MENU: continue MAIN_MENU_LOOP;
+                        case QUIT: break MAIN_MENU_LOOP;
                     }
                 }
             }

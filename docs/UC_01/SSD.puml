@@ -19,7 +19,7 @@ activate C
         deactivate S
         C -> S : inserts all the data
         activate S
-                S --> C: shows the data introduced and requests confirmation
+                S --> C: shows the data introduced, the amount that will be payed \nto the freelancer and requests confirmation
         deactivate S
         C -> S : confirms
         activate S

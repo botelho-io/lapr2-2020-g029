@@ -5,86 +5,80 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane prefHeight="473.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateTransactionUI">
-   <columnConstraints>
-      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
-   </rowConstraints>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateTransactionUI">
+   <top>
+      <VBox alignment="CENTER" prefHeight="91.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <Label text="Create New Transaction">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Label opacity="0.5" text="Insert All The Information Relevant To The Transaction Below" textAlignment="CENTER" />
+      </VBox>
+   </top>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="NEVER">
+            <children>
+               <Label prefHeight="18.0" prefWidth="180.0" text="Freelancer" />
+               <ChoiceBox fx:id="cbFreelancer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="10.0" HBox.hgrow="ALWAYS" />
+               <Button fx:id="btnUC3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" mnemonicParsing="false" onAction="#startUC3" prefWidth="10.0" text="UC3 - Create Freelancer" HBox.hgrow="ALWAYS" />
+            </children>
+         </HBox>
+         <HBox spacing="10.0" VBox.vgrow="NEVER">
+            <children>
+               <Label prefWidth="180.0" text="Task" />
+               <ChoiceBox fx:id="cbTask" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="10.0" HBox.hgrow="ALWAYS" />
+               <Button fx:id="btnUC2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" mnemonicParsing="false" onAction="#startUC2" prefWidth="10.0" text="UC2 - Create Task" HBox.hgrow="ALWAYS" />
+            </children>
+         </HBox>
+         <HBox spacing="10.0" VBox.vgrow="NEVER">
+            <children>
+               <Label prefWidth="180.0" text="Date The Task Ended" />
+               <DatePicker fx:id="dpDate" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" onAction="#updateValue" prefWidth="30.0" promptText="Date The Dask Ended" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin></DatePicker>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="196.0" spacing="10.0" VBox.vgrow="NEVER">
+            <children>
+               <Label prefWidth="180.0" text="Hours The Task Was Delayed" />
+               <Spinner fx:id="spHours" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="220.0" spacing="10.0" VBox.vgrow="ALWAYS">
+            <children>
+               <Label prefHeight="18.0" prefWidth="180.0" text="Description Of The Work Done" />
+               <TextArea fx:id="taDesc" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin></TextArea>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="154.0" spacing="10.0">
+            <children>
+               <Label prefHeight="18.0" prefWidth="180.0" text="Value To Pay The Freelancer:" />
+               <Label fx:id="lblValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" text="Incomplete Fields" HBox.hgrow="ALWAYS">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+      </VBox>
+   </center>
+   <bottom>
+      <BorderPane prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button mnemonicParsing="false" onAction="#quit" text="Cancel" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#newTransaction" text="Create Transaction" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
-   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-      <top>
-         <VBox alignment="CENTER" prefHeight="91.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <Label text="Create New Transaction">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label opacity="0.5" text="Insert All The Information Relevant To The Transaction Below" textAlignment="CENTER" />
-         </VBox>
-      </top>
-      <center>
-         <VBox BorderPane.alignment="CENTER">
-            <BorderPane prefHeight="200.0" prefWidth="200.0">
-               <right>
-                  <Button fx:id="btnUC3" mnemonicParsing="false" onAction="#startUC3" prefHeight="26.0" prefWidth="160.0" text="UC3 - Create Freelancer" BorderPane.alignment="CENTER" />
-               </right>
-               <center>
-                  <ChoiceBox fx:id="cbFreelancer" prefHeight="26.0" prefWidth="220.0" BorderPane.alignment="CENTER" />
-               </center>
-               <left>
-                  <Label prefHeight="18.0" prefWidth="180.0" text="Freelancer" BorderPane.alignment="CENTER" />
-               </left>
-            </BorderPane>
-            <BorderPane prefHeight="51.0" prefWidth="530.0">
-               <right>
-                  <Button fx:id="btnUC2" mnemonicParsing="false" onAction="#startUC2" prefHeight="26.0" prefWidth="160.0" text="UC2 - Create Task" BorderPane.alignment="CENTER" />
-               </right>
-               <center>
-                  <ChoiceBox fx:id="cbTask" prefHeight="26.0" prefWidth="220.0" BorderPane.alignment="CENTER" />
-               </center>
-               <left>
-                  <Label prefWidth="180.0" text="Task" BorderPane.alignment="CENTER" />
-               </left>
-            </BorderPane>
-            <BorderPane prefHeight="200.0" prefWidth="200.0">
-               <left>
-                  <Label text="Date The Task Ended" BorderPane.alignment="CENTER" />
-               </left>
-               <right>
-                  <DatePicker fx:id="dpDate" prefHeight="26.0" prefWidth="400.0" promptText="Date The Dask Ended" BorderPane.alignment="CENTER" />
-               </right>
-            </BorderPane>
-            <BorderPane prefHeight="200.0" prefWidth="200.0">
-               <left>
-                  <Label text="Hours The Task Was Delayed" BorderPane.alignment="CENTER" />
-               </left>
-               <right>
-                  <Spinner fx:id="spHours" prefWidth="400.0" BorderPane.alignment="CENTER" />
-               </right>
-            </BorderPane>
-            <BorderPane prefHeight="200.0" prefWidth="200.0">
-               <left>
-                  <Label text="Description Of The Work Done" BorderPane.alignment="CENTER" />
-               </left>
-               <right>
-                  <TextArea fx:id="taDesc" prefHeight="100.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
-               </right>
-            </BorderPane>
-         </VBox>
-      </center>
-      <bottom>
-         <BorderPane prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <left>
-               <Button mnemonicParsing="false" onAction="#quit" text="Cancel" BorderPane.alignment="CENTER" />
-            </left>
-            <right>
-               <Button mnemonicParsing="false" onAction="#newTransaction" text="Create Transaction" BorderPane.alignment="CENTER" />
-            </right>
-         </BorderPane>
-      </bottom>
-   </BorderPane>
-</GridPane>
+</BorderPane>
