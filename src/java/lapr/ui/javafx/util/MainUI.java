@@ -34,7 +34,7 @@ public class MainUI {
         } else if (su.isLoggedInComPapel(Role.COLLABORATOR)) {
             openUC(FXBridge.UC.MENU_COLLA);
         } else if (su.isLoggedInComPapel(Role.MANAGER)) {
-            // TODO: Complete.
+            openUC(FXBridge.UC.MENU_MANAG);
         } else {
             HelperUI.alert("Unknown Role!");
             System.exit(1);

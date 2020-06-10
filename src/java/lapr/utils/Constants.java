@@ -26,10 +26,10 @@ public abstract class Constants {
         final RegistFreelancer rf = app.getRegistFreelancer();
         // Add freelancers
         testFreelancers = new Freelancer[]{
-                rf.newFreelancer("Free Joe1", Expertise.SENIOR, "fre1@dei.pt", "28739247891", "8937431", "Address1", "Germany"),
-                rf.newFreelancer("Free Joe2", Expertise.JUNIOR, "fre2@dei.pt", "28739247892", "8937432", "Address2", "Germany"),
-                rf.newFreelancer("Free Joe3", Expertise.SENIOR, "fre3@dei.pt", "28739247893", "8937433", "Address3", "Germany"),
-                rf.newFreelancer("Free Joe4", Expertise.JUNIOR, "fre4@dei.pt", "28739247894", "8937434", "Address4", "Germany")
+                new Freelancer("FJ1", "Free Joe1", Expertise.SENIOR, "fre1@dei.pt", "28739247891", "8937431", "Address1", "Germany"),
+                new Freelancer("FJ2", "Free Joe2", Expertise.JUNIOR, "fre2@dei.pt", "28739247892", "8937432", "Address2", "Germany"),
+                new Freelancer("FJ3", "Free Joe3", Expertise.SENIOR, "fre3@dei.pt", "28739247893", "8937433", "Address3", "Germany"),
+                new Freelancer("FJ4", "Free Joe4", Expertise.JUNIOR, "fre4@dei.pt", "28739247894", "8937434", "Address4", "Germany")
         };
 
         // Add organization
@@ -81,7 +81,7 @@ public abstract class Constants {
         final App app = poe.getApp();
         final RegistFreelancer rf = app.getRegistFreelancer();
         for(final Freelancer f : testFreelancers)
-            rf.forceAdd(f);
+            rf.addFreelancer(f);
     }
 
     public static void addTestOrgTasksFreelancersAndTransactions() {

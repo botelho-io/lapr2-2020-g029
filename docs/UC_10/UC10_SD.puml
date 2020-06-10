@@ -4,23 +4,25 @@ hide footbox
 
 participant "scheduler\n:EmailScheduler" as SC
 participant "timer:\nTimer" as TIMER
-participant "task:\nTask" as TASK
+participant "task:\nSendEmailTask" as TASK
+participant "tras:\nTransaction" as TRA
 participant "org\n:Organization" as org
 participant "ted\n:TaskExecutionDetails" as ted
+participant "trs\n:Transaction" as trs
 participant ":EmailAPI" as eapi
-participant "tl\n:TaskList" as tl
-participant "completetask\n:TaskList" as ct
+participant "lt\n:ListTransaction" as lt
+participant "completetask\n:ListTransaction" as ct
 
-[o-> SC : create(dayOfMonth, timeOfDay, task)
+[o-> SC : create()
 activate SC
-        SC -> SC : resetTime(day, timeOfDay)
-        SC -> SC : scheduleNextMonth()
+        SC -> SC : resetTime()
+        SC -> SC : scheduleNextYear()
 loop
         activate SC
-                SC -> TASK**  : create(task, scheduler)
+                SC -> TASK**  : create(scheduler)
                 SC -> TIMER** : create()
                 SC -> SC : date = getNextDate()
-                SC ->TIMER: schedule(task, date)
+                SC ->TIMER: schedule(date)
         deactivate SC
 
 deactivate SC
@@ -28,40 +30,33 @@ deactivate SC
                 note over SC,TIMER  : On the specified date and time
                 TIMER->TASK:run()
                 activate TASK
-                        TASK->TASK: emailFreelancer()
+                        TASK->TASK: sendMessages()
                         activate TASK
-                                TASK -> org : tl = getTasklist()
+                                TASK -> org : tl = getListTransaction()
                                 activate org
                                 deactivate org
                                 TASK -> ct ** : create()
-                                loop for each task
-                                        opt if the task is delayed
-                                                TASK -> tl : trs = getTask(ID)
-                                                activate tl
-                                                deactivate tl
-                                                TASK -> ted : sendEmailFreelancer()
-                                                activate ted
-                                                        ted -> eapi: emailTo(fID, taskID, delayTime )
+                                loop for each transaction
+                                        opt if the freelancer has high task delay
+                                                TASK -> lt : trs = getTransaction(ID)
+                                                activate lt
+                                                deactivate lt
+                                                TASK -> trs : getExecutionDetails()
+                                                activate trs
+                                                        trs -> eapi: sendEmail( address, message)
                                                         activate eapi
                                                         deactivate eapi
                                                         note right
                                                                 Here the getters for the following fields were omited:
-                                                                fID - The ID of the freelancer to email to.
-								taskID - the id of the task he as delay
-                                                                delayTime - the delay he have on the task
+                                                                address that will receive the email
+                                                                message of the body of the email
                                                         end note
-                                                        ted -> ted : setEmailed(true)
-                                                deactivate ted
-                                                TASK -> ct : add(ted)
-                                                activate ct
-                                                deactivate ct
-                                        end
+                                                        trs-> trs : setEmailed(true)
+                                                deactivate trs
+                                                end
                                 end
-                                TASK -> ct : emailAboutTask()
-                                activate ct
-                                deactivate ct
                         deactivate TASK
-                        TASK -> SC : scheduleNextMonth()
+                        TASK -> SC : scheduleNextYear()
                         activate SC
                 deactivate TASK
         deactivate TIMER
