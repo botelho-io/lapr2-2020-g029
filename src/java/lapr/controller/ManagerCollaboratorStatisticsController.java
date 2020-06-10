@@ -126,17 +126,12 @@ public class ManagerCollaboratorStatisticsController {
         return trs.size();
     }
 
-    /**
-     * Calculates the probability that the mean delay is less than the specified value.
-     * @param value The value in hours to check the probability against.
-     * @return The probability that the mean delay is less than the specified value.
-     */
-    public double getProbabilityMeanDelayLessThan(double value) {
-        final double mean = getMeanDelays();
-        final double standardDeviation = getStandardDeviationDelays();
-        final double number = getNumberTransactions();
-        final NormalDistribution p = new NormalDistribution(mean,standardDeviation/number);
-        return 1.0 - p.cumulativeProbability(value);
+    public Double getPaymentOf(final Freelancer f) {
+        double acc = 0;
+        for(final Transaction t: trs)
+            if(t.getFreelancer() == f)
+                acc += t.getAmount();
+        return acc;
     }
 }
 

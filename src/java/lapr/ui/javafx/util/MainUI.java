@@ -42,8 +42,6 @@ public class MainUI {
     }
 
     public void start() throws Exception {
-        AppPOE.getInstance().getAuthFacade().doLogin("man@dei.pt", "password");
-        openUC(FXBridge.UC.UC7);
         // Login
         openUC(FXBridge.UC.LOGIN);
         // Was login successful?

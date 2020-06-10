@@ -170,7 +170,7 @@ public class ManColStatisticsUI2 {
                         f.getCountry(),
                         f.getEmail(),
                         f.getLevelOfExpertise().name(),
-                        10.4 // TODO change 10 for actual value
+                        ctr.getPaymentOf(f)
                 );
                 data.add(td);
             }
