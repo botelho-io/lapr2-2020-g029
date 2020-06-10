@@ -19,15 +19,23 @@ import lapr.model.*;
 import lapr.utils.Constants;
 import autorizacao.AuthFacade;
 import lapr.utils.Role;
+import lapr.utils.TestConstants;
 
 public class AppPOE {
     private static AppPOE singleton = null;
-
     private final App m_oApp;
 
     private AppPOE() {
+        this(new App());
+    }
+
+    private AppPOE(App app) {
+        this.m_oApp = app;
         Properties props = getProperties();
-        this.m_oApp = new App();
+    }
+
+    public static void setApp(App app) {
+        singleton = new AppPOE(app);
     }
 
     public App getApp() {
@@ -58,7 +66,7 @@ public class AppPOE {
         m_oApp.setAPIs(new StubEmailAPI(), new StubMonetaryConversionAPI(), new StubPaymentAPI(), new StubPswGeneratorAPI());
 
         // Add test data TODO: Delete
-        Constants.addTestOrgTasksFreelancersAndTransactions();
+        TestConstants.addTestOrgTasksFreelancersAndTransactions();
         // new SendEmailTask(new EmailScheduler()).run(); // Send test emails
     }
 

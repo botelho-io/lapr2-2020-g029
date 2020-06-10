@@ -61,6 +61,7 @@ public class App implements Serializable {
         this.m_oRegistFreelancer = new RegistFreelancer();
         this.m_oEmailScheduler = new EmailScheduler();
     }
+
     /**
      * @return The autorization facade used by the app.
      */
@@ -127,6 +128,22 @@ public class App implements Serializable {
         out.writeObject(this);
         out.close();
         fileOut.close();
+    }
+
+    /**
+     * Deserializes data from file.
+     * @param path The path of the file to deserialize the data from.
+     * @return The deserialized data.
+     * @throws IOException If the file is not able to be opened or serialization fails.
+     * @throws ClassNotFoundException If class of a serialized object cannot be found.
+     */
+    public static App deserialize(String path) throws IOException, ClassNotFoundException {
+        FileInputStream fileIn = new FileInputStream(path);
+        ObjectInputStream out = new ObjectInputStream(fileIn);
+        final App app = (App) out.readObject();
+        out.close();
+        fileIn.close();
+        return app;
     }
 }
     

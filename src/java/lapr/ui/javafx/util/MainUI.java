@@ -43,6 +43,9 @@ public class MainUI {
     }
 
     public void start() throws Exception {
+        // Load data from file
+        openUC(FXBridge.UC.UC12);
+
         // Login
         openUC(FXBridge.UC.LOGIN);
         // Was login successful?

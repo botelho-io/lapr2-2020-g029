@@ -20,5 +20,6 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         MainUI ctrl = new MainUI();
         ctrl.start();
+        System.exit(0);
     }
 }

@@ -12,7 +12,7 @@ public class DeserializeController {
      * @return True if the data file exists, false otherwise.
      */
     public boolean hasDataFile() {
-        File f = new File(path);
+        File f = new File(Constants.dataSavePath);
         return f.exists() && f.isFile() && f.canRead();
     }
 

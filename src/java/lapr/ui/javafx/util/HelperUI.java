@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class HelperUI {
     public static void alert(String message) {
+        System.out.println(message);
         alert(Alert.AlertType.ERROR, message);
     }
 

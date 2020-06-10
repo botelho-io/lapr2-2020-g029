@@ -28,6 +28,7 @@ public class DeserializeUI {
     public void load(ActionEvent actionEvent) {
         try {
             ctr.deserialize();
+            quit();
         } catch (IOException | ClassNotFoundException  e) {
             HelperUI.alert(e.getMessage());
             System.exit(-1);
