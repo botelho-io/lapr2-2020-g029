@@ -1,0 +1,32 @@
+@startuml SD
+
+autonumber
+actor "Administrator" as U
+participant ":SendEmailsUI" as S
+participant ":SendEmailsController" as ctr
+participant ":SendEmailTask" as tsk
+
+
+'The administrator starts the process of sending emails to late freelancers.
+'The system sends the e-mails and informs the administrator of the success of the operation.
+
+activate U
+        U -> S : starts the process of sending emails to late freelancers
+        activate S
+                S -> ctr : getMessages()
+                activate ctr
+                        ctr -> tsk : msgs = getMessages()
+                        activate tsk
+                        deactivate tsk
+                deactivate ctr
+                S -> ctr : sendMessages()
+                activate ctr
+                        ctr -> tsk : sendMessages(msgs)
+                        activate tsk
+                        deactivate tsk
+                deactivate ctr
+                S --> U : success
+        deactivate S
+deactivate U
+
+@enduml

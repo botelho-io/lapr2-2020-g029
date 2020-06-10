@@ -39,7 +39,7 @@ public class SendEmailTask extends TimerTask implements Serializable {
      * Sends emails with messages.
      * @param fre_msg A map that makes a freelancer correspond to its message or null to not send a message.
      */
-    private void sendMessages(Map<Freelancer, String> fre_msg){
+    public static void sendMessages(Map<Freelancer, String> fre_msg){
         final EmailAPI email = AppPOE.getInstance().getApp().getEmailAPI();
         for(final Freelancer fre : fre_msg.keySet()) {
             final String message = fre_msg.get(fre);
@@ -51,7 +51,7 @@ public class SendEmailTask extends TimerTask implements Serializable {
      * Gets the messages to be sent to the freelancers.
      * @return A map that makes a freelancer correspond to its message or null if there is nothing to send.
      */
-    private Map<Freelancer, String> getMessages() {
+    public static Map<Freelancer, String> getMessages() {
         final int CURREN_YEAR = Calendar.getInstance().get(Calendar.YEAR);
         // The regist of the organization
         final RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();

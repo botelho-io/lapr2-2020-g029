@@ -17,6 +17,7 @@
          <children>
             <Button fx:id="btnUC8NOrg" mnemonicParsing="false" onAction="#enterUC08" prefHeight="26.0" prefWidth="175.0" text="UC 8 - Add New Organization" />
             <Button mnemonicParsing="false" onAction="#enterUC09" prefWidth="175.0" text="UC 9 - Administrator Statistics" />
+            <Button layoutX="223.0" layoutY="187.0" mnemonicParsing="false" onAction="#enterUC13" prefWidth="175.0" text="UC 13 - Manually Send E-mail" />
          </children>
       </VBox>
    </center>
