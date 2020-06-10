@@ -5,9 +5,10 @@ import lapr.api.EmailAPI;
 import lapr.model.*;
 import lapr.regist.RegistOrganization;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class SendEmailTask extends TimerTask {
+public class SendEmailTask extends TimerTask implements Serializable {
     /**
      * The email scheduler responsible for this task.
      */

@@ -8,13 +8,14 @@ package autorizacao.model;
 import lapr.model.User;
 import lapr.utils.Role;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author paulomaio
  */
-public class SessaoUtilizador
+public class SessaoUtilizador implements Serializable
 {
     private User m_oUtilizador = null;
     

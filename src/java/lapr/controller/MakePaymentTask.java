@@ -5,11 +5,12 @@ import lapr.model.Organization;
 import lapr.model.PaymentScheduler;
 import lapr.model.Transaction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TimerTask;
 
-public class MakePaymentTask extends TimerTask {
+public class MakePaymentTask extends TimerTask implements Serializable {
     /**
      * The organization to make the payments on.
      */

@@ -1,8 +1,5 @@
 package lapr.controller;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import lapr.list.ListTask;
 import lapr.model.App;
 import lapr.model.Organization;
@@ -49,7 +46,7 @@ public class CreateTaskController {
      */
     public boolean newTask (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
         try {
-            this.autorizacao = this.plataforma.getAutorizacaoFacade();
+            this.autorizacao = this.plataforma.getAuthFacade();
             this.sessao = this.autorizacao.getSessaoAtual();
             this.emailUser = this.sessao.getEmailUtilizador();
             this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);

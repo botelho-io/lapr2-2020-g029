@@ -6,13 +6,14 @@ import lapr.controller.AppPOE;
 import lapr.model.*;
 import lapr.utils.Triplet;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.*;
 
 /**
  * Represents a list of transactions.
  */
-public class ListTransaction implements Iterable<Transaction> {
+public class ListTransaction implements Iterable<Transaction>, Serializable {
     /**
      * The list of the transactions held by the list.
      */

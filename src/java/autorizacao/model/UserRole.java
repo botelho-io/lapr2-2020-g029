@@ -7,14 +7,14 @@ package autorizacao.model;
 
 import lapr.utils.Role;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author paulomaio
  */
-public class UserRole
-{
+public class UserRole implements Serializable {
     private Role m_oPapel;
     private String m_strDescricao;
     

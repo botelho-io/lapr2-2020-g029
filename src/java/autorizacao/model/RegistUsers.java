@@ -7,6 +7,7 @@ package autorizacao.model;
 
 import lapr.model.User;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,7 @@ import java.util.Set;
  *
  * @author paulomaio
  */
-public class RegistUsers
-{
+public class RegistUsers implements Serializable {
     private Set<User> m_lstUtilizadores = new HashSet<>();
     
     public boolean addUser(User utlz)

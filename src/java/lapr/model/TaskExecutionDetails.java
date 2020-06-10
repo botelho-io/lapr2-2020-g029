@@ -5,13 +5,14 @@
  */
 package lapr.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author Universidade
  */
-public class TaskExecutionDetails {
+public class TaskExecutionDetails implements Serializable {
     /**
      * The date the task ended.
      */

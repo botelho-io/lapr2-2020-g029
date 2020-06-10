@@ -6,37 +6,38 @@
 package lapr.controller;
 
 import java.util.List;
+
+import autorizacao.AuthFacade;
 import autorizacao.model.UserRole;
 
 /**
  *
  * @author paulomaio
  */
-public class AutenticacaoController
-{
-    private AppPOE m_oApp;
+public class AutenticacaoController {
+    private AuthFacade m_oAuthFacade;
     
     public AutenticacaoController()
     {
-        this.m_oApp = AppPOE.getInstance();
+        this.m_oAuthFacade = AppPOE.getInstance().getApp().getAuthFacade();
     }
     
     public boolean doLogin(String strId, String strPwd)
     {
-        return this.m_oApp.doLogin(strId, strPwd);
+        return this.m_oAuthFacade.doLogin(strId, strPwd).isLoggedIn();
     }
     
     public List<UserRole> getPapeisUtilizador()
     {
-        if (this.m_oApp.getSessaoAtual().isLoggedIn())
+        if (this.m_oAuthFacade.getSessaoAtual().isLoggedIn())
         {
-            return this.m_oApp.getSessaoAtual().getPapeisUtilizador();
+            return this.m_oAuthFacade.getSessaoAtual().getPapeisUtilizador();
         }
         return null;
     }
 
     public void doLogout()
     {
-        this.m_oApp.doLogout();
+        this.m_oAuthFacade.doLogout();
     }
 }

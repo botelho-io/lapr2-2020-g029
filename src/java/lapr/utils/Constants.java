@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 public abstract class Constants {
     public static final String PATH_PARAMS = "config.properties";
+    public static String dataSavePath = "saveData.bin";
 
     private static final Freelancer[] testFreelancers;
     private static final Administrator testAdmin;
@@ -65,7 +66,7 @@ public abstract class Constants {
     }
 
     public static void addTestOrganizationAndUsers() {
-        AppPOE.getInstance().getAuthFacade().registUser(testAdmin);
+        AppPOE.getInstance().getApp().getAuthFacade().registUser(testAdmin);
         AppPOE.getInstance().getApp().getRegistOrganization().add(testOrg);
     }
 

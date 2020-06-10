@@ -12,14 +12,15 @@ import autorizacao.model.SessaoUtilizador;
 import lapr.model.User;
 import lapr.utils.Role;
 
+import java.io.Serializable;
+
 /**
  *
  * @author paulomaio
  */
-public class AuthFacade
-{
+public class AuthFacade implements Serializable {
+
     private SessaoUtilizador m_oSessao = null;
-    
     private final RegistUserRoles m_oPapeis = new RegistUserRoles();
     private final RegistUsers m_oUsers = new RegistUsers();
 

@@ -10,6 +10,7 @@ import lapr.controller.AppPOE;
 import lapr.list.ListTransaction;
 import lapr.list.ListTask;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import java.time.LocalTime;
 /**
  * Represents ans organazation seeking freelancers to complete tasks.
  */
-public class Organization {
+public class Organization implements Serializable {
 
     /**
      * Name of the organization.
@@ -152,7 +153,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesCollaborator(Collaborator collaborator) {
-        return !AppPOE.getInstance().getAuthFacade().hasUser(collaborator);
+        return !AppPOE.getInstance().getApp().getAuthFacade().hasUser(collaborator);
     }
 
     /**
@@ -173,7 +174,7 @@ public class Organization {
      * @return true if valid.
      */
     public static boolean validatesManager(Manager manager) {
-        return !AppPOE.getInstance().getAuthFacade().hasUser(manager);
+        return !AppPOE.getInstance().getApp().getAuthFacade().hasUser(manager);
     }
 
     /**

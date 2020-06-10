@@ -8,6 +8,10 @@ package lapr.model;
 import lapr.controller.MakePaymentTask;
 import lapr.controller.SendEmailTask;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
@@ -15,11 +19,12 @@ import java.util.Timer;
 /**
  * Class responsible for scheduling the e-mails to be automatically sent to the freelancer.
  */
-public class EmailScheduler {
+public class EmailScheduler implements Serializable {
     /**
      * The current Timer being used.
      */
-    private Timer m_oTimer;
+    private transient Timer m_oTimer;
+    private transient SendEmailTask task;
 
     /**
      * Creates a new scheduler.
@@ -46,7 +51,8 @@ public class EmailScheduler {
      * Schedules the e-mails to be sent on the next year.
      */
     public void scheduleNextYear() {
-        m_oTimer.schedule(new SendEmailTask(this), getNextDate());
+        this.task = new SendEmailTask(this);
+        m_oTimer.schedule(task, getNextDate());
     }
 
     /**
@@ -68,5 +74,25 @@ public class EmailScheduler {
             cal.add(Calendar.YEAR, 1);
         }
         return cal.getTime();
+    }
+
+    /**
+     * Read object.
+     * @param aInputStream The input stream.
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
+    private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
+        this.m_oTimer = null;
+        this.task = null;
+        resetTime();
+    }
+
+    /**
+     * Writes the object.
+     * @param aOutputStream The output stream.
+     * @throws IOException
+     */
+    private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
     }
 }

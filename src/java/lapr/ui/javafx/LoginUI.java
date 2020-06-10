@@ -25,7 +25,7 @@ public class LoginUI {
             HelperUI.alert(e.getMessage());
             return;
         }
-        final boolean succsess = AppPOE.getInstance().doLogin(mail, password);
+        final boolean succsess = AppPOE.getInstance().getApp().getAuthFacade().doLogin(mail, password).isLoggedIn();
         if(succsess) {
             // Close window, main controller knows if there was a successful login.
             ((Stage) fieldEmail.getScene().getWindow()).close();

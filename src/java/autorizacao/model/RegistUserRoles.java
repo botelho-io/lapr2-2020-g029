@@ -7,6 +7,7 @@ package autorizacao.model;
 
 import lapr.utils.Role;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
  *
  * @author paulomaio
  */
-public class RegistUserRoles {
+public class RegistUserRoles implements Serializable {
 
     private Set<UserRole> m_lstPapeis = new HashSet<UserRole>();
     public UserRole novoPapelUtilizador(Role Papel)

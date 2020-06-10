@@ -5,9 +5,10 @@ import lapr.controller.AppPOE;
 import lapr.list.ListTransaction;
 import lapr.model.*;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class RegistOrganization implements Iterable<Organization> {
+public class RegistOrganization implements Iterable<Organization>, Serializable {
 
     /**
      * A list of organizations.
@@ -44,7 +45,7 @@ public class RegistOrganization implements Iterable<Organization> {
         if(!validateOrganization(organization))
             throw new IllegalArgumentException("Organization is invalid.");
 
-        final AuthFacade au = AppPOE.getInstance().getAuthFacade();
+        final AuthFacade au = AppPOE.getInstance().getApp().getAuthFacade();
         boolean success =  m_lstOrganizacoes.add(organization);
         success = success && au.registUser(organization.getCollaborator());
         success = success && au.registUser(organization.getManager());
