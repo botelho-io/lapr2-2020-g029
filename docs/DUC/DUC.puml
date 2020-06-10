@@ -11,6 +11,7 @@ usecase UC8  as "UC8  - Add New Organization"
 usecase UC9  as "UC9  - Administrator Statistics Visualization"
 usecase UC10 as "UC10 - Send E-mail to Late Freelancers"
 usecase UC11 as "UC11 - Serialize Information To File"
+usecase UC12 as "UC12 - Deserialize Information From File"
 
 actor Collaborator as C
 actor Manager as M
@@ -38,5 +39,6 @@ A --> (UC9)
 T --> (UC10)
 
 U --> (UC11)
+U --> (UC12)
 
 @enduml

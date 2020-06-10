@@ -1,0 +1,22 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class DeserializeUI {
+
+}
+
+class DeserializeController {
+        + hasDataFile()
+        + deserialize()
+}
+
+DeserializeUI ..> DeserializeController
+
+class App {
+        + deserialize(String path)
+}
+
+DeserializeController ..> App
+
+@enduml
