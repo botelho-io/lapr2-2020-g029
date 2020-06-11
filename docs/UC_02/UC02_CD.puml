@@ -6,8 +6,8 @@ class AppPOE{
   +getSessaoAtual()
 }
 
-class SessaoUtilizador{
-  +getEmailUtilizador()
+class SessionUser{
+  +getEmailUser()
 }
 
 class Task {
@@ -55,7 +55,7 @@ CreatingTaskController ..> App
 CreatingTaskController ..> Task
 CreatingTaskController ..> Organization
 CreatingTaskController ..> AppPOE
-CreatingTaskController ..> SessaoUtilizador
+CreatingTaskController ..> SessionUser
 App "1" --> "1" RegistOrganization : has
 RegistOrganization "1" --> "*" Organization : has
 Organization "1" --> "1" TaskList : has

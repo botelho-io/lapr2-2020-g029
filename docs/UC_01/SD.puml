@@ -82,7 +82,13 @@ activate col
                         activate ltr
                         deactivate ltr
                 deactivate cnt
-                ui --> col : shows the data introduced and requests confirmation
+                ui -> cnt : eur = getAmount()
+                activate cnt
+                        cnt -> tr : eur = getAmount()
+                        activate tr
+                        deactivate tr
+                deactivate cnt
+                ui --> col : shows the data introduced, the amount that will be payed to the freelancer and requests confirmation
         deactivate ui
          col -> ui :  confirms
         activate ui
@@ -94,13 +100,7 @@ activate col
                                 ltr -> ltr : add(tr)
                         deactivate ltr
                 deactivate cnt
-                 ui -> cnt : eur = getAmount()
-                activate cnt
-                        cnt -> tr : eur = getAmount()
-                        activate tr
-                        deactivate tr
-                deactivate cnt
-                ui --> col :  success and shows amount that will be payed to the freelancer
+                ui --> col :  success
         deactivate ui
 deactivate col
 

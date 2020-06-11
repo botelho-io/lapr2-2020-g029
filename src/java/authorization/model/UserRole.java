@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package autorizacao.model;
+package authorization.model;
 
 import lapr.utils.Role;
 
@@ -15,47 +15,47 @@ import java.util.Objects;
  * @author paulomaio
  */
 public class UserRole implements Serializable {
-    private Role m_oPapel;
-    private String m_strDescricao;
+    private Role m_oRole;
+    private String m_strDescription;
     
-    public UserRole(Role Papel)
+    public UserRole(Role Role)
     {
-        if ( (Papel == null) )
-            throw new IllegalArgumentException("O argumento não pode ser nulo ou vazio.");
+        if ( (Role == null) )
+            throw new IllegalArgumentException("The argument cannot be null or empty");
         
-        this.m_oPapel = Papel;
-        this.m_strDescricao = Papel.name();
+        this.m_oRole = Role;
+        this.m_strDescription = Role.name();
     }
     
-    public UserRole(Role papel, String strDescricao)
+    public UserRole(Role role, String strDescription)
     {
-        if ( (papel == null) || (strDescricao == null) || (strDescricao.isEmpty()))
-            throw new IllegalArgumentException("Nenhum dos argumentos não pode ser nulo ou vazio.");
+        if ( (role == null) || (strDescription == null) || (strDescription.isEmpty()))
+            throw new IllegalArgumentException("The arguments cannot be null or empty");
         
-        this.m_oPapel = papel;
-        this.m_strDescricao = strDescricao;
+        this.m_oRole = role;
+        this.m_strDescription = strDescription;
     }
     
-    public Role getPapel()
+    public Role getRole()
     {
-        return this.m_oPapel;
+        return this.m_oRole;
     }
     
-    public String getDescricao()
+    public String getDescription()
     {
-        return this.m_strDescricao;
+        return this.m_strDescription;
     }
 
     public boolean hasId(Role Id)
     {
-        return this.m_oPapel.equals(Id);
+        return this.m_oRole.equals(Id);
     }
     
     @Override
     public int hashCode()
     {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.m_oPapel);
+        hash = 23 * hash + Objects.hashCode(this.m_oRole);
         return hash;
     }
     
@@ -74,12 +74,12 @@ public class UserRole implements Serializable {
             return false;
         // field comparison
         UserRole obj = (UserRole) o;
-        return Objects.equals(m_oPapel, obj.m_oPapel);
+        return Objects.equals(m_oRole, obj.m_oRole);
     }
     
     @Override
     public String toString()
     {
-        return String.format("%s - %s", this.m_oPapel, this.m_strDescricao);
+        return String.format("%s - %s", this.m_oRole, this.m_strDescription);
     }
 }

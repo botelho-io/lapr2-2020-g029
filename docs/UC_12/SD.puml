@@ -1,0 +1,31 @@
+@startuml SD
+autonumber
+actor "User" as U
+participant ":DeserializeUI" as ui
+participant ":DeserializeController" as ctr
+participant ":App" as app
+
+activate U
+        U -> ui : starts the process of starting up the system
+        activate ui
+                ui -> ctr : b = hasDataFile()
+                opt b == true
+                                ui --> U : questions if the changes that were made to the system in a previous session should be loaded
+                        deactivate ui
+                        U -> ui : confirms
+                        activate ui
+                                ui -> ctr : deserialize()
+                                activate ctr
+                                        ctr -> app : deserialize(path)
+                                        activate app
+                                                note over app : The app deerializes all \nthe objects in the file
+                                        deactivate app
+                                deactivate ctr
+                                ui --> U : starts up
+                else
+                        ui --> U : starts up
+                end
+        deactivate ui
+deactivate U
+
+@enduml

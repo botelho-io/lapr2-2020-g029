@@ -5,7 +5,7 @@
  */
 package lapr.model;
 
-import autorizacao.model.UserRole;
+import authorization.model.UserRole;
 import lapr.utils.Role;
 
 import java.io.Serializable;
@@ -27,7 +27,7 @@ public class User implements Serializable  {
      * The password of the user.
      */
     private String m_strPassword;
-    private Set<UserRole> m_lstPapeis = new HashSet<UserRole>();
+    private Set<UserRole> m_lstRoles = new HashSet<UserRole>();
 
     public User(String name, String email, String password, UserRole role) {
         this(name, email, password, new UserRole[]{role});
@@ -37,7 +37,7 @@ public class User implements Serializable  {
         this.m_strName = name;
         this.m_strEmail = email;
         this.m_strPassword = password;
-        this.m_lstPapeis = new HashSet<UserRole>(Arrays.asList(Roles));
+        this.m_lstRoles = new HashSet<UserRole>(Arrays.asList(Roles));
     }
 
     public String getName() {
@@ -74,39 +74,39 @@ public class User implements Serializable  {
         return this.m_strPassword.equals(strPwd);
     }
 
-    public boolean addPapel(UserRole papel)
+    public boolean addRole(UserRole role)
     {
-        if (papel != null)
-            return this.m_lstPapeis.add(papel);
+        if (role != null)
+            return this.m_lstRoles.add(role);
         return false;
     }
 
 
-    public boolean removePapel(UserRole papel)
+    public boolean removeRole(UserRole role)
     {
-        if (papel != null)
-            return this.m_lstPapeis.remove(papel);
+        if (role != null)
+            return this.m_lstRoles.remove(role);
         return false;
     }
 
-    public boolean hasPapel(UserRole papel)
+    public boolean hasRole(UserRole role)
     {
-        return this.m_lstPapeis.contains(papel);
+        return this.m_lstRoles.contains(role);
     }
 
-    public boolean hasPapel(Role oPapel)
+    public boolean hasRole(Role oRole)
     {
-        for(UserRole papel: this.m_lstPapeis)
+        for(UserRole role: this.m_lstRoles)
         {
-            if (papel.hasId(oPapel))
+            if (role.hasId(oRole))
                 return true;
         }
         return false;
     }
 
-    public List<UserRole> getPapeis()
+    public List<UserRole> getRoles()
     {
-        return new ArrayList<>(this.m_lstPapeis);
+        return new ArrayList<>(this.m_lstRoles);
     }
 
     @Override

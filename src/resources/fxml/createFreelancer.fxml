@@ -5,102 +5,76 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="CENTER" minHeight="500.0" minWidth="710.0" prefHeight="500.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateFreelancerUI">
-   <columnConstraints>
-      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
-   </rowConstraints>
-   <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-         <center>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <center>
-                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                     <BorderPane layoutX="10.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtName" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="Name" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                     <BorderPane prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtAddress" prefHeight="26.0" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="Address" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                     <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtCountry" prefHeight="26.0" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="Country" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                     <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtEmail" prefHeight="26.0" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="Email" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                     <BorderPane layoutX="10.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0">
-                        <left>
-                           <Label text="Expertise" BorderPane.alignment="CENTER" />
-                        </left>
-                        <right>
-                           <ChoiceBox fx:id="ddExpertise" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                     </BorderPane>
-                     <BorderPane layoutX="10.0" layoutY="61.0" prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtIBAN" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="IBAN" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                     <BorderPane layoutX="10.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0">
-                        <right>
-                           <TextField fx:id="txtNIF" prefWidth="410.0" BorderPane.alignment="CENTER" />
-                        </right>
-                        <left>
-                           <Label text="NIF" BorderPane.alignment="CENTER" />
-                        </left>
-                     </BorderPane>
-                  </VBox>
-               </center>
-               <bottom>
-                  <BorderPane prefHeight="80.0" prefWidth="518.0" BorderPane.alignment="CENTER">
-                     <left>
-                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
-                     </left>
-                     <right>
-                        <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateAction" text="Add Freelancer" BorderPane.alignment="CENTER" />
-                     </right>
-                  </BorderPane>
-               </bottom>
-            </BorderPane>
-         </center>
-         <top>
-            <VBox alignment="CENTER" prefHeight="95.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <Label text="Create New Freelancer">
-                  <font>
-                     <Font name="System Bold" size="24.0" />
-                  </font>
-               </Label>
-               <Label opacity="0.75" text="Fill the fields bellow with the freelancer's information" />
-            </VBox>
-         </top>
-      </BorderPane>
-   </children>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="375.0" minWidth="320.0" prefHeight="421.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateFreelancerUI">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label prefWidth="175.0" text="Name" />
+                  <TextField fx:id="txtName" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Address" />
+                  <TextField fx:id="txtAddress" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="46.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Country" />
+                  <TextField fx:id="txtCountry" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Email" />
+                  <TextField fx:id="txtEmail" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="IBAN" />
+                  <TextField fx:id="txtIBAN" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="118.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="NIF" />
+                  <TextField fx:id="txtNIF" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="190.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Expertise" />
+                  <ChoiceBox fx:id="ddExpertise" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="329.0" BorderPane.alignment="CENTER">
+         <Label text="Create New Freelancer">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Label opacity="0.75" text="Fill the fields bellow with the freelancer's information" />
+      </VBox>
+   </top>
    <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
-</GridPane>
+   <bottom>
+      <BorderPane prefHeight="6.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateAction" text="Add Freelancer" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+</BorderPane>

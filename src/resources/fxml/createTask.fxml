@@ -1,106 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateTaskUI">
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.6" minWidth="10.0" prefWidth="449.6" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="53.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="209.5999942779541" minHeight="5.400006198883062" prefHeight="63.40000381469727" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="292.6" minHeight="10.0" prefHeight="182.6" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="114.39999999999998" minHeight="10.0" prefHeight="37.00000000000003" vgrow="SOMETIMES" />
-    </rowConstraints>
-    <children>
-        <VBox alignment="CENTER" prefHeight="145.0" prefWidth="450.0" GridPane.columnIndex="1">
-            <children>
-                <StackPane prefHeight="34.0" prefWidth="359.0">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Create Task" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="22.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the task information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
-            </children>
-        </VBox>
-        <SplitPane dividerPositions="0.18666666666666668, 0.38666666666666666, 0.5911111111111111, 0.8" orientation="VERTICAL" prefHeight="320.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <items>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="448.0">
-                    <center>
-                        <TextField fx:id="fieldID" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="ID" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldDescription" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Description" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldDuration" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Duration" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldCost" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Cost" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="5.0" prefWidth="448.0">
-                    <center>
-                        <TextField fx:id="fieldCategory" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="227.0" prefWidth="94.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Category" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-            </items>
-        </SplitPane>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <left>
-                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" BorderPane.alignment="CENTER" />
-            </left>
-            <right>
-                <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateAction" text="Create" BorderPane.alignment="CENTER" />
-            </right>
-        </BorderPane>
-    </children>
-</GridPane>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="331.0" minWidth="320.0" prefHeight="331.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateTaskUI">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label prefWidth="175.0" text="ID" />
+                  <TextField fx:id="fieldID" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Description" />
+                  <TextField fx:id="fieldDescription" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="46.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Duration" />
+                  <TextField fx:id="fieldDuration" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Cost" />
+                  <TextField fx:id="fieldCost" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Category" />
+                  <TextField fx:id="fieldCategory" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="329.0" BorderPane.alignment="CENTER">
+         <Label text="Create New Task">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Label opacity="0.75" text="Please Insert the task information below" />
+      </VBox>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <bottom>
+      <BorderPane prefHeight="6.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateAction" text="Add Task" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+</BorderPane>

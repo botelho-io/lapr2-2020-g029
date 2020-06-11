@@ -1,0 +1,22 @@
+@startuml SSD
+autonumber
+actor "User" as U
+participant ":System" as S
+
+'The user starts the process of starting up the system.
+'The system questions if the changes that were made to the system in a previous session should be loaded.
+'The user confirms.
+'The system loads all the data to a file and starts up.
+
+activate U
+        U -> S : starts the process of starting up the system
+        activate S
+                S --> U : questions if the changes that were made to the system in a previous session should be loaded
+        deactivate S
+        U -> S : confirms
+        activate S
+                S --> U : starts up
+        deactivate S
+deactivate U
+
+@enduml

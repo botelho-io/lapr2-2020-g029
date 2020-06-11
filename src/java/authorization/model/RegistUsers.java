@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package autorizacao.model;
+package authorization.model;
 
 import lapr.model.User;
 
@@ -16,44 +16,37 @@ import java.util.Set;
  * @author paulomaio
  */
 public class RegistUsers implements Serializable {
-    private Set<User> m_lstUtilizadores = new HashSet<>();
+    private Set<User> m_lstUsers = new HashSet<>();
     
-    public boolean addUser(User utlz)
-    {
-
+    public boolean addUser(User utlz) {
         if (utlz != null)
-            return this.m_lstUtilizadores.add(utlz);
+            return this.m_lstUsers.add(utlz);
         return false;
     }
     
-    public boolean removeUtilizador(User utlz)
-    {
+    public boolean removeUser(User utlz) {
         if (utlz != null)
-            return this.m_lstUtilizadores.remove(utlz);
+            return this.m_lstUsers.remove(utlz);
         return false;
     }
     
-    public User procuraUtilizador(String email)
-    {
-        for(User utlz: this.m_lstUtilizadores)
-        {
+    public User searchUser(String email) {
+        for(User utlz: this.m_lstUsers)
             if(utlz.hasEmail(email))
                 return utlz;
-        }
         return null;
     }
     
-    public boolean hasUser(String email)
-    {
-        User utlz = procuraUtilizador(email);
+    public boolean hasUser(String email) {
+        User utlz = searchUser(email);
         if (utlz != null)
-            return this.m_lstUtilizadores.contains(utlz);
+            return this.m_lstUsers.contains(utlz);
         return false;
     }
     
     public boolean hasUser(User utlz)
     {
-        return this.m_lstUtilizadores.contains(utlz);
+        return this.m_lstUsers.contains(utlz);
     }
 }
 

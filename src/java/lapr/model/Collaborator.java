@@ -5,7 +5,7 @@
  */
 package lapr.model;
 
-import autorizacao.model.UserRole;
+import authorization.model.UserRole;
 import lapr.controller.AppPOE;
 import lapr.utils.Role;
 

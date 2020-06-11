@@ -19,7 +19,7 @@
    <bottom>
       <BorderPane prefHeight="33.0" prefWidth="560.0" BorderPane.alignment="CENTER">
          <left>
-            <Button mnemonicParsing="false" onAction="#quit" text="Cancel" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#quit" text="Go Back" BorderPane.alignment="CENTER" />
          </left>
          <right>
             <Button mnemonicParsing="false" onAction="#next" text="Continue" BorderPane.alignment="CENTER" />

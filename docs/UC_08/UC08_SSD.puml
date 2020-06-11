@@ -3,20 +3,20 @@ autonumber
 actor Administrator as A
 
 activate A
-A -> ":Sistem" : adding new organization
-activate ":Sistem"
-":Sistem" --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
-deactivate ":Sistem"
+A -> ":System" : adding new organization
+activate ":System"
+":System" --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
+deactivate ":System"
 
-A -> ":Sistem" : enter the requested data
-activate ":Sistem"
-":Sistem" --> A : presents data and asks for confirmation
-deactivate ":Sistem"
+A -> ":System" : enter the requested data
+activate ":System"
+":System" --> A : presents data and asks for confirmation
+deactivate ":System"
 
-A -> ":Sistem" : confirms
-activate ":Sistem"
-":Sistem" --> A : successful operation
-deactivate ":Sistem"
+A -> ":System" : confirms
+activate ":System"
+":System" --> A : successful operation
+deactivate ":System"
 
 deactivate A
 @enduml

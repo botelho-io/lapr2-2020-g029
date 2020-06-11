@@ -39,7 +39,7 @@ public class SendEmailTask extends TimerTask implements Serializable {
      * Sends emails with messages.
      * @param fre_msg A map that makes a freelancer correspond to its message or null to not send a message.
      */
-    private void sendMessages(Map<Freelancer, String> fre_msg){
+    public static void sendMessages(Map<Freelancer, String> fre_msg){
         final EmailAPI email = AppPOE.getInstance().getApp().getEmailAPI();
         for(final Freelancer fre : fre_msg.keySet()) {
             final String message = fre_msg.get(fre);
@@ -51,7 +51,7 @@ public class SendEmailTask extends TimerTask implements Serializable {
      * Gets the messages to be sent to the freelancers.
      * @return A map that makes a freelancer correspond to its message or null if there is nothing to send.
      */
-    private Map<Freelancer, String> getMessages() {
+    public static Map<Freelancer, String> getMessages() {
         final int CURREN_YEAR = Calendar.getInstance().get(Calendar.YEAR);
         // The regist of the organization
         final RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
@@ -97,17 +97,16 @@ public class SendEmailTask extends TimerTask implements Serializable {
             final double pctDelayed = pair.getValue();
             String msg = "";
             if(avgDelay > MEAN_TASK_DELAY_MAXIMUM) {
-                msg += String.format("we have noticed that you have a mean task delay higher than %f hours (%fhr), try to keep up! ", MEAN_TASK_DELAY_MAXIMUM, avgDelay);
+                msg += String.format("we have noticed that you have a mean task delay higher than %.3f hours (%.3fhr), try to keep up! ", MEAN_TASK_DELAY_MAXIMUM, avgDelay);
             }
             if(pctDelayed > percentageDelayedTransactions) {
-                msg += String.format("%s you have a percentage of delayed tasks higher than %d%% (%d%%), meaning that you are falling behind the average. ",(msg.isEmpty()?"we have noticed that":"Furthermore,"), (int)(percentageDelayedTransactions*100), (int)(pctDelayed*100));
+                msg += String.format("%s you have a percentage of delayed tasks higher than %.2f%% (%.2f%%), meaning that you are falling behind the average. ",(msg.isEmpty()?"we have noticed that":"Furthermore,"), percentageDelayedTransactions*100, pctDelayed*100);
             }
             if(!msg.isEmpty()) {
                 msg = String.format("Hello there %s,\nThis e-mail is being sent to notify you of your poor performance as of %d.\nNamely, %s\n\nBest regards,\nThe T4J team.\n", fre.getName(), CURREN_YEAR, msg);
                 toReturn.put(fre, msg);
             }
         }
-
         return toReturn;
     }
 }

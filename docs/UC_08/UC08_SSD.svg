@@ -21,9 +21,9 @@
         <ellipse cx="52.5" cy="349.0313" fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
         <path d="M52.5,357.0313 L52.5,384.0313 M39.5,365.0313 L65.5,365.0313 M52.5,384.0313 L39.5,399.0313 M52.5,384.0313 L65.5,399.0313 " fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" style="stroke: #A80036; stroke-width: 2.0;"/>
         <rect fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="591.5" y="51"/>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="72.5332">:Sistem</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="72.5332">:System</text>
         <rect fill="#FEFECE" filter="url(#f17lvtcsg5h4c7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="591.5" y="321.4219"/>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="342.9551">:Sistem</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="598.5" y="342.9551">:System</text>
         <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="206.4609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="47.5" y="97.6094"/>
         <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="63.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="119.6094"/>
         <rect fill="#FFFFFF" filter="url(#f17lvtcsg5h4c7)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="618.5" y="213.0156"/>
@@ -60,20 +60,20 @@ autonumber
 actor Administrator as A
 
 activate A
-A -> ":Sistem" : adding new organization
-activate ":Sistem"
-":Sistem" - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
-deactivate ":Sistem"
+A -> ":System" : adding new organization
+activate ":System"
+":System" - -> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. name, email and password)\n and  the data of one collaborator of the same organization  (i.e. name, email and password)
+deactivate ":System"
 
-A -> ":Sistem" : enter the requested data
-activate ":Sistem"
-":Sistem" - -> A : presents data and asks for confirmation
-deactivate ":Sistem"
+A -> ":System" : enter the requested data
+activate ":System"
+":System" - -> A : presents data and asks for confirmation
+deactivate ":System"
 
-A -> ":Sistem" : confirms
-activate ":Sistem"
-":Sistem" - -> A : successful operation
-deactivate ":Sistem"
+A -> ":System" : confirms
+activate ":System"
+":System" - -> A : successful operation
+deactivate ":System"
 
 deactivate A
 @enduml

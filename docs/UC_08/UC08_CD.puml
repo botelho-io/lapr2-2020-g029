@@ -49,18 +49,18 @@ class AutorizacaoFacade {
    - addCollaborator(nomeM,emailM,passawordC)
 }
 
-class AddingOrganizationController {
+class CreateOrganizationController {
     newOrganization(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
    - addOrganizaton()
 }
 
-class AddingOrganizationUI {
+class CreateOrganizationUI {
 }
 
-AddingOrganizationUI ..> AddingOrganizationController
-AddingOrganizationController ..> RegistOrganization
-AddingOrganizationController ..> App
-AddingOrganizationController ..> Organization
+CreateOrganizationUI ..> CreateOrganizationController
+CreateOrganizationController ..> RegistOrganization
+CreateOrganizationController ..> App
+CreateOrganizationController ..> Organization
 RegistOrganization"1" --> "*" Organization : has registed
 RegistOrganization ..> Collaborator
 RegistOrganization ..> Manager

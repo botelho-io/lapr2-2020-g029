@@ -1,16 +1,8 @@
 package lapr.ui.javafx.util;
 
-import autorizacao.model.SessaoUtilizador;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import authorization.model.UserSession;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 import lapr.controller.AppPOE;
-import lapr.ui.javafx.util.FXBridge;
-import lapr.ui.javafx.util.HelperUI;
-import lapr.utils.Constants;
 import lapr.utils.Role;
 
 import java.io.IOException;
@@ -26,15 +18,15 @@ public class MainUI {
     }
 
     public void mainMenu() {
-        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         // Loop trough the menus
         FXBridge.scene = null;
         // Select role
-        if (su.isLoggedInComPapel(Role.ADMINISTRATOR)) {
+        if (su.isLoggedInWithRole(Role.ADMINISTRATOR)) {
             openUC(FXBridge.UC.MENU_ADMIN);
-        } else if (su.isLoggedInComPapel(Role.COLLABORATOR)) {
+        } else if (su.isLoggedInWithRole(Role.COLLABORATOR)) {
             openUC(FXBridge.UC.MENU_COLLA);
-        } else if (su.isLoggedInComPapel(Role.MANAGER)) {
+        } else if (su.isLoggedInWithRole(Role.MANAGER)) {
             openUC(FXBridge.UC.MENU_MANAG);
         } else {
             HelperUI.alert("Unknown Role!");
@@ -42,14 +34,16 @@ public class MainUI {
         }
     }
 
-    public void start() throws Exception {
+    public void start() {
+        AppPOE.getInstance().getApp().getAuthFacade().doLogin("man@dei.pt", "password");
+
         // Load data from file
-        openUC(FXBridge.UC.UC12);
+        //openUC(FXBridge.UC.UC12);
 
         // Login
-        openUC(FXBridge.UC.LOGIN);
+        //openUC(FXBridge.UC.LOGIN);
         // Was login successful?
-        final SessaoUtilizador su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         if(su == null || (!su.isLoggedIn())) {
             System.exit(0); // Not successful - Exit
         } else {
@@ -75,14 +69,22 @@ public class MainUI {
                 } else {
                     // Nothing selected. Quit?
                     openUC(FXBridge.UC.UC11);
+                    if(FXBridge.scene == null)
+                        FXBridge.scene = FXBridge.UC.MAIN_MENU;
                     switch (FXBridge.scene) {
-                        case QUIT: break MAIN_MENU_LOOP;
                         case MAIN_MENU: continue MAIN_MENU_LOOP;
+                        case QUIT: break MAIN_MENU_LOOP;
                     }
                 }
             }
 
 
+        }
+
+        try {
+            AppPOE.getInstance().getApp().close();
+        } catch (IOException e) {
+            HelperUI.alert("Error while closing the app:\n"+e.getMessage());
         }
     }
 }

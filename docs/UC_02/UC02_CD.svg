@@ -17,14 +17,14 @@
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="116" y1="294" y2="294"/>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="12" y="309.4189">+static getInstance()</text>
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="12" y="323.2549">+getSessaoAtual()</text>
-        <!--class SessaoUtilizador-->
+        <!--class SessionUser-->
         <rect fill="#FEFECE" filter="url(#fp2qp8gavesnd)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="152.5" y="261"/>
         <ellipse cx="167.5" cy="277" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
         <path d="M170.2656,272.875 Q170.4219,272.6563 170.6094,272.5469 Q170.7969,272.4375 171.0156,272.4375 Q171.3906,272.4375 171.625,272.6953 Q171.8594,272.9531 171.8594,273.5625 L171.8594,275.0156 Q171.8594,275.625 171.625,275.8906 Q171.3906,276.1563 171.0156,276.1563 Q170.6719,276.1563 170.4688,275.9531 Q170.2656,275.7656 170.1563,275.25 Q170.1094,274.8906 169.9219,274.7031 Q169.5938,274.3281 168.9844,274.1094 Q168.375,273.8906 167.75,273.8906 Q166.9844,273.8906 166.3516,274.2188 Q165.7188,274.5469 165.2266,275.2969 Q164.7344,276.0469 164.7344,277.0781 L164.7344,278.1719 Q164.7344,279.4063 165.625,280.2266 Q166.5156,281.0469 168.1094,281.0469 Q169.0469,281.0469 169.7031,280.7969 Q170.0938,280.6406 170.5156,280.2031 Q170.7813,279.9375 170.9297,279.8594 Q171.0781,279.7813 171.2813,279.7813 Q171.6094,279.7813 171.8672,280.0391 Q172.125,280.2969 172.125,280.6406 Q172.125,280.9844 171.7813,281.3906 Q171.2813,281.9688 170.4844,282.2969 Q169.4063,282.75 168.1094,282.75 Q166.5938,282.75 165.3906,282.125 Q164.4063,281.625 163.7188,280.5547 Q163.0313,279.4844 163.0313,278.2031 L163.0313,277.0469 Q163.0313,275.7188 163.6484,274.5703 Q164.2656,273.4219 165.3594,272.8047 Q166.4531,272.1875 167.6875,272.1875 Q168.4219,272.1875 169.0703,272.3516 Q169.7188,272.5156 170.2656,272.875 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="94" x="181.5" y="281.9102">SessaoUtilizador</text>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="94" x="181.5" y="281.9102">SessionUser</text>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="153.5" x2="277.5" y1="293" y2="293"/>
         <line style="stroke: #A80036; stroke-width: 1.5;" x1="153.5" x2="277.5" y1="301" y2="301"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="158.5" y="316.4189">+getEmailUtilizador()</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="158.5" y="316.4189">+getEmailUser()</text>
         <!--class Task-->
         <rect fill="#FEFECE" filter="url(#fp2qp8gavesnd)" height="131.0156" style="stroke: #A80036; stroke-width: 1.5;" width="370" x="223.5" y="897"/>
         <ellipse cx="390.75" cy="913" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
@@ -132,8 +132,8 @@ class AppPOE{
   +getSessaoAtual()
 }
 
-class SessaoUtilizador{
-  +getEmailUtilizador()
+class SessionUser{
+  +getEmailUser()
 }
 
 class Task {
@@ -181,7 +181,7 @@ CreatingTaskController ..> App
 CreatingTaskController ..> Task
 CreatingTaskController ..> Organization
 CreatingTaskController ..> AppPOE
-CreatingTaskController ..> SessaoUtilizador
+CreatingTaskController ..> SessionUser
 App "1" - -> "1" RegistOrganization : has
 RegistOrganization "1" - -> "*" Organization : has
 Organization "1" - -> "1" TaskList : has

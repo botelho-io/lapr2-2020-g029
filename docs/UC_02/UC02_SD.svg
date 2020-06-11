@@ -62,10 +62,10 @@
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="58" x="1324" y="1038.041">:AppPOE</text>
         <rect fill="#FEFECE" filter="url(#fdn16yudyymzp)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="122" x="1403" y="33.3906"/>
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="1441.5" y="54.9238">sessao</text>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="1410" y="72.5332">:SessaoUtilizador</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="1410" y="72.5332">:SessionUser</text>
         <rect fill="#FEFECE" filter="url(#fdn16yudyymzp)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="122" x="1403" y="998.8984"/>
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="1441.5" y="1020.4316">sessao</text>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="1410" y="1038.041">:SessaoUtilizador</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="1410" y="1038.041">:SessionUser</text>
         <rect fill="#FEFECE" filter="url(#fdn16yudyymzp)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="45" x="1539" y="51"/>
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="1546" y="72.5332">:APP</text>
         <rect fill="#FEFECE" filter="url(#fdn16yudyymzp)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="45" x="1539" y="998.8984"/>
@@ -137,7 +137,7 @@
         <polygon fill="#A80036" points="1449,407.7188,1459,411.7188,1449,415.7188,1453,411.7188" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1124" x2="1455" y1="411.7188" y2="411.7188"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1131" y="407.2139">7</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="160" x="1142" y="407.2139">email = getEmailUtilizador()</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="160" x="1142" y="407.2139">email = getEmailUser()</text>
         <polygon fill="#A80036" points="1546.5,468.0703,1556.5,472.0703,1546.5,476.0703,1550.5,472.0703" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1124" x2="1552.5" y1="472.0703" y2="472.0703"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1131" y="467.5654">8</text>
@@ -145,7 +145,7 @@
         <polygon fill="#A80036" points="1630,528.4219,1640,532.4219,1630,536.4219,1634,532.4219" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1124" x2="1636" y1="532.4219" y2="532.4219"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="1131" y="527.917">9</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="1142" y="527.917">org = getOrganizacaoByEmailUtilizador(email)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="1142" y="527.917">org = getOrganizacaoByEmailUser(email)</text>
         <polygon fill="#A80036" points="1740,588.7734,1750,592.7734,1740,596.7734,1744,592.7734" style="stroke: #A80036; stroke-width: 1.0;"/>
         <line style="stroke: #A80036; stroke-width: 1.0;" x1="1124" x2="1746" y1="592.7734" y2="592.7734"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="1131" y="588.2686">10</text>
@@ -208,7 +208,7 @@ participant ":CreatingTaskUI" as UI
 participant ":CreatingTaskController" as CTRL
 participant "AppPOE" as _APPOE
 participant "app\n:AppPOE" as APPOE
-participant "sessao\n:SessaoUtilizador" as SESSAO
+participant "sessao\n:SessionUser" as SESSAO
 participant ":APP" as APP
 participant "rorgs:Regist\nOrganization" as RORGS
 participant "org\n:Organization" as ORG
@@ -237,7 +237,7 @@ activate APPOE
 |||
 deactivate APPOE
 
-CTRL -> SESSAO: email = getEmailUtilizador()
+CTRL -> SESSAO: email = getEmailUser()
 activate SESSAO
 deactivate SESSAO
 
@@ -245,7 +245,7 @@ CTRL -> APP: rorgs = getRegistOrganization()
 activate APP
 deactivate APP
 
-CTRL -> RORGS: org = getOrganizacaoByEmailUtilizador(email)
+CTRL -> RORGS: org = getOrganizacaoByEmailUser(email)
 activate RORGS
 deactivate RORGS
 

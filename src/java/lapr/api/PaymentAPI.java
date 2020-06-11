@@ -1,11 +1,12 @@
 package lapr.api;
 
+import java.io.Closeable;
 import java.io.Serializable;
 
 /**
  * Represents an API used to process bank payments.
  */
-public interface PaymentAPI extends Serializable {
+public interface PaymentAPI extends Serializable, Closeable {
     /**
      * Make a payment.
      * @param freelancerId The ID of the freelancer to pay to.

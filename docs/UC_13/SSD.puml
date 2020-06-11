@@ -1,0 +1,17 @@
+@startuml SSD
+
+autonumber
+actor "Administrator" as U
+participant ":System" as S
+
+'The administrator starts the process of sending emails to late freelancers.
+'The system sends the e-mails and informs the administrator of the success of the operation.
+
+activate U
+        U -> S : starts the process of sending emails to late freelancers
+        activate S
+                S --> U : success
+        deactivate S
+deactivate U
+
+@enduml

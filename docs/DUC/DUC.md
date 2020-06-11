@@ -17,3 +17,5 @@
 | UC9  | [Administrator Statistics Visualization](../UC_09/UC_09.md) |
 | UC10 | [Send E-mail to Late Freelancers](../UC_10/UC_10.md) |
 | UC11 | [Serialize Information To File](../UC_11/UC_11.md) |
+| UC12 | [Deserialize Information From File](../UC_12/UC_12.md) |
+| UC13 | [Manually Send E-mail to Late Freelancers](../UC_13/UC_13.md) |

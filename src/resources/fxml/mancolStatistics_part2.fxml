@@ -47,7 +47,7 @@
                         <Button mnemonicParsing="false" onAction="#applyBucketSizePayments" text="Apply" />
                         <BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                            <right>
-                              <Button mnemonicParsing="false" onAction="#quit" text="Exit" BorderPane.alignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#quit" text="Go Back" BorderPane.alignment="CENTER" />
                            </right>
                         </BorderPane>
                      </children>

@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.DefinePaymentSchedulerController">
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.6" minWidth="10.0" prefWidth="449.6" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="53.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="209.5999942779541" minHeight="5.400006198883062" prefHeight="63.40000381469727" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="292.6" minHeight="10.0" prefHeight="182.6" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="114.39999999999998" minHeight="10.0" prefHeight="37.00000000000003" vgrow="SOMETIMES" />
-    </rowConstraints>
-    <children>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.DefinePaymentSchedulerUI">
+   <center>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                          <Label maxWidth="120.0" minWidth="120.0" prefHeight="0.0" prefWidth="120.0" text="Day of the Month:" HBox.hgrow="NEVER" />
+                  <Spinner fx:id="spDay" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="109.0" VBox.vgrow="ALWAYS">
+               <children>
+                          <Label maxWidth="120.0" minWidth="120.0" prefHeight="0.0" prefWidth="120.0" text="Time of the day:" HBox.hgrow="NEVER" />
+                  <Spinner fx:id="spHour" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+                  <Label opacity="0.94" text="h">
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spMin" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+                  <Label opacity="0.94" text="m">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+                  </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+        <VBox alignment="CENTER" prefHeight="103.0" prefWidth="450.0" BorderPane.alignment="CENTER">
             <children>
                 <StackPane prefHeight="34.0" prefWidth="359.0">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Define Payment Scheduler" textAlignment="CENTER">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Define Payment Schedule" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
@@ -30,41 +56,18 @@
                 <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the scheduler information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
             </children>
         </VBox>
-        <SplitPane dividerPositions="0.4577777777777778" orientation="VERTICAL" prefHeight="165.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <items>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="89.0" prefWidth="448.0">
-                    <center>
-                        <TextField fx:id="fieldDayOfMonth" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="109.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Day of the Month" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="448.0">
-                    <center>
-                        <TextField fx:id="fieldTimeOfDay" prefHeight="26.0" prefWidth="354.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="111.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label prefHeight="17.0" prefWidth="112.0" text="     Time of the day" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-            </items>
-        </SplitPane>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+   </top>
+   <bottom>
+        <BorderPane prefHeight="0.0" prefWidth="450.0" BorderPane.alignment="CENTER">
             <left>
-                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" BorderPane.alignment="CENTER" />
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
             </left>
             <right>
-                <Button fx:id="btnSet" mnemonicParsing="false" onAction="#btnSetAction" text="Set scheduler" BorderPane.alignment="CENTER" />
+                <Button fx:id="btnSet" mnemonicParsing="false" onAction="#btnSetAction" text="Set schedule" BorderPane.alignment="CENTER" />
             </right>
         </BorderPane>
-    </children>
-</GridPane>
+   </bottom>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>

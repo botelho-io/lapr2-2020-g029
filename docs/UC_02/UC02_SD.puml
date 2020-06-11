@@ -7,7 +7,7 @@ participant ":CreatingTaskUI" as UI
 participant ":CreatingTaskController" as CTRL
 participant "AppPOE" as _APPOE
 participant "app\n:AppPOE" as APPOE
-participant "sessao\n:SessaoUtilizador" as SESSAO
+participant "sessao\n:SessionUser" as SESSAO
 participant ":APP" as APP
 participant "rorgs:Regist\nOrganization" as RORGS
 participant "org\n:Organization" as ORG
@@ -36,7 +36,7 @@ activate APPOE
 |||
 deactivate APPOE
 
-CTRL -> SESSAO: email = getEmailUtilizador()
+CTRL -> SESSAO: email = getEmailUser()
 activate SESSAO
 deactivate SESSAO
 
@@ -44,7 +44,7 @@ CTRL -> APP: rorgs = getRegistOrganization()
 activate APP
 deactivate APP
 
-CTRL -> RORGS: org = getOrganizacaoByEmailUtilizador(email)
+CTRL -> RORGS: org = getOrganizacaoByEmailUser(email)
 activate RORGS
 deactivate RORGS
 

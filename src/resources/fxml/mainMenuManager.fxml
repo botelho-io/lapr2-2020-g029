@@ -6,7 +6,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.MainMenuMangerUI">
     <top>
-        <Label prefHeight="58.0" prefWidth="193.0" text="Manager Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="313.0" text="Manager Menu" textAlignment="CENTER" BorderPane.alignment="CENTER">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -15,8 +15,8 @@
     <center>
         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="btnUC7ViIn" mnemonicParsing="false" onAction="#visIn" text="UC 7 -Visualize Informatiion" />
-                <Button fx:id="btnUC5dps" mnemonicParsing="false" onAction="#defineTime" text="UC 5 - Define Payment Schedular" />
+                <Button mnemonicParsing="false" onAction="#enterUC5" prefWidth="175.0" text="UC 5 -Payment Schedule" />
+            <Button fx:id="btnUC7ViIn" layoutX="223.0" layoutY="168.0" mnemonicParsing="false" onAction="#visIn" prefWidth="175.0" text="UC 7 -Visualize Information" />
             </children>
         </VBox>
     </center>

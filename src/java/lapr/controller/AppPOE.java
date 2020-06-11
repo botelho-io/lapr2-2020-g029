@@ -7,17 +7,23 @@
 package lapr.controller;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
-import lapr.api.stubs.StubEmailAPI;
-import lapr.api.stubs.StubMonetaryConversionAPI;
-import lapr.api.stubs.StubPaymentAPI;
-import lapr.api.stubs.StubPswGeneratorAPI;
+import lapr.api.EmailAPI;
+import lapr.api.MonetaryConversionAPI;
+import lapr.api.PaymentAPI;
+import lapr.api.PswGeneratorAPI;
+import lapr.api.sout.EmailAPIAdapter;
+import lapr.api.sout.MonetaryConversionAPIAdapter;
+import lapr.api.defaults.PaymentAPIAdapter;
+import lapr.api.sout.PswGeneratorAPIAdapter;
 import lapr.model.*;
 import lapr.utils.Constants;
-import autorizacao.AuthFacade;
+import authorization.AuthFacade;
 import lapr.utils.Role;
 import lapr.utils.TestConstants;
 
@@ -34,7 +40,10 @@ public class AppPOE {
         Properties props = getProperties();
     }
 
-    public static void setApp(App app) {
+    public static void setApp(App app) throws IOException {
+        if(singleton != null) {
+            singleton.getApp().close();
+        }
         singleton = new AppPOE(app);
     }
 
@@ -44,12 +53,25 @@ public class AppPOE {
 
     private Properties getProperties() {
         Properties props = new Properties();
-        // TODO: Is this useful?
+
+        // Default values
+        props.setProperty("admin.name", Constants.defaultAdminName);
+        props.setProperty("admin.email", Constants.defaultAdminEmail);
+        props.setProperty("admin.password", Constants.defaultAdminPassword);
+        props.setProperty("api.email", Constants.defaultApiEmail);
+        props.setProperty("api.monetaryConversion", Constants.defaultApiMonetaryConversion);
+        props.setProperty("api.payment", Constants.defaultApiPayment);
+        props.setProperty("api.passwordGenerator", Constants.defaultApiPasswordGenerator);
+
         try {
-            InputStream in = new FileInputStream(Constants.PATH_PARAMS);
+            InputStream in = new FileInputStream(Constants.pathPropertiesFile);
             props.load(in);
             in.close();
-        } catch(IOException ignored) {
+        } catch (FileNotFoundException ignored) {
+        } catch (IOException e) {
+            // TODO Handle Exception.
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return props;
     }
@@ -57,30 +79,60 @@ public class AppPOE {
     private void bootstrap() {
         // Add roles
         AuthFacade auth = getApp().getAuthFacade();
-        auth.registaPapelUtilizador(Role.ADMINISTRATOR);
-        auth.registaPapelUtilizador(Role.COLLABORATOR);
-        auth.registaPapelUtilizador(Role.MANAGER);
+        auth.registRoleUser(Role.ADMINISTRATOR);
+        auth.registRoleUser(Role.COLLABORATOR);
+        auth.registRoleUser(Role.MANAGER);
 
-        // Add APIs
-        // TODO: add real APIs
-        m_oApp.setAPIs(new StubEmailAPI(), new StubMonetaryConversionAPI(), new StubPaymentAPI(), new StubPswGeneratorAPI());
+        // Get Properties and APIs
+        Properties p = reloadAPIs();
+
+        // Add Admin
+        final Administrator adm = new Administrator(p.getProperty("admin.name"), p.getProperty("admin.email"), p.getProperty("admin.password"));
+        getApp().getAuthFacade().registUser(adm);
 
         // Add test data TODO: Delete
         TestConstants.addTestOrgTasksFreelancersAndTransactions();
-        // new SendEmailTask(new EmailScheduler()).run(); // Send test emails
+    }
+
+    public Properties reloadAPIs() {
+        Properties p = getProperties();
+
+        // Add APIs
+        final EmailAPI email_api = tryToGetFromName(p.getProperty("api.email"));
+        final MonetaryConversionAPI money_api = tryToGetFromName(p.getProperty("api.monetaryConversion"));
+        final PaymentAPI pay_api = tryToGetFromName(p.getProperty("api.payment"));
+        final PswGeneratorAPI psw_api = tryToGetFromName(p.getProperty("api.passwordGenerator"));
+        m_oApp.setAPIs(email_api, money_api, pay_api, psw_api);
+
+        return p;
+    }
+
+    private static<T> T tryToGetFromName(final String name) {
+        try {
+            return (T) (Class.forName(name).getConstructor().newInstance());
+        } catch (Exception e) {
+            // TODO: Handle exception
+            System.out.println(e);
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static AppPOE getInstance() {
-        if(singleton == null)
-            restartInstance();
+        if(singleton == null) {
+            singleton = new AppPOE();
+            singleton.bootstrap();
+        }
         return singleton;
     }
 
     /**
      * Restarts the instance of AppPOE, useful for testing.
      */
-    public static void restartInstance() {
+    public static void restartInstance() throws IOException {
         synchronized(AppPOE.class) {
+            if(singleton != null)
+                singleton.getApp().close();
             singleton = new AppPOE();
             singleton.bootstrap();
         }

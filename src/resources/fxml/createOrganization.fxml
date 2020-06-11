@@ -1,106 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateOrganizationUI">
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.6" minWidth="10.0" prefWidth="449.6" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="53.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="209.5999942779541" minHeight="5.400006198883062" prefHeight="63.40000381469727" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="292.6" minHeight="10.0" prefHeight="182.6" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="114.39999999999998" minHeight="10.0" prefHeight="37.00000000000003" vgrow="SOMETIMES" />
-    </rowConstraints>
-    <children>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-            <children>
-                <StackPane prefHeight="34.0" prefWidth="359.0">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Add Organization" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="22.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the organization information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
-            </children>
-        </VBox>
-        <SplitPane dividerPositions="0.2, 0.40444444444444444, 0.6133333333333333, 0.8088888888888889" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <items>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldOrganization" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="109.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldNameCollaborator" prefHeight="26.0" prefWidth="354.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="111.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label prefHeight="17.0" prefWidth="112.0" text="Collaborator name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldEmailCollaborator" prefHeight="25.0" prefWidth="344.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="111.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label prefHeight="17.0" prefWidth="105.0" text="Collaborator email" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-                    <center>
-                        <TextField fx:id="fieldNameManager" prefHeight="25.0" prefWidth="344.0" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="110.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Manager name" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-                <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="448.0">
-                    <center>
-                        <TextField fx:id="fieldEmailManager" BorderPane.alignment="CENTER" />
-                    </center>
-                    <left>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="108.0" BorderPane.alignment="CENTER">
-                            <children>
-                                <Label text="Manager email" />
-                            </children>
-                        </HBox>
-                    </left>
-                </BorderPane>
-            </items>
-        </SplitPane>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <left>
-                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" BorderPane.alignment="CENTER" />
-            </left>
-            <right>
-                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAction" text="Add Organization" BorderPane.alignment="CENTER" />
-            </right>
-        </BorderPane>
-    </children>
-</GridPane>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="375.0" minWidth="320.0" prefHeight="421.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.CreateOrganizationUI">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label prefWidth="175.0" text="Name" />
+                  <TextField fx:id="fieldOrganization" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Manager name" />
+                  <TextField fx:id="fieldNameManager" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Manager email" />
+                  <TextField fx:id="fieldEmailManager" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Collaborator name" />
+                  <TextField fx:id="fieldNameCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="46.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Collaborator email" />
+                  <TextField fx:id="fieldEmailCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="329.0" BorderPane.alignment="CENTER">
+         <Label text="Create New Organization">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Label opacity="0.75" text="Please Insert the organization information below" />
+      </VBox>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <bottom>
+      <BorderPane prefHeight="6.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAction" text="Add Organization" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+</BorderPane>

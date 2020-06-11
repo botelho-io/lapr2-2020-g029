@@ -2,9 +2,12 @@ package lapr.ui.javafx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import lapr.controller.SendEmailsController;
 import lapr.ui.javafx.util.FXBridge;
+import lapr.ui.javafx.util.HelperUI;
 import lapr.ui.javafx.util.MainUI;
 
 public class MainMenuAdminUI {
@@ -25,5 +28,12 @@ public class MainMenuAdminUI {
     public void enterUC09(ActionEvent actionEvent) {
         FXBridge.scene = FXBridge.UC.UC9;
         quit();
+    }
+
+    public void enterUC13(ActionEvent actionEvent) {
+        SendEmailsController ctr = new SendEmailsController();
+        ctr.getMessage();
+        ctr.sendMessages();
+        HelperUI.alert(Alert.AlertType.INFORMATION, "E-mails successfully sent!");
     }
 }

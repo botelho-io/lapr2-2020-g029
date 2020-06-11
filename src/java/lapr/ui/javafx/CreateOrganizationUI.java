@@ -41,7 +41,7 @@ public class CreateOrganizationUI {
             final String mailC = validateString(fieldEmailCollaborator.getText() , "mailC" );
             final String nameM = validateString(fieldNameManager.getText(), "nameM" );
             final String mailM = validateString(fieldEmailManager.getText() , "mailM");
-            final boolean succsess = controller.newOrganization(name, nameC,mailC,nameM,mailM);
+            final boolean succsess = controller.newOrganization(name, nameM, mailM, nameC, mailC);
             if(!succsess) throw new IllegalStateException("Organization with wrong data!!!");
             final boolean succsess2 = controller.registOrganizacation();
             if(!succsess2) throw new IllegalStateException("Organization with wrong data!!!");
