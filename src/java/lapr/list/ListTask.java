@@ -50,9 +50,7 @@ public class ListTask implements Serializable {
      * @param task of the organization.
      * @return true if valid.
      */
-    public boolean validatesTask(Task task ) {
-        //TODO: Write code to validate the task.
-        return true;
+    public boolean validatesTask(Task task ) { return !this.m_lstTask.contains(task);
     }
 
     /**

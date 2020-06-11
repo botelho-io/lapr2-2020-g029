@@ -16,6 +16,9 @@ public abstract class TestConstants {
     private static final Organization testOrg;
     private static final Task[] testTasks;
     private static final Transaction[] testTransactions;
+
+
+
     static {
         final AppPOE poe = AppPOE.getInstance();
         final App app = poe.getApp();
@@ -86,5 +89,25 @@ public abstract class TestConstants {
         final ListTransaction lt = testOrg.getListTransaction();
         for (final Transaction t : testTransactions)
             lt.addTransaction(t);
+    }
+
+    public static Task[] getTestTasks() {
+        return testTasks;
+    }
+
+    public static Administrator getTestAdmin() {
+        return testAdmin;
+    }
+
+    public static Freelancer[] getTestFreelancers() {
+        return testFreelancers;
+    }
+
+    public static Manager getTestMan() {
+        return testMan;
+    }
+
+    public static Collaborator getTestCol() {
+        return testCol;
     }
 }
