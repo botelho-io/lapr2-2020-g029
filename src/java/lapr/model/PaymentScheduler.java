@@ -87,7 +87,7 @@ public class PaymentScheduler implements Serializable {
         cal.set(Calendar.MINUTE, m_oTimeOfDay.getMinute());
         cal.set(Calendar.SECOND, m_oTimeOfDay.getSecond());
         // Check if date has passed
-        if(cal.after(Calendar.getInstance())) {
+        if(cal.before(Calendar.getInstance())) {
             // Date is not on this month, set for next month
             cal.add(Calendar.MONTH, 1);
         }

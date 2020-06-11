@@ -15,7 +15,8 @@
     <center>
         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="btnUC7ViIn" mnemonicParsing="false" onAction="#visIn" prefWidth="175.0" text="UC 7 -Visualize Informatiion" />
+                <Button mnemonicParsing="false" onAction="#enterUC5" prefWidth="175.0" text="UC 5 -Payment Schedule" />
+            <Button fx:id="btnUC7ViIn" layoutX="223.0" layoutY="168.0" mnemonicParsing="false" onAction="#visIn" prefWidth="175.0" text="UC 7 -Visualize Information" />
             </children>
         </VBox>
     </center>

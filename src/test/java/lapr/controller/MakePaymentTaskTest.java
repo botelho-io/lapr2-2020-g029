@@ -40,8 +40,8 @@ class MakePaymentTaskTest {
         tsk = ListTask.newTask("id2", "desc2", 100, 5, "Example");
         trs = ListTransaction.newTransaction(fre, tsk, LocalDate.now(), 3650, "A little late...");
         lt.addTransaction(trs);
-        PaymentScheduler ps = org.newPaymentScheduler(40, LocalTime.now());
-        pt = new MakePaymentTask(org, ps);
+        //PaymentScheduler ps = org.newPaymentScheduler(40, LocalTime.now());
+        //pt = new MakePaymentTask(org, ps);
     }
 
     @AfterEach

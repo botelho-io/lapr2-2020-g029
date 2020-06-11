@@ -1,0 +1,65 @@
+@startuml
+autonumber
+
+actor Manager as M
+participant ":Define\nTimeUI" as UI
+participant ":DefineTime\nController" as CTRL
+participant ":APP" as APP
+participant "ro:Regist\nOrganization" as ORGS
+participant "org:Organization" as ORG
+participant "psche:PaymentScheduler" as PS
+
+activate M
+M -> UI : defining time tasks will be payed.
+activate UI
+UI --> M : request the time data (i.e. dayMonth, timeOfDay).
+deactivate UI
+
+M -> UI : enter the requested data
+activate UI
+
+UI -> CTRL : newPaymentScheduler(dayMonth, timeOfDay)
+activate CTRL
+
+CTRL -> APP: ro = getRegistoOrganizacoes()
+activate APP
+deactivate APP
+
+CTRL -> ORGS: org = getOrganizationByEmailUser()
+activate ORGS
+deactivate ORGS
+
+
+ORG --> PS ** : create(org , dayMonth, timeOfDay)
+activate PS
+deactivate PS
+
+CTRL -> ORG : validatesPaymentScheduler(psche)
+activate ORG
+deactivate ORG
+
+deactivate CTRL
+UI --> M : The sistem validates and presents the data, asking to comfirm.
+deactivate UI
+
+M -> UI : confirms
+activate UI
+
+UI -> CTRL: addPaymentScheduler()
+activate CTRL
+CTRL -> ORG: addPaymentScheduler(psche)
+activate ORG
+
+ORG -> ORG: validaPaymentScheduler(psche)
+
+
+ORG -> ORG: addPaymentScheduler(psche)
+
+
+deactivate ORG
+deactivate CTRL
+UI --> M : successful operation
+deactivate UI
+
+deactivate M
+@enduml

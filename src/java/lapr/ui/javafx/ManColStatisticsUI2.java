@@ -15,6 +15,8 @@ import lapr.controller.ManagerCollaboratorStatisticsController;
 import lapr.model.Freelancer;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
+import lapr.utils.GenEur;
+import lapr.utils.HourConverter;
 
 import java.io.FileReader;
 import java.util.Collections;
@@ -100,41 +102,6 @@ public class ManColStatisticsUI2 {
         }
     }
 
-    private class SPGenEUR extends SpinnerValueFactory<Double> {
-        final double STEP;
-        final double MIN;
-        int t;
-        public SPGenEUR(double min, int step_begin, double step) {
-            STEP = step;
-            t = step_begin;
-            MIN = min;
-            this.setValue(Math.max(MIN, t*STEP));
-            this.setConverter(new StringConverter<Double>() {
-                @Override public String toString(Double aDouble) {
-                    return String.format("%.2f €", aDouble);
-                }
-                @Override public Double fromString(String s) { return 0.5; }
-            });
-        }
-        @Override public void decrement(int i) {
-            increment(-i);
-        }
-        @Override public void increment(int i) {
-            t = Math.max(0, t+i);
-            this.setValue(Math.max(MIN, t*STEP));
-        }
-    }
-
-    private class HrConverter extends StringConverter<Double> {
-        @Override public String toString(Double aDouble) {
-            return String.format("%.2f hrs", aDouble);
-        }
-        @Override public Double fromString(String s) {
-            return null;
-        }
-    }
-
-
     ManagerCollaboratorStatisticsController ctr;
     @FXML
     public void initialize() {
@@ -143,9 +110,9 @@ public class ManColStatisticsUI2 {
             quit(null);
         } else {
             ctr = (ManagerCollaboratorStatisticsController) FXBridge.param;
-            PspBS.setValueFactory(new SPGenEUR(1, 4, 25));
-            SpinnerValueFactory<Double> sp = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.5, Double.MAX_VALUE, 1, 0.5);
-            sp.setConverter(new HrConverter());
+            PspBS.setValueFactory(new GenEur(1, 4, 25));
+            SpinnerValueFactory<Double> sp = new SpinnerValueFactory.DoubleSpinnerValueFactory(30, Double.MAX_VALUE, 60, 15);
+            sp.setConverter(new HourConverter());
             DspBS.setValueFactory(sp);
             PlblM.setText(String.format("%.2f €", ctr.getMeanPayments()));
             DlblM.setText(String.format("%.2f hrs", ctr.getMeanDelays()));
@@ -184,16 +151,15 @@ public class ManColStatisticsUI2 {
 
     @FXML
     public void applyBucketSizePayments(ActionEvent actionEvent) {
-        applyBucketSize(PspBS, ctr::getHistogramDataPayments, PbcH, "Payment Amount (€)");
+        applyBucketSize(PspBS.getValue(), ctr::getHistogramDataPayments, PbcH, "Payment Amount (€)");
     }
 
     @FXML
     public void applyBucketSizeDelays(ActionEvent actionEvent) {
-        applyBucketSize(DspBS, ctr::getHistogramDataDelays, DbcH, "Delay (hrs)");
+        applyBucketSize(DspBS.getValue()/60, ctr::getHistogramDataDelays, DbcH, "Delay (hrs)");
     }
 
-    private void applyBucketSize(final Spinner<Double> sp, Function<Double, Map<Integer, Integer>> mapGetter, BarChart<String, Integer> bc, String name) {
-        final double width = sp.getValue();
+    private void applyBucketSize(final double width, Function<Double, Map<Integer, Integer>> mapGetter, BarChart<String, Integer> bc, String name) {
         final Map<Integer, Integer> map = mapGetter.apply(width);
         final Integer min = Collections.min(map.keySet());
         final Integer max = Collections.max(map.keySet());

@@ -24,4 +24,9 @@ public class MainMenuMangerUI {
         }
 
 
+        @FXML
+        public void enterUC5(ActionEvent actionEvent) {
+            FXBridge.scene = FXBridge.UC.UC5;
+            quit();
+        }
 }

@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class AuthFacade implements Serializable {
 
-    private transient UserSession m_oSessao = null;
+    private transient UserSession m_oSession = null;
     private final RegistUserRoles m_oRoles = new RegistUserRoles();
     private final RegistUsers m_oUsers = new RegistUsers();
 
@@ -55,18 +55,18 @@ public class AuthFacade implements Serializable {
         User utlz = this.m_oUsers.searchUser(strId);
         if (utlz != null)
             if (utlz.hasPassword(strPwd))
-                this.m_oSessao = new UserSession(utlz);
-        return getSessaoAtual();
+                this.m_oSession = new UserSession(utlz);
+        return getCurrentSession();
     }
     
-    public UserSession getSessaoAtual() {
-        return this.m_oSessao;
+    public UserSession getCurrentSession() {
+        return this.m_oSession;
     }
     
     public void doLogout() {
-        if (this.m_oSessao != null)
-            this.m_oSessao.doLogout();
-        this.m_oSessao = null;
+        if (this.m_oSession != null)
+            this.m_oSession.doLogout();
+        this.m_oSession = null;
     }
 
     public UserRole getRole(Role role) {

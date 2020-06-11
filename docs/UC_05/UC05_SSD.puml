@@ -1,0 +1,22 @@
+@startuml
+autonumber
+actor Manager as M
+
+activate M
+M -> ":Sistem" : defining time and day of the month unpayed tasks will be payed
+activate ":Sistem"
+":Sistem" --> M : request the time data (i.e. the day of the month and the time of day)
+deactivate ":Sistem"
+
+M -> ":Sistem" : enter the requested data
+activate ":Sistem"
+":Sistem" --> M : presents data and asks for confirmation
+deactivate ":Sistem"
+
+M -> ":Sistem" : confirms
+activate ":Sistem"
+":Sistem" --> M : successful operation
+deactivate ":Sistem"
+
+deactivate M
+@enduml

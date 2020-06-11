@@ -47,7 +47,7 @@ public class CreateTaskController {
     public boolean newTask (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
         try {
             this.autorizacao = this.plataforma.getAuthFacade();
-            this.sessao = this.autorizacao.getSessaoAtual();
+            this.sessao = this.autorizacao.getCurrentSession();
             this.emailUser = this.sessao.getEmailUser();
             this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);
             this.task = ListTask.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);

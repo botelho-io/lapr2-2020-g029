@@ -18,7 +18,7 @@ public class ManagerCollaboratorStatisticsController {
      */
     public ManagerCollaboratorStatisticsController() {
         app = AppPOE.getInstance().getApp();
-        org = app.getRegistOrganization().getOrganizationByEmailUser(app.getAuthFacade().getSessaoAtual().getEmailUser());
+        org = app.getRegistOrganization().getOrganizationByEmailUser(app.getAuthFacade().getCurrentSession().getEmailUser());
     }
 
     /**

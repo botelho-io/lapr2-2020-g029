@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.DefinePaymentSchedulerUI">
+   <center>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                          <Label maxWidth="120.0" minWidth="120.0" prefHeight="0.0" prefWidth="120.0" text="Day of the Month:" HBox.hgrow="NEVER" />
+                  <Spinner fx:id="spDay" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="109.0" VBox.vgrow="ALWAYS">
+               <children>
+                          <Label maxWidth="120.0" minWidth="120.0" prefHeight="0.0" prefWidth="120.0" text="Time of the day:" HBox.hgrow="NEVER" />
+                  <Spinner fx:id="spHour" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+                  <Label opacity="0.94" text="h">
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spMin" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
+                  <Label opacity="0.94" text="m">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+                  </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+        <VBox alignment="CENTER" prefHeight="103.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane prefHeight="34.0" prefWidth="359.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="288.0" text="Define Payment Schedule" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </StackPane>
+                <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.59" prefHeight="18.0" prefWidth="413.0" text="Please Insert the scheduler information below" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+   </top>
+   <bottom>
+        <BorderPane prefHeight="0.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+            <left>
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Go Back" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <Button fx:id="btnSet" mnemonicParsing="false" onAction="#btnSetAction" text="Set schedule" BorderPane.alignment="CENTER" />
+            </right>
+        </BorderPane>
+   </bottom>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>

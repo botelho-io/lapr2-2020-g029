@@ -36,19 +36,24 @@ public class Organization implements Serializable {
     ListTransaction m_oListTransaction;
 
     /**
-     * Creates a new payment scheduler.
-     * @param DayMonth The day of the month the payment are to be made.
-     * @param TimeOfDay The time of day to make the payments.
-     * @return The new payment scheduler
+     * Sets a new schedule for making payments.
+     * @param dayMonth The day of the month the payment are to be made.
+     * @param timeOfDay The time of day to make the payments.
+     * @return True if the schedule is valid, false otherwise.
      */
-    public PaymentScheduler newPaymentScheduler(int DayMonth, LocalTime TimeOfDay) {
-        if(m_oScheduler == null)
-            return new PaymentScheduler(DayMonth, TimeOfDay, this);
+    public boolean setPaymentScheduler(int dayMonth, LocalTime timeOfDay) {
+        if(!validatesPaymentScheduler(dayMonth, timeOfDay))
+            return false;
         else {
-            m_oScheduler.resetTime(DayMonth, TimeOfDay);
-            return m_oScheduler;
+            if (m_oScheduler == null)
+                m_oScheduler = new PaymentScheduler(dayMonth, timeOfDay, this);
+            else
+                m_oScheduler.resetTime(dayMonth, timeOfDay);
+            return true;
         }
     }
+
+
     /**
      * @return The list transactions the organization made.
      */
@@ -195,5 +200,16 @@ public class Organization implements Serializable {
     public boolean validateOrganization() {
         return  validatesCollaborator(getCollaborator()) &&
                 validatesManager(getManager());
+    }
+
+
+    /**
+     * Validates the schedule
+     * @param dayMonth The day of the month the payment are to be made.
+     * @param timeOfDay The time of day to make the payments.
+     * @return True if the schedule is valid, false otherwise.
+     */
+    public boolean validatesPaymentScheduler(int dayMonth, LocalTime timeOfDay) {
+        return dayMonth >= 1 && dayMonth <= 28;
     }
 }

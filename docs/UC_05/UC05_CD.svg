@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="842px" preserveAspectRatio="none" style="width:466px;height:842px;" version="1.1" viewBox="0 0 466 842" width="466px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fg0byfrp8pprn" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <!--class PaymentScheduler-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="131.0156" style="stroke: #A80036; stroke-width: 1.5;" width="315" x="6" y="702"/>
+        <ellipse cx="107.25" cy="718" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M110.0156,713.875 Q110.1719,713.6563 110.3594,713.5469 Q110.5469,713.4375 110.7656,713.4375 Q111.1406,713.4375 111.375,713.6953 Q111.6094,713.9531 111.6094,714.5625 L111.6094,716.0156 Q111.6094,716.625 111.375,716.8906 Q111.1406,717.1563 110.7656,717.1563 Q110.4219,717.1563 110.2188,716.9531 Q110.0156,716.7656 109.9063,716.25 Q109.8594,715.8906 109.6719,715.7031 Q109.3438,715.3281 108.7344,715.1094 Q108.125,714.8906 107.5,714.8906 Q106.7344,714.8906 106.1016,715.2188 Q105.4688,715.5469 104.9766,716.2969 Q104.4844,717.0469 104.4844,718.0781 L104.4844,719.1719 Q104.4844,720.4063 105.375,721.2266 Q106.2656,722.0469 107.8594,722.0469 Q108.7969,722.0469 109.4531,721.7969 Q109.8438,721.6406 110.2656,721.2031 Q110.5313,720.9375 110.6797,720.8594 Q110.8281,720.7813 111.0313,720.7813 Q111.3594,720.7813 111.6172,721.0391 Q111.875,721.2969 111.875,721.6406 Q111.875,721.9844 111.5313,722.3906 Q111.0313,722.9688 110.2344,723.2969 Q109.1563,723.75 107.8594,723.75 Q106.3438,723.75 105.1406,723.125 Q104.1563,722.625 103.4688,721.5547 Q102.7813,720.4844 102.7813,719.2031 L102.7813,718.0469 Q102.7813,716.7188 103.3984,715.5703 Q104.0156,714.4219 105.1094,713.8047 Q106.2031,713.1875 107.4375,713.1875 Q108.1719,713.1875 108.8203,713.3516 Q109.4688,713.5156 110.0156,713.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="104" x="127.75" y="722.9102">PaymentScheduler</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="320" y1="734" y2="734"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="743.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="26" y="749.4189">Integer dayMonth</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="757.2539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="101" x="26" y="763.2549">LocalTime timeOfDay</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="320" y1="769.6719" y2="769.6719"/>
+        <ellipse cx="17" cy="782.0898" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="289" x="26" y="785.0908">create (Integer day, LoaclTime timeOfDay, Organization org)</text>
+        <ellipse cx="17" cy="795.9258" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="245" x="26" y="798.9268">resetTime(Integer dayMonth, LocalTime timeOfDay)</text>
+        <ellipse cx="17" cy="809.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="103" x="26" y="812.7627">scheduleNestMonth()</text>
+        <ellipse cx="17" cy="823.5977" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="26" y="826.5986">getNextDate()</text>
+        <!--class Manager-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="83" x="356" y="729.5"/>
+        <ellipse cx="372.35" cy="745.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M375.1156,741.375 Q375.2719,741.1563 375.4594,741.0469 Q375.6469,740.9375 375.8656,740.9375 Q376.2406,740.9375 376.475,741.1953 Q376.7094,741.4531 376.7094,742.0625 L376.7094,743.5156 Q376.7094,744.125 376.475,744.3906 Q376.2406,744.6563 375.8656,744.6563 Q375.5219,744.6563 375.3188,744.4531 Q375.1156,744.2656 375.0063,743.75 Q374.9594,743.3906 374.7719,743.2031 Q374.4438,742.8281 373.8344,742.6094 Q373.225,742.3906 372.6,742.3906 Q371.8344,742.3906 371.2016,742.7188 Q370.5688,743.0469 370.0766,743.7969 Q369.5844,744.5469 369.5844,745.5781 L369.5844,746.6719 Q369.5844,747.9063 370.475,748.7266 Q371.3656,749.5469 372.9594,749.5469 Q373.8969,749.5469 374.5531,749.2969 Q374.9438,749.1406 375.3656,748.7031 Q375.6313,748.4375 375.7797,748.3594 Q375.9281,748.2813 376.1313,748.2813 Q376.4594,748.2813 376.7172,748.5391 Q376.975,748.7969 376.975,749.1406 Q376.975,749.4844 376.6313,749.8906 Q376.1313,750.4688 375.3344,750.7969 Q374.2563,751.25 372.9594,751.25 Q371.4438,751.25 370.2406,750.625 Q369.2563,750.125 368.5688,749.0547 Q367.8813,747.9844 367.8813,746.7031 L367.8813,745.5469 Q367.8813,744.2188 368.4984,743.0703 Q369.1156,741.9219 370.2094,741.3047 Q371.3031,740.6875 372.5375,740.6875 Q373.2719,740.6875 373.9203,740.8516 Q374.5688,741.0156 375.1156,741.375 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="386.65" y="750.4102">Manager</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="357" x2="438" y1="761.5" y2="761.5"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="364" y="770.918"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="376" y="776.9189">String name</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="364" y="784.7539"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="376" y="790.7549">String email</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="357" x2="438" y1="797.1719" y2="797.1719"/>
+        <!--class Organization-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="89.5078" style="stroke: #A80036; stroke-width: 1.5;" width="197" x="246" y="534"/>
+        <ellipse cx="305.75" cy="550" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M308.5156,545.875 Q308.6719,545.6563 308.8594,545.5469 Q309.0469,545.4375 309.2656,545.4375 Q309.6406,545.4375 309.875,545.6953 Q310.1094,545.9531 310.1094,546.5625 L310.1094,548.0156 Q310.1094,548.625 309.875,548.8906 Q309.6406,549.1563 309.2656,549.1563 Q308.9219,549.1563 308.7188,548.9531 Q308.5156,548.7656 308.4063,548.25 Q308.3594,547.8906 308.1719,547.7031 Q307.8438,547.3281 307.2344,547.1094 Q306.625,546.8906 306,546.8906 Q305.2344,546.8906 304.6016,547.2188 Q303.9688,547.5469 303.4766,548.2969 Q302.9844,549.0469 302.9844,550.0781 L302.9844,551.1719 Q302.9844,552.4063 303.875,553.2266 Q304.7656,554.0469 306.3594,554.0469 Q307.2969,554.0469 307.9531,553.7969 Q308.3438,553.6406 308.7656,553.2031 Q309.0313,552.9375 309.1797,552.8594 Q309.3281,552.7813 309.5313,552.7813 Q309.8594,552.7813 310.1172,553.0391 Q310.375,553.2969 310.375,553.6406 Q310.375,553.9844 310.0313,554.3906 Q309.5313,554.9688 308.7344,555.2969 Q307.6563,555.75 306.3594,555.75 Q304.8438,555.75 303.6406,555.125 Q302.6563,554.625 301.9688,553.5547 Q301.2813,552.4844 301.2813,551.2031 L301.2813,550.0469 Q301.2813,548.7188 301.8984,547.5703 Q302.5156,546.4219 303.6094,545.8047 Q304.7031,545.1875 305.9375,545.1875 Q306.6719,545.1875 307.3203,545.3516 Q307.9688,545.5156 308.5156,545.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="326.25" y="554.9102">Organization</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="247" x2="442" y1="566" y2="566"/>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="254" y="575.418"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="266" y="581.4189">String name</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="247" x2="442" y1="587.8359" y2="587.8359"/>
+        <ellipse cx="257" cy="600.2539" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="171" x="266" y="603.2549">validatesPaymentScheduler(psche)</text>
+        <ellipse cx="257" cy="614.0898" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="146" x="266" y="617.0908">addPaymentScheduler(psche)</text>
+        <!--class App-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="292" y="254"/>
+        <ellipse cx="353.75" cy="270" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M356.5156,265.875 Q356.6719,265.6563 356.8594,265.5469 Q357.0469,265.4375 357.2656,265.4375 Q357.6406,265.4375 357.875,265.6953 Q358.1094,265.9531 358.1094,266.5625 L358.1094,268.0156 Q358.1094,268.625 357.875,268.8906 Q357.6406,269.1563 357.2656,269.1563 Q356.9219,269.1563 356.7188,268.9531 Q356.5156,268.7656 356.4063,268.25 Q356.3594,267.8906 356.1719,267.7031 Q355.8438,267.3281 355.2344,267.1094 Q354.625,266.8906 354,266.8906 Q353.2344,266.8906 352.6016,267.2188 Q351.9688,267.5469 351.4766,268.2969 Q350.9844,269.0469 350.9844,270.0781 L350.9844,271.1719 Q350.9844,272.4063 351.875,273.2266 Q352.7656,274.0469 354.3594,274.0469 Q355.2969,274.0469 355.9531,273.7969 Q356.3438,273.6406 356.7656,273.2031 Q357.0313,272.9375 357.1797,272.8594 Q357.3281,272.7813 357.5313,272.7813 Q357.8594,272.7813 358.1172,273.0391 Q358.375,273.2969 358.375,273.6406 Q358.375,273.9844 358.0313,274.3906 Q357.5313,274.9688 356.7344,275.2969 Q355.6563,275.75 354.3594,275.75 Q352.8438,275.75 351.6406,275.125 Q350.6563,274.625 349.9688,273.5547 Q349.2813,272.4844 349.2813,271.2031 L349.2813,270.0469 Q349.2813,268.7188 349.8984,267.5703 Q350.5156,266.4219 351.6094,265.8047 Q352.7031,265.1875 353.9375,265.1875 Q354.6719,265.1875 355.3203,265.3516 Q355.9688,265.5156 356.5156,265.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="21" x="374.25" y="274.9102">App</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="293" x2="444" y1="286" y2="286"/>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="293" x2="444" y1="294" y2="294"/>
+        <ellipse cx="303" cy="306.418" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="127" x="312" y="309.4189">getRegistoOrganizacoes()</text>
+        <!--class RegistOrganization-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="170" x="287.5" y="394"/>
+        <ellipse cx="317.35" cy="410" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M320.1156,405.875 Q320.2719,405.6563 320.4594,405.5469 Q320.6469,405.4375 320.8656,405.4375 Q321.2406,405.4375 321.475,405.6953 Q321.7094,405.9531 321.7094,406.5625 L321.7094,408.0156 Q321.7094,408.625 321.475,408.8906 Q321.2406,409.1563 320.8656,409.1563 Q320.5219,409.1563 320.3188,408.9531 Q320.1156,408.7656 320.0063,408.25 Q319.9594,407.8906 319.7719,407.7031 Q319.4438,407.3281 318.8344,407.1094 Q318.225,406.8906 317.6,406.8906 Q316.8344,406.8906 316.2016,407.2188 Q315.5688,407.5469 315.0766,408.2969 Q314.5844,409.0469 314.5844,410.0781 L314.5844,411.1719 Q314.5844,412.4063 315.475,413.2266 Q316.3656,414.0469 317.9594,414.0469 Q318.8969,414.0469 319.5531,413.7969 Q319.9438,413.6406 320.3656,413.2031 Q320.6313,412.9375 320.7797,412.8594 Q320.9281,412.7813 321.1313,412.7813 Q321.4594,412.7813 321.7172,413.0391 Q321.975,413.2969 321.975,413.6406 Q321.975,413.9844 321.6313,414.3906 Q321.1313,414.9688 320.3344,415.2969 Q319.2563,415.75 317.9594,415.75 Q316.4438,415.75 315.2406,415.125 Q314.2563,414.625 313.5688,413.5547 Q312.8813,412.4844 312.8813,411.2031 L312.8813,410.0469 Q312.8813,408.7188 313.4984,407.5703 Q314.1156,406.4219 315.2094,405.8047 Q316.3031,405.1875 317.5375,405.1875 Q318.2719,405.1875 318.9203,405.3516 Q319.5688,405.5156 320.1156,405.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="105" x="334.65" y="414.9102">RegistOrganization</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="288.5" x2="456.5" y1="426" y2="426"/>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="288.5" x2="456.5" y1="434" y2="434"/>
+        <ellipse cx="298.5" cy="446.418" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="144" x="307.5" y="449.4189">getOrganizationByEmailUser()</text>
+        <!--class DefineTimeController-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="249" x="110" y="117"/>
+        <ellipse cx="171.25" cy="133" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M174.0156,128.875 Q174.1719,128.6563 174.3594,128.5469 Q174.5469,128.4375 174.7656,128.4375 Q175.1406,128.4375 175.375,128.6953 Q175.6094,128.9531 175.6094,129.5625 L175.6094,131.0156 Q175.6094,131.625 175.375,131.8906 Q175.1406,132.1563 174.7656,132.1563 Q174.4219,132.1563 174.2188,131.9531 Q174.0156,131.7656 173.9063,131.25 Q173.8594,130.8906 173.6719,130.7031 Q173.3438,130.3281 172.7344,130.1094 Q172.125,129.8906 171.5,129.8906 Q170.7344,129.8906 170.1016,130.2188 Q169.4688,130.5469 168.9766,131.2969 Q168.4844,132.0469 168.4844,133.0781 L168.4844,134.1719 Q168.4844,135.4063 169.375,136.2266 Q170.2656,137.0469 171.8594,137.0469 Q172.7969,137.0469 173.4531,136.7969 Q173.8438,136.6406 174.2656,136.2031 Q174.5313,135.9375 174.6797,135.8594 Q174.8281,135.7813 175.0313,135.7813 Q175.3594,135.7813 175.6172,136.0391 Q175.875,136.2969 175.875,136.6406 Q175.875,136.9844 175.5313,137.3906 Q175.0313,137.9688 174.2344,138.2969 Q173.1563,138.75 171.8594,138.75 Q170.3438,138.75 169.1406,138.125 Q168.1563,137.625 167.4688,136.5547 Q166.7813,135.4844 166.7813,134.2031 L166.7813,133.0469 Q166.7813,131.7188 167.3984,130.5703 Q168.0156,129.4219 169.1094,128.8047 Q170.2031,128.1875 171.4375,128.1875 Q172.1719,128.1875 172.8203,128.3516 Q173.4688,128.5156 174.0156,128.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="191.75" y="137.9102">DefineTimeController</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="111" x2="358" y1="149" y2="149"/>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="111" x2="358" y1="157" y2="157"/>
+        <ellipse cx="121" cy="169.418" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="223" x="130" y="172.4189">newPaymentScheduler(dayMonth, timeOfDay)</text>
+        <ellipse cx="121" cy="183.2539" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="130" y="186.2549">addPaymentScheduler()</text>
+        <!--class DefineTimeUI-->
+        <rect fill="#FEFECE" filter="url(#fg0byfrp8pprn)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="108" x="180.5" y="8"/>
+        <ellipse cx="195.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M198.2656,19.875 Q198.4219,19.6563 198.6094,19.5469 Q198.7969,19.4375 199.0156,19.4375 Q199.3906,19.4375 199.625,19.6953 Q199.8594,19.9531 199.8594,20.5625 L199.8594,22.0156 Q199.8594,22.625 199.625,22.8906 Q199.3906,23.1563 199.0156,23.1563 Q198.6719,23.1563 198.4688,22.9531 Q198.2656,22.7656 198.1563,22.25 Q198.1094,21.8906 197.9219,21.7031 Q197.5938,21.3281 196.9844,21.1094 Q196.375,20.8906 195.75,20.8906 Q194.9844,20.8906 194.3516,21.2188 Q193.7188,21.5469 193.2266,22.2969 Q192.7344,23.0469 192.7344,24.0781 L192.7344,25.1719 Q192.7344,26.4063 193.625,27.2266 Q194.5156,28.0469 196.1094,28.0469 Q197.0469,28.0469 197.7031,27.7969 Q198.0938,27.6406 198.5156,27.2031 Q198.7813,26.9375 198.9297,26.8594 Q199.0781,26.7813 199.2813,26.7813 Q199.6094,26.7813 199.8672,27.0391 Q200.125,27.2969 200.125,27.6406 Q200.125,27.9844 199.7813,28.3906 Q199.2813,28.9688 198.4844,29.2969 Q197.4063,29.75 196.1094,29.75 Q194.5938,29.75 193.3906,29.125 Q192.4063,28.625 191.7188,27.5547 Q191.0313,26.4844 191.0313,25.2031 L191.0313,24.0469 Q191.0313,22.7188 191.6484,21.5703 Q192.2656,20.4219 193.3594,19.8047 Q194.4531,19.1875 195.6875,19.1875 Q196.4219,19.1875 197.0703,19.3516 Q197.7188,19.5156 198.2656,19.875 Z "/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="76" x="209.5" y="28.9102">DefineTimeUI</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="181.5" x2="287.5" y1="40" y2="40"/>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="181.5" x2="287.5" y1="48" y2="48"/>
+        <path d="M234.5,56.044 C234.5,71.713 234.5,92.908 234.5,111.575 " fill="none" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+        <polygon fill="#A80036" points="234.5,116.767,238.5,107.767,234.5,111.767,230.5,107.767,234.5,116.767" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M273.258,193.023 C292.244,211.159 314.933,232.832 333.403,250.474 " fill="none" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+        <polygon fill="#A80036" points="337.038,253.947,333.2935,244.8377,333.4227,250.4931,327.7673,250.6223,337.038,253.947" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M233.748,193.153 C233.691,250.991 238.072,365.333 269.5,456 C278.47,481.877 293.607,508.074 307.943,529.523 " fill="none" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+        <polygon fill="#A80036" points="310.798,533.749,309.0762,524.0518,307.9998,529.6053,302.4463,528.5289,310.798,533.749" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M200.871,193.118 C182.52,217.223 163.5,250.329 163.5,284 C163.5,284 163.5,284 163.5,580 C163.5,618.576 163.5,661.64 163.5,696.66 " fill="none" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+        <polygon fill="#A80036" points="163.5,701.767,167.5,692.767,163.5,696.767,159.5,692.767,163.5,701.767" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <path d="M369.378,316.285 C369.995,337.586 370.824,366.165 371.472,388.533 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#A80036" points="371.624,393.786,375.3601,384.6733,371.4783,388.7881,367.3634,384.9064,371.624,393.786" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="371.5" y="360.4951">has</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="361.8782" y="337.318">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="363.7215" y="383.2464">1</text>
+        <path d="M366.968,456.03 C363.144,476.789 357.97,504.877 353.551,528.866 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#A80036" points="352.62,533.919,358.1842,525.7925,353.5257,529.0017,350.3165,524.3433,352.62,533.919" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="361.5" y="500.4951">has</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="358.1898" y="477.2599">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="5" x="348.5157" y="523.0216">*</text>
+        <path d="M357.06,624.198 C365.655,654.44 376.983,694.305 385.463,724.145 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#A80036" points="386.906,729.219,388.293,719.4683,385.539,724.4095,380.5978,721.6555,386.906,729.219" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="369.5" y="668.4951">has</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="351.2774" y="644.8983">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="377.3955" y="718.5308">1</text>
+        <path d="M301.606,624.198 C280.183,646.271 253.786,673.471 229.827,698.157 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <polygon fill="#A80036" points="226.311,701.78,235.4488,698.1056,229.7926,698.1913,229.7068,692.5351,226.311,701.78" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="271.5" y="668.4951">has</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="288.3718" y="644.8983">1</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="225.7981" y="691.2304">1</text>
+        <!--
+@startuml
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+        + create (Integer day, LoaclTime timeOfDay, Organization org)
+        + resetTime(Integer dayMonth, LocalTime timeOfDay)
+        + scheduleNestMonth()
+        + getNextDate()
+}
+
+class Manager {
+  -String name
+  -String email
+}
+
+
+class Organization {
+  -String name
+  +validatesPaymentScheduler(psche)
+  +addPaymentScheduler(psche)
+}
+
+class App {
+	+getRegistoOrganizacoes()
+}
+
+class RegistOrganization {
+	+getOrganizationByEmailUser()
+}
+
+
+class DefineTimeController {
+        +newPaymentScheduler(dayMonth, timeOfDay)
+        +addPaymentScheduler()
+}
+
+class DefineTimeUI {
+}
+
+
+DefineTimeUI ..> DefineTimeController
+DefineTimeController                  ..>          App
+DefineTimeController                  ..>          Organization
+DefineTimeController                  ..>          PaymentScheduler        
+App                               "1" - -> "1"      RegistOrganization       : has
+RegistOrganization                "1" - -> "*"     Organization              : has
+Organization                      "1" - -> "1"      Manager                  : has 
+Organization                      "1" - -> "1"      PaymentScheduler         : has
+
+
+
+@enduml
+
+PlantUML version 2017.11(Wed Apr 19 17:18:59 BST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_231-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

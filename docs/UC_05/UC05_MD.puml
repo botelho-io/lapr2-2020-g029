@@ -1,0 +1,61 @@
+@startuml MD
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class TaskExecutionDetails {
+        - Date endDate
+        - Integer delayInDays
+        - String DescriptionQualityOfWork
+}
+
+class Organization {
+        - String nome
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class App {
+
+}
+
+
+class Manager {
+        - String nome
+        - String email
+        - String password
+}
+
+class Transaction {
+
+}
+
+class PaymentScheduler {
+        - Integer dayMonth
+        - LocalTime timeOfDay
+}
+
+App                          "1" -- "*"      Organization              : has >
+App                          "1" -- "1"      PaymentAPI                : supports >
+App                          "1" -- "*"      Payment                   : registers >
+Organization                 "1" -- "*"      Task                      : publishes >
+Manager                      "1" -- "0,1"    PaymentScheduler          : defines >
+Transaction                  "1" -- "1"      Task                      : relative to >
+Transaction                  "1" -- "1"      TaskExecutionDetails      : executed with >
+TaskExecutionDetails         "1" -- "1"      Task                      : refer to >
+PaymentScheduler             "1" -- "*"      Payment                   : schedules >
+Organization                 "1" -- "1"      Manager                   : has >
+Organization                 "1" -- "1"      PaymentScheduler          : uses >
+Organization                 "1" -- "*"      Task                      : publishes >
+Organization                 "1" -- "*"      Transaction               : has unpaid >
+Payment                      "*" -- "1"      Organization              : made on behalf of >
+Payment                      "1" -- "1"      Transaction               : refers to >
+
+@enduml

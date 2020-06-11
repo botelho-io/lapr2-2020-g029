@@ -18,7 +18,7 @@ public class MainUI {
     }
 
     public void mainMenu() {
-        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         // Loop trough the menus
         FXBridge.scene = null;
         // Select role
@@ -35,13 +35,15 @@ public class MainUI {
     }
 
     public void start() {
+        AppPOE.getInstance().getApp().getAuthFacade().doLogin("man@dei.pt", "password");
+
         // Load data from file
-        openUC(FXBridge.UC.UC12);
+        //openUC(FXBridge.UC.UC12);
 
         // Login
-        openUC(FXBridge.UC.LOGIN);
+        //openUC(FXBridge.UC.LOGIN);
         // Was login successful?
-        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getSessaoAtual();
+        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         if(su == null || (!su.isLoggedIn())) {
             System.exit(0); // Not successful - Exit
         } else {
