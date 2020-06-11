@@ -1,0 +1,33 @@
+@startuml SD
+autonumber
+actor "Collaborator" as C   
+participant ":LoaderUI" as ui
+participant ":LoaderController" as ctr
+participant ":HistoricalTransactionFile" as htf
+
+activate C
+        C -> ui : starts the process of load historical transactions from file
+        activate ui
+                ui --> C : asks witch file should be loaded
+        deactivate ui
+        C -> ui : selctes the file
+        activate ui
+                ui -> ctr : create()
+                activate ctr
+                deactivate ctr 
+                ui --> C : open the file and displays the data contained in the file
+        deactivate ui
+        C -> ui : confirms the data
+        activate ui
+                ui -> ctr : newHistoricalTransactionsFile()
+                activate ctr
+                        ctr -> htf : readFileTo(registFreelancer, ListTask, ListTransaction)
+                        activate htf
+                                note over htf :HistoricalTransactionFile create all \nthe objects in the file
+                        deactivate htf
+                deactivate ctr
+                ui --> C : successful operation
+        deactivate ui
+deactivate C
+
+@enduml

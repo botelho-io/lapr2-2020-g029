@@ -1,0 +1,86 @@
+@startuml CD
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class LoaderUI {
+
+}
+
+class LoaderController {
+        + create()
+        + newHistoricalTransactionsFile()
+}
+
+class App {
+
+}
+
+class Organization {
+        - String nome
+        - String NIF
+}
+
+class Transaction {
+
+}
+
+class Task {
+        - String id
+        - String description
+        - Integer durationInHours
+        - Double costPerHourOfJuniorEur
+        - String category
+}
+
+class Collaborator {
+        - String nome
+        - String email
+        - String password
+}
+
+class Freelancer {
+        - String id
+        - String name
+        - String levelOfExpertise
+        - String email
+        - String NIF
+        - String bankAccountIBAN
+        - String address
+        - String country
+}
+
+class HistoricalTransactionFile {
+        + readFileTo(registFreelancer, ListTask, ListTransaction)
+}
+
+class ListTransaction {
+        + newTransaction()
+}
+
+class ListTask {
+        + newTask()
+}
+
+class RegistFreelancer {
+        + newFreelancer ()
+}
+
+
+LoaderUI ..> LoaderController
+LoaderController ..> HistoricalTransactionFile
+Organization                 "1" -- "1"      Collaborator              : has >
+Organization                 "1" -- "*"      Task                      : publishes >
+Organization                 "1" -- "*"      Transaction               : has >
+App                          "1" -- "*"      Organization              : has >
+App                          "1" -- "*"      Freelancer                : has >
+App                          "1" --> "1"     RegistFreelancer          : has
+RegistFreelancer             "1" --> "*"     Freelancer                : has
+Collaborator                 "1" -- "*"      HistoricalTransactionFile : loads >
+HistoricalTransactionFile    "1" -- "*"      Transaction               : records >
+ListTransaction              "1" --> "*"     Transaction               : has
+Organization                 "1" --> "1"      ListTask                  : has
+ListTask                     "1" --> "*"      Task                      : has
+Organization                 "1" --> "1"      ListTransaction           : has
+
+
+@enduml
