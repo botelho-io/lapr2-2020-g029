@@ -1,8 +1,10 @@
 package lapr.api.defaults;
 
 import lapr.api.PaymentAPI;
+import lapr.utils.Constants;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -12,9 +14,10 @@ public class PaymentAPIAdapter implements PaymentAPI {
 
     public PaymentAPIAdapter() {
         try {
-            fstream = new FileWriter("Payments.txt", true);
+            fstream = new FileWriter(Constants.paymentsFile, true);
             out = new BufferedWriter(fstream);
-            out.write("Freelancer ID\tFreelancer IBAN\tTask ID\tTask Description\tEuro\tNative Currency\n");
+            if(new File(Constants.paymentsFile).length() == 0)
+                out.write("Freelancer ID\tFreelancer IBAN\tTask ID\tTask Description\tEuro\tNative Currency\n");
         } catch (IOException e) {
             // TODO: handle exception.
             System.out.println(e.getMessage());

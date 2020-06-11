@@ -1,11 +1,17 @@
 package lapr.utils;
 
+import java.io.File;
+
 public abstract class Constants {
     public static final String pathPropertiesFile = "config.properties";
     public static String dataSavePath = "saveData.bin";
+    public static String paymentsFile = "Payments.txt";
+    public static String emailsFile = "Emails.txt";
+
     public static String defaultAdminName = "Admin Joe";
     public static String defaultAdminEmail = "admin@dei.pt";
     public static String defaultAdminPassword = "password";
+
     public static String defaultApiEmail = "lapr.api.sout.EmailAPIAdapter";
     public static String defaultApiMonetaryConversion = "lapr.api.sout.MonetaryConversionAPIAdapter";
     public static String defaultApiPayment = "lapr.api.sout.PaymentAPIAdapter";

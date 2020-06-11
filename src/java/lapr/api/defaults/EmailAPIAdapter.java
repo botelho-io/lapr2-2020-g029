@@ -1,6 +1,7 @@
 package lapr.api.defaults;
 
 import lapr.api.EmailAPI;
+import lapr.utils.Constants;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -13,7 +14,7 @@ public class EmailAPIAdapter implements EmailAPI {
 
     public EmailAPIAdapter() {
         try {
-            fstream = new FileWriter("Emails.txt", true);
+            fstream = new FileWriter(Constants.emailsFile, true);
             out = new BufferedWriter(fstream);
         } catch (IOException e) {
             // TODO: handle exception.
