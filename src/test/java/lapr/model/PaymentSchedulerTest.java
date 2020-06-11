@@ -12,34 +12,30 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PaymentSchedulerTest {
-
-    PaymentScheduler ps;
-
-    @BeforeEach
-    void setUp() {
-
-        ps = new PaymentScheduler(18, LocalTime.MIDNIGHT, null);
-    }
-
     @Test
     void getNextDate() {
-        assertEquals(getNextDateTested().toString(), ps.getNextDate().toString());
+        Calendar t;
+        // Wait until we aren't on the first millisecond of the month...
+        do {
+            t = Calendar.getInstance();
+        } while (   t.get(Calendar.DAY_OF_MONTH) == 1 &&
+                    t.get(Calendar.HOUR_OF_DAY) == 0 &&
+                    t.get(Calendar.MINUTE) == 0 &&
+                    t.get(Calendar.MILLISECOND) == 0 );
+
+
+        t.set(Calendar.DAY_OF_MONTH, 1);
+        t.add(Calendar.MONTH, 1);
+        t.set(Calendar.HOUR_OF_DAY, 0);
+        t.set(Calendar.MINUTE, 0);
+        t.set(Calendar.SECOND, 0);
+        t.set(Calendar.MILLISECOND, 0);
+        Date expected = t.getTime();
+
+        Date observed = new PaymentScheduler(1, LocalTime.of(0, 0), null).getNextDate();
+
+        assertEquals(expected, observed);
     }
 
-    public static Date getNextDateTested() {
-        // Find what time it is now
-        Calendar cal = Calendar.getInstance();
-        // Set that calendar to this month's day and time of payment
-        cal.set(Calendar.DAY_OF_MONTH, 18);
-        // Set time
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        // Check if date has passed
-        if(cal.after(Calendar.getInstance())) {
-            // Date is not on this month, set for next month
-            cal.add(Calendar.MONTH, 1);
-        }
-        return cal.getTime();
-    }
+
 }
