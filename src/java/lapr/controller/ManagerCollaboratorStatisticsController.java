@@ -63,22 +63,26 @@ public class ManagerCollaboratorStatisticsController {
      * @return The standard deviation of delays of the selected transactions.
      */
     public double getStandardDeviationDelays() {
+        final double n = getNumberTransactions();
+        if(n < 2) return 0;
         final double mean = getMeanDelays();
         double acc = 0;
         for(final Transaction t : trs)
             acc += Math.pow(t.getExecutionDetails().getHoursDelay() - mean, 2);
-        return Math.sqrt(acc/(getNumberTransactions()-1));
+        return Math.sqrt(acc/(n-1));
     }
 
     /**
      * @return The standard deviation of payments of the selected transactions.
      */
     public double getStandardDeviationPayments() {
+        final double n = getNumberTransactions();
+        if(n < 2) return 0;
         final double mean = getMeanPayments();
         double acc = 0;
         for(final Transaction t : trs)
             acc += Math.pow(t.getAmount() - mean, 2);
-        return Math.sqrt(acc/(getNumberTransactions()-1));
+        return Math.sqrt(acc/(n-1));
     }
 
     /**
