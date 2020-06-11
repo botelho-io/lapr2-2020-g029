@@ -7,10 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
 
     @Test
-    void setAPIs() {
-    }
-
-    @Test
     void serialize() {
     }
 
@@ -18,7 +14,4 @@ class AppTest {
     void deserialize() {
     }
 
-    @Test
-    void close() {
-    }
 }
