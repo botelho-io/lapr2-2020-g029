@@ -1,8 +1,10 @@
-package lapr.api.stubs;
+package lapr.api.sout;
 
 import lapr.api.PaymentAPI;
 
-public class StubPaymentAPI implements PaymentAPI {
+import java.io.IOException;
+
+public class PaymentAPIAdapter implements PaymentAPI {
 
     /**
      * Make a payment.
@@ -17,8 +19,20 @@ public class StubPaymentAPI implements PaymentAPI {
      */
     @Override
     public boolean payTo(String freelancerId, String freelancerIBAN, String taskId, String taskDescription, Double eur, Double nativeCurrency) {
-        final String msg = String.format("PaymentAPI - payment to [%s (%s)] for [%s (%s)] payed [%f€ (%f)]", freelancerIBAN, freelancerId, taskDescription, taskId, eur, nativeCurrency);
+        final String msg = String.format(
+                    "*******************************************************\n"+
+                    "PaymentAPI - Payment to [%s (%s)]\n"+
+                    "~~~~~~ BEGIN ~~~~~~\n"+
+                    "Task [%s (%s)]\n"+
+                    "Amount [%f€ (%f)]\n"+
+                    "~~~~~~  END  ~~~~~~\n"+
+                    "*******************************************************\n\n\n"
+                ,freelancerIBAN, freelancerId, taskDescription, taskId, eur, nativeCurrency);
         System.out.println(msg);
         return true;
+    }
+
+    @Override
+    public void close() {
     }
 }

@@ -16,19 +16,6 @@
                </children>
             </HBox>
             <Separator prefWidth="200.0" />
-            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
-               <children>
-                  <Label prefWidth="175.0" text="Collaborator name" />
-                  <TextField fx:id="fieldNameCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-               </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="46.0" spacing="10.0">
-               <children>
-                  <Label prefWidth="175.0" text="Collaborator email" />
-                  <TextField fx:id="fieldEmailCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-               </children>
-            </HBox>
-            <Separator prefWidth="200.0" />
             <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
                <children>
                   <Label prefWidth="175.0" text="Manager name" />
@@ -39,6 +26,19 @@
                <children>
                   <Label prefWidth="175.0" text="Manager email" />
                   <TextField fx:id="fieldEmailManager" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Collaborator name" />
+                  <TextField fx:id="fieldNameCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="46.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="Collaborator email" />
+                  <TextField fx:id="fieldEmailCollaborator" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
          </children>

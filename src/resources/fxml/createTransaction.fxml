@@ -71,7 +71,7 @@
    <bottom>
       <BorderPane prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <left>
-            <Button mnemonicParsing="false" onAction="#quit" text="Cancel" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#quit" text="Go Back" BorderPane.alignment="CENTER" />
          </left>
          <right>
             <Button mnemonicParsing="false" onAction="#newTransaction" text="Create Transaction" BorderPane.alignment="CENTER" />

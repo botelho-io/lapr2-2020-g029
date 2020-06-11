@@ -9,6 +9,7 @@ package lapr.model;
 import authorization.AuthFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
+import lapr.controller.AppPOE;
 import lapr.regist.RegistFreelancer;
 import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
@@ -19,31 +20,15 @@ import java.io.*;
 /**
  * @author André Botelho and Ricardo Moreira.
  */
-public class App implements Serializable {
+public class App implements Serializable, Closeable{
     /**
      * The autorization facade used by the app.
      */
-    private final AuthFacade m_oAutorization;
+    private AuthFacade m_oAutorization;
     /**
      * The registration of organization on the app.
      */
     private RegistOrganization m_oRegistOrganization;
-    /**
-     * The API used to generate passwords.
-     */
-    private PswGeneratorAPI m_oPswGeneratorAPI;
-    /**
-     * The API used to process bank payments.
-     */
-    private PaymentAPI m_oPaymentAPI;
-    /**
-     * The API used to convert between monetary units.
-     */
-    private MonetaryConversionAPI m_oMonetaryConversionAPI;
-    /**
-     * The API used to send emails.
-     */
-    private EmailAPI m_oEmailAPI;
     /**
      * The register of all the freelancers available in the system.
      */
@@ -52,13 +37,54 @@ public class App implements Serializable {
      * The object responsible for sending emails to freelancers every year.
      */
     private EmailScheduler m_oEmailScheduler;
-
+    /**
+     * The API used to generate passwords.
+     */
+    private transient PswGeneratorAPI m_oPswGeneratorAPI;
+    /**
+     * The API used to process bank payments.
+     */
+    private transient PaymentAPI m_oPaymentAPI;
+    /**
+     * The API used to convert between monetary units.
+     */
+    private transient MonetaryConversionAPI m_oMonetaryConversionAPI;
+    /**
+     * The API used to send emails.
+     */
+    private transient EmailAPI m_oEmailAPI;
 
     public App() {
         this.m_oAutorization = new AuthFacade();
         this.m_oRegistOrganization = new RegistOrganization();
         this.m_oRegistFreelancer = new RegistFreelancer();
         this.m_oEmailScheduler = new EmailScheduler();
+    }
+
+    /**
+     * Read object.
+     * @param aInputStream The input stream.
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
+    private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
+        this.m_oAutorization = (AuthFacade) aInputStream.readObject();
+        this.m_oRegistOrganization = (RegistOrganization) aInputStream.readObject();
+        this.m_oRegistFreelancer = (RegistFreelancer) aInputStream.readObject();
+        this.m_oEmailScheduler = (EmailScheduler) aInputStream.readObject();
+        AppPOE.getInstance().reloadAPIs();
+    }
+
+    /**
+     * Writes the object.
+     * @param aOutputStream The output stream.
+     * @throws IOException
+     */
+    private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
+        aOutputStream.writeObject(m_oAutorization);
+        aOutputStream.writeObject(m_oRegistOrganization);
+        aOutputStream.writeObject(m_oRegistFreelancer);
+        aOutputStream.writeObject(m_oEmailScheduler);
     }
 
     /**
@@ -143,6 +169,14 @@ public class App implements Serializable {
         out.close();
         fileIn.close();
         return app;
+    }
+
+    @Override
+    public void close() throws IOException {
+        m_oEmailAPI.close();
+        m_oMonetaryConversionAPI.close();
+        m_oPaymentAPI.close();
+        m_oPswGeneratorAPI.close();
     }
 }
     

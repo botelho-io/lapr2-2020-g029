@@ -5,6 +5,8 @@ import javafx.stage.Stage;
 import lapr.controller.AppPOE;
 import lapr.utils.Role;
 
+import java.io.IOException;
+
 public class MainUI {
     private Stage stage;
 
@@ -32,7 +34,7 @@ public class MainUI {
         }
     }
 
-    public void start() throws Exception {
+    public void start() {
         // Load data from file
         openUC(FXBridge.UC.UC12);
 
@@ -75,6 +77,12 @@ public class MainUI {
             }
 
 
+        }
+
+        try {
+            AppPOE.getInstance().getApp().close();
+        } catch (IOException e) {
+            HelperUI.alert("Error while closing the app:\n"+e.getMessage());
         }
     }
 }

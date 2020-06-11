@@ -97,17 +97,16 @@ public class SendEmailTask extends TimerTask implements Serializable {
             final double pctDelayed = pair.getValue();
             String msg = "";
             if(avgDelay > MEAN_TASK_DELAY_MAXIMUM) {
-                msg += String.format("we have noticed that you have a mean task delay higher than %f hours (%fhr), try to keep up! ", MEAN_TASK_DELAY_MAXIMUM, avgDelay);
+                msg += String.format("we have noticed that you have a mean task delay higher than %.3f hours (%.3fhr), try to keep up! ", MEAN_TASK_DELAY_MAXIMUM, avgDelay);
             }
             if(pctDelayed > percentageDelayedTransactions) {
-                msg += String.format("%s you have a percentage of delayed tasks higher than %d%% (%d%%), meaning that you are falling behind the average. ",(msg.isEmpty()?"we have noticed that":"Furthermore,"), (int)(percentageDelayedTransactions*100), (int)(pctDelayed*100));
+                msg += String.format("%s you have a percentage of delayed tasks higher than %.2f%% (%.2f%%), meaning that you are falling behind the average. ",(msg.isEmpty()?"we have noticed that":"Furthermore,"), percentageDelayedTransactions*100, pctDelayed*100);
             }
             if(!msg.isEmpty()) {
                 msg = String.format("Hello there %s,\nThis e-mail is being sent to notify you of your poor performance as of %d.\nNamely, %s\n\nBest regards,\nThe T4J team.\n", fre.getName(), CURREN_YEAR, msg);
                 toReturn.put(fre, msg);
             }
         }
-
         return toReturn;
     }
 }

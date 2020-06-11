@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,7 +24,7 @@ class ListTransactionTest{
     Freelancer fre;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws IOException {
         AppPOE.restartInstance();
         App app = AppPOE.getInstance().getApp();
         Manager m = Organization.newManager("manager", "manager@mail.com", "password");
