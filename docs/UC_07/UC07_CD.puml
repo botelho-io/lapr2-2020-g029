@@ -2,18 +2,20 @@
 skinparam classAttributeIconSize 0
 top to bottom direction
 
-class ManagerCollaboratorStatisticsUI {
+class ManColStatisticsUI {
 
 }
 
 class ManagerCollaboratorStatisticsController {
-        + setSortMethod(sm)
+        + getFreelancers()
+        + setFreelancers(Set<Freelancer> selected)
         + getMeanDelays()
         + getMeanPayments()
         + getStandardDeviationDelays()
         + getStandardDeviationPayments()
-        + getHistogramDataDelays()
-        + getHistogramDataPayments()
+        + getHistogramDataDelays(Double bucketSize)
+        + getHistogramDataPayments(Double bucketSize)
+        + getNumberTransactions()
 }
 
 
@@ -44,11 +46,13 @@ class Manager {
 }
 
 class ListTransaction {
+        + getFreelancersOfAllTransactions()
         + getTransactionsOfFreelancers(Set<Freelancer> selected)
         + get(ID)
 }
 
 class Transaction {
+        + madeToAny(Set<Freelancer> selected)
         + getTaskExecutionDetails()
         + getAmount()
 }
@@ -83,24 +87,27 @@ class PaymentDetails {
         Boolean isPaid
 }
 
+ManColStatisticsUI ..> ManagerCollaboratorStatisticsController
 ManagerCollaboratorStatisticsController ..> App
+ManagerCollaboratorStatisticsController ..> ListTransaction
 ManagerCollaboratorStatisticsController ..> RegistOrganization
 ManagerCollaboratorStatisticsController ..> Transaction
-ManagerCollaboratorStatisticsUI ..> ManagerCollaboratorStatisticsController
+
+App                          "1" --> "1"      RegistOrganization        : has
+RegistOrganization           "1" --> "*"      Organization              : has
 Organization                 "1" -- "1,..."   Collaborator              : has >
 Organization                 "1" -- "1"       Manager                   : has >
+Organization                 "1" --> "1"      ListTask                  : has
+Organization                 "1" --> "1"      ListTransaction           : has
+ListTransaction              "1" --> "*"      Transaction               : has
 Transaction                  "1" --> "1"      Task                      : knows
 Transaction                  "*" --> "1"      Freelancer                : knows
 Transaction                  "*" --> "1"      Organization              : knows
 Transaction                  "1" --> "1"      TaskExecutionDetails      : has
-TaskExecutionDetails         "1" --> "1"      Task                      : knows
-Organization                 "1" --> "1"      ListTask                  : has
-ListTask                     "1" --> "*"      Task                      : has
-Organization                 "1" --> "1"      ListTransaction           : has
-ListTransaction              "1" --> "*"      Transaction               : has
-Task                         "*" --> "0, 1"   Freelancer                : knows
-App                          "1" --> "1"      RegistOrganization        : has
-RegistOrganization           "1" --> "*"      Organization              : has
 Transaction                  "1" --> "1"      PaymentDetails            : has
+TaskExecutionDetails         "1" --> "1"      Task                      : knows
+ListTask                     "1" --> "*"      Task                      : has
+Task                         "*" --> "0, 1"   Freelancer                : knows
+
 
 @enduml

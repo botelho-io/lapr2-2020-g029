@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="363px" preserveAspectRatio="none" style="width:610px;height:363px;" version="1.1" viewBox="0 0 610 363" width="610px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="363px" preserveAspectRatio="none" style="width:624px;height:363px;" version="1.1" viewBox="0 0 624 363" width="624px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="f14h7j572fq3bq" width="300%" x="-1" y="-1">
+        <filter height="300%" id="fh6yt6o3daihc" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
@@ -8,43 +8,43 @@
         </filter>
     </defs>
     <g>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="162.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="566.5" y="119.6094"/>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="79.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="566.5" y="180.3125"/>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="162.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="46.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="580.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="63.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="580.5" y="196.6641"/>
         <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="88" x2="88" y1="87.6094" y2="278.0703"/>
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="571.5" x2="571.5" y1="87.6094" y2="278.0703"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="585.5" x2="585.5" y1="87.6094" y2="278.0703"/>
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="155" x="8" y="84.5332">Manager or Collaborator</text>
-        <ellipse cx="88.5" cy="13" fill="#FEFECE" filter="url(#f14h7j572fq3bq)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
-        <path d="M88.5,21 L88.5,48 M75.5,29 L101.5,29 M88.5,48 L75.5,63 M88.5,48 L101.5,63 " fill="#FEFECE" filter="url(#f14h7j572fq3bq)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <ellipse cx="88.5" cy="13" fill="#FEFECE" filter="url(#fh6yt6o3daihc)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M88.5,21 L88.5,48 M75.5,29 L101.5,29 M88.5,48 L75.5,63 M88.5,48 L101.5,63 " fill="#FEFECE" filter="url(#fh6yt6o3daihc)" style="stroke: #A80036; stroke-width: 2.0;"/>
         <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="155" x="8" y="291.6035">Manager or Collaborator</text>
-        <ellipse cx="88.5" cy="304.6797" fill="#FEFECE" filter="url(#f14h7j572fq3bq)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
-        <path d="M88.5,312.6797 L88.5,339.6797 M75.5,320.6797 L101.5,320.6797 M88.5,339.6797 L75.5,354.6797 M88.5,339.6797 L101.5,354.6797 " fill="#FEFECE" filter="url(#f14h7j572fq3bq)" style="stroke: #A80036; stroke-width: 2.0;"/>
-        <rect fill="#FEFECE" filter="url(#f14h7j572fq3bq)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="537.5" y="51"/>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="544.5" y="72.5332">:System</text>
-        <rect fill="#FEFECE" filter="url(#f14h7j572fq3bq)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="537.5" y="277.0703"/>
-        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="544.5" y="298.6035">:System</text>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="162.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="566.5" y="119.6094"/>
-        <rect fill="#FFFFFF" filter="url(#f14h7j572fq3bq)" height="79.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="566.5" y="180.3125"/>
-        <polygon fill="#A80036" points="554.5,115.6094,564.5,119.6094,554.5,123.6094,558.5,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="560.5" y1="119.6094" y2="119.6094"/>
+        <ellipse cx="88.5" cy="304.6797" fill="#FEFECE" filter="url(#fh6yt6o3daihc)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <path d="M88.5,312.6797 L88.5,339.6797 M75.5,320.6797 L101.5,320.6797 M88.5,339.6797 L75.5,354.6797 M88.5,339.6797 L101.5,354.6797 " fill="#FEFECE" filter="url(#fh6yt6o3daihc)" style="stroke: #A80036; stroke-width: 2.0;"/>
+        <rect fill="#FEFECE" filter="url(#fh6yt6o3daihc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="551.5" y="51"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="558.5" y="72.5332">:System</text>
+        <rect fill="#FEFECE" filter="url(#fh6yt6o3daihc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="551.5" y="277.0703"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="558.5" y="298.6035">:System</text>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="162.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="83.5" y="97.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="46.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="580.5" y="119.6094"/>
+        <rect fill="#FFFFFF" filter="url(#fh6yt6o3daihc)" height="63.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="580.5" y="196.6641"/>
+        <polygon fill="#A80036" points="568.5,115.6094,578.5,119.6094,568.5,123.6094,572.5,119.6094" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="574.5" y1="119.6094" y2="119.6094"/>
         <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="100.5" y="115.1045">1</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="376" x="111.5" y="115.1045">stars the visualize of overall statistics about task execution times</text>
-        <polygon fill="#A80036" points="104.5,145.9609,94.5,149.9609,104.5,153.9609,100.5,149.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="98.5" x2="570.5" y1="149.9609" y2="149.9609"/>
-        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="110.5" y="145.4561">2</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="315" x="121.5" y="145.4561">request sorting of the data (i.e.name or payment value)</text>
-        <polygon fill="#A80036" points="554.5,176.3125,564.5,180.3125,554.5,184.3125,558.5,180.3125" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="560.5" y1="180.3125" y2="180.3125"/>
-        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="100.5" y="175.8076">3</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="111.5" y="175.8076">enter the requested data</text>
-        <polygon fill="#A80036" points="99.5,255.6641,89.5,259.6641,99.5,263.6641,95.5,259.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="93.5" x2="570.5" y1="259.6641" y2="259.6641"/>
-        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="105.5" y="230.6865">4</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="420" x="116.5" y="206.1592">presents the information ( mean and the standard deviation of the delays,</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="397" x="120.5" y="222.5107">of each one and of all freelancers; histogram to analyze the delays of</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="430" x="120.5" y="238.8623">each one and all the freelancers working to the organization; mean and the</text>
-        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="420" x="116.5" y="255.2139">standard deviation of the payments made to each one of the freelancers).</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="318" x="111.5" y="115.1045">stars the visualize of overall statistics about freelancers</text>
+        <polygon fill="#A80036" points="104.5,161.9609,94.5,165.9609,104.5,169.9609,100.5,165.9609" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="98.5" x2="584.5" y1="165.9609" y2="165.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="110.5" y="153.6318">2</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="355" x="121.5" y="145.4561">shows the freelancers in the system that working in the same</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="448" x="125.5" y="161.8076">oganization of the user and requests the user to select which ones to include.</text>
+        <polygon fill="#A80036" points="568.5,192.6641,578.5,196.6641,568.5,200.6641,572.5,196.6641" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="93.5" x2="574.5" y1="196.6641" y2="196.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="100.5" y="192.1592">3</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="189" x="111.5" y="192.1592">selects more than one freelancer</text>
+        <polygon fill="#A80036" points="99.5,256.0156,89.5,260.0156,99.5,264.0156,95.5,260.0156" style="stroke: #A80036; stroke-width: 1.0;"/>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="93.5" x2="584.5" y1="260.0156" y2="260.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="105.5" y="238.8623">4</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="420" x="116.5" y="222.5107">presents the information ( mean and the standard deviation of the delays;</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="398" x="120.5" y="238.8623">histogram to analyze the delays ; mean and the standard deviation of</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="123" x="120.5" y="255.2139">the payments made )</text>
         <!--
 @startuml SSD
 autonumber
@@ -52,13 +52,13 @@ actor "Manager or Collaborator" as MC
 participant ":System" as S
 
 activate MC
-        MC -> S : stars the visualize of overall statistics about task execution times
+        MC -> S : stars the visualize of overall statistics about freelancers
         activate S
-        S - -> MC : request sorting of the data (i.e.name or payment value)
+        S - -> MC : shows the freelancers in the system that working in the same\n oganization of the user and requests the user to select which ones to include.
         deactivate S
-        MC -> S : enter the requested data
+        MC -> S : selects more than one freelancer
         activate S
-        S - -> MC : presents the information ( mean and the standard deviation of the delays,\n of each one and of all freelancers; histogram to analyze the delays of\n each one and all the freelancers working to the organization; mean and the \nstandard deviation of the payments made to each one of the freelancers).
+        S - -> MC : presents the information ( mean and the standard deviation of the delays;\n histogram to analyze the delays ; mean and the standard deviation of\n the payments made )
         deactivate S
 deactivate MC
 @enduml

@@ -4,13 +4,13 @@ actor "Manager or Collaborator" as MC
 participant ":System" as S
 
 activate MC
-        MC -> S : stars the visualize of overall statistics about task execution times
+        MC -> S : stars the visualize of overall statistics about freelancers
         activate S
-        S --> MC : request sorting of the data (i.e.name or payment value)
+        S --> MC : shows the freelancers in the system that working in the same\n oganization of the user and requests the user to select which ones to include.
         deactivate S
-        MC -> S : enter the requested data
+        MC -> S : selects more than one freelancer
         activate S
-        S --> MC : presents the information ( mean and the standard deviation of the delays,\n of each one and of all freelancers; histogram to analyze the delays of\n each one and all the freelancers working to the organization; mean and the \nstandard deviation of the payments made to each one of the freelancers).
+        S --> MC : presents the information ( mean and the standard deviation of the delays;\n histogram to analyze the delays ; mean and the standard deviation of\n the payments made )
         deactivate S
 deactivate MC
 @enduml
