@@ -43,7 +43,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @param description A textual description of the quality of the work done by the freelancer.
      * @return The new task.
      */
-    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
+    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, double hoursDelay, String description) {
         return new Transaction(freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
     }
 

@@ -9,13 +9,13 @@ import lapr.regist.RegistFreelancer;
 import java.time.LocalDate;
 
 public abstract class TestConstants {
-    private static final Freelancer[] testFreelancers;
-    private static final Administrator testAdmin;
-    private static final Manager testMan;
-    private static final Collaborator testCol;
-    private static final Organization testOrg;
-    private static final Task[] testTasks;
-    private static final Transaction[] testTransactions;
+    public static final Freelancer[] testFreelancers;
+    public static final Administrator testAdmin;
+    public static final Manager testMan;
+    public static final Collaborator testCol;
+    public static final Organization testOrg;
+    public static final Task[] testTasks;
+    public static final Transaction[] testTransactions;
     static {
         final AppPOE poe = AppPOE.getInstance();
         final App app = poe.getApp();

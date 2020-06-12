@@ -7,6 +7,7 @@ package lapr.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -20,7 +21,7 @@ public class TaskExecutionDetails implements Serializable {
     /**
      * The delay the freelancer took to execute the task.
      */
-    private int m_iDayHours;
+    private double m_dDayHours;
     /**
      * A textual description of the quality of the work done by the freelancer.
      */
@@ -32,19 +33,19 @@ public class TaskExecutionDetails implements Serializable {
      * @param hoursDelay The delay the freelancer took to execute the task. (in hours)
      * @param description A textual description of the quality of the work done by the freelancer.
      */
-    public TaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
+    public TaskExecutionDetails(LocalDate endDate, double hoursDelay, String description) {
         if(endDate == null) throw new IllegalArgumentException("Task Execution - End Date cannot be null");
         if(description == null || (description = description.trim()).isEmpty()) throw new IllegalArgumentException("Task Execution - Description cannot be empty");
         this.m_oEndDate = endDate;
-        this.m_iDayHours = hoursDelay;
+        this.m_dDayHours = hoursDelay;
         this.m_strDescription = description;
     }
 
     /**
      * @return The number of hours the execution was delayed.
      */
-    public int getHoursDelay() {
-        return m_iDayHours;
+    public double getHoursDelay() {
+        return m_dDayHours;
     }
 
     /**
@@ -52,5 +53,20 @@ public class TaskExecutionDetails implements Serializable {
      */
     public LocalDate getEndDate() {
         return m_oEndDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TaskExecutionDetails)) return false;
+        TaskExecutionDetails that = (TaskExecutionDetails) o;
+        return Double.compare(that.m_dDayHours, m_dDayHours) == 0 &&
+                m_oEndDate.equals(that.m_oEndDate) &&
+                m_strDescription.equals(that.m_strDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_oEndDate, m_dDayHours, m_strDescription);
     }
 }

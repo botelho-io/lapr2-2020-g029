@@ -69,7 +69,7 @@ public class EmailScheduler implements Serializable {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         // Check if date has passed
-        if(cal.after(Calendar.getInstance())) {
+        if(cal.before(Calendar.getInstance())) {
             // Date has passed, send next years date.
             cal.add(Calendar.YEAR, 1);
         }

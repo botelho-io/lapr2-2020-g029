@@ -59,7 +59,7 @@ public class Transaction implements Serializable {
      * @param description A textual description of the quality of the work done by the freelancer.
      * @return The new TaskExecutionDetails.
      */
-    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
+    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, double hoursDelay, String description) {
         return new TaskExecutionDetails(endDate, hoursDelay, description);
     }
 

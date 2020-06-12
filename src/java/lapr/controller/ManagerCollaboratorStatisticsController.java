@@ -43,7 +43,7 @@ public class ManagerCollaboratorStatisticsController {
      * @return The mean delay of the selected transactions.
      */
     public double getMeanDelays() {
-        int acc = 0;
+        double acc = 0;
         for(final Transaction t : trs)
             acc += t.getExecutionDetails().getHoursDelay();
         return ((double) acc) / getNumberTransactions();
@@ -93,7 +93,7 @@ public class ManagerCollaboratorStatisticsController {
     public Map<Integer, Integer> getHistogramDataDelays(double bucketSize) {
         final HashMap<Integer, Integer> map = new HashMap<>();
         for(final Transaction t : trs) {
-            final int delay = t.getExecutionDetails().getHoursDelay();
+            final double delay = t.getExecutionDetails().getHoursDelay();
             final int bucket = (int) (delay / bucketSize);
             if(!map.containsKey(bucket))
                 map.put(bucket, 1);
