@@ -19,4 +19,10 @@ class TaskExecutionDetailsTest {
         TaskExecutionDetails details = new TaskExecutionDetails(LocalDate.of(2020, 3, 3), 1.5, "Cool");
         assertEquals(details.getEndDate(), LocalDate.of(2020, 3, 3));
     }
+
+    @Test
+    void getDescription() {
+        TaskExecutionDetails details = new TaskExecutionDetails(LocalDate.of(2020, 3, 3), 1.5, "Cool");
+        assertEquals(details.getDescription(), "Cool");
+    }
 }
