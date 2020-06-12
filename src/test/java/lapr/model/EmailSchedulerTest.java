@@ -39,4 +39,14 @@ class EmailSchedulerTest {
 
         assertEquals(expected, observed);
     }
+
+    @Test
+    void resetTime()  {
+        EmailScheduler ps = new EmailScheduler();
+        EmailScheduler ps2 = new EmailScheduler();
+        ps2.resetTime();
+        Date expected = ps.getNextDate();
+        Date actual = ps2.getNextDate();
+        assertEquals(expected, actual);
+    }
 }

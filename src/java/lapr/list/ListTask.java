@@ -13,7 +13,7 @@ public class ListTask implements Serializable {
     /**
      * Setts task list.
      */
-    private List<Task> m_lstTask;
+    List<Task> m_lstTask;
 
     /**
      * Setts task list.
@@ -71,7 +71,7 @@ public class ListTask implements Serializable {
      * @param task to add.
      * @return True if the task was added, false otherwise.
      */
-    private boolean add(Task task) {
+    public boolean add(Task task) {
         return m_lstTask.add(task);
     }
 

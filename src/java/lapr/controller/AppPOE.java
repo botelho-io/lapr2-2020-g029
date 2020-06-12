@@ -91,7 +91,7 @@ public class AppPOE {
         getApp().getAuthFacade().registUser(adm);
 
         // Add test data TODO: Delete
-        TestConstants.addTestOrgTasksFreelancersAndTransactions();
+        // TestConstants.addTestOrgTasksFreelancersAndTransactions();
     }
 
     public Properties reloadAPIs() {

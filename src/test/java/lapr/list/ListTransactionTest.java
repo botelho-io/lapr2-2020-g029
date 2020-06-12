@@ -74,4 +74,9 @@ class ListTransactionTest{
         assertEquals(trs1, trs2);
         assertNotEquals(trs1, trs3);
     }
+
+    @Test
+    void emailAboutPayment() {
+        assertTrue(lt.emailAboutPayment());
+    }
 }
