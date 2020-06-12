@@ -36,4 +36,5 @@ public class Collaborator extends User {
     public Collaborator (String name, String email, String password){
         this(name, email, password, new UserRole[]{AppPOE.getInstance().getApp().getAuthFacade().getRole(Role.COLLABORATOR)});
     }
+
 }
