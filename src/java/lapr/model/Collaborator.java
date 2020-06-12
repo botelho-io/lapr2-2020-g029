@@ -37,18 +37,4 @@ public class Collaborator extends User {
         this(name, email, password, new UserRole[]{AppPOE.getInstance().getApp().getAuthFacade().getRole(Role.COLLABORATOR)});
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public String getEmail() {
-        return super.getEmail();
-    }
-
-    @Override
-    public String getM_strPassword() {
-        return super.getM_strPassword();
-    }
 }

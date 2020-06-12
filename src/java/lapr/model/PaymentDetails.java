@@ -1,6 +1,7 @@
 package lapr.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Represents the details of a payment made on a transaction.
@@ -38,5 +39,18 @@ public class PaymentDetails implements Serializable {
      */
     public void setPayed(boolean payed) {
         isPayed = payed;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PaymentDetails)) return false;
+        PaymentDetails that = (PaymentDetails) o;
+        return isPayed() == that.isPayed();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isPayed());
     }
 }

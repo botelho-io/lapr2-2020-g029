@@ -45,7 +45,7 @@ public class CreateTransactionController {
      * @param description A short description of the work.
      * @return True if the new transaction is valid, false otherwise.
      */
-    public boolean newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
+    public boolean newTransaction(Freelancer freelancer, Task task, LocalDate endDate, double hoursDelay, String description) {
         ltr = org.getListTransaction();
         tr = ltr.newTransaction(freelancer, task, endDate, hoursDelay, description);
         return ltr.validate(tr);

@@ -19,6 +19,14 @@ public abstract class TestConstants {
 
 
 
+    public static final Freelancer[] testFreelancers;
+    public static final Administrator testAdmin;
+    public static final Manager testMan;
+    public static final Collaborator testCol;
+    public static final Organization testOrg;
+    public static final Task[] testTasks;
+    public static final Transaction[] testTransactions;
+
     static {
         final AppPOE poe = AppPOE.getInstance();
         final App app = poe.getApp();

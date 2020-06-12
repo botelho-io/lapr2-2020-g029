@@ -1,9 +1,12 @@
 package lapr.model;
 
+import lapr.controller.AppPOE;
+import lapr.utils.TestConstants;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
@@ -38,4 +41,17 @@ class PaymentSchedulerTest {
     }
 
 
+    @Test
+    void resetTime() throws IOException {
+        Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
+        Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
+        AppPOE.restartInstance();
+        Organization org = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("DEFAULT", testMan, testCol);
+        PaymentScheduler ps = new PaymentScheduler(1, LocalTime.of(0,0), org);
+        PaymentScheduler ps2 = new PaymentScheduler(2, LocalTime.of(3,6), org);
+        ps2.resetTime(1, LocalTime.of(0, 0));
+        Date expected = ps.getNextDate();
+        Date actual = ps2.getNextDate();
+        assertEquals(expected, actual);
+    }
 }

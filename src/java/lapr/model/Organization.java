@@ -117,17 +117,17 @@ public class Organization implements Serializable {
     public Organization(String name, Manager manager, Collaborator collaborator) {
         if ((name == null) || (manager == null) || (collaborator == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
-            this.m_strName = name;
-            if(!validatesCollaborator(collaborator))
-                throw new IllegalStateException("Organization - Collaborator is not valid because it already exists.");
-            if(!validatesManager(manager))
-                throw new IllegalStateException("Organization - Manager is not valid because it already exists.");
-            if(!this.setManager(manager))
-                throw new IllegalStateException("Organization - Manager cannot be added into the system because it already exists.");
-            if(!this.setCollaborator(collaborator))
-                throw new IllegalStateException("Organization - Collaborator cannot be added into the system because it already exists.");
-            this.m_oListTransaction = new ListTransaction();
-            this.m_oListTask = new ListTask();
+        this.m_strName = name;
+        if(!validatesCollaborator(collaborator))
+            throw new IllegalStateException("Organization - Collaborator is not valid because it already exists.");
+        if(!validatesManager(manager))
+            throw new IllegalStateException("Organization - Manager is not valid because it already exists.");
+        if(!this.setManager(manager))
+            throw new IllegalStateException("Organization - Manager cannot be added into the system because it already exists.");
+        if(!this.setCollaborator(collaborator))
+            throw new IllegalStateException("Organization - Collaborator cannot be added into the system because it already exists.");
+        this.m_oListTransaction = new ListTransaction();
+        this.m_oListTask = new ListTask();
     }
     /**
      * Build a new instance of collaborator receiving the name, email and password.
@@ -209,7 +209,7 @@ public class Organization implements Serializable {
      * @param timeOfDay The time of day to make the payments.
      * @return True if the schedule is valid, false otherwise.
      */
-    public boolean validatesPaymentScheduler(int dayMonth, LocalTime timeOfDay) {
+    public static boolean validatesPaymentScheduler(int dayMonth, LocalTime timeOfDay) {
         return dayMonth >= 1 && dayMonth <= 28;
     }
 }
