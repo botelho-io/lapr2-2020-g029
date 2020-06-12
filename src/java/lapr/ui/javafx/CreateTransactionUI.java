@@ -6,14 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.InputMethodEvent;
 import javafx.stage.Stage;
 import lapr.controller.CreateTransactionController;
 import lapr.model.Freelancer;
 import lapr.model.Task;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
-import lapr.ui.javafx.util.MainUI;
 
 import java.util.*;
 

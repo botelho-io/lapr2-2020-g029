@@ -56,42 +56,13 @@ public class User implements Serializable  {
         this.m_strEmail = email;
     }
 
-    public String getM_strPassword() {
-        return m_strPassword;
-    }
-
-    public void setM_strPassword(String m_strPassword) {
-        this.m_strPassword = m_strPassword;
-    }
-
-    public boolean hasEmail(String email)
-    {
+    public boolean hasEmail(String email) {
         return this.m_strEmail.equals(email);
     }
 
     public boolean hasPassword(String strPwd)
     {
         return this.m_strPassword.equals(strPwd);
-    }
-
-    public boolean addRole(UserRole role)
-    {
-        if (role != null)
-            return this.m_lstRoles.add(role);
-        return false;
-    }
-
-
-    public boolean removeRole(UserRole role)
-    {
-        if (role != null)
-            return this.m_lstRoles.remove(role);
-        return false;
-    }
-
-    public boolean hasRole(UserRole role)
-    {
-        return this.m_lstRoles.contains(role);
     }
 
     public boolean hasRole(Role oRole)

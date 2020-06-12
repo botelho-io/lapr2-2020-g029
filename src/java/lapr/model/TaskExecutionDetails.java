@@ -7,6 +7,7 @@ package lapr.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -59,5 +60,20 @@ public class TaskExecutionDetails implements Serializable {
      */
     public String getDescription() {
         return this.m_strDescription;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TaskExecutionDetails)) return false;
+        TaskExecutionDetails that = (TaskExecutionDetails) o;
+        return Double.compare(that.m_dDelayHours, m_dDelayHours) == 0 &&
+                m_oEndDate.equals(that.m_oEndDate) &&
+                m_strDescription.equals(that.m_strDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_oEndDate, m_dDelayHours, m_strDescription);
     }
 }
