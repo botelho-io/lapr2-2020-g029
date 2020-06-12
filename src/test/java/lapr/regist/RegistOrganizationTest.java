@@ -62,13 +62,13 @@ class RegistOrganizationTest {
 
         // Add transactions
         testTransactions = new Transaction[]{
-                ListTransaction.newTransaction(testFreelancers[0], testTasks[3], LocalDate.of(2021, 1, 5), 0, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[1], testTasks[4], LocalDate.of(2021, 2, 4), 1, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[2], testTasks[5], LocalDate.of(2021, 3, 3), 9, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[2], testTasks[6], LocalDate.of(2020, 4, 2), 0, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[7], LocalDate.of(2020, 5, 1), 3, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[8], LocalDate.of(2020, 6, 9), 4, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[9], LocalDate.of(2020, 7, 8), 4, "Good Job :)")
+                ListTransaction.newTransaction("ID1", testFreelancers[0], testTasks[3], LocalDate.of(2021, 1, 5), 0, "Good Job :)"),
+                ListTransaction.newTransaction("ID2", testFreelancers[1], testTasks[4], LocalDate.of(2021, 2, 4), 1, "Good Job :)"),
+                ListTransaction.newTransaction("ID3", testFreelancers[2], testTasks[5], LocalDate.of(2021, 3, 3), 9, "Good Job :)"),
+                ListTransaction.newTransaction("ID4", testFreelancers[2], testTasks[6], LocalDate.of(2020, 4, 2), 0, "Good Job :)"),
+                ListTransaction.newTransaction("ID5", testFreelancers[3], testTasks[7], LocalDate.of(2020, 5, 1), 3, "Good Job :)"),
+                ListTransaction.newTransaction("ID6", testFreelancers[3], testTasks[8], LocalDate.of(2020, 6, 9), 4, "Good Job :)"),
+                ListTransaction.newTransaction("ID7", testFreelancers[3], testTasks[9], LocalDate.of(2020, 7, 8), 4, "Good Job :)")
         };
         for (Transaction t : testTransactions) {
             testOrg.getListTransaction().addTransaction(t);

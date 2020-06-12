@@ -34,7 +34,7 @@ class TransactionTest {
         org = app.getRegistOrganization().newOrganization("DEFAULT", testMan, testCol);
         org.getListTask().registTask(tsk1);
         org.getListTask().registTask(tsk2);
-        trs = ListTransaction.newTransaction(fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "...");
+        trs = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "...");
         org.getListTransaction().addTransaction(trs);
     }
 

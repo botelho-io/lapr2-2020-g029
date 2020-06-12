@@ -21,9 +21,9 @@ class EmailSchedulerTest {
         do {
             t = Calendar.getInstance();
         } while (   t.get(Calendar.MONTH) == Calendar.DECEMBER  &&
-                t.get(Calendar.DAY_OF_MONTH) == t.getActualMaximum(Calendar.DAY_OF_MONTH) &&
-                t.get(Calendar.HOUR_OF_DAY) == 10 &&
-                t.get(Calendar.MINUTE) == 0 );
+                    t.get(Calendar.DAY_OF_MONTH) == t.getActualMaximum(Calendar.DAY_OF_MONTH) &&
+                    t.get(Calendar.HOUR_OF_DAY) == 10 &&
+                    t.get(Calendar.MINUTE) == 0 );
 
 
         t.set(Calendar.DAY_OF_MONTH, t.getActualMaximum(Calendar.DAY_OF_MONTH)+1);
@@ -31,6 +31,7 @@ class EmailSchedulerTest {
         t.set(Calendar.HOUR_OF_DAY, 10);
         t.set(Calendar.MINUTE, 0);
         t.set(Calendar.SECOND, 0);
+        t.set(Calendar.MILLISECOND, 0);
 
         Date expected = t.getTime();
 

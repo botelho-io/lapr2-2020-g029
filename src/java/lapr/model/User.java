@@ -96,10 +96,7 @@ public class User implements Serializable  {
         if (this == o)
             return true;
         // null check
-        if (o == null)
-            return false;
-        // type check and cast
-        if (getClass() != o.getClass())
+        if (o == null || getClass() != o.getClass())
             return false;
         // field comparison
         User obj = (User) o;

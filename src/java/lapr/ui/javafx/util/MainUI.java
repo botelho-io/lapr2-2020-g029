@@ -35,13 +35,14 @@ public class MainUI {
     }
 
     public void start() {
-        AppPOE.getInstance().getApp().getAuthFacade().doLogin("colab@dei.pt", "password");
+        // TODO: Delete
+        //AppPOE.getInstance().getApp().getAuthFacade().doLogin("colab@dei.pt", "password");
 
         // Load data from file
-        //openUC(FXBridge.UC.UC12);
+        openUC(FXBridge.UC.UC12);
 
         // Login
-        //openUC(FXBridge.UC.LOGIN);
+        openUC(FXBridge.UC.LOGIN);
         // Was login successful?
         final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         if(su == null || (!su.isLoggedIn())) {

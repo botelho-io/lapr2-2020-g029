@@ -35,7 +35,7 @@ class TaskTest {
 
     @Test
     void getExecutor() {
-        org.getListTransaction().addTransaction(ListTransaction.newTransaction(fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "..."));
+        org.getListTransaction().addTransaction(ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "..."));
         assertEquals(tsk1.getExecutor(), fre);
         assertNull(tsk2.getExecutor());
     }
@@ -77,5 +77,10 @@ class TaskTest {
     @Test
     void getDescription() {
         assertEquals(tsk1.getDescription(), "A Test task 1");
+    }
+
+    @Test
+    void getCategory() {
+        assertEquals(tsk1.getCategory(), "TEST");
     }
 }

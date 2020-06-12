@@ -37,9 +37,9 @@ class ListTransactionTest{
         Task tsk2 = ListTask.newTask("id2", "desc2", 100, 5, "Example");
         lt = org.getListTransaction();
         fre = rfre.newFreelancer("André Botelho", Expertise.SENIOR.name(), "fre@mail.com", "7238648762", "6248736", "dshfsk", "Portugal");
-        trs1 = ListTransaction.newTransaction(fre, tsk1, LocalDate.now(), 1, "Good Job!");
-        trs2 = ListTransaction.newTransaction(fre, tsk1, LocalDate.now(), 2, "Bad Job!");
-        trs3 = ListTransaction.newTransaction(fre, tsk2, LocalDate.now(), 2, "Bad Job!");
+        trs1 = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.now(), 1, "Good Job!");
+        trs2 = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.now(), 2, "Bad Job!");
+        trs3 = ListTransaction.newTransaction("ID3", fre, tsk2, LocalDate.now(), 2, "Bad Job!");
         lt.addTransaction(trs1);
     }
 
@@ -50,7 +50,7 @@ class ListTransactionTest{
     @Test
     void newTransaction() {
         Transaction expected = trs1;
-        Transaction result = ListTransaction.newTransaction(fre, tsk1, LocalDate.now(), 1, "Good Job!");
+        Transaction result = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.now(), 1, "Good Job!");
         assertEquals(expected, result);
     }
 
@@ -65,7 +65,7 @@ class ListTransactionTest{
         assertFalse(lt.addTransaction(trs2)); // same id as trs1
         assertTrue(lt.addTransaction(trs3)); // unique id
         Task tsk = ListTask.newTask("id2", "desc4 :)", 10, 2, "Example2");
-        Transaction trs4 = ListTransaction.newTransaction(fre, tsk, LocalDate.now(), 1, "Good Job!");
+        Transaction trs4 = ListTransaction.newTransaction("ID4", fre, tsk, LocalDate.now(), 1, "Good Job!");
         assertFalse(lt.addTransaction(trs3)); // Same ID as trs3
     }
 

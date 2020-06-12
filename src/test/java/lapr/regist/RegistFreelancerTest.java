@@ -59,6 +59,12 @@ class RegistFreelancerTest {
         Freelancer expected = new Freelancer("FF1", "Fre Fre", Expertise.SENIOR, "mail@mail.com", "123", "123", "add", "Pt");
         Freelancer actual = new RegistFreelancer().newFreelancer("Fre Fre", " SENIOR ", "mail@mail.com", "123", "123", "add", "Pt");
         assertEquals(expected, actual);
+        try {
+            new RegistFreelancer().newFreelancer("Fre Fre", " dskljsdljsdlkfsdjlks ", "mail@mail.com", "123", "123", "add", "Pt");
+            assertTrue(false);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
     }
 
     @Test
@@ -83,5 +89,11 @@ class RegistFreelancerTest {
         assertTrue(fres.contains(f3));
         assertFalse(fres.contains(f4));
         assertEquals(fres.size(), 2);
+    }
+
+    @Test
+    void getEqualFreelancer() {
+        assertSame(rf.getEqualFreelancer(f3), f1);
+        assertNull(rf.getEqualFreelancer(f4));
     }
 }
