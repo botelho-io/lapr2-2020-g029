@@ -29,7 +29,7 @@ class ListTransactionTest{
         App app = AppPOE.getInstance().getApp();
         Manager m = Organization.newManager("manager", "manager@mail.com", "password");
         Collaborator c = Organization.newCollaborator("colab", "colab@mail.com", "password");
-        Organization org = app.getRegistOrganization().newOrganization("Org", m, c);
+        Organization org = app.getRegistOrganization().newOrganization("123", "Org", m, c);
         //RegistOrganization rorg = app.getRegistOrganization();
         //rorg.add(org);
         rfre = app.getRegistFreelancer();

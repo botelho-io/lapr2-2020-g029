@@ -28,10 +28,11 @@ public class RegistOrganization implements Iterable<Organization>, Serializable 
      * @param name of the collaborator.
      * @param manager of the organization
      * @param collaborator  of the organization.
+     * @param iban The IBAN of the organization.
      * @return The new organization.
      */
-    public Organization newOrganization(String name, Manager manager, Collaborator collaborator) {
-        return new Organization(name, manager, collaborator);
+    public Organization newOrganization(String iban, String name, Manager manager, Collaborator collaborator) {
+        return new Organization(iban, name, manager, collaborator);
     }
 
     /**

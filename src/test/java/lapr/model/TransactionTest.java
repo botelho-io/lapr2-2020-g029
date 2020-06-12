@@ -1,5 +1,6 @@
 package lapr.model;
 
+import lapr.api.PaymentAPI;
 import lapr.controller.AppPOE;
 import lapr.list.ListTask;
 import lapr.list.ListTransaction;
@@ -29,9 +30,18 @@ class TransactionTest {
         fre = new Freelancer("FJ1", "Free Joe1", Expertise.JUNIOR, "fre1@dei.pt", "28739247891", "8937431", "Address1", "Germany");
         AppPOE.restartInstance();
         App app = AppPOE.getInstance().getApp();
+        app.setAPIs(app.getEmailAPI(), app.getMonetaryConversionAPI(), new PaymentAPI() {
+            @Override
+            public boolean payTo(String freelancerId, String freelancerIBAN, String taskId, String taskDescription, Double eur, Double nativeCurrency) {
+                return true;
+            }
+            @Override
+            public void close() throws IOException {
+            }
+        }, app.getPswGeneratorAPI());
         Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
         Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
-        org = app.getRegistOrganization().newOrganization("DEFAULT", testMan, testCol);
+        org = app.getRegistOrganization().newOrganization("123", "DEFAULT", testMan, testCol);
         org.getListTask().registTask(tsk1);
         org.getListTask().registTask(tsk2);
         trs = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "...");

@@ -12,6 +12,7 @@ import lapr.list.ListTask;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import java.time.LocalTime;
@@ -22,10 +23,13 @@ import java.time.LocalTime;
 public class Organization implements Serializable {
 
     /**
+     * The International Bank Account Number of the organization.
+     */
+    private final String m_strIban;
+    /**
      * Name of the organization.
      */
     private String m_strName;
-
     /**
      * Responsible for making payments on unpaid transactions.
      */
@@ -113,11 +117,13 @@ public class Organization implements Serializable {
      * @param name of the collaborator.
      * @param manager of the organization
      * @param collaborator  of the organization.
+     * @param iban The IBAN of the organization.
      */
-    public Organization(String name, Manager manager, Collaborator collaborator) {
-        if ((name == null) || (manager == null) || (collaborator == null))
+    public Organization(String iban, String name, Manager manager, Collaborator collaborator) {
+        if ((name == null) || (manager == null) || (collaborator == null) || (iban == null))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
         this.m_strName = name;
+        this.m_strIban = iban;
         if(!validatesCollaborator(collaborator))
             throw new IllegalStateException("Organization - Collaborator is not valid because it already exists.");
         if(!validatesManager(manager))
@@ -211,5 +217,18 @@ public class Organization implements Serializable {
      */
     public static boolean validatesPaymentScheduler(int dayMonth, LocalTime timeOfDay) {
         return dayMonth >= 1 && dayMonth <= 28;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Organization)) return false;
+        Organization that = (Organization) o;
+        return m_strIban.equals(that.m_strIban);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(m_strIban);
     }
 }

@@ -15,6 +15,12 @@
                   <TextField fx:id="fieldOrganization" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
+            <HBox layoutX="10.0" layoutY="63.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="175.0" text="IBAN" />
+                  <TextField fx:id="fieldOrganizationIBAN" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
             <Separator prefWidth="200.0" />
             <HBox layoutX="10.0" layoutY="82.0" spacing="10.0">
                <children>
