@@ -50,13 +50,13 @@ public abstract class TestConstants {
 
         // Add transactions
         testTransactions = new Transaction[]{
-                ListTransaction.newTransaction(testFreelancers[0], testTasks[3], LocalDate.now(), 0, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[1], testTasks[4], LocalDate.now(), 1, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[2], testTasks[5], LocalDate.now(), 9, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[2], testTasks[6], LocalDate.now(), 0, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[7], LocalDate.now(), 3, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[8], LocalDate.now(), 4, "Good Job :)"),
-                ListTransaction.newTransaction(testFreelancers[3], testTasks[9], LocalDate.now(), 4, "Good Job :)")
+                ListTransaction.newTransaction("TR1", testFreelancers[0], testTasks[3], LocalDate.now(), 0, "Good Job :)"),
+                ListTransaction.newTransaction("TR2", testFreelancers[1], testTasks[4], LocalDate.now(), 1, "Good Job :)"),
+                ListTransaction.newTransaction("TR3", testFreelancers[2], testTasks[5], LocalDate.now(), 9, "Good Job :)"),
+                ListTransaction.newTransaction("TR4", testFreelancers[2], testTasks[6], LocalDate.now(), 0, "Good Job :)"),
+                ListTransaction.newTransaction("TR5", testFreelancers[3], testTasks[7], LocalDate.now(), 3, "Good Job :)"),
+                ListTransaction.newTransaction("TR6", testFreelancers[3], testTasks[8], LocalDate.now(), 4, "Good Job :)"),
+                ListTransaction.newTransaction("TR7", testFreelancers[3], testTasks[9], LocalDate.now(), 4, "Good Job :)")
         };
     }
 

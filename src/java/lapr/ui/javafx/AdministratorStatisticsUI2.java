@@ -12,8 +12,8 @@ import javafx.stage.Stage;
 import lapr.controller.AdministratorStatisticsController;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
-import lapr.utils.GenEur;
-import lapr.utils.HourConverter;
+import lapr.ui.javafx.util.GenEur;
+import lapr.ui.javafx.util.HourConverter;
 
 import java.util.Collections;
 import java.util.Map;
@@ -49,7 +49,7 @@ public class AdministratorStatisticsUI2 {
     public void initialize() {
         if(!(FXBridge.param instanceof AdministratorStatisticsController)) {
             HelperUI.alert("Error on FXBridge");
-            quit(null);
+            HelperUI.initializeExit();
         } else {
             ctr = (AdministratorStatisticsController) FXBridge.param;
             PspBS.setValueFactory(new GenEur(1, 4, 25));

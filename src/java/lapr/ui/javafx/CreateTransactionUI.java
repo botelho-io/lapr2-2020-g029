@@ -34,6 +34,8 @@ public class CreateTransactionUI {
     public TextArea taDesc;
     @FXML
     public Label lblValue;
+    @FXML
+    public TextField tfId;
 
     private Map<String, Task> name_task;
     private Map<String, Freelancer> name_freelancer;
@@ -46,6 +48,7 @@ public class CreateTransactionUI {
         final SpinnerValueFactory<Integer> vFac = new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE,Integer.MAX_VALUE, 0);
         spHours.setValueFactory(vFac);
         taDesc.setText("");
+        tfId.setText("");
         ChangeListener<Object> cl = new ChangeListener<Object>() {
             @Override public void changed(ObservableValue<? extends Object> obs, Object o, Object o1) {
                 updateValue();
@@ -109,7 +112,7 @@ public class CreateTransactionUI {
             if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.\nPlease, try again.");
             tsk = name_task.get(cbTask.getValue());
             if (tsk == null) throw new IllegalStateException("An illegal task was chosen.\nPlease, try again.");
-            boolean nt = controller.newTransaction(fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
+            boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
             if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.\nPlease, try again.");
             boolean ad = controller.addTransaction();
             if (!ad) throw new IllegalStateException("An error occurred while adding the transaction to the register.\nPlease, try again.");
@@ -133,7 +136,7 @@ public class CreateTransactionUI {
             if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.");
             tsk = name_task.get(cbTask.getValue());
             if (tsk == null) throw new IllegalStateException("An illegal task was chosen.");
-            boolean nt = controller.newTransaction(fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
+            boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
             if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.");
             final String msg = String.format("%.3f€", controller.getAmount());
             lblValue.setText(msg);

@@ -39,18 +39,18 @@ public class CreateTaskController {
      * Build an instance of organization receiving the name, manager and collaborator.
      * @param id of the task.
      * @param description of the task.
-     * @param m_iDurationInHours duration it took to complete the task.
+     * @param durationInHours duration it took to complete the task.
      * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
      * @param category he category this task is in.
      * @return The new task.
      */
-    public boolean newTask (String id, String description, int m_iDurationInHours, double m_dCostPerHourOfJuniorEur, String category) {
+    public boolean newTask (String id, String description, double durationInHours, double m_dCostPerHourOfJuniorEur, String category) {
         try {
             this.autorizacao = this.plataforma.getAuthFacade();
             this.sessao = this.autorizacao.getCurrentSession();
             this.emailUser = this.sessao.getEmailUser();
             this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);
-            this.task = ListTask.newTask( id, description, m_iDurationInHours, m_dCostPerHourOfJuniorEur, category);
+            this.task = ListTask.newTask( id, description, durationInHours, m_dCostPerHourOfJuniorEur, category);
             return this.organization.getListTask().validatesTask(this.task);
         } catch(RuntimeException ex){
             System.out.println(ex.getMessage());

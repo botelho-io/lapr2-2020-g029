@@ -35,7 +35,7 @@ public class MainUI {
     }
 
     public void start() {
-        AppPOE.getInstance().getApp().getAuthFacade().doLogin("man@dei.pt", "password");
+        AppPOE.getInstance().getApp().getAuthFacade().doLogin("colab@dei.pt", "password");
 
         // Load data from file
         //openUC(FXBridge.UC.UC12);

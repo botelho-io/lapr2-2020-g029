@@ -1,4 +1,4 @@
-package lapr.utils;
+package lapr.ui.javafx.util;
 
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.util.StringConverter;

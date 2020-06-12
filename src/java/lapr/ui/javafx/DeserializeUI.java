@@ -20,7 +20,7 @@ public class DeserializeUI {
         ctr = new DeserializeController();
         if(!ctr.hasDataFile()) {
             // No data file to deserialize.
-            quit();
+            HelperUI.initializeExit();
         }
     }
 

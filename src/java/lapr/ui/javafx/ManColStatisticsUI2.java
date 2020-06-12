@@ -9,16 +9,10 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import lapr.controller.AdministratorStatisticsController;
 import lapr.controller.ManagerCollaboratorStatisticsController;
 import lapr.model.Freelancer;
-import lapr.ui.javafx.util.FXBridge;
-import lapr.ui.javafx.util.HelperUI;
-import lapr.utils.GenEur;
-import lapr.utils.HourConverter;
+import lapr.ui.javafx.util.*;
 
-import java.io.FileReader;
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;
@@ -46,68 +40,26 @@ public class ManColStatisticsUI2 {
 
     // UC7
     @FXML
-    public TableColumn<TableData, String> tcId;
+    public TableColumn<Freelancer, String> tcId;
     @FXML
-    public TableColumn<TableData, String> tcName;
+    public TableColumn<Freelancer, String> tcName;
     @FXML
-    public TableColumn<TableData, String> tcCountry;
+    public TableColumn<Freelancer, String> tcCountry;
     @FXML
-    public TableColumn<TableData, String> tcEmail;
+    public TableColumn<Freelancer, String> tcEmail;
     @FXML
-    public TableColumn<TableData, String> tcExpertise;
+    public TableColumn<Freelancer, String> tcExpertise;
     @FXML
-    public TableColumn<TableData, Double> tcPayment;
+    public TableColumn<Freelancer, Double> tcPayment;
     @FXML
-    public TableView<TableData> table;
-
-    public class TableData {
-        final String id;
-        final String name;
-        final String country;
-        final String email;
-        final String expertise;
-        final Double payment;
-
-        public TableData(String id, String name, String country, String email, String expertise, Double payment) {
-            this.id = id;
-            this.name = name;
-            this.country = country;
-            this.email = email;
-            this.expertise = expertise;
-            this.payment = payment;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getCountry() {
-            return country;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public String getExpertise() {
-            return expertise;
-        }
-
-        public Double getPayment() {
-            return payment;
-        }
-    }
+    public TableView<Freelancer> table;
 
     ManagerCollaboratorStatisticsController ctr;
     @FXML
     public void initialize() {
         if(!(FXBridge.param instanceof ManagerCollaboratorStatisticsController)) {
             HelperUI.alert("Error on FXBridge");
-            quit(null);
+            HelperUI.initializeExit();
         } else {
             ctr = (ManagerCollaboratorStatisticsController) FXBridge.param;
             PspBS.setValueFactory(new GenEur(1, 4, 25));
@@ -121,27 +73,15 @@ public class ManColStatisticsUI2 {
             applyBucketSizeDelays(null);
             applyBucketSizePayments(null);
 
-            tcCountry.setCellValueFactory( new PropertyValueFactory<>("country"));
-            tcEmail.setCellValueFactory( new PropertyValueFactory<>("email"));
-            tcExpertise.setCellValueFactory( new PropertyValueFactory<>("expertise"));
-            tcId.setCellValueFactory( new PropertyValueFactory<>("id"));
-            tcName.setCellValueFactory( new PropertyValueFactory<>("name"));
-            tcPayment.setCellValueFactory( new PropertyValueFactory<>("payment"));
+            SetCellValueFactory.set(tcCountry, (Freelancer::getCountry));
+            SetCellValueFactory.set(tcEmail, (Freelancer::getEmail));
+            SetCellValueFactory.set(tcExpertise, (freelancer -> freelancer.getLevelOfExpertise().name()));
+            SetCellValueFactory.set(tcId, (Freelancer::getId));
+            SetCellValueFactory.set(tcName, (Freelancer::getName));
+            SetCellValueFactory.set(tcPayment, (freelancer -> ctr.getPaymentOf(freelancer)));
 
-            final ObservableList<TableData> data = FXCollections.observableArrayList();
+            table.setItems(FXCollections.observableArrayList(ctr.getFreelancers()));
 
-            for(final Freelancer f : ctr.getFreelancers()) {
-                final TableData td = new TableData(
-                        f.getId(),
-                        f.getName(),
-                        f.getCountry(),
-                        f.getEmail(),
-                        f.getLevelOfExpertise().name(),
-                        ctr.getPaymentOf(f)
-                );
-                data.add(td);
-            }
-            table.setItems(data);
         }
     }
     @FXML

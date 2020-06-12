@@ -68,13 +68,13 @@ public class SendEmailTask extends TimerTask implements Serializable {
         for(final Freelancer fre : fre_trs.keySet()) {
             // statistics for the freelancer
             final int transactions;
-            int delayDays = 0;
+            double delayDays = 0;
             int delayedTransactions = 0;
 
             // Calculate freelancer statistics
             final List<Transaction> transactionList = fre_trs.get(fre);
             for(final Transaction trs : transactionList) {
-                final int delay = trs.getExecutionDetails().getHoursDelay();
+                final double delay = trs.getExecutionDetails().getHoursDelay();
                 delayDays += delay;
                 if(delay > 0) delayedTransactions++;
             }

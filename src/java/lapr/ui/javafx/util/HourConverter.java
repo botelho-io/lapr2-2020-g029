@@ -1,4 +1,4 @@
-package lapr.utils;
+package lapr.ui.javafx.util;
 
 import javafx.util.StringConverter;
 

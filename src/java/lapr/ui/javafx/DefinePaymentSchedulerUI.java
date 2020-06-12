@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import lapr.controller.DefinePaymentSchedulerController;
 import lapr.ui.javafx.util.HelperUI;
-import lapr.utils.HourConverter;
 
 import java.time.LocalTime;
 

@@ -13,13 +13,13 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     /**
      * The list of freelancers
      */
-    Set<Freelancer> m_setFreelancer;
+    List<Freelancer> m_setFreelancer;
 
     /**
      * Constructor.
      */
     public RegistFreelancer() {
-        m_setFreelancer = new HashSet<>();
+        m_setFreelancer = new ArrayList<>();
     }
 
     /**
@@ -125,5 +125,18 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     @Override
     public Iterator<Freelancer> iterator() {
         return this.m_setFreelancer.iterator();
+    }
+
+    /**
+     * Searches for a freelancer.
+     * @param fre Get a freelancer that equal fre.
+     * @return The freelancer that will equal fre.
+     */
+    public Freelancer getEqualFreelancer(Freelancer fre) {
+        for (Freelancer f : this) {
+            if(f.equals(fre))
+                return f;
+        }
+        return null;
     }
 }
