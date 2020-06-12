@@ -58,7 +58,7 @@ class OrganizationTest {
         Manager manager = Organization.newManager("Man Joe", "man@dei.pt", "password");
         //AppPOE.getInstance().getApp().getAuthFacade().registUser(manager);
         //AppPOE.getInstance().getApp().getAuthFacade().registUser(col);
-        assertTrue(new Organization("Name", manager, col).validateOrganization());
+        assertTrue(new Organization("123", "Name", manager, col).validateOrganization());
     }
 
     @Test

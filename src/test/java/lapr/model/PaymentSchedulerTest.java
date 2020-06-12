@@ -46,7 +46,7 @@ class PaymentSchedulerTest {
         Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
         Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
         AppPOE.restartInstance();
-        Organization org = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("DEFAULT", testMan, testCol);
+        Organization org = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("123", "DEFAULT", testMan, testCol);
         PaymentScheduler ps = new PaymentScheduler(1, LocalTime.of(0,0), org);
         PaymentScheduler ps2 = new PaymentScheduler(2, LocalTime.of(3,6), org);
         ps2.resetTime(1, LocalTime.of(0, 0));

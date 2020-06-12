@@ -32,7 +32,7 @@ public abstract class TestConstants {
         testAdmin = new Administrator("Admin Joe", "admin@dei.pt", "password");
         testMan = new Manager("Man Joe", "man@dei.pt", "password");
         testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
-        testOrg = app.getRegistOrganization().newOrganization("DEFAULT", testMan, testCol);
+        testOrg = app.getRegistOrganization().newOrganization("123", "DEFAULT", testMan, testCol);
 
         // Add tasks
         testTasks = new Task[]{

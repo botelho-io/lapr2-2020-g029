@@ -60,9 +60,10 @@ public class CreateOrganizationController {
      * @param strEmailM the email of the manager.
      * @param nameC the name of the collaborator.
      * @param strEmailC the email of the collaborator.
+     * @param iban The IBAN of the organization.
      * @return True if all parameter are valid, false otherwise.
      */
-    public boolean newOrganization(String name, String nameM, String strEmailM, String nameC, String strEmailC) {
+    public boolean newOrganization(String iban, String name, String nameM, String strEmailM, String nameC, String strEmailC) {
         m_strEmailM = strEmailM;
         m_strEmailC = strEmailC;
         m_strManagerPassword = m_oPswrd.generatePassword(m_strEmailM);
@@ -73,7 +74,7 @@ public class CreateOrganizationController {
         Manager m = Organization.newManager(nameM, m_strEmailM, m_strManagerPassword);
         if(!Organization.validatesManager(m))
             throw new IllegalArgumentException("Manager already registered");
-        m_oOrg = m_oRegist.newOrganization(name, m, c);
+        m_oOrg = m_oRegist.newOrganization(iban, name, m, c);
         return m_oRegist.validateOrganization(m_oOrg);
     }
 

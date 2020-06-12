@@ -26,6 +26,8 @@ public class CreateOrganizationUI {
     public Button btnAdd;
     @FXML
     public Button btnCancel;
+    @FXML
+    public TextField fieldOrganizationIBAN;
 
     CreateOrganizationController controller;
     @FXML
@@ -41,7 +43,8 @@ public class CreateOrganizationUI {
             final String mailC = validateString(fieldEmailCollaborator.getText() , "mailC" );
             final String nameM = validateString(fieldNameManager.getText(), "nameM" );
             final String mailM = validateString(fieldEmailManager.getText() , "mailM");
-            final boolean succsess = controller.newOrganization(name, nameM, mailM, nameC, mailC);
+            final String iban = validateString(fieldOrganizationIBAN.getText(), "IBAN");
+            final boolean succsess = controller.newOrganization(iban, name, nameM, mailM, nameC, mailC);
             if(!succsess) throw new IllegalStateException("Organization with wrong data!!!");
             final boolean succsess2 = controller.registOrganizacation();
             if(!succsess2) throw new IllegalStateException("Organization with wrong data!!!");
