@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="670.0" prefWidth="1174.0" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lapr.ui.javafx.LoadHistoricalTransactionFileUI">
+    <children>
+        <Label text="Loaded Data">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font></Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.89" prefHeight="16.0" prefWidth="498.0" text="Bellow Is All The Data That Was Loaded From The Files" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10.0" top="-15.0" />
+            </VBox.margin>
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font></Label>
+        <TableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="30.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="66.0" text="Transaction">
+               <columns>
+                      <TableColumn fx:id="transId" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="27.20001220703125" text="ID" />
+                      <TableColumn maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="371.1999931335449" text="Task">
+                     <columns>
+                        <TableColumn fx:id="tId" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="27.99996566772461" text="ID" />
+                        <TableColumn fx:id="tDesc" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="76.80001831054688" text="Description" />
+                        <TableColumn fx:id="tDur" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="72.79998779296875" text="Duration" />
+                        <TableColumn fx:id="tCos" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="59.20002746582031" text="Cost" />
+                        <TableColumn fx:id="tCat" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="68.79998779296875" text="Category" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="215.20001220703125" text="Task Execution">
+                     <columns>
+                        <TableColumn fx:id="eFinDate" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="73.5999755859375" text="Finish Date" />
+                        <TableColumn fx:id="eDel" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="75.99993896484375" text="Delay (hr)" />
+                        <TableColumn fx:id="eDesc" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="130.0" text="Description of Work" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="515.9999389648438" text="Executor Freelancer">
+                     <columns>
+                        <TableColumn fx:id="fId" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="38.39996337890625" text="ID" />
+                        <TableColumn fx:id="fName" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="45.60003662109375" text="Name" />
+                        <TableColumn fx:id="fExp" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="72.0" text="Expertise" />
+                        <TableColumn fx:id="fMail" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="61.59991455078125" text="Email" />
+                        <TableColumn fx:id="fNif" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="60.800048828125" text="NIF" />
+                        <TableColumn fx:id="fIban" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="70.4000244140625" text="IBAN" />
+                        <TableColumn fx:id="fAdd" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="67.99981689453125" text="Address" />
+                        <TableColumn fx:id="fCountry" maxWidth="1.7976931348623157E308" minWidth="20.0" prefWidth="60.0" text="Country" />
+                     </columns></TableColumn>
+               </columns></TableColumn>
+            </columns>
+        </TableView>
+      <BorderPane prefHeight="18.0" prefWidth="1134.0">
+         <left>
+              <Button fx:id="btn" mnemonicParsing="false" onAction="#quit" text="Go Back" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#addData" text="Add Data To The System" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

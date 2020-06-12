@@ -18,6 +18,10 @@ import java.util.Objects;
  */
 public class Transaction implements Serializable {
     /**
+     * The ID of the transaction.
+     */
+    private String m_strID;
+    /**
      * The freelancer this transaction refers to.
      */
     private Freelancer m_oFreelancer;
@@ -41,11 +45,13 @@ public class Transaction implements Serializable {
      * @param paymentDetails The payment details of the transaction.
      * @param details The details about the execution of the task.
      */
-    public Transaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+    public Transaction(String id, Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+        if(id == null || id.isEmpty()) throw new IllegalArgumentException("Transaction - Id cannot be null or empty");
         if(freelancer == null) throw new IllegalArgumentException("Transaction - Freelancer cannot be null");
         if(task == null) throw new IllegalArgumentException("Transaction - Task cannot be null");
         if(paymentDetails == null) throw new IllegalArgumentException("Transaction - Payment Details cannot be null");
         if(details == null) throw new IllegalArgumentException("Transaction - Task ExecutionDetails cannot be null");
+        this.m_strID = id;
         this.m_oFreelancer = freelancer;
         this.m_oTask = task;
         this.m_oPaymentDetails = paymentDetails;
@@ -59,7 +65,7 @@ public class Transaction implements Serializable {
      * @param description A textual description of the quality of the work done by the freelancer.
      * @return The new TaskExecutionDetails.
      */
-    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, int hoursDelay, String description) {
+    public static TaskExecutionDetails newTaskExecutionDetails(LocalDate endDate, double hoursDelay, String description) {
         return new TaskExecutionDetails(endDate, hoursDelay, description);
     }
 
@@ -70,6 +76,14 @@ public class Transaction implements Serializable {
      */
     public static PaymentDetails newPaymentDetails(boolean isPayed) {
         return new PaymentDetails(isPayed);
+    }
+
+    /**
+     * Changes the freelancer of the transaction.
+     * @param freelancer The freelancer to change.
+     */
+    public void setFreelancer(Freelancer freelancer) {
+        this.m_oFreelancer = freelancer;
     }
 
     /**
@@ -150,12 +164,25 @@ public class Transaction implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Transaction)) return false;
         Transaction that = (Transaction) o;
-        return m_oTask.equals(that.m_oTask);
+        return this.m_strID.equals(that.m_strID) || m_oTask.equals(that.m_oTask);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(m_oTask);
+        return Objects.hash(m_strID);
     }
 
+    /**
+     * @param task Task to be set.
+     */
+    public void setTask(Task task) {
+        this.m_oTask = task;
+    }
+
+    /**
+     * @return The ID of the transaction.
+     */
+    public String getId() {
+        return this.m_strID;
+    }
 }

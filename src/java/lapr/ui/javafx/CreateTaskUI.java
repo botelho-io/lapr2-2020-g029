@@ -41,7 +41,7 @@ public class CreateTaskUI {
             String Duration = validateString(fieldDuration.getText(), "Duration");
             String Cost = validateString(fieldCost.getText(), "Cost");
             String Category = validateString(fieldCategory.getText(), "Category");
-            final boolean succsess = controller.newTask( ID, Description, Integer.parseInt(Duration), Double.parseDouble(Cost), Category);
+            final boolean succsess = controller.newTask( ID, Description, Double.parseDouble(Duration), Double.parseDouble(Cost), Category);
             if(!succsess) throw new IllegalStateException("Task with wrong data!!!");
             final boolean succsess2 = controller.registTask();
             if(!succsess2)  throw new IllegalStateException("Task with wrong data!!!");

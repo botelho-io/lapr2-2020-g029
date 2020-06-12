@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lapr.model.strategies.htf;
+package lapr.strategies.htf;
 
 import lapr.list.ListTask;
 import lapr.list.ListTransaction;
 import lapr.model.Transaction;
 import lapr.regist.RegistFreelancer;
+import lapr.strategies.htf.utils.HistoricalTransactionFileStrategyCommonCSV;
 
 import java.util.List;
 
@@ -16,8 +17,8 @@ import java.util.List;
  *
  * @author Universidade
  */
-public interface HistoricalTransactionFileStrategy {
-    boolean openFile(String path);
-    List<Transaction> readData();
-    void saveData(RegistFreelancer rf, ListTask ltk, ListTransaction ltr);
+public class TXTTransactionFileStrategy extends HistoricalTransactionFileStrategyCommonCSV {
+    public TXTTransactionFileStrategy() {
+        super("\t");
+    }
 }

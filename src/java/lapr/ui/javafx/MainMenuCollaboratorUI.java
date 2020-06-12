@@ -45,4 +45,9 @@ public class MainMenuCollaboratorUI {
     private void quit() {
         ((Stage)btnUC3NFre.getScene().getWindow()).close();
     }
+
+    public void enterUC4(ActionEvent actionEvent) {
+        FXBridge.scene = FXBridge.UC.UC4;
+        quit();
+    }
 }

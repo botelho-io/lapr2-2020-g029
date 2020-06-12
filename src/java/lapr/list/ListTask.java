@@ -40,19 +40,17 @@ public class ListTask implements Serializable {
      * @param category The category this task is in.
      * @return The task created.
      */
-    public static Task newTask(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category) {
+    public static Task newTask(String id, String description, double durationInHours, double costPerHourOfJuniorEur, String category) {
         return new Task(id, description, durationInHours, costPerHourOfJuniorEur, category, null);
     }
 
     /**
-     * Validates task of the organization.
-     *
+     * Tests weather a task can be added into the regist.
      * @param task of the organization.
      * @return true if valid.
      */
     public boolean validatesTask(Task task ) {
-        //TODO: Write code to validate the task.
-        return true;
+        return !m_lstTask.contains(task);
     }
 
     /**
@@ -88,5 +86,18 @@ public class ListTask implements Serializable {
                 ue.add(tsk);
         }
         return ue;
+    }
+
+    /**
+     * Searches for a task.
+     * @param task Get a freelancer that equal task.
+     * @return The Task that will equal task.
+     */
+    public Task getEqualTask(Task task) {
+        for (Task t : this.m_lstTask) {
+            if(t.equals(task))
+                return task;
+        }
+        return null;
     }
 }

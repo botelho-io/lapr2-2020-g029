@@ -18,6 +18,7 @@
             <Button mnemonicParsing="false" onAction="#addTransaction" prefWidth="175.0" text="UC1 - Add New Transaction" />
             <Button fx:id="btnUC2CTask" mnemonicParsing="false" onAction="#createTask" prefWidth="175.0" text="UC 2 - Add New Task" />
                 <Button fx:id="btnUC3NFre" mnemonicParsing="false" onAction="#addFre" prefHeight="21.0" prefWidth="175.0" text="UC 3 - Add New Freelancer" />
+            <Button layoutX="223.0" layoutY="186.0" mnemonicParsing="false" onAction="#enterUC4" prefHeight="21.0" prefWidth="175.0" text="UC 4 - Load Transaction File" />
             <Button fx:id="btnUC7ViIn" mnemonicParsing="false" onAction="#visInf" prefWidth="175.0" text="UC 7 - Visualize information" />
          </children>
       </VBox>

@@ -17,13 +17,13 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
     /**
      * The list of the transactions held by the list.
      */
-    Set<Transaction> m_setTransaction;
+    List<Transaction> m_setTransaction;
 
     /**
      * Constructor.
      */
     public ListTransaction() {
-        m_setTransaction = new HashSet<>();
+        m_setTransaction = new ArrayList<>();
     }
 
     /**
@@ -43,8 +43,8 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @param description A textual description of the quality of the work done by the freelancer.
      * @return The new task.
      */
-    public static Transaction newTransaction(Freelancer freelancer, Task task, LocalDate endDate, int hoursDelay, String description) {
-        return new Transaction(freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
+    public static Transaction newTransaction(String id, Freelancer freelancer, Task task, LocalDate endDate, double hoursDelay, String description) {
+        return new Transaction(id, freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
     }
 
     /**
@@ -55,8 +55,8 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @param details The details about the execution of the task.
      * @return The new task.
      */
-    public static Transaction newTransaction(Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
-        return new Transaction(freelancer, task, paymentDetails, details);
+    public static Transaction newTransaction(String id, Freelancer freelancer, Task task, PaymentDetails paymentDetails, TaskExecutionDetails details) {
+        return new Transaction(id, freelancer, task, paymentDetails, details);
     }
 
     /**

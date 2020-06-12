@@ -23,7 +23,7 @@ public class Task implements Serializable {
     /**
      * The duration it took to complete the task.
      */
-    private int m_iDurationInHours;
+    private double m_dDurationInHours;
     /**
      * The cost per hour a junior freelancer receives for this task.
      */
@@ -46,12 +46,12 @@ public class Task implements Serializable {
      * @param category The category this task is in.
      * @param executor The Freelancer that executed the task.
      */
-    public Task(String id, String description, int durationInHours, double costPerHourOfJuniorEur, String category, Freelancer executor) {
+    public Task(String id, String description, double durationInHours, double costPerHourOfJuniorEur, String category, Freelancer executor) {
         if ((id == null) || (description == null) || (category == null) || (id.isEmpty()))
             throw new IllegalArgumentException("None of the arguments can be null or empty.");
         this.m_strId = id;
         this.m_strDescription = description;
-        this.m_iDurationInHours = durationInHours;
+        this.m_dDurationInHours = durationInHours;
         this.m_dCostPerHourOfJuniorEur = costPerHourOfJuniorEur;
         this.m_strCategory = category;
         this.m_oExecutor = executor;
@@ -73,14 +73,14 @@ public class Task implements Serializable {
     /**
      * @return The duration in hours it took to complete the task.
      */
-    public int getDurationInHours() {
-        return m_iDurationInHours;
+    public double getDurationInHours() {
+        return m_dDurationInHours;
     }
     /**
      * @param durationInHours The new duration in hours it took to complete the task.
      */
     public void setDurationInHours(int durationInHours) {
-        this.m_iDurationInHours = durationInHours;
+        this.m_dDurationInHours = durationInHours;
     }
     /**
      * @return The cost per hour a junior freelancer receives for this task.
@@ -123,5 +123,12 @@ public class Task implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(m_strId);
+    }
+
+    /**
+     * @return The category this task is in.
+     */
+    public String getCategory() {
+        return this.m_strCategory;
     }
 }
