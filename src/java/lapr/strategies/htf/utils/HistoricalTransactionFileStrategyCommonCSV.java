@@ -193,7 +193,7 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
             // Task
             Task task = transaction.getTask();
             if(ltk.validatesTask(task))
-                ltk.registTask(task);
+                ltk.registerTask(task);
             else {
                 task = ltk.getSameTask(task);
                 if(task.getExecutor() != null) {
@@ -205,9 +205,9 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
             // Freelancer
             Freelancer freelancer = transaction.getFreelancer();
             if(rf.validate(freelancer))
-                rf.addFreelancer(freelancer);
+                rf.registerFreelancer(freelancer);
             else {
-                freelancer = rf.getEqualFreelancer(freelancer);
+                freelancer = rf.getSameFreelancer(freelancer);
                 transaction.setFreelancer(freelancer);
             }
 

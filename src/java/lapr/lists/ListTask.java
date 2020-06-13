@@ -58,7 +58,7 @@ public class ListTask implements Serializable {
      * @param task Task to regist.
      * @return True if the task was added, false otherwise.
      */
-    public boolean registTask(Task task){
+    public boolean registerTask(Task task){
         if (validatesTask(task)){
             return add(task);
         } else {

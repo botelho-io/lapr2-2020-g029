@@ -76,9 +76,9 @@ class RegistOrganizationTest {
     @Test
     void add() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
-        assertTrue(ro.add(testOrg));
+        assertTrue(ro.registerOrganization(testOrg));
         try {
-            ro.add(testOrg);
+            ro.registerOrganization(testOrg);
             assertTrue(false);
         } catch (IllegalArgumentException e) {
             assertTrue(true);
@@ -89,14 +89,14 @@ class RegistOrganizationTest {
     void validateOrganization() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
         assertTrue(ro.validateOrganization(testOrg));
-        assertTrue(ro.add(testOrg));
+        assertTrue(ro.registerOrganization(testOrg));
         assertFalse(ro.validateOrganization(testOrg));
     }
 
     @Test
     void getOrganizationByEmailUser() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
-        ro.add(testOrg);
+        ro.registerOrganization(testOrg);
         assertNull(ro.getOrganizationByEmailUser(testAdmin.getEmail()));
         assertEquals(ro.getOrganizationByEmailUser(testMan.getEmail()), testOrg);
         assertEquals(ro.getOrganizationByEmailUser(testCol.getEmail()), testOrg);
@@ -105,14 +105,14 @@ class RegistOrganizationTest {
     @Test
     void getGroupedTransactions() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
-        ro.add(testOrg);
+        ro.registerOrganization(testOrg);
         assertEquals(ro.getGroupedTransactions().keySet().size(), 4);
     }
 
     @Test
     void getGroupedTransactionsInYear() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
-        ro.add(testOrg);
+        ro.registerOrganization(testOrg);
         assertEquals(ro.getGroupedTransactionsInYear(2021).keySet().size(), 3);
         assertEquals(ro.getGroupedTransactionsInYear(2020).keySet().size(), 2);
     }
@@ -120,7 +120,7 @@ class RegistOrganizationTest {
     @Test
     void getTransactionsOfFreelancers() {
         RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();
-        ro.add(testOrg);
+        ro.registerOrganization(testOrg);
         Set<Freelancer> fres = new HashSet<>();
 
         fres.add(testFreelancers[0]);

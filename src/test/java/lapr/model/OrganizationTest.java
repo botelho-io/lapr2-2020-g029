@@ -1,7 +1,6 @@
 package lapr.model;
 
 import lapr.controller.AppPOE;
-import lapr.utils.TestConstants;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,7 +39,7 @@ class OrganizationTest {
     void validatesCollaborator() {
         Collaborator col = Organization.newCollaborator("Colab Joe", "colab@dei.pt", "password");
         assertTrue(Organization.validatesCollaborator(col));
-        AppPOE.getInstance().getApp().getAuthFacade().registUser(col);
+        AppPOE.getInstance().getApp().getAuthFacade().registerUser(col);
         assertFalse(Organization.validatesCollaborator(col));
     }
 
@@ -48,7 +47,7 @@ class OrganizationTest {
     void validatesManager() {
         Manager manager = Organization.newManager("Man Joe", "man@dei.pt", "password");
         assertTrue(Organization.validatesManager(manager));
-        AppPOE.getInstance().getApp().getAuthFacade().registUser(manager);
+        AppPOE.getInstance().getApp().getAuthFacade().registerUser(manager);
         assertFalse(Organization.validatesManager(manager));
     }
 

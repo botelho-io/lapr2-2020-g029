@@ -41,14 +41,14 @@ public class RegistOrganization implements Iterable<Organization>, Serializable 
      * @param organization to get added.
      * @return list with the organization added.
      */
-    public boolean add(Organization organization) {
+    public boolean registerOrganization(Organization organization) {
         if(!validateOrganization(organization))
             throw new IllegalArgumentException("Organization is invalid.");
 
         final AuthFacade au = AppPOE.getInstance().getApp().getAuthFacade();
         boolean success =  m_lstOrganizacoes.add(organization);
-        success = success && au.registUser(organization.getCollaborator());
-        success = success && au.registUser(organization.getManager());
+        success = success && au.registerUser(organization.getCollaborator());
+        success = success && au.registerUser(organization.getManager());
         return success;
     }
 

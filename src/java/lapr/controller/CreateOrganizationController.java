@@ -89,7 +89,7 @@ public class CreateOrganizationController {
      * @return True if all the organization was added and the emails with the passwords , false otherwise.
      */
     public boolean registOrganizacation() {
-        if(m_oRegist.add(m_oOrg)) {
+        if(m_oRegist.registerOrganization(m_oOrg)) {
             boolean b = true;
             b = b & m_oMail.sendEmail(m_strEmailC, String.format(CollaboratorEmail, m_strCollaboratorPassword));
             b = b & m_oMail.sendEmail(m_strEmailM, String.format(ManagerEmail, m_strManagerPassword));

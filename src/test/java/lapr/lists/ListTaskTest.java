@@ -33,8 +33,8 @@ class ListTaskTest {
         Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
         org = app.getRegistOrganization().newOrganization("DEFAULT","name", testMan, testCol);
         lt = org.getListTask();
-        org.getListTask().registTask(tsk1);
-        org.getListTask().registTask(tsk2);
+        org.getListTask().registerTask(tsk1);
+        org.getListTask().registerTask(tsk2);
     }
 
 
@@ -48,10 +48,10 @@ class ListTaskTest {
 
     @Test
     void registTask() {
-        assertFalse(lt.registTask(ListTask.newTask("TSK1", "A Test task 4", 10, 10, "TEST")));
-        assertTrue(lt.registTask(ListTask.newTask("TSK5", "A Test task 5", 10, 10, "TEST")));
+        assertFalse(lt.registerTask(ListTask.newTask("TSK1", "A Test task 4", 10, 10, "TEST")));
+        assertTrue(lt.registerTask(ListTask.newTask("TSK5", "A Test task 5", 10, 10, "TEST")));
         Task tsk4 = ListTask.newTask("TSK3", "A Test task 4", 10, 10, "TEST");
-        assertTrue(lt.registTask(tsk4));
+        assertTrue(lt.registerTask(tsk4));
     }
 
     @Test

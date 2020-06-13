@@ -61,15 +61,15 @@ public abstract class TestConstants {
     }
 
     public static void addTestOrganizationAndUsers() {
-        AppPOE.getInstance().getApp().getAuthFacade().registUser(testAdmin);
-        AppPOE.getInstance().getApp().getRegistOrganization().add(testOrg);
+        AppPOE.getInstance().getApp().getAuthFacade().registerUser(testAdmin);
+        AppPOE.getInstance().getApp().getRegistOrganization().registerOrganization(testOrg);
     }
 
     public static void addTestTasksAndOrg() {
         addTestOrganizationAndUsers();
         final ListTask lt = testOrg.getListTask();
         for(final Task t : testTasks)
-            lt.registTask(t);
+            lt.registerTask(t);
     }
 
     public static void addTestFreelancers() {
@@ -77,7 +77,7 @@ public abstract class TestConstants {
         final App app = poe.getApp();
         final RegistFreelancer rf = app.getRegistFreelancer();
         for(final Freelancer f : testFreelancers)
-            rf.addFreelancer(f);
+            rf.registerFreelancer(f);
     }
 
     public static void addTestOrgTasksFreelancersAndTransactions() {

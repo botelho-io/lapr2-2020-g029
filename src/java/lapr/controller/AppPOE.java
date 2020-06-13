@@ -18,8 +18,6 @@ import lapr.api.PaymentAPI;
 import lapr.api.PswGeneratorAPI;
 import lapr.model.*;
 import lapr.utils.Constants;
-import authorization.AuthFacade;
-import authorization.model.Role;
 
 public class AppPOE {
     private static AppPOE singleton = null;
@@ -76,7 +74,7 @@ public class AppPOE {
 
         // Add Admin
         final Administrator adm = new Administrator(p.getProperty("admin.name"), p.getProperty("admin.email"), p.getProperty("admin.password"));
-        getApp().getAuthFacade().registUser(adm);
+        getApp().getAuthFacade().registerUser(adm);
 
         // Add test data TODO: Delete
         // TestConstants.addTestOrgTasksFreelancersAndTransactions();

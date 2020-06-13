@@ -18,7 +18,7 @@ public class AuthFacade implements Serializable {
     private transient UserSession m_oSession = null;
     private final RegistUsers m_oUsers = new RegistUsers();
     
-    public boolean registUser(User utlz)
+    public boolean registerUser(User utlz)
     {
         return this.m_oUsers.registerUser(utlz);
     }

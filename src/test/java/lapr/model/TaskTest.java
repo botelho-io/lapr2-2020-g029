@@ -29,8 +29,8 @@ class TaskTest {
         Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
         Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
         org = app.getRegistOrganization().newOrganization("123", "DEFAULT", testMan, testCol);
-        org.getListTask().registTask(tsk1);
-        org.getListTask().registTask(tsk2);
+        org.getListTask().registerTask(tsk1);
+        org.getListTask().registerTask(tsk2);
     }
 
     @Test

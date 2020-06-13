@@ -26,6 +26,6 @@ public class CreateFreelancerController {
     }
 
     public boolean addFreelancer() {
-        return reg.addFreelancer(fre);
+        return reg.registerFreelancer(fre);
     }
 }

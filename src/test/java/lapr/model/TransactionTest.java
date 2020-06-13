@@ -42,8 +42,8 @@ class TransactionTest {
         Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
         Collaborator testCol = new Collaborator("Colab Joe", "colab@dei.pt", "password");
         org = app.getRegistOrganization().newOrganization("123", "DEFAULT", testMan, testCol);
-        org.getListTask().registTask(tsk1);
-        org.getListTask().registTask(tsk2);
+        org.getListTask().registerTask(tsk1);
+        org.getListTask().registerTask(tsk2);
         trs = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "...");
         org.getListTransaction().registerTransaction(trs);
     }

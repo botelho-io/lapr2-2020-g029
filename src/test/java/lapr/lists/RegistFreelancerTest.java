@@ -20,8 +20,8 @@ class RegistFreelancerTest {
     @BeforeEach
     void setUp() {
         rf = new RegistFreelancer();
-        rf.addFreelancer(f1 = rf.newFreelancer("Fre Fre", Expertise.SENIOR, "mail@mail.com", "123", "123", "add", "Pt"));
-        rf.addFreelancer(f2 = rf.newFreelancer("Fre Fre", Expertise.SENIOR, "mail2@mail.com", "1234", "1234", "add", "Pt"));
+        rf.registerFreelancer(f1 = rf.newFreelancer("Fre Fre", Expertise.SENIOR, "mail@mail.com", "123", "123", "add", "Pt"));
+        rf.registerFreelancer(f2 = rf.newFreelancer("Fre Fre", Expertise.SENIOR, "mail2@mail.com", "1234", "1234", "add", "Pt"));
         f3 = rf.newFreelancer("Fre Fre", "  SeNiOr ", "  mail@mail.com   ", "123 ", " 123", "add", "pt");
         f4 = new Freelancer("FF4", "Fre Fre", Expertise.SENIOR, "mail5@mail.com", "12345", "12345", "add", "Pt");
     }
@@ -50,7 +50,7 @@ class RegistFreelancerTest {
     @Test
     void addFreelancer() {
         assertTrue(rf.validate(f4));
-        assertTrue(rf.addFreelancer(f4));
+        assertTrue(rf.registerFreelancer(f4));
         assertFalse(rf.validate(f4));
     }
 
@@ -76,9 +76,9 @@ class RegistFreelancerTest {
 
     @Test
     void testAddFreelancer() {
-        assertFalse(rf.addFreelancer(f1));
-        assertFalse(rf.addFreelancer(f3));
-        assertTrue(rf.addFreelancer(f4));
+        assertFalse(rf.registerFreelancer(f1));
+        assertFalse(rf.registerFreelancer(f3));
+        assertTrue(rf.registerFreelancer(f4));
     }
 
     @Test
@@ -93,7 +93,7 @@ class RegistFreelancerTest {
 
     @Test
     void getEqualFreelancer() {
-        assertSame(rf.getEqualFreelancer(f3), f1);
-        assertNull(rf.getEqualFreelancer(f4));
+        assertSame(rf.getSameFreelancer(f3), f1);
+        assertNull(rf.getSameFreelancer(f4));
     }
 }

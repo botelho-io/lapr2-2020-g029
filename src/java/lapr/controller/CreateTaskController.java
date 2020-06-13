@@ -64,7 +64,7 @@ public class CreateTaskController {
      * @return registed on the organization.
      */
     public boolean registTask() {
-        return this.organization.getListTask().registTask(this.task);
+        return this.organization.getListTask().registerTask(this.task);
     }
 
     /**

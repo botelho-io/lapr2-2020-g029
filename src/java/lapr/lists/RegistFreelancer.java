@@ -109,7 +109,7 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
      * @param fre The freelancer to add;
      * @return True if the freelancer was added, false otherwise.
      */
-    public boolean addFreelancer(Freelancer fre) {
+    public boolean registerFreelancer(Freelancer fre) {
         if(validate(fre))
             return m_setFreelancer.add(fre);
         return false;
@@ -132,7 +132,7 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
      * @param f2 Freelancer that should equal f1.
      * @return A freelancer f1 where f2.equal(f1) is true or null if no such freelancer is found.
      */
-    public Freelancer getEqualFreelancer(Freelancer f2) {
+    public Freelancer getSameFreelancer(Freelancer f2) {
         for (Freelancer f1 : this) {
             if(f2.equals(f1))
                 return f1;
