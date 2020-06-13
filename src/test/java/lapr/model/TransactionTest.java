@@ -2,8 +2,8 @@ package lapr.model;
 
 import lapr.api.PaymentAPI;
 import lapr.controller.AppPOE;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.utils.Expertise;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -45,7 +45,7 @@ class TransactionTest {
         org.getListTask().registTask(tsk1);
         org.getListTask().registTask(tsk2);
         trs = ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "...");
-        org.getListTransaction().addTransaction(trs);
+        org.getListTransaction().registerTransaction(trs);
     }
 
     @Test
@@ -111,5 +111,23 @@ class TransactionTest {
         assertFalse(trs.madeToAny(set));
         set.add(fre);
         assertTrue(trs.madeToAny(set));
+    }
+
+    @Test
+    void setFreelancer() {
+        Freelancer fre2 = new Freelancer("FJ2", "Free Joe2", Expertise.JUNIOR, "fre2@dei.pt", "28739247892", "8937432", "Address2", "Germany");
+        trs.setFreelancer(fre2);
+        assertSame(fre2, trs.getFreelancer());
+    }
+
+    @Test
+    void setTask() {
+        trs.setTask(tsk2);
+        assertSame(tsk2, trs.getTask());
+    }
+
+    @Test
+    void getId() {
+        assertEquals("ID1", trs.getId());
     }
 }

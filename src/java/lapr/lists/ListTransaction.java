@@ -1,4 +1,4 @@
-package lapr.list;
+package lapr.lists;
 
 import lapr.api.EmailAPI;
 import lapr.api.MonetaryConversionAPI;
@@ -17,13 +17,13 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
     /**
      * The list of the transactions held by the list.
      */
-    List<Transaction> m_setTransaction;
+    List<Transaction> m_lstTransaction;
 
     /**
      * Constructor.
      */
     public ListTransaction() {
-        m_setTransaction = new ArrayList<>();
+        m_lstTransaction = new ArrayList<>();
     }
 
     /**
@@ -31,7 +31,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      */
     @Override
     public Iterator<Transaction> iterator() {
-        return m_setTransaction.iterator();
+        return m_lstTransaction.iterator();
     }
 
     /**
@@ -44,7 +44,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @return The new task.
      */
     public static Transaction newTransaction(String id, Freelancer freelancer, Task task, LocalDate endDate, double hoursDelay, String description) {
-        return new Transaction(id, freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
+        return newTransaction(id, freelancer, task, Transaction.newPaymentDetails(false), Transaction.newTaskExecutionDetails(endDate, hoursDelay, description));
     }
 
     /**
@@ -65,7 +65,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @return True if the transaction is removed, false otherwise.
      */
     public boolean remove(Transaction trs) {
-        return m_setTransaction.remove(trs);
+        return m_lstTransaction.remove(trs);
     }
 
     /**
@@ -75,7 +75,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @return True if the task is valid, false otherwise.
      */
     public boolean validate(Transaction trs) {
-        return !this.m_setTransaction.contains(trs);
+        return !this.m_lstTransaction.contains(trs);
     }
 
     /**
@@ -84,11 +84,8 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @return True if the transaction is added, false otherwise.
      */
     private boolean add(Transaction trs) {
-        if(m_setTransaction.add(trs)) {
-            trs.getTask().setExecutor(trs.getFreelancer());
-            return true;
-        }
-        return false;
+        trs.getTask().setExecutor(trs.getFreelancer());
+        return m_lstTransaction.add(trs);
     }
 
     /**
@@ -106,7 +103,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
         MonetaryConversionAPI mcapi = AppPOE.getInstance().getApp().getMonetaryConversionAPI();
         EmailAPI eapi = AppPOE.getInstance().getApp().getEmailAPI();
         // Put all payment in message
-        for(Transaction trs : m_setTransaction) {
+        for(Transaction trs : m_lstTransaction) {
             final String email = trs.getFreelancer().getEmail();
             Triplet<Double, String, String> val = map.get(email);
             if(val == null) val = new Triplet<>(0.0, "", trs.getFreelancer().getCountry());
@@ -139,9 +136,9 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
      * @param tr Transaction to add.
      * @return True if the transaction is added, false otherwise.
      */
-    public boolean addTransaction(Transaction tr) {
-        if(!validate(tr)) return false;
-        return add(tr);
+    public boolean registerTransaction(Transaction tr) {
+        if(validate(tr)) return add(tr);
+        else return false;
     }
 
     /**

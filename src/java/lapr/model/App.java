@@ -10,10 +10,10 @@ import authorization.AuthFacade;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
 import lapr.controller.AppPOE;
-import lapr.regist.RegistFreelancer;
-import lapr.regist.RegistOrganization;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
+import lapr.lists.RegistFreelancer;
+import lapr.lists.RegistOrganization;
 
 import java.io.*;
 

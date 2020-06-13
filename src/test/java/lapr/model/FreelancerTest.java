@@ -1,14 +1,8 @@
 package lapr.model;
 
-import lapr.controller.AppPOE;
-import lapr.regist.RegistFreelancer;
 import lapr.utils.Expertise;
-import lapr.utils.Role;
-import lapr.utils.TestConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

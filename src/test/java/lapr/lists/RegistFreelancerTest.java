@@ -1,4 +1,4 @@
-package lapr.regist;
+package lapr.lists;
 
 import lapr.model.Freelancer;
 import lapr.utils.Expertise;

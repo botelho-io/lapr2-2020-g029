@@ -1,8 +1,8 @@
 package lapr.model;
 
 import lapr.controller.AppPOE;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.utils.Expertise;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +35,7 @@ class TaskTest {
 
     @Test
     void getExecutor() {
-        org.getListTransaction().addTransaction(ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "..."));
+        org.getListTransaction().registerTransaction(ListTransaction.newTransaction("ID1", fre, tsk1, LocalDate.of(2020, 4, 3), 1.5, "..."));
         assertEquals(tsk1.getExecutor(), fre);
         assertNull(tsk2.getExecutor());
     }

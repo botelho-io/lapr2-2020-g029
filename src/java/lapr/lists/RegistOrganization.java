@@ -1,4 +1,4 @@
-package lapr.regist;
+package lapr.lists;
 
 import authorization.AuthFacade;
 import lapr.controller.AppPOE;

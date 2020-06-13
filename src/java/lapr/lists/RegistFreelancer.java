@@ -1,4 +1,4 @@
-package lapr.regist;
+package lapr.lists;
 
 import lapr.model.Freelancer;
 import lapr.utils.Expertise;
@@ -128,14 +128,14 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     }
 
     /**
-     * Searches for a freelancer.
-     * @param fre Get a freelancer that equal fre.
-     * @return The freelancer that will equal fre.
+     * Searches for a freelancer f1 where f2.equal(f1) is true.
+     * @param f2 Freelancer that should equal f1.
+     * @return A freelancer f1 where f2.equal(f1) is true or null if no such freelancer is found.
      */
-    public Freelancer getEqualFreelancer(Freelancer fre) {
-        for (Freelancer f : this) {
-            if(f.equals(fre))
-                return f;
+    public Freelancer getEqualFreelancer(Freelancer f2) {
+        for (Freelancer f1 : this) {
+            if(f2.equals(f1))
+                return f1;
         }
         return null;
     }

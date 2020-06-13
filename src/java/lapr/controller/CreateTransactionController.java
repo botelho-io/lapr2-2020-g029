@@ -1,6 +1,6 @@
 package lapr.controller;
 
-import lapr.list.ListTransaction;
+import lapr.lists.ListTransaction;
 import lapr.model.*;
 
 import java.time.LocalDate;
@@ -57,7 +57,7 @@ public class CreateTransactionController {
      */
     public boolean addTransaction() {
         if(tr == null) throw new IllegalStateException("Create Transaction Controller - Execution out of order");
-        return ltr.addTransaction(tr);
+        return ltr.registerTransaction(tr);
     }
 
     /**

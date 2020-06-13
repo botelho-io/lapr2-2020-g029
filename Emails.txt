@@ -53,3 +53,94 @@ TOTAL - 201.000000 - NATIVE CURRENCY [201.000000]
 *******************************************************
 
 
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:44:16 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:44:28 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:51:39 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:52:24 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:53:42 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:54:07 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+
+*******************************************************
+EmailAPI - Email to [fre@mail.com]
+Date - Sat Jun 13 16:56:05 BST 2020
+~~~~~~ E-MAIL BEGIN ~~~~~~
+TASK [desc1] (ID: id1) - EUR [200.000000] - NATIVE CURRENCY [200.000000]
+
+
+TOTAL - 200.000000 - NATIVE CURRENCY [200.000000]
+
+~~~~~~  E-MAIL END  ~~~~~~
+*******************************************************
+
+

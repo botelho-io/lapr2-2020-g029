@@ -1,13 +1,7 @@
 package lapr.model;
-
-import authorization.model.UserRole;
-import lapr.utils.Role;
-import lapr.utils.TestConstants;
+import authorization.model.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 

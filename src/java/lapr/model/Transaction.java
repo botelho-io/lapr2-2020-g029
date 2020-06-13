@@ -95,18 +95,12 @@ public class Transaction implements Serializable {
             getFreelancer().getId(),            // The ID of the freelancer to pay to.
             getFreelancer().getIBAN(),          // The IBAN of the freelancer to pay.
             getTask().getId(),                  // The ID of the task this payment is for.
-            getTask().getDescription(),    // The description of the task this payment is for.
+            getTask().getDescription(),         // The description of the task this payment is for.
             getAmount(),                        // The amount in euros to pay to the freelancer.
             getNativeAmount()                   // The amount in the freelancer's native currency to pay.
         );
         getPaymentDetails().setPayed(success);
         return success;
-    }
-    /**
-     * @return The IBAN of the freelancer this transaction refers to.
-     */
-    private String getFreelancerIBAN() {
-        return m_oFreelancer.getIBAN();
     }
     /**
      * @return Amount (in euros) to pay to the freelancer for the task.
@@ -165,11 +159,6 @@ public class Transaction implements Serializable {
         if (!(o instanceof Transaction)) return false;
         Transaction that = (Transaction) o;
         return this.m_strID.equals(that.m_strID) || m_oTask.equals(that.m_oTask);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(m_strID);
     }
 
     /**

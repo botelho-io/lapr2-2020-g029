@@ -85,14 +85,14 @@ public class CreateTransactionUI {
 
     @FXML
     public void startUC3(ActionEvent actionEvent) {
-        FXBridge.openUC(FXBridge.UC.UC3, new Stage());
+        FXBridge.openState(FXBridge.STATE.UC3, new Stage());
         refreshFreelancer();
     }
 
     //Stage stgUC2;
     @FXML
     public void startUC2(ActionEvent actionEvent) {
-        FXBridge.openUC(FXBridge.UC.UC2, new Stage());
+        FXBridge.openState(FXBridge.STATE.UC2, new Stage());
         refreshTasks();
     }
 

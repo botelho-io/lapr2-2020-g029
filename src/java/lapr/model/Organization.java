@@ -7,8 +7,8 @@ package lapr.model;
 
 import authorization.AuthFacade;
 import lapr.controller.AppPOE;
-import lapr.list.ListTransaction;
-import lapr.list.ListTask;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 
 import java.io.Serializable;
 import java.util.HashSet;

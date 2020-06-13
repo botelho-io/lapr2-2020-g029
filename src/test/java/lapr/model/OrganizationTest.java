@@ -66,4 +66,25 @@ class OrganizationTest {
         assertTrue(Organization.validatesPaymentScheduler(1, LocalTime.now()));
         assertFalse(Organization.validatesPaymentScheduler(31, LocalTime.now()));
     }
+
+    @Test
+    void testValidatesPaymentScheduler() {
+        Collaborator col = Organization.newCollaborator("Colab Joe", "colab@dei.pt", "password");
+        Manager manager = Organization.newManager("Man Joe", "man@dei.pt", "password");
+        Organization org = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("28934734", "LEL", manager, col);
+        assertFalse(org.setPaymentScheduler(0, LocalTime.now()));
+        assertTrue(org.setPaymentScheduler(1, LocalTime.now()));
+        assertTrue(org.setPaymentScheduler(2, LocalTime.now()));
+    }
+
+    @Test
+    void testEquals() {
+        Collaborator col = Organization.newCollaborator("Colab Joe", "colab@dei.pt", "password");
+        Manager manager = Organization.newManager("Man Joe", "man@dei.pt", "password");
+        Organization org = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("28934734", "LEL", manager, col);
+        Collaborator col2 = Organization.newCollaborator("Colab Joe", "colab2@dei.pt", "password");
+        Manager manager2 = Organization.newManager("Man Joe", "man2@dei.pt", "password");
+        Organization org2 = AppPOE.getInstance().getApp().getRegistOrganization().newOrganization("28934734", "LEL", manager2, col2);
+        assertEquals(org, org2);
+    }
 }

@@ -5,9 +5,7 @@
  */
 package lapr.model;
 
-import authorization.model.UserRole;
-import lapr.utils.Role;
-
+import authorization.model.Role;
 import java.io.Serializable;
 import java.util.*;
 
@@ -27,17 +25,14 @@ public class User implements Serializable  {
      * The password of the user.
      */
     private String m_strPassword;
-    private Set<UserRole> m_lstRoles = new HashSet<UserRole>();
 
-    public User(String name, String email, String password, UserRole role) {
-        this(name, email, password, new UserRole[]{role});
-    }
+    private Role m_enumRole;
 
-    public User(String name, String email, String password, UserRole[] Roles) {
-        this.m_strName = name;
-        this.m_strEmail = email;
-        this.m_strPassword = password;
-        this.m_lstRoles = new HashSet<UserRole>(Arrays.asList(Roles));
+    public User(String strName, String strEmail, String strPassword, Role enumRole) {
+        this.m_strName = strName;
+        this.m_strEmail = strEmail;
+        this.m_strPassword = strPassword;
+        this.m_enumRole = enumRole;
     }
 
     public String getName() {
@@ -65,24 +60,17 @@ public class User implements Serializable  {
         return this.m_strPassword.equals(strPwd);
     }
 
-    public boolean hasRole(Role oRole)
-    {
-        for(UserRole role: this.m_lstRoles)
-        {
-            if (role.hasId(oRole))
-                return true;
-        }
-        return false;
+    public boolean hasRole(Role oRole) {
+        return m_enumRole.equals(oRole);
     }
 
-    public List<UserRole> getRoles()
+    public Role getRole()
     {
-        return new ArrayList<>(this.m_lstRoles);
+        return m_enumRole;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 23 * hash + Objects.hashCode(this.m_strEmail);
         return hash;
@@ -104,9 +92,8 @@ public class User implements Serializable  {
     }
 
     @Override
-    public String toString()
-    {
-        return String.format("%s - %s", this.m_strName, this.m_strEmail);
+    public String toString() {
+        return String.format("[%s] %s - %s",m_enumRole.name() , this.m_strName, this.m_strEmail);
     }
 
 }

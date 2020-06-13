@@ -108,6 +108,13 @@ public class Task implements Serializable {
     }
 
     /**
+     * @return The category this task is in.
+     */
+    public String getCategory() {
+        return this.m_strCategory;
+    }
+
+    /**
      * Compare two tasks.
      * @param o Ideally a task to compare.
      * @return Will return true if and only if the object provided is a task with the same ID.
@@ -123,12 +130,5 @@ public class Task implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(m_strId);
-    }
-
-    /**
-     * @return The category this task is in.
-     */
-    public String getCategory() {
-        return this.m_strCategory;
     }
 }

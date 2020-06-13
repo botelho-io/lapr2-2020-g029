@@ -1,7 +1,7 @@
 package lapr.controller;
 
 import lapr.model.Freelancer;
-import lapr.regist.RegistFreelancer;
+import lapr.lists.RegistFreelancer;
 import lapr.utils.Expertise;
 
 import java.util.ArrayList;

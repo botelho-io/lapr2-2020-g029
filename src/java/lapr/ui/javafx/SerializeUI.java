@@ -19,25 +19,25 @@ public class SerializeUI {
         SerializeController ctr = new SerializeController();
         try {
             ctr.serialize();
-            quit(FXBridge.UC.QUIT);
+            quit(FXBridge.STATE.QUIT);
         } catch (IOException ex) {
             HelperUI.alert(ex.getMessage());
-            quit(FXBridge.UC.MAIN_MENU);
+            quit(FXBridge.STATE.MAIN_MENU);
         }
     }
 
     @FXML
     public void noSave(ActionEvent actionEvent) {
-        quit(FXBridge.UC.QUIT);
+        quit(FXBridge.STATE.QUIT);
     }
 
     @FXML
     public void cancel(ActionEvent actionEvent) {
-        quit(FXBridge.UC.MAIN_MENU);
+        quit(FXBridge.STATE.MAIN_MENU);
     }
 
-    private void quit(FXBridge.UC uc) {
-        FXBridge.scene = uc;
+    private void quit(FXBridge.STATE STATE) {
+        FXBridge.scene = STATE;
         ((Stage)btnSave.getScene().getWindow()).close();
     }
 }

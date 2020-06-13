@@ -1,9 +1,7 @@
 package lapr.model;
 
-import lapr.api.EmailAPI;
-import lapr.api.MonetaryConversionAPI;
-import lapr.api.PaymentAPI;
-import lapr.api.PswGeneratorAPI;
+import lapr.api.*;
+import lapr.api.sout.*;
 import lapr.controller.AppPOE;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,25 +12,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
 
+    EmailAPI eapi;
+    PswGeneratorAPI psapi;
+    MonetaryConversionAPI mcapi;
+    PaymentAPI pmapi;
 
-    App app = AppPOE.getInstance().getApp();
-    EmailAPI eapi = app.getEmailAPI();
-    PswGeneratorAPI psapi = app.getPswGeneratorAPI();
-    MonetaryConversionAPI mcapi = app.getMonetaryConversionAPI();
-    PaymentAPI pmapi = app.getPaymentAPI();
-    
-
-    @Test
-    void getPswGeneratorAPI() {assertEquals(app.getPswGeneratorAPI(), psapi); }
-
-    @Test
-    void getPaymentAPI() { assertEquals(app.getPaymentAPI(), pmapi);}
-
-    @Test
-    void getMonetaryConversionAPI() { assertEquals(app.getMonetaryConversionAPI(), mcapi); }
+    @BeforeEach
+    void setUp() throws IOException {
+        AppPOE.restartInstance();
+        eapi = new EmailAPIAdapter();
+        psapi = new PswGeneratorAPIAdapter();
+        mcapi = new MonetaryConversionAPIAdapter();
+        pmapi = new PaymentAPIAdapter();
+        AppPOE.getInstance().getApp().setAPIs(eapi, mcapi, pmapi, psapi);
+    }
 
     @Test
-    void getEmailAPI() { assertEquals(app.getEmailAPI(),eapi); }
+    void getPswGeneratorAPI() {
+        assertSame(AppPOE.getInstance().getApp().getPswGeneratorAPI(), psapi);
+    }
+
+    @Test
+    void getPaymentAPI() {
+        assertSame(AppPOE.getInstance().getApp().getPaymentAPI(), pmapi);
+    }
+
+    @Test
+    void getMonetaryConversionAPI() {
+        assertSame(AppPOE.getInstance().getApp().getMonetaryConversionAPI(), mcapi);
+    }
+
+    @Test
+    void getEmailAPI() {
+        assertSame(AppPOE.getInstance().getApp().getEmailAPI(), eapi);
+    }
 
 
 }

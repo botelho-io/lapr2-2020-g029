@@ -1,13 +1,10 @@
 package lapr.model;
 
-import authorization.model.UserRole;
-import lapr.utils.Role;
+import authorization.model.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,12 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserTest {
 
     User usr;
-    UserRole url;
 
     @BeforeEach
     void setUp() {
-        url = new UserRole(Role.ADMINISTRATOR);
-        usr = new User("name", "email", "password", url);
+        usr = new User("name", "email", "password", Role.ADMINISTRATOR);
     }
 
     @Test
@@ -66,9 +61,7 @@ class UserTest {
     }
 
     @Test
-    void getRoles() {
-        List<UserRole> u = new ArrayList<>();
-        u.add(url);
-        assertArrayEquals(u.toArray(), usr.getRoles().toArray());
+    void getRole() {
+        assertEquals(Role.ADMINISTRATOR, usr.getRole());
     }
 }

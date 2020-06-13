@@ -10,7 +10,6 @@ import lapr.controller.AdministratorStatisticsController;
 import lapr.model.Freelancer;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
-import lapr.ui.javafx.util.MainUI;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -44,7 +43,7 @@ public class AdministratorStatisticsUI {
         if(!ctr.setFreelancers(selected)) {
             HelperUI.alert("The freelancers selected do not have anny transactions.");
         } else {
-            FXBridge.scene = FXBridge.UC.UC9_PART2;
+            FXBridge.scene = FXBridge.STATE.UC9_PART2;
             FXBridge.param = (Object) ctr;
             quit(null);
         }

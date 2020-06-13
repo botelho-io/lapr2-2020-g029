@@ -5,13 +5,7 @@
  */
 package lapr.strategies.htf;
 
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
-import lapr.model.Transaction;
-import lapr.regist.RegistFreelancer;
 import lapr.strategies.htf.utils.HistoricalTransactionFileStrategyCommonCSV;
-
-import java.util.List;
 
 /**
  *

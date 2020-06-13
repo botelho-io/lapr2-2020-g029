@@ -10,22 +10,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
 import lapr.api.EmailAPI;
 import lapr.api.MonetaryConversionAPI;
 import lapr.api.PaymentAPI;
 import lapr.api.PswGeneratorAPI;
-import lapr.api.sout.EmailAPIAdapter;
-import lapr.api.sout.MonetaryConversionAPIAdapter;
-import lapr.api.defaults.PaymentAPIAdapter;
-import lapr.api.sout.PswGeneratorAPIAdapter;
 import lapr.model.*;
 import lapr.utils.Constants;
 import authorization.AuthFacade;
-import lapr.utils.Role;
-import lapr.utils.TestConstants;
+import authorization.model.Role;
 
 public class AppPOE {
     private static AppPOE singleton = null;
@@ -77,12 +71,6 @@ public class AppPOE {
     }
 
     private void bootstrap() {
-        // Add roles
-        AuthFacade auth = getApp().getAuthFacade();
-        auth.registRoleUser(Role.ADMINISTRATOR);
-        auth.registRoleUser(Role.COLLABORATOR);
-        auth.registRoleUser(Role.MANAGER);
-
         // Get Properties and APIs
         Properties p = reloadAPIs();
 

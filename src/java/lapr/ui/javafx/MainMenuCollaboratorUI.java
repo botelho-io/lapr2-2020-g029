@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import lapr.ui.javafx.util.FXBridge;
-import lapr.ui.javafx.util.HelperUI;
 
 public class MainMenuCollaboratorUI {
     @FXML
@@ -20,25 +19,25 @@ public class MainMenuCollaboratorUI {
 
     @FXML
     public void addTransaction(ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC1;
+        FXBridge.scene = FXBridge.STATE.UC1;
         quit();
     }
 
     @FXML
     public void addFre(ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC3;
+        FXBridge.scene = FXBridge.STATE.UC3;
         quit();
     }
 
     @FXML
     public void createTask (ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC2;
+        FXBridge.scene = FXBridge.STATE.UC2;
         quit();
     }
 
     @FXML
     public void visInf (ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC7;
+        FXBridge.scene = FXBridge.STATE.UC7;
         quit();
     }
 
@@ -47,7 +46,7 @@ public class MainMenuCollaboratorUI {
     }
 
     public void enterUC4(ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC4;
+        FXBridge.scene = FXBridge.STATE.UC4;
         quit();
     }
 }

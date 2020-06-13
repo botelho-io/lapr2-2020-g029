@@ -6,7 +6,6 @@
 package authorization.model;
 
 import lapr.model.User;
-import lapr.utils.Role;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,18 +18,10 @@ public class UserSession implements Serializable
 {
     private User m_oUser = null;
     
-    private UserSession() {
-    }
-    
     public UserSession(User oUser) {
         if (oUser == null)
-            throw new IllegalArgumentException("Argumento não pode ser nulo.");
+            throw new IllegalArgumentException("Argument cannot be null");
         this.m_oUser = oUser;
-    }
-    
-    public void doLogout()
-    {
-        this.m_oUser = null;
     }
     
     public boolean isLoggedIn()
@@ -44,15 +35,13 @@ public class UserSession implements Serializable
         return false;
     }
 
-    public String getEmailUser()
-    {
+    public String getEmailUser() {
         if (isLoggedIn())
             return this.m_oUser.getEmail();
         return null;
     }
-    
-    public List<UserRole> getRolesUser()
-    {
-        return this.m_oUser.getRoles();
+
+    public Role getRoleUser() {
+        return this.m_oUser.getRole();
     }
 }

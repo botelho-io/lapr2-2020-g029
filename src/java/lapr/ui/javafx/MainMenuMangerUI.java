@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import lapr.ui.javafx.util.FXBridge;
-import lapr.ui.javafx.util.MainUI;
 
 
 public class MainMenuMangerUI {
@@ -15,7 +14,7 @@ public class MainMenuMangerUI {
 
         @FXML
         public void visIn (ActionEvent actionEvent) {
-            FXBridge.scene = FXBridge.UC.UC7;
+            FXBridge.scene = FXBridge.STATE.UC7;
             quit();
         }
 
@@ -26,7 +25,7 @@ public class MainMenuMangerUI {
 
         @FXML
         public void enterUC5(ActionEvent actionEvent) {
-            FXBridge.scene = FXBridge.UC.UC5;
+            FXBridge.scene = FXBridge.STATE.UC5;
             quit();
         }
 }

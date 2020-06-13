@@ -3,7 +3,6 @@ package lapr.ui.javafx.util;
 import authorization.model.UserSession;
 import javafx.stage.Stage;
 import lapr.controller.AppPOE;
-import lapr.utils.Role;
 
 import java.io.IOException;
 
@@ -13,24 +12,27 @@ public class MainUI {
     public MainUI() {
         stage = new Stage();
     }
-    private boolean openUC(FXBridge.UC uc) {
-        return FXBridge.openUC(uc, stage);
+    private boolean openState(FXBridge.STATE state) {
+        return FXBridge.openState(state, stage);
     }
 
     public void mainMenu() {
         final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         // Loop trough the menus
         FXBridge.scene = null;
-        // Select role
-        if (su.isLoggedInWithRole(Role.ADMINISTRATOR)) {
-            openUC(FXBridge.UC.MENU_ADMIN);
-        } else if (su.isLoggedInWithRole(Role.COLLABORATOR)) {
-            openUC(FXBridge.UC.MENU_COLLA);
-        } else if (su.isLoggedInWithRole(Role.MANAGER)) {
-            openUC(FXBridge.UC.MENU_MANAG);
-        } else {
-            HelperUI.alert("Unknown Role!");
-            System.exit(1);
+        switch (su.getRoleUser()) {
+            case ADMINISTRATOR:
+                openState(FXBridge.STATE.MENU_ADMIN);
+                break;
+            case COLLABORATOR:
+                openState(FXBridge.STATE.MENU_COLLA);
+                break;
+            case MANAGER:
+                openState(FXBridge.STATE.MENU_MANAG);
+                break;
+            default:
+                HelperUI.alert("Unknown Role!");
+                System.exit(1);
         }
     }
 
@@ -39,10 +41,10 @@ public class MainUI {
         //AppPOE.getInstance().getApp().getAuthFacade().doLogin("colab@dei.pt", "password");
 
         // Load data from file
-        openUC(FXBridge.UC.UC12);
+        openState(FXBridge.STATE.UC12);
 
         // Login
-        openUC(FXBridge.UC.LOGIN);
+        openState(FXBridge.STATE.LOGIN);
         // Was login successful?
         final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();
         if(su == null || (!su.isLoggedIn())) {
@@ -62,16 +64,16 @@ public class MainUI {
                     // This allows a panel to just set a FXBridge.scene and it will be automatically
                     // opened when the current UC closes;
                     // FXBridge.param may be used for iter-panel communications.
-                    FXBridge.UC uc;
+                    FXBridge.STATE STATE;
                     do {
-                        uc = FXBridge.scene;
+                        STATE = FXBridge.scene;
                         FXBridge.scene = null;
-                    } while(openUC(uc));
+                    } while(openState(STATE));
                 } else {
                     // Nothing selected. Quit?
-                    openUC(FXBridge.UC.UC11);
+                    openState(FXBridge.STATE.UC11);
                     if(FXBridge.scene == null)
-                        FXBridge.scene = FXBridge.UC.MAIN_MENU;
+                        FXBridge.scene = FXBridge.STATE.MAIN_MENU;
                     switch (FXBridge.scene) {
                         case MAIN_MENU: continue MAIN_MENU_LOOP;
                         case QUIT: break MAIN_MENU_LOOP;

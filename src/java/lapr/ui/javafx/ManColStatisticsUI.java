@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.stage.Stage;
-import lapr.controller.AdministratorStatisticsController;
 import lapr.controller.ManagerCollaboratorStatisticsController;
 import lapr.model.Freelancer;
 import lapr.ui.javafx.util.FXBridge;
@@ -44,7 +43,7 @@ public class ManColStatisticsUI {
         if(!ctr.setFreelancers(selected)) {
             HelperUI.alert("The freelancers selected do not have anny transactions.");
         } else {
-            FXBridge.scene = FXBridge.UC.UC7_PART2;
+            FXBridge.scene = FXBridge.STATE.UC7_PART2;
             FXBridge.param = (Object) ctr;
             quit(null);
         }

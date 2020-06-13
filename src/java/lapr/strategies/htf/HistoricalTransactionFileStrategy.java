@@ -5,12 +5,11 @@
  */
 package lapr.strategies.htf;
 
-import csvparser.LineException;
 import csvparser.LineExceptionStack;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.model.Transaction;
-import lapr.regist.RegistFreelancer;
+import lapr.lists.RegistFreelancer;
 
 import java.io.IOException;
 import java.util.List;

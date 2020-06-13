@@ -1,6 +1,6 @@
 package lapr.controller;
 
-import lapr.list.ListTask;
+import lapr.lists.ListTask;
 import lapr.model.App;
 import lapr.model.Organization;
 import lapr.model.Task;

@@ -1,27 +1,21 @@
-package lapr.list;
+package lapr.lists;
 
 import lapr.controller.AppPOE;
 import lapr.model.*;
-import lapr.regist.RegistFreelancer;
-import lapr.regist.RegistOrganization;
-import lapr.utils.Expertise;
-import lapr.utils.TestConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListTaskTest {
 
     ListTask lt;
-    Task tsk1;
-    Task tsk2;
+    Task tsk1; // in lt
+    Task tsk2; // in lt
     Task tsk3;
+    Task tsk4; // equals tsk1
     Organization org;
 
 
@@ -32,6 +26,7 @@ class ListTaskTest {
         tsk1 = ListTask.newTask("TSK1", "A Test task 1", 10, 10, "TEST");
         tsk2 = ListTask.newTask("TSK2", "A Test task 2", 10, 10, "TEST");
         tsk3 = ListTask.newTask("TSK3", "A Test task 3", 10, 10, "TEST");
+        tsk4 = ListTask.newTask("TSK1", "A Test task 3", 10, 10, "TEST");
         AppPOE.restartInstance();
         App app = AppPOE.getInstance().getApp();
         Manager testMan = new Manager("Man Joe", "man@dei.pt", "password");
@@ -73,8 +68,8 @@ class ListTaskTest {
 
     @Test
     void getEqualTask() {
-        assertEquals(tsk1, tsk1);
-        assertNotEquals(tsk1, tsk2);
+        assertNull(lt.getSameTask(tsk3));
+        assertSame(tsk1, lt.getSameTask(tsk4));
     }
 
     @Test

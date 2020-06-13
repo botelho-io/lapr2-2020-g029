@@ -1,4 +1,4 @@
-package lapr.list;
+package lapr.lists;
 
 import lapr.model.Task;
 
@@ -89,14 +89,14 @@ public class ListTask implements Serializable {
     }
 
     /**
-     * Searches for a task.
-     * @param task Get a freelancer that equal task.
-     * @return The Task that will equal task.
+     * Searches for a task t1 where t2.equal(t1) is true.
+     * @param t2 Task that should equal t1.
+     * @return A task t1 where t2.equal(t1) is true or null if no such task is found.
      */
-    public Task getEqualTask(Task task) {
-        for (Task t : this.m_lstTask) {
-            if(t.equals(task))
-                return task;
+    public Task getSameTask(Task t2) {
+        for (Task t1 : this.m_lstTask) {
+            if(t2.equals(t1))
+                return t1;
         }
         return null;
     }

@@ -3,7 +3,7 @@ package lapr.controller;
 import lapr.api.EmailAPI;
 import lapr.api.PswGeneratorAPI;
 import lapr.model.*;
-import lapr.regist.RegistOrganization;
+import lapr.lists.RegistOrganization;
 
 public class CreateOrganizationController {
     /**

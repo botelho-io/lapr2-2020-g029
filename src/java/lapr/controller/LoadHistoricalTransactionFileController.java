@@ -1,15 +1,14 @@
 package lapr.controller;
 
 import csvparser.LineExceptionStack;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.model.App;
 import lapr.model.Organization;
 import lapr.model.Transaction;
-import lapr.regist.RegistFreelancer;
+import lapr.lists.RegistFreelancer;
 import lapr.strategies.htf.CSVTransactionFileStrategy;
 import lapr.strategies.htf.TXTTransactionFileStrategy;
-import lapr.strategies.htf.utils.HistoricalTransactionFileStrategyCommonCSV;
 import lapr.strategies.htf.HistoricalTransactionFileStrategy;
 
 import java.io.File;

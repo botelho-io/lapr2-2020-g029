@@ -8,10 +8,10 @@ package lapr.strategies.htf.utils;
 import csvparser.FileCSV;
 import csvparser.LineException;
 import csvparser.LineExceptionStack;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.model.*;
-import lapr.regist.RegistFreelancer;
+import lapr.lists.RegistFreelancer;
 import lapr.strategies.htf.HistoricalTransactionFileStrategy;
 import lapr.utils.Expertise;
 
@@ -195,7 +195,7 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
             if(ltk.validatesTask(task))
                 ltk.registTask(task);
             else {
-                task = ltk.getEqualTask(task);
+                task = ltk.getSameTask(task);
                 if(task.getExecutor() != null) {
                     exceptions.push(new LineException("Task already exists in the system, and is executed", path, lineRead.get(i)));
                     continue;
@@ -212,7 +212,7 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
             }
 
             // Transaction
-            if(ltr.validate(transaction) && ltr.addTransaction(transaction)) {
+            if(ltr.validate(transaction) && ltr.registerTransaction(transaction)) {
                 // All went ok
                 task.setExecutor(freelancer);
                 transaction.setFreelancer(freelancer);

@@ -1,10 +1,10 @@
 package lapr.utils;
 
 import lapr.controller.AppPOE;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
+import lapr.lists.ListTask;
+import lapr.lists.ListTransaction;
 import lapr.model.*;
-import lapr.regist.RegistFreelancer;
+import lapr.lists.RegistFreelancer;
 
 import java.time.LocalDate;
 
@@ -85,6 +85,6 @@ public abstract class TestConstants {
         addTestFreelancers();
         final ListTransaction lt = testOrg.getListTransaction();
         for (final Transaction t : testTransactions)
-            lt.addTransaction(t);
+            lt.registerTransaction(t);
     }
 }

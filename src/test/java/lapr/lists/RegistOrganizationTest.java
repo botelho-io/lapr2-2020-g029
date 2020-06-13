@@ -1,8 +1,6 @@
-package lapr.regist;
+package lapr.lists;
 
 import lapr.controller.AppPOE;
-import lapr.list.ListTask;
-import lapr.list.ListTransaction;
 import lapr.model.*;
 import lapr.utils.Expertise;
 import org.junit.jupiter.api.BeforeEach;
@@ -71,7 +69,7 @@ class RegistOrganizationTest {
                 ListTransaction.newTransaction("ID7", testFreelancers[3], testTasks[9], LocalDate.of(2020, 7, 8), 4, "Good Job :)")
         };
         for (Transaction t : testTransactions) {
-            testOrg.getListTransaction().addTransaction(t);
+            testOrg.getListTransaction().registerTransaction(t);
         }
     }
 

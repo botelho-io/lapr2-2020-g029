@@ -3,7 +3,7 @@ package lapr.controller;
 import javafx.util.Pair;
 import lapr.api.EmailAPI;
 import lapr.model.*;
-import lapr.regist.RegistOrganization;
+import lapr.lists.RegistOrganization;
 
 import java.io.Serializable;
 import java.util.*;

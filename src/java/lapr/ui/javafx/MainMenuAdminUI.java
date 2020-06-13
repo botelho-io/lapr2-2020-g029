@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 import lapr.controller.SendEmailsController;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
-import lapr.ui.javafx.util.MainUI;
 
 public class MainMenuAdminUI {
 
@@ -17,7 +16,7 @@ public class MainMenuAdminUI {
 
     @FXML
     public void enterUC08(ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC8;
+        FXBridge.scene = FXBridge.STATE.UC8;
         quit();
     }
 
@@ -26,7 +25,7 @@ public class MainMenuAdminUI {
     }
 
     public void enterUC09(ActionEvent actionEvent) {
-        FXBridge.scene = FXBridge.UC.UC9;
+        FXBridge.scene = FXBridge.STATE.UC9;
         quit();
     }
 
