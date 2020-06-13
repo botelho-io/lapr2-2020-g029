@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * FileCSV Reader
  * <p>Classe que representa um ficheiro CSV (simples sem caracteres de escape).</p>
- * @author 1150462 & 1192223
+ * @author 1150462 and 1192223
 */
 
 public class FileCSV extends SimpleMatrix<String> {

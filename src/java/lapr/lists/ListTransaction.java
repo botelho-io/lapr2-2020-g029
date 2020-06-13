@@ -27,7 +27,8 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
     }
 
     /**
-     * @return An iterator for the list.
+     * Returns an iterator for the list.
+     * @return n iterator for the list.
      */
     @Override
     public Iterator<Transaction> iterator() {
@@ -36,6 +37,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
 
     /**
      * Creates a new transaction.
+     * @param id The ID of the transaction.
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param endDate The date the task ended.
@@ -49,6 +51,7 @@ public class ListTransaction implements Iterable<Transaction>, Serializable {
 
     /**
      * Creates a new transaction.
+     * @param id The ID of the transaction.
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param paymentDetails The payment details of the transaction.

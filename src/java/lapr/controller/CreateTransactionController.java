@@ -23,14 +23,16 @@ public class CreateTransactionController {
     }
 
     /**
-     * @return A list of the tasks in the organization of the current user that have not been executed.
+     * Returns a list of the tasks in the organization of the current user that have not been executed.
+     * @return  list of the tasks in the organization of the current user that have not been executed.
      */
     public List<Task> getTasks() {
         return org.getListTask().getUnexecutedTasks();
     }
 
     /**
-     * @return A list of the freelancers in the system.
+     * Returns a list of the freelancers in the system.
+     * @return  list of the freelancers in the system.
      */
     public Collection<Freelancer> getFreelancers() {
         return app.getRegistFreelancer().getFreelancers();
@@ -38,6 +40,7 @@ public class CreateTransactionController {
 
     /**
      * Creates a new transaction.
+     * @param id The ID of the transaction.
      * @param freelancer The freelancer who executed the task.
      * @param task The task that was executed.
      * @param endDate The date the task was executed.
@@ -47,7 +50,7 @@ public class CreateTransactionController {
      */
     public boolean newTransaction(String id, Freelancer freelancer, Task task, LocalDate endDate, double hoursDelay, String description) {
         ltr = org.getListTransaction();
-        tr = ltr.newTransaction(id, freelancer, task, endDate, hoursDelay, description);
+        tr = ListTransaction.newTransaction(id, freelancer, task, endDate, hoursDelay, description);
         return ltr.validate(tr);
     }
 

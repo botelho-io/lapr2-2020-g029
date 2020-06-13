@@ -114,6 +114,7 @@ public class AppPOE {
 
     /**
      * Restarts the instance of AppPOE, useful for testing.
+     * @throws IOException If the app fails to close.
      */
     public static void restartInstance() throws IOException {
         synchronized(AppPOE.class) {

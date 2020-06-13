@@ -42,21 +42,24 @@ public class TaskExecutionDetails implements Serializable {
     }
 
     /**
-     * @return The number of hours the execution was delayed.
+     * Returns the number of hours the execution was delayed.
+     * @return he number of hours the execution was delayed.
      */
     public double getHoursDelay() {
         return m_dDelayHours;
     }
 
     /**
-     * @return The date the task was executed.
+     * Returns the date the task was executed.
+     * @return he date the task was executed.
      */
     public LocalDate getEndDate() {
         return m_oEndDate;
     }
 
     /**
-     * @return A textual description of the quality of the work done by the freelancer.
+     * Returns a textual description of the quality of the work done by the freelancer.
+     * @return  textual description of the quality of the work done by the freelancer.
      */
     public String getDescription() {
         return this.m_strDescription;

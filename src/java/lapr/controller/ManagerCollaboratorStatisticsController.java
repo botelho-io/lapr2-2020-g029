@@ -40,7 +40,8 @@ public class ManagerCollaboratorStatisticsController {
         return !trs.isEmpty();
     }
     /**
-     * @return The mean delay of the selected transactions.
+     * Returns the mean delay of the selected transactions.
+     * @return he mean delay of the selected transactions.
      */
     public double getMeanDelays() {
         double acc = 0;
@@ -50,7 +51,8 @@ public class ManagerCollaboratorStatisticsController {
     }
 
     /**
-     * @return The mean payments of the selected transactions.
+     * Returns the mean payments of the selected transactions.
+     * @return he mean payments of the selected transactions.
      */
     public double getMeanPayments() {
         int acc = 0;
@@ -60,7 +62,8 @@ public class ManagerCollaboratorStatisticsController {
     }
 
     /**
-     * @return The standard deviation of delays of the selected transactions.
+     * Returns the standard deviation of delays of the selected transactions.
+     * @return he standard deviation of delays of the selected transactions.
      */
     public double getStandardDeviationDelays() {
         final double n = getNumberTransactions();
@@ -73,7 +76,8 @@ public class ManagerCollaboratorStatisticsController {
     }
 
     /**
-     * @return The standard deviation of payments of the selected transactions.
+     * Returns the standard deviation of payments of the selected transactions.
+     * @return he standard deviation of payments of the selected transactions.
      */
     public double getStandardDeviationPayments() {
         final double n = getNumberTransactions();
@@ -120,7 +124,8 @@ public class ManagerCollaboratorStatisticsController {
     }
 
     /**
-     * @return The number of the transactions selected.
+     * Returns the number of the transactions selected.
+     * @return he number of the transactions selected.
      */
     public double getNumberTransactions() {
         return trs.size();

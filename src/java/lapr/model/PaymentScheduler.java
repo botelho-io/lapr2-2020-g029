@@ -74,7 +74,8 @@ public class PaymentScheduler implements Serializable {
         m_oTimer.schedule(task, getNextDate());
     }
     /**
-     * @return The date when the next automatic payments will be made.
+     * Returns the date when the next automatic payments will be made.
+     * @return he date when the next automatic payments will be made.
      */
     public Date getNextDate() {
         // Find what time it is now
@@ -98,8 +99,8 @@ public class PaymentScheduler implements Serializable {
     /**
      * Read object.
      * @param aInputStream The input stream.
-     * @throws ClassNotFoundException
-     * @throws IOException
+     * @throws ClassNotFoundException If the class is not in the stream.
+     * @throws IOException If the stream cannot be read from.
      */
     private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
         this.task = null;
@@ -114,7 +115,7 @@ public class PaymentScheduler implements Serializable {
     /**
      * Writes the object.
      * @param aOutputStream The output stream.
-     * @throws IOException
+     * @throws IOException If the stream cannot be written to.
      */
     private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
         aOutputStream.writeObject(m_oOrganization);

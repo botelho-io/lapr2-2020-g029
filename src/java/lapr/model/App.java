@@ -64,8 +64,8 @@ public class App implements Serializable, Closeable{
     /**
      * Read object.
      * @param aInputStream The input stream.
-     * @throws ClassNotFoundException
-     * @throws IOException
+     * @throws ClassNotFoundException If the APIs fail to load.
+     * @throws IOException If the file cannot be deserialized.
      */
     private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
         this.m_oAutorization = (AuthFacade) aInputStream.readObject();
@@ -78,7 +78,7 @@ public class App implements Serializable, Closeable{
     /**
      * Writes the object.
      * @param aOutputStream The output stream.
-     * @throws IOException
+     * @throws IOException If the file cannot be whiten to.
      */
     private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
         aOutputStream.writeObject(m_oAutorization);
@@ -88,7 +88,8 @@ public class App implements Serializable, Closeable{
     }
 
     /**
-     * @return The autorization facade used by the app.
+     * Returns the autorization facade used by the app.
+     * @return he autorization facade used by the app.
      */
     public AuthFacade getAuthFacade()
     {
@@ -104,6 +105,7 @@ public class App implements Serializable, Closeable{
     }
 
     /**
+     * Returns an instance of the payment API.
      * @return An instance of the payment API.
      */
     public PaymentAPI getPaymentAPI() {
@@ -115,14 +117,16 @@ public class App implements Serializable, Closeable{
     }
 
     /**
-     * @return The API used to send emails.
+     * Returns the API used to send emails.
+     * @return he API used to send emails.
      */
     public EmailAPI getEmailAPI() {
         return this.m_oEmailAPI;
     }
 
     /**
-     * @return The register of all the freelancers available in the system.
+     * Returns the register of all the freelancers available in the system.
+     * @return he register of all the freelancers available in the system.
      */
     public RegistFreelancer getRegistFreelancer() {
         return this.m_oRegistFreelancer;
@@ -179,5 +183,5 @@ public class App implements Serializable, Closeable{
         m_oPswGeneratorAPI.close();
     }
 }
-    
-    
+
+

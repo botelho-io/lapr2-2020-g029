@@ -59,7 +59,8 @@ public class Organization implements Serializable {
 
 
     /**
-     * @return The list transactions the organization made.
+     * Returns the list transactions the organization made.
+     * @return he list transactions the organization made.
      */
     public ListTransaction getListTransaction() {
         return m_oListTransaction;
@@ -76,14 +77,16 @@ public class Organization implements Serializable {
     private Collaborator m_oCollaborator;
 
     /**
-     * @return The manager of the organization.
+     * Returns the manager of the organization.
+     * @return he manager of the organization.
      */
     public Manager getManager() {
         return m_oManager;
     }
 
     /**
-     * @return The collaborator of the organization.
+     * Returns the collaborator of the organization.
+     * @return he collaborator of the organization.
      */
     public Collaborator getCollaborator() {
         return m_oCollaborator;
@@ -105,7 +108,8 @@ public class Organization implements Serializable {
     private ListTask m_oListTask;
 
     /**
-     * @return Task list of the organization.
+     * Returns task list of the organization.
+     * @return ask list of the organization.
      */
     public ListTask getListTask() {
         return m_oListTask;

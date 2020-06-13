@@ -70,49 +70,57 @@ public class Freelancer implements Serializable {
     }
 
     /**
-     * @return The freelancer's International Bank Account Number.
+     * Returns the freelancer's International Bank Account Number.
+     * @return he freelancer's International Bank Account Number.
      */
     public String getIBAN() {
         return m_strBankAccountIBAN;
     }
     /**
-     * @return The level of expertise of this freelancer.
+     * Returns the level of expertise of this freelancer.
+     * @return he level of expertise of this freelancer.
      */
     public Expertise getLevelOfExpertise() {
         return m_enumLevelOfExpertise;
     }
     /**
-     * @return The unique email of this freelancer.
+     * Returns the unique email of this freelancer.
+     * @return he unique email of this freelancer.
      */
     public String getEmail() {
         return m_strEmail;
     }
     /**
-     * @return The country where the freelancer resides.
+     * Returns the country where the freelancer resides.
+     * @return he country where the freelancer resides.
      */
     public String getCountry() {
         return m_strCountry;
     }
     /**
-     * @return The unique ID of this freelancer.
+     * Returns the unique ID of this freelancer.
+     * @return he unique ID of this freelancer.
      */
     public String getId() {
         return m_strId;
     }
     /**
-     * @return The name of this freelancer.
+     * Returns the name of this freelancer.
+     * @return he name of this freelancer.
      */
     public String getName() {
         return m_strName;
     }
     /**
-     * @return The NIF of this freelancer.
+     * Returns the NIF of this freelancer.
+     * @return he NIF of this freelancer.
      */
     public String getNIF() {
         return m_strNIF;
     }
     /**
-     * @return The address of this freelancer.
+     * Returns the address of this freelancer.
+     * @return he address of this freelancer.
      */
     public String getAddress() {
         return m_strAddress;

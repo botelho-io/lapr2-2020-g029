@@ -28,7 +28,8 @@ public class PaymentDetails implements Serializable {
     }
 
     /**
-     * @return True if the payment has been made, false otherwise.
+     * Returns true if the payment has been made, false otherwise.
+     * @return rue if the payment has been made, false otherwise.
      */
     public boolean isPayed() {
         return isPayed;

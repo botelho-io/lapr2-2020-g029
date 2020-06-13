@@ -76,7 +76,8 @@ public class RegistOrganization implements Iterable<Organization>, Serializable 
     }
 
     /**
-     * @return An iterator to all organizations.
+     * Returns an iterator to all organizations.
+     * @return n iterator to all organizations.
      */
     @Override
     public Iterator<Organization> iterator() {

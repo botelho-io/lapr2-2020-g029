@@ -120,7 +120,8 @@ public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     }
 
     /**
-     * @return An iterator to all the freelancers.
+     * Returns an iterator to all the freelancers.
+     * @return n iterator to all the freelancers.
      */
     @Override
     public Iterator<Freelancer> iterator() {

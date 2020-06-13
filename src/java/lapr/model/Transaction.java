@@ -40,6 +40,7 @@ public class Transaction implements Serializable {
 
     /**
      * Constructor.
+     * @param id The id of the transaction.
      * @param freelancer The freelancer that completed the task.
      * @param task Tha task completed by the freelancer.
      * @param paymentDetails The payment details of the transaction.
@@ -103,7 +104,8 @@ public class Transaction implements Serializable {
         return success;
     }
     /**
-     * @return Amount (in euros) to pay to the freelancer for the task.
+     * Returns amount (in euros) to pay to the freelancer for the task.
+     * @return mount (in euros) to pay to the freelancer for the task.
      */
     public Double getAmount() {
         double total = m_oTask.getCostPerHourOfJuniorEur() * m_oTask.getDurationInHours();
@@ -113,32 +115,37 @@ public class Transaction implements Serializable {
         return total;
     }
     /**
-     * @return Amount (in the freelancer's native currency) to pay to the freelancer for the task.
+     * Returns amount (in the freelancer's native currency) to pay to the freelancer for the task.
+     * @return mount (in the freelancer's native currency) to pay to the freelancer for the task.
      */
     public Double getNativeAmount() {
         return AppPOE.getInstance().getApp().getMonetaryConversionAPI().convert(getFreelancer().getCountry(), getAmount());
     }
     /**
-     * @return The freelancer this transaction refers to.
+     * Returns the freelancer this transaction refers to.
+     * @return he freelancer this transaction refers to.
      */
     public Freelancer getFreelancer() {
         return m_oFreelancer;
     }
     /**
-     * @return The task this transaction is paying.
+     * Returns the task this transaction is paying.
+     * @return he task this transaction is paying.
      */
     public Task getTask() {
         return m_oTask;
     }
     /**
-     * @return The details about the payment made on this transaction.
+     * Returns the details about the payment made on this transaction.
+     * @return he details about the payment made on this transaction.
      */
     public PaymentDetails getPaymentDetails() {
         return m_oPaymentDetails;
     }
 
     /**
-     * @return The details of the execution of the task.
+     * Returns the details of the execution of the task.
+     * @return he details of the execution of the task.
      */
     public TaskExecutionDetails getExecutionDetails() {
         return m_oDetails;
@@ -169,7 +176,8 @@ public class Transaction implements Serializable {
     }
 
     /**
-     * @return The ID of the transaction.
+     * Returns the ID of the transaction.
+     * @return he ID of the transaction.
      */
     public String getId() {
         return this.m_strID;

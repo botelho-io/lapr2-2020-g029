@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Simple Matrix Class
  * <p>Representa uma matriz regular que pode aumentar em altura mas não em largura.</p>
- * @author 1150462 & 1192223
+ * @author 1150462 and 1192223
 */
 
 public class SimpleMatrix<T> {
@@ -49,7 +49,7 @@ public class SimpleMatrix<T> {
      * @param line Linha a adicionar.
      * @param padding Dados a colocar no final da matriz de modo a criar uma matriz completa.
      * @return Verdadeiro se pode adicionar uma nova linha à matriz; Falso caso contrário.
-     * @throws IllegalArgumentException Ver addLine(List<T> line).
+     * @throws IllegalArgumentException Ver (addLine).
      */
     public boolean addLine(List<T> line, T padding) throws IllegalArgumentException {
         if(!addLine(line)) return false;
@@ -63,7 +63,7 @@ public class SimpleMatrix<T> {
      * Tenta adicionar uma linha à matriz.
      * @param line Linha a adicionar. (Se width == 0 este será inferido pelo tamanho de line)
      * @return Verdadeiro se foi possível adicionar à matriz.
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException If the line size is incorrect.
      */
     boolean addLine(List<T> line) throws IllegalArgumentException {
         if(line.size() > width) {
@@ -97,7 +97,8 @@ public class SimpleMatrix<T> {
     }
 
     /**
-     * @return A altura da matriz.
+     * Returns a altura da matriz.
+     * @return  altura da matriz.
      */
     public Integer getHeight() {
         return height;

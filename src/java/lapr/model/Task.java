@@ -58,7 +58,8 @@ public class Task implements Serializable {
     }
 
     /**
-     * @return The freelancer that executed the task or null if the task has not been executed yet.
+     * Returns the freelancer that executed the task or null if the task has not been executed yet.
+     * @return he freelancer that executed the task or null if the task has not been executed yet.
      */
     public Freelancer getExecutor() {
         return m_oExecutor;
@@ -71,7 +72,8 @@ public class Task implements Serializable {
         this.m_oExecutor = executor;
     }
     /**
-     * @return The duration in hours it took to complete the task.
+     * Returns the duration in hours it took to complete the task.
+     * @return he duration in hours it took to complete the task.
      */
     public double getDurationInHours() {
         return m_dDurationInHours;
@@ -83,7 +85,8 @@ public class Task implements Serializable {
         this.m_dDurationInHours = durationInHours;
     }
     /**
-     * @return The cost per hour a junior freelancer receives for this task.
+     * Returns the cost per hour a junior freelancer receives for this task.
+     * @return he cost per hour a junior freelancer receives for this task.
      */
     public double getCostPerHourOfJuniorEur() {
         return m_dCostPerHourOfJuniorEur;
@@ -95,20 +98,23 @@ public class Task implements Serializable {
         this.m_dCostPerHourOfJuniorEur = costPerHourOfJuniorEur;
     }
     /**
-     * @return The id of the task.
+     * Returns the id of the task.
+     * @return he id of the task.
      */
     public String getId() {
         return m_strId;
     }
     /**
-     * @return A short description of the task.
+     * Returns a short description of the task.
+     * @return  short description of the task.
      */
     public String getDescription() {
         return m_strDescription;
     }
 
     /**
-     * @return The category this task is in.
+     * Returns the category this task is in.
+     * @return he category this task is in.
      */
     public String getCategory() {
         return this.m_strCategory;

@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Line Exception Class
  * <p>Representa um erro que ocureu ao ler um certo ficheiro numa certa linha.</p>
- * @author 1150462 & 1192223
+ * @author 1150462 and 1192223
 */
 
 public class LineException extends IOException {
@@ -25,14 +25,16 @@ public class LineException extends IOException {
     }
 
     /**
-     * @return Ficheiro em que o erro ocorreu.
+     * Returns ficheiro em que o erro ocorreu.
+     * @return icheiro em que o erro ocorreu.
      */
     public String getFile() {
         return file;
     }
 
     /**
-     * @return Linha do ficheiro onde ocorreu o erro.
+     * Returns linha do ficheiro onde ocorreu o erro.
+     * @return inha do ficheiro onde ocorreu o erro.
      */
     public int getLine() {
         return line;

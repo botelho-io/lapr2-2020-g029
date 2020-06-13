@@ -56,7 +56,8 @@ public class EmailScheduler implements Serializable {
     }
 
     /**
-     * @return The date when the next automatic e-mails will be sent.
+     * Returns the date when the next automatic e-mails will be sent.
+     * @return he date when the next automatic e-mails will be sent.
      */
     public Date getNextDate() {
         // Find what time it is now
@@ -80,10 +81,8 @@ public class EmailScheduler implements Serializable {
     /**
      * Read object.
      * @param aInputStream The input stream.
-     * @throws ClassNotFoundException
-     * @throws IOException
      */
-    private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
+    private void readObject(ObjectInputStream aInputStream) {
         this.m_oTimer = null;
         this.task = null;
         resetTime();
@@ -92,8 +91,7 @@ public class EmailScheduler implements Serializable {
     /**
      * Writes the object.
      * @param aOutputStream The output stream.
-     * @throws IOException
      */
-    private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
+    private void writeObject(ObjectOutputStream aOutputStream) {
     }
 }
