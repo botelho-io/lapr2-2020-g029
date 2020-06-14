@@ -14,7 +14,7 @@ class PaymentScheduler {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 }
 

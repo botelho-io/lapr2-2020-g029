@@ -11,7 +11,7 @@ class TaskExecutionDetails {
 }
 
 class Organization {
-        - String nome
+        - String name
 }
 
 class Task {
@@ -28,7 +28,7 @@ class App {
 
 
 class Manager {
-        - String nome
+        - String name
         - String email
         - String password
 }

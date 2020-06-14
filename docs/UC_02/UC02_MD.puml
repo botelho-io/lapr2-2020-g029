@@ -13,7 +13,7 @@ class Organization {
 
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }
@@ -27,7 +27,7 @@ class Task {
 }
 
 class User {
-        - String nome
+        - String name
         - String email
         - String password
 }

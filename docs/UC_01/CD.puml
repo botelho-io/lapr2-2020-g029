@@ -28,7 +28,7 @@ class RegistFreelancer {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 
         + getListTask()

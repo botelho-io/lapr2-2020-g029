@@ -8,7 +8,7 @@ class App {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 }
 

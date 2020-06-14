@@ -30,7 +30,7 @@ class MonetaryUnitConversionAPI {
 }
 
 class Organization {
-        - String nome
+        - String name
         + getListTransaction()
 }
 

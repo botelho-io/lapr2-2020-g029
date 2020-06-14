@@ -9,7 +9,7 @@ class App {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 }
 
@@ -31,7 +31,7 @@ class HistoricalTransactionFile {
 
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }

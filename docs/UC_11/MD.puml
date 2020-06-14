@@ -9,7 +9,7 @@ class App {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 }
 
@@ -36,13 +36,13 @@ class TaskExecutionDetails {
 }
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class Manager {
-        - String nome
+        - String name
         - String email
         - String password
 }
@@ -53,7 +53,7 @@ class PaymentScheduler {
 }
 
 class Administrator {
-        - String nome
+        - String name
         - String email
         - String password
 }

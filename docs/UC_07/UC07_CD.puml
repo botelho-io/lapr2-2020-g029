@@ -28,19 +28,19 @@ class RegistOrganization {
 }
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
         + getListTransaction()
 }
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class Manager {
-        - String nome
+        - String name
         - String email
         - String password
 }

@@ -41,7 +41,7 @@ class RegistOrganization {
 AdministratorStatisticsController ..> RegistOrganization
 
 class Organization {
-        - String nome
+        - String name
         - String NIF
 
         + getListTransaction()

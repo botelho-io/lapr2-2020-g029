@@ -8,7 +8,7 @@ class EmailScheduler {
         + getNextDate()
 }
 
-class SendEmailTask {       
+class SendEmailTask {
 	+ sendMessages(Map<Freelancer, String> fre_msg)
         + run()
 	+ getMessages()
@@ -21,7 +21,7 @@ class EmailAPI {
 
 
 class Organization {
-        - String nome
+        - String name
         + getTaskList()
 }
 
