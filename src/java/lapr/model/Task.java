@@ -138,4 +138,9 @@ public class Task implements Serializable {
     public int hashCode() {
         return Objects.hash(m_strId);
     }
+
+    @Override
+    public String toString() {
+        return String.format("(%s) %s", m_strId, m_strDescription);
+    }
 }

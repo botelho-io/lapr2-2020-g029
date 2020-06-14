@@ -13,21 +13,23 @@ import lapr.model.Task;
 import lapr.ui.javafx.util.FXBridge;
 import lapr.ui.javafx.util.HelperUI;
 
+import java.time.LocalDate;
 import java.util.*;
+import java.util.zip.DeflaterOutputStream;
 
 public class CreateTransactionUI {
     @FXML
     public Button btnUC3;
     @FXML
-    public ChoiceBox<String> cbFreelancer;
+    public ChoiceBox<Freelancer> cbFreelancer;
     @FXML
     public Button btnUC2;
     @FXML
-    public ChoiceBox<String> cbTask;
+    public ChoiceBox<Task> cbTask;
     @FXML
     public DatePicker dpDate;
     @FXML
-    public Spinner<Integer> spHours;
+    public Spinner<Double> spHours;
     @FXML
     public TextArea taDesc;
     @FXML
@@ -35,52 +37,50 @@ public class CreateTransactionUI {
     @FXML
     public TextField tfId;
 
-    private Map<String, Task> name_task;
-    private Map<String, Freelancer> name_freelancer;
     private CreateTransactionController controller;
     @FXML
     public void initialize() {
         controller = new CreateTransactionController();
         refreshTasks();
         refreshFreelancer();
-        final SpinnerValueFactory<Integer> vFac = new SpinnerValueFactory.IntegerSpinnerValueFactory(Integer.MIN_VALUE,Integer.MAX_VALUE, 0);
+        final SpinnerValueFactory<Double> vFac = new SpinnerValueFactory.DoubleSpinnerValueFactory(Double.MIN_VALUE,Double.MAX_VALUE, 0);
         spHours.setValueFactory(vFac);
         taDesc.setText("");
         tfId.setText("");
-        ChangeListener<Object> cl = new ChangeListener<Object>() {
-            @Override public void changed(ObservableValue<? extends Object> obs, Object o, Object o1) {
-                updateValue();
+        cbFreelancer.getSelectionModel().selectedItemProperty().addListener(ncl());
+        cbTask.getSelectionModel().selectedItemProperty().addListener(ncl());
+        taDesc.textProperty().addListener(ncl());
+        spHours.valueProperty().addListener(ncl());
+        dpDate.valueProperty().addListener(ncl());
+        updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());
+    }
+
+    private <T> ChangeListener<T> ncl() {
+        return new ChangeListener<T>() {
+            @Override public void changed(ObservableValue<? extends T> obs, T oldval, T newval) {
+                if(newval instanceof Freelancer) {
+                    updateValue((Freelancer) newval, cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());
+                } else if (newval instanceof Task) {
+                    updateValue(cbFreelancer.getValue(), (Task) newval, dpDate.getValue(), spHours.getValue(), taDesc.getText());
+                } else if (newval instanceof LocalDate) {
+                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), (LocalDate) newval, spHours.getValue(), taDesc.getText());
+                } else if (newval instanceof  Double) {
+                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), (Double) newval, taDesc.getText());
+                } else if (newval instanceof  String) {
+                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), (String) newval);
+                } else {
+                    throw new IllegalArgumentException("CreateTransactionUI - Bad listener");
+                }
             }
         };
-        cbFreelancer.getSelectionModel().selectedIndexProperty().addListener(cl);
-        cbTask.getSelectionModel().selectedIndexProperty().addListener(cl);
-        taDesc.textProperty().addListener(cl);
-        spHours.valueProperty().addListener(cl);
-        updateValue();
     }
 
     private void refreshTasks() {
-        name_task = new HashMap<>();
-        List<Task> lt = controller.getTasks();
-        ArrayList<String> strLt = new ArrayList<>();
-        for (Task tsk : lt) {
-            final String name = String.format("(%s) %s", tsk.getId(), tsk.getDescription());
-            name_task.put(name, tsk);
-            strLt.add(name);
-        }
-        cbTask.setItems(FXCollections.observableArrayList(strLt));
+        cbTask.setItems(FXCollections.observableArrayList(controller.getTasks()));
     }
 
     private void refreshFreelancer() {
-        name_freelancer = new HashMap<>();
-        Collection<Freelancer> lf = controller.getFreelancers();
-        ArrayList<String> strLf = new ArrayList<>();
-        for (Freelancer fre : lf) {
-            final String name = String.format("(%s) %s", fre.getId(), fre.getName());
-            name_freelancer.put(name, fre);
-            strLf.add(name);
-        }
-        cbFreelancer.setItems(FXCollections.observableArrayList(strLf));
+        cbFreelancer.setItems(FXCollections.observableArrayList(controller.getFreelancers()));
     }
 
     @FXML
@@ -89,7 +89,6 @@ public class CreateTransactionUI {
         refreshFreelancer();
     }
 
-    //Stage stgUC2;
     @FXML
     public void startUC2(ActionEvent actionEvent) {
         FXBridge.openState(FXBridge.STATE.UC2, new Stage());
@@ -106,12 +105,7 @@ public class CreateTransactionUI {
         Freelancer fre;
         Task tsk;
         try {
-            fre = name_freelancer.get(cbFreelancer.getValue());
-            if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.\nPlease, try again.");
-            tsk = name_task.get(cbTask.getValue());
-            if (tsk == null) throw new IllegalStateException("An illegal task was chosen.\nPlease, try again.");
-            boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
-            if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.\nPlease, try again.");
+            newTransaction(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());
             boolean ad = controller.addTransaction();
             if (!ad) throw new IllegalStateException("An error occurred while adding the transaction to the register.\nPlease, try again.");
         } catch (IllegalArgumentException | IllegalStateException ex) {
@@ -120,26 +114,26 @@ public class CreateTransactionUI {
             return;
         }
         // All went ok.
-        final String msg = String.format("The freelancer (%s) %s will be payed %f€.\nYou may quit or keep adding transactions.", fre.getId(), fre.getName(), controller.getAmount());
+        final String msg = String.format("The freelancer %s will be payed %f€.\nYou may quit or keep adding transactions.", cbFreelancer.getValue().toString(), controller.getAmount());
         HelperUI.alert(Alert.AlertType.INFORMATION, msg);
         initialize();
     }
 
     @FXML
-    public void updateValue() {
-        Freelancer fre;
-        Task tsk;
+    public void updateValue(Freelancer fre, Task tsk, LocalDate date, Double hours, String desc) {
         try {
-            fre = name_freelancer.get(cbFreelancer.getValue());
-            if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.");
-            tsk = name_task.get(cbTask.getValue());
-            if (tsk == null) throw new IllegalStateException("An illegal task was chosen.");
-            boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, dpDate.getValue(), spHours.getValue(), taDesc.getText());
-            if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.");
+            newTransaction(fre, tsk, date, hours, desc);
             final String msg = String.format("%.3f€", controller.getAmount());
             lblValue.setText(msg);
         } catch (IllegalArgumentException | IllegalStateException ex) {
             lblValue.setText("Incomplete Values");
         }
+    }
+
+    private void newTransaction(Freelancer fre, Task tsk, LocalDate date, Double hours, String desc) {
+        if (fre == null) throw new IllegalStateException("An illegal freelancer was chosen.");
+        if (tsk == null) throw new IllegalStateException("An illegal task was chosen.");
+        boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, date, hours, desc);
+        if (!nt) throw new IllegalStateException("An error occurred while creating the transaction.");
     }
 }

@@ -41,7 +41,7 @@
          <HBox spacing="10.0" VBox.vgrow="NEVER">
             <children>
                <Label prefWidth="180.0" text="Date The Task Ended" />
-               <DatePicker fx:id="dpDate" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" onAction="#updateValue" prefWidth="30.0" promptText="Date The Dask Ended" HBox.hgrow="ALWAYS">
+               <DatePicker fx:id="dpDate" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="30.0" promptText="Date The Dask Ended" HBox.hgrow="ALWAYS">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin></DatePicker>
