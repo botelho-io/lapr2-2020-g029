@@ -7,15 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class PaymentDetailsTest {
 
     @Test
-    void isPayed() {
+    void isPaid() {
         PaymentDetails pd = new PaymentDetails();
-        assertFalse(pd.isPayed());
+        assertFalse(pd.isPaid());
     }
 
     @Test
-    void setPayed() {
+    void setPaid() {
         PaymentDetails pd = new PaymentDetails();
-        pd.setPayed(true);
-        assertTrue(pd.isPayed());
+        pd.setPaid(true);
+        assertTrue(pd.isPaid());
     }
 }

@@ -73,11 +73,11 @@ public class Transaction implements Serializable {
 
     /**
      * Creates new payment details.
-     * @param isPayed True if the payment was made, false otherwise.
+     * @param isPaid True if the payment was made, false otherwise.
      * @return The payment details.
      */
-    public static PaymentDetails newPaymentDetails(boolean isPayed) {
-        return new PaymentDetails(isPayed);
+    public static PaymentDetails newPaymentDetails(boolean isPaid) {
+        return new PaymentDetails(isPaid);
     }
 
     /**
@@ -101,7 +101,7 @@ public class Transaction implements Serializable {
             getAmount(),                        // The amount in euros to pay to the freelancer.
             getNativeAmount()                   // The amount in the freelancer's native currency to pay.
         );
-        getPaymentDetails().setPayed(success);
+        getPaymentDetails().setPaid(success);
         return success;
     }
     /**

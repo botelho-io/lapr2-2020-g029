@@ -114,7 +114,7 @@ public class CreateTransactionUI {
             return;
         }
         // All went ok.
-        final String msg = String.format("The freelancer %s will be payed %f€.\nYou may quit or keep adding transactions.", cbFreelancer.getValue().toString(), controller.getAmount());
+        final String msg = String.format("The freelancer %s will be paid %f€.\nYou may quit or keep adding transactions.", cbFreelancer.getValue().toString(), controller.getAmount());
         HelperUI.alert(Alert.AlertType.INFORMATION, msg);
         initialize();
     }

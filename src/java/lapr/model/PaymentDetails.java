@@ -11,14 +11,14 @@ public class PaymentDetails implements Serializable {
     /**
      * Represents whether the payment has been made (true) or not (false).
      */
-    private boolean isPayed;
+    private boolean isPaid;
 
     /**
      * Constructor.
-     * @param isPayed True if the payment has been made, false otherwise.
+     * @param isPaid True if the payment has been made, false otherwise.
      */
-    public PaymentDetails(boolean isPayed) {
-        this.isPayed = isPayed;
+    public PaymentDetails(boolean isPaid) {
+        this.isPaid = isPaid;
     }
 
     /**
@@ -32,32 +32,32 @@ public class PaymentDetails implements Serializable {
      * Returns true if the payment has been made, false otherwise.
      * @return rue if the payment has been made, false otherwise.
      */
-    public boolean isPayed() {
-        return isPayed;
+    public boolean isPaid() {
+        return isPaid;
     }
 
     /**
-     * @param payed True if the payment has been made, false otherwise.
+     * @param paid True if the payment has been made, false otherwise.
      */
-    public void setPayed(boolean payed) {
-        isPayed = payed;
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 
     /**
      * Compare two payment details.
      * @param o Ideally a payment details to compare.
-     * @return Will return true if and only if the object provided is a payment details that is payed.
+     * @return Will return true if and only if the object provided is a payment details that is paid.
      */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof PaymentDetails)) return false;
         PaymentDetails that = (PaymentDetails) o;
-        return isPayed() == that.isPayed();
+        return isPaid() == that.isPaid();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isPayed());
+        return Objects.hash(isPaid());
     }
 }

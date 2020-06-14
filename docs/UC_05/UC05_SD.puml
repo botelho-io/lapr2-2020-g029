@@ -10,7 +10,7 @@ participant "org:Organization" as ORG
 participant "psche:PaymentScheduler" as PS
 
 activate M
-M -> UI : defining time tasks will be payed.
+M -> UI : defining time tasks will be paid.
 activate UI
 UI --> M : request the time data (i.e. dayMonth, timeOfDay).
 deactivate UI

@@ -48,7 +48,7 @@ class Task {
 }
 
 class PaymentDetails {
-        - Boolean isPayed
+        - Boolean isPaid
 }
 
 Transaction                  "1" -- "1"      Task                      : relative to>

@@ -10,7 +10,7 @@
 | UC2  | [Create a Task](../UC_02/UC_02.md) |
 | UC3  | [Create a Freelancer](../UC_03/UC_03.md) |
 | UC4  | [Load Historical Transactions from File](../UC_04/UC_04.md) |
-| UC5  | [Define Time and Day of the Month Unpayed Tasks Will Be Payed](../5/UC_05.md)
+| UC5  | [Define Time and Day of the Month Unpaid Tasks Will Be Paid](../5/UC_05.md)
 | UC6  | [Automatically Make Payments](../UC_06/UC_06.md) |
 | UC7  | [Visualize Overall Statistics About Task Execution Times](../UC_07/UC_07.md) |
 | UC8  | [Add New Organization](../UC_08/UC_08.md) |

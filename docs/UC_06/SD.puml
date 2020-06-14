@@ -34,7 +34,7 @@ deactivate SC
                                 deactivate org
                                 TASK -> ct ** : create()
                                 loop for each transaction
-                                        opt if the transaction isn't payed
+                                        opt if the transaction isn't paid
                                                 TASK -> lt : trs = getTransaction(ID)
                                                 activate lt
                                                 deactivate lt
@@ -52,7 +52,7 @@ deactivate SC
                                                                 aEUR - The amount in euros to pay to the freelancer.
                                                                 aNAT - The amount in the freelancer's native currency to pay.
                                                         end note
-                                                        trs -> trs : setPayed(true)
+                                                        trs -> trs : setPaid(true)
                                                 deactivate trs
                                                 TASK -> ct : add(trs)
                                                 activate ct

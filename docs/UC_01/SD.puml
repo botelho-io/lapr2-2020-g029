@@ -25,7 +25,7 @@ participant "tr\n:Transaction" as tr
 'The collaborator introduces all the data.
 'The systems shows the data introduced and requests confirmation.
 'The collaborator confirms.
-'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be payed to the freelancer.
+'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be paid to the freelancer.
 
 
 
@@ -88,7 +88,7 @@ activate col
                         activate tr
                         deactivate tr
                 deactivate cnt
-                ui --> col : shows the data introduced, the amount that will be payed to the freelancer and requests confirmation
+                ui --> col : shows the data introduced, the amount that will be paid to the freelancer and requests confirmation
         deactivate ui
          col -> ui :  confirms
         activate ui

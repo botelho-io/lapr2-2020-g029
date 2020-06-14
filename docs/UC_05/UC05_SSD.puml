@@ -3,7 +3,7 @@ autonumber
 actor Manager as M
 
 activate M
-M -> ":Sistem" : defining time and day of the month unpayed tasks will be payed
+M -> ":Sistem" : defining time and day of the month unpaid tasks will be paid
 activate ":Sistem"
 ":Sistem" --> M : request the time data (i.e. the day of the month and the time of day)
 deactivate ":Sistem"

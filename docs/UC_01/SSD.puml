@@ -9,7 +9,7 @@ participant ":System" as S
 'The collaborator inserts all the data.
 'The systems shows the data introduced and requests confirmation.
 'The collaborator confirms.
-'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be payed to the freelancer.
+'The system validates and stores the data and informs the collaborator of the success of the operation and the amount that will be paid to the freelancer.
 
 
 activate C
@@ -19,11 +19,11 @@ activate C
         deactivate S
         C -> S : inserts all the data
         activate S
-                S --> C: shows the data introduced, the amount that will be payed \nto the freelancer and requests confirmation
+                S --> C: shows the data introduced, the amount that will be paid \nto the freelancer and requests confirmation
         deactivate S
         C -> S : confirms
         activate S
-                S --> C: success and shows amount that will be payed to the freelancer
+                S --> C: success and shows amount that will be paid to the freelancer
         deactivate S
 deactivate C
 

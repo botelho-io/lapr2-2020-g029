@@ -46,7 +46,7 @@ public class MakePaymentTask extends TimerTask implements Serializable {
 
         ListTransaction completeTransactions = new ListTransaction();
         for(Transaction trs : lt) {
-            if(!trs.getPaymentDetails().isPayed())
+            if(!trs.getPaymentDetails().isPaid())
                 if(trs.makeBankTransfer())
                     completeTransactions.registerTransaction(trs);
         }

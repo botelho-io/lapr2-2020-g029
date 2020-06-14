@@ -93,7 +93,7 @@ class TransactionTest {
         PaymentDetails expected = new PaymentDetails();
         assertEquals(trs.getPaymentDetails(), expected);
         trs.makeBankTransfer();
-        expected.setPayed(true);
+        expected.setPaid(true);
         assertEquals(trs.getPaymentDetails(), expected);
     }
 
