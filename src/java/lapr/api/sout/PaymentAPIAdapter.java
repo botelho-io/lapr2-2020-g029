@@ -4,6 +4,9 @@ import lapr.api.PaymentAPI;
 
 import java.io.IOException;
 
+/**
+ * Represents an API adapter used to process bank payments.
+ */
 public class PaymentAPIAdapter implements PaymentAPI {
 
     /**

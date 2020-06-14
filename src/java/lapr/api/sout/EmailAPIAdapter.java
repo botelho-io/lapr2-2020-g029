@@ -4,6 +4,9 @@ import lapr.api.EmailAPI;
 
 import java.util.Calendar;
 
+/**
+ * The API adapter used to send emails.
+ */
 public class EmailAPIAdapter implements EmailAPI {
     /**
      * Send an email.

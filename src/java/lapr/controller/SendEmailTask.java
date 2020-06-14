@@ -8,6 +8,10 @@ import lapr.lists.RegistOrganization;
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * Class that is responsible for send emails to late freelancers.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class SendEmailTask extends TimerTask implements Serializable {
     /**
      * The email scheduler responsible for this task.

@@ -22,13 +22,19 @@ import java.time.format.DateTimeParseException;
 import java.util.*;
 
 /**
- *
- * @author Universidade
+ * Represents a historical transaction file strategy common for loading files.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTransactionFileStrategy {
 
+    /**
+     * An instance of date time formatter.
+     */
     final static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("dd-MM-yy");
     // Map columns to their name to allow easy modification of data placement within file
+    /**
+     * Reade the information in file to the current instance o «f the object.
+     */
     final static HashMap<field, Integer> colIdx;
     static {
         colIdx = new HashMap<>();
@@ -51,24 +57,49 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
         colIdx.put(field.FreelancerCountry,         16);
     }
 
+    /**
+     * Name of the file that will be loaded.
+     */
     FileCSV file;
+    /**
+     * Path of the file that will be loaded.
+     */
     String path;
+    /**
+     * An instance of transactions.
+     */
     final ArrayList<Transaction> allTransactions;
+    /**
+     * Line that will be read.
+     */
     final ArrayList<Integer> lineRead;
+    /**
+     * The separator of the information in the file.
+     */
     final String colSeparator;
 
+    /**
+     * Constructor.
+     * @param colSeparator how the information is separated in the file.
+     */
     public HistoricalTransactionFileStrategyCommonCSV(String colSeparator) {
         allTransactions = new ArrayList<>();
         lineRead = new ArrayList<>();
         this.colSeparator = colSeparator;
     }
 
+    /**
+     * Opens the file that will be loaded.
+     */
     @Override
     public void openFile(final String path) throws IOException {
         this.path = path;
         file = new FileCSV(path, "\n", colSeparator, true, 17);
     }
 
+    /**
+     * Load's data from the file into memory.
+     */
     @Override
     public void loadData() throws LineExceptionStack {
         final LineExceptionStack exceptions = new LineExceptionStack();
@@ -178,11 +209,17 @@ public class HistoricalTransactionFileStrategyCommonCSV implements HistoricalTra
             throw exceptions;
     }
 
+    /**
+     * Get's data from the transaction file into transaction list.
+     */
     @Override
     public List<Transaction> getData() {
         return Collections.unmodifiableList(allTransactions);
     }
 
+    /**
+     * Save's data from the file into the system.
+     */
     @Override
     public void saveData(final RegistFreelancer rf, final ListTask ltk, final ListTransaction ltr) throws LineExceptionStack {
         final LineExceptionStack exceptions = new LineExceptionStack();

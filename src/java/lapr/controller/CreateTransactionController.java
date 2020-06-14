@@ -7,10 +7,26 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Class that is responsible for creating a new transaction and adding to tha transaction list of the organization.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class CreateTransactionController {
+    /**
+     * Instance of the app.
+     */
     App app;
+    /**
+     * Instance of Organization of the current user.
+     */
     Organization org;
+    /**
+     * A list of transactions of current organization.
+     */
     ListTransaction ltr;
+    /**
+     * Instance of transaction to be added to the list of transactions.
+     */
     Transaction tr;
 
     /**

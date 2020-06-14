@@ -10,8 +10,8 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- *
- * @author Universidade
+ * Represents a the details of task that have executed by a freelancer.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class TaskExecutionDetails implements Serializable {
     /**
@@ -65,6 +65,11 @@ public class TaskExecutionDetails implements Serializable {
         return this.m_strDescription;
     }
 
+    /**
+     * Compare two task execution details.
+     * @param o Ideally a task execution details. to compare.
+     * @return Will return true if and only if the object provided is a task execution details delay is 0, with the same end date and description.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

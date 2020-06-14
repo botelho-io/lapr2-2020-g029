@@ -8,8 +8,8 @@ package lapr.model;
 import authorization.model.Role;
 
 /**
- *
- * @author Universidade
+ * Represents a manager of the organization.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Manager extends User {
     /**

@@ -9,21 +9,22 @@ import java.util.Arrays;
 
 /**
  * FileCSV Reader
- * <p>Classe que representa um ficheiro CSV (simples sem caracteres de escape).</p>
- * @author 1150462 and 1192223
+ * <p>Class that represents a CSV file (simple without escape characters).</p>
+ * @author 1150462 and 1192232
 */
 
 public class FileCSV extends SimpleMatrix<String> {
 
     /**
-     * Abre um ficheiro, lendo-o para memória.
-     * @param path Caminho do ficheiro a ler.
-     * @param lineSeparator Caractere de separação de linhas.
-     * @param columnSeparator Caractere de separação de colunas.
-     * @param skipHeader Se verdadeiro ignora a primeira linha do ficheiro, assumindo que esta contém apenas cabeçalhos.
-     * @param width Especifica uma largura para o ficheiro (número de colunas), se for 0 será automaticamente inferido pela primeira linha.
-     * @throws IOException Caso o ficheiro não possa ser aberto ou erros semelhantes.
-     * @throws LineException Caso encontre um erro relacionado com a formatação do ficheiro.
+     *
+     * Open a file, reading it into memory.
+     * @param path the path of the file to read.
+     * @param lineSeparator the line separator character.
+     * @param columnSeparator the column separation character.
+     * @param skipHeader if true it ignores the first line of the file, assuming it contains only headers.
+     * @param width specifies a width for the file (number of columns), if it is 0 it will be automatically inferred by the first line.
+     * @throws IOException in case of the file cannot be opened or similar errors.
+     * @throws LineException in case of you encounter an error related to the formatting of the file.
      */
     public FileCSV(String path, String lineSeparator, String columnSeparator, boolean skipHeader, int width)
             throws IOException, LineException

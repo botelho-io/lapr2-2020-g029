@@ -7,32 +7,43 @@ import lapr.model.Task;
 import authorization.model.UserSession;
 import authorization.AuthFacade;
 
+/**
+ * Class that is responsible for creating a new task and adding to tha task list of the organization.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class CreateTaskController {
-        private App plataforma;
+
         /**
-        * Instance of the organization.
+        * Instance of the app.
+        */
+        private App app;
+        /**
+        * Instance of Organization of the current user.
         */
         private Organization organization;
         /**
         * User session.
         */
-        private UserSession sessao;
+        private UserSession session;
         /**
-        * id of the collaborator.
+        * ID of the collaborator.
         */
         private String emailUser;
-        /*** Instance of the task.
-         *
-         * */
+        /**
+         *  Instance of Task of the transaction.
+         */
         private Task task;
 
-     /**
-     * An AutorizacaoFacade instance.
+      /**
+      * An Authorization Facade instance.
       */
-     private AuthFacade autorizacao;
+     private AuthFacade authorization;
 
+    /**
+     * Constructor.
+     */
      public CreateTaskController() {
-        this.plataforma = AppPOE.getInstance().getApp();
+        this.app = AppPOE.getInstance().getApp();
     }
 
     /**
@@ -46,10 +57,10 @@ public class CreateTaskController {
      */
     public boolean newTask (String id, String description, double durationInHours, double m_dCostPerHourOfJuniorEur, String category) {
         try {
-            this.autorizacao = this.plataforma.getAuthFacade();
-            this.sessao = this.autorizacao.getCurrentSession();
-            this.emailUser = this.sessao.getEmailUser();
-            this.organization = this.plataforma.getRegistOrganization().getOrganizationByEmailUser(emailUser);
+            this.authorization = this.app.getAuthFacade();
+            this.session = this.authorization.getCurrentSession();
+            this.emailUser = this.session.getEmailUser();
+            this.organization = this.app.getRegistOrganization().getOrganizationByEmailUser(emailUser);
             this.task = ListTask.newTask( id, description, durationInHours, m_dCostPerHourOfJuniorEur, category);
             return this.organization.getListTask().validatesTask(this.task);
         } catch(RuntimeException ex){
@@ -61,7 +72,7 @@ public class CreateTaskController {
 
     /**
      * Register task of the organization.
-     * @return registed on the organization.
+     * @return register on the organization.
      */
     public boolean registTask() {
         return this.organization.getListTask().registerTask(this.task);

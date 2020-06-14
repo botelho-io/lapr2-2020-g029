@@ -5,6 +5,9 @@ import lapr.api.PswGeneratorAPI;
 import java.io.IOException;
 import java.util.Random;
 
+/**
+ * Represents an API adapter used to generate passwords.
+ */
 public class PswGeneratorAPIAdapter implements PswGeneratorAPI {
     @Override
     public String generatePassword(String emailOfUser) {

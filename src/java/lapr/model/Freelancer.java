@@ -12,6 +12,7 @@ import java.util.Objects;
 
 /**
  * Represents a freelancer that intends do profit from completing tasks.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Freelancer implements Serializable {
     /**
@@ -126,6 +127,11 @@ public class Freelancer implements Serializable {
         return m_strAddress;
     }
 
+    /**
+     * Compare two freelancers.
+     * @param o Ideally a freelancers to compare.
+     * @return Will return true if and only if the object provided is a freelancers with the same ID, email, NIF and IBAN.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -18,6 +18,7 @@ import java.util.Timer;
 
 /**
  * Class responsible for scheduling the e-mails to be automatically sent to the freelancer.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class EmailScheduler implements Serializable {
     /**

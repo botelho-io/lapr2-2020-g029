@@ -8,8 +8,8 @@ package lapr.strategies.htf;
 import lapr.strategies.htf.utils.HistoricalTransactionFileStrategyCommonCSV;
 
 /**
- *
- * @author Universidade
+ * Represents a historical transaction file strategy for loading csv files with col separated by ";".
+ * @author André Botelho and Ricardo Moreira.
  */
 public class CSVTransactionFileStrategy extends HistoricalTransactionFileStrategyCommonCSV {
     public CSVTransactionFileStrategy() {

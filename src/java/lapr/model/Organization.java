@@ -18,7 +18,8 @@ import java.util.Set;
 import java.time.LocalTime;
 
 /**
- * Represents ans organazation seeking freelancers to complete tasks.
+ * Represents ans organization seeking freelancers to complete tasks.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Organization implements Serializable {
 
@@ -223,6 +224,11 @@ public class Organization implements Serializable {
         return dayMonth >= 1 && dayMonth <= 28;
     }
 
+    /**
+     * Compare two organizations.
+     * @param o Ideally a organizations to compare.
+     * @return Will return true if and only if the object provided is a organizations with the same IBAN.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

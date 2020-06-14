@@ -9,17 +9,17 @@ import lapr.controller.AppPOE;
 import authorization.model.Role;
 
 /**
- *
- * @author Universidade
+ * Represents an administrator of the organization.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Administrator extends User {
 
     /**
      * Build an instance of administrator receiving the name, email and password.
      *
-     * @param name of the admininstrator.
-     * @param email of the admininstrator.
-     * @param password of the admininstrator.
+     * @param name name of the administrator.
+     * @param email email of the administrator.
+     * @param password password of the administrator.
      */
     public Administrator (String name, String email, String password){
         super(name, email, password, Role.ADMINISTRATOR);

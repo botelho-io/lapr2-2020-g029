@@ -7,6 +7,10 @@ import lapr.model.*;
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * Represents the register of all the organizations available in the system.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class RegistOrganization implements Iterable<Organization>, Serializable {
 
     /**
@@ -14,11 +18,16 @@ public class RegistOrganization implements Iterable<Organization>, Serializable 
      */
     private Set<Organization> m_lstOrganizacoes;
 
-
+    /**
+     * Constructor.
+     */
     public RegistOrganization() {
         this(new HashSet<>());
     }
 
+    /**
+     * Constructor setts all organizations.
+     */
     public RegistOrganization(Set<Organization> m_lstOrganizacoes) {
         this.m_lstOrganizacoes = m_lstOrganizacoes;
     }

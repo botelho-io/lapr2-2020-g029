@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Represents a list of tasks.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class ListTask implements Serializable {
 
     /**

@@ -19,6 +19,7 @@ import java.util.Timer;
 /**
  * Class responsible for scheduling a task to automatically pay
  * the transactions of an organization.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class PaymentScheduler implements Serializable {
     /**

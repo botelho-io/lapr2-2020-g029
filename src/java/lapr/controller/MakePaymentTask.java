@@ -8,6 +8,10 @@ import lapr.model.Transaction;
 import java.io.Serializable;
 import java.util.TimerTask;
 
+/**
+ * Class that is responsible for making payments to freelancers.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class MakePaymentTask extends TimerTask implements Serializable {
     /**
      * The organization to make the payments on.

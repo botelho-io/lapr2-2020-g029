@@ -12,6 +12,7 @@ import java.util.*;
 
 /**
  * Represents a list of transactions.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class ListTransaction implements Iterable<Transaction>, Serializable {
     /**

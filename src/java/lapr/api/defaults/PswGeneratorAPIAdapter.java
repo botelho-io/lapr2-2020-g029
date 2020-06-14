@@ -4,7 +4,17 @@ import lapr.api.PswGeneratorAPI;
 
 import java.util.Random;
 
+/**
+ * Represents an API adapter used to generate passwords.
+ */
 public class PswGeneratorAPIAdapter implements PswGeneratorAPI {
+
+    /**
+     * Converts currency.
+     *
+     * @param emailOfUser the email of the user to generate a password.
+     * @return the passaword generated for the user.
+     */
     @Override
     public String generatePassword(String emailOfUser) {
         final String valid = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklçzxcvbnm0123456789";

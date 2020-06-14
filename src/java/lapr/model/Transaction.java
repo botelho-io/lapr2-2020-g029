@@ -15,6 +15,7 @@ import java.util.Objects;
 
 /**
  * Represents a monetary transaction made to a freelancer because of a task.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Transaction implements Serializable {
     /**
@@ -160,6 +161,11 @@ public class Transaction implements Serializable {
         return selected.contains(m_oFreelancer);
     }
 
+    /**
+     * Compare two transactions.
+     * @param o Ideally a transactions to compare.
+     * @return Will return true if and only if the object provided is a task with the same ID and task.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

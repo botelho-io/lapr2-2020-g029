@@ -6,8 +6,14 @@ import lapr.model.*;
 import lapr.model.Organization;
 import java.time.LocalTime;
 
-
+/**
+ * Class that is responsible for defining the payment scheduler of the organization.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class DefinePaymentSchedulerController {
+    /** Instance of the app.
+     *
+     * */
     private App app;
     /** Instance of the paymentScheduler.
      *
@@ -22,7 +28,7 @@ public class DefinePaymentSchedulerController {
      */
     private UserSession session;
     /**
-     * An AutorizacaoFacade instance.
+     * An Authorization Facade instance.
      */
     private AuthFacade auth;
     /**
@@ -30,7 +36,9 @@ public class DefinePaymentSchedulerController {
      */
     private String emailUser;
 
-
+    /**
+     * Constructor.
+     */
     public DefinePaymentSchedulerController() {
         this.app = AppPOE.getInstance().getApp();
     }

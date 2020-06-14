@@ -5,6 +5,10 @@ import lapr.api.PswGeneratorAPI;
 import lapr.model.*;
 import lapr.lists.RegistOrganization;
 
+/**
+ * Class that is responsible for creating a new organization and register in the system.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class CreateOrganizationController {
     /**
      * Name of the organization.
@@ -20,6 +24,10 @@ public class CreateOrganizationController {
      * The collaborator password.
      */
     private String m_strCollaboratorPassword;
+
+    /**
+     * The organization details.
+     */
     private Organization m_oOrg;
 
     /**

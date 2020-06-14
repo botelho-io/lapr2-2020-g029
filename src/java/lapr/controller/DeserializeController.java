@@ -6,6 +6,10 @@ import lapr.utils.Constants;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Class that is responsible for deserialize information for the file.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class DeserializeController {
 
     /**

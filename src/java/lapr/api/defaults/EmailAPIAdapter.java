@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
+/**
+ * The API adapter used to send emails.
+ */
 public class EmailAPIAdapter implements EmailAPI {
     FileWriter fstream;
     BufferedWriter out;

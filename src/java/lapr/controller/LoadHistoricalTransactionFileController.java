@@ -19,12 +19,21 @@ import java.util.List;
 
 public class LoadHistoricalTransactionFileController {
 
+    /**
+     * An instance of historical transaction file strategy.
+     */
     final List<HistoricalTransactionFileStrategy> strategies;
 
+    /**
+     * Constructor.
+     */
     public LoadHistoricalTransactionFileController () {
         strategies = new ArrayList<>();
     }
 
+    /**
+     * Adds the files that will be loaded.
+     */
     public void addFiles(final List<File> files) throws IOException {
         for (final File f : files) {
             final String name = f.getName();
@@ -53,6 +62,9 @@ public class LoadHistoricalTransactionFileController {
         }
     }
 
+    /**
+     * Load's data from the file into memory.
+     */
     public void loadData() throws LineExceptionStack {
         LineExceptionStack acc = new LineExceptionStack("Some errors occurred while loading the information from the file into memory");
         for (HistoricalTransactionFileStrategy s : strategies) {
@@ -66,6 +78,9 @@ public class LoadHistoricalTransactionFileController {
             throw acc;
     }
 
+    /**
+     * Get's data from the transaction file into transaction list.
+     */
     public List<Transaction> getData() {
         ArrayList<Transaction> trss = new ArrayList<>();
         for (HistoricalTransactionFileStrategy s : strategies) {
@@ -74,6 +89,9 @@ public class LoadHistoricalTransactionFileController {
         return Collections.unmodifiableList(trss);
     }
 
+    /**
+     * Save's data from the file into the system.
+     */
     public void saveData() throws LineExceptionStack {
         LineExceptionStack acc = new LineExceptionStack("Some errors occurred while trying to save the data into the system");
         final App app = AppPOE.getInstance().getApp();

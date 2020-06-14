@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /**
  * Represents the details of a payment made on a transaction.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class PaymentDetails implements Serializable {
     /**
@@ -42,6 +43,11 @@ public class PaymentDetails implements Serializable {
         isPayed = payed;
     }
 
+    /**
+     * Compare two payment details.
+     * @param o Ideally a payment details to compare.
+     * @return Will return true if and only if the object provided is a payment details that is payed.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

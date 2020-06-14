@@ -8,9 +8,23 @@ import java.util.*;
 
 import java.util.Collection;
 
+/**
+ * Class that is responsible for setting the information that will be visualize.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class ManagerCollaboratorStatisticsController {
+
+    /**
+     * Instance of the app.
+     */
     final App app;
+    /**
+     * Instance of Organization of the current user.
+     */
     private final Organization org;
+    /**
+     * A collection of transactions.
+     */
     Collection<Transaction> trs;
 
     /**

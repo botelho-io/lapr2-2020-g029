@@ -2,7 +2,18 @@ package lapr.api.defaults;
 
 import lapr.api.MonetaryConversionAPI;
 
+/**
+ * The API adapter used to convert between monetary units.
+ */
 public class MonetaryConversionAPIAdapter implements MonetaryConversionAPI {
+
+    /**
+     * Converts currency.
+     *
+     * @param country the country that the currency will be converted.
+     * @param euro the currency to convert.
+     * @return the currency converted to country of the freelancer.
+     */
     @Override
     public Double convert(String country, Double euro) {
         switch(country.trim().toUpperCase()) {

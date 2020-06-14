@@ -18,6 +18,7 @@ import lapr.lists.RegistOrganization;
 import java.io.*;
 
 /**
+ * Class responsible for initiating the app.
  * @author André Botelho and Ricardo Moreira.
  */
 public class App implements Serializable, Closeable{
@@ -54,6 +55,9 @@ public class App implements Serializable, Closeable{
      */
     private transient EmailAPI m_oEmailAPI;
 
+    /**
+     * Constructor.
+     */
     public App() {
         this.m_oAutorization = new AuthFacade();
         this.m_oRegistOrganization = new RegistOrganization();
@@ -96,10 +100,18 @@ public class App implements Serializable, Closeable{
         return this.m_oAutorization;
     }
 
+    /**
+     * Returns the register of all the organizations available in the system.
+     * @return the register of all the organizations available in the system.
+     */
     public RegistOrganization getRegistOrganization() {
         return m_oRegistOrganization;
     }
 
+    /**
+     * Returns an instance of the password generator API.
+     * @return An instance of the password generator API.
+     */
     public PswGeneratorAPI getPswGeneratorAPI() {
         return this.m_oPswGeneratorAPI;
     }
@@ -112,6 +124,10 @@ public class App implements Serializable, Closeable{
         return m_oPaymentAPI;
     }
 
+    /**
+     * Returns an instance of the monetary conversion API.
+     * @return An instance of the monetary conversion API.
+     */
     public MonetaryConversionAPI getMonetaryConversionAPI() {
         return this.m_oMonetaryConversionAPI;
     }
@@ -126,7 +142,7 @@ public class App implements Serializable, Closeable{
 
     /**
      * Returns the register of all the freelancers available in the system.
-     * @return he register of all the freelancers available in the system.
+     * @return the register of all the freelancers available in the system.
      */
     public RegistFreelancer getRegistFreelancer() {
         return this.m_oRegistFreelancer;
@@ -175,6 +191,10 @@ public class App implements Serializable, Closeable{
         return app;
     }
 
+    /**
+     * Close the app.
+     * @throws IOException If the app is not able to be closed.
+     */
     @Override
     public void close() throws IOException {
         m_oEmailAPI.close();

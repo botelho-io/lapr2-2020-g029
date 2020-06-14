@@ -19,19 +19,42 @@ import lapr.api.PswGeneratorAPI;
 import lapr.model.*;
 import lapr.utils.Constants;
 
+/**
+ * Class that is responsible for creating an app and initiate it.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class AppPOE {
+
+    /**
+     * Instance of the appPOE.
+     */
     private static AppPOE singleton = null;
+
+    /**
+     * Instance of the app.
+     */
     private final App m_oApp;
 
+    /**
+     * Constructor.
+     */
     private AppPOE() {
         this(new App());
     }
 
+    /**
+     * Constructor.
+     * @param  app An app already initialize in the system.
+     */
     private AppPOE(App app) {
         this.m_oApp = app;
         Properties props = getProperties();
     }
 
+    /**
+     * Constructor.
+     * @param  app An app already initialize in the system.
+     */
     public static void setApp(App app) throws IOException {
         if(singleton != null) {
             singleton.getApp().close();
@@ -39,10 +62,18 @@ public class AppPOE {
         singleton = new AppPOE(app);
     }
 
+    /**
+     * Returns the app already initialize in the system.
+     * @return app already initialize in the system.
+     */
     public App getApp() {
         return this.m_oApp;
     }
 
+    /**
+     * Returns the properties of the app already initialize in the system.
+     * @return properties of the app already initialize in the system.
+     */
     private Properties getProperties() {
         Properties props = new Properties();
 
@@ -67,7 +98,9 @@ public class AppPOE {
         }
         return props;
     }
-
+    /**
+     * Bootstrap for the AppPOE.
+     */
     private void bootstrap() {
         // Get Properties and APIs
         Properties p = reloadAPIs();
@@ -80,6 +113,10 @@ public class AppPOE {
         // TestConstants.addTestOrgTasksFreelancersAndTransactions();
     }
 
+    /**
+     * Reloads all the API's.
+     * @return API's reloaded.
+     */
     public Properties reloadAPIs() {
         Properties p = getProperties();
 
@@ -104,6 +141,10 @@ public class AppPOE {
         }
     }
 
+    /**
+     * Returns instance of the AppPOE.
+     * @return instance of the AppPOE.
+     */
     public static AppPOE getInstance() {
         if(singleton == null) {
             singleton = new AppPOE();

@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * Represents a task an organization is trying to outsource to a freelancer.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class Task implements Serializable {
     /**

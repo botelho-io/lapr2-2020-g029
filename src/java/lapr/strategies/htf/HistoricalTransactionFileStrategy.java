@@ -15,15 +15,23 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
- * @author Universidade
+ * Represents a historical transaction file strategy for loading files.
+ * @author André Botelho and Ricardo Moreira.
  */
 public interface HistoricalTransactionFileStrategy {
     void openFile(final String path) throws IOException;
+    /**
+     * Load's data from the file into memory.
+     */
     void loadData() throws LineExceptionStack;
     List<Transaction> getData();
+    /**
+     * Save's data from the file into the system.
+     * @param  rf freelancer to be register.
+     * @param  ltk task to be register.
+     * @param  ltr transaction to be register.
+     */
     void saveData(final RegistFreelancer rf, final ListTask ltk, final ListTransaction ltr) throws LineExceptionStack;
-
     enum field {
         TransID,
         TaskID,

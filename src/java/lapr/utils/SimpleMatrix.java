@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Simple Matrix Class
  * <p>Representa uma matriz regular que pode aumentar em altura mas não em largura.</p>
- * @author 1150462 and 1192223
+ * @author 1150462 and 1192232
 */
 
 public class SimpleMatrix<T> {

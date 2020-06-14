@@ -8,8 +8,8 @@ package lapr.strategies.htf;
 import lapr.strategies.htf.utils.HistoricalTransactionFileStrategyCommonCSV;
 
 /**
- *
- * @author Universidade
+ * Represents a historical transaction file strategy for loading txt files separated by "tab".
+ * @author André Botelho and Ricardo Moreira.
  */
 public class TXTTransactionFileStrategy extends HistoricalTransactionFileStrategyCommonCSV {
     public TXTTransactionFileStrategy() {

@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Represents an API adapter used to process bank payments.
+ */
 public class PaymentAPIAdapter implements PaymentAPI {
     FileWriter fstream;
     BufferedWriter out;

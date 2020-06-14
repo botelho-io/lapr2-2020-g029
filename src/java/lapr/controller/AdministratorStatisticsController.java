@@ -7,8 +7,18 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 
 import java.util.*;
 
+/**
+ * Class that is responsible for setting the information that will be visualize.
+ * @author André Botelho and Ricardo Moreira.
+ */
 public class AdministratorStatisticsController {
+    /**
+     * Instance of the app.
+     */
     final App app;
+    /**
+     * A collection of transactions.
+     */
     Collection<Transaction> trs;
 
     /**

@@ -8,6 +8,7 @@ import java.util.*;
 
 /**
  * Represents the register of all the freelancers available in the system.
+ * @author André Botelho and Ricardo Moreira.
  */
 public class RegistFreelancer implements Iterable<Freelancer>, Serializable {
     /**
