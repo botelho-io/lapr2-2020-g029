@@ -76,7 +76,7 @@ public class App implements Serializable, Closeable{
         this.m_oRegistOrganization = (RegistOrganization) aInputStream.readObject();
         this.m_oRegistFreelancer = (RegistFreelancer) aInputStream.readObject();
         this.m_oEmailScheduler = (EmailScheduler) aInputStream.readObject();
-        AppPOE.getInstance().reloadAPIs();
+        AppPOE.reloadAPIs(this, AppPOE.getProperties());
     }
 
     /**
@@ -188,6 +188,7 @@ public class App implements Serializable, Closeable{
         final App app = (App) out.readObject();
         out.close();
         fileIn.close();
+        AppPOE.reloadAPIs(app, AppPOE.getProperties());
         return app;
     }
 

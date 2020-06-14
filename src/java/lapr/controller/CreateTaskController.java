@@ -77,13 +77,5 @@ public class CreateTaskController {
     public boolean registTask() {
         return this.organization.getListTask().registerTask(this.task);
     }
-
-    /**
-     * Get task by string.
-     * @return task.
-     */
-    public String getTaskString() {
-            return this.task.toString();
-        }
 }
 

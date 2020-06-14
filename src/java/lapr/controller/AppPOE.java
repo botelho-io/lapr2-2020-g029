@@ -74,7 +74,7 @@ public class AppPOE {
      * Returns the properties of the app already initialize in the system.
      * @return properties of the app already initialize in the system.
      */
-    private Properties getProperties() {
+    public static Properties getProperties() {
         Properties props = new Properties();
 
         // Default values
@@ -103,7 +103,8 @@ public class AppPOE {
      */
     private void bootstrap() {
         // Get Properties and APIs
-        Properties p = reloadAPIs();
+        Properties p = getProperties();
+        reloadAPIs(m_oApp, p);
 
         // Add Admin
         final Administrator adm = new Administrator(p.getProperty("admin.name"), p.getProperty("admin.email"), p.getProperty("admin.password"));
@@ -117,17 +118,13 @@ public class AppPOE {
      * Reloads all the API's.
      * @return API's reloaded.
      */
-    public Properties reloadAPIs() {
-        Properties p = getProperties();
-
+    public static void reloadAPIs(App app, Properties p) {
         // Add APIs
         final EmailAPI email_api = tryToGetFromName(p.getProperty("api.email"));
         final MonetaryConversionAPI money_api = tryToGetFromName(p.getProperty("api.monetaryConversion"));
         final PaymentAPI pay_api = tryToGetFromName(p.getProperty("api.payment"));
         final PswGeneratorAPI psw_api = tryToGetFromName(p.getProperty("api.passwordGenerator"));
-        m_oApp.setAPIs(email_api, money_api, pay_api, psw_api);
-
-        return p;
+        app.setAPIs(email_api, money_api, pay_api, psw_api);
     }
 
     private static<T> T tryToGetFromName(final String name) {
