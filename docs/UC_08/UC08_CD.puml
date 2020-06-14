@@ -1,34 +1,29 @@
 @startuml
 
 class Collaborator {
-  -String nome
+  -String name
   -String email
-  Colaborador(nome, email, password )
-  String getNome()
-  String getEmail()
-  String getPassword()}
+  Colaborador(String name, String email, String password )
 }
 
 class Manager {
   -String name
   -String email
-  Colaborador(name, email, password)
-  String getName()
-  String getEmail()
-  String getPassword()
+  Manager(String name, String email, String password)
 }
 
 class Administrator {
-- String nome
+- String name
 - String email
 - String password
 }
 
 class Organization {
   -String name
-  +Organizacao(name, managerColaborador ,otherCollaborator)
-  {static} Manager novoManager(nome, email, password)
-  {static} Colaborador novoColaborador(nome, email, password)
+  -String IBAN
+  +Organizacao(name, iban, manager ,collaborator)
+  {static} Manager newManager(name, email, password)
+  {static} Colaborador newColaborador(name, email, password)
 }
 
 class App {
@@ -38,19 +33,18 @@ class App {
 }
 
 class RegistOrganization {
-  +Organization novaOrganizacao(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+  +Organization newOrganizacao(String iban, String name, Manager manager, Collaborator collaborator)
   +validatesOrganization(Organization org)
   +registOrganization(Organizacao org)
   -addOrganization(Organizacao org))
 }
 
-class AutorizacaoFacade {
-   - addManager(nomeM,emailM,passawordM)
-   - addCollaborator(nomeM,emailM,passawordC)
+class AuthorizationFacade {
+   - registerUser(User utlz)
 }
 
 class CreateOrganizationController {
-    newOrganization(name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+    newOrganization(newOrganization(String iban, String name, String nameM, String strEmailM, String nameC, String strEmailC) 
    - addOrganizaton()
 }
 

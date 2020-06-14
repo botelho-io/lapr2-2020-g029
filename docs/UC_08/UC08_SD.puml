@@ -10,31 +10,31 @@ participant "Organization" as _ORG
 participant "org:Organization" as ORG
 participant "manag:Manager" as MAN
 participant "colab:Colaborador" as COLAB
-participant ":Autorizacao\nFacade" as AUT
+participant ":Authorization\nFacade" as AUT
 
 
 activate A
 A -> UI : adding new organization
 activate UI
-UI --> A : requests organization data (i.e. name),\n the data of one manager of that organization (i.e. nameM, emailM, passwordM)\n and  the data of one collaborator of the same organization  (i.e. nameC, emailC, passwordC)
+UI --> A : requests organization data (i.e. name, iban),\n the data of one manager of that organization (i.e. nameM, strEmailM)\n and  the data of one collaborator of the same organization  (i.e. nameC, strEmailC)
 deactivate UI
 
 A -> UI : enter the requested data
 activate UI
 
-UI -> CTRL : newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+UI -> CTRL : newOrganization( iban, name, nameM, strEmailM, nameC, strEmailC) 
 activate CTRL
 
 CTRL -> APP: ro = getRegistoOrganizacoes()
 activate APP
 deactivate APP
 
-CTRL -> ORGS: org = newOrganization( name, nameM, emailM, passwordM, nameC, emailC, passwordC)
+CTRL -> ORGS: org = newOrganization(iban, name, manager, collaborator)
 activate ORGS
 
-ORGS -> _ORG: manag=newManager( nameM, emailM, passwordM)
+ORGS -> _ORG: manag=newManager( nameM, emailM, psw)
 activate _ORG
-_ORG --> MAN ** : create( nameM, emailM, passwordM)
+_ORG --> MAN ** : create( nameM, emailM, psw)
 deactivate _ORG
 
 ORGS -> _ORG: colab=newCollaborator( nameC, emailC, passwordC)
@@ -68,10 +68,7 @@ deactivate MAN
 ORGS -> MAN: emailM = getEmail()
 activate MAN
 deactivate MAN
-ORGS -> MAN: passwordM = getPassword()
-activate MAN
-deactivate MAN
-ORGS -> AUT: addManager(nameM,emailM,passwordM)
+ORGS -> AUT: addManager(nameM,emailM,passwordM,role)
 activate AUT
 deactivate AUT
 
@@ -81,10 +78,7 @@ deactivate COLAB
 ORGS -> COLAB: emailC = getEmail()
 activate COLAB
 deactivate COLAB
-ORGS -> COLAB: passwordC = getPassword()
-activate COLAB
-deactivate COLAB
-ORGS -> AUT: addCollaborator(nameC,emailC,passwordC)
+ORGS -> AUT: addCollaborator(nameC,emailC,passwordC,role)
 activate AUT
 deactivate AUT
 

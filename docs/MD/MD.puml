@@ -10,7 +10,7 @@ class App {
 
 class Organization {
         - String nome
-        - String NIF
+        - String IBAN
 }
 
 class Transaction {
@@ -36,13 +36,13 @@ class TaskExecutionDetails {
 }
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class Manager {
-        - String nome
+        - String name
         - String email
         - String password
 }
@@ -57,7 +57,7 @@ class PaymentScheduler {
 }
 
 class Administrator {
-        - String nome
+        - String name
         - String email
         - String password
 }
@@ -67,7 +67,7 @@ class EmailScheduler {
 }
 
 class User {
-        - String nome
+        - String name
         - String email
         - String password
 }

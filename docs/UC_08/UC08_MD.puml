@@ -8,29 +8,30 @@ class App {
 }
 
 class Organization {
-        - String nome
+        - String name
+        - String IBAN
 }
 
 class Administrator {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class Collaborator {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class Manager {
-        - String nome
+        - String name
         - String email
         - String password
 }
 
 class User {
-        - String nome
+        - String name
         - String email
         - String password
 }
