@@ -81,6 +81,7 @@ public class User implements Serializable  {
 
     /**
      * Verifies the email of the user.
+     * @param email The email to verify.
      * @return true if the email of the user is valid.
      */
     public boolean hasEmail(String email) {
@@ -89,6 +90,7 @@ public class User implements Serializable  {
 
     /**
      * Verifies the password of the user.
+     * @param strPwd The password to verify.
      * @return true if the password of the user is valid.
      */
     public boolean hasPassword(String strPwd)
@@ -98,6 +100,7 @@ public class User implements Serializable  {
 
     /**
      * Verifies the role of the user.
+     * @param oRole The role to verify.
      * @return true if the role of the user is valid.
      */
     public boolean hasRole(Role oRole) {

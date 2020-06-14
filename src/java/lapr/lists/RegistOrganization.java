@@ -27,6 +27,7 @@ public class RegistOrganization implements Iterable<Organization>, Serializable 
 
     /**
      * Constructor setts all organizations.
+     * @param m_lstOrganizacoes The list of organizations.
      */
     public RegistOrganization(Set<Organization> m_lstOrganizacoes) {
         this.m_lstOrganizacoes = m_lstOrganizacoes;

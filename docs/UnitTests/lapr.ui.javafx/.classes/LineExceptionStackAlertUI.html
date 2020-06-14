@@ -1,0 +1,132 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LineExceptionStackAlertUI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LineExceptionStackAlertUI (lapr.ui.javafx)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LineExceptionStackAlertUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import csvparser.LineException;
+<i>4</i>&nbsp;import csvparser.LineExceptionStack;
+<i>5</i>&nbsp;import javafx.collections.FXCollections;
+<i>6</i>&nbsp;import javafx.collections.ObservableList;
+<i>7</i>&nbsp;import javafx.fxml.FXML;
+<i>8</i>&nbsp;import javafx.scene.control.Label;
+<i>9</i>&nbsp;import javafx.scene.control.TableColumn;
+<i>10</i>&nbsp;import javafx.scene.control.TableView;
+<i>11</i>&nbsp;import javafx.scene.control.cell.PropertyValueFactory;
+<i>12</i>&nbsp;import javafx.stage.Stage;
+<i>13</i>&nbsp;import lapr.ui.javafx.util.FXBridge;
+<i>14</i>&nbsp;import lapr.ui.javafx.util.HelperUI;
+<i>15</i>&nbsp;import lapr.ui.javafx.util.SetCellValueFactory;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;import java.util.ArrayList;
+<i>18</i>&nbsp;
+<b class="nc"><i>19</i>&nbsp;public class LineExceptionStackAlertUI {</b>
+<i>20</i>&nbsp;    @FXML
+<i>21</i>&nbsp;    public Label lblMSG;
+<i>22</i>&nbsp;    @FXML
+<i>23</i>&nbsp;    public TableView&lt;LineException&gt; tvErr;
+<i>24</i>&nbsp;    @FXML
+<i>25</i>&nbsp;    public TableColumn&lt;LineException, String&gt; colFile;
+<i>26</i>&nbsp;    @FXML
+<i>27</i>&nbsp;    public TableColumn&lt;LineException, Integer&gt; colLine;
+<i>28</i>&nbsp;    @FXML
+<i>29</i>&nbsp;    public TableColumn&lt;LineException, String&gt; colErr;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    @FXML
+<i>32</i>&nbsp;    public void initialize() {
+<b class="nc"><i>33</i>&nbsp;        if(!(FXBridge.param instanceof LineExceptionStack)) {</b>
+<b class="nc"><i>34</i>&nbsp;            HelperUI.alert(&quot;Error on FXBridge&quot;);</b>
+<b class="nc"><i>35</i>&nbsp;            HelperUI.initializeExit();</b>
+<i>36</i>&nbsp;        }
+<b class="nc"><i>37</i>&nbsp;        SetCellValueFactory.set(colErr, LineException::getMessage);</b>
+<b class="nc"><i>38</i>&nbsp;        SetCellValueFactory.set(colFile, LineException::getFile);</b>
+<b class="nc"><i>39</i>&nbsp;        SetCellValueFactory.set(colLine, LineException::getLine);</b>
+<b class="nc"><i>40</i>&nbsp;        LineExceptionStack stack = (LineExceptionStack) FXBridge.param;</b>
+<b class="nc"><i>41</i>&nbsp;        tvErr.setItems(FXCollections.observableArrayList(stack.getStack()));</b>
+<b class="nc"><i>42</i>&nbsp;        lblMSG.setText(stack.getMessage());</b>
+<b class="nc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    @FXML
+<i>46</i>&nbsp;    public void quit() {
+<b class="nc"><i>47</i>&nbsp;        ((Stage)lblMSG.getScene().getWindow()).close();</b>
+<b class="nc"><i>48</i>&nbsp;    }</b>
+<i>49</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

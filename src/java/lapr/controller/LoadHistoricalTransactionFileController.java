@@ -33,6 +33,8 @@ public class LoadHistoricalTransactionFileController {
 
     /**
      * Adds the files that will be loaded.
+     * @param files The files that will be loaded.
+     * @throws IOException If the files fail to load.
      */
     public void addFiles(final List<File> files) throws IOException {
         for (final File f : files) {
@@ -64,6 +66,7 @@ public class LoadHistoricalTransactionFileController {
 
     /**
      * Load's data from the file into memory.
+     * @throws LineExceptionStack If any error is encountered while loading the data.
      */
     public void loadData() throws LineExceptionStack {
         LineExceptionStack acc = new LineExceptionStack("Some errors occurred while loading the information from the file into memory");
@@ -80,6 +83,7 @@ public class LoadHistoricalTransactionFileController {
 
     /**
      * Get's data from the transaction file into transaction list.
+     * @return The transactions loaded from file.
      */
     public List<Transaction> getData() {
         ArrayList<Transaction> trss = new ArrayList<>();
@@ -91,6 +95,7 @@ public class LoadHistoricalTransactionFileController {
 
     /**
      * Save's data from the file into the system.
+     * @throws LineExceptionStack If any error is encountered while loading the data.
      */
     public void saveData() throws LineExceptionStack {
         LineExceptionStack acc = new LineExceptionStack("Some errors occurred while trying to save the data into the system");

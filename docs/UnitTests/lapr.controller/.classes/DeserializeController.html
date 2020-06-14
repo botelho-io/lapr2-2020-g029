@@ -1,0 +1,116 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DeserializeController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DeserializeController (lapr.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DeserializeController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lapr.model.App;
+<i>4</i>&nbsp;import lapr.utils.Constants;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.io.File;
+<i>7</i>&nbsp;import java.io.IOException;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * Class that is responsible for deserialize information for the file.
+<i>11</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>12</i>&nbsp; */
+<b class="nc"><i>13</i>&nbsp;public class DeserializeController {</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    /**
+<i>16</i>&nbsp;     * Returns true if the data file exists, false otherwise.
+<i>17</i>&nbsp;     * @return rue if the data file exists, false otherwise.
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    public boolean hasDataFile() {
+<b class="nc"><i>20</i>&nbsp;        File f = new File(Constants.dataSavePath);</b>
+<b class="nc"><i>21</i>&nbsp;        return f.exists() &amp;&amp; f.isFile() &amp;&amp; f.canRead();</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * Serialize data.
+<i>26</i>&nbsp;     * @throws IOException If the file is not able to be opened or serialization fails.
+<i>27</i>&nbsp;     * @throws ClassNotFoundException If the file cannot be deserialized.
+<i>28</i>&nbsp;     */
+<i>29</i>&nbsp;    public void deserialize() throws IOException, ClassNotFoundException {
+<b class="nc"><i>30</i>&nbsp;        App app = App.deserialize(Constants.dataSavePath);</b>
+<b class="nc"><i>31</i>&nbsp;        AppPOE.setApp(app);</b>
+<b class="nc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

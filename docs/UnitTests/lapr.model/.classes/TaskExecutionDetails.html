@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TaskExecutionDetails</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TaskExecutionDetails (lapr.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TaskExecutionDetails</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.1%
+  </span>
+  <span class="absValue">
+    (16/ 17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * To change this license header, choose License Headers in Project Properties.
+<i>3</i>&nbsp; * To change this template file, choose Tools | Templates
+<i>4</i>&nbsp; * and open the template in the editor.
+<i>5</i>&nbsp; */
+<i>6</i>&nbsp;package lapr.model;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.io.Serializable;
+<i>9</i>&nbsp;import java.time.LocalDate;
+<i>10</i>&nbsp;import java.util.Objects;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;/**
+<i>13</i>&nbsp; * Represents a the details of task that have executed by a freelancer.
+<i>14</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>15</i>&nbsp; */
+<i>16</i>&nbsp;public class TaskExecutionDetails implements Serializable {
+<i>17</i>&nbsp;    /**
+<i>18</i>&nbsp;     * The date the task ended.
+<i>19</i>&nbsp;     */
+<i>20</i>&nbsp;    private LocalDate m_oEndDate;
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;     * The delay the freelancer took to execute the task.
+<i>23</i>&nbsp;     */
+<i>24</i>&nbsp;    private double m_dDelayHours;
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * A textual description of the quality of the work done by the freelancer.
+<i>27</i>&nbsp;     */
+<i>28</i>&nbsp;    private String m_strDescription;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    /**
+<i>31</i>&nbsp;     * Constructor.
+<i>32</i>&nbsp;     * @param endDate The date the task ended.
+<i>33</i>&nbsp;     * @param hoursDelay The delay the freelancer took to execute the task. (in hours)
+<i>34</i>&nbsp;     * @param description A textual description of the quality of the work done by the freelancer.
+<i>35</i>&nbsp;     */
+<b class="fc"><i>36</i>&nbsp;    public TaskExecutionDetails(LocalDate endDate, double hoursDelay, String description) {</b>
+<b class="fc"><i>37</i>&nbsp;        if(endDate == null) throw new IllegalArgumentException(&quot;Task Execution - End Date cannot be null&quot;);</b>
+<b class="fc"><i>38</i>&nbsp;        if(description == null || (description = description.trim()).isEmpty()) throw new IllegalArgumentException(&quot;Task Execution - Description cannot be empty&quot;);</b>
+<b class="fc"><i>39</i>&nbsp;        this.m_oEndDate = endDate;</b>
+<b class="fc"><i>40</i>&nbsp;        this.m_dDelayHours = hoursDelay;</b>
+<b class="fc"><i>41</i>&nbsp;        this.m_strDescription = description;</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    /**
+<i>45</i>&nbsp;     * Returns the number of hours the execution was delayed.
+<i>46</i>&nbsp;     * @return he number of hours the execution was delayed.
+<i>47</i>&nbsp;     */
+<i>48</i>&nbsp;    public double getHoursDelay() {
+<b class="fc"><i>49</i>&nbsp;        return m_dDelayHours;</b>
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    /**
+<i>53</i>&nbsp;     * Returns the date the task was executed.
+<i>54</i>&nbsp;     * @return he date the task was executed.
+<i>55</i>&nbsp;     */
+<i>56</i>&nbsp;    public LocalDate getEndDate() {
+<b class="fc"><i>57</i>&nbsp;        return m_oEndDate;</b>
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    /**
+<i>61</i>&nbsp;     * Returns a textual description of the quality of the work done by the freelancer.
+<i>62</i>&nbsp;     * @return  textual description of the quality of the work done by the freelancer.
+<i>63</i>&nbsp;     */
+<i>64</i>&nbsp;    public String getDescription() {
+<b class="fc"><i>65</i>&nbsp;        return this.m_strDescription;</b>
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    /**
+<i>69</i>&nbsp;     * Compare two task execution details.
+<i>70</i>&nbsp;     * @param o Ideally a task execution details. to compare.
+<i>71</i>&nbsp;     * @return Will return true if and only if the object provided is a task execution details delay is 0, with the same end date and description.
+<i>72</i>&nbsp;     */
+<i>73</i>&nbsp;    @Override
+<i>74</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>75</i>&nbsp;        if (this == o) return true;</b>
+<b class="fc"><i>76</i>&nbsp;        if (!(o instanceof TaskExecutionDetails)) return false;</b>
+<b class="fc"><i>77</i>&nbsp;        TaskExecutionDetails that = (TaskExecutionDetails) o;</b>
+<b class="fc"><i>78</i>&nbsp;        return Double.compare(that.m_dDelayHours, m_dDelayHours) == 0 &amp;&amp;</b>
+<b class="fc"><i>79</i>&nbsp;                m_oEndDate.equals(that.m_oEndDate) &amp;&amp;</b>
+<b class="fc"><i>80</i>&nbsp;                m_strDescription.equals(that.m_strDescription);</b>
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;    @Override
+<i>84</i>&nbsp;    public int hashCode() {
+<b class="nc"><i>85</i>&nbsp;        return Objects.hash(m_oEndDate, m_dDelayHours, m_strDescription);</b>
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

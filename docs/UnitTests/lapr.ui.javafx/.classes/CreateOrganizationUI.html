@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CreateOrganizationUI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CreateOrganizationUI (lapr.ui.javafx)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreateOrganizationUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.event.ActionEvent;
+<i>4</i>&nbsp;import javafx.fxml.FXML;
+<i>5</i>&nbsp;import javafx.scene.control.Button;
+<i>6</i>&nbsp;import javafx.scene.control.TextField;
+<i>7</i>&nbsp;import javafx.stage.Stage;
+<i>8</i>&nbsp;import lapr.controller.CreateOrganizationController;
+<i>9</i>&nbsp;import lapr.ui.javafx.util.HelperUI;
+<i>10</i>&nbsp;import lapr.ui.javafx.util.MainUI;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;public class CreateOrganizationUI {</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    @FXML
+<i>16</i>&nbsp;    public TextField fieldOrganization;
+<i>17</i>&nbsp;    @FXML
+<i>18</i>&nbsp;    public TextField fieldNameCollaborator;
+<i>19</i>&nbsp;    @FXML
+<i>20</i>&nbsp;    public TextField fieldEmailCollaborator;
+<i>21</i>&nbsp;    @FXML
+<i>22</i>&nbsp;    public TextField fieldNameManager;
+<i>23</i>&nbsp;    @FXML
+<i>24</i>&nbsp;    public TextField fieldEmailManager;
+<i>25</i>&nbsp;    @FXML
+<i>26</i>&nbsp;    public Button btnAdd;
+<i>27</i>&nbsp;    @FXML
+<i>28</i>&nbsp;    public Button btnCancel;
+<i>29</i>&nbsp;    @FXML
+<i>30</i>&nbsp;    public TextField fieldOrganizationIBAN;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    CreateOrganizationController controller;
+<i>33</i>&nbsp;    @FXML
+<i>34</i>&nbsp;    public void initialize() {
+<b class="nc"><i>35</i>&nbsp;        controller = new CreateOrganizationController();</b>
+<b class="nc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    @FXML
+<i>39</i>&nbsp;    public void btnAddAction (ActionEvent actionEvent) {
+<i>40</i>&nbsp;        try {
+<b class="nc"><i>41</i>&nbsp;            final String name = validateString(fieldOrganization.getText(), &quot;name&quot;);</b>
+<b class="nc"><i>42</i>&nbsp;            final String nameC = validateString(fieldNameCollaborator.getText(), &quot;nameC&quot;);</b>
+<b class="nc"><i>43</i>&nbsp;            final String mailC = validateString(fieldEmailCollaborator.getText() , &quot;mailC&quot; );</b>
+<b class="nc"><i>44</i>&nbsp;            final String nameM = validateString(fieldNameManager.getText(), &quot;nameM&quot; );</b>
+<b class="nc"><i>45</i>&nbsp;            final String mailM = validateString(fieldEmailManager.getText() , &quot;mailM&quot;);</b>
+<b class="nc"><i>46</i>&nbsp;            final String iban = validateString(fieldOrganizationIBAN.getText(), &quot;IBAN&quot;);</b>
+<b class="nc"><i>47</i>&nbsp;            final boolean succsess = controller.newOrganization(iban, name, nameM, mailM, nameC, mailC);</b>
+<b class="nc"><i>48</i>&nbsp;            if(!succsess) throw new IllegalStateException(&quot;Organization with wrong data!!!&quot;);</b>
+<b class="nc"><i>49</i>&nbsp;            final boolean succsess2 = controller.registOrganizacation();</b>
+<b class="nc"><i>50</i>&nbsp;            if(!succsess2) throw new IllegalStateException(&quot;Organization with wrong data!!!&quot;);</b>
+<b class="nc"><i>51</i>&nbsp;            quit();</b>
+<b class="nc"><i>52</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>53</i>&nbsp;            HelperUI.alert(&quot;An error occurred:\n&quot; + e.getMessage());</b>
+<b class="nc"><i>54</i>&nbsp;        }</b>
+<b class="nc"><i>55</i>&nbsp;    }</b>
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    @FXML
+<i>58</i>&nbsp;    public void btnCancelAction(ActionEvent actionEvent) {
+<b class="nc"><i>59</i>&nbsp;        quit();</b>
+<b class="nc"><i>60</i>&nbsp;    }</b>
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;    private void quit() {
+<b class="nc"><i>63</i>&nbsp;        ((Stage) fieldOrganization.getScene().getWindow()).close();</b>
+<b class="nc"><i>64</i>&nbsp;    }</b>
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    private String validateString(String data, String dataName) {
+<b class="nc"><i>67</i>&nbsp;        if(data == null || (data = data.trim()).isEmpty()) {</b>
+<b class="nc"><i>68</i>&nbsp;            throw new IllegalArgumentException(dataName + &quot; cannot be empty!&quot;);</b>
+<b class="nc"><i>69</i>&nbsp;        } else return data;</b>
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;}
+<i>74</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

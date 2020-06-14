@@ -1,0 +1,202 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ManColStatisticsUI2</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ManColStatisticsUI2 (lapr.ui.javafx)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ManColStatisticsUI2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 43)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.collections.FXCollections;
+<i>4</i>&nbsp;import javafx.collections.ObservableList;
+<i>5</i>&nbsp;import javafx.event.ActionEvent;
+<i>6</i>&nbsp;import javafx.fxml.FXML;
+<i>7</i>&nbsp;import javafx.scene.chart.BarChart;
+<i>8</i>&nbsp;import javafx.scene.chart.XYChart;
+<i>9</i>&nbsp;import javafx.scene.control.*;
+<i>10</i>&nbsp;import javafx.scene.control.cell.PropertyValueFactory;
+<i>11</i>&nbsp;import javafx.stage.Stage;
+<i>12</i>&nbsp;import lapr.controller.ManagerCollaboratorStatisticsController;
+<i>13</i>&nbsp;import lapr.model.Freelancer;
+<i>14</i>&nbsp;import lapr.ui.javafx.util.*;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import java.util.Collections;
+<i>17</i>&nbsp;import java.util.Map;
+<i>18</i>&nbsp;import java.util.function.Function;
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;public class ManColStatisticsUI2 {</b>
+<i>21</i>&nbsp;    // Payments
+<i>22</i>&nbsp;    @FXML
+<i>23</i>&nbsp;    public Label PlblM; // Mean
+<i>24</i>&nbsp;    @FXML
+<i>25</i>&nbsp;    public Label PlblSD; // Standard deviation
+<i>26</i>&nbsp;    @FXML
+<i>27</i>&nbsp;    public BarChart&lt;String, Integer&gt; PbcH;
+<i>28</i>&nbsp;    @FXML
+<i>29</i>&nbsp;    public Spinner&lt;Double&gt; PspBS;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    // Delays
+<i>32</i>&nbsp;    @FXML
+<i>33</i>&nbsp;    public Label DlblM; // Mean
+<i>34</i>&nbsp;    @FXML
+<i>35</i>&nbsp;    public Label DlblSD; // Standard deviation
+<i>36</i>&nbsp;    @FXML
+<i>37</i>&nbsp;    public BarChart&lt;String, Integer&gt; DbcH;
+<i>38</i>&nbsp;    @FXML
+<i>39</i>&nbsp;    public Spinner&lt;Double&gt; DspBS;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    // UC7
+<i>42</i>&nbsp;    @FXML
+<i>43</i>&nbsp;    public TableColumn&lt;Freelancer, String&gt; tcId;
+<i>44</i>&nbsp;    @FXML
+<i>45</i>&nbsp;    public TableColumn&lt;Freelancer, String&gt; tcName;
+<i>46</i>&nbsp;    @FXML
+<i>47</i>&nbsp;    public TableColumn&lt;Freelancer, String&gt; tcCountry;
+<i>48</i>&nbsp;    @FXML
+<i>49</i>&nbsp;    public TableColumn&lt;Freelancer, String&gt; tcEmail;
+<i>50</i>&nbsp;    @FXML
+<i>51</i>&nbsp;    public TableColumn&lt;Freelancer, String&gt; tcExpertise;
+<i>52</i>&nbsp;    @FXML
+<i>53</i>&nbsp;    public TableColumn&lt;Freelancer, Double&gt; tcPayment;
+<i>54</i>&nbsp;    @FXML
+<i>55</i>&nbsp;    public TableView&lt;Freelancer&gt; table;
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    ManagerCollaboratorStatisticsController ctr;
+<i>58</i>&nbsp;    @FXML
+<i>59</i>&nbsp;    public void initialize() {
+<b class="nc"><i>60</i>&nbsp;        if(!(FXBridge.param instanceof ManagerCollaboratorStatisticsController)) {</b>
+<b class="nc"><i>61</i>&nbsp;            HelperUI.alert(&quot;Error on FXBridge&quot;);</b>
+<b class="nc"><i>62</i>&nbsp;            HelperUI.initializeExit();</b>
+<i>63</i>&nbsp;        } else {
+<b class="nc"><i>64</i>&nbsp;            ctr = (ManagerCollaboratorStatisticsController) FXBridge.param;</b>
+<b class="nc"><i>65</i>&nbsp;            PspBS.setValueFactory(new GenEur(1, 4, 25));</b>
+<b class="nc"><i>66</i>&nbsp;            SpinnerValueFactory&lt;Double&gt; sp = new SpinnerValueFactory.DoubleSpinnerValueFactory(30, Double.MAX_VALUE, 60, 15);</b>
+<b class="nc"><i>67</i>&nbsp;            sp.setConverter(new HourConverter());</b>
+<b class="nc"><i>68</i>&nbsp;            DspBS.setValueFactory(sp);</b>
+<b class="nc"><i>69</i>&nbsp;            PlblM.setText(String.format(&quot;%.2f €&quot;, ctr.getMeanPayments()));</b>
+<b class="nc"><i>70</i>&nbsp;            DlblM.setText(String.format(&quot;%.2f hrs&quot;, ctr.getMeanDelays()));</b>
+<b class="nc"><i>71</i>&nbsp;            PlblSD.setText(String.format(&quot;%.2f&quot;, ctr.getStandardDeviationPayments()));</b>
+<b class="nc"><i>72</i>&nbsp;            DlblSD.setText(String.format(&quot;%.2f&quot;, ctr.getStandardDeviationDelays()));</b>
+<b class="nc"><i>73</i>&nbsp;            applyBucketSizeDelays(null);</b>
+<b class="nc"><i>74</i>&nbsp;            applyBucketSizePayments(null);</b>
+<i>75</i>&nbsp;
+<b class="nc"><i>76</i>&nbsp;            SetCellValueFactory.set(tcCountry, (Freelancer::getCountry));</b>
+<b class="nc"><i>77</i>&nbsp;            SetCellValueFactory.set(tcEmail, (Freelancer::getEmail));</b>
+<b class="nc"><i>78</i>&nbsp;            SetCellValueFactory.set(tcExpertise, (freelancer -&gt; freelancer.getLevelOfExpertise().name()));</b>
+<b class="nc"><i>79</i>&nbsp;            SetCellValueFactory.set(tcId, (Freelancer::getId));</b>
+<b class="nc"><i>80</i>&nbsp;            SetCellValueFactory.set(tcName, (Freelancer::getName));</b>
+<b class="nc"><i>81</i>&nbsp;            SetCellValueFactory.set(tcPayment, (freelancer -&gt; ctr.getPaymentOf(freelancer)));</b>
+<i>82</i>&nbsp;
+<b class="nc"><i>83</i>&nbsp;            table.setItems(FXCollections.observableArrayList(ctr.getFreelancers()));</b>
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;        }
+<b class="nc"><i>86</i>&nbsp;    }</b>
+<i>87</i>&nbsp;    @FXML
+<i>88</i>&nbsp;    public void quit(ActionEvent actionEvent) {
+<b class="nc"><i>89</i>&nbsp;        ((Stage)DspBS.getScene().getWindow()).close();</b>
+<b class="nc"><i>90</i>&nbsp;    }</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    @FXML
+<i>93</i>&nbsp;    public void applyBucketSizePayments(ActionEvent actionEvent) {
+<b class="nc"><i>94</i>&nbsp;        applyBucketSize(PspBS.getValue(), ctr::getHistogramDataPayments, PbcH, &quot;Payment Amount (€)&quot;);</b>
+<b class="nc"><i>95</i>&nbsp;    }</b>
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    @FXML
+<i>98</i>&nbsp;    public void applyBucketSizeDelays(ActionEvent actionEvent) {
+<b class="nc"><i>99</i>&nbsp;        applyBucketSize(DspBS.getValue()/60, ctr::getHistogramDataDelays, DbcH, &quot;Delay (hrs)&quot;);</b>
+<b class="nc"><i>100</i>&nbsp;    }</b>
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;    private void applyBucketSize(final double width, Function&lt;Double, Map&lt;Integer, Integer&gt;&gt; mapGetter, BarChart&lt;String, Integer&gt; bc, String name) {
+<b class="nc"><i>103</i>&nbsp;        final Map&lt;Integer, Integer&gt; map = mapGetter.apply(width);</b>
+<b class="nc"><i>104</i>&nbsp;        final Integer min = Collections.min(map.keySet());</b>
+<b class="nc"><i>105</i>&nbsp;        final Integer max = Collections.max(map.keySet());</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;        XYChart.Series&lt;String, Integer&gt; series = new XYChart.Series&lt;&gt;();</b>
+<b class="nc"><i>108</i>&nbsp;        series.setName(name);</b>
+<b class="nc"><i>109</i>&nbsp;        final ObservableList&lt;XYChart.Data&lt;String, Integer&gt;&gt; data = series.getData();</b>
+<b class="nc"><i>110</i>&nbsp;        for(Integer i = min; i &lt;= max; i++) {</b>
+<b class="nc"><i>111</i>&nbsp;            Integer value = map.get(i);</b>
+<b class="nc"><i>112</i>&nbsp;            if(value == null) value = 0;</b>
+<b class="nc"><i>113</i>&nbsp;            final String range = String.format(&quot;[%.2f, %.2f[&quot;, i*width, (i+1)*width);</b>
+<b class="nc"><i>114</i>&nbsp;            data.add(new XYChart.Data&lt;&gt;(range, value));</b>
+<i>115</i>&nbsp;        }
+<b class="nc"><i>116</i>&nbsp;        bc.getData().clear();</b>
+<b class="nc"><i>117</i>&nbsp;        bc.getData().add(series);</b>
+<b class="nc"><i>118</i>&nbsp;    }</b>
+<i>119</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

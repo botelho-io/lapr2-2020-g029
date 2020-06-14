@@ -1,0 +1,199 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MainUI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx.util</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MainUI (lapr.ui.javafx.util)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 38)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainUI$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 40)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx.util;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import authorization.model.UserSession;
+<i>4</i>&nbsp;import javafx.stage.Stage;
+<i>5</i>&nbsp;import lapr.controller.AppPOE;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.io.IOException;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class MainUI {
+<i>10</i>&nbsp;    private Stage stage;
+<i>11</i>&nbsp;
+<b class="nc"><i>12</i>&nbsp;    public MainUI() {</b>
+<b class="nc"><i>13</i>&nbsp;        stage = new Stage();</b>
+<b class="nc"><i>14</i>&nbsp;    }</b>
+<i>15</i>&nbsp;    private boolean openState(FXBridge.STATE state) {
+<b class="nc"><i>16</i>&nbsp;        return FXBridge.openState(state, stage);</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public void mainMenu() {
+<b class="nc"><i>20</i>&nbsp;        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();</b>
+<i>21</i>&nbsp;        // Loop trough the menus
+<b class="nc"><i>22</i>&nbsp;        FXBridge.scene = null;</b>
+<b class="nc"><i>23</i>&nbsp;        switch (su.getRoleUser()) {</b>
+<i>24</i>&nbsp;            case ADMINISTRATOR:
+<b class="nc"><i>25</i>&nbsp;                openState(FXBridge.STATE.MENU_ADMIN);</b>
+<b class="nc"><i>26</i>&nbsp;                break;</b>
+<i>27</i>&nbsp;            case COLLABORATOR:
+<b class="nc"><i>28</i>&nbsp;                openState(FXBridge.STATE.MENU_COLLA);</b>
+<b class="nc"><i>29</i>&nbsp;                break;</b>
+<i>30</i>&nbsp;            case MANAGER:
+<b class="nc"><i>31</i>&nbsp;                openState(FXBridge.STATE.MENU_MANAG);</b>
+<b class="nc"><i>32</i>&nbsp;                break;</b>
+<i>33</i>&nbsp;            default:
+<b class="nc"><i>34</i>&nbsp;                HelperUI.alert(&quot;Unknown Role!&quot;);</b>
+<b class="nc"><i>35</i>&nbsp;                System.exit(1);</b>
+<i>36</i>&nbsp;        }
+<b class="nc"><i>37</i>&nbsp;    }</b>
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    public void start() {
+<i>40</i>&nbsp;        // Load data from file
+<b class="nc"><i>41</i>&nbsp;        openState(FXBridge.STATE.UC12);</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;        // Login
+<b class="nc"><i>44</i>&nbsp;        openState(FXBridge.STATE.LOGIN);</b>
+<i>45</i>&nbsp;        // Was login successful?
+<b class="nc"><i>46</i>&nbsp;        final UserSession su = AppPOE.getInstance().getApp().getAuthFacade().getCurrentSession();</b>
+<b class="nc"><i>47</i>&nbsp;        if(su == null || (!su.isLoggedIn())) {</b>
+<b class="nc"><i>48</i>&nbsp;            System.exit(0); // Not successful - Exit</b>
+<i>49</i>&nbsp;        } else {
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;            // Main interaction loop
+<i>52</i>&nbsp;            MAIN_MENU_LOOP:
+<i>53</i>&nbsp;            while (true) {
+<i>54</i>&nbsp;                // Pull scene from main menu
+<b class="nc"><i>55</i>&nbsp;                mainMenu();</b>
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;                // Check is a scene was selected
+<b class="nc"><i>58</i>&nbsp;                if(FXBridge.scene != null) {</b>
+<i>59</i>&nbsp;                    // It was.
+<i>60</i>&nbsp;                    // Continue opening UC panels until there are no more panels to open;
+<i>61</i>&nbsp;                    // This allows a panel to just set a FXBridge.scene and it will be automatically
+<i>62</i>&nbsp;                    // opened when the current UC closes;
+<i>63</i>&nbsp;                    // FXBridge.param may be used for iter-panel communications.
+<i>64</i>&nbsp;                    FXBridge.STATE STATE;
+<i>65</i>&nbsp;                    do {
+<b class="nc"><i>66</i>&nbsp;                        STATE = FXBridge.scene;</b>
+<b class="nc"><i>67</i>&nbsp;                        FXBridge.scene = null;</b>
+<b class="nc"><i>68</i>&nbsp;                    } while(openState(STATE));</b>
+<b class="nc"><i>69</i>&nbsp;                } else {</b>
+<i>70</i>&nbsp;                    // Nothing selected. Quit?
+<b class="nc"><i>71</i>&nbsp;                    openState(FXBridge.STATE.UC11);</b>
+<b class="nc"><i>72</i>&nbsp;                    if(FXBridge.scene == null)</b>
+<b class="nc"><i>73</i>&nbsp;                        FXBridge.scene = FXBridge.STATE.MAIN_MENU;</b>
+<b class="nc"><i>74</i>&nbsp;                    switch (FXBridge.scene) {</b>
+<b class="nc"><i>75</i>&nbsp;                        case MAIN_MENU: continue MAIN_MENU_LOOP;</b>
+<b class="nc"><i>76</i>&nbsp;                        case QUIT: break MAIN_MENU_LOOP;</b>
+<i>77</i>&nbsp;                    }
+<i>78</i>&nbsp;                }
+<i>79</i>&nbsp;            }
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;        try {
+<b class="nc"><i>85</i>&nbsp;            AppPOE.getInstance().getApp().close();</b>
+<b class="nc"><i>86</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>87</i>&nbsp;            HelperUI.alert(&quot;Error while closing the app:\n&quot;+e.getMessage());</b>
+<b class="nc"><i>88</i>&nbsp;        }</b>
+<b class="nc"><i>89</i>&nbsp;    }</b>
+<i>90</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PaymentAPI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.api</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PaymentAPI (lapr.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">PaymentAPI</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.api;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.io.Closeable;
+<i>4</i>&nbsp;import java.io.Serializable;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * Represents an API used to process bank payments.
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public interface PaymentAPI extends Serializable, Closeable {
+<i>10</i>&nbsp;    /**
+<i>11</i>&nbsp;     * Make a payment.
+<i>12</i>&nbsp;     * @param freelancerId The ID of the freelancer to pay to.
+<i>13</i>&nbsp;     * @param freelancerIBAN The IBAN of the freelancer to pay.
+<i>14</i>&nbsp;     * @param taskId The ID of the task this payment is for.
+<i>15</i>&nbsp;     * @param taskDescription The description of the task this payment is for.
+<i>16</i>&nbsp;     * @param eur The amount in euros to pay to the freelancer.
+<i>17</i>&nbsp;     * @param nativeCurrency The amount in the freelancer&#39;s native currency to pay.
+<i>18</i>&nbsp;     * @return True if the payment was successful, false otherwise.
+<i>19</i>&nbsp;     */
+<i>20</i>&nbsp;    boolean payTo(String freelancerId, String freelancerIBAN, String taskId, String taskDescription, Double eur, Double nativeCurrency);
+<i>21</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

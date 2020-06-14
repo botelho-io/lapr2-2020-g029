@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Task</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Task (lapr.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Task</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    84.6%
+  </span>
+  <span class="absValue">
+    (11/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89.3%
+  </span>
+  <span class="absValue">
+    (25/ 28)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * To change this license header, choose License Headers in Project Properties.
+<i>3</i>&nbsp; * To change this template file, choose Tools | Templates
+<i>4</i>&nbsp; * and open the template in the editor.
+<i>5</i>&nbsp; */
+<i>6</i>&nbsp;package lapr.model;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.io.Serializable;
+<i>9</i>&nbsp;import java.util.Objects;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * Represents a task an organization is trying to outsource to a freelancer.
+<i>13</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;public class Task implements Serializable {
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;     * The id of the task.
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    private String m_strId;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;     * A short description of the task.
+<i>22</i>&nbsp;     */
+<i>23</i>&nbsp;    private String m_strDescription;
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * The duration it took to complete the task.
+<i>26</i>&nbsp;     */
+<i>27</i>&nbsp;    private double m_dDurationInHours;
+<i>28</i>&nbsp;    /**
+<i>29</i>&nbsp;     * The cost per hour a junior freelancer receives for this task.
+<i>30</i>&nbsp;     */
+<i>31</i>&nbsp;    private double m_dCostPerHourOfJuniorEur;
+<i>32</i>&nbsp;    /**
+<i>33</i>&nbsp;     * The category this task is in.
+<i>34</i>&nbsp;     */
+<i>35</i>&nbsp;    private String m_strCategory;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * The Freelancer that executed the task.
+<i>38</i>&nbsp;     */
+<i>39</i>&nbsp;    private Freelancer m_oExecutor;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    /**
+<i>42</i>&nbsp;     * Constructor.
+<i>43</i>&nbsp;     * @param id The id of the task.
+<i>44</i>&nbsp;     * @param description A short description of the task.
+<i>45</i>&nbsp;     * @param durationInHours The duration it took to complete the task.
+<i>46</i>&nbsp;     * @param costPerHourOfJuniorEur The cost per hour a junior freelancer receives for this task.
+<i>47</i>&nbsp;     * @param category The category this task is in.
+<i>48</i>&nbsp;     * @param executor The Freelancer that executed the task.
+<i>49</i>&nbsp;     */
+<b class="fc"><i>50</i>&nbsp;    public Task(String id, String description, double durationInHours, double costPerHourOfJuniorEur, String category, Freelancer executor) {</b>
+<b class="fc"><i>51</i>&nbsp;        if ((id == null) || (description == null) || (category == null) || (id.isEmpty()))</b>
+<b class="nc"><i>52</i>&nbsp;            throw new IllegalArgumentException(&quot;None of the arguments can be null or empty.&quot;);</b>
+<b class="fc"><i>53</i>&nbsp;        this.m_strId = id;</b>
+<b class="fc"><i>54</i>&nbsp;        this.m_strDescription = description;</b>
+<b class="fc"><i>55</i>&nbsp;        this.m_dDurationInHours = durationInHours;</b>
+<b class="fc"><i>56</i>&nbsp;        this.m_dCostPerHourOfJuniorEur = costPerHourOfJuniorEur;</b>
+<b class="fc"><i>57</i>&nbsp;        this.m_strCategory = category;</b>
+<b class="fc"><i>58</i>&nbsp;        this.m_oExecutor = executor;</b>
+<b class="fc"><i>59</i>&nbsp;    }</b>
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;    /**
+<i>62</i>&nbsp;     * Returns the freelancer that executed the task or null if the task has not been executed yet.
+<i>63</i>&nbsp;     * @return he freelancer that executed the task or null if the task has not been executed yet.
+<i>64</i>&nbsp;     */
+<i>65</i>&nbsp;    public Freelancer getExecutor() {
+<b class="fc"><i>66</i>&nbsp;        return m_oExecutor;</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;    /**
+<i>69</i>&nbsp;     * Set the task as having been executed by a freelancer.
+<i>70</i>&nbsp;     * @param executor The Freelancer that executed the task.
+<i>71</i>&nbsp;     */
+<i>72</i>&nbsp;    public void setExecutor(Freelancer executor) {
+<b class="fc"><i>73</i>&nbsp;        this.m_oExecutor = executor;</b>
+<b class="fc"><i>74</i>&nbsp;    }</b>
+<i>75</i>&nbsp;    /**
+<i>76</i>&nbsp;     * Returns the duration in hours it took to complete the task.
+<i>77</i>&nbsp;     * @return he duration in hours it took to complete the task.
+<i>78</i>&nbsp;     */
+<i>79</i>&nbsp;    public double getDurationInHours() {
+<b class="fc"><i>80</i>&nbsp;        return m_dDurationInHours;</b>
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;    /**
+<i>83</i>&nbsp;     * @param durationInHours The new duration in hours it took to complete the task.
+<i>84</i>&nbsp;     */
+<i>85</i>&nbsp;    public void setDurationInHours(int durationInHours) {
+<b class="fc"><i>86</i>&nbsp;        this.m_dDurationInHours = durationInHours;</b>
+<b class="fc"><i>87</i>&nbsp;    }</b>
+<i>88</i>&nbsp;    /**
+<i>89</i>&nbsp;     * Returns the cost per hour a junior freelancer receives for this task.
+<i>90</i>&nbsp;     * @return he cost per hour a junior freelancer receives for this task.
+<i>91</i>&nbsp;     */
+<i>92</i>&nbsp;    public double getCostPerHourOfJuniorEur() {
+<b class="fc"><i>93</i>&nbsp;        return m_dCostPerHourOfJuniorEur;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;    /**
+<i>96</i>&nbsp;     * @param costPerHourOfJuniorEur The new cost per hour a junior freelancer receives for this task.
+<i>97</i>&nbsp;     */
+<i>98</i>&nbsp;    public void setCostPerHourOfJuniorEur(double costPerHourOfJuniorEur) {
+<b class="fc"><i>99</i>&nbsp;        this.m_dCostPerHourOfJuniorEur = costPerHourOfJuniorEur;</b>
+<b class="fc"><i>100</i>&nbsp;    }</b>
+<i>101</i>&nbsp;    /**
+<i>102</i>&nbsp;     * Returns the id of the task.
+<i>103</i>&nbsp;     * @return he id of the task.
+<i>104</i>&nbsp;     */
+<i>105</i>&nbsp;    public String getId() {
+<b class="fc"><i>106</i>&nbsp;        return m_strId;</b>
+<i>107</i>&nbsp;    }
+<i>108</i>&nbsp;    /**
+<i>109</i>&nbsp;     * Returns a short description of the task.
+<i>110</i>&nbsp;     * @return  short description of the task.
+<i>111</i>&nbsp;     */
+<i>112</i>&nbsp;    public String getDescription() {
+<b class="fc"><i>113</i>&nbsp;        return m_strDescription;</b>
+<i>114</i>&nbsp;    }
+<i>115</i>&nbsp;
+<i>116</i>&nbsp;    /**
+<i>117</i>&nbsp;     * Returns the category this task is in.
+<i>118</i>&nbsp;     * @return he category this task is in.
+<i>119</i>&nbsp;     */
+<i>120</i>&nbsp;    public String getCategory() {
+<b class="fc"><i>121</i>&nbsp;        return this.m_strCategory;</b>
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    /**
+<i>125</i>&nbsp;     * Compare two tasks.
+<i>126</i>&nbsp;     * @param o Ideally a task to compare.
+<i>127</i>&nbsp;     * @return Will return true if and only if the object provided is a task with the same ID.
+<i>128</i>&nbsp;     */
+<i>129</i>&nbsp;    @Override
+<i>130</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>131</i>&nbsp;        if (this == o) return true;</b>
+<b class="fc"><i>132</i>&nbsp;        if (!(o instanceof Task)) return false;</b>
+<b class="fc"><i>133</i>&nbsp;        Task task = (Task) o;</b>
+<b class="fc"><i>134</i>&nbsp;        return m_strId.equals(task.m_strId);</b>
+<i>135</i>&nbsp;    }
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;    @Override
+<i>138</i>&nbsp;    public int hashCode() {
+<b class="nc"><i>139</i>&nbsp;        return Objects.hash(m_strId);</b>
+<i>140</i>&nbsp;    }
+<i>141</i>&nbsp;
+<i>142</i>&nbsp;    @Override
+<i>143</i>&nbsp;    public String toString() {
+<b class="nc"><i>144</i>&nbsp;        return String.format(&quot;(%s) %s&quot;, m_strId, m_strDescription);</b>
+<i>145</i>&nbsp;    }
+<i>146</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

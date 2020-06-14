@@ -1,0 +1,199 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SendEmailTask</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SendEmailTask (lapr.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SendEmailTask</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    40%
+  </span>
+  <span class="absValue">
+    (2/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    8.2%
+  </span>
+  <span class="absValue">
+    (4/ 49)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.util.Pair;
+<i>4</i>&nbsp;import lapr.api.EmailAPI;
+<i>5</i>&nbsp;import lapr.model.*;
+<i>6</i>&nbsp;import lapr.lists.RegistOrganization;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.io.Serializable;
+<i>9</i>&nbsp;import java.util.*;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * Class that is responsible for send emails to late freelancers.
+<i>13</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;public class SendEmailTask extends TimerTask implements Serializable {
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;     * The email scheduler responsible for this task.
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    EmailScheduler m_oEmailScheduler;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;     * Constructor.
+<i>22</i>&nbsp;     * @param emailScheduler The payment scheduler responsible for this task.
+<i>23</i>&nbsp;     */
+<b class="fc"><i>24</i>&nbsp;    public SendEmailTask(EmailScheduler emailScheduler) {</b>
+<b class="fc"><i>25</i>&nbsp;        this.m_oEmailScheduler = emailScheduler;</b>
+<b class="fc"><i>26</i>&nbsp;    }</b>
+<i>27</i>&nbsp;    /**
+<i>28</i>&nbsp;     * Called by tis tasks timer. Starts to send emails.
+<i>29</i>&nbsp;     */
+<i>30</i>&nbsp;    @Override
+<i>31</i>&nbsp;    public void run() {
+<b class="nc"><i>32</i>&nbsp;        sendMessages(getMessages());</b>
+<b class="nc"><i>33</i>&nbsp;        m_oEmailScheduler.scheduleNextYear();</b>
+<b class="nc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * All the freelancers with a mean task delay higher than MEAN_TASK_DELAY_MAXIMUM will be notified of their poor
+<i>38</i>&nbsp;     * performance.
+<i>39</i>&nbsp;     */
+<b class="fc"><i>40</i>&nbsp;    private final static Double MEAN_TASK_DELAY_MAXIMUM = 3.0;</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    /**
+<i>43</i>&nbsp;     * Sends emails with messages.
+<i>44</i>&nbsp;     * @param fre_msg A map that makes a freelancer correspond to its message or null to not send a message.
+<i>45</i>&nbsp;     */
+<i>46</i>&nbsp;    public static void sendMessages(Map&lt;Freelancer, String&gt; fre_msg){
+<b class="nc"><i>47</i>&nbsp;        final EmailAPI email = AppPOE.getInstance().getApp().getEmailAPI();</b>
+<b class="nc"><i>48</i>&nbsp;        for(final Freelancer fre : fre_msg.keySet()) {</b>
+<b class="nc"><i>49</i>&nbsp;            final String message = fre_msg.get(fre);</b>
+<b class="nc"><i>50</i>&nbsp;            if(message != null) email.sendEmail(fre.getEmail(), message);</b>
+<b class="nc"><i>51</i>&nbsp;        }</b>
+<b class="nc"><i>52</i>&nbsp;    }</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    /**
+<i>55</i>&nbsp;     * Gets the messages to be sent to the freelancers.
+<i>56</i>&nbsp;     * @return A map that makes a freelancer correspond to its message or null if there is nothing to send.
+<i>57</i>&nbsp;     */
+<i>58</i>&nbsp;    public static Map&lt;Freelancer, String&gt; getMessages() {
+<b class="nc"><i>59</i>&nbsp;        final int CURREN_YEAR = Calendar.getInstance().get(Calendar.YEAR);</b>
+<i>60</i>&nbsp;        // The regist of the organization
+<b class="nc"><i>61</i>&nbsp;        final RegistOrganization ro = AppPOE.getInstance().getApp().getRegistOrganization();</b>
+<i>62</i>&nbsp;        // Maps a freelancer to their executed transactions
+<b class="nc"><i>63</i>&nbsp;        final Map&lt;Freelancer, List&lt;Transaction&gt;&gt; fre_trs = ro.getGroupedTransactionsInYear(CURREN_YEAR);</b>
+<i>64</i>&nbsp;        // Maps a freelancer to [the average delay of the transaction; and the percentage of delayed transactions]
+<b class="nc"><i>65</i>&nbsp;        final Map&lt;Freelancer, Pair&lt;Double, Double&gt;&gt; fre__ad_dt = new HashMap&lt;&gt;();</b>
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;        // Overall statistical values
+<b class="nc"><i>68</i>&nbsp;        int numberTransactions = 0;</b>
+<b class="nc"><i>69</i>&nbsp;        int numberDelayedTransactions = 0;</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;        // Calculate overall statistical values
+<b class="nc"><i>72</i>&nbsp;        for(final Freelancer fre : fre_trs.keySet()) {</b>
+<i>73</i>&nbsp;            // statistics for the freelancer
+<i>74</i>&nbsp;            final int transactions;
+<b class="nc"><i>75</i>&nbsp;            double delayDays = 0;</b>
+<b class="nc"><i>76</i>&nbsp;            int delayedTransactions = 0;</b>
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;            // Calculate freelancer statistics
+<b class="nc"><i>79</i>&nbsp;            final List&lt;Transaction&gt; transactionList = fre_trs.get(fre);</b>
+<b class="nc"><i>80</i>&nbsp;            for(final Transaction trs : transactionList) {</b>
+<b class="nc"><i>81</i>&nbsp;                final double delay = trs.getExecutionDetails().getHoursDelay();</b>
+<b class="nc"><i>82</i>&nbsp;                delayDays += delay;</b>
+<b class="nc"><i>83</i>&nbsp;                if(delay &gt; 0) delayedTransactions++;</b>
+<b class="nc"><i>84</i>&nbsp;            }</b>
+<b class="nc"><i>85</i>&nbsp;            transactions = transactionList.size();</b>
+<i>86</i>&nbsp;            // save those values
+<b class="nc"><i>87</i>&nbsp;            fre__ad_dt.put(fre, new Pair&lt;&gt;((double) delayDays / transactions, (double) delayedTransactions / transactions));</b>
+<i>88</i>&nbsp;
+<i>89</i>&nbsp;            // Calculate statistics for the overall values
+<b class="nc"><i>90</i>&nbsp;            numberTransactions += transactions;</b>
+<b class="nc"><i>91</i>&nbsp;            numberDelayedTransactions += delayedTransactions;</b>
+<b class="nc"><i>92</i>&nbsp;        }</b>
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;        // Make decisions on which freelancer to send e-mails to
+<b class="nc"><i>95</i>&nbsp;        final Map&lt;Freelancer, String&gt; toReturn = new HashMap&lt;&gt;();</b>
+<i>96</i>&nbsp;
+<b class="nc"><i>97</i>&nbsp;        final double percentageDelayedTransactions = (double) numberDelayedTransactions / numberTransactions;</b>
+<b class="nc"><i>98</i>&nbsp;        for(final Freelancer fre: fre__ad_dt.keySet()) {</b>
+<b class="nc"><i>99</i>&nbsp;            final Pair&lt;Double, Double&gt; pair = fre__ad_dt.get(fre);</b>
+<b class="nc"><i>100</i>&nbsp;            final double avgDelay = pair.getKey();</b>
+<b class="nc"><i>101</i>&nbsp;            final double pctDelayed = pair.getValue();</b>
+<b class="nc"><i>102</i>&nbsp;            String msg = &quot;&quot;;</b>
+<b class="nc"><i>103</i>&nbsp;            if(avgDelay &gt; MEAN_TASK_DELAY_MAXIMUM) {</b>
+<b class="nc"><i>104</i>&nbsp;                msg += String.format(&quot;we have noticed that you have a mean task delay higher than %.3f hours (%.3fhr), try to keep up! &quot;, MEAN_TASK_DELAY_MAXIMUM, avgDelay);</b>
+<i>105</i>&nbsp;            }
+<b class="nc"><i>106</i>&nbsp;            if(pctDelayed &gt; percentageDelayedTransactions) {</b>
+<b class="nc"><i>107</i>&nbsp;                msg += String.format(&quot;%s you have a percentage of delayed tasks higher than %.2f%% (%.2f%%), meaning that you are falling behind the average. &quot;,(msg.isEmpty()?&quot;we have noticed that&quot;:&quot;Furthermore,&quot;), percentageDelayedTransactions*100, pctDelayed*100);</b>
+<i>108</i>&nbsp;            }
+<b class="nc"><i>109</i>&nbsp;            if(!msg.isEmpty()) {</b>
+<b class="nc"><i>110</i>&nbsp;                msg = String.format(&quot;Hello there %s,\nThis e-mail is being sent to notify you of your poor performance as of %d.\nNamely, %s\n\nBest regards,\nThe T4J team.\n&quot;, fre.getName(), CURREN_YEAR, msg);</b>
+<b class="nc"><i>111</i>&nbsp;                toReturn.put(fre, msg);</b>
+<i>112</i>&nbsp;            }
+<b class="nc"><i>113</i>&nbsp;        }</b>
+<b class="nc"><i>114</i>&nbsp;        return toReturn;</b>
+<i>115</i>&nbsp;    }
+<i>116</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

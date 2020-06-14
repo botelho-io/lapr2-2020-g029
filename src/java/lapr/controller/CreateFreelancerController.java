@@ -53,7 +53,7 @@ public class CreateFreelancerController {
 
     /**
      * Adds the new freelancer to the register of freelancers.
-     * * @return True if the freelancer was added.
+     * @return True if the freelancer was added.
      */
     public boolean addFreelancer() {
         return reg.registerFreelancer(fre);

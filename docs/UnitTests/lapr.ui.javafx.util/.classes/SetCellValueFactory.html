@@ -1,0 +1,160 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SetCellValueFactory</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx.util</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SetCellValueFactory (lapr.ui.javafx.util)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SetCellValueFactory</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SetCellValueFactory$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">SetCellValueFactory$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx.util;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.beans.InvalidationListener;
+<i>4</i>&nbsp;import javafx.beans.value.ChangeListener;
+<i>5</i>&nbsp;import javafx.beans.value.ObservableValue;
+<i>6</i>&nbsp;import javafx.scene.control.TableColumn;
+<i>7</i>&nbsp;import javafx.util.Callback;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import java.util.function.Function;
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;public abstract class SetCellValueFactory {</b>
+<i>12</i>&nbsp;    public static&lt;T, U&gt; void set(TableColumn&lt;T, U&gt; column, Function&lt;T, U&gt; transform) {
+<b class="nc"><i>13</i>&nbsp;        column.setCellValueFactory(new Callback&lt;TableColumn.CellDataFeatures&lt;T, U&gt;, ObservableValue&lt;U&gt;&gt;() {</b>
+<i>14</i>&nbsp;            @Override
+<i>15</i>&nbsp;            public ObservableValue&lt;U&gt; call(TableColumn.CellDataFeatures&lt;T, U&gt; dataFeatures) {
+<b class="nc"><i>16</i>&nbsp;                return new ObservableValue&lt;U&gt;() {</b>
+<i>17</i>&nbsp;                    @Override public void addListener(ChangeListener&lt;? super U&gt; changeListener) {
+<b class="nc"><i>18</i>&nbsp;                    }</b>
+<i>19</i>&nbsp;                    @Override public void removeListener(ChangeListener&lt;? super U&gt; changeListener) {
+<b class="nc"><i>20</i>&nbsp;                    }</b>
+<i>21</i>&nbsp;                    @Override public U getValue() {
+<b class="nc"><i>22</i>&nbsp;                        return transform.apply(dataFeatures.getValue());</b>
+<i>23</i>&nbsp;                    }
+<i>24</i>&nbsp;                    @Override public void addListener(InvalidationListener invalidationListener) {
+<b class="nc"><i>25</i>&nbsp;                    }</b>
+<i>26</i>&nbsp;                    @Override public void removeListener(InvalidationListener invalidationListener) {
+<b class="nc"><i>27</i>&nbsp;                    }</b>
+<i>28</i>&nbsp;                };
+<i>29</i>&nbsp;            }
+<i>30</i>&nbsp;        });
+<b class="nc"><i>31</i>&nbsp;    }</b>
+<i>32</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

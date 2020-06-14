@@ -15,11 +15,12 @@ Here you will find:
 * [FURPS+](docs/FURPS.md)
 * [Glossary](docs/Glossary.md)
 * [Documentation on each use case](docs/README.md)
+* [Documentation for the code in JavaDoc](docs/JavaDoc/index.html)
+* [Unit Test Coverage Data](docs/UnitTests/index.html)
 
 ## How To Run This Project
 
 The easiest and most haste-free way to run this project is with [*IntelliJ*](https://www.jetbrains.com/idea/download).
-
 
 Once you have *IntelliJ* installed, open it, click *open project* and select the file `.idea/PFinal.iml`.
 

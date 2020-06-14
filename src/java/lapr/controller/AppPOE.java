@@ -54,6 +54,7 @@ public class AppPOE {
     /**
      * Constructor.
      * @param  app An app already initialize in the system.
+     * @throws IOException If there is an error while closing the last instance of the App.
      */
     public static void setApp(App app) throws IOException {
         if(singleton != null) {
@@ -114,8 +115,9 @@ public class AppPOE {
     }
 
     /**
-     * Reloads all the API's.
-     * @return API's reloaded.
+     * Reloads all the API's of a certain app.
+     * @param app The app to reload the APIs to.
+     * @param p The properties containing the names of the API classes.
      */
     public static void reloadAPIs(App app, Properties p) {
         // Add APIs

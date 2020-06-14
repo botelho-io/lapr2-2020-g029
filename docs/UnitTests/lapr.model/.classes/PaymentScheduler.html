@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PaymentScheduler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PaymentScheduler (lapr.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PaymentScheduler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (4/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.6%
+  </span>
+  <span class="absValue">
+    (24/ 35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * To change this license header, choose License Headers in Project Properties.
+<i>3</i>&nbsp; * To change this template file, choose Tools | Templates
+<i>4</i>&nbsp; * and open the template in the editor.
+<i>5</i>&nbsp; */
+<i>6</i>&nbsp;package lapr.model;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import lapr.controller.MakePaymentTask;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import java.io.IOException;
+<i>11</i>&nbsp;import java.io.ObjectInputStream;
+<i>12</i>&nbsp;import java.io.ObjectOutputStream;
+<i>13</i>&nbsp;import java.io.Serializable;
+<i>14</i>&nbsp;import java.time.LocalTime;
+<i>15</i>&nbsp;import java.util.Calendar;
+<i>16</i>&nbsp;import java.util.Date;
+<i>17</i>&nbsp;import java.util.Timer;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;/**
+<i>20</i>&nbsp; * Class responsible for scheduling a task to automatically pay
+<i>21</i>&nbsp; * the transactions of an organization.
+<i>22</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>23</i>&nbsp; */
+<i>24</i>&nbsp;public class PaymentScheduler implements Serializable {
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * The day of the month the payments will be processed.
+<i>27</i>&nbsp;     */
+<i>28</i>&nbsp;    private int m_iDayMonth;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * The time of the day the payments will be processed.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    LocalTime m_oTimeOfDay;
+<i>33</i>&nbsp;    /**
+<i>34</i>&nbsp;     * The organization that has the unpaid transactions.
+<i>35</i>&nbsp;     */
+<i>36</i>&nbsp;    Organization m_oOrganization;
+<i>37</i>&nbsp;    /**
+<i>38</i>&nbsp;     * The current Timer being used.
+<i>39</i>&nbsp;     */
+<i>40</i>&nbsp;    private transient Timer m_oTimer;
+<i>41</i>&nbsp;    private transient MakePaymentTask task;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * Creates a new scheduler.
+<i>45</i>&nbsp;     * @param DayMonth The day of the month the payment are to be made.
+<i>46</i>&nbsp;     * @param TimeOfDay The time of day to make the payments.
+<i>47</i>&nbsp;     * @param Organization The organization to make payments on.
+<i>48</i>&nbsp;     */
+<b class="fc"><i>49</i>&nbsp;    public PaymentScheduler(int DayMonth, LocalTime TimeOfDay, Organization Organization) {</b>
+<b class="fc"><i>50</i>&nbsp;        this.m_oOrganization = Organization;</b>
+<b class="fc"><i>51</i>&nbsp;        resetTime(DayMonth, TimeOfDay);</b>
+<b class="fc"><i>52</i>&nbsp;    }</b>
+<i>53</i>&nbsp;    /**
+<i>54</i>&nbsp;     * Resets the time the payments are precessed.
+<i>55</i>&nbsp;     * @param DayMonth New day of the month to process payments.
+<i>56</i>&nbsp;     * @param TimeOfDay Time of the day to process payments.
+<i>57</i>&nbsp;     */
+<i>58</i>&nbsp;    public void resetTime(int DayMonth, LocalTime TimeOfDay) {
+<i>59</i>&nbsp;        // Cancel the previous tasks if they exist
+<b class="fc"><i>60</i>&nbsp;        if(m_oTimer != null) {</b>
+<b class="fc"><i>61</i>&nbsp;            m_oTimer.cancel();</b>
+<b class="fc"><i>62</i>&nbsp;            m_oTimer.purge();</b>
+<i>63</i>&nbsp;        }
+<b class="fc"><i>64</i>&nbsp;        m_oTimer = new Timer();</b>
+<i>65</i>&nbsp;        // Schedule next task
+<b class="fc"><i>66</i>&nbsp;        this.m_iDayMonth = DayMonth;</b>
+<b class="fc"><i>67</i>&nbsp;        this.m_oTimeOfDay = TimeOfDay;</b>
+<b class="fc"><i>68</i>&nbsp;        scheduleNextMonth();</b>
+<b class="fc"><i>69</i>&nbsp;    }</b>
+<i>70</i>&nbsp;    /**
+<i>71</i>&nbsp;     * Schedules the payments to be made on the next month.
+<i>72</i>&nbsp;     */
+<i>73</i>&nbsp;    public void scheduleNextMonth() {
+<b class="fc"><i>74</i>&nbsp;        this.task = new MakePaymentTask(m_oOrganization, this);</b>
+<b class="fc"><i>75</i>&nbsp;        m_oTimer.schedule(task, getNextDate());</b>
+<b class="fc"><i>76</i>&nbsp;    }</b>
+<i>77</i>&nbsp;    /**
+<i>78</i>&nbsp;     * Returns the date when the next automatic payments will be made.
+<i>79</i>&nbsp;     * @return he date when the next automatic payments will be made.
+<i>80</i>&nbsp;     */
+<i>81</i>&nbsp;    public Date getNextDate() {
+<i>82</i>&nbsp;        // Find what time it is now
+<b class="fc"><i>83</i>&nbsp;        Calendar cal = Calendar.getInstance();</b>
+<i>84</i>&nbsp;        // Set that calendar to this month&#39;s day and time of payment
+<b class="fc"><i>85</i>&nbsp;        cal.set(Calendar.DAY_OF_MONTH, Math.min(cal.getActualMaximum(Calendar.DAY_OF_MONTH), m_iDayMonth));</b>
+<i>86</i>&nbsp;        // Set time
+<b class="fc"><i>87</i>&nbsp;        cal.set(Calendar.HOUR_OF_DAY, m_oTimeOfDay.getHour());</b>
+<b class="fc"><i>88</i>&nbsp;        cal.set(Calendar.MINUTE, m_oTimeOfDay.getMinute());</b>
+<b class="fc"><i>89</i>&nbsp;        cal.set(Calendar.SECOND, m_oTimeOfDay.getSecond());</b>
+<b class="fc"><i>90</i>&nbsp;        cal.set(Calendar.MILLISECOND, 0);</b>
+<i>91</i>&nbsp;        // Check if date has passed
+<b class="fc"><i>92</i>&nbsp;        if(cal.before(Calendar.getInstance())) {</b>
+<i>93</i>&nbsp;            // Date is not on this month, set for next month
+<b class="fc"><i>94</i>&nbsp;            cal.add(Calendar.MONTH, 1);</b>
+<i>95</i>&nbsp;        }
+<b class="fc"><i>96</i>&nbsp;        return cal.getTime();</b>
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;    /**
+<i>100</i>&nbsp;     * Read object.
+<i>101</i>&nbsp;     * @param aInputStream The input stream.
+<i>102</i>&nbsp;     * @throws ClassNotFoundException If the class is not in the stream.
+<i>103</i>&nbsp;     * @throws IOException If the stream cannot be read from.
+<i>104</i>&nbsp;     */
+<i>105</i>&nbsp;    private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException {
+<b class="nc"><i>106</i>&nbsp;        this.task = null;</b>
+<b class="nc"><i>107</i>&nbsp;        this.m_oTimer = null;</b>
+<i>108</i>&nbsp;
+<b class="nc"><i>109</i>&nbsp;        this.m_oOrganization = (Organization) aInputStream.readObject();</b>
+<b class="nc"><i>110</i>&nbsp;        this.m_oTimeOfDay = (LocalTime) aInputStream.readObject();</b>
+<b class="nc"><i>111</i>&nbsp;        this.m_iDayMonth = aInputStream.readInt();</b>
+<b class="nc"><i>112</i>&nbsp;        resetTime(m_iDayMonth, m_oTimeOfDay);</b>
+<b class="nc"><i>113</i>&nbsp;    }</b>
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;    /**
+<i>116</i>&nbsp;     * Writes the object.
+<i>117</i>&nbsp;     * @param aOutputStream The output stream.
+<i>118</i>&nbsp;     * @throws IOException If the stream cannot be written to.
+<i>119</i>&nbsp;     */
+<i>120</i>&nbsp;    private void writeObject(ObjectOutputStream aOutputStream) throws IOException {
+<b class="nc"><i>121</i>&nbsp;        aOutputStream.writeObject(m_oOrganization);</b>
+<b class="nc"><i>122</i>&nbsp;        aOutputStream.writeObject(m_oTimeOfDay);</b>
+<b class="nc"><i>123</i>&nbsp;        aOutputStream.writeInt(m_iDayMonth);</b>
+<b class="nc"><i>124</i>&nbsp;    }</b>
+<i>125</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

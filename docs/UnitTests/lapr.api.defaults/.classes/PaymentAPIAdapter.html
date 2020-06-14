@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PaymentAPIAdapter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.api.defaults</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PaymentAPIAdapter (lapr.api.defaults)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PaymentAPIAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.9%
+  </span>
+  <span class="absValue">
+    (11/ 19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.api.defaults;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lapr.api.PaymentAPI;
+<i>4</i>&nbsp;import lapr.utils.Constants;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.io.BufferedWriter;
+<i>7</i>&nbsp;import java.io.File;
+<i>8</i>&nbsp;import java.io.FileWriter;
+<i>9</i>&nbsp;import java.io.IOException;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * Represents an API adapter used to process bank payments.
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;public class PaymentAPIAdapter implements PaymentAPI {
+<i>15</i>&nbsp;    FileWriter fstream;
+<i>16</i>&nbsp;    BufferedWriter out;
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    public PaymentAPIAdapter() {</b>
+<i>19</i>&nbsp;        try {
+<b class="fc"><i>20</i>&nbsp;            fstream = new FileWriter(Constants.paymentsFile, true);</b>
+<b class="fc"><i>21</i>&nbsp;            out = new BufferedWriter(fstream);</b>
+<b class="fc"><i>22</i>&nbsp;            if(new File(Constants.paymentsFile).length() == 0)</b>
+<b class="fc"><i>23</i>&nbsp;                out.write(&quot;Freelancer ID\tFreelancer IBAN\tTask ID\tTask Description\tEuro\tNative Currency\n&quot;);</b>
+<b class="nc"><i>24</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>25</i>&nbsp;            System.out.println(e.getMessage());</b>
+<b class="fc"><i>26</i>&nbsp;        }</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * Make a payment.
+<i>31</i>&nbsp;     *
+<i>32</i>&nbsp;     * @param freelancerId    The ID of the freelancer to pay to.
+<i>33</i>&nbsp;     * @param freelancerIBAN  The IBAN of the freelancer to pay.
+<i>34</i>&nbsp;     * @param taskId          The ID of the task this payment is for.
+<i>35</i>&nbsp;     * @param taskDescription The description of the task this payment is for.
+<i>36</i>&nbsp;     * @param eur             The amount in euros to pay to the freelancer.
+<i>37</i>&nbsp;     * @param nativeCurrency  The amount in the freelancer&#39;s native currency to pay.
+<i>38</i>&nbsp;     * @return True if the payment was successful, false otherwise.
+<i>39</i>&nbsp;     */
+<i>40</i>&nbsp;    @Override
+<i>41</i>&nbsp;    public boolean payTo(String freelancerId, String freelancerIBAN, String taskId, String taskDescription, Double eur, Double nativeCurrency) {
+<i>42</i>&nbsp;        try {
+<b class="nc"><i>43</i>&nbsp;            out.write(String.format(&quot;%s\t%s\t%s\t%s\t%.2f\t%.2f\n&quot;, freelancerId, freelancerIBAN, taskId, taskDescription, eur, nativeCurrency));</b>
+<b class="nc"><i>44</i>&nbsp;            return true;</b>
+<b class="nc"><i>45</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>46</i>&nbsp;            System.out.println(e.getMessage());</b>
+<b class="nc"><i>47</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i>48</i>&nbsp;            return false;</b>
+<i>49</i>&nbsp;        }
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    @Override
+<i>53</i>&nbsp;    public void close() throws IOException {
+<b class="fc"><i>54</i>&nbsp;        out.flush();</b>
+<b class="fc"><i>55</i>&nbsp;        out.close();</b>
+<b class="fc"><i>56</i>&nbsp;        fstream.close();</b>
+<b class="fc"><i>57</i>&nbsp;    }</b>
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

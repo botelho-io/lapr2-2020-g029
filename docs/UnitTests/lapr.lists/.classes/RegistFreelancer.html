@@ -1,0 +1,227 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RegistFreelancer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.lists</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RegistFreelancer (lapr.lists)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RegistFreelancer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (33/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.lists;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lapr.model.Freelancer;
+<i>4</i>&nbsp;import lapr.utils.Expertise;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.io.Serializable;
+<i>7</i>&nbsp;import java.util.*;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * Represents the register of all the freelancers available in the system.
+<i>11</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>12</i>&nbsp; */
+<i>13</i>&nbsp;public class RegistFreelancer implements Iterable&lt;Freelancer&gt;, Serializable {
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * The list of freelancers
+<i>16</i>&nbsp;     */
+<i>17</i>&nbsp;    List&lt;Freelancer&gt; m_setFreelancer;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    /**
+<i>20</i>&nbsp;     * Constructor.
+<i>21</i>&nbsp;     */
+<b class="fc"><i>22</i>&nbsp;    public RegistFreelancer() {</b>
+<b class="fc"><i>23</i>&nbsp;        m_setFreelancer = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>24</i>&nbsp;    }</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /**
+<i>27</i>&nbsp;     * Creates a new freelancer
+<i>28</i>&nbsp;     * @param strName The name of this freelancer.
+<i>29</i>&nbsp;     * @param strExpertise The level of expertise of this freelancer. (Must be in the Expertise enum)
+<i>30</i>&nbsp;     * @param strEmail The unique email of this freelancer.
+<i>31</i>&nbsp;     * @param strNIF The NIF of this freelancer.
+<i>32</i>&nbsp;     * @param strIBAN Freelancer&#39;s International Bank Account Number.
+<i>33</i>&nbsp;     * @param strAddress The address of this freelancer.
+<i>34</i>&nbsp;     * @param strCountry The country where the freelancer resides.
+<i>35</i>&nbsp;     * @return The new freelancer that was created
+<i>36</i>&nbsp;     * @throws IllegalArgumentException IF the name does not have at least two words or the strExpertise is not a valid expertise name.
+<i>37</i>&nbsp;     */
+<i>38</i>&nbsp;    public Freelancer newFreelancer(String strName, String strExpertise, String strEmail, String strNIF,
+<i>39</i>&nbsp;                                    String strIBAN, String strAddress, String strCountry)
+<i>40</i>&nbsp;    throws IllegalArgumentException {
+<i>41</i>&nbsp;        Expertise exp;
+<i>42</i>&nbsp;        try {
+<b class="fc"><i>43</i>&nbsp;            exp = Expertise.valueOf(strExpertise.trim().toUpperCase());</b>
+<b class="fc"><i>44</i>&nbsp;        } catch (IllegalArgumentException ex) {</b>
+<b class="fc"><i>45</i>&nbsp;            throw new IllegalArgumentException(strExpertise.trim() + &quot; is not a valid name for an expertise level.&quot;);</b>
+<b class="fc"><i>46</i>&nbsp;        }</b>
+<b class="fc"><i>47</i>&nbsp;        return newFreelancer(strName.trim(), exp, strEmail.trim(), strNIF.trim(), strIBAN.trim(), strAddress.trim(), strCountry.trim().toUpperCase());</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    /**
+<i>51</i>&nbsp;     * Creates a new freelancer.
+<i>52</i>&nbsp;     * @param strName The name of this freelancer.
+<i>53</i>&nbsp;     * @param enumExpertise The level of expertise of this freelancer.
+<i>54</i>&nbsp;     * @param strEmail The unique email of this freelancer.
+<i>55</i>&nbsp;     * @param strNIF The NIF of this freelancer.
+<i>56</i>&nbsp;     * @param strIBAN Freelancer&#39;s International Bank Account Number.
+<i>57</i>&nbsp;     * @param strAddress The address of this freelancer.
+<i>58</i>&nbsp;     * @param strCountry The country where the freelancer resides.
+<i>59</i>&nbsp;     * @return The new freelancer that was created
+<i>60</i>&nbsp;     * @throws IllegalArgumentException IF the name does not have at least two words.
+<i>61</i>&nbsp;     */
+<i>62</i>&nbsp;    public Freelancer newFreelancer(String strName, Expertise enumExpertise, String strEmail, String strNIF,
+<i>63</i>&nbsp;                                    String strIBAN, String strAddress, String strCountry)
+<i>64</i>&nbsp;    throws IllegalArgumentException {
+<b class="fc"><i>65</i>&nbsp;        String id = generateID(strName);</b>
+<b class="fc"><i>66</i>&nbsp;        return new Freelancer(id, strName, enumExpertise, strEmail, strNIF, strIBAN, strAddress, strCountry);</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    /**
+<i>70</i>&nbsp;     * Generates a unique id from a name.
+<i>71</i>&nbsp;     * @param strName The name from which to generate the id.
+<i>72</i>&nbsp;     * @return The ID that was generated
+<i>73</i>&nbsp;     * @throws IllegalArgumentException IF the name does not have at least two words.
+<i>74</i>&nbsp;     */
+<i>75</i>&nbsp;    private String generateID(String strName) throws IllegalArgumentException {
+<b class="fc"><i>76</i>&nbsp;        String[] names = strName.split(&quot;[ ]+&quot;);</b>
+<b class="fc"><i>77</i>&nbsp;        if(names.length &lt; 2) throw new IllegalArgumentException(&quot;Name provided must include at least firs and last name.&quot;);</b>
+<b class="fc"><i>78</i>&nbsp;        String base_id = (String.valueOf(names[0].charAt(0)) + names[names.length - 1].charAt(0)).toUpperCase();</b>
+<b class="fc"><i>79</i>&nbsp;        int num_id = 1;</b>
+<b class="fc"><i>80</i>&nbsp;        while(existsId(base_id+num_id)) {</b>
+<b class="fc"><i>81</i>&nbsp;            num_id++;</b>
+<i>82</i>&nbsp;        }
+<b class="fc"><i>83</i>&nbsp;        return base_id+num_id;</b>
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;    /**
+<i>87</i>&nbsp;     * Checks if another freelancer has the same ID.
+<i>88</i>&nbsp;     * @param id Id to check
+<i>89</i>&nbsp;     * @return True if another freelancer has the same id, false otherwise.
+<i>90</i>&nbsp;     */
+<i>91</i>&nbsp;    public boolean existsId(String id) {
+<b class="fc"><i>92</i>&nbsp;        for(Freelancer fre : m_setFreelancer) {</b>
+<b class="fc"><i>93</i>&nbsp;            if(fre.getId().equals(id))</b>
+<b class="fc"><i>94</i>&nbsp;                return true;</b>
+<b class="fc"><i>95</i>&nbsp;        }</b>
+<b class="fc"><i>96</i>&nbsp;        return false;</b>
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;    /**
+<i>100</i>&nbsp;     * Tests if a freelancer can be added into the register.
+<i>101</i>&nbsp;     * @param fre The freelancer to test.
+<i>102</i>&nbsp;     * @return True if the freelancer can be added into the register, false otherwise.
+<i>103</i>&nbsp;     */
+<i>104</i>&nbsp;    public boolean validate(Freelancer fre) {
+<b class="fc"><i>105</i>&nbsp;        return !m_setFreelancer.contains(fre);</b>
+<i>106</i>&nbsp;    }
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;    /**
+<i>109</i>&nbsp;     * Adds a freelancer to the register.
+<i>110</i>&nbsp;     * @param fre The freelancer to add;
+<i>111</i>&nbsp;     * @return True if the freelancer was added, false otherwise.
+<i>112</i>&nbsp;     */
+<i>113</i>&nbsp;    public boolean registerFreelancer(Freelancer fre) {
+<b class="fc"><i>114</i>&nbsp;        if(validate(fre))</b>
+<b class="fc"><i>115</i>&nbsp;            return m_setFreelancer.add(fre);</b>
+<b class="fc"><i>116</i>&nbsp;        return false;</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;
+<i>119</i>&nbsp;    public Collection&lt;Freelancer&gt; getFreelancers() {
+<b class="fc"><i>120</i>&nbsp;        return new ArrayList&lt;&gt;(this.m_setFreelancer);</b>
+<i>121</i>&nbsp;    }
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;    /**
+<i>124</i>&nbsp;     * Returns an iterator to all the freelancers.
+<i>125</i>&nbsp;     * @return n iterator to all the freelancers.
+<i>126</i>&nbsp;     */
+<i>127</i>&nbsp;    @Override
+<i>128</i>&nbsp;    public Iterator&lt;Freelancer&gt; iterator() {
+<b class="fc"><i>129</i>&nbsp;        return this.m_setFreelancer.iterator();</b>
+<i>130</i>&nbsp;    }
+<i>131</i>&nbsp;
+<i>132</i>&nbsp;    /**
+<i>133</i>&nbsp;     * Searches for a freelancer f1 where f2.equal(f1) is true.
+<i>134</i>&nbsp;     * @param f2 Freelancer that should equal f1.
+<i>135</i>&nbsp;     * @return A freelancer f1 where f2.equal(f1) is true or null if no such freelancer is found.
+<i>136</i>&nbsp;     */
+<i>137</i>&nbsp;    public Freelancer getSameFreelancer(Freelancer f2) {
+<b class="fc"><i>138</i>&nbsp;        for (Freelancer f1 : this) {</b>
+<b class="fc"><i>139</i>&nbsp;            if(f2.equals(f1))</b>
+<b class="fc"><i>140</i>&nbsp;                return f1;</b>
+<b class="fc"><i>141</i>&nbsp;        }</b>
+<b class="fc"><i>142</i>&nbsp;        return null;</b>
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CreateTaskController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CreateTaskController (lapr.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreateTaskController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lapr.lists.ListTask;
+<i>4</i>&nbsp;import lapr.model.App;
+<i>5</i>&nbsp;import lapr.model.Organization;
+<i>6</i>&nbsp;import lapr.model.Task;
+<i>7</i>&nbsp;import authorization.model.UserSession;
+<i>8</i>&nbsp;import authorization.AuthFacade;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * Class that is responsible for creating a new task and adding to tha task list of the organization.
+<i>12</i>&nbsp; * @author André Botelho and Ricardo Moreira.
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;public class CreateTaskController {
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;        /**
+<i>17</i>&nbsp;        * Instance of the app.
+<i>18</i>&nbsp;        */
+<i>19</i>&nbsp;        private App app;
+<i>20</i>&nbsp;        /**
+<i>21</i>&nbsp;        * Instance of Organization of the current user.
+<i>22</i>&nbsp;        */
+<i>23</i>&nbsp;        private Organization organization;
+<i>24</i>&nbsp;        /**
+<i>25</i>&nbsp;        * User session.
+<i>26</i>&nbsp;        */
+<i>27</i>&nbsp;        private UserSession session;
+<i>28</i>&nbsp;        /**
+<i>29</i>&nbsp;        * ID of the collaborator.
+<i>30</i>&nbsp;        */
+<i>31</i>&nbsp;        private String emailUser;
+<i>32</i>&nbsp;        /**
+<i>33</i>&nbsp;         *  Instance of Task of the transaction.
+<i>34</i>&nbsp;         */
+<i>35</i>&nbsp;        private Task task;
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;      /**
+<i>38</i>&nbsp;      * An Authorization Facade instance.
+<i>39</i>&nbsp;      */
+<i>40</i>&nbsp;     private AuthFacade authorization;
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    /**
+<i>43</i>&nbsp;     * Constructor.
+<i>44</i>&nbsp;     */
+<b class="nc"><i>45</i>&nbsp;     public CreateTaskController() {</b>
+<b class="nc"><i>46</i>&nbsp;        this.app = AppPOE.getInstance().getApp();</b>
+<b class="nc"><i>47</i>&nbsp;    }</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    /**
+<i>50</i>&nbsp;     * Build an instance of organization receiving the name, manager and collaborator.
+<i>51</i>&nbsp;     * @param id of the task.
+<i>52</i>&nbsp;     * @param description of the task.
+<i>53</i>&nbsp;     * @param durationInHours duration it took to complete the task.
+<i>54</i>&nbsp;     * @param m_dCostPerHourOfJuniorEur cost per hour a junior freelancer receives for this task.
+<i>55</i>&nbsp;     * @param category he category this task is in.
+<i>56</i>&nbsp;     * @return The new task.
+<i>57</i>&nbsp;     */
+<i>58</i>&nbsp;    public boolean newTask (String id, String description, double durationInHours, double m_dCostPerHourOfJuniorEur, String category) {
+<i>59</i>&nbsp;        try {
+<b class="nc"><i>60</i>&nbsp;            this.authorization = this.app.getAuthFacade();</b>
+<b class="nc"><i>61</i>&nbsp;            this.session = this.authorization.getCurrentSession();</b>
+<b class="nc"><i>62</i>&nbsp;            this.emailUser = this.session.getEmailUser();</b>
+<b class="nc"><i>63</i>&nbsp;            this.organization = this.app.getRegistOrganization().getOrganizationByEmailUser(emailUser);</b>
+<b class="nc"><i>64</i>&nbsp;            this.task = ListTask.newTask( id, description, durationInHours, m_dCostPerHourOfJuniorEur, category);</b>
+<b class="nc"><i>65</i>&nbsp;            return this.organization.getListTask().validatesTask(this.task);</b>
+<b class="nc"><i>66</i>&nbsp;        } catch(RuntimeException ex){</b>
+<b class="nc"><i>67</i>&nbsp;            System.out.println(ex.getMessage());</b>
+<b class="nc"><i>68</i>&nbsp;            this.task = null;</b>
+<b class="nc"><i>69</i>&nbsp;            return false;</b>
+<i>70</i>&nbsp;        }
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;    /**
+<i>74</i>&nbsp;     * Register task of the organization.
+<i>75</i>&nbsp;     * @return register on the organization.
+<i>76</i>&nbsp;     */
+<i>77</i>&nbsp;    public boolean registTask() {
+<b class="nc"><i>78</i>&nbsp;        return this.organization.getListTask().registerTask(this.task);</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;}
+<i>81</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>

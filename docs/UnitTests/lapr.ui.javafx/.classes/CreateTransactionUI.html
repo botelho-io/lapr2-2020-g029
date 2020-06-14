@@ -1,0 +1,248 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CreateTransactionUI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">lapr.ui.javafx</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CreateTransactionUI (lapr.ui.javafx)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreateTransactionUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 52)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CreateTransactionUI$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 65)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package lapr.ui.javafx;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.beans.value.ChangeListener;
+<i>4</i>&nbsp;import javafx.beans.value.ObservableValue;
+<i>5</i>&nbsp;import javafx.collections.FXCollections;
+<i>6</i>&nbsp;import javafx.event.ActionEvent;
+<i>7</i>&nbsp;import javafx.fxml.FXML;
+<i>8</i>&nbsp;import javafx.scene.control.*;
+<i>9</i>&nbsp;import javafx.stage.Stage;
+<i>10</i>&nbsp;import lapr.controller.CreateTransactionController;
+<i>11</i>&nbsp;import lapr.model.Freelancer;
+<i>12</i>&nbsp;import lapr.model.Task;
+<i>13</i>&nbsp;import lapr.ui.javafx.util.FXBridge;
+<i>14</i>&nbsp;import lapr.ui.javafx.util.HelperUI;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import java.time.LocalDate;
+<i>17</i>&nbsp;import java.util.*;
+<i>18</i>&nbsp;import java.util.zip.DeflaterOutputStream;
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;public class CreateTransactionUI {</b>
+<i>21</i>&nbsp;    @FXML
+<i>22</i>&nbsp;    public Button btnUC3;
+<i>23</i>&nbsp;    @FXML
+<i>24</i>&nbsp;    public ChoiceBox&lt;Freelancer&gt; cbFreelancer;
+<i>25</i>&nbsp;    @FXML
+<i>26</i>&nbsp;    public Button btnUC2;
+<i>27</i>&nbsp;    @FXML
+<i>28</i>&nbsp;    public ChoiceBox&lt;Task&gt; cbTask;
+<i>29</i>&nbsp;    @FXML
+<i>30</i>&nbsp;    public DatePicker dpDate;
+<i>31</i>&nbsp;    @FXML
+<i>32</i>&nbsp;    public Spinner&lt;Double&gt; spHours;
+<i>33</i>&nbsp;    @FXML
+<i>34</i>&nbsp;    public TextArea taDesc;
+<i>35</i>&nbsp;    @FXML
+<i>36</i>&nbsp;    public Label lblValue;
+<i>37</i>&nbsp;    @FXML
+<i>38</i>&nbsp;    public TextField tfId;
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    private CreateTransactionController controller;
+<i>41</i>&nbsp;    @FXML
+<i>42</i>&nbsp;    public void initialize() {
+<b class="nc"><i>43</i>&nbsp;        controller = new CreateTransactionController();</b>
+<b class="nc"><i>44</i>&nbsp;        refreshTasks();</b>
+<b class="nc"><i>45</i>&nbsp;        refreshFreelancer();</b>
+<b class="nc"><i>46</i>&nbsp;        final SpinnerValueFactory&lt;Double&gt; vFac = new SpinnerValueFactory.DoubleSpinnerValueFactory(Double.MIN_VALUE,Double.MAX_VALUE, 0);</b>
+<b class="nc"><i>47</i>&nbsp;        spHours.setValueFactory(vFac);</b>
+<b class="nc"><i>48</i>&nbsp;        taDesc.setText(&quot;&quot;);</b>
+<b class="nc"><i>49</i>&nbsp;        tfId.setText(&quot;&quot;);</b>
+<b class="nc"><i>50</i>&nbsp;        cbFreelancer.getSelectionModel().selectedItemProperty().addListener(ncl());</b>
+<b class="nc"><i>51</i>&nbsp;        cbTask.getSelectionModel().selectedItemProperty().addListener(ncl());</b>
+<b class="nc"><i>52</i>&nbsp;        taDesc.textProperty().addListener(ncl());</b>
+<b class="nc"><i>53</i>&nbsp;        spHours.valueProperty().addListener(ncl());</b>
+<b class="nc"><i>54</i>&nbsp;        dpDate.valueProperty().addListener(ncl());</b>
+<b class="nc"><i>55</i>&nbsp;        updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());</b>
+<b class="nc"><i>56</i>&nbsp;    }</b>
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    private &lt;T&gt; ChangeListener&lt;T&gt; ncl() {
+<b class="nc"><i>59</i>&nbsp;        return new ChangeListener&lt;T&gt;() {</b>
+<i>60</i>&nbsp;            @Override public void changed(ObservableValue&lt;? extends T&gt; obs, T oldval, T newval) {
+<b class="nc"><i>61</i>&nbsp;                if(newval instanceof Freelancer) {</b>
+<b class="nc"><i>62</i>&nbsp;                    updateValue((Freelancer) newval, cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());</b>
+<b class="nc"><i>63</i>&nbsp;                } else if (newval instanceof Task) {</b>
+<b class="nc"><i>64</i>&nbsp;                    updateValue(cbFreelancer.getValue(), (Task) newval, dpDate.getValue(), spHours.getValue(), taDesc.getText());</b>
+<b class="nc"><i>65</i>&nbsp;                } else if (newval instanceof LocalDate) {</b>
+<b class="nc"><i>66</i>&nbsp;                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), (LocalDate) newval, spHours.getValue(), taDesc.getText());</b>
+<b class="nc"><i>67</i>&nbsp;                } else if (newval instanceof  Double) {</b>
+<b class="nc"><i>68</i>&nbsp;                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), (Double) newval, taDesc.getText());</b>
+<b class="nc"><i>69</i>&nbsp;                } else if (newval instanceof  String) {</b>
+<b class="nc"><i>70</i>&nbsp;                    updateValue(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), (String) newval);</b>
+<i>71</i>&nbsp;                } else {
+<b class="nc"><i>72</i>&nbsp;                    throw new IllegalArgumentException(&quot;CreateTransactionUI - Bad listener&quot;);</b>
+<i>73</i>&nbsp;                }
+<b class="nc"><i>74</i>&nbsp;            }</b>
+<i>75</i>&nbsp;        };
+<i>76</i>&nbsp;    }
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;    private void refreshTasks() {
+<b class="nc"><i>79</i>&nbsp;        cbTask.setItems(FXCollections.observableArrayList(controller.getTasks()));</b>
+<b class="nc"><i>80</i>&nbsp;    }</b>
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;    private void refreshFreelancer() {
+<b class="nc"><i>83</i>&nbsp;        cbFreelancer.setItems(FXCollections.observableArrayList(controller.getFreelancers()));</b>
+<b class="nc"><i>84</i>&nbsp;    }</b>
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;    @FXML
+<i>87</i>&nbsp;    public void startUC3(ActionEvent actionEvent) {
+<b class="nc"><i>88</i>&nbsp;        FXBridge.openState(FXBridge.STATE.UC3, new Stage());</b>
+<b class="nc"><i>89</i>&nbsp;        refreshFreelancer();</b>
+<b class="nc"><i>90</i>&nbsp;    }</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    @FXML
+<i>93</i>&nbsp;    public void startUC2(ActionEvent actionEvent) {
+<b class="nc"><i>94</i>&nbsp;        FXBridge.openState(FXBridge.STATE.UC2, new Stage());</b>
+<b class="nc"><i>95</i>&nbsp;        refreshTasks();</b>
+<b class="nc"><i>96</i>&nbsp;    }</b>
+<i>97</i>&nbsp;
+<i>98</i>&nbsp;    @FXML
+<i>99</i>&nbsp;    public void quit(ActionEvent actionEvent) {
+<b class="nc"><i>100</i>&nbsp;        ((Stage)btnUC3.getScene().getWindow()).close();</b>
+<b class="nc"><i>101</i>&nbsp;    }</b>
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;    @FXML
+<i>104</i>&nbsp;    public void newTransaction(ActionEvent actionEvent) {
+<i>105</i>&nbsp;        Freelancer fre;
+<i>106</i>&nbsp;        Task tsk;
+<i>107</i>&nbsp;        try {
+<b class="nc"><i>108</i>&nbsp;            newTransaction(cbFreelancer.getValue(), cbTask.getValue(), dpDate.getValue(), spHours.getValue(), taDesc.getText());</b>
+<b class="nc"><i>109</i>&nbsp;            boolean ad = controller.addTransaction();</b>
+<b class="nc"><i>110</i>&nbsp;            if (!ad) throw new IllegalStateException(&quot;An error occurred while adding the transaction to the register.\nPlease, try again.&quot;);</b>
+<b class="nc"><i>111</i>&nbsp;        } catch (IllegalArgumentException | IllegalStateException ex) {</b>
+<b class="nc"><i>112</i>&nbsp;            HelperUI.alert(ex.getMessage());</b>
+<b class="nc"><i>113</i>&nbsp;            initialize();</b>
+<b class="nc"><i>114</i>&nbsp;            return;</b>
+<b class="nc"><i>115</i>&nbsp;        }</b>
+<i>116</i>&nbsp;        // All went ok.
+<b class="nc"><i>117</i>&nbsp;        final String msg = String.format(&quot;The freelancer %s will be paid %f€.\nYou may quit or keep adding transactions.&quot;, cbFreelancer.getValue().toString(), controller.getAmount());</b>
+<b class="nc"><i>118</i>&nbsp;        HelperUI.alert(Alert.AlertType.INFORMATION, msg);</b>
+<b class="nc"><i>119</i>&nbsp;        initialize();</b>
+<b class="nc"><i>120</i>&nbsp;    }</b>
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;    @FXML
+<i>123</i>&nbsp;    public void updateValue(Freelancer fre, Task tsk, LocalDate date, Double hours, String desc) {
+<i>124</i>&nbsp;        try {
+<b class="nc"><i>125</i>&nbsp;            newTransaction(fre, tsk, date, hours, desc);</b>
+<b class="nc"><i>126</i>&nbsp;            final String msg = String.format(&quot;%.3f€&quot;, controller.getAmount());</b>
+<b class="nc"><i>127</i>&nbsp;            lblValue.setText(msg);</b>
+<b class="nc"><i>128</i>&nbsp;        } catch (IllegalArgumentException | IllegalStateException ex) {</b>
+<b class="nc"><i>129</i>&nbsp;            lblValue.setText(&quot;Incomplete Values&quot;);</b>
+<b class="nc"><i>130</i>&nbsp;        }</b>
+<b class="nc"><i>131</i>&nbsp;    }</b>
+<i>132</i>&nbsp;
+<i>133</i>&nbsp;    private void newTransaction(Freelancer fre, Task tsk, LocalDate date, Double hours, String desc) {
+<b class="nc"><i>134</i>&nbsp;        if (fre == null) throw new IllegalStateException(&quot;An illegal freelancer was chosen.&quot;);</b>
+<b class="nc"><i>135</i>&nbsp;        if (tsk == null) throw new IllegalStateException(&quot;An illegal task was chosen.&quot;);</b>
+<b class="nc"><i>136</i>&nbsp;        boolean nt = controller.newTransaction(tfId.getText(), fre, tsk, date, hours, desc);</b>
+<b class="nc"><i>137</i>&nbsp;        if (!nt) throw new IllegalStateException(&quot;An error occurred while creating the transaction.&quot;);</b>
+<b class="nc"><i>138</i>&nbsp;    }</b>
+<i>139</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-14 22:49</div>
+</div>
+</body>
+</html>
