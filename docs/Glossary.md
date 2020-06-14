@@ -2,9 +2,9 @@
 
 | Term | Description |
 |------|-------------|
-| Administrador | Person employed by T4J in order to maintain the app |
+| Administrator | Person employed by T4J in order to maintain the app |
 | App | The payments application that allows organizations to make and manage payments to Freelancers |
-| Freelancer | An independant self-employed worker that completes a task on behalf of an organization |
+| Freelancer | An independent self-employed worker that completes a task on behalf of an organization |
 | Organization | A company that seeks freelancers to complete their tasks |
 | Task | A job that an organization needs to get done |
 | Transaction | A completed task that needs to be paid by a certain organization to a freelancer |
@@ -19,5 +19,5 @@
 | TaskExecutionDetails | Details about how the freelancer preformed during his execution of a certain task |
 | MonetaryUnitConversionAPI | Common interface for converting monetary units from one country to another |
 | PaymentAPI | Common interface to make payments by bank transfer |
-| HistoricalTransactionFile | A CSV file that contains historical informaition about transactions |
+| HistoricalTransactionFile | A CSV file that contains historical information about transactions |
 | API | Application Programing Interface |

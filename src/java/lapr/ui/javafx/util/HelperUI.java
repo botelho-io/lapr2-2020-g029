@@ -13,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class HelperUI {
     public static void alert(String message) {
-        System.out.println(message);
+        // System.out.println(message);
         alert(Alert.AlertType.ERROR, message);
     }
 
@@ -39,7 +39,6 @@ public class HelperUI {
             root = FXMLLoader.load(MainUI.class.getResource(fxml_s));
         } catch (Exception e) {
             // HACK to exit early out of initialization
-            // TODO: Think of something better?
             if(e instanceof LoadException)
                 if(e.getCause() instanceof InvocationTargetException)
                     if(e.getCause().getCause() instanceof IllegalStateException)

@@ -82,7 +82,6 @@ public class PaymentScheduler implements Serializable {
         // Find what time it is now
         Calendar cal = Calendar.getInstance();
         // Set that calendar to this month's day and time of payment
-        // TODO: confirm with client what happens on invalid day of month.
         cal.set(Calendar.DAY_OF_MONTH, Math.min(cal.getActualMaximum(Calendar.DAY_OF_MONTH), m_iDayMonth));
         // Set time
         cal.set(Calendar.HOUR_OF_DAY, m_oTimeOfDay.getHour());

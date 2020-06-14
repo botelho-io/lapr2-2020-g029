@@ -22,7 +22,6 @@ public class PaymentAPIAdapter implements PaymentAPI {
             if(new File(Constants.paymentsFile).length() == 0)
                 out.write("Freelancer ID\tFreelancer IBAN\tTask ID\tTask Description\tEuro\tNative Currency\n");
         } catch (IOException e) {
-            // TODO: handle exception.
             System.out.println(e.getMessage());
         }
     }
@@ -44,7 +43,6 @@ public class PaymentAPIAdapter implements PaymentAPI {
             out.write(String.format("%s\t%s\t%s\t%s\t%.2f\t%.2f\n", freelancerId, freelancerIBAN, taskId, taskDescription, eur, nativeCurrency));
             return true;
         } catch (IOException e) {
-            // TODO: handle exception
             System.out.println(e.getMessage());
             e.printStackTrace();
             return false;

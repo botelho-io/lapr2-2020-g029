@@ -37,9 +37,6 @@ public class MainUI {
     }
 
     public void start() {
-        // TODO: Delete
-        //AppPOE.getInstance().getApp().getAuthFacade().doLogin("colab@dei.pt", "password");
-
         // Load data from file
         openState(FXBridge.STATE.UC12);
 

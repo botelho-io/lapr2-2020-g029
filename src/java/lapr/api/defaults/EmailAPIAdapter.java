@@ -20,7 +20,6 @@ public class EmailAPIAdapter implements EmailAPI {
             fstream = new FileWriter(Constants.emailsFile, true);
             out = new BufferedWriter(fstream);
         } catch (IOException e) {
-            // TODO: handle exception.
             System.out.println(e.getMessage());
         }
     }
@@ -47,7 +46,6 @@ public class EmailAPIAdapter implements EmailAPI {
             out.write(msg);
             return true;
         } catch (IOException e) {
-            // TODO: handle exception
             System.out.println(e);
             e.printStackTrace();
             return false;

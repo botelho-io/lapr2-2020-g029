@@ -92,7 +92,6 @@ public class AppPOE {
             in.close();
         } catch (FileNotFoundException ignored) {
         } catch (IOException e) {
-            // TODO Handle Exception.
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
@@ -110,7 +109,7 @@ public class AppPOE {
         final Administrator adm = new Administrator(p.getProperty("admin.name"), p.getProperty("admin.email"), p.getProperty("admin.password"));
         getApp().getAuthFacade().registerUser(adm);
 
-        // Add test data TODO: Delete
+        // Add test data
         // TestConstants.addTestOrgTasksFreelancersAndTransactions();
     }
 
@@ -131,7 +130,6 @@ public class AppPOE {
         try {
             return (T) (Class.forName(name).getConstructor().newInstance());
         } catch (Exception e) {
-            // TODO: Handle exception
             System.out.println(e);
             e.printStackTrace();
             return null;

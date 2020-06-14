@@ -88,7 +88,6 @@ public class CreateOrganizationController {
 
 
 
-    // TODO: Extract to config file?
     private static final String CollaboratorEmail = "Hello new collaborator!\nHere's your password: [%s].\n\nHave a great day!\n";
     private static final String ManagerEmail = "Hello new Manager!\nHere's your password: [%s].\n\nHave a great day!\n";
 
