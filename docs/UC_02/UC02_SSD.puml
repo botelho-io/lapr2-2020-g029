@@ -1,4 +1,5 @@
-@startuml
+@startuml SSD
+
 autonumber
 actor Collaborator as C
 
